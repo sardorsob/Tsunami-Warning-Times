@@ -1,0 +1,32 @@
+[project]
+name = "pacific-tsunami-warning-time"
+version = "0.1.0"
+description = "Reproducible analysis support for the Pacific Tsunami Warning Time visual story."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "pyright==1.1.411",
+  "pytest==9.1.1",
+  "ruff==0.16.6",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.pyright]
+include = ["pipeline", "tests"]
+exclude = ["data", "artifacts", "public"]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
