@@ -9,8 +9,8 @@ data or overbuilding the application.
 The project owner approved the broad Tōhoku acquisition, data-quality, and EDA
 design on 2026-09-05 and authorized implementation of T-002A through T-002C on
 `main`. T-002A source-contract discovery and T-002B acquisition are accepted;
-T-002C normalization/data quality is active, and EDA remains gated on accepted
-analysis-ready data.
+T-002C normalization/data quality has a deterministic candidate in independent
+review, and EDA remains gated on accepted analysis-ready data.
 
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
@@ -44,8 +44,8 @@ analysis-ready data.
 - Designed the T-002P through T-002E work package: exact-source discovery,
   source-gated acquisition, normalization/data quality, script-backed marimo
   EDA, Markdown reporting, and independent scientific closure.
-- Added intentionally empty acquisition, data-quality, and EDA report files.
-  Their task-owned scripts will populate them when work begins.
+- Populated the acquisition and data-quality reports from their task-owned
+  evidence. The EDA report remains intentionally empty until T-002D.
 
 ## Verification evidence
 
@@ -121,7 +121,8 @@ Observed on 2026-09-05 for the source-contract ledger:
 - Tōhoku is only a provisional recommendation. `app/src/project.ts` intentionally
   keeps `selectedEvent` null.
 - No repository code license was inferred. The owner must choose one.
-- No raw scientific data was downloaded; no reportable scientific result exists.
+- The accepted T-002B raw bundle exists locally as ignored, immutable,
+  checksummed files. No EDA result or production claim exists.
 - `.serena/` predated this setup and remains intact locally, but the entire
   directory is ignored and absent from the current tracked tree.
 
@@ -141,6 +142,23 @@ reviewer reconciled both bundles, the manifest, all 12 raw assets, and all 12
 checksum sidecars; confirmed that raw data remains ignored and untracked; and
 found no proxy substitution. T-002B is done and T-002C may proceed.
 
+## T-002C candidate evidence
+
+At Git SHA `5f920f2`, two offline checksum-gated builds with tags
+`2026-09-05-1958-quality-a-5f920f2` and
+`2026-09-05-1958-quality-b-5f920f2` produced byte-identical outputs: 1 event,
+4,380 TTT contour parts, 10 station rows, 138,619 accepted observations, and 93
+rejections. The tracked portable bundle is
+`2026-09-05__1958__quality__5f920f2`; the processed tables remain ignored.
+
+Core correctness review is approved after fixes for source-metadata identity,
+grain accounting, empty-source handling, output containment, units, and strict
+geometry types. A later adaptive profile found 90 exact `9999` values in DART
+measurement fields. Because publisher semantics were not verified, the pipeline
+now quarantines those rows as `unexpected_sentinel` instead of guessing a null
+meaning; tests and the final double build confirm no retained sentinel rows.
+T-002C awaits its final independent scientific-data disposition.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
@@ -158,13 +176,11 @@ found no proxy substitution. T-002B is done and T-002C may proceed.
 
 Execute the remaining approved implementation chain in order:
 
-1. Normalize and validate the accepted T-002B bundle without downloading or
-   substituting sources; keep all blocked candidates in coverage denominators.
-2. Preserve the four preselected DART stations, source timestamps, units,
-   datums, missingness, TTT geometry, and antimeridian precision.
-3. Build twice, compare deterministic outputs, complete manual scientific QA,
-   and obtain independent review before accepting T-002C.
-4. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+1. Complete the independent T-002C review of identity, accounting, units/time,
+   datum handling, deterministic outputs, manual traces, and rejections.
+2. Resolve any material finding and rerun the full repository gate before
+   accepting T-002C.
+3. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -173,10 +189,10 @@ Do not begin the full wavefront or story build during the data proof.
 ## Repository state
 
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
-`main`. Raw data remains ignored and untracked; no deployment or publication
-occurred. T-002C is active, and T-002D remains pending.
+`main`. Raw and processed data remain ignored and untracked; no deployment or
+publication occurred. T-002C is in review, and T-002D remains pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, and T-002B are accepted. T-002C is active, and
+T-000, T-001, T-002P, T-002A, and T-002B are accepted. T-002C is in review, and
 T-002D is not yet active.

@@ -1,0 +1,17 @@
+{
+  "builds": [
+    "data/processed/tohoku/2026-09-05-1958-quality-a-5f920f2",
+    "data/processed/tohoku/2026-09-05-1958-quality-b-5f920f2"
+  ],
+  "comparison": "byte-identical",
+  "files": {
+    "accounting.json": "ad581a22b900883ce5e35849cb573533d4a4e49d49caa23aedb947319de62413",
+    "event.csv": "bd1e11e9322f8670f016eeea4820f83ddca811d20fd52395d12405cd86d9ba82",
+    "observation.csv": "628a9c836f922b17bafb52876b06f7a2df0af12c48fbf85399cf792113a4a7ff",
+    "rejected_record.csv": "72d93c72ff6d0e9a7e62bf58889f142e5f74e40757616ee5110f501697d03fed",
+    "schemas.json": "84cf050ffc0870b262ad0a5daffbd247b7b052632b4c80fa56c45c6d899d0bac",
+    "station.csv": "d88a05b792576ed822616ff8643cc7bc1bf6ba488654ef5f5bbf97824b1f81bb",
+    "ttt_contour.csv": "53f2efd57327e69f196a6ce25417e451ff3366dd3e9f4185ddbe4d764c3caed4"
+  },
+  "storage_note": "Processed tables are reproducible, ignored local artifacts; this tracked bundle is their portable evidence."
+}

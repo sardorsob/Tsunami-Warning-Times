@@ -1,0 +1,18 @@
+{
+  "contract": {
+    "path": "config/tohoku-data-proof.toml",
+    "sha256": "37d61c3576c4d968e60be3aa408f74124a6a4487f8b0c149ff1872bb104ce1b5"
+  },
+  "input_inventory": {
+    "path": "artifacts/logs/runs/2026-09-05__1906__accepted__e602131/outputs.json",
+    "sha256": "f71e0fd9e429a78fd648c68695f4d8fcd62effe0218e74519cc494cad65a174e"
+  },
+  "normalization_policy": {
+    "blocked_sources_remain_in_denominators": true,
+    "dart_9999_policy": "quarantine entire row as unexpected_sentinel",
+    "missing_values_preserved": true,
+    "nctr_coefficients_role": "coverage_only_not_continuous_field",
+    "nctr_field_policy": "blocked_no_proxy",
+    "source_precision_preserved": true
+  }
+}

@@ -205,10 +205,20 @@
 - Verification commands: task-owned tests, schema checks, count reconciliation,
   coordinate/geometry validation, and deterministic rebuild comparison
 - Manual QA: inspect three contours, four DART records, and six coastal records
-- Evidence: pending
-- Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Evidence: deterministic offline builds
+  `2026-09-05-1958-quality-a-5f920f2` and
+  `2026-09-05-1958-quality-b-5f920f2` are byte-identical: 1 event, 4,380 TTT
+  parts, 10 stations, 138,619 observations, and 93 visible rejections. The
+  portable run bundle is `2026-09-05__1958__quality__5f920f2`; the complete
+  profile and manual source traces are in `context/DATA_QUALITY_REPORT.md`.
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-05 — typed offline normalization, schema/accounting
+  outputs, fixture tests, and deterministic builder completed; correctness
+  review resolved metadata, accounting, empty-source, containment, and unit
+  contract findings; adaptive profiling then found 90 undocumented DART `9999`
+  measurement rows, which were quarantined before the final double build;
+  submitted for independent scientific-data review
+- Status: in-review
 
 ## T-002D — Run reproducible EDA
 

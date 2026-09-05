@@ -1,0 +1,13 @@
+{
+  "commands": [
+    "uv run python scripts/build_tohoku_data.py --inventory artifacts/logs/runs/2026-09-05__1906__accepted__e602131/outputs.json --config config/tohoku-data-proof.toml --root . --run-tag 2026-09-05-1958-quality-a-5f920f2",
+    "uv run python scripts/build_tohoku_data.py --inventory artifacts/logs/runs/2026-09-05__1906__accepted__e602131/outputs.json --config config/tohoku-data-proof.toml --root . --run-tag 2026-09-05-1958-quality-b-5f920f2",
+    "diff -rq data/processed/tohoku/2026-09-05-1958-quality-a-5f920f2 data/processed/tohoku/2026-09-05-1958-quality-b-5f920f2"
+  ],
+  "evidence_disposition": "ready-for-review",
+  "git_sha": "5f920f2",
+  "mode": "offline-checksummed-normalization",
+  "run_id": "2026-09-05__1958__quality__5f920f2",
+  "timestamp_utc": "2026-09-05T19:58:00Z",
+  "working_tree": "clean"
+}

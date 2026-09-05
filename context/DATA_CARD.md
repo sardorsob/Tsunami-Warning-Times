@@ -1,11 +1,17 @@
-# Data Card — Feasibility State
+# Data Card — Tōhoku Data-Proof Candidate
 
 ## Status
 
-No scientific dataset has been approved or downloaded. Tōhoku is authorized for
-a broad data-proof attempt, not promoted for production. Candidate sources and
-their evidence belong in `docs/research/feasibility.md`; approved machine-readable
-records belong in `artifacts/provenance/source-manifest.csv`.
+T-002A source contracts and T-002B acquisition are accepted. The T-002C
+normalization candidate is in independent review: 12 of 15 contracted sources
+were acquired by exact contract, while the continuous NCTR field, Saipan, and
+Valparaíso remain blocked and visible. Tōhoku remains a data-proof candidate,
+not a production dataset or operational warning product.
+
+Raw assets are immutable, checksummed, ignored, and untracked. Reproducible
+processed tables are also ignored; their schemas, accounting, output hashes, and
+quality metrics are tracked in the run bundle and
+`context/DATA_QUALITY_REPORT.md`.
 
 ## Required source classes
 
@@ -31,15 +37,20 @@ records belong in `artifacts/provenance/source-manifest.csv`.
 Exact station IDs, deployments, endpoints, windows, and formats are outputs of
 T-002A. No candidate becomes analysis-ready merely because it downloads.
 
-## Planned grains
+## Actual normalized grains
 
-- source asset: one row per retrieved file or API response;
+- source outcome: one row per contracted file/API response, including blockers;
+- event: one row for the reviewed USGS event origin;
 - travel-time contour: one row per source contour part and `HOURS` value;
-- model-field index: one row per source variable/grid/time asset;
-- station: one row per deployment or gauge identity;
-- observation: one row per station sample;
+- station: one row per selected DART deployment or coastal-gauge identity,
+  including blocked candidates;
+- observation: one row per accepted station sample, retaining source time;
 - arrival pick: one row per station, method configuration, and sensitivity run;
 - rejected record: one row per rejected asset, feature, station, or sample.
+
+The NCTR model-field index is absent because no exact continuous field passed the
+source gate. Published NCTR scalar source coefficients are coverage-only evidence
+and are not a field proxy. Arrival-pick tables are deferred to T-002D.
 
 ## Minimum record contract
 
@@ -53,9 +64,28 @@ Raw files are immutable and ignored. Normalized files retain source fields and
 add derived fields rather than overwriting identity, time, units, or coordinates.
 Every stage reconciles input, accepted, rejected, and output counts.
 
+## Current coverage and quality
+
+- one reviewed USGS event row;
+- 72 TTT features expanded to 4,380 contour parts and 62,988 vertices;
+- four preselected DART stations with 121,722 accepted samples;
+- six coastal candidates represented as stations: four with 16,897 observations
+  and two retained as blockers;
+- 93 rejected records: 3 blocked assets and 90 DART rows containing an
+  undocumented `9999` measurement sentinel;
+- zero duplicate primary keys, zero duplicate station/timestamp pairs, and zero
+  null required fields.
+
+CO-OPS raw-value missingness is retained, not imputed. Pago Pago returns only
+3,937 of 4,320 requested minute rows, contains 936 null values, and supplies
+3,001 usable values (69.468% of the requested window). DART cadence varies by
+source; long post-quarantine intervals remain explicit EDA targets. Unknown CRS,
+horizontal datum, vertical reference, and time semantics remain `unknown` where
+the publisher evidence does not resolve them.
+
 ## Sensitive data and authorization
 
-The planned sources are public environmental and geographic records. No PII,
+The sources are public environmental and geographic records. No PII,
 credentials, private data, or user uploads are in scope. Public availability is
 not assumed to grant redistribution; terms must be checked per source.
 
