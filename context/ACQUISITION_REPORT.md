@@ -49,7 +49,9 @@ publisher names it.
 
 Each contract also records a conservative, whitespace-tolerant response prefix
 for T-002B identity checks. This is only an acquisition guard; the full parser
-and row-level validation remain T-002C responsibilities.
+and row-level validation remain T-002C responsibilities. An explicit `reason`
+is present on every contract: `not applicable` for approved assets and the
+source-specific access/contract blocker for blocked assets.
 
 T-002B may acquire only the 12 approved exact assets, fingerprint each one, and
 record actual byte counts, checksums, headers, and response counts. It must not

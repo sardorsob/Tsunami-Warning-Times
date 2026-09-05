@@ -125,8 +125,10 @@ mark T-002A done, and commit as `docs(data): resolve Tohoku source contracts`.
   `acquire_source(contract: SourceContract, root: Path, fetcher: Fetcher = download_url) -> AcquisitionResult`,
   and `acquire_all(contracts: Sequence[SourceContract], root: Path, fetcher: Fetcher = download_url) -> tuple[AcquisitionResult, ...]`.
 
-`SourceContract` contains the Task 1 TOML fields, including a whitespace-tolerant
-`expected_prefix` used for a minimal response-identity check. `ResponseMetadata` contains
+`SourceContract` contains the Task 1 TOML fields verbatim (`crs`,
+`temporal_semantics`, and `station_metadata` retain those exact names), including
+an explicit `reason` and a whitespace-tolerant `expected_prefix` used for a
+minimal response-identity check. `ResponseMetadata` contains
 `content_type: str` and `headers: dict[str, str]`. `AcquisitionResult` contains
 `source_id`, `status`, `local_path`, `bytes`, `sha256`, and `reason`; `Fetcher` is
 `Callable[[str, Path, float], ResponseMetadata]` so tests can write controlled
@@ -146,11 +148,12 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
         publisher="fixture",
         expected_prefix="{",
         units="not applicable",
-        spatial_reference="not applicable",
+        crs="not applicable",
         horizontal_datum="not applicable",
         vertical_datum="not applicable",
         coordinate_order="not applicable",
-        temporal_reference="not applicable",
+        temporal_semantics="not applicable",
+        station_metadata="not applicable",
         reason="not applicable",
     )
     result = acquire_source(
@@ -165,8 +168,9 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
 ```
 
 Verify RED, implement only the typed dataclasses, streamed temporary-file write,
-non-empty/signature check (`bytes.lstrip().startswith(expected_prefix)`), SHA-256,
-and atomic `Path.replace`, then verify GREEN.
+non-empty/signature check
+(`payload.lstrip().startswith(contract.expected_prefix.encode("utf-8"))`),
+SHA-256, and atomic `Path.replace`, then verify GREEN.
 
 - [ ] **Step 2: Test idempotent cache reuse**
 

@@ -120,7 +120,10 @@
   for independent scientific review;
   2026-09-05 — review round 1 added NCEI-to-NDBC UTC evidence, corrected the
   coefficient HTML contract, and aligned downstream acquisition/normalization
-  plans to `approved` contracts and USGS FDSN CSV
+  plans to `approved` contracts and USGS FDSN CSV;
+  2026-09-05 — review round 2 aligned the downloader interface exactly to the
+  TOML field names, added explicit blocker reasons, and corrected the byte-prefix
+  encoding contract
 - Status: in-review
 
 ## T-002B — Acquire and fingerprint raw assets
