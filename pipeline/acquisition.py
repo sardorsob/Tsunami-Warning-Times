@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import tempfile
 import tomllib
 from collections.abc import Callable, Sequence
@@ -97,6 +98,8 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
         raise ContractError("missing [assets] tables")
     assets = cast(dict[str, object], raw_assets)
     contracts: list[SourceContract] = []
+    source_ids: set[str] = set()
+    approved_paths: set[PurePosixPath] = set()
     for name, raw_values in assets.items():
         if not isinstance(raw_values, dict):
             raise ContractError(f"asset {name!r} must be a TOML table")
@@ -108,6 +111,9 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
         if missing:
             raise ContractError(f"asset {name!r} missing string fields: {', '.join(missing)}")
         strings = {field: value for field, value in values.items() if isinstance(value, str)}
+        blank = [field for field, value in strings.items() if not value.strip()]
+        if blank:
+            raise ContractError(f"asset {name!r} has blank fields: {', '.join(blank)}")
         availability = strings["availability"]
         if availability not in {"approved", "blocked"}:
             raise ContractError(f"asset {name!r} has unsupported availability {availability!r}")
@@ -118,10 +124,20 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
         if availability == "approved" and (
             local_path_value == "not-downloaded"
             or local_path.is_absolute()
+            or local_path == PurePosixPath(".")
             or ".." in local_path.parts
             or "\\" in local_path_value
         ):
             raise ContractError(f"approved asset {name!r} needs a safe relative local_path")
+        if strings["source_id"] in source_ids:
+            raise ContractError(f"duplicate source_id {strings['source_id']!r}")
+        source_ids.add(strings["source_id"])
+        if availability == "approved":
+            if not strings["expected_prefix"].strip():
+                raise ContractError(f"approved asset {name!r} needs a nonblank expected_prefix")
+            if local_path in approved_paths:
+                raise ContractError(f"duplicate approved local_path {local_path.as_posix()!r}")
+            approved_paths.add(local_path)
         parsed_url = urlparse(strings["url"])
         if parsed_url.scheme != "https" or not parsed_url.netloc:
             raise ContractError(f"asset {name!r} needs an absolute HTTPS url")
@@ -164,6 +180,15 @@ def _matches_prefix(path: Path, expected_prefix: str) -> bool:
         return source.read(PREFIX_WINDOW_BYTES).lstrip().startswith(expected_prefix.encode("utf-8"))
 
 
+def _checksum_path(destination: Path) -> Path:
+    return destination.with_name(f"{destination.name}.sha256")
+
+
+def _matches_checksum_record(destination: Path, digest: str) -> bool:
+    recorded = _checksum_path(destination).read_text(encoding="utf-8").strip()
+    return recorded == digest
+
+
 def _result(
     contract: SourceContract, status: str, size: int, digest: str, reason: str
 ) -> AcquisitionResult:
@@ -195,8 +220,13 @@ def _fetch_with_retries(
     for attempt in range(MAX_FETCH_ATTEMPTS):
         try:
             return fetcher(url, destination, timeout_seconds)
-        except (TimeoutError, URLError) as error:
-            if isinstance(error, HTTPError) or attempt == MAX_FETCH_ATTEMPTS - 1:
+        except HTTPError as error:
+            if error.code not in {408, 429} and not 500 <= error.code < 600:
+                raise
+            if attempt == MAX_FETCH_ATTEMPTS - 1:
+                raise
+        except (TimeoutError, URLError):
+            if attempt == MAX_FETCH_ATTEMPTS - 1:
                 raise
     raise AssertionError("bounded fetch loop must return or raise")
 
@@ -210,20 +240,28 @@ def acquire_source(
     """Acquire one approved contract without replacing a conflicting raw file."""
     if contract.availability == "blocked":
         return _result(contract, "blocked", 0, "not-downloaded", contract.reason)
-
-    destination = root / contract.local_path
-    if destination.exists():
-        size, digest = _sha256(destination)
-        if size and _matches_prefix(destination, contract.expected_prefix):
-            return _result(contract, "cached", size, digest, "not applicable")
-        return _result(contract, "quarantined", size, digest, "existing_checksum_conflict")
-
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(
-        prefix=f".{destination.name}.", dir=destination.parent, delete=False
-    ) as temporary:
-        temporary_path = Path(temporary.name)
+    temporary_path: Path | None = None
+    checksum_temporary_path: Path | None = None
     try:
+        root_resolved = root.resolve()
+        destination = root_resolved / contract.local_path
+        if not destination.resolve(strict=False).is_relative_to(root_resolved):
+            return _result(contract, "quarantined", 0, "not-downloaded", "destination_outside_root")
+        if destination.exists():
+            size, digest = _sha256(destination)
+            if not _checksum_path(destination).exists():
+                return _result(contract, "quarantined", size, digest, "missing_checksum_record")
+            if not _matches_checksum_record(destination, digest):
+                return _result(contract, "quarantined", size, digest, "checksum_record_mismatch")
+            if size and _matches_prefix(destination, contract.expected_prefix):
+                return _result(contract, "cached", size, digest, "not applicable")
+            return _result(contract, "quarantined", size, digest, "existing_checksum_conflict")
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            prefix=f".{destination.name}.", dir=destination.parent, delete=False
+        ) as temporary:
+            temporary_path = Path(temporary.name)
         _fetch_with_retries(fetcher, contract.url, temporary_path, timeout_seconds)
         size, digest = _sha256(temporary_path)
         if not size:
@@ -232,12 +270,33 @@ def acquire_source(
             return _result(
                 contract, "quarantined", size, digest, "content_signature_mismatch"
             )
-        temporary_path.replace(destination)
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", prefix=f".{destination.name}.sha256.",
+            dir=destination.parent, delete=False
+        ) as checksum_temporary:
+            checksum_temporary.write(f"{digest}\n")
+            checksum_temporary_path = Path(checksum_temporary.name)
+        checksum_path = _checksum_path(destination)
+        os.link(checksum_temporary_path, checksum_path)
+        try:
+            os.link(temporary_path, destination)
+        except FileExistsError:
+            checksum_path.unlink(missing_ok=True)
+            return _result(
+                contract, "quarantined", 0, "not-downloaded", "existing_checksum_conflict"
+            )
         return _result(contract, "downloaded", size, digest, "not applicable")
     except (HTTPError, OSError, URLError) as error:
-        return _result(contract, "quarantined", 0, "not-downloaded", f"download_failed: {error}")
+        return _result(
+            contract, "quarantined", 0, "not-downloaded", f"local_or_download_error: {error}"
+        )
     finally:
-        temporary_path.unlink(missing_ok=True)
+        for path in (temporary_path, checksum_temporary_path):
+            if path is not None:
+                try:
+                    path.unlink(missing_ok=True)
+                except OSError:
+                    pass
 
 
 def acquire_all(

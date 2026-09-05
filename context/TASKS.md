@@ -157,11 +157,17 @@
   evidence for atomic writes, cache reuse, immutable conflict quarantine,
   bounded transient-failure isolation in source-ID order, blocked no-fetch, TOML
   contract-field preservation, and bounded prefix inspection. Focused suite
-  passed (7 tests); Ruff and Pyright passed; CLI help and an isolated offline
-  run bundle were exercised. No live request or raw scientific download occurred.
+  passed (20 tests); Ruff and Pyright passed; CLI help and an isolated offline
+  run bundle were exercised. Review correction adds hard-link no-clobber
+  finalization, sidecar-backed cache verification, local I/O containment,
+  symlink-root containment, strict duplicate/blank contract rejection, and
+  transient HTTP retry classification. No live request or raw scientific data
+  download occurred.
 - Attempts / Max: 1 / 3
-- Attempt log: 2026-09-05 — implemented the Task 2 core and thin CLI; pending
-  reviewer acceptance and separately authorized live acquisition/checksum run.
+- Attempt log: 2026-09-05 — implemented the Task 2 core and thin CLI; 2026-09-05
+  — review round 1 corrected no-clobber, cache-truth, containment, and retry
+  safety gaps; pending reviewer acceptance and separately authorized live
+  acquisition/checksum run.
 - Status: in progress
 
 ## T-002C — Normalize and validate analysis tables
