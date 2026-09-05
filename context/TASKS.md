@@ -123,7 +123,9 @@
   plans to `approved` contracts and USGS FDSN CSV;
   2026-09-05 — review round 2 aligned the downloader interface exactly to the
   TOML field names, added explicit blocker reasons, and corrected the byte-prefix
-  encoding contract
+  encoding contract;
+  2026-09-05 — final interface check added the previously omitted narrative
+  content-signature field to the planned downloader dataclass
 - Status: in-review
 
 ## T-002B — Acquire and fingerprint raw assets

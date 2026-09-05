@@ -146,6 +146,7 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
         local_path=PurePosixPath("data/raw/sample.json"),
         format="json",
         publisher="fixture",
+        expected_content_signature="fixture JSON object",
         expected_prefix="{",
         units="not applicable",
         crs="not applicable",

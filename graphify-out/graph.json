@@ -1502,7 +1502,7 @@
       "node_kind": "heading",
       "norm_label": "t-002b \u2014 acquire and fingerprint raw assets",
       "source_file": "context/TASKS.md",
-      "source_location": "L129"
+      "source_location": "L131"
     },
     {
       "id": "context_tasks_t_002c_normalize_and_validate_analysis_tables",
@@ -1514,7 +1514,7 @@
       "node_kind": "heading",
       "norm_label": "t-002c \u2014 normalize and validate analysis tables",
       "source_file": "context/TASKS.md",
-      "source_location": "L156"
+      "source_location": "L158"
     },
     {
       "id": "context_tasks_t_002d_run_reproducible_eda",
@@ -1526,7 +1526,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d \u2014 run reproducible eda",
       "source_file": "context/TASKS.md",
-      "source_location": "L186"
+      "source_location": "L188"
     },
     {
       "id": "context_tasks_t_002e_review_and_close_the_data_proof",
@@ -1538,7 +1538,7 @@
       "node_kind": "heading",
       "norm_label": "t-002e \u2014 review and close the data proof",
       "source_file": "context/TASKS.md",
-      "source_location": "L218"
+      "source_location": "L220"
     },
     {
       "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
@@ -1562,7 +1562,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L244"
+      "source_location": "L246"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -1574,7 +1574,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L267"
+      "source_location": "L269"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -1586,7 +1586,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L291"
+      "source_location": "L293"
     },
     {
       "id": "context_tasks_tasks",
@@ -2993,7 +2993,7 @@
       "node_kind": "heading",
       "norm_label": "task 3: live source bundle, checksums, and acquisition report",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L208"
+      "source_location": "L209"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_4_event_contour_and_water_level_normalization",
@@ -3005,7 +3005,7 @@
       "node_kind": "heading",
       "norm_label": "task 4: event, contour, and water-level normalization",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L255"
+      "source_location": "L256"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_5_live_data_quality_build_and_requested_phase_closure",
@@ -3017,7 +3017,7 @@
       "node_kind": "heading",
       "norm_label": "task 5: live data-quality build and requested-phase closure",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L328"
+      "source_location": "L329"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_t\u014dhoku_data_coverage_and_implementation_plan",
@@ -5672,7 +5672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L129",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -5683,7 +5683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L156",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -5694,7 +5694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L186",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -5705,7 +5705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L218",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -5716,7 +5716,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L244",
+      "source_location": "L246",
       "weight": 1.0
     },
     {
@@ -5727,7 +5727,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L267",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -5738,7 +5738,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L291",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -6200,7 +6200,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L208",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -6211,7 +6211,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L255",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -6222,7 +6222,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L328",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -6997,5 +6997,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7cb84534940730dc7ac59dd0e122d50cd1c16480"
+  "built_at_commit": "3a2ba560f67bffe697164f58942e4740ed9504f1"
 }
