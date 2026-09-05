@@ -264,6 +264,8 @@ def normalize_ttt(path: Path) -> tuple[list[TTTContourRecord], list[RejectedReco
     raw_features = document.get("features")
     if not isinstance(raw_features, list):
         raise NormalizationError("TTT FeatureCollection must contain a features list")
+    if not raw_features:
+        raise NormalizationError("TTT FeatureCollection contains no features")
 
     records: list[TTTContourRecord] = []
     rejected: list[RejectedRecord] = []
@@ -279,6 +281,15 @@ def normalize_ttt(path: Path) -> tuple[list[TTTContourRecord], list[RejectedReco
             )
             continue
         feature = cast(dict[str, object], raw_feature)
+        if feature.get("type") != "Feature":
+            rejected.append(
+                _ttt_rejection(
+                    f"ttt-feature-index-{index:06d}",
+                    "malformed_feature",
+                    "feature type is not 'Feature'",
+                )
+            )
+            continue
         object_id, feature_ref = _feature_reference(feature, index)
         if object_id is not None and object_id in observed_object_ids:
             rejected.append(
@@ -413,12 +424,19 @@ def normalize_dart(
         station.station_type != "dart"
         or station.availability != "approved"
         or station.time_basis != "UTC"
+        or station.units != "m water column"
+        or station.vertical_reference != "unknown"
     ):
-        raise NormalizationError("normalize_dart requires an approved DART station with UTC basis")
+        raise NormalizationError(
+            "normalize_dart requires an approved UTC DART station in m water column with "
+            "unknown vertical reference"
+        )
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
     except OSError as error:
         raise NormalizationError(f"could not read DART asset {path}: {error}") from error
+    if not any(line.strip() for line in lines):
+        raise NormalizationError("approved asset contains no DART rows")
 
     observations: list[ObservationRecord] = []
     rejected: list[RejectedRecord] = []
@@ -502,82 +520,53 @@ def normalize_coastal(
             "normalize_coastal requires an approved coastal station with GMT and m/STND contract"
         )
     asset_reference = f"coastal-{station.station_id}-asset"
+
+    def reject_asset(
+        reason: str, detail: str
+    ) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
+        return [], [
+            _station_rejection(
+                station,
+                asset_reference,
+                reason,
+                detail,
+                record_type="source_asset",
+            )
+        ]
+
     try:
         document_value: object = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
         raise NormalizationError(f"could not read coastal asset {path}: {error}") from error
     if not isinstance(document_value, dict):
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "malformed_asset",
-                "response is not a JSON object",
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset("malformed_asset", "response is not a JSON object")
     document = cast(dict[str, object], document_value)
     if "error" in document:
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "api_error_asset",
-                json.dumps(document["error"]),
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset("api_error_asset", json.dumps(document["error"]))
     metadata_value = document.get("metadata")
     if not isinstance(metadata_value, dict):
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "station_metadata_mismatch",
-                "metadata is absent",
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset("station_metadata_mismatch", "metadata is absent")
     metadata = cast(dict[str, object], metadata_value)
     try:
         metadata_id = str(metadata["id"])
         metadata_latitude = _finite_float(str(metadata["lat"]))
         metadata_longitude = _finite_float(str(metadata["lon"]))
     except (KeyError, ValueError) as error:
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "station_metadata_mismatch",
-                str(error),
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset("station_metadata_mismatch", str(error))
     if (
         metadata_id != station.station_id
         or abs(metadata_latitude - station.latitude) > 1e-6
         or abs(metadata_longitude - station.longitude) > 1e-6
     ):
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "station_metadata_mismatch",
-                "response station ID or coordinates differ from configuration",
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset(
+            "station_metadata_mismatch",
+            "response station ID or coordinates differ from configuration",
+        )
     raw_data_value = document.get("data")
     if not isinstance(raw_data_value, list):
-        return [], [
-            _station_rejection(
-                station,
-                asset_reference,
-                "malformed_asset",
-                "data is not a list",
-                record_type="source_asset",
-            )
-        ]
+        return reject_asset("malformed_asset", "data is not a list")
+    if not raw_data_value:
+        raise NormalizationError("approved asset contains no CO-OPS rows")
     raw_data = cast(list[object], raw_data_value)
 
     observations: list[ObservationRecord] = []
@@ -733,13 +722,20 @@ def _verify_inventory(
             raise NormalizationError(
                 f"raw asset path escapes the build root for {contract.source_id!r}"
             )
+        sidecar_path = raw_path.with_name(f"{raw_path.name}.sha256")
+        try:
+            resolved_sidecar = sidecar_path.resolve(strict=True)
+        except OSError as error:
+            raise NormalizationError(
+                f"checksum sidecar is unavailable for {contract.source_id!r}"
+            ) from error
+        if not resolved_sidecar.is_relative_to(root) or not resolved_sidecar.is_file():
+            raise NormalizationError(
+                f"checksum sidecar escapes the build root for {contract.source_id!r}"
+            )
         try:
             size, digest = _sha256(resolved_path)
-            sidecar = (
-                raw_path.with_name(f"{raw_path.name}.sha256")
-                .read_text(encoding="utf-8")
-                .strip()
-            )
+            sidecar = resolved_sidecar.read_text(encoding="utf-8").strip()
         except OSError as error:
             raise NormalizationError(
                 f"could not verify raw checksum for {contract.source_id!r}: {error}"
@@ -750,11 +746,9 @@ def _verify_inventory(
     return verified
 
 
-def _load_stations(path: Path, contracts: tuple[SourceContract, ...]) -> tuple[StationRecord, ...]:
-    try:
-        document = cast(dict[str, object], tomllib.loads(path.read_text(encoding="utf-8")))
-    except (OSError, tomllib.TOMLDecodeError) as error:
-        raise NormalizationError(f"could not read station configuration {path}: {error}") from error
+def _load_stations(
+    document: dict[str, object], contracts: tuple[SourceContract, ...]
+) -> tuple[StationRecord, ...]:
     raw_stations_value = document.get("stations")
     if not isinstance(raw_stations_value, dict):
         raise NormalizationError("source contract is missing parseable [stations] metadata")
@@ -834,6 +828,160 @@ def _load_stations(path: Path, contracts: tuple[SourceContract, ...]) -> tuple[S
     if source_ids != expected_sources:
         raise NormalizationError("station metadata does not cover every DART and coastal candidate")
     return tuple(sorted(stations, key=lambda station: station.station_id))
+
+
+def _load_config_document(path: Path) -> dict[str, object]:
+    try:
+        return cast(dict[str, object], tomllib.loads(path.read_text(encoding="utf-8")))
+    except (OSError, tomllib.TOMLDecodeError) as error:
+        raise NormalizationError(f"could not read build configuration: {error}") from error
+
+
+def _validate_ttt_metadata(path: Path) -> None:
+    try:
+        document_value: object = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise NormalizationError(f"TTT metadata is not readable JSON: {error}") from error
+    if not isinstance(document_value, dict):
+        raise NormalizationError("TTT metadata must be a JSON object")
+    document = cast(dict[str, object], document_value)
+    extent_value = document.get("extent")
+    extent = cast(dict[str, object], extent_value) if isinstance(extent_value, dict) else {}
+    reference_value = extent.get("spatialReference")
+    reference = (
+        cast(dict[str, object], reference_value) if isinstance(reference_value, dict) else {}
+    )
+    if (
+        document.get("name") != "2011/3/11 Tohoku, Japan"
+        or document.get("geometryType") != "esriGeometryPolyline"
+        or reference.get("wkid") != 4326
+    ):
+        raise NormalizationError(
+            "TTT metadata does not match the Tohoku polyline layer in WKID 4326"
+        )
+
+
+TTT_FEATURE_REJECTION_CODES = frozenset(
+    {
+        "malformed_feature",
+        "duplicate_object_id",
+        "missing_hours",
+        "negative_hours",
+        "missing_object_id",
+        "empty_geometry",
+        "unsupported_geometry",
+    }
+)
+TTT_PART_REJECTION_CODES = frozenset({"empty_geometry_part", "coordinate_out_of_range"})
+
+
+def _ttt_source_accounting(
+    path: Path, contours: list[TTTContourRecord], rejected: list[RejectedRecord]
+) -> dict[str, object]:
+    try:
+        document_value: object = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise NormalizationError(f"could not reconcile TTT input: {error}") from error
+    if not isinstance(document_value, dict):
+        raise NormalizationError("could not reconcile TTT input object")
+    document = cast(dict[str, object], document_value)
+    features_value = document.get("features")
+    if not isinstance(features_value, list):
+        raise NormalizationError("could not reconcile TTT feature input")
+    raw_features = cast(list[object], features_value)
+    feature_input = len(raw_features)
+    part_input = 0
+    for raw_feature in raw_features:
+        if not isinstance(raw_feature, dict):
+            continue
+        geometry_value = cast(dict[str, object], raw_feature).get("geometry")
+        if not isinstance(geometry_value, dict):
+            continue
+        geometry = cast(dict[str, object], geometry_value)
+        coordinates_value = geometry.get("coordinates")
+        if geometry.get("type") == "LineString":
+            part_input += 1
+        elif geometry.get("type") == "MultiLineString" and isinstance(
+            coordinates_value, list
+        ):
+            part_input += len(cast(list[object], coordinates_value))
+
+    unknown_rejections = {
+        record.reason_code
+        for record in rejected
+        if record.reason_code
+        not in TTT_FEATURE_REJECTION_CODES | TTT_PART_REJECTION_CODES
+    }
+    if unknown_rejections:
+        raise NormalizationError(
+            f"TTT accounting has unknown rejection codes: {sorted(unknown_rejections)}"
+        )
+    feature_rejected = sum(
+        record.reason_code in TTT_FEATURE_REJECTION_CODES for record in rejected
+    )
+    part_rejected = sum(record.reason_code in TTT_PART_REJECTION_CODES for record in rejected)
+    feature_accepted = feature_input - feature_rejected
+    part_accepted = len(contours)
+    unparsed_parts = part_input - part_accepted - part_rejected
+    if feature_accepted < 0 or feature_input != feature_accepted + feature_rejected:
+        raise NormalizationError("TTT feature accounting does not reconcile")
+    if unparsed_parts < 0:
+        raise NormalizationError("TTT part accounting does not reconcile")
+    return {
+        "input_count": feature_input,
+        "accepted_count": feature_accepted,
+        "rejected_count": feature_rejected,
+        "output_count": part_accepted,
+        "feature_accounting": {
+            "input": feature_input,
+            "accepted": feature_accepted,
+            "rejected": feature_rejected,
+        },
+        "part_accounting": {
+            "input": part_input,
+            "accepted": part_accepted,
+            "rejected": part_rejected,
+            "not_parsed_due_to_feature_rejection": unparsed_parts,
+            "output": part_accepted,
+        },
+    }
+
+
+def _dart_input_count(path: Path) -> int:
+    try:
+        return sum(bool(line.strip()) for line in path.read_text(encoding="utf-8").splitlines())
+    except OSError as error:
+        raise NormalizationError(f"could not reconcile DART input: {error}") from error
+
+
+def _coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
+    if any(record.record_type == "source_asset" for record in rejected):
+        return 1
+    try:
+        document_value: object = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise NormalizationError(f"could not reconcile CO-OPS input: {error}") from error
+    if not isinstance(document_value, dict):
+        raise NormalizationError("could not reconcile CO-OPS input object")
+    data_value = cast(dict[str, object], document_value).get("data")
+    if not isinstance(data_value, list):
+        raise NormalizationError("could not reconcile CO-OPS data rows")
+    return len(cast(list[object], data_value))
+
+
+def _observation_source_accounting(
+    input_count: int,
+    accepted: list[ObservationRecord],
+    rejected: list[RejectedRecord],
+) -> dict[str, object]:
+    if input_count != len(accepted) + len(rejected):
+        raise NormalizationError("observation source accounting does not reconcile")
+    return {
+        "input_count": input_count,
+        "accepted_count": len(accepted),
+        "rejected_count": len(rejected),
+        "output_count": len(accepted),
+    }
 
 
 def _csv_value(value: object) -> object:
@@ -959,15 +1107,10 @@ def build_tables(
         contracts = load_contracts(config_path)
     except ContractError as error:
         raise NormalizationError(f"invalid source contract: {error}") from error
+    config_document = _load_config_document(config_path)
     inventory = _load_inventory(inventory_path)
     verified = _verify_inventory(contracts, inventory, root_resolved)
-    stations = _load_stations(config_path, contracts)
-    try:
-        config_document = cast(
-            dict[str, object], tomllib.loads(config_path.read_text(encoding="utf-8"))
-        )
-    except (OSError, tomllib.TOMLDecodeError) as error:
-        raise NormalizationError(f"could not read build configuration: {error}") from error
+    stations = _load_stations(config_document, contracts)
     event_id = config_document.get("event_id")
     if not isinstance(event_id, str):
         raise NormalizationError("source contract is missing event_id")
@@ -977,11 +1120,38 @@ def build_tables(
         contracts_by_class.setdefault(contract.source_class, []).append(contract)
     event_contracts = contracts_by_class.get("event metadata", [])
     contour_contracts = contracts_by_class.get("modeled travel-time contours", [])
-    if len(event_contracts) != 1 or len(contour_contracts) != 1:
-        raise NormalizationError("build requires exactly one event and one TTT contour asset")
+    metadata_contracts = contracts_by_class.get("modeled travel-time contour metadata", [])
+    if (
+        len(event_contracts) != 1
+        or len(contour_contracts) != 1
+        or len(metadata_contracts) != 1
+    ):
+        raise NormalizationError(
+            "build requires exactly one event, TTT metadata, and TTT contour asset"
+        )
+    contour_contract = contour_contracts[0]
+    metadata_contract = metadata_contracts[0]
+    if (
+        contour_contract.crs != "output SR 4326 requested from service"
+        or contour_contract.coordinate_order != "longitude, latitude"
+        or metadata_contract.crs != "WKID 4326"
+    ):
+        raise NormalizationError("TTT metadata contract does not justify EPSG:4326 labels")
+    _validate_ttt_metadata(verified[metadata_contract.source_id])
 
     event = normalize_event(verified[event_contracts[0].source_id], event_id)
-    contours, rejected = normalize_ttt(verified[contour_contracts[0].source_id])
+    contours, rejected = normalize_ttt(verified[contour_contract.source_id])
+    source_accounting: dict[str, dict[str, object]] = {
+        event_contracts[0].source_id: {
+            "input_count": 1,
+            "accepted_count": 1,
+            "rejected_count": 0,
+            "output_count": 1,
+        },
+        contour_contract.source_id: _ttt_source_accounting(
+            verified[contour_contract.source_id], contours, rejected
+        ),
+    }
     observations: list[ObservationRecord] = []
     for station in stations:
         contract = next(item for item in contracts if item.source_id == station.source_id)
@@ -997,10 +1167,18 @@ def build_tables(
             )
         elif station.station_type == "dart":
             accepted, station_rejected = normalize_dart(verified[contract.source_id], station)
+            source_accounting[contract.source_id] = _observation_source_accounting(
+                _dart_input_count(verified[contract.source_id]), accepted, station_rejected
+            )
             observations.extend(accepted)
             rejected.extend(station_rejected)
         else:
             accepted, station_rejected = normalize_coastal(verified[contract.source_id], station)
+            source_accounting[contract.source_id] = _observation_source_accounting(
+                _coastal_input_count(verified[contract.source_id], station_rejected),
+                accepted,
+                station_rejected,
+            )
             observations.extend(accepted)
             rejected.extend(station_rejected)
     station_sources = {station.source_id for station in stations}
@@ -1165,9 +1343,18 @@ def build_tables(
     }
 
     tag = _sanitize_run_tag(run_tag)
-    output_root = root_resolved / "data/processed/tohoku"
+    output_candidate = root_resolved / "data/processed/tohoku"
+    try:
+        output_root = output_candidate.resolve(strict=False)
+    except OSError as error:
+        raise NormalizationError(f"could not resolve output root: {error}") from error
+    if not output_root.is_relative_to(root_resolved):
+        raise NormalizationError("output root escapes the resolved build root")
+    output_candidate.mkdir(parents=True, exist_ok=True)
+    output_root = output_candidate.resolve(strict=True)
+    if not output_root.is_relative_to(root_resolved):
+        raise NormalizationError("output root escapes the resolved build root")
     final_path = output_root / tag
-    output_root.mkdir(parents=True, exist_ok=True)
     lock_path = output_root / f".{tag}.lock"
     try:
         lock_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
@@ -1193,25 +1380,71 @@ def build_tables(
         output_checksums = {
             name: _sha256(path)[1] for name, path in sorted(output_files.items())
         }
-        source_outcomes = [
-            {
-                "availability": contract.availability,
-                "bytes": inventory[contract.source_id].bytes,
-                "normalization_role": (
-                    "blocked"
+        source_outcomes: list[dict[str, object]] = []
+        for contract in contracts:
+            role = (
+                "blocked"
+                if contract.availability == "blocked"
+                else "coverage_only_not_continuous_field"
+                if contract.source_class == "model source coefficients"
+                else "validation_input"
+                if contract.source_class == "modeled travel-time contour metadata"
+                else "normalized"
+            )
+            counts = source_accounting.get(contract.source_id)
+            if counts is None:
+                counts = (
+                    {
+                        "input_count": 0,
+                        "accepted_count": 0,
+                        "rejected_count": 0,
+                        "output_count": 0,
+                    }
                     if contract.availability == "blocked"
-                    else "coverage_only_not_continuous_field"
-                    if contract.source_class == "model source coefficients"
-                    else "validation_input"
-                    if contract.source_class == "modeled travel-time contour metadata"
-                    else "normalized"
-                ),
-                "sha256": inventory[contract.source_id].sha256,
-                "source_id": contract.source_id,
-                "status": inventory[contract.source_id].status,
-            }
-            for contract in contracts
-        ]
+                    else {
+                        "input_count": 1,
+                        "accepted_count": 1,
+                        "rejected_count": 0,
+                        "output_count": 0,
+                    }
+                )
+            station_output_count = int(contract.source_id in station_sources)
+            blocked_count = int(contract.availability == "blocked")
+            parser_rejection_count = sum(
+                record.source_id == contract.source_id for record in rejected
+            )
+            source_outcomes.append(
+                {
+                    **counts,
+                    "blocked_count": blocked_count,
+                    "station_output_count": station_output_count,
+                    "rejection_output_count": parser_rejection_count,
+                    "input_grain": (
+                        "feature"
+                        if contract.source_class == "modeled travel-time contours"
+                        else "sample"
+                        if contract.source_class
+                        in {"DART observation time series", "coastal water-level observation"}
+                        else "asset"
+                    ),
+                    "output_grain": (
+                        "contour_part"
+                        if contract.source_class == "modeled travel-time contours"
+                        else "observation"
+                        if contract.source_class
+                        in {"DART observation time series", "coastal water-level observation"}
+                        else "event"
+                        if contract.source_class == "event metadata"
+                        else "none"
+                    ),
+                    "availability": contract.availability,
+                    "bytes": inventory[contract.source_id].bytes,
+                    "normalization_role": role,
+                    "sha256": inventory[contract.source_id].sha256,
+                    "source_id": contract.source_id,
+                    "status": inventory[contract.source_id].status,
+                }
+            )
         accounting = {
             "input_inventory": inventory_path.as_posix(),
             "nctr_model_field": "blocked_no_proxy",

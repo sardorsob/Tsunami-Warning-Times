@@ -3,6 +3,7 @@ import hashlib
 import json
 import shutil
 import tomllib
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -178,6 +179,59 @@ def test_normalize_ttt_rejects_a_one_position_linestring(tmp_path: Path) -> None
     assert rejected[0].reason_code == "empty_geometry_part"
 
 
+def test_normalize_ttt_rejects_an_empty_linestring(tmp_path: Path) -> None:
+    document: dict[str, object] = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "id": 1,
+                "properties": {"OBJECTID": 1, "HOURS": 1},
+                "geometry": {"type": "LineString", "coordinates": []},
+            }
+        ],
+    }
+    path = tmp_path / "empty-line.geojson"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    contours, rejected = normalize_ttt(path)
+
+    assert contours == []
+    assert rejected[0].reason_code == "empty_geometry_part"
+
+
+def test_normalize_ttt_rejects_a_non_feature_object_with_stable_identity(
+    tmp_path: Path,
+) -> None:
+    document = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "not-a-feature",
+                "id": 1,
+                "properties": {"OBJECTID": 1, "HOURS": 1},
+                "geometry": {"type": "LineString", "coordinates": [[0, 0], [1, 1]]},
+            }
+        ],
+    }
+    path = tmp_path / "not-feature.geojson"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    contours, rejected = normalize_ttt(path)
+
+    assert contours == []
+    assert rejected[0].rejection_id == "ttt-feature-index-000001"
+    assert rejected[0].reason_code == "malformed_feature"
+
+
+def test_normalize_ttt_rejects_an_empty_feature_collection(tmp_path: Path) -> None:
+    path = tmp_path / "empty.geojson"
+    path.write_text('{"type":"FeatureCollection","features":[]}', encoding="utf-8")
+
+    with pytest.raises(NormalizationError, match="no features"):
+        normalize_ttt(path)
+
+
 def test_normalize_ttt_rejects_an_empty_multilinestring(tmp_path: Path) -> None:
     document: dict[str, object] = {
         "type": "FeatureCollection",
@@ -226,32 +280,22 @@ def test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows() -> N
     ]
 
 
+def test_normalize_dart_rejects_an_empty_approved_asset(tmp_path: Path) -> None:
+    path = tmp_path / "empty-dart.txt"
+    path.write_text("\n", encoding="utf-8")
+
+    with pytest.raises(NormalizationError, match="no DART rows"):
+        normalize_dart(path, dart_station())
+
+
 def test_normalize_dart_rejects_a_non_dart_station() -> None:
-    station = dart_station()
-    coastal = StationRecord(
-        station_id=station.station_id,
-        source_id=station.source_id,
-        station_type="coastal",
-        name=station.name,
-        latitude=station.latitude,
-        longitude=station.longitude,
-        availability=station.availability,
-        units=station.units,
-        vertical_reference=station.vertical_reference,
-        selection_role=station.selection_role,
-        reason=station.reason,
-        horizontal_datum=station.horizontal_datum,
-        coordinate_order=station.coordinate_order,
-        time_basis="GMT",
-    )
+    coastal = replace(dart_station(), station_type="coastal", time_basis="GMT")
 
     with pytest.raises(NormalizationError, match="DART station"):
         normalize_dart(FIXTURES / "dart_station.txt", coastal)
 
 
 def test_observation_normalizers_require_the_verified_source_time_basis() -> None:
-    from dataclasses import replace
-
     with pytest.raises(NormalizationError, match="UTC"):
         normalize_dart(
             FIXTURES / "dart_station.txt", replace(dart_station(), time_basis="unknown")
@@ -261,6 +305,20 @@ def test_observation_normalizers_require_the_verified_source_time_basis() -> Non
             FIXTURES / "coops_station.json",
             replace(coastal_station(), time_basis="unknown"),
         )
+
+
+@pytest.mark.parametrize(
+    "station",
+    [
+        replace(dart_station(), units="ft"),
+        replace(dart_station(), vertical_reference="MSL"),
+    ],
+)
+def test_normalize_dart_requires_canonical_units_and_vertical_reference(
+    station: StationRecord,
+) -> None:
+    with pytest.raises(NormalizationError, match="m water column.*unknown"):
+        normalize_dart(FIXTURES / "dart_station.txt", station)
 
 
 def test_normalize_coastal_keeps_missing_and_zero_as_distinct_samples() -> None:
@@ -338,6 +396,23 @@ def test_normalize_coastal_rejects_a_structured_value_without_crashing(
     assert rejected[0].reason_code == "malformed_value"
 
 
+def test_normalize_coastal_rejects_an_empty_approved_asset(tmp_path: Path) -> None:
+    payload: dict[str, object] = {
+        "metadata": {
+            "id": "9461380",
+            "name": "Adak Island",
+            "lat": "51.8606",
+            "lon": "-176.6376",
+        },
+        "data": [],
+    }
+    path = tmp_path / "empty-coops.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(NormalizationError, match="no CO-OPS rows"):
+        normalize_coastal(path, coastal_station())
+
+
 def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
     config = root / "config.toml"
     source_config = Path(__file__).parents[1] / "config/tohoku-data-proof.toml"
@@ -381,7 +456,14 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
             )
             payload = json.dumps(payload_document, separators=(",", ":")).encode()
         elif asset["source_class"] == "modeled travel-time contour metadata":
-            payload = b'{"name":"2011/3/11 Tohoku, Japan","wkid":4326}'
+            payload = json.dumps(
+                {
+                    "name": "2011/3/11 Tohoku, Japan",
+                    "geometryType": "esriGeometryPolyline",
+                    "extent": {"spatialReference": {"wkid": 4326}},
+                },
+                separators=(",", ":"),
+            ).encode()
         else:
             payload = b"<!DOCTYPE HTML><html></html>"
         raw_path = root / asset["local_path"]
@@ -404,6 +486,51 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
     inventory_path = root / "inventory.json"
     inventory_path.write_text(json.dumps(inventory), encoding="utf-8")
     return config, inventory_path
+
+
+def replace_staged_asset(
+    root: Path, inventory_path: Path, source_id: str, payload: bytes
+) -> None:
+    inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+    item = next(row for row in inventory if row["source_id"] == source_id)
+    raw_path = root / item["local_path"]
+    raw_path.write_bytes(payload)
+    digest = hashlib.sha256(payload).hexdigest()
+    raw_path.with_name(f"{raw_path.name}.sha256").write_text(
+        f"{digest}\n", encoding="utf-8"
+    )
+    item["bytes"] = len(payload)
+    item["sha256"] = digest
+    inventory_path.write_text(json.dumps(inventory), encoding="utf-8")
+
+
+@pytest.mark.parametrize(
+    "payload",
+    [
+        b"not json",
+        b'{"name":"wrong","geometryType":"esriGeometryPolyline","extent":{"spatialReference":{"wkid":4326}}}',
+        (
+            b'{"name":"2011/3/11 Tohoku, Japan","geometryType":"esriGeometryPoint",'
+            b'"extent":{"spatialReference":{"wkid":4326}}}'
+        ),
+        (
+            b'{"name":"2011/3/11 Tohoku, Japan","geometryType":"esriGeometryPolyline",'
+            b'"extent":{"spatialReference":{"wkid":3857}}}'
+        ),
+    ],
+)
+def test_build_tables_rejects_unverified_ttt_metadata_before_publication(
+    tmp_path: Path, payload: bytes
+) -> None:
+    config, inventory = stage_fixture_bundle(tmp_path)
+    replace_staged_asset(
+        tmp_path, inventory, "ncei-ttt-tohoku-layer17-metadata", payload
+    )
+
+    with pytest.raises(NormalizationError, match="TTT metadata"):
+        build_tables(config, inventory, tmp_path, run_tag="bad-metadata")
+
+    assert not (tmp_path / "data/processed/tohoku/bad-metadata").exists()
 
 
 def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
@@ -469,6 +596,35 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
     }
     assert accounting["nctr_model_field"] == "blocked_no_proxy"
     assert accounting["nctr_source_coefficients"] == "coverage_only_not_continuous_field"
+    outcomes = {row["source_id"]: row for row in accounting["source_outcomes"]}
+    assert {
+        key: outcomes["usgs-tohoku-origin-csv"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 1, "accepted_count": 1, "rejected_count": 0, "output_count": 1}
+    ttt = outcomes["ncei-ttt-tohoku-layer17-geojson"]
+    assert ttt["feature_accounting"] == {"input": 5, "accepted": 3, "rejected": 2}
+    assert ttt["part_accounting"] == {
+        "input": 7,
+        "accepted": 3,
+        "rejected": 2,
+        "not_parsed_due_to_feature_rejection": 2,
+        "output": 3,
+    }
+    assert {
+        key: outcomes["ncei-dart-21418-20110301to20110320"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 5, "accepted_count": 2, "rejected_count": 3, "output_count": 2}
+    assert {
+        key: outcomes["coops-adak-9461380-20110311to20110313"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 5, "accepted_count": 3, "rejected_count": 2, "output_count": 3}
+    assert outcomes["ncei-ttt-tohoku-layer17-metadata"]["normalization_role"] == (
+        "validation_input"
+    )
+    assert outcomes["nctr-tohoku-source-coefficients"]["normalization_role"] == (
+        "coverage_only_not_continuous_field"
+    )
+    assert outcomes["nctr-tohoku-model-field"]["blocked_count"] == 1
 
     schemas = json.loads(
         (tmp_path / first.output_paths["schemas"]).read_text(encoding="utf-8")
@@ -491,6 +647,40 @@ def test_build_tables_rejects_a_checksum_mismatch_without_publishing(tmp_path: P
         build_tables(config, inventory, tmp_path, run_tag="failed")
 
     assert not (tmp_path / "data/processed/tohoku/failed").exists()
+
+
+def test_build_tables_rejects_a_checksum_sidecar_symlink_escape(tmp_path: Path) -> None:
+    root = tmp_path / "project"
+    root.mkdir()
+    config, inventory = stage_fixture_bundle(root)
+    raw_path = root / "data/raw/usgs/official20110311054624120_30.csv"
+    sidecar = raw_path.with_name(f"{raw_path.name}.sha256")
+    digest = sidecar.read_text(encoding="utf-8")
+    sidecar.unlink()
+    outside = tmp_path / "outside.sha256"
+    outside.write_text(digest, encoding="utf-8")
+    sidecar.symlink_to(outside)
+
+    with pytest.raises(NormalizationError, match="checksum sidecar.*escapes"):
+        build_tables(config, inventory, root, run_tag="sidecar-escape")
+
+    assert not (root / "data/processed/tohoku/sidecar-escape").exists()
+
+
+def test_build_tables_rejects_an_output_root_symlink_escape(tmp_path: Path) -> None:
+    root = tmp_path / "project"
+    root.mkdir()
+    config, inventory = stage_fixture_bundle(root)
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    processed = root / "data/processed"
+    processed.mkdir(parents=True)
+    (processed / "tohoku").symlink_to(outside, target_is_directory=True)
+
+    with pytest.raises(NormalizationError, match="output root.*escapes"):
+        build_tables(config, inventory, root, run_tag="output-escape")
+
+    assert list(outside.iterdir()) == []
 
 
 def test_build_tables_exposes_an_invalid_contract_as_a_normalization_error(
