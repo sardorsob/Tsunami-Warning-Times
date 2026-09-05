@@ -120,6 +120,8 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
             raise ContractError(f"asset {name!r} has unsupported availability {availability!r}")
         local_path_value = strings["local_path"]
         local_path = PurePosixPath(local_path_value)
+        if "\x00" in local_path_value:
+            raise ContractError(f"asset {name!r} local_path contains a NUL byte")
         if availability == "blocked" and local_path_value != "not-downloaded":
             raise ContractError(f"blocked asset {name!r} must use local_path 'not-downloaded'")
         if availability == "approved" and (
@@ -308,7 +310,7 @@ def acquire_source(
         return _result(contract, "downloaded", size, digest, "not applicable")
     except UnicodeDecodeError:
         return _result(contract, "quarantined", 0, "not-downloaded", "invalid_checksum_record")
-    except (HTTPError, HTTPException, OSError, URLError) as error:
+    except (HTTPError, HTTPException, OSError, URLError, ValueError) as error:
         return _result(
             contract, "quarantined", 0, "not-downloaded", f"local_or_download_error: {error}"
         )

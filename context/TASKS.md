@@ -157,7 +157,7 @@
   evidence for atomic writes, cache reuse, immutable conflict quarantine,
   bounded transient-failure isolation in source-ID order, blocked no-fetch, TOML
   contract-field preservation, and bounded prefix inspection. Focused suite
-  passed (24 tests); Ruff and Pyright passed; CLI help and an isolated offline
+  passed (26 tests); Ruff and Pyright passed; CLI help and an isolated offline
   run bundle were exercised. Review correction adds hard-link no-clobber
   finalization, sidecar-backed cache verification, local I/O containment,
   symlink-root containment, strict duplicate/blank contract rejection, and
@@ -170,7 +170,8 @@
   acquisition/checksum run; 2026-09-05 — review round 2 added malformed-sidecar
   isolation, owned-sidecar rollback, and raw/sidecar namespace collision guards;
   2026-09-05 — final transport review added bounded retry and sibling isolation
-  for incomplete HTTP response reads.
+  for incomplete HTTP response reads; fresh final review added NUL-path contract
+  rejection plus defensive per-source `ValueError` isolation.
 - Status: in progress
 
 ## T-002C — Normalize and validate analysis tables

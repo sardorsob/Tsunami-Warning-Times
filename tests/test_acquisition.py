@@ -456,3 +456,28 @@ def test_acquire_all_retries_and_isolates_incomplete_http_reads(tmp_path: Path) 
 
     assert bad_calls == 3
     assert [result.status for result in results] == ["quarantined", "downloaded"]
+
+
+def test_load_contracts_rejects_a_nul_local_path(tmp_path: Path) -> None:
+    config = tmp_path / "nul-path.toml"
+    source = Path("config/tohoku-data-proof.toml").read_text(encoding="utf-8")
+    config.write_text(
+        source.replace(
+            'local_path = "data/raw/usgs/official20110311054624120_30.csv"',
+            'local_path = "data/raw/\\u0000payload.csv"',
+            1,
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="NUL byte"):
+        load_contracts(config)
+
+
+def test_acquire_all_defensively_isolates_a_nul_path(tmp_path: Path) -> None:
+    bad = sample_contract(source_id="bad", local_path=PurePosixPath("data/\x00bad.json"))
+    good = sample_contract(source_id="good", local_path=PurePosixPath("data/good.json"))
+
+    results = acquire_all((bad, good), tmp_path, fetcher=fixture_fetcher(b'{"ok":true}'))
+
+    assert [result.status for result in results] == ["quarantined", "downloaded"]
