@@ -4,7 +4,7 @@
 - Tier: Full
 - Primary lane: retrospective event forecast/intelligence
 - Domain owner: geospatial data engineering
-- Review state: written specification awaiting project-owner review
+- Review state: approved by project owner on 2026-09-05
 
 ## Outcome
 
@@ -170,6 +170,13 @@ The EDA is descriptive and diagnostic. It will produce:
    join coverage for candidate locations;
 9. counterexamples and hard cases, not only visually appealing pairs; and
 10. a promote, revise, or reject recommendation for Tōhoku and each source class.
+
+The first pass is a fixed core profile. After that pass, an EDA decision ledger
+records the finding that raised each new question, the follow-up check chosen,
+its evidence, and its disposition. This makes the exploration adaptive without
+making it outcome-driven: gaps, cadence shifts, outliers, geometry behavior, and
+source conflicts may branch the analysis, while station selection and baseline
+arrival-pick settings stay frozen before modeled residuals are inspected.
 
 Arrival-pick parameters are frozen before model residuals are inspected for
 selection. Sensitivity analysis may compare methods, but the chosen method cannot

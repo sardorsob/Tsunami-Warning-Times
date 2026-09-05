@@ -77,12 +77,14 @@
   consumer; Markdown is the canonical result surface
 - Verification commands: link/placeholder/consistency review and repository gate
 - Manual QA: project owner reviews the committed specification before T-002A
-- Evidence: design approved in chat on 2026-09-04; specification and context
-  package passed the full repository gate; three report placeholders verified at
-  zero bytes; written review pending
+- Evidence: design approved in chat and reaffirmed by the project owner on
+  2026-09-05; specification and context package passed the full repository gate;
+  three report placeholders verified at zero bytes
 - Attempts / Max: 1 / 3
-- Attempt log: 2026-09-04 — planning package prepared for owner review
-- Status: in-review
+- Attempt log: 2026-09-04 — planning package prepared for owner review;
+  2026-09-05 — project owner approved the design and authorized T-002A through
+  T-002C execution on `main`
+- Status: done
 
 ## T-002A — Resolve source endpoints and contracts
 
@@ -107,8 +109,8 @@
 - Manual QA: reconcile station names/IDs and three map locations with source pages
 - Evidence: pending
 - Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Attempt log: 2026-09-05 — authoritative endpoint and contract audit started
+- Status: in-progress
 
 ## T-002B — Acquire and fingerprint raw assets
 
@@ -181,7 +183,9 @@
   remain distinct from frozen production claims
 - Scope: reusable analysis functions, a thin marimo notebook, data inventory,
   missingness/cadence/distribution checks, spatial coverage, NCTR structure,
-  arrival-pick sensitivity, join coverage, and distance-versus-arrival contrasts
+  arrival-pick sensitivity, join coverage, and distance-versus-arrival contrasts;
+  maintain a decision ledger whose follow-up checks are triggered by observed
+  quality findings rather than a fixed list of preferred results
 - Artifacts to produce: analysis module, marimo notebook, compact tables/figures,
   file run bundle, project-local MLflow run, and populated
   `context/EDA_REPORT.md`

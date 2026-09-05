@@ -6,9 +6,10 @@ Prepare the new Pacific Tsunami Warning Time repository for a reproducible,
 scientifically defensible PacificVis 2027 project without prematurely selecting
 data or overbuilding the application.
 
-The active follow-up is the approved design and planning package for a broad
-Tōhoku acquisition, data-quality, and EDA workflow. No acquisition code or
-scientific data is part of this planning unit.
+The project owner approved the broad Tōhoku acquisition, data-quality, and EDA
+design on 2026-09-05 and authorized implementation of T-002A through T-002C on
+`main`. T-002A source-contract discovery is active; EDA remains gated on accepted
+analysis-ready data.
 
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
@@ -114,9 +115,7 @@ Observed on 2026-09-04 for the planning/context package:
 
 ## Continue from here
 
-The project owner reviews
-`docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md`. After
-written approval, move T-002P to `done` and begin only T-002A:
+Execute the approved data-coverage and implementation chain in order:
 
 1. Resolve exact authoritative endpoints, formats, station IDs/deployments,
    windows, units, terms, and expected schemas for the approved source bundle.
@@ -124,8 +123,13 @@ written approval, move T-002P to `done` and begin only T-002A:
    `context/ACQUISITION_REPORT.md`.
 3. Select the four DART stations from documented near/far coverage before
    inspecting model residuals.
-4. Do not download the broad source bundle, choose dependencies, or implement
-   the pipeline until the T-002A source contract is independently reviewable.
+4. Independently review T-002A before downloading the approved source bundle or
+   choosing format-driven dependencies.
+5. Complete tested, source-independent acquisition and then normalization/data
+   quality as T-002B and T-002C. Commit each accepted task or meaningful subtask.
+6. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+   decision ledger, and add follow-up checks only when observed evidence warrants
+   them.
 
 Do not begin the full wavefront or story build during the data proof.
 
@@ -137,5 +141,5 @@ or publication was performed in this planning step.
 
 ## Final disposition
 
-T-000 and T-001 remain accepted. T-002P is in review; T-002A is the next
-permitted work surface only after the project owner approves the written design.
+T-000, T-001, and T-002P are accepted. T-002A is active. T-002B and T-002C are
+authorized but remain dependency-gated in that order; T-002D is not yet active.

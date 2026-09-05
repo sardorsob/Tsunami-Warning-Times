@@ -117,3 +117,20 @@
   not been measured.
 - Revisit when: T-002B demonstrates that reconstructing or sharing data from
   authoritative endpoints is too slow, unstable, or large for this approach.
+
+## D-010 — Let evidence branch the EDA
+
+- Date: 2026-09-05
+- Status: accepted
+- Decision: T-002D begins with a fixed core data-quality and coverage profile,
+  then records each observation, question, follow-up check, and disposition in an
+  EDA decision ledger. Follow-up analysis is triggered by actual gaps, cadence
+  shifts, outliers, geometry behavior, or source conflicts rather than a
+  preselected narrative.
+- Reason: exploratory analysis should respond to the data while keeping the path
+  reproducible and reviewable.
+- Constraint: arrival-pick settings and station inclusion rules remain frozen
+  before modeled residuals are inspected; adaptive exploration cannot become
+  outcome-driven station selection.
+- Revisit when: repeated EDA runs show that a stable follow-up check belongs in
+  the fixed core profile.
