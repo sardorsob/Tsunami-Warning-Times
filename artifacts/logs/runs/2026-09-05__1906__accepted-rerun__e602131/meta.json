@@ -1,0 +1,9 @@
+{
+  "command": "uv run python scripts/acquire_tohoku.py --config config/tohoku-data-proof.toml --root . --run-tag accepted-rerun",
+  "evidence_disposition": "ready-for-review",
+  "git_sha": "e602131",
+  "mode": "live",
+  "run_id": "2026-09-05__1906__accepted-rerun__e602131",
+  "timestamp_utc": "2026-09-05T19:06:00Z",
+  "working_tree": "clean"
+}
