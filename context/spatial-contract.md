@@ -2,8 +2,26 @@
 
 ## Current state
 
-No spatial source is approved, so no CRS, coordinate order, extent, grid,
-resolution, nodata value, or vertical datum is yet a project fact.
+The NCEI Tōhoku TTT metadata and GeoJSON contracts are approved. Metadata
+identity is `2011/3/11 Tohoku, Japan`, geometry type is polyline, and WKID 4326
+is validated before parsing. The GeoJSON request uses output SR 4326 and its
+coordinates are stored as longitude, latitude. The accepted normalized contour
+extent is longitude [-179.99999999990004, 180.00000000010004] and latitude
+[-77.99997792933794, 87.59715345366902].
+
+The 24 contour parts containing publisher coordinates about `1e-10` degrees
+above +180 retain those values and carry `longitude_boundary_precision = true`;
+they are not silently clamped. A part is marked as crossing the antimeridian only
+when adjacent source longitudes jump by more than 180 degrees. The current 4,380
+parts contain no such jump.
+
+The USGS event coordinates use the source's WGS84 latitude/longitude contract.
+DART and coastal station coordinates retain their source-stated latitude and
+longitude order, but their horizontal datums remain unknown. The continuous NCTR
+field is blocked, so no NCTR grid, axis order, extent, resolution, nodata value,
+cell registration, or field units are project facts. DART vertical reference is
+unknown; CO-OPS observations retain station datum `STND` and must not be treated
+as a shared vertical datum.
 
 ## Required per-source fields
 
