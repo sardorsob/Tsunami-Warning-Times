@@ -5,7 +5,7 @@
   },
   "input_inventory": {
     "path": "artifacts/logs/runs/2026-09-05__1906__accepted__e602131/outputs.json",
-    "sha256": "f71e0fd9e429a78fd648c68695f4d8fcd62effe0218e74519cc494cad65a174e"
+    "sha256": "6141ea3f4a49eeb9a98f2a09188fa9b9c7a930e828f1c1897e19ad2a59fef5ca"
   },
   "normalization_policy": {
     "blocked_sources_remain_in_denominators": true,

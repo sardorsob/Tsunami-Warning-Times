@@ -12,7 +12,7 @@ continuous NCTR model field.
 - Mode: offline, checksum-gated normalization
 - Input inventory:
   `artifacts/logs/runs/2026-09-05__1906__accepted__e602131/outputs.json`
-  (`f71e0fd9e429a78fd648c68695f4d8fcd62effe0218e74519cc494cad65a174e`)
+  (`6141ea3f4a49eeb9a98f2a09188fa9b9c7a930e828f1c1897e19ad2a59fef5ca`)
 - Contract: `config/tohoku-data-proof.toml`
   (`37d61c3576c4d968e60be3aa408f74124a6a4487f8b0c149ff1872bb104ce1b5`)
 - Portable evidence:
