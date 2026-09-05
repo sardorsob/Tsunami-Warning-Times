@@ -99,7 +99,7 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
     assets = cast(dict[str, object], raw_assets)
     contracts: list[SourceContract] = []
     source_ids: set[str] = set()
-    approved_paths: set[PurePosixPath] = set()
+    approved_paths: list[PurePosixPath] = []
     for name, raw_values in assets.items():
         if not isinstance(raw_values, dict):
             raise ContractError(f"asset {name!r} must be a TOML table")
@@ -135,9 +135,17 @@ def load_contracts(path: Path) -> tuple[SourceContract, ...]:
         if availability == "approved":
             if not strings["expected_prefix"].strip():
                 raise ContractError(f"approved asset {name!r} needs a nonblank expected_prefix")
-            if local_path in approved_paths:
-                raise ContractError(f"duplicate approved local_path {local_path.as_posix()!r}")
-            approved_paths.add(local_path)
+            for candidate in (local_path, local_path.with_name(f"{local_path.name}.sha256")):
+                for existing in approved_paths:
+                    if (
+                        candidate == existing
+                        or candidate in existing.parents
+                        or existing in candidate.parents
+                    ):
+                        raise ContractError(
+                            f"approved path namespace collision {candidate.as_posix()!r}"
+                        )
+            approved_paths.extend((local_path, local_path.with_name(f"{local_path.name}.sha256")))
         parsed_url = urlparse(strings["url"])
         if parsed_url.scheme != "https" or not parsed_url.netloc:
             raise ContractError(f"asset {name!r} needs an absolute HTTPS url")
@@ -187,6 +195,15 @@ def _checksum_path(destination: Path) -> Path:
 def _matches_checksum_record(destination: Path, digest: str) -> bool:
     recorded = _checksum_path(destination).read_text(encoding="utf-8").strip()
     return recorded == digest
+
+
+def _unlink_if_owned(path: Path, temporary_path: Path | None) -> None:
+    if temporary_path is not None:
+        try:
+            if path.exists() and path.samefile(temporary_path):
+                path.unlink()
+        except OSError:
+            pass
 
 
 def _result(
@@ -242,6 +259,9 @@ def acquire_source(
         return _result(contract, "blocked", 0, "not-downloaded", contract.reason)
     temporary_path: Path | None = None
     checksum_temporary_path: Path | None = None
+    destination: Path | None = None
+    published_sidecar = False
+    published_raw = False
     try:
         root_resolved = root.resolve()
         destination = root_resolved / contract.local_path
@@ -278,19 +298,19 @@ def acquire_source(
             checksum_temporary_path = Path(checksum_temporary.name)
         checksum_path = _checksum_path(destination)
         os.link(checksum_temporary_path, checksum_path)
-        try:
-            os.link(temporary_path, destination)
-        except FileExistsError:
-            checksum_path.unlink(missing_ok=True)
-            return _result(
-                contract, "quarantined", 0, "not-downloaded", "existing_checksum_conflict"
-            )
+        published_sidecar = True
+        os.link(temporary_path, destination)
+        published_raw = True
         return _result(contract, "downloaded", size, digest, "not applicable")
+    except UnicodeDecodeError:
+        return _result(contract, "quarantined", 0, "not-downloaded", "invalid_checksum_record")
     except (HTTPError, OSError, URLError) as error:
         return _result(
             contract, "quarantined", 0, "not-downloaded", f"local_or_download_error: {error}"
         )
     finally:
+        if published_sidecar and not published_raw and destination is not None:
+            _unlink_if_owned(_checksum_path(destination), checksum_temporary_path)
         for path in (temporary_path, checksum_temporary_path):
             if path is not None:
                 try:

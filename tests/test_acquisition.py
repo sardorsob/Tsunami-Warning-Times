@@ -347,7 +347,7 @@ def test_acquire_source_quarantines_a_symlink_destination_outside_root(tmp_path:
         (
             'local_path = "data/raw/ncei/ttt_contours_2011_tohoku_layer17.metadata.json"',
             'local_path = "data/raw/usgs/official20110311054624120_30.csv"',
-            "duplicate approved local_path",
+            "namespace collision",
         ),
     ],
 )
@@ -383,3 +383,55 @@ def test_acquire_source_retries_only_transient_http_errors(
 
     assert calls == attempts
     assert result.status == ("downloaded" if code != 404 else "quarantined")
+
+
+def test_acquire_all_isolates_a_non_utf8_checksum_record(tmp_path: Path) -> None:
+    bad = sample_contract(source_id="bad", local_path=PurePosixPath("data/bad.json"))
+    good = sample_contract(source_id="good", local_path=PurePosixPath("data/good.json"))
+    acquire_source(bad, tmp_path, fetcher=fixture_fetcher(b'{"ok":true}'))
+    (tmp_path / "data/bad.json.sha256").write_bytes(b"\xff")
+
+    results = acquire_all((bad, good), tmp_path, fetcher=fixture_fetcher(b'{"ok":true}'))
+
+    assert [result.status for result in results] == ["quarantined", "downloaded"]
+    assert results[0].reason == "invalid_checksum_record"
+
+
+def test_acquire_source_rolls_back_its_sidecar_after_raw_publication_error(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    contract = sample_contract()
+    import pipeline.acquisition as acquisition
+
+    real_link = acquisition.os.link
+
+    def fail_raw_link(source: str | Path, destination: str | Path, *args: object) -> None:
+        if Path(destination) == tmp_path / contract.local_path:
+            raise OSError("injected raw publication failure")
+        real_link(source, destination, *args)
+
+    monkeypatch.setattr(acquisition.os, "link", fail_raw_link)
+    failed = acquire_source(contract, tmp_path, fetcher=fixture_fetcher(b'{"ok":true}'))
+
+    assert failed.status == "quarantined"
+    assert not (tmp_path / contract.local_path).exists()
+    assert not (tmp_path / "data/raw/sample.json.sha256").exists()
+    monkeypatch.setattr(acquisition.os, "link", real_link)
+    recovered = acquire_source(contract, tmp_path, fetcher=fixture_fetcher(b'{"ok":true}'))
+    assert recovered.status == "downloaded"
+
+
+def test_load_contracts_rejects_raw_sidecar_namespace_collision(tmp_path: Path) -> None:
+    config = tmp_path / "collision.toml"
+    source = Path("config/tohoku-data-proof.toml").read_text(encoding="utf-8")
+    config.write_text(
+        source.replace(
+            'local_path = "data/raw/ncei/ttt_contours_2011_tohoku_layer17.metadata.json"',
+            'local_path = "data/raw/usgs/official20110311054624120_30.csv.sha256"',
+            1,
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="namespace collision"):
+        load_contracts(config)
