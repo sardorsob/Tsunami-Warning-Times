@@ -102,6 +102,11 @@ Observed on 2026-09-05 for the source-contract ledger:
 - `graphify update .` rebuilt the tracked graph after the provenance-code change:
   303 nodes, 306 edges, and 37 communities. It reported that semantic labels are
   stale; no semantic relabel was run because this task did not change architecture.
+- Review round 1 added the NCEI-to-NDBC UTC evidence chain for DART calendar
+  fields, corrected the NCTR coefficient HTML contract, and aligned downstream
+  planning to `approved` contracts and USGS FDSN CSV. The Task 1 gate reran with
+  15 manifest records, 9 passing provenance tests, clean Ruff, and 0 Pyright
+  errors.
 
 ## Decisions and assumptions
 

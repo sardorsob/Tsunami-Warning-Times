@@ -633,7 +633,7 @@
       "label": "AGENTS.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "agents.md",
@@ -645,7 +645,7 @@
       "label": "graphify",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "graphify",
@@ -657,7 +657,7 @@
       "label": "Non-negotiable scientific rules",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "non-negotiable scientific rules",
@@ -669,7 +669,7 @@
       "label": "Project Instructions",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "project instructions",
@@ -681,7 +681,7 @@
       "label": "Scope and implementation rules",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "scope and implementation rules",
@@ -693,7 +693,7 @@
       "label": "Start here",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "start here",
@@ -705,7 +705,7 @@
       "label": "Verification",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "verification",
@@ -713,11 +713,143 @@
       "source_location": "L58"
     },
     {
+      "id": "artifacts_provenance_source_manifest",
+      "label": "source-manifest.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "source-manifest.md",
+      "source_file": "artifacts/provenance/source-manifest.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_provenance_source_manifest_source_manifest_contract",
+      "label": "Source Manifest Contract",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source manifest contract",
+      "source_file": "artifacts/provenance/source-manifest.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_data_card",
+      "label": "DATA_CARD.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "data_card.md",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_data_card_data_card_feasibility_state",
+      "label": "Data Card \u2014 Feasibility State",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data card \u2014 feasibility state",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_data_card_data_proof_acquisition_set",
+      "label": "Data-proof acquisition set",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data-proof acquisition set",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "context_data_card_known_misuse_risk",
+      "label": "Known misuse risk",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "known misuse risk",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "context_data_card_minimum_record_contract",
+      "label": "Minimum record contract",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "minimum record contract",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "context_data_card_planned_grains",
+      "label": "Planned grains",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "planned grains",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "context_data_card_required_source_classes",
+      "label": "Required source classes",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "required source classes",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "context_data_card_sensitive_data_and_authorization",
+      "label": "Sensitive data and authorization",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sensitive data and authorization",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "context_data_card_status",
+      "label": "Status",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "status",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L3"
+    },
+    {
       "id": "context_handover",
       "label": "HANDOVER.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "handover.md",
@@ -725,131 +857,11 @@
       "source_location": "L1"
     },
     {
-      "id": "context_handover_completed",
-      "label": "Completed",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "completed",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L21"
-    },
-    {
-      "id": "context_handover_continue_from_here",
-      "label": "Continue from here",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "continue from here",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L116"
-    },
-    {
-      "id": "context_handover_decisions_and_assumptions",
-      "label": "Decisions and assumptions",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decisions and assumptions",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L90"
-    },
-    {
-      "id": "context_handover_final_disposition",
-      "label": "Final disposition",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "final disposition",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L142"
-    },
-    {
-      "id": "context_handover_handover",
-      "label": "Handover",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "handover",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_handover_objective_and_workflow",
-      "label": "Objective and workflow",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objective and workflow",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "context_handover_repository_state",
-      "label": "Repository state",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "repository state",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L136"
-    },
-    {
-      "id": "context_handover_risks_and_blockers",
-      "label": "Risks and blockers",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "risks and blockers",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L103"
-    },
-    {
-      "id": "context_handover_t_002p_verification_evidence",
-      "label": "T-002P verification evidence",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "t-002p verification evidence",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L76"
-    },
-    {
-      "id": "context_handover_verification_evidence",
-      "label": "Verification evidence",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "verification evidence",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L49"
-    },
-    {
       "id": "context_project",
       "label": "PROJECT.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "project.md",
@@ -857,11 +869,47 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_data_sources",
+      "label": "data-sources.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "data-sources.md",
+      "source_file": "docs/data-sources.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_data_sources_data_sources",
+      "label": "Data Sources",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data sources",
+      "source_file": "docs/data-sources.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_research_feasibility",
+      "label": "feasibility.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Data Card \u2014 Feasibility State",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "feasibility.md",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L1"
+    },
+    {
       "id": "readme",
       "label": "README.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "readme.md",
@@ -873,7 +921,7 @@
       "label": "Current status",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "current status",
@@ -885,7 +933,7 @@
       "label": "License",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "license",
@@ -897,7 +945,7 @@
       "label": "Local setup",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "local setup",
@@ -909,7 +957,7 @@
       "label": "Pacific Tsunami Warning Time",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "pacific tsunami warning time",
@@ -921,7 +969,7 @@
       "label": "Repository map",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "repository map",
@@ -933,180 +981,12 @@
       "label": "Safety and interpretation",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Handover",
+      "community_name": "Data Card \u2014 Feasibility State",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "safety and interpretation",
       "source_file": "README.md",
       "source_location": "L72"
-    },
-    {
-      "id": "artifacts_provenance_source_manifest",
-      "label": "source-manifest.md",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "source-manifest.md",
-      "source_file": "artifacts/provenance/source-manifest.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "artifacts_provenance_source_manifest_source_manifest_contract",
-      "label": "Source Manifest Contract",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source manifest contract",
-      "source_file": "artifacts/provenance/source-manifest.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_data_card",
-      "label": "DATA_CARD.md",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "data_card.md",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_data_card_data_card_feasibility_state",
-      "label": "Data Card \u2014 Feasibility State",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "data card \u2014 feasibility state",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_data_card_data_proof_acquisition_set",
-      "label": "Data-proof acquisition set",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "data-proof acquisition set",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L21"
-    },
-    {
-      "id": "context_data_card_known_misuse_risk",
-      "label": "Known misuse risk",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "known misuse risk",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L62"
-    },
-    {
-      "id": "context_data_card_minimum_record_contract",
-      "label": "Minimum record contract",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "minimum record contract",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L44"
-    },
-    {
-      "id": "context_data_card_planned_grains",
-      "label": "Planned grains",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "planned grains",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L34"
-    },
-    {
-      "id": "context_data_card_required_source_classes",
-      "label": "Required source classes",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "required source classes",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "context_data_card_sensitive_data_and_authorization",
-      "label": "Sensitive data and authorization",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "sensitive data and authorization",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L56"
-    },
-    {
-      "id": "context_data_card_status",
-      "label": "Status",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "status",
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "docs_data_sources",
-      "label": "data-sources.md",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "data-sources.md",
-      "source_file": "docs/data-sources.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_data_sources_data_sources",
-      "label": "Data Sources",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "data sources",
-      "source_file": "docs/data-sources.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_research_feasibility",
-      "label": "feasibility.md",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "feasibility.md",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L1"
     },
     {
       "id": "docs_research_feasibility_competition_requirements_external_constraints",
@@ -1622,7 +1502,7 @@
       "node_kind": "heading",
       "norm_label": "t-002b \u2014 acquire and fingerprint raw assets",
       "source_file": "context/TASKS.md",
-      "source_location": "L122"
+      "source_location": "L126"
     },
     {
       "id": "context_tasks_t_002c_normalize_and_validate_analysis_tables",
@@ -1634,7 +1514,7 @@
       "node_kind": "heading",
       "norm_label": "t-002c \u2014 normalize and validate analysis tables",
       "source_file": "context/TASKS.md",
-      "source_location": "L149"
+      "source_location": "L153"
     },
     {
       "id": "context_tasks_t_002d_run_reproducible_eda",
@@ -1646,7 +1526,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d \u2014 run reproducible eda",
       "source_file": "context/TASKS.md",
-      "source_location": "L179"
+      "source_location": "L183"
     },
     {
       "id": "context_tasks_t_002e_review_and_close_the_data_proof",
@@ -1658,7 +1538,7 @@
       "node_kind": "heading",
       "norm_label": "t-002e \u2014 review and close the data proof",
       "source_file": "context/TASKS.md",
-      "source_location": "L211"
+      "source_location": "L215"
     },
     {
       "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
@@ -1682,7 +1562,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L237"
+      "source_location": "L241"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -1694,7 +1574,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L260"
+      "source_location": "L264"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -1706,7 +1586,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L284"
+      "source_location": "L288"
     },
     {
       "id": "context_tasks_tasks",
@@ -3113,7 +2993,7 @@
       "node_kind": "heading",
       "norm_label": "task 3: live source bundle, checksums, and acquisition report",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L202"
+      "source_location": "L204"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_4_event_contour_and_water_level_normalization",
@@ -3125,7 +3005,7 @@
       "node_kind": "heading",
       "norm_label": "task 4: event, contour, and water-level normalization",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L249"
+      "source_location": "L251"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_5_live_data_quality_build_and_requested_phase_closure",
@@ -3137,7 +3017,7 @@
       "node_kind": "heading",
       "norm_label": "task 5: live data-quality build and requested-phase closure",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L322"
+      "source_location": "L324"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_t\u014dhoku_data_coverage_and_implementation_plan",
@@ -3164,14 +3044,14 @@
       "source_location": "L1"
     },
     {
-      "id": "context_acquisition_report_approved_contracts_11_assets",
-      "label": "Approved contracts \u2014 11 assets",
+      "id": "context_acquisition_report_approved_contracts_12_assets",
+      "label": "Approved contracts \u2014 12 assets",
       "_origin": "ast",
       "community": 34,
       "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "approved contracts \u2014 11 assets",
+      "norm_label": "approved contracts \u2014 12 assets",
       "source_file": "context/ACQUISITION_REPORT.md",
       "source_location": "L22"
     },
@@ -3188,14 +3068,14 @@
       "source_location": "L12"
     },
     {
-      "id": "context_acquisition_report_blocked_contracts_4_assets",
-      "label": "Blocked contracts \u2014 4 assets",
+      "id": "context_acquisition_report_blocked_contracts_3_assets",
+      "label": "Blocked contracts \u2014 3 assets",
       "_origin": "ast",
       "community": 34,
       "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "blocked contracts \u2014 4 assets",
+      "norm_label": "blocked contracts \u2014 3 assets",
       "source_file": "context/ACQUISITION_REPORT.md",
       "source_location": "L32"
     },
@@ -3258,6 +3138,138 @@
       "norm_label": "eda_report.md",
       "source_file": "context/EDA_REPORT.md",
       "source_location": "L1"
+    },
+    {
+      "id": "context_handover_completed",
+      "label": "Completed",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "completed",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "context_handover_continue_from_here",
+      "label": "Continue from here",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "continue from here",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L137"
+    },
+    {
+      "id": "context_handover_decisions_and_assumptions",
+      "label": "Decisions and assumptions",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisions and assumptions",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L111"
+    },
+    {
+      "id": "context_handover_final_disposition",
+      "label": "Final disposition",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "final disposition",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L162"
+    },
+    {
+      "id": "context_handover_handover",
+      "label": "Handover",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "handover",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_handover_objective_and_workflow",
+      "label": "Objective and workflow",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objective and workflow",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_handover_repository_state",
+      "label": "Repository state",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "repository state",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L155"
+    },
+    {
+      "id": "context_handover_risks_and_blockers",
+      "label": "Risks and blockers",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "risks and blockers",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L124"
+    },
+    {
+      "id": "context_handover_t_002a_verification_evidence",
+      "label": "T-002A verification evidence",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002a verification evidence",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L90"
+    },
+    {
+      "id": "context_handover_t_002p_verification_evidence",
+      "label": "T-002P verification evidence",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002p verification evidence",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L76"
+    },
+    {
+      "id": "context_handover_verification_evidence",
+      "label": "Verification evidence",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification evidence",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L49"
     },
     {
       "id": "package",
@@ -4840,7 +4852,7 @@
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
-      "target": "context_acquisition_report_approved_contracts_11_assets",
+      "target": "context_acquisition_report_approved_contracts_12_assets",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4862,7 +4874,7 @@
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
-      "target": "context_acquisition_report_blocked_contracts_4_assets",
+      "target": "context_acquisition_report_blocked_contracts_3_assets",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5236,13 +5248,24 @@
     },
     {
       "source": "context_handover_handover",
+      "target": "context_handover_decisions_and_assumptions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
       "target": "context_handover_risks_and_blockers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L103",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -5253,7 +5276,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L116",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -5264,7 +5287,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L136",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -5275,7 +5298,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L142",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -5324,7 +5347,7 @@
     },
     {
       "source": "context_handover_handover",
-      "target": "context_handover_decisions_and_assumptions",
+      "target": "context_handover_t_002a_verification_evidence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5649,7 +5672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L122",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -5660,7 +5683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L149",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -5671,7 +5694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L179",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -5682,7 +5705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L211",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -5693,7 +5716,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L237",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -5704,7 +5727,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L260",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -5715,7 +5738,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L284",
+      "source_location": "L288",
       "weight": 1.0
     },
     {
@@ -6177,7 +6200,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L202",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -6188,7 +6211,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L249",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -6199,7 +6222,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L322",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -6974,5 +6997,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "76c98919be08d6a51754869497a551482095eec5"
+  "built_at_commit": "f0f0198769142f63c83403b0f16060bc71a30ec7"
 }

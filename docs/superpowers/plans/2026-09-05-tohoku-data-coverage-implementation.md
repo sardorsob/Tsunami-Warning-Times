@@ -11,7 +11,7 @@ data-quality report without beginning EDA.
 
 **Architecture:** A TOML source contract drives a standard-library acquisition
 module that treats each source independently and writes immutable raw files plus a
-portable run bundle. A separate normalization module parses accepted USGS GeoJSON,
+portable run bundle. A separate normalization module parses accepted USGS FDSN CSV,
 NCEI TTT GeoJSON, NCEI DART text, and NOAA CO-OPS JSON into deterministic CSV and
 JSON artifacts; inaccessible or scientifically ambiguous assets remain explicit in
 coverage and rejection records.
@@ -118,14 +118,15 @@ mark T-002A done, and commit as `docs(data): resolve Tohoku source contracts`.
 
 **Interfaces:**
 - Consumes: `config/tohoku-data-proof.toml` source tables with
-  `availability = "ready"`.
+  `availability = "approved"`.
 - Produces:
   `load_contracts(path: Path) -> tuple[SourceContract, ...]`,
   `download_url(url: str, destination: Path, timeout_seconds: float) -> ResponseMetadata`,
   `acquire_source(contract: SourceContract, root: Path, fetcher: Fetcher = download_url) -> AcquisitionResult`,
   and `acquire_all(contracts: Sequence[SourceContract], root: Path, fetcher: Fetcher = download_url) -> tuple[AcquisitionResult, ...]`.
 
-`SourceContract` contains the Task 1 TOML fields. `ResponseMetadata` contains
+`SourceContract` contains the Task 1 TOML fields, including a whitespace-tolerant
+`expected_prefix` used for a minimal response-identity check. `ResponseMetadata` contains
 `content_type: str` and `headers: dict[str, str]`. `AcquisitionResult` contains
 `source_id`, `status`, `local_path`, `bytes`, `sha256`, and `reason`; `Fetcher` is
 `Callable[[str, Path, float], ResponseMetadata]` so tests can write controlled
@@ -138,7 +139,7 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
     contract = SourceContract(
         source_id="sample",
         source_class="event",
-        availability="ready",
+        availability="approved",
         url="https://example.test/sample.json",
         local_path=PurePosixPath("data/raw/sample.json"),
         format="json",
@@ -164,7 +165,8 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
 ```
 
 Verify RED, implement only the typed dataclasses, streamed temporary-file write,
-non-empty/signature check, SHA-256, and atomic `Path.replace`, then verify GREEN.
+non-empty/signature check (`bytes.lstrip().startswith(expected_prefix)`), SHA-256,
+and atomic `Path.replace`, then verify GREEN.
 
 - [ ] **Step 2: Test idempotent cache reuse**
 
@@ -221,14 +223,14 @@ assets. Run focused tests, Ruff, Pyright, and `--help`, then commit as
 
 Run: `uv run python scripts/acquire_tohoku.py --config config/tohoku-data-proof.toml --root . --run-tag initial`
 
-Expected ready attempts: USGS event GeoJSON, NCEI TTT GeoJSON, DART 21418/21413/
-46411/32401 text, and NOAA CO-OPS Adak/Hilo/Crescent City/Pago Pago JSON. Expected
-blocked records: exact NCTR field, NCTR coefficients, Saipan series, and
-Valparaíso series unless the contract review found a newly verified endpoint.
+Expected approved attempts: USGS event FDSN CSV, NCEI TTT metadata JSON and
+GeoJSON, NCTR coefficient HTML, DART 21418/21413/46411/32401 text, and NOAA
+CO-OPS Adak/Hilo/Crescent City/Pago Pago JSON. Expected blocked records are the
+continuous NCTR field, Saipan series, and Valparaíso series.
 
 - [ ] **Step 2: Re-run and prove idempotence**
 
-Run the same command with `--run-tag initial-rerun`; compare each ready asset's
+Run the same command with `--run-tag initial-rerun`; compare each approved asset's
 SHA-256 and byte count. Every second-run success must be `cached`, and no raw file
 may change.
 
@@ -252,7 +254,7 @@ data-quality checker disposition, mark T-002B done, and commit as
 - Create: `pipeline/normalize.py`
 - Create: `scripts/build_tohoku_data.py`
 - Create: `tests/test_normalize.py`
-- Create: `tests/fixtures/normalize/usgs_event.geojson`
+- Create: `tests/fixtures/normalize/usgs_event.csv`
 - Create: `tests/fixtures/normalize/ttt_contours.geojson`
 - Create: `tests/fixtures/normalize/dart_station.txt`
 - Create: `tests/fixtures/normalize/coops_station.json`
@@ -274,9 +276,9 @@ rejection counts.
 
 - [ ] **Step 1: Test USGS event normalization**
 
-Assert the exact event ID, longitude/latitude/depth coordinate order, reviewed
-status, magnitude type, source epoch milliseconds, and derived ISO UTC timestamp.
-Reject a non-Point geometry or wrong event ID.
+Assert the exact one-row FDSN CSV schema, event ID, latitude-then-longitude/depth
+field order, reviewed status, magnitude type, and ISO UTC timestamp. Reject a
+missing required column, multiple rows, or wrong event ID.
 
 - [ ] **Step 2: Test TTT contour normalization**
 

@@ -112,12 +112,15 @@
   and 3 explicitly blocked. The blocked status has RED/GREEN provenance-test
   evidence; no raw data was downloaded. Maker verification is recorded in the
   T-002A report and awaits an independent scientific checker disposition.
-- Attempts / Max: 0 / 3
+- Attempts / Max: 1 / 3
 - Attempt log: 2026-09-05 — authoritative endpoint and contract audit started;
   2026-09-05 — exact source-contract ledger completed with NCTR field and
   Saipan and Valparaíso retained as blocked, while the published NCTR scalar
   coefficients were approved with their units explicitly unstated; submitted
-  for independent scientific review
+  for independent scientific review;
+  2026-09-05 — review round 1 added NCEI-to-NDBC UTC evidence, corrected the
+  coefficient HTML contract, and aligned downstream acquisition/normalization
+  plans to `approved` contracts and USGS FDSN CSV
 - Status: in-review
 
 ## T-002B — Acquire and fingerprint raw assets

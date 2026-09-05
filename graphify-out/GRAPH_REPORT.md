@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-05)
 
 ## Corpus Check
-- 45 files · ~18,444 words
+- 45 files · ~18,758 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 303 nodes · 306 edges · 37 communities (27 shown, 10 thin omitted)
+- 304 nodes · 307 edges · 38 communities (28 shown, 10 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `76c98919`
+- Built from commit: `f0f01987`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,7 @@
 - check-build.mjs
 - __init__.py
 - pacific-tsunami-warning-time
-- Handover
+- Data Card — Feasibility State
 - PacificVis 2027 and tsunami-event data feasibility
 - Tōhoku Data Pipeline and EDA Design
 - Decision Log
@@ -49,6 +49,7 @@
 - Project Contract
 - Global Constraints
 - T-002A — Tōhoku Source-Contract Ledger
+- Handover
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
@@ -57,8 +58,8 @@
 4. `Decision Log` - 12 edges
 5. `Tasks` - 12 edges
 6. `write_manifest()` - 11 edges
-7. `ManifestError` - 10 edges
-8. `Handover` - 10 edges
+7. `Handover` - 11 edges
+8. `ManifestError` - 10 edges
 9. `PacificVis 2027 and tsunami-event data feasibility` - 9 edges
 10. `Data Card — Feasibility State` - 8 edges
 
@@ -77,7 +78,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (37 total, 10 thin omitted)
+## Communities (38 total, 10 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -103,13 +104,13 @@ Nodes (14): engines, node, name, packageManager, private, scripts, build, check 
 Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
-### Community 10 - "Handover"
-Cohesion: 0.08
-Nodes (22): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Completed, Continue from here (+14 more)
+### Community 10 - "Data Card — Feasibility State"
+Cohesion: 0.07
+Nodes (22): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Source Manifest Contract, Data Card — Feasibility State (+14 more)
 
 ### Community 11 - "PacificVis 2027 and tsunami-event data feasibility"
-Cohesion: 0.08
-Nodes (20): Source Manifest Contract, Data Card — Feasibility State, Data-proof acquisition set, Known misuse risk, Minimum record contract, Planned grains, Required source classes, Sensitive data and authorization (+12 more)
+Cohesion: 0.20
+Nodes (10): Competition requirements (external constraints), Decision summary, Event recommendation and why it is conditional, Feasibility matrix, Honest “warning time” contract, Licensing/terms finding shared by all three, PacificVis 2027 and tsunami-event data feasibility, Project choices (not contest rules) (+2 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
@@ -173,18 +174,26 @@ Nodes (7): Global Constraints, Task 1: Source-contract ledger and blocked-state 
 
 ### Community 34 - "T-002A — Tōhoku Source-Contract Ledger"
 Cohesion: 0.29
-Nodes (6): Approved contracts — 11 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 4 assets, Contract limits and next steps, Disposition, T-002A — Tōhoku Source-Contract Ledger
+Nodes (6): Approved contracts — 12 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 3 assets, Contract limits and next steps, Disposition, T-002A — Tōhoku Source-Contract Ledger
+
+### Community 37 - "Handover"
+Cohesion: 0.18
+Nodes (11): Completed, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow, Repository state, Risks and blockers (+3 more)
 
 ## Knowledge Gaps
-- **189 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+184 more)
+- **190 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+185 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `Handover` connect `Handover` to `Data Card — Feasibility State`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `PacificVis 2027 and tsunami-event data feasibility` connect `PacificVis 2027 and tsunami-event data feasibility` to `Data Card — Feasibility State`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _189 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _190 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `app/package.json` be split into smaller, more focused modules?**
@@ -193,7 +202,3 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
-- **Should `Handover` be split into smaller, more focused modules?**
-  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `PacificVis 2027 and tsunami-event data feasibility` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
