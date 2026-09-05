@@ -6,6 +6,10 @@ Prepare the new Pacific Tsunami Warning Time repository for a reproducible,
 scientifically defensible PacificVis 2027 project without prematurely selecting
 data or overbuilding the application.
 
+The active follow-up is the approved design and planning package for a broad
+Tōhoku acquisition, data-quality, and EDA workflow. No acquisition code or
+scientific data is part of this planning unit.
+
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
 - Primary lane: retrospective event forecast/intelligence
@@ -35,6 +39,11 @@ data or overbuilding the application.
   remain ignored.
 - Kept D3, regl/WebGL, scroll libraries, geospatial runtime dependencies,
   Playwright, a backend, and modeling tools out until demonstrated need.
+- Designed the T-002P through T-002E work package: exact-source discovery,
+  source-gated acquisition, normalization/data quality, script-backed marimo
+  EDA, Markdown reporting, and independent scientific closure.
+- Added intentionally empty acquisition, data-quality, and EDA report files.
+  Their task-owned scripts will populate them when work begins.
 
 ## Verification evidence
 
@@ -62,6 +71,20 @@ Observed during the setup session on 2026-09-04:
   multigraph diagnostics completed successfully.
 
 These are the final fresh gate results for setup task T-000.
+
+## T-002P verification evidence
+
+Observed on 2026-09-04 for the planning/context package:
+
+- Ruff passed; Pyright reported 0 errors; Pytest reported 8 passed; the
+  provenance validator accepted 6 source records.
+- TypeScript passed; Vitest reported 1 passed; Vite built 17 modules and verified
+  both required build outputs.
+- `git diff --check` passed and the changed planning surface contained no
+  `TBD`, `TODO`, `FIXME`, or `XXX` placeholders.
+- `ACQUISITION_REPORT.md`, `DATA_QUALITY_REPORT.md`, and `EDA_REPORT.md` were
+  each verified at zero bytes and remain intentionally empty until their owning
+  tasks run.
 
 ## Decisions and assumptions
 
@@ -91,33 +114,28 @@ These are the final fresh gate results for setup task T-000.
 
 ## Continue from here
 
-Start T-002 and own only its data-proof surface:
+The project owner reviews
+`docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md`. After
+written approval, move T-002P to `done` and begin only T-002A:
 
-1. Read `AGENTS.md`, this file, `context/TASKS.md`,
-   `docs/research/feasibility.md`, `context/DATA_CARD.md`,
-   `context/spatial-contract.md`, and `context/FORECAST_PROTOCOL.md`.
-2. Query NCEI TTT layer 17 as GeoJSON and record exact request, feature count,
-   `HOURS`, EPSG:4326 metadata, antimeridian behavior, validity, and missing
-   contours.
-3. Check NCTR THREDDS/OPeNDAP for a usable raw Tōhoku field and document the
-   actual variables, units, grid, time step, longitude convention, coefficients,
-   and terms—or narrow the product to authoritative contours.
-4. Prove small DART and coastal-gauge samples, freeze the arrival-pick protocol,
-   and test the candidate community comparison before changing
-   `selectedEvent`.
-5. Record every source in the manifest and every transformation/check in the
-   task evidence. Stop on ambiguous identity, time, units, CRS/order, datum,
-   terms, or material uncertainty.
+1. Resolve exact authoritative endpoints, formats, station IDs/deployments,
+   windows, units, terms, and expected schemas for the approved source bundle.
+2. Record stable assets or explicit blockers in the source manifest and
+   `context/ACQUISITION_REPORT.md`.
+3. Select the four DART stations from documented near/far coverage before
+   inspecting model residuals.
+4. Do not download the broad source bundle, choose dependencies, or implement
+   the pipeline until the T-002A source contract is independently reviewable.
 
 Do not begin the full wavefront or story build during the data proof.
 
 ## Repository state
 
-The T-000 setup is on `main`. This follow-up keeps Serena out of the current
-tracked tree, preserves all `context/` files even when empty, and initializes
-Graphify. No deployment, publication, or large download was performed.
+The T-000 setup is on `main`. The planning package is a separate documentation
+commit for project-owner review. No data download, implementation, deployment,
+or publication was performed in this planning step.
 
 ## Final disposition
 
-Accepted by the independent repository checker on 2026-09-04. T-000 is complete;
-T-002 is the next permitted work surface.
+T-000 and T-001 remain accepted. T-002P is in review; T-002A is the next
+permitted work surface only after the project owner approves the written design.

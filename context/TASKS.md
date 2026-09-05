@@ -58,25 +58,166 @@
 - Attempt log: 2026-09-04 — research completed and accepted with conditional recommendation
 - Status: done
 
-## T-002 — Prove the data path
+## T-002P — Approve the broad data-proof design
 
-- ID: T-002
-- Title: Reproduce one modeled field and two observed station records
+- ID: T-002P
+- Title: Approve the Tōhoku acquisition and EDA work package
 - Depends on: accepted T-001 recommendation
+- Owner (Maker): Codex primary agent
+- Checker: project owner
+- Phase: planning
+- Data refs: candidate rows in `artifacts/provenance/source-manifest.csv`
+- Scientific refs: `docs/research/feasibility.md`; approved workflow profiles
+- Statistical notes: design only; no source is promoted and no result is estimated
+- Scope: source coverage, task boundaries, data flow, validation, reporting,
+  run tracking, failure behavior, and intentionally empty report placeholders
+- Artifacts to produce: approved design specification and updated context contracts
+- Acceptance criteria: tasks are independently checkable; every requested source
+  is owned; scripts remain the source of calculations; marimo remains a thin EDA
+  consumer; Markdown is the canonical result surface
+- Verification commands: link/placeholder/consistency review and repository gate
+- Manual QA: project owner reviews the committed specification before T-002A
+- Evidence: design approved in chat on 2026-09-04; specification and context
+  package passed the full repository gate; three report placeholders verified at
+  zero bytes; written review pending
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-04 — planning package prepared for owner review
+- Status: in-review
+
+## T-002A — Resolve source endpoints and contracts
+
+- ID: T-002A
+- Title: Resolve the exact Tōhoku model and observation assets
+- Depends on: T-002P done
 - Owner (Maker): data-pipeline contributor
 - Checker: scientific reviewer
-- Phase: data proof
-- Data refs: approved rows in `artifacts/provenance/source-manifest.csv`
-- Scientific refs: source documentation accepted in T-001
-- Statistical notes: define arrival pick and precision before residuals
-- Scope: acquire a minimal sample; validate identity, UTC basis, units, CRS,
-  vertical datum, nodata, geometry/grid, missingness, and licensing; log counts
-- Artifacts to produce: source records, schemas, validation output, rejected-record
-  report, reproducible script, and two manually cross-checked observations
-- Acceptance criteria: idempotent rerun; no unexplained record loss; exact source
-  lineage; observed and modeled times remain separate
-- Verification commands: task-owned tests plus a rerun and checksum comparison
-- Manual QA: inspect the field and station locations against source records
+- Phase: source discovery
+- Data refs: provisional source manifest plus authoritative source metadata
+- Scientific refs: `docs/research/feasibility.md`; source-owned documentation
+- Statistical notes: inventory only; do not select stations from desired residuals
+- Scope: verify machine endpoints and terms for USGS event metadata, NCEI TTT
+  layer 17, the NCTR field and coefficients, four DART records, and six coastal
+  gauges; resolve exact station IDs, coordinates, time windows, and formats
+- Artifacts to produce: updated source manifest and
+  `context/ACQUISITION_REPORT.md`
+- Acceptance criteria: every asset has a stable URL or documented access blocker,
+  publisher, version/date, terms, expected schema, units, spatial/time basis, and
+  planned local path; station selection rule is independent of observed residuals
+- Verification commands: authoritative metadata/link audit and manifest validator
+- Manual QA: reconcile station names/IDs and three map locations with source pages
+- Evidence: pending
+- Attempts / Max: 0 / 3
+- Attempt log: not started
+- Status: pending
+
+## T-002B — Acquire and fingerprint raw assets
+
+- ID: T-002B
+- Title: Download the approved Tōhoku source bundle reproducibly
+- Depends on: T-002A done
+- Owner (Maker): data-pipeline contributor
+- Checker: data-quality reviewer
+- Phase: acquisition
+- Data refs: approved T-002A manifest rows only
+- Scientific refs: source-owned schemas and terms accepted in T-002A
+- Statistical notes: acquisition accounting only; no inferential result
+- Scope: idempotent downloads for the event record, TTT contours, NCTR field,
+  four DART stations, and six coastal gauges; immutable raw cache; checksums;
+  retry/timeout behavior; per-source success or quarantine
+- Artifacts to produce: reusable acquisition module, thin CLI, raw checksums,
+  source inventory, run bundle, and populated `context/ACQUISITION_REPORT.md`
+- Acceptance criteria: reruns do not corrupt or silently replace assets; byte
+  counts and checksums reconcile; unavailable or ambiguous sources fail
+  independently and never masquerade as successful downloads
+- Verification commands: unit fixtures, opt-in live smoke checks, two-run checksum
+  comparison, provenance validator, and raw-file accounting
+- Manual QA: open representative files and compare headers/identity with source
+- Evidence: pending
+- Attempts / Max: 0 / 3
+- Attempt log: not started
+- Status: pending
+
+## T-002C — Normalize and validate analysis tables
+
+- ID: T-002C
+- Title: Produce analysis-ready model and observation tables
+- Depends on: T-002B done
+- Owner (Maker): data-pipeline contributor
+- Checker: scientific data reviewer
+- Phase: data quality
+- Data refs: checksummed T-002B raw assets
+- Scientific refs: `context/DATA_CARD.md`; `context/spatial-contract.md`;
+  `context/FORECAST_PROTOCOL.md`
+- Statistical notes: preserve source precision and missingness; no model-guided
+  tuning of observation picks
+- Scope: normalize schemas, timestamps, coordinates, CRS, units, station metadata,
+  TTT contours, NCTR dimensions, and water-level series; quarantine invalid or
+  ambiguous records; log input/output/rejection counts
+- Artifacts to produce: typed reusable transformations, compact processed tables,
+  schemas, rejected-record output, run bundle, and populated
+  `context/DATA_QUALITY_REPORT.md`
+- Acceptance criteria: explicit grain/key for every table; UTC derivation retains
+  source time; zero differs from NoData; geometry/grid and antimeridian rules pass;
+  no unexplained row, feature, sample, or station loss
+- Verification commands: task-owned tests, schema checks, count reconciliation,
+  coordinate/geometry validation, and deterministic rebuild comparison
+- Manual QA: inspect three contours, four DART records, and six coastal records
+- Evidence: pending
+- Attempts / Max: 0 / 3
+- Attempt log: not started
+- Status: pending
+
+## T-002D — Run reproducible EDA
+
+- ID: T-002D
+- Title: Profile the broad Tōhoku data proof with scripts and marimo
+- Depends on: T-002C done
+- Owner (Maker): analysis contributor
+- Checker: independent analytical reviewer
+- Phase: EDA
+- Data refs: accepted T-002C analysis-ready artifacts only
+- Scientific refs: data, spatial, forecast, and validation contracts
+- Statistical notes: descriptive and sensitivity analysis; exploratory findings
+  remain distinct from frozen production claims
+- Scope: reusable analysis functions, a thin marimo notebook, data inventory,
+  missingness/cadence/distribution checks, spatial coverage, NCTR structure,
+  arrival-pick sensitivity, join coverage, and distance-versus-arrival contrasts
+- Artifacts to produce: analysis module, marimo notebook, compact tables/figures,
+  file run bundle, project-local MLflow run, and populated
+  `context/EDA_REPORT.md`
+- Acceptance criteria: notebook contains no unique transformation logic; all
+  calculations are reproducible from scripts; Markdown records results, evidence,
+  interpretations, limitations, takeaways, and next steps; failed sources remain
+  visible in denominators and coverage statements
+- Verification commands: task-owned tests, `marimo check`, headless notebook run,
+  report regeneration, MLflow/run-bundle reconciliation, and selected-value checks
+- Manual QA: inspect all figures/tables and compare at least three values with data
+- Evidence: pending
+- Attempts / Max: 0 / 3
+- Attempt log: not started
+- Status: pending
+
+## T-002E — Review and close the data proof
+
+- ID: T-002E
+- Title: Decide whether Tōhoku is ready for the static comparison
+- Depends on: T-002D done
+- Owner (Maker): project coordinator
+- Checker: independent scientific reviewer
+- Phase: data-proof review
+- Data refs: accepted T-002A through T-002D evidence
+- Scientific refs: all task-owned reports and authoritative source records
+- Statistical notes: freeze definitions only after sensitivity and hard-case review
+- Scope: audit source identity, terms, reproducibility, data quality, arrival
+  definitions, uncertainty, selection bias, and the proposed community contrast
+- Artifacts to produce: checker disposition, updated decisions/data card/handover,
+  and either a frozen event/observation set or an explicit revise/reject decision
+- Acceptance criteria: every upstream criterion has evidence; unsupported assets
+  are excluded; known blockers cannot reverse the recommendation; T-003 receives
+  an explicit versioned interface or remains blocked
+- Verification commands: clean rerun, independent report/code review, checksum
+  comparison, full repository gate, and Graphify update
+- Manual QA: scientific reviewer traces three reported findings to raw sources
 - Evidence: pending
 - Attempts / Max: 0 / 3
 - Attempt log: not started
@@ -86,7 +227,7 @@
 
 - ID: T-003
 - Title: Compare a distance-only ring with the modeled arrival field
-- Depends on: accepted T-002 data proof
+- Depends on: T-002E done with a promote disposition
 - Owner (Maker): analysis/visualization contributor
 - Checker: scientific and cartographic reviewer
 - Phase: analysis

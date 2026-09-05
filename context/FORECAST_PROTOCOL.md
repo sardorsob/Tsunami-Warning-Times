@@ -33,6 +33,21 @@ operational forecast protocol.
 7. Review residuals, spatial hard cases, uncertainty, and alternative definitions.
 8. Export only accepted fields and labels to the browser artifact.
 
+## Data-proof sequencing
+
+- Resolve source assets and observation deployments before inspecting their
+  model residuals.
+- Choose two near-field and two far-field DART records by documented coverage
+  criteria, not by agreement with the model.
+- Treat all six coastal locations as candidates until continuity, metadata,
+  datums, and first-deviation reproducibility are checked.
+- Define the arrival-pick baseline window, filter, threshold, persistence,
+  gap-handling, uncertainty, and maximum-wave rule before using residuals to
+  evaluate or select a method.
+- A sensitivity grid may expose method dependence; it may not be optimized to
+  make the modeled field appear accurate.
+- Preserve source timestamps and precision beside every derived UTC value.
+
 ## Stop conditions
 
 Stop if event identity, time zone, units, CRS/order, vertical datum, product

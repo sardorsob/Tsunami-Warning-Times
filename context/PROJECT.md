@@ -66,6 +66,9 @@ proof tasks must resolve the applicable fields before production work.
 
 ## Smallest useful deliverable
 
-A verified event-feasibility decision followed by a reproducible data proof for
-one modeled field and two observations. The browser shell is infrastructure,
-not scientific evidence.
+A verified event-feasibility decision followed by a reproducible Tōhoku data
+proof covering USGS event metadata, NCEI TTT contours, the NCTR field, four DART
+records, and six coastal-gauge candidates. Reusable scripts own the calculations,
+a thin marimo notebook exposes the EDA, and Markdown reports preserve the
+evidence and decisions. The browser shell is infrastructure, not scientific
+evidence.

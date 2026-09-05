@@ -7,6 +7,16 @@
 - Manually cross-check at least three displayed values against authoritative
   records before release.
 
+## Acquisition and accounting
+
+- Use finite timeouts, bounded retries, temporary downloads, content checks, and
+  atomic finalization.
+- Refuse to overwrite a raw path when its existing checksum differs.
+- Record request parameters, response metadata, bytes, retrieval time, checksum,
+  and per-source success, rejection, or blocker.
+- Reconcile source assets requested, retrieved, quarantined, and promoted.
+- Verify a second run is idempotent and produces matching deterministic checksums.
+
 ## Temporal
 
 - Preserve each source's original time field and time standard.
@@ -31,6 +41,11 @@
 - Define residual sign once and test it.
 - Report missingness and hard cases; do not summarize away failed stations.
 - Quantify uncertainty only where its source and interpretation are documented.
+- Report source/station coverage as counts and rates, retaining failed candidates
+  in the denominator.
+- Profile grain, keys, duplicates, missingness, cadence segments, gaps, robust
+  outliers, distribution shape, and join expansion before interpreting results.
+- Compare arrival-pick settings without choosing them from model agreement.
 
 ## Cartographic and interaction
 

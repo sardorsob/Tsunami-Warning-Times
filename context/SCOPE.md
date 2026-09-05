@@ -2,10 +2,10 @@
 
 ## First complete version
 
-One event; one modeled field; one distance-only baseline; a small DART and
-tide-gauge chain; four to six community panels; one projection; one story clock;
-one reproducible pipeline; one guided browser story; one compact evidence and
-methods section.
+One event; one modeled field; one distance-only baseline; four DART records and
+six coastal-gauge candidates during data proof; four to six accepted community
+panels in the story; one projection; one story clock; one reproducible pipeline;
+one guided browser story; one compact evidence and methods section.
 
 ## Feasibility gate
 
@@ -17,6 +17,10 @@ Production begins only after primary-source research and a data proof establish:
 4. event metadata that unambiguously links every source to the same event;
 5. several analytically contrasting community candidates;
 6. an honest definition for each timing shown as “warning” or “arrival” time.
+
+The broad data proof may reject sources or stations. “Six coastal candidates” is
+an acquisition/EDA scope, not a promise that six stations will survive into the
+story.
 
 ## Deferred
 

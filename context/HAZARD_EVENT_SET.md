@@ -36,3 +36,14 @@ future freeze decision must record:
 | Selection evidence | Feasibility score plus completed minimal data proof |
 
 Fame or historical importance alone is not a selection criterion.
+
+## Tōhoku data-proof bundle
+
+The approved attempt covers one USGS event record, NCEI TTT layer 17, one exact
+NCTR field/source combination, four DART records, and six coastal-gauge
+candidates. This bundle tests availability and analytical fit; it does not alter
+the provisional event disposition.
+
+The source and station set can be frozen only when T-002E accepts the upstream
+identity, terms, timing, spatial, quality, sensitivity, and reproducibility
+evidence. Rejected stations and unavailable assets remain visible in the reports.
