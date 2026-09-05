@@ -153,17 +153,15 @@
 - Verification commands: unit fixtures, opt-in live smoke checks, two-run checksum
   comparison, provenance validator, and raw-file accounting
 - Manual QA: open representative files and compare headers/identity with source
-- Evidence: 2026-09-05 — source-independent acquisition core has fixture RED/GREEN
-  evidence for atomic writes, cache reuse, immutable conflict quarantine,
-  bounded transient-failure isolation in source-ID order, blocked no-fetch, TOML
-  contract-field preservation, and bounded prefix inspection. Focused suite
-  passed (26 tests); Ruff and Pyright passed; CLI help and an isolated offline
-  run bundle were exercised. Review correction adds hard-link no-clobber
-  finalization, sidecar-backed cache verification, local I/O containment,
-  symlink-root containment, strict duplicate/blank contract rejection, and
-  transient HTTP retry classification. No live request or raw scientific data
-  download occurred.
-- Attempts / Max: 1 / 3
+- Evidence: Core implementation review is **APPROVED**. The acquisition core's
+  27 tests, focused Ruff, and focused Pyright passed. A preliminary live run
+  downloaded all 12 approved contracts (12,386,361 bytes) and left the 3 blocked
+  contracts unfetched; `initial-rerun` returned all 12 as checksum-identical
+  `cached` outcomes. Bundles are at `artifacts/logs/runs/2026-09-05__1840__initial__be7f766`
+  and `...initial-rerun__be7f766`; they were created from a dirty implementation
+  worktree and are not accepted release evidence. A clean-commit accepted rerun
+  remains required. See `context/ACQUISITION_REPORT.md` and the Task 3 report.
+- Attempts / Max: 2 / 3
 - Attempt log: 2026-09-05 — implemented the Task 2 core and thin CLI; 2026-09-05
   — review round 1 corrected no-clobber, cache-truth, containment, and retry
   safety gaps; pending reviewer acceptance and separately authorized live
@@ -171,8 +169,10 @@
   isolation, owned-sidecar rollback, and raw/sidecar namespace collision guards;
   2026-09-05 — final transport review added bounded retry and sibling isolation
   for incomplete HTTP response reads; fresh final review added NUL-path contract
-  rejection plus defensive per-source `ValueError` isolation.
-- Status: in progress
+  rejection plus defensive per-source `ValueError` isolation; 2026-09-05 — core
+  implementation review APPROVED; preliminary initial and cache runs completed,
+  but must be repeated from a clean committed implementation before acceptance.
+- Status: in-review
 
 ## T-002C — Normalize and validate analysis tables
 

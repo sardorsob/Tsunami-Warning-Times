@@ -7,7 +7,7 @@ import os
 import tempfile
 import tomllib
 from collections.abc import Callable, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from http.client import HTTPException
 from pathlib import Path, PurePosixPath
 from typing import cast
@@ -47,6 +47,10 @@ class ResponseMetadata:
     headers: dict[str, str]
 
 
+def _empty_headers() -> dict[str, str]:
+    return {}
+
+
 @dataclass(frozen=True, slots=True)
 class AcquisitionResult:
     """Outcome for exactly one source contract."""
@@ -57,6 +61,8 @@ class AcquisitionResult:
     bytes: int
     sha256: str
     reason: str
+    content_type: str = "not-downloaded"
+    headers: dict[str, str] = field(default_factory=_empty_headers)
 
 
 Fetcher = Callable[[str, Path, float], ResponseMetadata]
@@ -210,7 +216,12 @@ def _unlink_if_owned(path: Path, temporary_path: Path | None) -> None:
 
 
 def _result(
-    contract: SourceContract, status: str, size: int, digest: str, reason: str
+    contract: SourceContract,
+    status: str,
+    size: int,
+    digest: str,
+    reason: str,
+    response_metadata: ResponseMetadata | None = None,
 ) -> AcquisitionResult:
     return AcquisitionResult(
         source_id=contract.source_id,
@@ -219,6 +230,10 @@ def _result(
         bytes=size,
         sha256=digest,
         reason=reason,
+        content_type=(
+            response_metadata.content_type if response_metadata is not None else "not-downloaded"
+        ),
+        headers=response_metadata.headers if response_metadata is not None else {},
     )
 
 
@@ -288,7 +303,9 @@ def acquire_source(
             prefix=f".{destination.name}.", dir=destination.parent, delete=False
         ) as temporary:
             temporary_path = Path(temporary.name)
-        _fetch_with_retries(fetcher, contract.url, temporary_path, timeout_seconds)
+        response_metadata = _fetch_with_retries(
+            fetcher, contract.url, temporary_path, timeout_seconds
+        )
         size, digest = _sha256(temporary_path)
         if not size:
             return _result(contract, "quarantined", 0, "not-downloaded", "empty_response")
@@ -307,7 +324,14 @@ def acquire_source(
         published_sidecar = True
         os.link(temporary_path, destination)
         published_raw = True
-        return _result(contract, "downloaded", size, digest, "not applicable")
+        return _result(
+            contract,
+            "downloaded",
+            size,
+            digest,
+            "not applicable",
+            response_metadata,
+        )
     except UnicodeDecodeError:
         return _result(contract, "quarantined", 0, "not-downloaded", "invalid_checksum_record")
     except (HTTPError, HTTPException, OSError, URLError, ValueError) as error:

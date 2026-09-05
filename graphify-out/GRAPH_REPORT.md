@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-05)
 
 ## Corpus Check
-- 45 files · ~18,839 words
+- 61 files · ~30,111 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 304 nodes · 307 edges · 38 communities (28 shown, 10 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.95)
+- 393 nodes · 556 edges · 39 communities (29 shown, 10 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 17 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3a2ba560`
+- Built from commit: `be7f7666`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,13 +18,13 @@
 - compilerOptions
 - validate_manifest
 - app/package.json
-- devDependencies
+- test_acquisition.py
 - package.json
 - App.tsx
 - check-build.mjs
 - __init__.py
 - pacific-tsunami-warning-time
-- Data Card — Feasibility State
+- Handover
 - PacificVis 2027 and tsunami-event data feasibility
 - Tōhoku Data Pipeline and EDA Design
 - Decision Log
@@ -46,39 +46,40 @@
 - STRUCTURE.md
 - competition.md
 - data/README.md
-- Project Contract
+- acquire_tohoku.py
 - Global Constraints
 - T-002A — Tōhoku Source-Contract Ledger
-- Handover
+- Acquisition run notes
+- Acquisition run notes
 
 ## God Nodes (most connected - your core abstractions)
-1. `compilerOptions` - 17 edges
-2. `validate_manifest()` - 15 edges
-3. `Tōhoku Data Pipeline and EDA Design` - 14 edges
-4. `Decision Log` - 12 edges
-5. `Tasks` - 12 edges
-6. `write_manifest()` - 11 edges
-7. `Handover` - 11 edges
-8. `ManifestError` - 10 edges
-9. `PacificVis 2027 and tsunami-event data feasibility` - 9 edges
-10. `Data Card — Feasibility State` - 8 edges
+1. `acquire_source()` - 27 edges
+2. `compilerOptions` - 17 edges
+3. `SourceContract` - 17 edges
+4. `validate_manifest()` - 16 edges
+5. `acquire_all()` - 15 edges
+6. `write_run_evidence()` - 15 edges
+7. `fixture_fetcher()` - 15 edges
+8. `ResponseMetadata` - 14 edges
+9. `sample_contract()` - 14 edges
+10. `Tōhoku Data Pipeline and EDA Design` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `test_manifest_rejects_an_unresolved_spatial_field()` --uses--> `ManifestError`  [INFERRED]
-  tests/test_provenance.py → pipeline/provenance.py
-- `test_manifest_rejects_duplicate_source_ids()` --uses--> `ManifestError`  [INFERRED]
-  tests/test_provenance.py → pipeline/provenance.py
-- `test_manifest_rejects_inconsistent_download_state()` --uses--> `ManifestError`  [INFERRED]
-  tests/test_provenance.py → pipeline/provenance.py
-- `test_manifest_rejects_local_path_traversal()` --uses--> `ManifestError`  [INFERRED]
-  tests/test_provenance.py → pipeline/provenance.py
-- `test_manifest_requires_extended_iso_access_date()` --uses--> `ManifestError`  [INFERRED]
-  tests/test_provenance.py → pipeline/provenance.py
+- `_contract_record()` --uses--> `SourceContract`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `write_run_evidence()` --uses--> `SourceContract`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `offline_fetcher()` --uses--> `ResponseMetadata`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `_result_record()` --uses--> `AcquisitionResult`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `write_run_evidence()` --uses--> `AcquisitionResult`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (38 total, 10 thin omitted)
+## Communities (39 total, 10 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -86,15 +87,15 @@ Nodes (25): compilerOptions, allowJs, allowSyntheticDefaultImports, esModuleInte
 
 ### Community 1 - "validate_manifest"
 Cohesion: 0.18
-Nodes (24): parametrize, main(), ManifestError, Path, Validate the project's source-provenance manifest., Run manifest validation from the command line., Raised when the source manifest violates its documented contract., Summary of a successful manifest validation. (+16 more)
+Nodes (24): main(), ManifestError, Path, ValueError, Validate the project's source-provenance manifest., Run manifest validation from the command line., Raised when the source manifest violates its documented contract., Summary of a successful manifest validation. (+16 more)
 
 ### Community 2 - "app/package.json"
-Cohesion: 0.11
-Nodes (17): dependencies, react, react-dom, engines, node, name, private, scripts (+9 more)
+Cohesion: 0.06
+Nodes (32): dependencies, react, react-dom, devDependencies, @types/node, @types/react, @types/react-dom, typescript (+24 more)
 
-### Community 3 - "devDependencies"
-Cohesion: 0.13
-Nodes (15): devDependencies, @types/node, @types/react, @types/react-dom, typescript, vite, @vitejs/plugin-react, vitest (+7 more)
+### Community 3 - "test_acquisition.py"
+Cohesion: 0.12
+Nodes (52): Fetcher, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), download_url(), _fetch_with_retries() (+44 more)
 
 ### Community 4 - "package.json"
 Cohesion: 0.13
@@ -104,13 +105,13 @@ Nodes (14): engines, node, name, packageManager, private, scripts, build, check 
 Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
-### Community 10 - "Data Card — Feasibility State"
-Cohesion: 0.07
-Nodes (22): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Source Manifest Contract, Data Card — Feasibility State (+14 more)
+### Community 10 - "Handover"
+Cohesion: 0.06
+Nodes (32): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Completed, Continue from here (+24 more)
 
 ### Community 11 - "PacificVis 2027 and tsunami-event data feasibility"
-Cohesion: 0.20
-Nodes (10): Competition requirements (external constraints), Decision summary, Event recommendation and why it is conditional, Feasibility matrix, Honest “warning time” contract, Licensing/terms finding shared by all three, PacificVis 2027 and tsunami-event data feasibility, Project choices (not contest rules) (+2 more)
+Cohesion: 0.08
+Nodes (20): Source Manifest Contract, Data Card — Feasibility State, Data-proof acquisition set, Known misuse risk, Minimum record contract, Planned grains, Required source classes, Sensitive data and authorization (+12 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
@@ -164,41 +165,45 @@ Nodes (4): Contract, Current state, Hazard Event Set, Tōhoku data-proof bundle
 Cohesion: 0.50
 Nodes (3): Cross-year criteria for this project, Originality boundary, PacificVis Storytelling Benchmark, 2017–2026
 
-### Community 32 - "Project Contract"
-Cohesion: 0.25
-Nodes (8): Consequential unknowns, Decision and lane, In scope for the first complete version, Objective, Out of scope until separately approved, Project Contract, Smallest useful deliverable, Workflow contract
+### Community 32 - "acquire_tohoku.py"
+Cohesion: 0.14
+Nodes (23): datetime, ContractError, ValueError, Raised when a source-contract TOML file violates the acquisition contract., _contract_record(), git_short_sha(), main(), offline_fetcher() (+15 more)
 
 ### Community 33 - "Global Constraints"
 Cohesion: 0.25
 Nodes (7): Global Constraints, Task 1: Source-contract ledger and blocked-state validation, Task 2: Atomic, source-independent acquisition core, Task 3: Live source bundle, checksums, and acquisition report, Task 4: Event, contour, and water-level normalization, Task 5: Live data-quality build and requested-phase closure, Tōhoku Data Coverage and Implementation Plan
 
 ### Community 34 - "T-002A — Tōhoku Source-Contract Ledger"
-Cohesion: 0.29
-Nodes (6): Approved contracts — 12 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 3 assets, Contract limits and next steps, Disposition, T-002A — Tōhoku Source-Contract Ledger
+Cohesion: 0.25
+Nodes (7): Approved contracts — 12 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 3 assets, Contract limits and next steps, Disposition, T-002A — Tōhoku Source-Contract Ledger, T-002B preliminary live evidence
 
-### Community 37 - "Handover"
-Cohesion: 0.18
-Nodes (11): Completed, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow, Repository state, Risks and blockers (+3 more)
+### Community 37 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
+
+### Community 38 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
 
 ## Knowledge Gaps
-- **190 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+185 more)
+- **196 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+191 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Handover` connect `Handover` to `Data Card — Feasibility State`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `PacificVis 2027 and tsunami-event data feasibility` connect `PacificVis 2027 and tsunami-event data feasibility` to `Data Card — Feasibility State`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `load_contracts()` connect `test_acquisition.py` to `acquire_tohoku.py`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Are the 2 inferred relationships involving `SourceContract` (e.g. with `_contract_record()` and `write_run_evidence()`) actually correct?**
+  _`SourceContract` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _190 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _196 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `app/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
-- **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected._
+- **Should `test_acquisition.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.12053872053872054 - nodes in this community are weakly interconnected._

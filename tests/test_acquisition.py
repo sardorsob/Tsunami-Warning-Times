@@ -1,5 +1,7 @@
 import hashlib
+import json
 from dataclasses import replace
+from datetime import UTC, datetime
 from email.message import Message
 from http.client import IncompleteRead
 from pathlib import Path, PurePosixPath
@@ -14,6 +16,7 @@ from pipeline.acquisition import (
     acquire_source,
     load_contracts,
 )
+from scripts.acquire_tohoku import working_tree_status, write_run_evidence
 
 
 def fixture_fetcher(payload: bytes):
@@ -58,6 +61,141 @@ def test_acquire_source_writes_verified_bytes_atomically(tmp_path: Path) -> None
     assert (tmp_path / contract.local_path).with_name("sample.json.sha256").read_text() == (
         f"{result.sha256}\n"
     )
+    assert result.content_type == "application/json"
+    assert result.headers == {}
+
+
+def test_write_run_evidence_writes_an_immutable_portable_bundle(tmp_path: Path) -> None:
+    config = tmp_path / "tohoku.toml"
+    config.write_text("[assets]\n", encoding="utf-8")
+    approved = sample_contract()
+    blocked = replace(
+        approved,
+        source_id="blocked",
+        availability="blocked",
+        local_path=PurePosixPath("not-downloaded"),
+        url="https://example.test/blocked",
+        reason="source access is blocked",
+    )
+    results = (
+        acquire_source(
+            approved,
+            tmp_path,
+            fetcher=fixture_fetcher(b'{"ok":true}'),
+        ),
+        acquire_source(blocked, tmp_path),
+    )
+
+    run_path = write_run_evidence(
+        root=tmp_path,
+        run_tag="Initial Rerun!",
+        config_path=config,
+        contracts=(approved, blocked),
+        results=results,
+        command="uv run python scripts/acquire_tohoku.py --run-tag Initial Rerun!",
+        mode="live",
+        now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+        git_sha=lambda: "be7f766",
+        working_tree=lambda: "dirty",
+    )
+
+    assert run_path.name == "2011-03-11__0546__initial-rerun__be7f766"
+    assert {path.name for path in run_path.iterdir()} == {
+        "config.json",
+        "inputs.json",
+        "meta.json",
+        "metrics.json",
+        "notes.md",
+        "outputs.json",
+    }
+    assert json.loads((run_path / "meta.json").read_text(encoding="utf-8")) == {
+        "command": "uv run python scripts/acquire_tohoku.py --run-tag Initial Rerun!",
+        "evidence_disposition": "implementation-under-review",
+        "git_sha": "be7f766",
+        "mode": "live",
+        "run_id": "2011-03-11__0546__initial-rerun__be7f766",
+        "timestamp_utc": "2011-03-11T05:46:00Z",
+        "working_tree": "dirty",
+    }
+    inputs = json.loads((run_path / "inputs.json").read_text(encoding="utf-8"))
+    assert [(item["source_id"], item["availability"], item["url"]) for item in inputs] == [
+        ("blocked", "blocked", "https://example.test/blocked"),
+        ("sample", "approved", "https://example.test/sample.json"),
+    ]
+    outputs = json.loads((run_path / "outputs.json").read_text(encoding="utf-8"))
+    assert outputs[0]["source_id"] == "blocked"
+    assert outputs[1]["content_type"] == "application/json"
+    assert json.loads((run_path / "metrics.json").read_text(encoding="utf-8")) == {
+        "bytes_by_status": {"blocked": 0, "downloaded": 11},
+        "status_counts": {"blocked": 1, "downloaded": 1},
+        "total_bytes": 11,
+        "total_contracts": 2,
+    }
+    assert "## Decision" in (run_path / "notes.md").read_text(encoding="utf-8")
+
+    with pytest.raises(FileExistsError):
+        write_run_evidence(
+            root=tmp_path,
+            run_tag="Initial Rerun!",
+            config_path=config,
+            contracts=(approved, blocked),
+            results=results,
+            command="test",
+            mode="live",
+            now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+            git_sha=lambda: "be7f766",
+            working_tree=lambda: "dirty",
+        )
+
+
+def test_working_tree_status_ignores_only_generated_run_bundles(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    observed: list[str] = []
+
+    def fake_check_output(command: list[str], **kwargs: object) -> str:
+        del kwargs
+        observed.extend(command)
+        return ""
+
+    monkeypatch.setattr("scripts.acquire_tohoku.subprocess.check_output", fake_check_output)
+
+    assert working_tree_status(tmp_path) == "clean"
+    assert observed == [
+        "git",
+        "status",
+        "--porcelain",
+        "--untracked-files=all",
+        "--",
+        ".",
+        ":(exclude)artifacts/logs/runs/**",
+    ]
+
+
+def test_write_run_evidence_redacts_sensitive_response_headers(tmp_path: Path) -> None:
+    config = tmp_path / "tohoku.toml"
+    config.write_text("[assets]\n", encoding="utf-8")
+    contract = sample_contract()
+    result = replace(
+        acquire_source(contract, tmp_path, fetcher=fixture_fetcher(b'{"ok":true}')),
+        headers={"Set-Cookie": "secret=value", "ETag": "public-version"},
+    )
+
+    run_path = write_run_evidence(
+        root=tmp_path,
+        run_tag="header-redaction",
+        config_path=config,
+        contracts=(contract,),
+        results=(result,),
+        command="test",
+        mode="fixture",
+        now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+        git_sha=lambda: "be7f766",
+        working_tree=lambda: "clean",
+    )
+
+    output = json.loads((run_path / "outputs.json").read_text(encoding="utf-8"))[0]
+    assert output["headers"] == {"ETag": "public-version", "Set-Cookie": "[redacted]"}
 
 
 def test_acquire_source_reuses_a_verified_cache_without_fetching(tmp_path: Path) -> None:

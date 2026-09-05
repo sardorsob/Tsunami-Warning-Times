@@ -1,0 +1,12 @@
+{
+  "bytes_by_status": {
+    "blocked": 0,
+    "downloaded": 12386361
+  },
+  "status_counts": {
+    "blocked": 3,
+    "downloaded": 12
+  },
+  "total_bytes": 12386361,
+  "total_contracts": 15
+}

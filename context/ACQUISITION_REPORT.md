@@ -3,11 +3,51 @@
 ## Disposition
 
 Source discovery recorded 15 exact requested assets on 2026-09-05: 12 are
-approved only for the separately gated T-002B acquisition task and 3 remain
-blocked. No scientific data was downloaded, no checksum is available, and no
-asset is analysis-ready or reportable. The machine-readable ledger is
-`artifacts/provenance/source-manifest.csv`; the exact contracts are in
+approved for T-002B acquisition and 3 remain blocked. A preliminary live run
+downloaded all 12 approved assets (12,386,361 bytes) and recorded their
+checksums and source response headers in
+`artifacts/logs/runs/2026-09-05__1840__initial__be7f766/`. The rerun recorded
+all 12 as checksum-identical cache hits. These are inspection and manifest
+drafting evidence only: both runs used uncommitted implementation under base
+`be7f766`; they are not accepted production evidence. A clean-commit rerun is
+required before T-002B can be accepted. The machine-readable ledger is
+`artifacts/provenance/source-manifest.csv`; exact contracts are in
 `config/tohoku-data-proof.toml`.
+
+## T-002B preliminary live evidence
+
+Command: `uv run python scripts/acquire_tohoku.py --config
+config/tohoku-data-proof.toml --root . --run-tag initial`
+
+- Initial bundle: `2026-09-05__1840__initial__be7f766`; 12 `downloaded`, 3
+  `blocked`, 12,386,361 total bytes, config SHA-256
+  `4d253132699d07417206827e65528cf342cff558d3b254f9be99c740ad33b979`.
+- Cache proof command: `uv run python scripts/acquire_tohoku.py --config
+  config/tohoku-data-proof.toml --root . --run-tag initial-rerun`
+- Cache bundle: `2026-09-05__1840__initial-rerun__be7f766`; 12 `cached`, 3
+  `blocked`, with every approved asset's byte count and SHA-256 identical to
+  the initial bundle. Blocked contracts were not fetched.
+
+The portable bundle includes `meta.json`, `config.json`, `inputs.json`,
+`outputs.json`, `metrics.json`, and `notes.md`. The writer records the Git
+working-tree state and marks dirty runs `implementation-under-review`; that
+known disposition was backfilled into these two preliminary bundles after the
+audit correction. Do not use either as accepted release evidence.
+
+Manual source identity checks on the acquired raw cache found:
+
+- USGS `official20110311054624120_30`: origin
+  `2011-03-11T05:46:24.120Z`, latitude `38.297`, longitude `142.373`, depth
+  `29 km`, magnitude `9.1 mww`.
+- NCEI TTT GeoJSON begins with `OBJECTID`/`HOURS` pairs `4/1`, `8/2`, and
+  `12/3`; each is a `MultiLineString` named `2011 Japan`.
+- DART first records identify the selected source files and their row counts:
+  21418 (5,025), 21413 (4,153), 46411 (109,441), and 32401 (3,193). The raw
+  records retain the source's unnamed eleventh token.
+- CO-OPS JSON metadata identifies Adak Island 9461380 (`51.8606`, `-176.6376`),
+  Hilo 1617760 (`19.7303`, `-155.0556`), Crescent City 9419750 (`41.7456`,
+  `-124.1844`), and Pago Pago 1770000 (`-14.28`, `-170.69`), with 4,320,
+  4,320, 4,320, and 3,937 rows respectively.
 
 ## Authoritative evidence and observed smoke checks
 

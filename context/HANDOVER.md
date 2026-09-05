@@ -124,6 +124,24 @@ Observed on 2026-09-05 for the source-contract ledger:
 - `.serena/` predated this setup and remains intact locally, but the entire
   directory is ignored and absent from the current tracked tree.
 
+## T-002B preliminary live evidence
+
+The approved bounded acquisition was exercised on 2026-09-05: all 12 approved
+contracts downloaded to the ignored raw cache (12,386,361 bytes) and all three
+blocked contracts remained unfetched. The immediate rerun returned the 12
+approved assets as checksum-identical cache hits. Source inspection confirmed
+the USGS event identity, the first three TTT contours, all four DART files, and
+all four available CO-OPS metadata blocks. The manifest now records the raw
+paths and SHA-256 values.
+
+This is not accepted production evidence: bundles
+`2026-09-05__1840__initial__be7f766` and
+`2026-09-05__1840__initial-rerun__be7f766` were created from a dirty worktree
+before the bundle metadata gained its explicit dirty/under-review disposition.
+The implementation review is approved, but the parent coordinator must commit
+the code and rerun `accepted` plus `accepted-rerun` from that clean commit before
+accepting T-002B. Raw data and SHA sidecars remain ignored and untracked.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
