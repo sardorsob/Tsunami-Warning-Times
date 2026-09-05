@@ -2210,7 +2210,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L175"
+      "source_location": "L179"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2234,7 +2234,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L195"
+      "source_location": "L196"
     },
     {
       "id": "context_handover_handover",
@@ -2270,7 +2270,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L189"
+      "source_location": "L190"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -2282,7 +2282,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L162"
+      "source_location": "L166"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -2309,14 +2309,14 @@
       "source_location": "L129"
     },
     {
-      "id": "context_handover_t_002c_candidate_evidence",
-      "label": "T-002C candidate evidence",
+      "id": "context_handover_t_002c_accepted_evidence",
+      "label": "T-002C accepted evidence",
       "_origin": "ast",
       "community": 10,
       "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "t-002c candidate evidence",
+      "norm_label": "t-002c accepted evidence",
       "source_file": "context/HANDOVER.md",
       "source_location": "L145"
     },
@@ -3254,7 +3254,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d \u2014 run reproducible eda",
       "source_file": "context/TASKS.md",
-      "source_location": "L223"
+      "source_location": "L226"
     },
     {
       "id": "context_tasks_t_002e_review_and_close_the_data_proof",
@@ -3266,7 +3266,7 @@
       "node_kind": "heading",
       "norm_label": "t-002e \u2014 review and close the data proof",
       "source_file": "context/TASKS.md",
-      "source_location": "L255"
+      "source_location": "L258"
     },
     {
       "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
@@ -3290,7 +3290,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L281"
+      "source_location": "L284"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -3302,7 +3302,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L304"
+      "source_location": "L307"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -3314,7 +3314,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L328"
+      "source_location": "L331"
     },
     {
       "id": "context_tasks_tasks",
@@ -4217,7 +4217,7 @@
       "node_kind": "heading",
       "norm_label": "required per-source fields",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L8"
+      "source_location": "L26"
     },
     {
       "id": "context_spatial_contract_spatial_contract",
@@ -4241,7 +4241,7 @@
       "node_kind": "heading",
       "norm_label": "working output rules",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L19"
+      "source_location": "L37"
     },
     {
       "id": "context_assumptions",
@@ -12413,7 +12413,7 @@
     },
     {
       "source": "context_handover_handover",
-      "target": "context_handover_t_002c_candidate_evidence",
+      "target": "context_handover_t_002c_accepted_evidence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12430,7 +12430,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L162",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -12441,7 +12441,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L175",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -12452,7 +12452,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L189",
+      "source_location": "L190",
       "weight": 1.0
     },
     {
@@ -12463,7 +12463,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -12776,13 +12776,13 @@
     },
     {
       "source": "context_spatial_contract_spatial_contract",
-      "target": "context_spatial_contract_working_output_rules",
+      "target": "context_spatial_contract_required_per_source_fields",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/spatial-contract.md",
-      "source_location": "L19",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -12798,13 +12798,13 @@
     },
     {
       "source": "context_spatial_contract_spatial_contract",
-      "target": "context_spatial_contract_required_per_source_fields",
+      "target": "context_spatial_contract_working_output_rules",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/spatial-contract.md",
-      "source_location": "L8",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -12859,7 +12859,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L223",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -12870,7 +12870,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L255",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -12881,7 +12881,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L281",
+      "source_location": "L284",
       "weight": 1.0
     },
     {
@@ -12903,7 +12903,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L304",
+      "source_location": "L307",
       "weight": 1.0
     },
     {
@@ -12914,7 +12914,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L328",
+      "source_location": "L331",
       "weight": 1.0
     },
     {
@@ -16287,5 +16287,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5f920f222458fc09a196655623df31db7ea8eb96"
+  "built_at_commit": "5689f18a62c30aabb49482665d8e8e505cdc5e66"
 }

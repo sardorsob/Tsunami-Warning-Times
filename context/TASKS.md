@@ -217,8 +217,11 @@
   review resolved metadata, accounting, empty-source, containment, and unit
   contract findings; adaptive profiling then found 90 undocumented DART `9999`
   measurement rows, which were quarantined before the final double build;
-  submitted for independent scientific-data review
-- Status: in-review
+  independent review found and resolved one incorrect inventory-hash reference
+  and one stale spatial-contract statement, then APPROVED all identity, checksum,
+  accounting, schema, time/unit/datum, geometry, missingness, rejection,
+  determinism, and manual-trace gates
+- Status: done
 
 ## T-002D — Run reproducible EDA
 

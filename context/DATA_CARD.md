@@ -2,11 +2,11 @@
 
 ## Status
 
-T-002A source contracts and T-002B acquisition are accepted. The T-002C
-normalization candidate is in independent review: 12 of 15 contracted sources
-were acquired by exact contract, while the continuous NCTR field, Saipan, and
-Valparaíso remain blocked and visible. Tōhoku remains a data-proof candidate,
-not a production dataset or operational warning product.
+T-002A source contracts, T-002B acquisition, and T-002C normalization are
+accepted: 12 of 15 contracted sources were acquired by exact contract, while the
+continuous NCTR field, Saipan, and Valparaíso remain blocked and visible.
+Tōhoku remains a data-proof candidate, not a production dataset or operational
+warning product.
 
 Raw assets are immutable, checksummed, ignored, and untracked. Reproducible
 processed tables are also ignored; their schemas, accounting, output hashes, and

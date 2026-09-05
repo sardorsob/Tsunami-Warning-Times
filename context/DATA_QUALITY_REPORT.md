@@ -2,10 +2,10 @@
 
 ## Disposition
 
-T-002C is ready for independent scientific-data review. The candidate is
-analysis-ready for the source classes actually acquired, subject to the explicit
-limitations below; it is not yet an accepted EDA input and does not supply a
-continuous NCTR model field.
+T-002C is accepted after independent scientific-data review. The normalized
+bundle is analysis-ready for the source classes actually acquired, subject to
+the explicit limitations below; it does not supply a continuous NCTR model
+field.
 
 - Run ID: `2026-09-05__1958__quality__5f920f2`
 - Build Git SHA: `5f920f2`
@@ -183,9 +183,12 @@ redistribution terms still require per-asset review; TTT origin-reference
 semantics are not stated in the geometry asset; and this retrospective dataset
 is not an operational warning product.
 
-If the independent checker accepts T-002C, T-002D should begin with its fixed
-core profile and then branch only from recorded findings. Immediate evidence-led
-questions are the DART cadence transitions and long intervals, Pago Pago's
-missing values and truncated tail, the 24 near-180-degree contour precision
-flags, and whether station-to-contour joins are sufficiently complete. Arrival
-rules and station inclusion remain frozen before residual sensitivity is viewed.
+The independent checker accepted source identity, checksums, accounting, table
+contracts, time/unit/datum handling, deterministic output, rejections, and all
+manual traces after corrections in `d0ef35b` and `5689f18`. T-002D may begin
+with its fixed core profile and then branch only from recorded findings.
+Immediate evidence-led questions are the DART cadence transitions and long
+intervals, Pago Pago's missing values and truncated tail, the 24 near-180-degree
+contour precision flags, and whether station-to-contour joins are sufficiently
+complete. Arrival rules and station inclusion remain frozen before residual
+sensitivity is viewed.

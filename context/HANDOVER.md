@@ -9,8 +9,8 @@ data or overbuilding the application.
 The project owner approved the broad Tōhoku acquisition, data-quality, and EDA
 design on 2026-09-05 and authorized implementation of T-002A through T-002C on
 `main`. T-002A source-contract discovery and T-002B acquisition are accepted;
-T-002C normalization/data quality has a deterministic candidate in independent
-review, and EDA remains gated on accepted analysis-ready data.
+T-002C normalization/data quality is accepted, and T-002D EDA may now consume
+only the accepted analysis-ready data.
 
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
@@ -142,7 +142,7 @@ reviewer reconciled both bundles, the manifest, all 12 raw assets, and all 12
 checksum sidecars; confirmed that raw data remains ignored and untracked; and
 found no proxy substitution. T-002B is done and T-002C may proceed.
 
-## T-002C candidate evidence
+## T-002C accepted evidence
 
 At Git SHA `5f920f2`, two offline checksum-gated builds with tags
 `2026-09-05-1958-quality-a-5f920f2` and
@@ -157,7 +157,19 @@ geometry types. A later adaptive profile found 90 exact `9999` values in DART
 measurement fields. Because publisher semantics were not verified, the pipeline
 now quarantines those rows as `unexpected_sentinel` instead of guessing a null
 meaning; tests and the final double build confirm no retained sentinel rows.
-T-002C awaits its final independent scientific-data disposition.
+The independent checker reconciled all 15 contracts, raw checksums and sidecars,
+both builds, all accounting and table contracts, time/unit/datum semantics,
+geometry, missingness, cadence, sentinel-line identity, and the required manual
+traces. It approved T-002C after the inventory-hash correction in `d0ef35b` and
+spatial-contract correction in `5689f18`.
+
+Final acceptance verification on 2026-09-05 passed Ruff; Pyright with 0 errors,
+warnings, or information messages; 77 Python tests; the 15-record provenance
+validator; and the complete frontend typecheck, Vitest, and production build.
+The final build-directory comparison returned no differences. Graphify rebuilt
+the current code graph with 513 nodes, 893 edges, and 43 communities. Raw and
+processed data were confirmed ignored and untracked, Serena remained ignored,
+and `context/EDA_REPORT.md` remained exactly zero bytes.
 
 ## Risks and blockers
 
@@ -176,11 +188,8 @@ T-002C awaits its final independent scientific-data disposition.
 
 Execute the remaining approved implementation chain in order:
 
-1. Complete the independent T-002C review of identity, accounting, units/time,
-   datum handling, deterministic outputs, manual traces, and rejections.
-2. Resolve any material finding and rerun the full repository gate before
-   accepting T-002C.
-3. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+1. Start T-002D only from the accepted T-002C inventory and table checksums.
+2. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -190,9 +199,9 @@ Do not begin the full wavefront or story build during the data proof.
 
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
 `main`. Raw and processed data remain ignored and untracked; no deployment or
-publication occurred. T-002C is in review, and T-002D remains pending.
+publication occurred. T-002C is accepted, and T-002D remains pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, and T-002B are accepted. T-002C is in review, and
-T-002D is not yet active.
+T-000, T-001, T-002P, T-002A, T-002B, and T-002C are accepted. T-002D is not
+yet active.

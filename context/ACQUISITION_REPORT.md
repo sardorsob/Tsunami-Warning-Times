@@ -94,5 +94,5 @@ source-specific access/contract blocker for blocked assets.
 
 T-002B acquired only the 12 approved exact assets, fingerprinted each one, and
 recorded actual byte counts, checksums, headers, and response counts. It did not
-download the blocked assets or replace them with proxies. T-002C is active;
-T-002D remains pending.
+download the blocked assets or replace them with proxies. T-002C normalization
+is accepted; T-002D remains pending.
