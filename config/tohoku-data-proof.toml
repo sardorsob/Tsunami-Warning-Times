@@ -288,3 +288,125 @@ vertical_datum = "unknown"
 coordinate_order = "latitude, longitude in IOC station metadata"
 temporal_semantics = "unknown"
 station_metadata = "Valparaiso, IOC code valp; approximately -33.02767128, -71.62787275; one-minute pressure/radar sensors; exact PTWC event files https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.070, .071, and .072 return HTTP 403; datum/schema unverified; blocked rather than substituting monthly or hourly products"
+
+# Parseable station identities for normalization. Availability and blocker
+# reasons remain owned by the corresponding source asset above.
+[stations.dart_21413]
+source_id = "ncei-dart-21413-20110301to20110320"
+station_id = "21413"
+station_type = "dart"
+name = "DART 21413"
+latitude = 30.528
+longitude = 152.123
+units = "m water column"
+vertical_reference = "unknown"
+selection_role = "near field"
+time_basis = "UTC"
+
+[stations.dart_21418]
+source_id = "ncei-dart-21418-20110301to20110320"
+station_id = "21418"
+station_type = "dart"
+name = "DART 21418"
+latitude = 38.718
+longitude = 148.698
+units = "m water column"
+vertical_reference = "unknown"
+selection_role = "near field"
+time_basis = "UTC"
+
+[stations.dart_32401]
+source_id = "ncei-dart-32401-20110301to20110320"
+station_id = "32401"
+station_type = "dart"
+name = "DART 32401"
+latitude = -19.297
+longitude = -74.746
+units = "m water column"
+vertical_reference = "unknown"
+selection_role = "far field, southeast Pacific"
+time_basis = "UTC"
+
+[stations.dart_46411]
+source_id = "ncei-dart-46411-20110301to20110320"
+station_id = "46411"
+station_type = "dart"
+name = "DART 46411"
+latitude = 39.328
+longitude = -127.013
+units = "m water column"
+vertical_reference = "unknown"
+selection_role = "far field, northeast Pacific"
+time_basis = "UTC"
+
+[stations.coops_hilo]
+source_id = "coops-hilo-1617760-20110311to20110313"
+station_id = "1617760"
+station_type = "coastal"
+name = "Hilo"
+latitude = 19.7303
+longitude = -155.0556
+units = "m"
+vertical_reference = "STND"
+selection_role = "coastal candidate"
+time_basis = "GMT"
+
+[stations.coops_saipan]
+source_id = "coops-saipan-1633227-20110311to20110313"
+station_id = "1633227"
+station_type = "coastal"
+name = "Tanapag Harbor/Saipan"
+latitude = 15.2267
+longitude = 145.7370
+units = "unknown"
+vertical_reference = "unknown"
+selection_role = "coastal candidate"
+time_basis = "GMT"
+
+[stations.coops_pago_pago]
+source_id = "coops-pago-pago-1770000-20110311to20110313"
+station_id = "1770000"
+station_type = "coastal"
+name = "Pago Pago"
+latitude = -14.28
+longitude = -170.69
+units = "m"
+vertical_reference = "STND"
+selection_role = "coastal candidate"
+time_basis = "GMT"
+
+[stations.coops_crescent_city]
+source_id = "coops-crescent-city-9419750-20110311to20110313"
+station_id = "9419750"
+station_type = "coastal"
+name = "Crescent City"
+latitude = 41.7456
+longitude = -124.1844
+units = "m"
+vertical_reference = "STND"
+selection_role = "coastal candidate"
+time_basis = "GMT"
+
+[stations.coops_adak]
+source_id = "coops-adak-9461380-20110311to20110313"
+station_id = "9461380"
+station_type = "coastal"
+name = "Adak"
+latitude = 51.8606
+longitude = -176.6376
+units = "m"
+vertical_reference = "STND"
+selection_role = "coastal candidate"
+time_basis = "GMT"
+
+[stations.ioc_valparaiso]
+source_id = "ioc-valparaiso-valp-20110311to20110313"
+station_id = "valp"
+station_type = "coastal"
+name = "Valparaiso"
+latitude = -33.02767128
+longitude = -71.62787275
+units = "unknown"
+vertical_reference = "unknown"
+selection_role = "coastal candidate"
+time_basis = "unknown"

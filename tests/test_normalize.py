@@ -1,0 +1,523 @@
+import csv
+import hashlib
+import json
+import shutil
+import tomllib
+from pathlib import Path
+
+import pytest
+
+from pipeline.normalize import (
+    NormalizationError,
+    StationRecord,
+    build_tables,
+    normalize_coastal,
+    normalize_dart,
+    normalize_event,
+    normalize_ttt,
+)
+from scripts.build_tohoku_data import main as build_main
+
+FIXTURES = Path(__file__).parent / "fixtures/normalize"
+EVENT_ID = "official20110311054624120_30"
+
+
+def dart_station() -> StationRecord:
+    return StationRecord(
+        station_id="21418",
+        source_id="ncei-dart-21418-20110301to20110320",
+        station_type="dart",
+        name="DART 21418",
+        latitude=38.718,
+        longitude=148.698,
+        availability="approved",
+        units="m water column",
+        vertical_reference="unknown",
+        selection_role="near field",
+        reason="not applicable",
+        horizontal_datum="unknown",
+        coordinate_order="latitude, longitude",
+        time_basis="UTC",
+    )
+
+
+def coastal_station() -> StationRecord:
+    return StationRecord(
+        station_id="9461380",
+        source_id="coops-adak-9461380-20110311to20110313",
+        station_type="coastal",
+        name="Adak",
+        latitude=51.8606,
+        longitude=-176.6376,
+        availability="approved",
+        units="m",
+        vertical_reference="STND",
+        selection_role="coastal candidate",
+        reason="not applicable",
+        horizontal_datum="unknown",
+        coordinate_order="latitude, longitude",
+        time_basis="GMT",
+    )
+
+
+def test_normalize_event_accepts_the_exact_reviewed_fdsn_record() -> None:
+    event = normalize_event(FIXTURES / "usgs_event.csv", EVENT_ID)
+
+    assert event.event_id == EVENT_ID
+    assert event.origin_time_utc == "2011-03-11T05:46:24.120Z"
+    assert (event.latitude, event.longitude, event.depth_km) == (38.297, 142.373, 29.0)
+    assert (event.magnitude, event.magnitude_type) == (9.1, "mww")
+    assert event.status == "reviewed"
+
+
+@pytest.mark.parametrize(
+    ("mutation", "message"),
+    [
+        ("missing-column", "exact FDSN CSV schema"),
+        ("duplicate-row", "exactly one event row"),
+        ("wrong-id", "unexpected event ID"),
+    ],
+)
+def test_normalize_event_rejects_identity_or_schema_drift(
+    tmp_path: Path, mutation: str, message: str
+) -> None:
+    source = FIXTURES / "usgs_event.csv"
+    with source.open(newline="", encoding="utf-8") as source_file:
+        rows = list(csv.reader(source_file))
+    if mutation == "missing-column":
+        rows = [row[:-1] for row in rows]
+    elif mutation == "duplicate-row":
+        rows.append(rows[1])
+    else:
+        rows[1][11] = "wrong-event"
+    mutated = tmp_path / "event.csv"
+    with mutated.open("w", newline="", encoding="utf-8") as target:
+        csv.writer(target).writerows(rows)
+
+    with pytest.raises(NormalizationError, match=message):
+        normalize_event(mutated, EVENT_ID)
+
+
+def test_normalize_event_rejects_nonfinite_measurements(tmp_path: Path) -> None:
+    rows = list(csv.reader((FIXTURES / "usgs_event.csv").open(encoding="utf-8")))
+    rows[1][3] = "nan"
+    path = tmp_path / "nonfinite-event.csv"
+    with path.open("w", newline="", encoding="utf-8") as target:
+        csv.writer(target).writerows(rows)
+
+    with pytest.raises(NormalizationError, match="finite"):
+        normalize_event(path, EVENT_ID)
+
+
+def test_normalize_ttt_explodes_parts_and_preserves_boundary_precision() -> None:
+    contours, rejected = normalize_ttt(FIXTURES / "ttt_contours.geojson")
+
+    assert [record.contour_id for record in contours] == [
+        "ttt-4-part-0001",
+        "ttt-4-part-0002",
+        "ttt-8-part-0001",
+    ]
+    assert [record.hours for record in contours] == [0.0, 0.0, 1.0]
+    assert contours[2].coordinates[-1] == (180.0000000001, 1.0)
+    assert contours[2].longitude_boundary_precision is True
+    assert contours[2].crosses_antimeridian is False
+    assert [record.reason_code for record in rejected] == [
+        "missing_hours",
+        "empty_geometry_part",
+        "coordinate_out_of_range",
+        "negative_hours",
+    ]
+    assert [record.rejection_id for record in rejected] == [
+        "ttt-feature-12",
+        "ttt-16-part-0001",
+        "ttt-16-part-0002",
+        "ttt-feature-20",
+    ]
+
+
+def test_normalize_ttt_rejects_non_geojson_or_invalid_json(tmp_path: Path) -> None:
+    for payload in ('{"type":"Point"}', "not json"):
+        path = tmp_path / "contours.geojson"
+        path.write_text(payload, encoding="utf-8")
+
+        with pytest.raises(NormalizationError):
+            normalize_ttt(path)
+
+
+def test_normalize_ttt_rejects_duplicate_object_ids(tmp_path: Path) -> None:
+    document = json.loads((FIXTURES / "ttt_contours.geojson").read_text(encoding="utf-8"))
+    document["features"].append(document["features"][0])
+    path = tmp_path / "duplicate.geojson"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    contours, rejected = normalize_ttt(path)
+
+    contour_ids = [record.contour_id for record in contours]
+    assert len(contour_ids) == len(set(contour_ids))
+    assert rejected[-1].reason_code == "duplicate_object_id"
+
+
+def test_normalize_ttt_rejects_a_one_position_linestring(tmp_path: Path) -> None:
+    document = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "id": 1,
+                "properties": {"OBJECTID": 1, "HOURS": 1},
+                "geometry": {"type": "LineString", "coordinates": [[0, 0]]},
+            }
+        ],
+    }
+    path = tmp_path / "one-position.geojson"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    contours, rejected = normalize_ttt(path)
+
+    assert contours == []
+    assert rejected[0].reason_code == "empty_geometry_part"
+
+
+def test_normalize_ttt_rejects_an_empty_multilinestring(tmp_path: Path) -> None:
+    document: dict[str, object] = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {"OBJECTID": 1, "HOURS": 1},
+                "geometry": {"type": "MultiLineString", "coordinates": []},
+            }
+        ],
+    }
+    path = tmp_path / "empty-multiline.geojson"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    contours, rejected = normalize_ttt(path)
+
+    assert contours == []
+    assert [row.reason_code for row in rejected] == ["empty_geometry"]
+
+
+def test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows() -> None:
+    observations, rejected = normalize_dart(FIXTURES / "dart_station.txt", dart_station())
+
+    assert [row.observed_at_utc for row in observations] == [
+        "2011-03-01T00:00:00Z",
+        "2011-03-01T00:15:00Z",
+    ]
+    assert observations[0].source_time == "60.000000"
+    assert (
+        observations[0].raw_value,
+        observations[0].fitted_value,
+        observations[0].residual_value,
+        observations[0].source_extra,
+    ) == (5662.89485, 5662.88318, 0.01167, "0.000")
+    assert observations[0].units == "m water column"
+    assert observations[0].vertical_reference == "unknown"
+    assert [row.reason_code for row in rejected] == [
+        "duplicate_timestamp",
+        "invalid_column_count",
+        "julian_day_mismatch",
+    ]
+    assert [row.rejection_id for row in rejected] == [
+        "dart-21418-line-000003",
+        "dart-21418-line-000004",
+        "dart-21418-line-000005",
+    ]
+
+
+def test_normalize_dart_rejects_a_non_dart_station() -> None:
+    station = dart_station()
+    coastal = StationRecord(
+        station_id=station.station_id,
+        source_id=station.source_id,
+        station_type="coastal",
+        name=station.name,
+        latitude=station.latitude,
+        longitude=station.longitude,
+        availability=station.availability,
+        units=station.units,
+        vertical_reference=station.vertical_reference,
+        selection_role=station.selection_role,
+        reason=station.reason,
+        horizontal_datum=station.horizontal_datum,
+        coordinate_order=station.coordinate_order,
+        time_basis="GMT",
+    )
+
+    with pytest.raises(NormalizationError, match="DART station"):
+        normalize_dart(FIXTURES / "dart_station.txt", coastal)
+
+
+def test_observation_normalizers_require_the_verified_source_time_basis() -> None:
+    from dataclasses import replace
+
+    with pytest.raises(NormalizationError, match="UTC"):
+        normalize_dart(
+            FIXTURES / "dart_station.txt", replace(dart_station(), time_basis="unknown")
+        )
+    with pytest.raises(NormalizationError, match="GMT"):
+        normalize_coastal(
+            FIXTURES / "coops_station.json",
+            replace(coastal_station(), time_basis="unknown"),
+        )
+
+
+def test_normalize_coastal_keeps_missing_and_zero_as_distinct_samples() -> None:
+    observations, rejected = normalize_coastal(
+        FIXTURES / "coops_station.json", coastal_station()
+    )
+
+    assert [row.observed_at_utc for row in observations] == [
+        "2011-03-11T00:00:00Z",
+        "2011-03-11T00:01:00Z",
+        "2011-03-11T00:02:00Z",
+    ]
+    assert [row.raw_value for row in observations] == [1.113, None, 0.0]
+    assert all(row.fitted_value is None and row.residual_value is None for row in observations)
+    assert observations[0].source_time == "2011-03-11 00:00"
+    assert (observations[0].units, observations[0].vertical_reference) == ("m", "STND")
+    assert [row.reason_code for row in rejected] == [
+        "duplicate_timestamp",
+        "malformed_timestamp",
+    ]
+
+
+@pytest.mark.parametrize(
+    ("payload", "reason"),
+    [
+        ({"error": {"message": "No data was found."}}, "api_error_asset"),
+        (
+            {
+                "metadata": {
+                    "id": "wrong",
+                    "name": "Adak Island",
+                    "lat": "51.8606",
+                    "lon": "-176.6376",
+                },
+                "data": [],
+            },
+            "station_metadata_mismatch",
+        ),
+    ],
+)
+def test_normalize_coastal_quarantines_api_errors_or_wrong_station_metadata(
+    tmp_path: Path, payload: object, reason: str
+) -> None:
+    import json
+
+    path = tmp_path / "coops.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+
+    observations, rejected = normalize_coastal(path, coastal_station())
+
+    assert observations == []
+    assert [row.reason_code for row in rejected] == [reason]
+    assert rejected[0].rejection_id == "coastal-9461380-asset"
+    assert rejected[0].record_type == "source_asset"
+
+
+def test_normalize_coastal_rejects_a_structured_value_without_crashing(
+    tmp_path: Path,
+) -> None:
+    payload = {
+        "metadata": {
+            "id": "9461380",
+            "name": "Adak Island",
+            "lat": "51.8606",
+            "lon": "-176.6376",
+        },
+        "data": [{"t": "2011-03-11 00:00", "v": {"unexpected": "object"}}],
+    }
+    path = tmp_path / "structured-value.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+
+    observations, rejected = normalize_coastal(path, coastal_station())
+
+    assert observations == []
+    assert rejected[0].reason_code == "malformed_value"
+
+
+def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
+    config = root / "config.toml"
+    source_config = Path(__file__).parents[1] / "config/tohoku-data-proof.toml"
+    shutil.copyfile(source_config, config)
+    document = tomllib.loads(config.read_text(encoding="utf-8"))
+    stations = {
+        values["source_id"]: values for values in document["stations"].values()
+    }
+    inventory: list[dict[str, object]] = []
+    for asset in document["assets"].values():
+        source_id = asset["source_id"]
+        if asset["availability"] == "blocked":
+            inventory.append(
+                {
+                    "source_id": source_id,
+                    "status": "blocked",
+                    "local_path": "not-downloaded",
+                    "bytes": 0,
+                    "sha256": "not-downloaded",
+                    "reason": asset["reason"],
+                }
+            )
+            continue
+        if asset["source_class"] == "event metadata":
+            payload = (FIXTURES / "usgs_event.csv").read_bytes()
+        elif asset["source_class"] == "modeled travel-time contours":
+            payload = (FIXTURES / "ttt_contours.geojson").read_bytes()
+        elif asset["source_class"] == "DART observation time series":
+            payload = (FIXTURES / "dart_station.txt").read_bytes()
+        elif asset["source_class"] == "coastal water-level observation":
+            payload_document = json.loads(
+                (FIXTURES / "coops_station.json").read_text(encoding="utf-8")
+            )
+            station = stations[source_id]
+            payload_document["metadata"].update(
+                {
+                    "id": station["station_id"],
+                    "lat": str(station["latitude"]),
+                    "lon": str(station["longitude"]),
+                }
+            )
+            payload = json.dumps(payload_document, separators=(",", ":")).encode()
+        elif asset["source_class"] == "modeled travel-time contour metadata":
+            payload = b'{"name":"2011/3/11 Tohoku, Japan","wkid":4326}'
+        else:
+            payload = b"<!DOCTYPE HTML><html></html>"
+        raw_path = root / asset["local_path"]
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        raw_path.write_bytes(payload)
+        digest = hashlib.sha256(payload).hexdigest()
+        raw_path.with_name(f"{raw_path.name}.sha256").write_text(
+            f"{digest}\n", encoding="utf-8"
+        )
+        inventory.append(
+            {
+                "source_id": source_id,
+                "status": "cached",
+                "local_path": asset["local_path"],
+                "bytes": len(payload),
+                "sha256": digest,
+                "reason": "not applicable",
+            }
+        )
+    inventory_path = root / "inventory.json"
+    inventory_path.write_text(json.dumps(inventory), encoding="utf-8")
+    return config, inventory_path
+
+
+def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
+    tmp_path: Path,
+) -> None:
+    config, inventory = stage_fixture_bundle(tmp_path)
+
+    first = build_tables(config, inventory, tmp_path, run_tag="fixture-a")
+    second = build_tables(config, inventory, tmp_path, run_tag="fixture-b")
+
+    assert first.row_counts == {
+        "event": 1,
+        "observation": 20,
+        "rejected_record": 27,
+        "station": 10,
+        "ttt_contour": 3,
+    }
+    assert first.rejection_counts == {
+        "api_or_record_rejection": 24,
+        "blocked_source": 3,
+    }
+    assert set(first.output_paths) == {
+        "accounting",
+        "event",
+        "observation",
+        "rejected_record",
+        "schemas",
+        "station",
+        "ttt_contour",
+    }
+    assert first.checksums == second.checksums
+    assert all((tmp_path / path).is_file() for path in first.output_paths.values())
+
+    station_path = tmp_path / first.output_paths["station"]
+    with station_path.open(newline="", encoding="utf-8") as source:
+        station_rows = list(csv.DictReader(source))
+    assert [row["station_id"] for row in station_rows] == [
+        "1617760",
+        "1633227",
+        "1770000",
+        "21413",
+        "21418",
+        "32401",
+        "46411",
+        "9419750",
+        "9461380",
+        "valp",
+    ]
+    blocked_station_states = {
+        row["availability"]
+        for row in station_rows
+        if row["station_id"] in {"1633227", "valp"}
+    }
+    assert blocked_station_states == {"blocked"}
+
+    accounting = json.loads(
+        (tmp_path / first.output_paths["accounting"]).read_text(encoding="utf-8")
+    )
+    assert accounting["source_coverage"] == {
+        "approved": 12,
+        "blocked": 3,
+        "total": 15,
+    }
+    assert accounting["nctr_model_field"] == "blocked_no_proxy"
+    assert accounting["nctr_source_coefficients"] == "coverage_only_not_continuous_field"
+
+    schemas = json.loads(
+        (tmp_path / first.output_paths["schemas"]).read_text(encoding="utf-8")
+    )
+    for table_name in ("event", "observation", "rejected_record", "station", "ttt_contour"):
+        with (tmp_path / first.output_paths[table_name]).open(
+            newline="", encoding="utf-8"
+        ) as source:
+            columns = csv.DictReader(source).fieldnames
+        assert set(schemas[table_name]["fields"]) == set(columns or [])
+
+
+def test_build_tables_rejects_a_checksum_mismatch_without_publishing(tmp_path: Path) -> None:
+    config, inventory = stage_fixture_bundle(tmp_path)
+    inventory_rows = json.loads(inventory.read_text(encoding="utf-8"))
+    inventory_rows[0]["sha256"] = "0" * 64
+    inventory.write_text(json.dumps(inventory_rows), encoding="utf-8")
+
+    with pytest.raises(NormalizationError, match="checksum"):
+        build_tables(config, inventory, tmp_path, run_tag="failed")
+
+    assert not (tmp_path / "data/processed/tohoku/failed").exists()
+
+
+def test_build_tables_exposes_an_invalid_contract_as_a_normalization_error(
+    tmp_path: Path,
+) -> None:
+    config, inventory = stage_fixture_bundle(tmp_path)
+    config.write_text("not valid TOML =", encoding="utf-8")
+
+    with pytest.raises(NormalizationError, match="source contract"):
+        build_tables(config, inventory, tmp_path, run_tag="failed-contract")
+
+
+def test_build_cli_accepts_explicit_inputs_and_never_downloads(tmp_path: Path) -> None:
+    config, inventory = stage_fixture_bundle(tmp_path)
+
+    exit_code = build_main(
+        [
+            "--config",
+            str(config),
+            "--inventory",
+            str(inventory),
+            "--root",
+            str(tmp_path),
+            "--run-tag",
+            "cli-fixture",
+        ]
+    )
+
+    assert exit_code == 0
+    assert (tmp_path / "data/processed/tohoku/cli-fixture/accounting.json").is_file()
