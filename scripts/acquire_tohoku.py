@@ -5,9 +5,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
+import shlex
+import shutil
 import subprocess
 import sys
+import tempfile
 from collections import Counter
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime
@@ -27,8 +31,19 @@ from pipeline.acquisition import (  # noqa: E402
     load_contracts,
 )
 
-SENSITIVE_RESPONSE_HEADERS = frozenset(
-    {"authorization", "cookie", "proxy-authorization", "set-cookie", "x-api-key"}
+SAFE_RESPONSE_HEADER_NAMES = frozenset(
+    {
+        "accept-ranges",
+        "cache-control",
+        "content-length",
+        "content-type",
+        "date",
+        "etag",
+        "expires",
+        "last-modified",
+        "transfer-encoding",
+        "vary",
+    }
 )
 
 
@@ -110,20 +125,39 @@ def _contract_record(contract: SourceContract) -> dict[str, str]:
     }
 
 
+def _safe_response_headers(headers: dict[str, str]) -> dict[str, str]:
+    return {
+        name: value if name.casefold() in SAFE_RESPONSE_HEADER_NAMES else "[redacted]"
+        for name, value in sorted(headers.items())
+    }
+
+
 def _result_record(result: AcquisitionResult) -> dict[str, object]:
     return {
         "bytes": result.bytes,
         "content_type": result.content_type,
-        "headers": {
-            key: "[redacted]" if key.casefold() in SENSITIVE_RESPONSE_HEADERS else value
-            for key, value in sorted(result.headers.items())
-        },
+        "headers": _safe_response_headers(result.headers),
         "local_path": result.local_path.as_posix(),
         "reason": result.reason,
         "sha256": result.sha256,
         "source_id": result.source_id,
         "status": result.status,
     }
+
+
+def _validate_evidence_ids(
+    contracts: Sequence[SourceContract], results: Sequence[AcquisitionResult]
+) -> None:
+    contract_ids = [contract.source_id for contract in contracts]
+    result_ids = [result.source_id for result in results]
+    for label, identifiers in (("contract", contract_ids), ("result", result_ids)):
+        duplicates = sorted(
+            identifier for identifier, count in Counter(identifiers).items() if count > 1
+        )
+        if duplicates:
+            raise ValueError(f"duplicate {label} source_id: {', '.join(duplicates)}")
+    if set(contract_ids) != set(result_ids):
+        raise ValueError("contract and result source ID sets differ")
 
 
 def write_run_evidence(
@@ -152,7 +186,7 @@ def write_run_evidence(
     }.get(tree_status, "working-tree-unknown")
     run_id = f"{timestamp:%Y-%m-%d__%H%M}__{safe_tag}__{revision}"
     run_path = root / "artifacts/logs/runs" / run_id
-    run_path.mkdir(parents=True, exist_ok=False)
+    _validate_evidence_ids(contracts, results)
     config_bytes = config_path.read_bytes()
     ordered_contracts = sorted(contracts, key=lambda contract: contract.source_id)
     ordered_results = sorted(results, key=lambda result: result.source_id)
@@ -161,64 +195,84 @@ def write_run_evidence(
         status: sum(result.bytes for result in ordered_results if result.status == status)
         for status in sorted(status_counts)
     }
-    _write_json(
-        run_path / "meta.json",
-        {
-            "command": command,
-            "evidence_disposition": evidence_disposition,
-            "git_sha": revision,
-            "mode": mode,
-            "run_id": run_id,
-            "timestamp_utc": timestamp.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "working_tree": tree_status,
-        },
-    )
-    _write_json(
-        run_path / "config.json",
-        {
-            "path": config_path.as_posix(),
-            "sha256": hashlib.sha256(config_bytes).hexdigest(),
-            "toml": config_bytes.decode("utf-8"),
-        },
-    )
-    _write_json(
-        run_path / "inputs.json",
-        [_contract_record(contract) for contract in ordered_contracts],
-    )
-    _write_json(
-        run_path / "outputs.json",
-        [_result_record(result) for result in ordered_results],
-    )
-    _write_json(
-        run_path / "metrics.json",
-        {
-            "bytes_by_status": bytes_by_status,
-            "status_counts": dict(sorted(status_counts.items())),
-            "total_bytes": sum(result.bytes for result in ordered_results),
-            "total_contracts": len(ordered_contracts),
-        },
-    )
-    (run_path / "notes.md").write_text(
-        "# Acquisition run notes\n\n"
-        "## Decision\n\n"
-        "Only contracts marked `approved` were eligible for retrieval; blocked contracts "
-        "were recorded without network access.\n\n"
-        "## Limitations\n\n"
-        "Source-specific limits, missingness, datum, CRS, and temporal-semantics "
-        "constraints remain in `inputs.json`; cached assets have no new response headers.\n",
-        encoding="utf-8",
-    )
+    run_path.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = run_path.parent / f".{run_id}.lock"
+    lock_fd = os.open(lock_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    temporary_path: Path | None = None
+    try:
+        if run_path.exists():
+            raise FileExistsError(run_path)
+        temporary_path = Path(tempfile.mkdtemp(prefix=f".{run_id}.", dir=run_path.parent))
+        _write_json(
+            temporary_path / "meta.json",
+            {
+                "command": command,
+                "evidence_disposition": evidence_disposition,
+                "git_sha": revision,
+                "mode": mode,
+                "run_id": run_id,
+                "timestamp_utc": timestamp.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "working_tree": tree_status,
+            },
+        )
+        _write_json(
+            temporary_path / "config.json",
+            {
+                "path": config_path.as_posix(),
+                "sha256": hashlib.sha256(config_bytes).hexdigest(),
+                "toml": config_bytes.decode("utf-8"),
+            },
+        )
+        _write_json(
+            temporary_path / "inputs.json",
+            [_contract_record(contract) for contract in ordered_contracts],
+        )
+        _write_json(
+            temporary_path / "outputs.json",
+            [_result_record(result) for result in ordered_results],
+        )
+        _write_json(
+            temporary_path / "metrics.json",
+            {
+                "bytes_by_status": bytes_by_status,
+                "status_counts": dict(sorted(status_counts.items())),
+                "total_bytes": sum(result.bytes for result in ordered_results),
+                "total_contracts": len(ordered_contracts),
+                "total_outcomes": len(ordered_results),
+            },
+        )
+        (temporary_path / "notes.md").write_text(
+            "# Acquisition run notes\n\n"
+            "## Decision\n\n"
+            "Only contracts marked `approved` were eligible for retrieval; blocked contracts "
+            "were recorded without network access.\n\n"
+            "## Limitations\n\n"
+            "Source-specific limits, missingness, datum, CRS, and temporal-semantics "
+            "constraints remain in `inputs.json`; cached assets have no new response headers.\n",
+            encoding="utf-8",
+        )
+        if run_path.exists():
+            raise FileExistsError(run_path)
+        os.rename(temporary_path, run_path)
+    except BaseException:
+        if temporary_path is not None:
+            shutil.rmtree(temporary_path, ignore_errors=True)
+        raise
+    finally:
+        os.close(lock_fd)
+        lock_path.unlink(missing_ok=True)
     return run_path
 
 
 def main(argv: list[str] | None = None) -> int:
     """Run the source-independent acquisition command."""
+    effective_argv = list(sys.argv[1:] if argv is None else argv)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=Path("config/tohoku-data-proof.toml"))
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--run-tag", default="acquisition")
     parser.add_argument("--offline", action="store_true", help="do not access the network")
-    args = parser.parse_args(argv)
+    args = parser.parse_args(effective_argv)
     if not sanitize_run_tag(args.run_tag):
         parser.error("--run-tag must include at least one letter or number")
 
@@ -229,7 +283,9 @@ def main(argv: list[str] | None = None) -> int:
 
     fetcher: Fetcher = offline_fetcher if args.offline else download_url
     results = acquire_all(contracts, args.root, fetcher=fetcher)
-    command = " ".join(["uv run python scripts/acquire_tohoku.py", *sys.argv[1:]])
+    command = shlex.join(
+        ["uv", "run", "python", "scripts/acquire_tohoku.py", *effective_argv]
+    )
     try:
         evidence_path = write_run_evidence(
             root=args.root,

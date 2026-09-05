@@ -10,12 +10,14 @@ from urllib.error import HTTPError, URLError
 import pytest
 
 from pipeline.acquisition import (
+    AcquisitionResult,
     ResponseMetadata,
     SourceContract,
     acquire_all,
     acquire_source,
     load_contracts,
 )
+from scripts import acquire_tohoku as acquire_script
 from scripts.acquire_tohoku import working_tree_status, write_run_evidence
 
 
@@ -130,6 +132,7 @@ def test_write_run_evidence_writes_an_immutable_portable_bundle(tmp_path: Path) 
         "status_counts": {"blocked": 1, "downloaded": 1},
         "total_bytes": 11,
         "total_contracts": 2,
+        "total_outcomes": 2,
     }
     assert "## Decision" in (run_path / "notes.md").read_text(encoding="utf-8")
 
@@ -172,13 +175,19 @@ def test_working_tree_status_ignores_only_generated_run_bundles(
     ]
 
 
-def test_write_run_evidence_redacts_sensitive_response_headers(tmp_path: Path) -> None:
+def test_write_run_evidence_keeps_only_safe_response_header_values(tmp_path: Path) -> None:
     config = tmp_path / "tohoku.toml"
     config.write_text("[assets]\n", encoding="utf-8")
     contract = sample_contract()
     result = replace(
         acquire_source(contract, tmp_path, fetcher=fixture_fetcher(b'{"ok":true}')),
-        headers={"Set-Cookie": "secret=value", "ETag": "public-version"},
+        headers={
+            "Authentication-Info": "secret-info",
+            "Content-Type": "application/json",
+            "ETag": "public-version",
+            "X-Auth-Token": "secret-token",
+            "X-Unrecognized": "not-implicitly-safe",
+        },
     )
 
     run_path = write_run_evidence(
@@ -195,7 +204,185 @@ def test_write_run_evidence_redacts_sensitive_response_headers(tmp_path: Path) -
     )
 
     output = json.loads((run_path / "outputs.json").read_text(encoding="utf-8"))[0]
-    assert output["headers"] == {"ETag": "public-version", "Set-Cookie": "[redacted]"}
+    assert output["headers"] == {
+        "Authentication-Info": "[redacted]",
+        "Content-Type": "application/json",
+        "ETag": "public-version",
+        "X-Auth-Token": "[redacted]",
+        "X-Unrecognized": "[redacted]",
+    }
+
+
+def test_write_run_evidence_rejects_duplicate_or_mismatched_source_ids(tmp_path: Path) -> None:
+    config = tmp_path / "tohoku.toml"
+    config.write_text("[assets]\n", encoding="utf-8")
+    contract = sample_contract()
+    result = AcquisitionResult(
+        source_id="sample",
+        status="downloaded",
+        local_path=contract.local_path,
+        bytes=11,
+        sha256="a" * 64,
+        reason="not applicable",
+    )
+    variants = (
+        ((contract, contract), (result,), "duplicate contract source_id"),
+        ((contract,), (result, result), "duplicate result source_id"),
+        ((contract,), (replace(result, source_id="other"),), "source ID sets differ"),
+    )
+
+    for contracts, results, message in variants:
+        with pytest.raises(ValueError, match=message):
+            write_run_evidence(
+                root=tmp_path,
+                run_tag="invalid",
+                config_path=config,
+                contracts=contracts,
+                results=results,
+                command="test",
+                mode="fixture",
+                now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+                git_sha=lambda: "be7f766",
+                working_tree=lambda: "clean",
+            )
+    assert not (tmp_path / "artifacts/logs/runs").exists()
+
+
+def test_write_run_evidence_cleans_failed_temp_bundle_and_allows_retry(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config = tmp_path / "missing.toml"
+    contract = sample_contract()
+    result = AcquisitionResult(
+        source_id="sample",
+        status="downloaded",
+        local_path=contract.local_path,
+        bytes=11,
+        sha256="a" * 64,
+        reason="not applicable",
+    )
+    run_path = tmp_path / "artifacts/logs/runs/2011-03-11__0546__retry__be7f766"
+
+    def write_bundle() -> Path:
+        return write_run_evidence(
+            root=tmp_path,
+            run_tag="retry",
+            config_path=config,
+            contracts=(contract,),
+            results=(result,),
+            command="test",
+            mode="fixture",
+            now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+            git_sha=lambda: "be7f766",
+            working_tree=lambda: "clean",
+        )
+
+    with pytest.raises(FileNotFoundError):
+        write_bundle()
+    assert not run_path.exists()
+
+    config.write_text("[assets]\n", encoding="utf-8")
+    original_write_json = acquire_script._write_json  # pyright: ignore[reportPrivateUsage]
+
+    def fail_outputs(path: Path, value: object) -> None:
+        if path.name == "outputs.json":
+            raise OSError("injected write failure")
+        original_write_json(path, value)
+
+    monkeypatch.setattr(acquire_script, "_write_json", fail_outputs)
+    with pytest.raises(OSError, match="injected write failure"):
+        write_bundle()
+    assert not run_path.exists()
+    runs = run_path.parent
+    assert not any(
+        path.name.startswith(".2011-03-11__0546__retry__be7f766.") for path in runs.iterdir()
+    )
+
+    monkeypatch.setattr(acquire_script, "_write_json", original_write_json)
+    assert write_bundle() == run_path
+
+
+def test_write_run_evidence_respects_an_exclusive_writer_lock(tmp_path: Path) -> None:
+    config = tmp_path / "tohoku.toml"
+    config.write_text("[assets]\n", encoding="utf-8")
+    contract = sample_contract()
+    result = AcquisitionResult(
+        source_id="sample",
+        status="downloaded",
+        local_path=contract.local_path,
+        bytes=11,
+        sha256="a" * 64,
+        reason="not applicable",
+    )
+    runs = tmp_path / "artifacts/logs/runs"
+    runs.mkdir(parents=True)
+    lock = runs / ".2011-03-11__0546__locked__be7f766.lock"
+    lock.write_text("another writer", encoding="utf-8")
+
+    with pytest.raises(FileExistsError):
+        write_run_evidence(
+            root=tmp_path,
+            run_tag="locked",
+            config_path=config,
+            contracts=(contract,),
+            results=(result,),
+            command="test",
+            mode="fixture",
+            now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
+            git_sha=lambda: "be7f766",
+            working_tree=lambda: "clean",
+        )
+
+    assert lock.read_text(encoding="utf-8") == "another writer"
+    assert not (runs / "2011-03-11__0546__locked__be7f766").exists()
+
+
+def test_main_records_the_supplied_programmatic_argv(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    contract = sample_contract()
+    result = AcquisitionResult(
+        source_id="sample",
+        status="cached",
+        local_path=contract.local_path,
+        bytes=11,
+        sha256="a" * 64,
+        reason="verified immutable cache",
+    )
+    observed: dict[str, str] = {}
+
+    def fake_load_contracts(path: Path) -> tuple[SourceContract, ...]:
+        del path
+        return (contract,)
+
+    def fake_acquire_all(*args: object, **kwargs: object) -> tuple[AcquisitionResult, ...]:
+        del args, kwargs
+        return (result,)
+
+    monkeypatch.setattr(acquire_script, "load_contracts", fake_load_contracts)
+    monkeypatch.setattr(acquire_script, "acquire_all", fake_acquire_all)
+
+    def capture_evidence(**kwargs: object) -> Path:
+        observed["command"] = str(kwargs["command"])
+        return tmp_path / "run"
+
+    monkeypatch.setattr(acquire_script, "write_run_evidence", capture_evidence)
+    config = tmp_path / "config with spaces.toml"
+    argv = [
+        "--config",
+        str(config),
+        "--root",
+        str(tmp_path),
+        "--run-tag",
+        "Tag With Space",
+        "--offline",
+    ]
+
+    assert acquire_script.main(argv) == 0
+    assert observed["command"] == (
+        "uv run python scripts/acquire_tohoku.py --config "
+        f"'{config}' --root {tmp_path} --run-tag 'Tag With Space' --offline"
+    )
 
 
 def test_acquire_source_reuses_a_verified_cache_without_fetching(tmp_path: Path) -> None:

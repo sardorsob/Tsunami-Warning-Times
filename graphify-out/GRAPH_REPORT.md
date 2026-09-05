@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-05)
 
 ## Corpus Check
-- 61 files · ~30,111 words
+- 61 files · ~30,591 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 393 nodes · 556 edges · 39 communities (29 shown, 10 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 17 edges (avg confidence: 0.93)
+- 399 nodes · 587 edges · 39 communities (29 shown, 10 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `be7f7666`
+- Built from commit: `1d2b942f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,28 +53,28 @@
 - Acquisition run notes
 
 ## God Nodes (most connected - your core abstractions)
-1. `acquire_source()` - 27 edges
-2. `compilerOptions` - 17 edges
-3. `SourceContract` - 17 edges
-4. `validate_manifest()` - 16 edges
-5. `acquire_all()` - 15 edges
-6. `write_run_evidence()` - 15 edges
-7. `fixture_fetcher()` - 15 edges
-8. `ResponseMetadata` - 14 edges
-9. `sample_contract()` - 14 edges
+1. `acquire_source()` - 28 edges
+2. `write_run_evidence()` - 19 edges
+3. `SourceContract` - 18 edges
+4. `compilerOptions` - 17 edges
+5. `sample_contract()` - 17 edges
+6. `validate_manifest()` - 16 edges
+7. `fixture_fetcher()` - 16 edges
+8. `acquire_all()` - 15 edges
+9. `ResponseMetadata` - 14 edges
 10. `Tōhoku Data Pipeline and EDA Design` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `_contract_record()` --uses--> `SourceContract`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `_validate_evidence_ids()` --uses--> `SourceContract`  [INFERRED]
+  scripts/acquire_tohoku.py → pipeline/acquisition.py
 - `write_run_evidence()` --uses--> `SourceContract`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
 - `offline_fetcher()` --uses--> `ResponseMetadata`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
-- `_result_record()` --uses--> `AcquisitionResult`  [INFERRED]
-  scripts/acquire_tohoku.py → pipeline/acquisition.py
-- `write_run_evidence()` --uses--> `AcquisitionResult`  [INFERRED]
-  scripts/acquire_tohoku.py → pipeline/acquisition.py
+- `test_acquire_source_never_fetches_a_blocked_contract()` --uses--> `ResponseMetadata`  [INFERRED]
+  tests/test_acquisition.py → pipeline/acquisition.py
 
 ## Import Cycles
 - None detected.
@@ -95,7 +95,7 @@ Nodes (32): dependencies, react, react-dom, devDependencies, @types/node, @types
 
 ### Community 3 - "test_acquisition.py"
 Cohesion: 0.12
-Nodes (52): Fetcher, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), download_url(), _fetch_with_retries() (+44 more)
+Nodes (53): Fetcher, MonkeyPatch, acquire_all(), acquire_source(), _checksum_path(), download_url(), _fetch_with_retries(), load_contracts() (+45 more)
 
 ### Community 4 - "package.json"
 Cohesion: 0.13
@@ -166,8 +166,8 @@ Cohesion: 0.50
 Nodes (3): Cross-year criteria for this project, Originality boundary, PacificVis Storytelling Benchmark, 2017–2026
 
 ### Community 32 - "acquire_tohoku.py"
-Cohesion: 0.14
-Nodes (23): datetime, ContractError, ValueError, Raised when a source-contract TOML file violates the acquisition contract., _contract_record(), git_short_sha(), main(), offline_fetcher() (+15 more)
+Cohesion: 0.13
+Nodes (28): datetime, AcquisitionResult, ContractError, ValueError, Outcome for exactly one source contract., Raised when a source-contract TOML file violates the acquisition contract., _contract_record(), git_short_sha() (+20 more)
 
 ### Community 33 - "Global Constraints"
 Cohesion: 0.25
@@ -197,13 +197,13 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `load_contracts()` connect `test_acquisition.py` to `acquire_tohoku.py`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **Are the 2 inferred relationships involving `SourceContract` (e.g. with `_contract_record()` and `write_run_evidence()`) actually correct?**
-  _`SourceContract` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `acquire_source()` connect `test_acquisition.py` to `acquire_tohoku.py`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Are the 2 inferred relationships involving `write_run_evidence()` (e.g. with `AcquisitionResult` and `SourceContract`) actually correct?**
+  _`write_run_evidence()` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `SourceContract` (e.g. with `_contract_record()` and `_validate_evidence_ids()`) actually correct?**
+  _`SourceContract` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _196 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `app/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected._
-- **Should `test_acquisition.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.12053872053872054 - nodes in this community are weakly interconnected._

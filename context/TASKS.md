@@ -154,7 +154,10 @@
   comparison, provenance validator, and raw-file accounting
 - Manual QA: open representative files and compare headers/identity with source
 - Evidence: Core implementation review is **APPROVED**. The acquisition core's
-  27 tests, focused Ruff, and focused Pyright passed. A preliminary live run
+  31 tests, focused Ruff, and focused Pyright passed. Review fixes require an
+  explicit safe response-header value allowlist, pre-write evidence-ID
+  reconciliation, sibling-temporary all-or-nothing bundle publication with
+  cleanup/retry tests, and `total_outcomes` metrics. A preliminary live run
   downloaded all 12 approved contracts (12,386,361 bytes) and left the 3 blocked
   contracts unfetched; `initial-rerun` returned all 12 as checksum-identical
   `cached` outcomes. Bundles are at `artifacts/logs/runs/2026-09-05__1840__initial__be7f766`
@@ -171,7 +174,10 @@
   for incomplete HTTP response reads; fresh final review added NUL-path contract
   rejection plus defensive per-source `ValueError` isolation; 2026-09-05 — core
   implementation review APPROVED; preliminary initial and cache runs completed,
-  but must be repeated from a clean committed implementation before acceptance.
+  but must be repeated from a clean committed implementation before acceptance;
+  review fixes added safe header-value serialization, atomic temporary-bundle
+  publication, input/output ID checks, and failure-cleanup tests without a live
+  rerun.
 - Status: in-review
 
 ## T-002C — Normalize and validate analysis tables
