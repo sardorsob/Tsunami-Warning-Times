@@ -1,6 +1,7 @@
 import hashlib
 from dataclasses import replace
 from email.message import Message
+from http.client import IncompleteRead
 from pathlib import Path, PurePosixPath
 from urllib.error import HTTPError, URLError
 
@@ -435,3 +436,23 @@ def test_load_contracts_rejects_raw_sidecar_namespace_collision(tmp_path: Path) 
 
     with pytest.raises(ValueError, match="namespace collision"):
         load_contracts(config)
+
+
+def test_acquire_all_retries_and_isolates_incomplete_http_reads(tmp_path: Path) -> None:
+    bad = sample_contract(source_id="bad", local_path=PurePosixPath("data/bad.json"))
+    good = sample_contract(source_id="good", local_path=PurePosixPath("data/good.json"))
+    bad_calls = 0
+
+    def fetcher(url: str, destination: Path, timeout_seconds: float) -> ResponseMetadata:
+        nonlocal bad_calls
+        del timeout_seconds
+        if destination.name.startswith(".bad.json"):
+            bad_calls += 1
+            raise IncompleteRead(b"partial", 10)
+        destination.write_bytes(b'{"ok":true}')
+        return ResponseMetadata(content_type="application/json", headers={})
+
+    results = acquire_all((bad, good), tmp_path, fetcher=fetcher)
+
+    assert bad_calls == 3
+    assert [result.status for result in results] == ["quarantined", "downloaded"]

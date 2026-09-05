@@ -8,6 +8,7 @@ import tempfile
 import tomllib
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
+from http.client import HTTPException
 from pathlib import Path, PurePosixPath
 from typing import cast
 from urllib.error import HTTPError, URLError
@@ -245,6 +246,9 @@ def _fetch_with_retries(
         except (TimeoutError, URLError):
             if attempt == MAX_FETCH_ATTEMPTS - 1:
                 raise
+        except HTTPException:
+            if attempt == MAX_FETCH_ATTEMPTS - 1:
+                raise
     raise AssertionError("bounded fetch loop must return or raise")
 
 
@@ -304,7 +308,7 @@ def acquire_source(
         return _result(contract, "downloaded", size, digest, "not applicable")
     except UnicodeDecodeError:
         return _result(contract, "quarantined", 0, "not-downloaded", "invalid_checksum_record")
-    except (HTTPError, OSError, URLError) as error:
+    except (HTTPError, HTTPException, OSError, URLError) as error:
         return _result(
             contract, "quarantined", 0, "not-downloaded", f"local_or_download_error: {error}"
         )
