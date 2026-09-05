@@ -111,7 +111,8 @@
   `config/tohoku-data-proof.toml` and the source manifest: 12 acquisition-approved
   and 3 explicitly blocked. The blocked status has RED/GREEN provenance-test
   evidence; no raw data was downloaded. Maker verification is recorded in the
-  T-002A report and awaits an independent scientific checker disposition.
+  T-002A report; a fresh final scientific reviewer approved the four-commit
+  range after three correction rounds with no material findings.
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-05 — authoritative endpoint and contract audit started;
   2026-09-05 — exact source-contract ledger completed with NCTR field and
@@ -125,8 +126,10 @@
   TOML field names, added explicit blocker reasons, and corrected the byte-prefix
   encoding contract;
   2026-09-05 — final interface check added the previously omitted narrative
-  content-signature field to the planned downloader dataclass
-- Status: in-review
+  content-signature field to the planned downloader dataclass;
+  2026-09-05 — fresh final reviewer approved the exact contracts, source/time
+  evidence, manifest symmetry, downstream interface, and blocked-source handling
+- Status: done
 
 ## T-002B — Acquire and fingerprint raw assets
 

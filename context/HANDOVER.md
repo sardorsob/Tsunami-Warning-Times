@@ -8,8 +8,8 @@ data or overbuilding the application.
 
 The project owner approved the broad Tōhoku acquisition, data-quality, and EDA
 design on 2026-09-05 and authorized implementation of T-002A through T-002C on
-`main`. T-002A source-contract discovery is active; EDA remains gated on accepted
-analysis-ready data.
+`main`. T-002A source-contract discovery is accepted; T-002B acquisition is the
+active gate, and EDA remains gated on accepted analysis-ready data.
 
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
@@ -99,14 +99,17 @@ Observed on 2026-09-05 for the source-contract ledger:
 - The ledger permits 12 exact assets only for T-002B acquisition and keeps the
   continuous NCTR field, Saipan, and Valparaíso visibly blocked. No raw data was
   downloaded and T-002D remains pending.
-- `graphify update .` rebuilt the tracked graph after the provenance-code change:
-  303 nodes, 306 edges, and 37 communities. It reported that semantic labels are
-  stale; no semantic relabel was run because this task did not change architecture.
+- `graphify update .` rebuilt the tracked graph after the provenance and contract
+  changes: 304 nodes, 307 edges, and 38 communities.
 - Review round 1 added the NCEI-to-NDBC UTC evidence chain for DART calendar
   fields, corrected the NCTR coefficient HTML contract, and aligned downstream
   planning to `approved` contracts and USGS FDSN CSV. The Task 1 gate reran with
   15 manifest records, 9 passing provenance tests, clean Ruff, and 0 Pyright
   errors.
+- Later review rounds aligned the downloader dataclass exactly to the TOML,
+  added explicit reasons and byte-prefix validation, and restored the narrative
+  content-signature field. A fresh final reviewer approved the complete range
+  with no material findings.
 
 ## Decisions and assumptions
 
@@ -138,8 +141,8 @@ Observed on 2026-09-05 for the source-contract ledger:
 
 Execute the approved data-coverage and implementation chain in order:
 
-1. Obtain an independent scientific-checker disposition for T-002A's exact
-   contracts before T-002B begins.
+1. Implement the tested, source-independent T-002B downloader against the
+   accepted contracts.
 2. Acquire only the 12 exact assets approved in T-002A; keep the continuous
    NCTR field, Saipan, and Valparaíso blocked and do not use proxies.
 3. Keep the four DART stations selected from documented near/far coverage before
@@ -154,12 +157,11 @@ Do not begin the full wavefront or story build during the data proof.
 
 ## Repository state
 
-The T-000 setup is on `main`. T-002A source discovery is in review pending an
-independent scientific checker; it made no raw-data download, deployment, or
-publication. T-002B and T-002C remain dependency-gated, and T-002D remains
-pending.
+The T-000 setup and accepted T-002A source contracts are on `main`. T-002A made
+no raw-data download, deployment, or publication. T-002B is active; T-002C
+remains dependency-gated, and T-002D remains pending.
 
 ## Final disposition
 
-T-000, T-001, and T-002P are accepted. T-002A is active. T-002B and T-002C are
-authorized but remain dependency-gated in that order; T-002D is not yet active.
+T-000, T-001, T-002P, and T-002A are accepted. T-002B is active; T-002C is
+authorized but dependency-gated, and T-002D is not yet active.
