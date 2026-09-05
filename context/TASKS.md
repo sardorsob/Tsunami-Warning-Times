@@ -11,15 +11,16 @@
 - Data refs: no scientific data acquired
 - Scientific refs: user handoff; Catastrophe Modeling & GeoAI profile
 - Statistical notes: no model or result is in scope
-- Scope: repository instructions, context contracts, provenance validation,
-  Python/Node tooling, browser status shell, tests, CI, and handover
+- Scope: repository instructions, context contracts and retention, provenance
+  validation, Python/Node tooling, browser status shell, Graphify, tests, CI,
+  and handover
 - Artifacts to produce: the tracked repository scaffold described in
   `context/STRUCTURE.md`
 - Acceptance criteria: setup is installable; checks pass; unresolved scientific
   choices remain explicit; no large data, secret, backend, or unsupported claim
   is introduced; prior `.serena/` content is preserved
-- Verification commands: full gate in `AGENTS.md`; clean-tree review limited to
-  newly created files
+- Verification commands: full gate in `AGENTS.md`; Graphify query/explain;
+  clean-tree review limited to newly created files
 - Manual QA: read README links and browser shell copy; inspect ignored data paths
 - Evidence: Maker environment, lint, type, test, build, audit, manifest, and
   browser checks recorded in `context/HANDOVER.md`; independent checker accepted
@@ -27,6 +28,8 @@
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-04 — Maker setup complete; checker-requested provenance
   path/state validation and Node engine alignment corrected; re-check accepted
+- Follow-up: 2026-09-04 — retained all context placeholders, removed Serena from
+  the tracked tree, and initialized a verified code-only Graphify graph
 - Status: done
 
 ## T-001 — Select a feasible event

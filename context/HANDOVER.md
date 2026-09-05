@@ -28,9 +28,11 @@ data or overbuilding the application.
 - Added project instructions, scope/decision/scientific contracts, provenance
   inventory and validation, ignored data stages, pinned Python/Node environments,
   a minimal React/Vite status shell, tests, and immutable-SHA CI actions.
-- Configured Serena for Python and TypeScript. Its shared project configuration
-  is intentionally tracked while `.serena/` remains ignored for future local
-  state, caches, and overrides.
+- Kept Serena entirely local: `.serena/` is ignored and absent from the current
+  tracked tree while its existing files remain available in this workspace.
+- Initialized Graphify's project instructions, local Codex hook, and AST graph.
+  The durable graph is tracked; machine-specific roots, manifests, and caches
+  remain ignored.
 - Kept D3, regl/WebGL, scroll libraries, geospatial runtime dependencies,
   Playwright, a backend, and modeling tools out until demonstrated need.
 
@@ -55,6 +57,9 @@ Observed during the setup session on 2026-09-04:
 - Independent re-check: accepted after confirming paired provenance download
   state, safe repository-relative paths, Node 24.18.0 alignment, and no
   fix-induced regression.
+- Graphify 0.9.50 initialization and incremental rebuild: the current graph has
+  253 nodes, 258 edges, and 32 communities; `query`, `explain`, `god-nodes`, and
+  multigraph diagnostics completed successfully.
 
 These are the final fresh gate results for setup task T-000.
 
@@ -68,8 +73,8 @@ These are the final fresh gate results for setup task T-000.
   keeps `selectedEvent` null.
 - No repository code license was inferred. The owner must choose one.
 - No raw scientific data was downloaded; no reportable scientific result exists.
-- `.serena/` predated this setup. Its shared configuration now declares the
-  project languages; `project.local.yml` remains local and ignored.
+- `.serena/` predated this setup and remains intact locally, but the entire
+  directory is ignored and absent from the current tracked tree.
 
 ## Risks and blockers
 
@@ -108,8 +113,9 @@ Do not begin the full wavefront or story build during the data proof.
 
 ## Repository state
 
-The T-000 setup is packaged as one project commit on `main`. No push,
-deployment, publication, or large download was performed.
+The T-000 setup is on `main`. This follow-up keeps Serena out of the current
+tracked tree, preserves all `context/` files even when empty, and initializes
+Graphify. No deployment, publication, or large download was performed.
 
 ## Final disposition
 

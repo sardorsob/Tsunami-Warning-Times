@@ -2,6 +2,7 @@
 .env
 .env.*
 !.env.example
+.codex/hooks.json
 .serena/
 .venv/
 .pytest_cache/
