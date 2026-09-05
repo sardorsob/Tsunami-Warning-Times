@@ -288,6 +288,22 @@ def test_normalize_dart_rejects_an_empty_approved_asset(tmp_path: Path) -> None:
         normalize_dart(path, dart_station())
 
 
+def test_normalize_dart_quarantines_the_undocumented_9999_sentinel(
+    tmp_path: Path,
+) -> None:
+    path = tmp_path / "sentinel-dart.txt"
+    path.write_text(
+        "60.000000 2011 3 1 0 0 0 9999.00000 5662.88318 9999.00000 0.000\n",
+        encoding="utf-8",
+    )
+
+    observations, rejected = normalize_dart(path, dart_station())
+
+    assert observations == []
+    assert [row.reason_code for row in rejected] == ["unexpected_sentinel"]
+    assert "publisher semantics are undocumented" in rejected[0].detail
+
+
 def test_normalize_dart_rejects_a_non_dart_station() -> None:
     coastal = replace(dart_station(), station_type="coastal", time_basis="GMT")
 

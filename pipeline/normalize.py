@@ -45,6 +45,7 @@ FDSN_EVENT_COLUMNS: tuple[str, ...] = (
 )
 EPSG4326_LONGITUDE_TOLERANCE = 1e-8
 DART_JULIAN_DAY_TOLERANCE = 1e-6
+DART_UNDOCUMENTED_SENTINEL = 9999.0
 
 
 class NormalizationError(ValueError):
@@ -463,6 +464,17 @@ def normalize_dart(
         except (ValueError, OverflowError) as error:
             rejected.append(
                 _station_rejection(station, reference, "malformed_row", str(error))
+            )
+            continue
+        if DART_UNDOCUMENTED_SENTINEL in (raw_value, fitted_value, residual_value):
+            rejected.append(
+                _station_rejection(
+                    station,
+                    reference,
+                    "unexpected_sentinel",
+                    "9999.0 appears in a named measurement field; publisher semantics are "
+                    "undocumented, so the record is quarantined",
+                )
             )
             continue
         expected_julian = observed.timetuple().tm_yday + (
