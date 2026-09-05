@@ -8,8 +8,9 @@ data or overbuilding the application.
 
 The project owner approved the broad Tōhoku acquisition, data-quality, and EDA
 design on 2026-09-05 and authorized implementation of T-002A through T-002C on
-`main`. T-002A source-contract discovery is accepted; T-002B acquisition is the
-active gate, and EDA remains gated on accepted analysis-ready data.
+`main`. T-002A source-contract discovery and T-002B acquisition are accepted;
+T-002C normalization/data quality is active, and EDA remains gated on accepted
+analysis-ready data.
 
 - Tier: Full
 - Primary process: direct Workflow Core route from the supplied handoff
@@ -124,23 +125,21 @@ Observed on 2026-09-05 for the source-contract ledger:
 - `.serena/` predated this setup and remains intact locally, but the entire
   directory is ignored and absent from the current tracked tree.
 
-## T-002B preliminary live evidence
+## T-002B accepted clean evidence
 
-The approved bounded acquisition was exercised on 2026-09-05: all 12 approved
-contracts downloaded to the ignored raw cache (12,386,361 bytes) and all three
-blocked contracts remained unfetched. The immediate rerun returned the 12
-approved assets as checksum-identical cache hits. Source inspection confirmed
+Clean committed evidence bundles `2026-09-05__1906__accepted__e602131` and
+`2026-09-05__1906__accepted-rerun__e602131` each report 12 `cached` outcomes,
+3 `blocked` outcomes, and 12,386,361 total bytes. Both record Git SHA `e602131`,
+`working_tree: clean`, and `evidence_disposition: ready-for-review`; all output
+checksums and byte counts match. Source inspection confirmed
 the USGS event identity, the first three TTT contours, all four DART files, and
 all four available CO-OPS metadata blocks. The manifest now records the raw
 paths and SHA-256 values.
 
-This is not accepted production evidence: bundles
-`2026-09-05__1840__initial__be7f766` and
-`2026-09-05__1840__initial-rerun__be7f766` were created from a dirty worktree
-before the bundle metadata gained its explicit dirty/under-review disposition.
-The implementation review is approved, but the parent coordinator must commit
-the code and rerun `accepted` plus `accepted-rerun` from that clean commit before
-accepting T-002B. Raw data and SHA sidecars remain ignored and untracked.
+The implementation review and independent data-quality review are approved. The
+reviewer reconciled both bundles, the manifest, all 12 raw assets, and all 12
+checksum sidecars; confirmed that raw data remains ignored and untracked; and
+found no proxy substitution. T-002B is done and T-002C may proceed.
 
 ## Risks and blockers
 
@@ -157,17 +156,15 @@ accepting T-002B. Raw data and SHA sidecars remain ignored and untracked.
 
 ## Continue from here
 
-Execute the approved data-coverage and implementation chain in order:
+Execute the remaining approved implementation chain in order:
 
-1. Implement the tested, source-independent T-002B downloader against the
-   accepted contracts.
-2. Acquire only the 12 exact assets approved in T-002A; keep the continuous
-   NCTR field, Saipan, and Valparaíso blocked and do not use proxies.
-3. Keep the four DART stations selected from documented near/far coverage before
-   inspecting model residuals.
-4. Complete tested, source-independent acquisition and then normalization/data
-   quality as T-002B and T-002C. Commit each accepted task or meaningful subtask.
-5. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+1. Normalize and validate the accepted T-002B bundle without downloading or
+   substituting sources; keep all blocked candidates in coverage denominators.
+2. Preserve the four preselected DART stations, source timestamps, units,
+   datums, missingness, TTT geometry, and antimeridian precision.
+3. Build twice, compare deterministic outputs, complete manual scientific QA,
+   and obtain independent review before accepting T-002C.
+4. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -175,11 +172,11 @@ Do not begin the full wavefront or story build during the data proof.
 
 ## Repository state
 
-The T-000 setup and accepted T-002A source contracts are on `main`. T-002A made
-no raw-data download, deployment, or publication. T-002B is active; T-002C
-remains dependency-gated, and T-002D remains pending.
+The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
+`main`. Raw data remains ignored and untracked; no deployment or publication
+occurred. T-002C is active, and T-002D remains pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, and T-002A are accepted. T-002B is active; T-002C is
-authorized but dependency-gated, and T-002D is not yet active.
+T-000, T-001, T-002P, T-002A, and T-002B are accepted. T-002C is active, and
+T-002D is not yet active.

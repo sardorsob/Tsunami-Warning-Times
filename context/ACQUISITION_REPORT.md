@@ -3,36 +3,35 @@
 ## Disposition
 
 Source discovery recorded 15 exact requested assets on 2026-09-05: 12 are
-approved for T-002B acquisition and 3 remain blocked. A preliminary live run
-downloaded all 12 approved assets (12,386,361 bytes) and recorded their
-checksums and source response headers in
-`artifacts/logs/runs/2026-09-05__1840__initial__be7f766/`. The rerun recorded
-all 12 as checksum-identical cache hits. These are inspection and manifest
-drafting evidence only: both runs used uncommitted implementation under base
-`be7f766`; they are not accepted production evidence. A clean-commit rerun is
-required before T-002B can be accepted. The machine-readable ledger is
+approved for T-002B acquisition and 3 remain blocked. The clean committed
+evidence bundles `2026-09-05__1906__accepted__e602131` and
+`2026-09-05__1906__accepted-rerun__e602131` each recorded 12 `cached` and 3
+`blocked` outcomes totaling 12,386,361 bytes. Both have Git SHA `e602131`,
+`working_tree: clean`, and `evidence_disposition: ready-for-review`; every
+outcome's byte count and checksum is identical between the two bundles. The
+machine-readable ledger is
 `artifacts/provenance/source-manifest.csv`; exact contracts are in
 `config/tohoku-data-proof.toml`.
 
-## T-002B preliminary live evidence
+## T-002B clean live evidence
 
 Command: `uv run python scripts/acquire_tohoku.py --config
-config/tohoku-data-proof.toml --root . --run-tag initial`
+config/tohoku-data-proof.toml --root . --run-tag accepted`
 
-- Initial bundle: `2026-09-05__1840__initial__be7f766`; 12 `downloaded`, 3
+- Accepted bundle: `2026-09-05__1906__accepted__e602131`; 12 `cached`, 3
   `blocked`, 12,386,361 total bytes, config SHA-256
   `4d253132699d07417206827e65528cf342cff558d3b254f9be99c740ad33b979`.
 - Cache proof command: `uv run python scripts/acquire_tohoku.py --config
-  config/tohoku-data-proof.toml --root . --run-tag initial-rerun`
-- Cache bundle: `2026-09-05__1840__initial-rerun__be7f766`; 12 `cached`, 3
-  `blocked`, with every approved asset's byte count and SHA-256 identical to
-  the initial bundle. Blocked contracts were not fetched.
+  config/tohoku-data-proof.toml --root . --run-tag accepted-rerun`
+- Accepted-rerun bundle: `2026-09-05__1906__accepted-rerun__e602131`; 12
+  `cached`, 3 `blocked`, with every output byte count and SHA-256 identical to
+  the accepted bundle. Blocked contracts were not fetched.
 
-The portable bundle includes `meta.json`, `config.json`, `inputs.json`,
-`outputs.json`, `metrics.json`, and `notes.md`. The writer records the Git
-working-tree state and marks dirty runs `implementation-under-review`; that
-known disposition was backfilled into these two preliminary bundles after the
-audit correction. Do not use either as accepted release evidence.
+Each portable bundle contains `meta.json`, `config.json`, `inputs.json`,
+`outputs.json`, `metrics.json`, and `notes.md`. Independent data-quality review
+accepted the bundle/manifest/raw/sidecar reconciliation, verified that all raw
+assets remain ignored and untracked, and confirmed that blocked sources were not
+replaced with proxies. T-002B is accepted and T-002C may proceed.
 
 Manual source identity checks on the acquired raw cache found:
 
@@ -93,7 +92,7 @@ and row-level validation remain T-002C responsibilities. An explicit `reason`
 is present on every contract: `not applicable` for approved assets and the
 source-specific access/contract blocker for blocked assets.
 
-T-002B may acquire only the 12 approved exact assets, fingerprint each one, and
-record actual byte counts, checksums, headers, and response counts. It must not
-download the blocked assets or replace them with proxies. T-002C remains gated
-on acquisition; T-002D remains pending.
+T-002B acquired only the 12 approved exact assets, fingerprinted each one, and
+recorded actual byte counts, checksums, headers, and response counts. It did not
+download the blocked assets or replace them with proxies. T-002C is active;
+T-002D remains pending.

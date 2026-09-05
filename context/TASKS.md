@@ -153,18 +153,19 @@
 - Verification commands: unit fixtures, opt-in live smoke checks, two-run checksum
   comparison, provenance validator, and raw-file accounting
 - Manual QA: open representative files and compare headers/identity with source
-- Evidence: Core implementation review is **APPROVED**. The acquisition core's
-  31 tests, focused Ruff, and focused Pyright passed. Review fixes require an
+- Evidence: Core implementation review and independent acquisition data-quality
+  review are **APPROVED**. The acquisition core's 33 tests (42 repository tests
+  total), focused Ruff, and focused Pyright passed. Review fixes required an
   explicit safe response-header value allowlist, pre-write evidence-ID
   reconciliation, sibling-temporary all-or-nothing bundle publication with
-  cleanup/retry tests, and `total_outcomes` metrics. A preliminary live run
-  downloaded all 12 approved contracts (12,386,361 bytes) and left the 3 blocked
-  contracts unfetched; `initial-rerun` returned all 12 as checksum-identical
-  `cached` outcomes. Bundles are at `artifacts/logs/runs/2026-09-05__1840__initial__be7f766`
-  and `...initial-rerun__be7f766`; they were created from a dirty implementation
-  worktree and are not accepted release evidence. A clean-commit accepted rerun
-  remains required. See `context/ACQUISITION_REPORT.md` and the Task 3 report.
-- Attempts / Max: 2 / 3
+  cleanup/retry tests, and `total_outcomes` metrics. Clean committed bundles
+  `2026-09-05__1906__accepted__e602131` and
+  `2026-09-05__1906__accepted-rerun__e602131` each report 12 `cached`, 3
+  `blocked`, 12,386,361 bytes, `working_tree: clean`, and
+  `ready-for-review`; all output checksums and byte counts are identical. The
+  reviewer reconciled both bundles, the manifest, the 12 ignored raw files, and
+  their 12 ignored checksum sidecars with no proxy substitution.
+- Attempts / Max: 3 / 3
 - Attempt log: 2026-09-05 — implemented the Task 2 core and thin CLI; 2026-09-05
   — review round 1 corrected no-clobber, cache-truth, containment, and retry
   safety gaps; pending reviewer acceptance and separately authorized live
@@ -173,12 +174,11 @@
   2026-09-05 — final transport review added bounded retry and sibling isolation
   for incomplete HTTP response reads; fresh final review added NUL-path contract
   rejection plus defensive per-source `ValueError` isolation; 2026-09-05 — core
-  implementation review APPROVED; preliminary initial and cache runs completed,
-  but must be repeated from a clean committed implementation before acceptance;
-  review fixes added safe header-value serialization, atomic temporary-bundle
-  publication, input/output ID checks, and failure-cleanup tests without a live
-  rerun.
-- Status: in-review
+  implementation review APPROVED; review fixes added safe header-value
+  serialization, atomic temporary-bundle publication, input/output ID checks,
+  and failure-cleanup tests; 2026-09-05 — clean committed accepted and
+  accepted-rerun bundles reconcile; independent data-quality review APPROVED.
+- Status: done
 
 ## T-002C — Normalize and validate analysis tables
 
