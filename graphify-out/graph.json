@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "manifesterror",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L36"
+      "source_location": "L38"
     },
     {
       "id": "pipeline_provenance_validationresult",
@@ -27,7 +27,7 @@
       "file_type": "code",
       "norm_label": "validationresult",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L41"
+      "source_location": "L43"
     },
     {
       "id": "app_src_project_projectphase",
@@ -65,7 +65,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L124"
+      "source_location": "L126"
     },
     {
       "id": "pipeline_provenance_validate_manifest",
@@ -77,7 +77,19 @@
       "file_type": "code",
       "norm_label": "validate_manifest()",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L47"
+      "source_location": "L49"
+    },
+    {
+      "id": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
+      "label": "test_manifest_accepts_a_blocked_asset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "validate_manifest",
+      "file_type": "code",
+      "norm_label": "test_manifest_accepts_a_blocked_asset()",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L46"
     },
     {
       "id": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
@@ -89,7 +101,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_accepts_a_downloaded_asset()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L120"
+      "source_location": "L128"
     },
     {
       "id": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
@@ -101,7 +113,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_rejects_an_unresolved_spatial_field()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L46"
+      "source_location": "L54"
     },
     {
       "id": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
@@ -113,7 +125,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_rejects_duplicate_source_ids()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L62"
+      "source_location": "L70"
     },
     {
       "id": "tests_test_provenance_test_manifest_rejects_inconsistent_download_state",
@@ -125,7 +137,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_rejects_inconsistent_download_state()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L102"
+      "source_location": "L110"
     },
     {
       "id": "tests_test_provenance_test_manifest_rejects_local_path_traversal",
@@ -137,7 +149,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_rejects_local_path_traversal()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L112"
+      "source_location": "L120"
     },
     {
       "id": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
@@ -149,7 +161,7 @@
       "file_type": "code",
       "norm_label": "test_manifest_requires_extended_iso_access_date()",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L54"
+      "source_location": "L62"
     },
     {
       "id": "tests_test_provenance_test_valid_manifest_returns_record_count",
@@ -551,7 +563,7 @@
       "source_location": "L1"
     },
     {
-      "id": "pipeline_provenance_rationale_125",
+      "id": "pipeline_provenance_rationale_127",
       "label": "Run manifest validation from the command line.",
       "_origin": "ast",
       "community": 1,
@@ -559,10 +571,10 @@
       "file_type": "rationale",
       "norm_label": "run manifest validation from the command line.",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L125"
+      "source_location": "L127"
     },
     {
-      "id": "pipeline_provenance_rationale_37",
+      "id": "pipeline_provenance_rationale_39",
       "label": "Raised when the source manifest violates its documented contract.",
       "_origin": "ast",
       "community": 1,
@@ -570,10 +582,10 @@
       "file_type": "rationale",
       "norm_label": "raised when the source manifest violates its documented contract.",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L37"
+      "source_location": "L39"
     },
     {
-      "id": "pipeline_provenance_rationale_42",
+      "id": "pipeline_provenance_rationale_44",
       "label": "Summary of a successful manifest validation.",
       "_origin": "ast",
       "community": 1,
@@ -581,10 +593,10 @@
       "file_type": "rationale",
       "norm_label": "summary of a successful manifest validation.",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L42"
+      "source_location": "L44"
     },
     {
-      "id": "pipeline_provenance_rationale_48",
+      "id": "pipeline_provenance_rationale_50",
       "label": "Validate required fields and basic provenance invariants in a CSV manifest.",
       "_origin": "ast",
       "community": 1,
@@ -592,7 +604,7 @@
       "file_type": "rationale",
       "norm_label": "validate required fields and basic provenance invariants in a csv manifest.",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L48"
+      "source_location": "L50"
     },
     {
       "id": "tests_test_provenance_rationale_10",
@@ -606,11 +618,22 @@
       "source_location": "L10"
     },
     {
+      "id": "tests_test_provenance_rationale_47",
+      "label": "Protect the explicit access-blocker state from being rejected as invalid.",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "validate_manifest",
+      "file_type": "rationale",
+      "norm_label": "protect the explicit access-blocker state from being rejected as invalid.",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L47"
+    },
+    {
       "id": "agents",
       "label": "AGENTS.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "agents.md",
@@ -622,7 +645,7 @@
       "label": "graphify",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "graphify",
@@ -634,7 +657,7 @@
       "label": "Non-negotiable scientific rules",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "non-negotiable scientific rules",
@@ -646,7 +669,7 @@
       "label": "Project Instructions",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "project instructions",
@@ -658,7 +681,7 @@
       "label": "Scope and implementation rules",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "scope and implementation rules",
@@ -670,7 +693,7 @@
       "label": "Start here",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "start here",
@@ -682,7 +705,7 @@
       "label": "Verification",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "verification",
@@ -694,7 +717,7 @@
       "label": "HANDOVER.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "handover.md",
@@ -702,11 +725,131 @@
       "source_location": "L1"
     },
     {
+      "id": "context_handover_completed",
+      "label": "Completed",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "completed",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "context_handover_continue_from_here",
+      "label": "Continue from here",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "continue from here",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L116"
+    },
+    {
+      "id": "context_handover_decisions_and_assumptions",
+      "label": "Decisions and assumptions",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisions and assumptions",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L90"
+    },
+    {
+      "id": "context_handover_final_disposition",
+      "label": "Final disposition",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "final disposition",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L142"
+    },
+    {
+      "id": "context_handover_handover",
+      "label": "Handover",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "handover",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_handover_objective_and_workflow",
+      "label": "Objective and workflow",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objective and workflow",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_handover_repository_state",
+      "label": "Repository state",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "repository state",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L136"
+    },
+    {
+      "id": "context_handover_risks_and_blockers",
+      "label": "Risks and blockers",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "risks and blockers",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L103"
+    },
+    {
+      "id": "context_handover_t_002p_verification_evidence",
+      "label": "T-002P verification evidence",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002p verification evidence",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L76"
+    },
+    {
+      "id": "context_handover_verification_evidence",
+      "label": "Verification evidence",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification evidence",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L49"
+    },
+    {
       "id": "context_project",
       "label": "PROJECT.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "project.md",
@@ -714,107 +857,11 @@
       "source_location": "L1"
     },
     {
-      "id": "context_project_consequential_unknowns",
-      "label": "Consequential unknowns",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "consequential unknowns",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L60"
-    },
-    {
-      "id": "context_project_decision_and_lane",
-      "label": "Decision and lane",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decision and lane",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L28"
-    },
-    {
-      "id": "context_project_in_scope_for_the_first_complete_version",
-      "label": "In scope for the first complete version",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "in scope for the first complete version",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L41"
-    },
-    {
-      "id": "context_project_objective",
-      "label": "Objective",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objective",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "context_project_out_of_scope_until_separately_approved",
-      "label": "Out of scope until separately approved",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "out of scope until separately approved",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L53"
-    },
-    {
-      "id": "context_project_project_contract",
-      "label": "Project Contract",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "project contract",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_project_smallest_useful_deliverable",
-      "label": "Smallest useful deliverable",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "smallest useful deliverable",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L67"
-    },
-    {
-      "id": "context_project_workflow_contract",
-      "label": "Workflow contract",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Project Contract",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "workflow contract",
-      "source_file": "context/PROJECT.md",
-      "source_location": "L10"
-    },
-    {
       "id": "readme",
       "label": "README.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "readme.md",
@@ -826,7 +873,7 @@
       "label": "Current status",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "current status",
@@ -838,7 +885,7 @@
       "label": "License",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "license",
@@ -850,7 +897,7 @@
       "label": "Local setup",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "local setup",
@@ -862,7 +909,7 @@
       "label": "Pacific Tsunami Warning Time",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "pacific tsunami warning time",
@@ -874,7 +921,7 @@
       "label": "Repository map",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "repository map",
@@ -886,7 +933,7 @@
       "label": "Safety and interpretation",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Project Contract",
+      "community_name": "Handover",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "safety and interpretation",
@@ -942,6 +989,18 @@
       "source_location": "L1"
     },
     {
+      "id": "context_data_card_data_proof_acquisition_set",
+      "label": "Data-proof acquisition set",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data-proof acquisition set",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L21"
+    },
+    {
       "id": "context_data_card_known_misuse_risk",
       "label": "Known misuse risk",
       "_origin": "ast",
@@ -951,7 +1010,7 @@
       "node_kind": "heading",
       "norm_label": "known misuse risk",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L34"
+      "source_location": "L62"
     },
     {
       "id": "context_data_card_minimum_record_contract",
@@ -963,7 +1022,19 @@
       "node_kind": "heading",
       "norm_label": "minimum record contract",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L20"
+      "source_location": "L44"
+    },
+    {
+      "id": "context_data_card_planned_grains",
+      "label": "Planned grains",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "PacificVis 2027 and tsunami-event data feasibility",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "planned grains",
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L34"
     },
     {
       "id": "context_data_card_required_source_classes",
@@ -975,7 +1046,7 @@
       "node_kind": "heading",
       "norm_label": "required source classes",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "context_data_card_sensitive_data_and_authorization",
@@ -987,7 +1058,7 @@
       "node_kind": "heading",
       "norm_label": "sensitive data and authorization",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L28"
+      "source_location": "L56"
     },
     {
       "id": "context_data_card_status",
@@ -1158,112 +1229,184 @@
       "source_location": "L36"
     },
     {
-      "id": "context_handover_completed",
-      "label": "Completed",
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design",
+      "label": "2026-09-04-tohoku-data-pipeline-eda-design.md",
       "_origin": "ast",
       "community": 12,
-      "community_name": "Handover",
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "completed",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L16"
-    },
-    {
-      "id": "context_handover_continue_from_here",
-      "label": "Continue from here",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "continue from here",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L92"
-    },
-    {
-      "id": "context_handover_decisions_and_assumptions",
-      "label": "Decisions and assumptions",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decisions and assumptions",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L66"
-    },
-    {
-      "id": "context_handover_final_disposition",
-      "label": "Final disposition",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "final disposition",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L120"
-    },
-    {
-      "id": "context_handover_handover",
-      "label": "Handover",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "handover",
-      "source_file": "context/HANDOVER.md",
+      "node_kind": "page",
+      "norm_label": "2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
       "source_location": "L1"
     },
     {
-      "id": "context_handover_objective_and_workflow",
-      "label": "Objective and workflow",
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_acquisition_behavior",
+      "label": "Acquisition behavior",
       "_origin": "ast",
       "community": 12,
-      "community_name": "Handover",
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "objective and workflow",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L3"
+      "norm_label": "acquisition behavior",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L119"
     },
     {
-      "id": "context_handover_repository_state",
-      "label": "Repository state",
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_approved_choices",
+      "label": "Approved choices",
       "_origin": "ast",
       "community": 12,
-      "community_name": "Handover",
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "repository state",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L114"
+      "norm_label": "approved choices",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L21"
     },
     {
-      "id": "context_handover_risks_and_blockers",
-      "label": "Risks and blockers",
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_architecture",
+      "label": "Architecture",
       "_origin": "ast",
       "community": 12,
-      "community_name": "Handover",
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "risks and blockers",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L79"
+      "norm_label": "architecture",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L52"
     },
     {
-      "id": "context_handover_verification_evidence",
-      "label": "Verification evidence",
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_canonical_records",
+      "label": "Canonical records",
       "_origin": "ast",
       "community": 12,
-      "community_name": "Handover",
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "verification evidence",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L39"
+      "norm_label": "canonical records",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L100"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_commit_boundaries",
+      "label": "Commit boundaries",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "commit boundaries",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L231"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_data_flow",
+      "label": "Data flow",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data flow",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_dependencies_and_deliberate_deferrals",
+      "label": "Dependencies and deliberate deferrals",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dependencies and deliberate deferrals",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L204"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_eda_contract",
+      "label": "EDA contract",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "eda contract",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L155"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_markdown_and_run_artifacts",
+      "label": "Markdown and run artifacts",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "markdown and run artifacts",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L185"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_normalization_and_quality_gates",
+      "label": "Normalization and quality gates",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "normalization and quality gates",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L134"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_source_boundary",
+      "label": "Source boundary",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source boundary",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "label": "T\u014dhoku Data Pipeline and EDA Design",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tohoku data pipeline and eda design",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_verification",
+      "label": "Verification",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "T\u014dhoku Data Pipeline and EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification",
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L216"
     },
     {
       "id": "context_decisions",
@@ -1338,6 +1481,66 @@
       "source_location": "L56"
     },
     {
+      "id": "context_decisions_d_006_use_a_broad_but_source_gated_t\u014dhoku_data_proof",
+      "label": "D-006 \u2014 Use a broad but source-gated T\u014dhoku data proof",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-006 \u2014 use a broad but source-gated tohoku data proof",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L68"
+    },
+    {
+      "id": "context_decisions_d_007_scripts_own_calculations_marimo_exposes_eda",
+      "label": "D-007 \u2014 Scripts own calculations; marimo exposes EDA",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-007 \u2014 scripts own calculations; marimo exposes eda",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "context_decisions_d_008_markdown_is_the_canonical_result_surface",
+      "label": "D-008 \u2014 Markdown is the canonical result surface",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-008 \u2014 markdown is the canonical result surface",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L97"
+    },
+    {
+      "id": "context_decisions_d_009_defer_dvc_and_workflow_orchestration",
+      "label": "D-009 \u2014 Defer DVC and workflow orchestration",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-009 \u2014 defer dvc and workflow orchestration",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L109"
+    },
+    {
+      "id": "context_decisions_d_010_let_evidence_branch_the_eda",
+      "label": "D-010 \u2014 Let evidence branch the EDA",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-010 \u2014 let evidence branch the eda",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L121"
+    },
+    {
       "id": "context_decisions_decision_log",
       "label": "Decision Log",
       "_origin": "ast",
@@ -1398,14 +1601,74 @@
       "source_location": "L35"
     },
     {
-      "id": "context_tasks_t_002_prove_the_data_path",
-      "label": "T-002 \u2014 Prove the data path",
+      "id": "context_tasks_t_002a_resolve_source_endpoints_and_contracts",
+      "label": "T-002A \u2014 Resolve source endpoints and contracts",
       "_origin": "ast",
       "community": 14,
       "community_name": "Tasks",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "t-002 \u2014 prove the data path",
+      "norm_label": "t-002a \u2014 resolve source endpoints and contracts",
+      "source_file": "context/TASKS.md",
+      "source_location": "L89"
+    },
+    {
+      "id": "context_tasks_t_002b_acquire_and_fingerprint_raw_assets",
+      "label": "T-002B \u2014 Acquire and fingerprint raw assets",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002b \u2014 acquire and fingerprint raw assets",
+      "source_file": "context/TASKS.md",
+      "source_location": "L122"
+    },
+    {
+      "id": "context_tasks_t_002c_normalize_and_validate_analysis_tables",
+      "label": "T-002C \u2014 Normalize and validate analysis tables",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002c \u2014 normalize and validate analysis tables",
+      "source_file": "context/TASKS.md",
+      "source_location": "L149"
+    },
+    {
+      "id": "context_tasks_t_002d_run_reproducible_eda",
+      "label": "T-002D \u2014 Run reproducible EDA",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002d \u2014 run reproducible eda",
+      "source_file": "context/TASKS.md",
+      "source_location": "L179"
+    },
+    {
+      "id": "context_tasks_t_002e_review_and_close_the_data_proof",
+      "label": "T-002E \u2014 Review and close the data proof",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002e \u2014 review and close the data proof",
+      "source_file": "context/TASKS.md",
+      "source_location": "L211"
+    },
+    {
+      "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
+      "label": "T-002P \u2014 Approve the broad data-proof design",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002p \u2014 approve the broad data-proof design",
       "source_file": "context/TASKS.md",
       "source_location": "L61"
     },
@@ -1419,7 +1682,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L85"
+      "source_location": "L237"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -1431,7 +1694,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L108"
+      "source_location": "L260"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -1443,7 +1706,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L132"
+      "source_location": "L284"
     },
     {
       "id": "context_tasks_tasks",
@@ -1470,6 +1733,18 @@
       "source_location": "L1"
     },
     {
+      "id": "context_validation_plan_acquisition_and_accounting",
+      "label": "Acquisition and accounting",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Validation Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "acquisition and accounting",
+      "source_file": "context/VALIDATION_PLAN.md",
+      "source_location": "L10"
+    },
+    {
       "id": "context_validation_plan_analytical",
       "label": "Analytical",
       "_origin": "ast",
@@ -1479,7 +1754,7 @@
       "node_kind": "heading",
       "norm_label": "analytical",
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L26"
+      "source_location": "L36"
     },
     {
       "id": "context_validation_plan_cartographic_and_interaction",
@@ -1491,7 +1766,7 @@
       "node_kind": "heading",
       "norm_label": "cartographic and interaction",
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L35"
+      "source_location": "L50"
     },
     {
       "id": "context_validation_plan_release",
@@ -1503,7 +1778,7 @@
       "node_kind": "heading",
       "norm_label": "release",
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L43"
+      "source_location": "L58"
     },
     {
       "id": "context_validation_plan_source_and_identity",
@@ -1527,7 +1802,7 @@
       "node_kind": "heading",
       "norm_label": "spatial and raster",
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L18"
+      "source_location": "L28"
     },
     {
       "id": "context_validation_plan_temporal",
@@ -1539,7 +1814,7 @@
       "node_kind": "heading",
       "norm_label": "temporal",
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L10"
+      "source_location": "L20"
     },
     {
       "id": "context_validation_plan_validation_plan",
@@ -1674,6 +1949,18 @@
       "source_location": "L23"
     },
     {
+      "id": "context_forecast_protocol_data_proof_sequencing",
+      "label": "Data-proof sequencing",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "Historical Event Protocol",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data-proof sequencing",
+      "source_file": "context/FORECAST_PROTOCOL.md",
+      "source_location": "L36"
+    },
+    {
       "id": "context_forecast_protocol_historical_event_protocol",
       "label": "Historical Event Protocol",
       "_origin": "ast",
@@ -1719,7 +2006,7 @@
       "node_kind": "heading",
       "norm_label": "stop conditions",
       "source_file": "context/FORECAST_PROTOCOL.md",
-      "source_location": "L36"
+      "source_location": "L51"
     },
     {
       "id": "context_problem",
@@ -2085,7 +2372,7 @@
       "node_kind": "heading",
       "norm_label": "deferred",
       "source_file": "context/SCOPE.md",
-      "source_location": "L21"
+      "source_location": "L25"
     },
     {
       "id": "context_scope_feasibility_gate",
@@ -2278,6 +2565,18 @@
       "norm_label": "hazard event set",
       "source_file": "context/HAZARD_EVENT_SET.md",
       "source_location": "L1"
+    },
+    {
+      "id": "context_hazard_event_set_t\u014dhoku_data_proof_bundle",
+      "label": "T\u014dhoku data-proof bundle",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "Hazard Event Set",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tohoku data-proof bundle",
+      "source_file": "context/HAZARD_EVENT_SET.md",
+      "source_location": "L40"
     },
     {
       "id": "docs_archive_benchmark",
@@ -2661,6 +2960,306 @@
       "source_location": "L1"
     },
     {
+      "id": "context_project_consequential_unknowns",
+      "label": "Consequential unknowns",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "consequential unknowns",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "context_project_decision_and_lane",
+      "label": "Decision and lane",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decision and lane",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "context_project_in_scope_for_the_first_complete_version",
+      "label": "In scope for the first complete version",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "in scope for the first complete version",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "context_project_objective",
+      "label": "Objective",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objective",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_project_out_of_scope_until_separately_approved",
+      "label": "Out of scope until separately approved",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "out of scope until separately approved",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "context_project_project_contract",
+      "label": "Project Contract",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "project contract",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_project_smallest_useful_deliverable",
+      "label": "Smallest useful deliverable",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "smallest useful deliverable",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "context_project_workflow_contract",
+      "label": "Workflow contract",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "workflow contract",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation",
+      "label": "2026-09-05-tohoku-data-coverage-implementation.md",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "label": "Global Constraints",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "global constraints",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_1_source_contract_ledger_and_blocked_state_validation",
+      "label": "Task 1: Source-contract ledger and blocked-state validation",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 1: source-contract ledger and blocked-state validation",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_2_atomic_source_independent_acquisition_core",
+      "label": "Task 2: Atomic, source-independent acquisition core",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 2: atomic, source-independent acquisition core",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L111"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_3_live_source_bundle_checksums_and_acquisition_report",
+      "label": "Task 3: Live source bundle, checksums, and acquisition report",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 3: live source bundle, checksums, and acquisition report",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L202"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_4_event_contour_and_water_level_normalization",
+      "label": "Task 4: Event, contour, and water-level normalization",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 4: event, contour, and water-level normalization",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L249"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_5_live_data_quality_build_and_requested_phase_closure",
+      "label": "Task 5: Live data-quality build and requested-phase closure",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 5: live data-quality build and requested-phase closure",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L322"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_t\u014dhoku_data_coverage_and_implementation_plan",
+      "label": "T\u014dhoku Data Coverage and Implementation Plan",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Global Constraints",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tohoku data coverage and implementation plan",
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_acquisition_report",
+      "label": "ACQUISITION_REPORT.md",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "acquisition_report.md",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_acquisition_report_approved_contracts_11_assets",
+      "label": "Approved contracts \u2014 11 assets",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "approved contracts \u2014 11 assets",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "context_acquisition_report_authoritative_evidence_and_observed_smoke_checks",
+      "label": "Authoritative evidence and observed smoke checks",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "authoritative evidence and observed smoke checks",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "context_acquisition_report_blocked_contracts_4_assets",
+      "label": "Blocked contracts \u2014 4 assets",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "blocked contracts \u2014 4 assets",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "context_acquisition_report_contract_limits_and_next_steps",
+      "label": "Contract limits and next steps",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contract limits and next steps",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L40"
+    },
+    {
+      "id": "context_acquisition_report_disposition",
+      "label": "Disposition",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "disposition",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "label": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002a \u2014 tohoku source-contract ledger",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_data_quality_report",
+      "label": "DATA_QUALITY_REPORT.md",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "DATA_QUALITY_REPORT.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "data_quality_report.md",
+      "source_file": "context/DATA_QUALITY_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_eda_report",
+      "label": "EDA_REPORT.md",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "EDA_REPORT.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "eda_report.md",
+      "source_file": "context/EDA_REPORT.md",
+      "source_location": "L1"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -2960,7 +3559,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L131",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -2972,7 +3571,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L121",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -2984,11 +3583,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L55",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
+      "source": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
       "target": "tests_test_provenance_write_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -2996,35 +3595,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L122",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
-      "target": "pipeline_provenance_validate_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L124",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
-      "target": "tests_test_provenance_write_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
+      "source": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
       "target": "pipeline_provenance_validate_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -3036,7 +3611,7 @@
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
       "target": "tests_test_provenance_write_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -3044,11 +3619,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L64",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
       "target": "pipeline_provenance_validate_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -3056,59 +3631,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L92",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_rejects_inconsistent_download_state",
-      "target": "tests_test_provenance_write_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_inconsistent_download_state",
-      "target": "pipeline_provenance_validate_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L109",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_local_path_traversal",
-      "target": "tests_test_provenance_write_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L114",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_local_path_traversal",
-      "target": "pipeline_provenance_validate_manifest",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L117",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
+      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
       "target": "tests_test_provenance_write_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -3120,7 +3647,7 @@
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
+      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
       "target": "pipeline_provenance_validate_manifest",
       "relation": "calls",
       "_origin": "ast",
@@ -3129,6 +3656,102 @@
       "context": "call",
       "source_file": "tests/test_provenance.py",
       "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "target": "pipeline_provenance_validate_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "target": "tests_test_provenance_write_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_inconsistent_download_state",
+      "target": "tests_test_provenance_write_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_inconsistent_download_state",
+      "target": "pipeline_provenance_validate_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_local_path_traversal",
+      "target": "tests_test_provenance_write_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_local_path_traversal",
+      "target": "pipeline_provenance_validate_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
+      "target": "tests_test_provenance_write_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
+      "target": "pipeline_provenance_validate_manifest",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -3164,7 +3787,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L95",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -3488,23 +4111,11 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/provenance.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
-      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
-      "target": "tests_test_provenance_py_path",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "tests/test_provenance.py",
-      "source_location": "L120",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
+      "source": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
       "target": "tests_test_provenance_py_path",
       "relation": "references",
       "_origin": "ast",
@@ -3516,6 +4127,30 @@
       "weight": 1.0
     },
     {
+      "source": "tests_test_provenance_test_manifest_accepts_a_downloaded_asset",
+      "target": "tests_test_provenance_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
+      "target": "tests_test_provenance_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
       "target": "tests_test_provenance_py_path",
       "relation": "references",
@@ -3524,7 +4159,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L62",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -3536,7 +4171,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L102",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -3548,7 +4183,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L112",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -3560,7 +4195,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_provenance.py",
-      "source_location": "L54",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -4182,6 +4817,72 @@
       "weight": 1.0
     },
     {
+      "source": "context_acquisition_report",
+      "target": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_authoritative_evidence_and_observed_smoke_checks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_approved_contracts_11_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_disposition",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_blocked_contracts_4_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_contract_limits_and_next_steps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
       "source": "context_assumptions",
       "target": "context_assumptions_assumptions_and_unknowns",
       "relation": "contains",
@@ -4227,24 +4928,24 @@
     },
     {
       "source": "context_data_card_data_card_feasibility_state",
-      "target": "context_data_card_minimum_record_contract",
+      "target": "context_data_card_required_source_classes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L20",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
       "source": "context_data_card_data_card_feasibility_state",
-      "target": "context_data_card_sensitive_data_and_authorization",
+      "target": "context_data_card_data_proof_acquisition_set",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L28",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -4260,7 +4961,7 @@
     },
     {
       "source": "context_data_card_data_card_feasibility_state",
-      "target": "context_data_card_known_misuse_risk",
+      "target": "context_data_card_planned_grains",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4271,13 +4972,35 @@
     },
     {
       "source": "context_data_card_data_card_feasibility_state",
-      "target": "context_data_card_required_source_classes",
+      "target": "context_data_card_minimum_record_contract",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L9",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_card_data_card_feasibility_state",
+      "target": "context_data_card_sensitive_data_and_authorization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_card_data_card_feasibility_state",
+      "target": "context_data_card_known_misuse_risk",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -4289,6 +5012,28 @@
       "confidence_score": 1.0,
       "source_file": "context/DECISIONS.md",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_009_defer_dvc_and_workflow_orchestration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_010_let_evidence_branch_the_eda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -4358,6 +5103,39 @@
       "weight": 1.0
     },
     {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_006_use_a_broad_but_source_gated_t\u014dhoku_data_proof",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_007_scripts_own_calculations_marimo_exposes_eda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_008_markdown_is_the_canonical_result_surface",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
       "source": "context_experiments",
       "target": "context_experiments_experiment_ledger",
       "relation": "contains",
@@ -4403,13 +5181,24 @@
     },
     {
       "source": "context_forecast_protocol_historical_event_protocol",
-      "target": "context_forecast_protocol_stop_conditions",
+      "target": "context_forecast_protocol_data_proof_sequencing",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/FORECAST_PROTOCOL.md",
       "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "context_forecast_protocol_historical_event_protocol",
+      "target": "context_forecast_protocol_stop_conditions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/FORECAST_PROTOCOL.md",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -4447,13 +5236,35 @@
     },
     {
       "source": "context_handover_handover",
+      "target": "context_handover_risks_and_blockers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_continue_from_here",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
       "target": "context_handover_repository_state",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L114",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -4464,7 +5275,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L120",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -4475,7 +5286,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L16",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -4497,7 +5308,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L39",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_t_002p_verification_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -4508,29 +5330,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_risks_and_blockers",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_continue_from_here",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L92",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -4564,6 +5364,17 @@
       "confidence_score": 1.0,
       "source_file": "context/HAZARD_EVENT_SET.md",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_hazard_event_set_hazard_event_set",
+      "target": "context_hazard_event_set_t\u014dhoku_data_proof_bundle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HAZARD_EVENT_SET.md",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -4750,7 +5561,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/SCOPE.md",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -4832,13 +5643,68 @@
     },
     {
       "source": "context_tasks_tasks",
+      "target": "context_tasks_t_002b_acquire_and_fingerprint_raw_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_002c_normalize_and_validate_analysis_tables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_002d_run_reproducible_eda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_002e_review_and_close_the_data_proof",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_003_make_the_static_scientific_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
       "target": "context_tasks_t_004_test_the_wavefront_mechanism",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L108",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -4849,7 +5715,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L132",
+      "source_location": "L284",
       "weight": 1.0
     },
     {
@@ -4876,7 +5742,7 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_002_prove_the_data_path",
+      "target": "context_tasks_t_002p_approve_the_broad_data_proof_design",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4887,13 +5753,13 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_003_make_the_static_scientific_comparison",
+      "target": "context_tasks_t_002a_resolve_source_endpoints_and_contracts",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L85",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -4909,7 +5775,7 @@
     },
     {
       "source": "context_validation_plan_validation_plan",
-      "target": "context_validation_plan_temporal",
+      "target": "context_validation_plan_acquisition_and_accounting",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4920,24 +5786,24 @@
     },
     {
       "source": "context_validation_plan_validation_plan",
+      "target": "context_validation_plan_temporal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/VALIDATION_PLAN.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "context_validation_plan_validation_plan",
       "target": "context_validation_plan_spatial_and_raster",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "context_validation_plan_validation_plan",
-      "target": "context_validation_plan_analytical",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -4953,13 +5819,24 @@
     },
     {
       "source": "context_validation_plan_validation_plan",
+      "target": "context_validation_plan_analytical",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/VALIDATION_PLAN.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "context_validation_plan_validation_plan",
       "target": "context_validation_plan_cartographic_and_interaction",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L35",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -4970,7 +5847,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/VALIDATION_PLAN.md",
-      "source_location": "L43",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -5271,6 +6148,237 @@
       "weight": 1.0
     },
     {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_t\u014dhoku_data_coverage_and_implementation_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_2_atomic_source_independent_acquisition_core",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_3_live_source_bundle_checksums_and_acquisition_report",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_4_event_contour_and_water_level_normalization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_5_live_data_quality_build_and_requested_phase_closure",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_task_1_source_contract_ledger_and_blocked_state_validation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_t\u014dhoku_data_coverage_and_implementation_plan",
+      "target": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation_global_constraints",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_canonical_records",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_acquisition_behavior",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_normalization_and_quality_gates",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_eda_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_markdown_and_run_artifacts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_dependencies_and_deliberate_deferrals",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_approved_choices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_verification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_commit_boundaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_source_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_architecture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_data_flow",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
+      "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "package",
       "target": "package_scripts",
       "relation": "contains",
@@ -5421,7 +6529,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L124",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -5432,7 +6540,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -5443,7 +6551,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -5454,7 +6562,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -5542,7 +6650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L102",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -5553,7 +6661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L112",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -5564,7 +6672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L120",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -5580,7 +6688,7 @@
     },
     {
       "source": "tests_test_provenance",
-      "target": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
+      "target": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5591,7 +6699,7 @@
     },
     {
       "source": "tests_test_provenance",
-      "target": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
+      "target": "tests_test_provenance_test_manifest_rejects_an_unresolved_spatial_field",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5602,13 +6710,24 @@
     },
     {
       "source": "tests_test_provenance",
-      "target": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "target": "tests_test_provenance_test_manifest_requires_extended_iso_access_date",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_provenance.py",
       "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance",
+      "target": "tests_test_provenance_test_manifest_rejects_duplicate_source_ids",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -5630,7 +6749,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -5656,47 +6775,47 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_provenance_rationale_125",
+      "source": "pipeline_provenance_rationale_127",
       "target": "pipeline_provenance_main",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L125",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
-      "source": "pipeline_provenance_rationale_37",
+      "source": "pipeline_provenance_rationale_39",
       "target": "pipeline_provenance_manifesterror",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L37",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
-      "source": "pipeline_provenance_rationale_42",
+      "source": "pipeline_provenance_rationale_44",
       "target": "pipeline_provenance_validationresult",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
-      "source": "pipeline_provenance_rationale_48",
+      "source": "pipeline_provenance_rationale_50",
       "target": "pipeline_provenance_validate_manifest",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/provenance.py",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -5708,6 +6827,17 @@
       "confidence_score": 1.0,
       "source_file": "tests/test_provenance.py",
       "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_provenance_rationale_47",
+      "target": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_provenance.py",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -5795,7 +6925,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L50",
+      "source_location": "L58",
       "weight": 0.8
     },
     {
@@ -5806,7 +6936,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L91",
+      "source_location": "L99",
       "weight": 0.8
     },
     {
@@ -5817,7 +6947,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L108",
+      "source_location": "L116",
       "weight": 0.8
     },
     {
@@ -5828,7 +6958,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L116",
+      "source_location": "L124",
       "weight": 0.8
     },
     {
@@ -5839,10 +6969,10 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_provenance.py",
-      "source_location": "L58",
+      "source_location": "L66",
       "weight": 0.8
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b7a67959bb4475bd1d06f37d07c381c829096b3a"
+  "built_at_commit": "76c98919be08d6a51754869497a551482095eec5"
 }

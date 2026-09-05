@@ -87,6 +87,22 @@ Observed on 2026-09-04 for the planning/context package:
   each verified at zero bytes and remain intentionally empty until their owning
   tasks run.
 
+## T-002A verification evidence
+
+Observed on 2026-09-05 for the source-contract ledger:
+
+- The required RED test failed with `unsupported status 'blocked'`; after the
+  minimal validator change, its GREEN rerun passed.
+- The final provenance suite passed 9 tests; the source-manifest validator
+  accepted 15 exact assets; Ruff passed; Pyright reported 0 errors; the source
+  contract TOML parsed with Python 3.12; and `git diff --check` passed.
+- The ledger permits 12 exact assets only for T-002B acquisition and keeps the
+  continuous NCTR field, Saipan, and Valparaíso visibly blocked. No raw data was
+  downloaded and T-002D remains pending.
+- `graphify update .` rebuilt the tracked graph after the provenance-code change:
+  303 nodes, 306 edges, and 37 communities. It reported that semantic labels are
+  stale; no semantic relabel was run because this task did not change architecture.
+
 ## Decisions and assumptions
 
 - The browser product is static and retrospective, never an operational warning
@@ -117,17 +133,15 @@ Observed on 2026-09-04 for the planning/context package:
 
 Execute the approved data-coverage and implementation chain in order:
 
-1. Resolve exact authoritative endpoints, formats, station IDs/deployments,
-   windows, units, terms, and expected schemas for the approved source bundle.
-2. Record stable assets or explicit blockers in the source manifest and
-   `context/ACQUISITION_REPORT.md`.
-3. Select the four DART stations from documented near/far coverage before
+1. Obtain an independent scientific-checker disposition for T-002A's exact
+   contracts before T-002B begins.
+2. Acquire only the 12 exact assets approved in T-002A; keep the continuous
+   NCTR field, Saipan, and Valparaíso blocked and do not use proxies.
+3. Keep the four DART stations selected from documented near/far coverage before
    inspecting model residuals.
-4. Independently review T-002A before downloading the approved source bundle or
-   choosing format-driven dependencies.
-5. Complete tested, source-independent acquisition and then normalization/data
+4. Complete tested, source-independent acquisition and then normalization/data
    quality as T-002B and T-002C. Commit each accepted task or meaningful subtask.
-6. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+5. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -135,9 +149,10 @@ Do not begin the full wavefront or story build during the data proof.
 
 ## Repository state
 
-The T-000 setup is on `main`. The planning package is a separate documentation
-commit for project-owner review. No data download, implementation, deployment,
-or publication was performed in this planning step.
+The T-000 setup is on `main`. T-002A source discovery is in review pending an
+independent scientific checker; it made no raw-data download, deployment, or
+publication. T-002B and T-002C remain dependency-gated, and T-002D remains
+pending.
 
 ## Final disposition
 

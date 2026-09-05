@@ -107,10 +107,18 @@
   planned local path; station selection rule is independent of observed residuals
 - Verification commands: authoritative metadata/link audit and manifest validator
 - Manual QA: reconcile station names/IDs and three map locations with source pages
-- Evidence: pending
+- Evidence: 2026-09-05 — 15 exact asset contracts recorded in
+  `config/tohoku-data-proof.toml` and the source manifest: 12 acquisition-approved
+  and 3 explicitly blocked. The blocked status has RED/GREEN provenance-test
+  evidence; no raw data was downloaded. Maker verification is recorded in the
+  T-002A report and awaits an independent scientific checker disposition.
 - Attempts / Max: 0 / 3
-- Attempt log: 2026-09-05 — authoritative endpoint and contract audit started
-- Status: in-progress
+- Attempt log: 2026-09-05 — authoritative endpoint and contract audit started;
+  2026-09-05 — exact source-contract ledger completed with NCTR field and
+  Saipan and Valparaíso retained as blocked, while the published NCTR scalar
+  coefficients were approved with their units explicitly unstated; submitted
+  for independent scientific review
+- Status: in-review
 
 ## T-002B — Acquire and fingerprint raw assets
 

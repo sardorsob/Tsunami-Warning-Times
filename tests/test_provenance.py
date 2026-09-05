@@ -43,6 +43,14 @@ def test_valid_manifest_returns_record_count(tmp_path: Path) -> None:
     assert validate_manifest(manifest).records == 1
 
 
+def test_manifest_accepts_a_blocked_asset(tmp_path: Path) -> None:
+    """Protect the explicit access-blocker state from being rejected as invalid."""
+    manifest = tmp_path / "sources.csv"
+    write_manifest(manifest, status="blocked")
+
+    assert validate_manifest(manifest).records == 1
+
+
 def test_manifest_rejects_an_unresolved_spatial_field(tmp_path: Path) -> None:
     manifest = tmp_path / "sources.csv"
     write_manifest(manifest, coordinate_order="")

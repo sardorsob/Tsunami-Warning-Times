@@ -30,7 +30,9 @@ REQUIRED_COLUMNS: tuple[str, ...] = (
     "local_path",
     "notes",
 )
-ALLOWED_STATUSES = frozenset({"candidate", "approved", "rejected", "superseded"})
+# A blocked asset has a recorded source-access or contract blocker. It remains
+# in the ledger for accounting, but cannot feed an acquisition run.
+ALLOWED_STATUSES = frozenset({"candidate", "approved", "blocked", "rejected", "superseded"})
 
 
 class ManifestError(ValueError):
