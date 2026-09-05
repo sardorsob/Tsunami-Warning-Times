@@ -153,10 +153,16 @@
 - Verification commands: unit fixtures, opt-in live smoke checks, two-run checksum
   comparison, provenance validator, and raw-file accounting
 - Manual QA: open representative files and compare headers/identity with source
-- Evidence: pending
-- Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Evidence: 2026-09-05 — source-independent acquisition core has fixture RED/GREEN
+  evidence for atomic writes, cache reuse, immutable conflict quarantine,
+  bounded transient-failure isolation in source-ID order, blocked no-fetch, TOML
+  contract-field preservation, and bounded prefix inspection. Focused suite
+  passed (7 tests); Ruff and Pyright passed; CLI help and an isolated offline
+  run bundle were exercised. No live request or raw scientific download occurred.
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-05 — implemented the Task 2 core and thin CLI; pending
+  reviewer acceptance and separately authorized live acquisition/checksum run.
+- Status: in progress
 
 ## T-002C — Normalize and validate analysis tables
 
