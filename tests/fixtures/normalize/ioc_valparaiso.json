@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "slevel": 0.0,
+      "stime": "2011-03-11 00:01:00",
+      "sensor": "rad",
+      "missing": "F",
+      "out_of_range": "F",
+      "spikes_via_median": "F",
+      "exceeded_neighbours": "F",
+      "flat_line": "F",
+      "distinctness": "F",
+      "completeness": "F",
+      "shift": "F"
+    },
+    {
+      "slevel": 2.5,
+      "stime": "2011-03-11 00:02:00",
+      "sensor": "rad",
+      "missing": "F",
+      "out_of_range": "F",
+      "spikes_via_median": "F",
+      "exceeded_neighbours": "T",
+      "flat_line": "F",
+      "distinctness": "F",
+      "completeness": "F",
+      "shift": "F"
+    },
+    {
+      "slevel": "NA",
+      "stime": "2011-03-11 00:03:00",
+      "sensor": "rad",
+      "missing": "T",
+      "out_of_range": "F",
+      "spikes_via_median": "F",
+      "exceeded_neighbours": "F",
+      "flat_line": "F",
+      "distinctness": "F",
+      "completeness": "F",
+      "shift": "F"
+    }
+  ],
+  "pagination": {
+    "total_days": 3,
+    "current_page": 1,
+    "total_pages": 1,
+    "next_page": null,
+    "prev_page": null
+  }
+}

@@ -6,6 +6,7 @@ from email.message import Message
 from http.client import IncompleteRead
 from pathlib import Path, PurePosixPath
 from urllib.error import HTTPError, URLError
+from urllib.request import Request
 
 import pytest
 
@@ -173,6 +174,141 @@ def test_working_tree_status_ignores_only_generated_run_bundles(
         ".",
         ":(exclude)artifacts/logs/runs/**",
     ]
+
+
+def test_read_ioc_api_key_rejects_malformed_values_without_echoing_them(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert hasattr(acquire_script, "read_ioc_api_key")
+    loader = acquire_script.read_ioc_api_key
+    malformed = "not-a-valid-secret"
+
+    def malformed_key(*args: object, **kwargs: object) -> str:
+        del args, kwargs
+        return malformed
+
+    monkeypatch.setattr(
+        "scripts.acquire_tohoku.subprocess.check_output",
+        malformed_key,
+    )
+
+    with pytest.raises(ValueError) as error:
+        loader()
+
+    assert malformed not in str(error.value)
+    assert "128 hexadecimal" in str(error.value)
+
+
+def test_ioc_keychain_fetcher_routes_the_secret_only_to_the_exact_ioc_host(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    assert hasattr(acquire_script, "ioc_keychain_fetcher")
+    factory = acquire_script.ioc_keychain_fetcher
+    loaded = 0
+    routed: list[tuple[str, str | None]] = []
+
+    def load_key() -> str:
+        nonlocal loaded
+        loaded += 1
+        return "a" * 128
+
+    def ordinary(url: str, destination: Path, timeout_seconds: float) -> ResponseMetadata:
+        del destination, timeout_seconds
+        routed.append((url, None))
+        return ResponseMetadata(content_type="application/json", headers={})
+
+    def authenticated(
+        url: str, destination: Path, timeout_seconds: float, api_key: str
+    ) -> ResponseMetadata:
+        del destination, timeout_seconds
+        routed.append((url, api_key))
+        return ResponseMetadata(content_type="application/json", headers={})
+
+    monkeypatch.setattr(acquire_script, "read_ioc_api_key", load_key)
+    monkeypatch.setattr(acquire_script, "download_url", ordinary)
+    monkeypatch.setattr(acquire_script, "download_ioc_url", authenticated)
+    fetcher = factory()
+
+    fetcher("https://example.test/data", tmp_path / "ordinary", 30)
+    fetcher(
+        "https://api.ioc-sealevelmonitoring.org/v2/research/data",
+        tmp_path / "ioc-a",
+        30,
+    )
+    fetcher(
+        "https://api.ioc-sealevelmonitoring.org/v2/catalog/ioc/valp",
+        tmp_path / "ioc-b",
+        30,
+    )
+    fetcher("https://api.ioc-sealevelmonitoring.org.evil.test/data", tmp_path / "evil", 30)
+
+    assert loaded == 1
+    assert routed == [
+        ("https://example.test/data", None),
+        ("https://api.ioc-sealevelmonitoring.org/v2/research/data", "a" * 128),
+        ("https://api.ioc-sealevelmonitoring.org/v2/catalog/ioc/valp", "a" * 128),
+        ("https://api.ioc-sealevelmonitoring.org.evil.test/data", None),
+    ]
+
+
+def test_download_ioc_url_uses_header_auth_and_rejects_redirects(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    assert hasattr(acquire_script, "download_ioc_url")
+    assert hasattr(acquire_script, "RejectAuthenticatedRedirects")
+    observed: dict[str, object] = {}
+    headers = Message()
+    headers["Content-Type"] = "application/json"
+
+    class Response:
+        status = 200
+
+        def __init__(self) -> None:
+            self.headers = headers
+            self._reads = [b'{"data":[]}', b""]
+
+        def __enter__(self) -> "Response":
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            del args
+
+        def read(self, size: int) -> bytes:
+            del size
+            return self._reads.pop(0)
+
+    class Opener:
+        def open(self, request: object, timeout: float) -> Response:
+            observed["request"] = request
+            observed["timeout"] = timeout
+            return Response()
+
+    def fake_build_opener(handler: object) -> Opener:
+        observed["handler"] = handler
+        return Opener()
+
+    monkeypatch.setattr(acquire_script, "build_opener", fake_build_opener)
+    destination = tmp_path / "valp.json"
+    metadata = acquire_script.download_ioc_url(
+        "https://api.ioc-sealevelmonitoring.org/v2/research/data",
+        destination,
+        30,
+        "a" * 128,
+    )
+
+    request = observed["request"]
+    assert isinstance(request, Request)
+    assert request.get_header("X-api-key") == "a" * 128
+    assert request.get_header("Accept") == "application/json"
+    assert isinstance(observed["handler"], acquire_script.RejectAuthenticatedRedirects)
+    assert observed["timeout"] == 30
+    assert destination.read_bytes() == b'{"data":[]}'
+    assert metadata.content_type == "application/json"
+
+    with pytest.raises(HTTPError, match="redirect refused"):
+        acquire_script.RejectAuthenticatedRedirects().redirect_request(
+            request, None, 302, "redirect refused", headers, "https://evil.test"
+        )
 
 
 def test_write_run_evidence_keeps_only_safe_response_header_values(tmp_path: Path) -> None:

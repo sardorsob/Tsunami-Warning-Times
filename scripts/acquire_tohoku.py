@@ -16,7 +16,9 @@ from collections import Counter
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlsplit
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -45,6 +47,94 @@ SAFE_RESPONSE_HEADER_NAMES = frozenset(
         "vary",
     }
 )
+IOC_API_HOST = "api.ioc-sealevelmonitoring.org"
+IOC_KEYCHAIN_ACCOUNT = "tsunami-warning-times"
+IOC_KEYCHAIN_SERVICE = "org.ioc-sealevelmonitoring.api"
+IOC_API_KEY_PATTERN = re.compile(r"[0-9a-fA-F]{128}\Z")
+
+
+class RejectAuthenticatedRedirects(HTTPRedirectHandler):
+    """Prevent an authenticated request from forwarding its API key."""
+
+    def redirect_request(  # type: ignore[override]
+        self,
+        req: Request,
+        fp: object,
+        code: int,
+        msg: str,
+        headers: object,
+        newurl: str,
+    ) -> Request | None:
+        raise HTTPError(newurl, code, msg, headers, fp)  # type: ignore[arg-type]
+
+
+def read_ioc_api_key() -> str:
+    """Read and validate the IOC credential from the project Keychain entry."""
+    try:
+        api_key = subprocess.check_output(
+            [
+                "security",
+                "find-generic-password",
+                "-a",
+                IOC_KEYCHAIN_ACCOUNT,
+                "-s",
+                IOC_KEYCHAIN_SERVICE,
+                "-w",
+            ],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError) as error:
+        raise ValueError("IOC API key is unavailable from macOS Keychain") from error
+    if IOC_API_KEY_PATTERN.fullmatch(api_key) is None:
+        raise ValueError("IOC API key must contain exactly 128 hexadecimal characters")
+    return api_key
+
+
+def _is_exact_ioc_url(url: str) -> bool:
+    parsed = urlsplit(url)
+    return (
+        parsed.scheme == "https"
+        and parsed.hostname == IOC_API_HOST
+        and parsed.port is None
+        and parsed.username is None
+        and parsed.password is None
+    )
+
+
+def download_ioc_url(
+    url: str, destination: Path, timeout_seconds: float, api_key: str
+) -> ResponseMetadata:
+    """Download one IOC API response without exposing or forwarding its key."""
+    if not _is_exact_ioc_url(url):
+        raise ValueError("authenticated IOC URL must use the exact approved HTTPS host")
+    if IOC_API_KEY_PATTERN.fullmatch(api_key) is None:
+        raise ValueError("IOC API key must contain exactly 128 hexadecimal characters")
+    request = Request(url, headers={"X-API-KEY": api_key, "Accept": "application/json"})
+    opener = build_opener(RejectAuthenticatedRedirects())
+    with opener.open(request, timeout=timeout_seconds) as response:
+        with destination.open("wb") as target:
+            while chunk := response.read(1024 * 1024):
+                target.write(chunk)
+        return ResponseMetadata(
+            content_type=response.headers.get_content_type(),
+            headers=dict(response.headers.items()),
+        )
+
+
+def ioc_keychain_fetcher() -> Fetcher:
+    """Return a fetcher that adds the Keychain key only for the exact IOC host."""
+    api_key: str | None = None
+
+    def fetcher(url: str, destination: Path, timeout_seconds: float) -> ResponseMetadata:
+        nonlocal api_key
+        if not _is_exact_ioc_url(url):
+            return download_url(url, destination, timeout_seconds)
+        if api_key is None:
+            api_key = read_ioc_api_key()
+        return download_ioc_url(url, destination, timeout_seconds, api_key)
+
+    return fetcher
 
 
 def offline_fetcher(url: str, destination: Path, timeout_seconds: float) -> ResponseMetadata:
@@ -281,7 +371,7 @@ def main(argv: list[str] | None = None) -> int:
     except ContractError as error:
         parser.error(str(error))
 
-    fetcher: Fetcher = offline_fetcher if args.offline else download_url
+    fetcher: Fetcher = offline_fetcher if args.offline else ioc_keychain_fetcher()
     results = acquire_all(contracts, args.root, fetcher=fetcher)
     command = shlex.join(
         ["uv", "run", "python", "scripts/acquire_tohoku.py", *effective_argv]

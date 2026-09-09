@@ -46,6 +46,16 @@ FDSN_EVENT_COLUMNS: tuple[str, ...] = (
 EPSG4326_LONGITUDE_TOLERANCE = 1e-8
 DART_JULIAN_DAY_TOLERANCE = 1e-6
 DART_UNDOCUMENTED_SENTINEL = 9999.0
+IOC_QC_FLAGS: tuple[str, ...] = (
+    "missing",
+    "out_of_range",
+    "spikes_via_median",
+    "exceeded_neighbours",
+    "flat_line",
+    "distinctness",
+    "completeness",
+    "shift",
+)
 
 
 class NormalizationError(ValueError):
@@ -637,6 +647,173 @@ def normalize_coastal(
                 vertical_reference=station.vertical_reference,
             )
         )
+    return observations, rejected
+
+
+def normalize_ioc_valparaiso(
+    path: Path, station: StationRecord
+) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
+    """Normalize the explicit IOC Valparaíso radar response and retain its QC flags."""
+    if (
+        station.station_type != "coastal"
+        or station.availability != "approved"
+        or station.station_id != "valp"
+        or station.units != "m"
+        or station.vertical_reference != "unknown"
+        or station.time_basis != "UTC"
+    ):
+        raise NormalizationError(
+            "normalize_ioc_valparaiso requires the approved valp coastal station with "
+            "UTC, metres, and unknown vertical reference"
+        )
+    asset_reference = "coastal-valp-asset"
+
+    def reject_asset(
+        reason: str, detail: str
+    ) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
+        return [], [
+            _station_rejection(
+                station,
+                asset_reference,
+                reason,
+                detail,
+                record_type="source_asset",
+            )
+        ]
+
+    try:
+        document_value: object = json.loads(path.read_text(encoding="utf-8"))
+    except OSError as error:
+        raise NormalizationError(f"could not read IOC coastal asset {path}: {error}") from error
+    except json.JSONDecodeError as error:
+        return reject_asset("malformed_asset", str(error))
+    if not isinstance(document_value, dict):
+        return reject_asset("malformed_asset", "response is not a JSON object")
+    document = cast(dict[str, object], document_value)
+    data_value = document.get("data")
+    pagination_value = document.get("pagination")
+    if not isinstance(data_value, list):
+        return reject_asset("malformed_asset", "data is not a list")
+    if not data_value:
+        raise NormalizationError("approved asset contains no IOC coastal rows")
+    if not isinstance(pagination_value, dict):
+        return reject_asset("pagination_mismatch", "pagination is absent")
+    pagination = cast(dict[str, object], pagination_value)
+    expected_pagination: dict[str, object] = {
+        "total_days": 3,
+        "current_page": 1,
+        "total_pages": 1,
+        "next_page": None,
+        "prev_page": None,
+    }
+    if any(pagination.get(key) != value for key, value in expected_pagination.items()):
+        return reject_asset(
+            "pagination_mismatch",
+            "response does not cover the contracted three-day single-page request",
+        )
+    data = cast(list[object], data_value)
+    if any(
+        not isinstance(row, dict) or cast(dict[str, object], row).get("sensor") != "rad"
+        for row in data
+    ):
+        return reject_asset("sensor_mismatch", "response contains a non-rad sensor row")
+
+    observations: list[ObservationRecord] = []
+    candidates: list[tuple[int, str, ObservationRecord]] = []
+    indexed_rejections: list[tuple[int, RejectedRecord]] = []
+    for row_number, row_value in enumerate(data, start=1):
+        row = cast(dict[str, object], row_value)
+        reference = f"coastal-valp-row-{row_number:06d}"
+        source_time = row.get("stime")
+        if not isinstance(source_time, str):
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station, reference, "malformed_timestamp", "stime is not text"
+                    ),
+                )
+            )
+            continue
+        try:
+            observed = datetime.strptime(source_time, "%Y-%m-%d %H:%M:%S").replace(
+                tzinfo=UTC
+            )
+        except ValueError as error:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station, reference, "malformed_timestamp", str(error)
+                    ),
+                )
+            )
+            continue
+        qc = {name: row.get(name) for name in IOC_QC_FLAGS}
+        if any(value not in {"F", "T"} for value in qc.values()):
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station,
+                        reference,
+                        "malformed_row",
+                        "QC flags must all be F or T",
+                    ),
+                )
+            )
+            continue
+        value = row.get("slevel")
+        try:
+            raw_value = None if value == "NA" else _finite_float(str(value))
+        except (TypeError, ValueError) as error:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(station, reference, "malformed_value", str(error)),
+                )
+            )
+            continue
+        observed_at_utc = observed.strftime("%Y-%m-%dT%H:%M:%SZ")
+        extra = {"sensor": "rad", **qc}
+        candidates.append(
+            (
+                row_number,
+                reference,
+                ObservationRecord(
+                    observation_id=f"{station.station_id}-{observed_at_utc}",
+                    source_id=station.source_id,
+                    station_id=station.station_id,
+                    source_time=source_time,
+                    observed_at_utc=observed_at_utc,
+                    raw_value=raw_value,
+                    fitted_value=None,
+                    residual_value=None,
+                    source_extra=json.dumps(extra, sort_keys=True, separators=(",", ":")),
+                    units=station.units,
+                    vertical_reference=station.vertical_reference,
+                ),
+            )
+        )
+
+    timestamp_counts = Counter(record.observed_at_utc for _, _, record in candidates)
+    for row_number, reference, record in candidates:
+        duplicate_count = timestamp_counts[record.observed_at_utc]
+        if duplicate_count > 1:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station,
+                        reference,
+                        "duplicate_timestamp",
+                        f"{record.observed_at_utc}; all {duplicate_count} rows quarantined",
+                    ),
+                )
+            )
+        else:
+            observations.append(record)
+    rejected = [record for _, record in sorted(indexed_rejections, key=lambda item: item[0])]
     return observations, rejected
 
 

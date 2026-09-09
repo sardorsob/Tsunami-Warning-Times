@@ -81,6 +81,25 @@ def ntwc_saipan_station() -> StationRecord:
     )
 
 
+def ioc_valparaiso_station() -> StationRecord:
+    return StationRecord(
+        station_id="valp",
+        source_id="ioc-valparaiso-rad-20110311to20110314",
+        station_type="coastal",
+        name="Valparaíso",
+        latitude=-33.02767128,
+        longitude=-71.62787275,
+        availability="approved",
+        units="m",
+        vertical_reference="unknown",
+        selection_role="coastal candidate",
+        reason="not applicable",
+        horizontal_datum="unknown",
+        coordinate_order="latitude, longitude",
+        time_basis="UTC",
+    )
+
+
 def test_normalize_event_accepts_the_exact_reviewed_fdsn_record() -> None:
     event = normalize_event(FIXTURES / "usgs_event.csv", EVENT_ID)
 
@@ -539,6 +558,74 @@ def test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch(tmp_path: Path)
 
     assert len(observations) == 3
     assert [row.reason_code for row in rejected] == ["malformed_timestamp"]
+
+
+def test_normalize_ioc_valparaiso_preserves_zero_missingness_and_qc_flags() -> None:
+    assert hasattr(normalize_module, "normalize_ioc_valparaiso")
+    normalizer = normalize_module.normalize_ioc_valparaiso
+
+    observations, rejected = normalizer(
+        FIXTURES / "ioc_valparaiso.json", ioc_valparaiso_station()
+    )
+
+    assert [row.observed_at_utc for row in observations] == [
+        "2011-03-11T00:01:00Z",
+        "2011-03-11T00:02:00Z",
+        "2011-03-11T00:03:00Z",
+    ]
+    assert [row.raw_value for row in observations] == [0.0, 2.5, None]
+    assert all(row.units == "m" and row.vertical_reference == "unknown" for row in observations)
+    assert json.loads(observations[1].source_extra or "{}") == {
+        "completeness": "F",
+        "distinctness": "F",
+        "exceeded_neighbours": "T",
+        "flat_line": "F",
+        "missing": "F",
+        "out_of_range": "F",
+        "sensor": "rad",
+        "shift": "F",
+        "spikes_via_median": "F",
+    }
+    assert rejected == []
+
+
+def test_normalize_ioc_valparaiso_quarantines_every_conflicting_duplicate(
+    tmp_path: Path,
+) -> None:
+    assert hasattr(normalize_module, "normalize_ioc_valparaiso")
+    normalizer = normalize_module.normalize_ioc_valparaiso
+    document = json.loads((FIXTURES / "ioc_valparaiso.json").read_text(encoding="utf-8"))
+    duplicate = dict(document["data"][0])
+    duplicate["slevel"] = 1.25
+    document["data"].append(duplicate)
+    path = tmp_path / "valp.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+
+    observations, rejected = normalizer(path, ioc_valparaiso_station())
+
+    assert len(observations) == 2
+    assert [row.reason_code for row in rejected] == [
+        "duplicate_timestamp",
+        "duplicate_timestamp",
+    ]
+    assert all("all 2 rows quarantined" in row.detail for row in rejected)
+
+
+def test_normalize_ioc_valparaiso_rejects_wrong_sensor_or_pagination(tmp_path: Path) -> None:
+    assert hasattr(normalize_module, "normalize_ioc_valparaiso")
+    normalizer = normalize_module.normalize_ioc_valparaiso
+    source = (FIXTURES / "ioc_valparaiso.json").read_text(encoding="utf-8")
+    variants = (
+        (source.replace('"sensor": "rad"', '"sensor": "prs"', 1), "sensor_mismatch"),
+        (source.replace('"total_pages": 1', '"total_pages": 2'), "pagination_mismatch"),
+    )
+
+    for payload, reason in variants:
+        path = tmp_path / f"{reason}.json"
+        path.write_text(payload, encoding="utf-8")
+        observations, rejected = normalizer(path, ioc_valparaiso_station())
+        assert observations == []
+        assert [row.reason_code for row in rejected] == [reason]
 
 
 def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
