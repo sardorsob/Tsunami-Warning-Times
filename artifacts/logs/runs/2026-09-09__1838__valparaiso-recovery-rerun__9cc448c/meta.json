@@ -1,0 +1,9 @@
+{
+  "command": "uv run python scripts/acquire_tohoku.py --run-tag valparaiso-recovery-rerun",
+  "evidence_disposition": "ready-for-review",
+  "git_sha": "9cc448c",
+  "mode": "live",
+  "run_id": "2026-09-09__1838__valparaiso-recovery-rerun__9cc448c",
+  "timestamp_utc": "2026-09-09T18:38:00Z",
+  "working_tree": "clean"
+}

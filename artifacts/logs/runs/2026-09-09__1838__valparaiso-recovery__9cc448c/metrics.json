@@ -1,0 +1,15 @@
+{
+  "bytes_by_status": {
+    "blocked": 0,
+    "cached": 12467478,
+    "downloaded": 1893995
+  },
+  "status_counts": {
+    "blocked": 1,
+    "cached": 15,
+    "downloaded": 2
+  },
+  "total_bytes": 14361473,
+  "total_contracts": 18,
+  "total_outcomes": 18
+}
