@@ -660,6 +660,8 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
         elif asset["source_class"] == "coastal water-level observation":
             if asset["format"] == "NTWC event archive ASCII":
                 payload = (FIXTURES / "ntwc_saipan.070").read_bytes()
+            elif asset["format"] == "IOC SLSMF v2 research JSON":
+                payload = (FIXTURES / "ioc_valparaiso.json").read_bytes()
             else:
                 payload_document = json.loads(
                     (FIXTURES / "coops_station.json").read_text(encoding="utf-8")
@@ -675,6 +677,8 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
                 payload = json.dumps(payload_document, separators=(",", ":")).encode()
         elif asset["source_class"] == "coastal water-level archival companion":
             payload = (FIXTURES / "ntwc_saipan.070").read_bytes()
+        elif asset["source_class"] == "coastal water-level quality companion":
+            payload = (FIXTURES / "ioc_valparaiso.json").read_bytes()
         elif asset["source_class"] == "modeled travel-time contour metadata":
             payload = json.dumps(
                 {
@@ -763,14 +767,14 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
 
     assert first.row_counts == {
         "event": 1,
-        "observation": 23,
-        "rejected_record": 26,
+        "observation": 26,
+        "rejected_record": 25,
         "station": 10,
         "ttt_contour": 3,
     }
     assert first.rejection_counts == {
         "api_or_record_rejection": 24,
-        "blocked_source": 2,
+        "blocked_source": 1,
     }
     assert set(first.output_paths) == {
         "accounting",
@@ -799,20 +803,20 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
         "saip",
         "valp",
     ]
-    blocked_station_states = {
+    selected_station_states = {
         row["availability"]
         for row in station_rows
         if row["station_id"] in {"saip", "valp"}
     }
-    assert blocked_station_states == {"approved", "blocked"}
+    assert selected_station_states == {"approved"}
 
     accounting = json.loads(
         (tmp_path / first.output_paths["accounting"]).read_text(encoding="utf-8")
     )
     assert accounting["source_coverage"] == {
-        "approved": 15,
-        "blocked": 2,
-        "total": 17,
+        "approved": 17,
+        "blocked": 1,
+        "total": 18,
     }
     assert accounting["nctr_model_field"] == "blocked_no_proxy"
     assert accounting["nctr_source_coefficients"] == "coverage_only_not_continuous_field"
@@ -842,6 +846,10 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
         key: outcomes["ntwc-uhslc-saipan-20110311"][key]
         for key in ("input_count", "accepted_count", "rejected_count", "output_count")
     } == {"input_count": 3, "accepted_count": 3, "rejected_count": 0, "output_count": 3}
+    assert {
+        key: outcomes["ioc-valparaiso-rad-20110311to20110314"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 3, "accepted_count": 3, "rejected_count": 0, "output_count": 3}
     assert outcomes["ncei-ttt-tohoku-layer17-metadata"]["normalization_role"] == (
         "validation_input"
     )
@@ -854,6 +862,9 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
     assert outcomes["ntwc-uhslc-saipan-20110313"]["normalization_role"] == (
         "coverage_only_archival_companion"
     )
+    assert outcomes["ioc-valparaiso-prs-20110311to20110314"][
+        "normalization_role"
+    ] == "coverage_only_quality_companion"
     assert outcomes["nctr-tohoku-model-field"]["blocked_count"] == 1
 
     schemas = json.loads(

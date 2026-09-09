@@ -679,7 +679,7 @@ def test_load_contracts_preserves_the_approved_source_contract_fields() -> None:
     )
     blocked = next(contract for contract in contracts if contract.availability == "blocked")
 
-    assert len(contracts) == 17
+    assert len(contracts) == 18
     assert event.expected_content_signature.startswith("One CSV row")
     assert event.expected_prefix == "time,latitude,longitude,depth"
     assert event.crs == "WGS84 horizontal coordinates"
@@ -687,6 +687,15 @@ def test_load_contracts_preserves_the_approved_source_contract_fields() -> None:
     assert event.station_metadata == "not applicable"
     assert event.reason == "not applicable"
     assert blocked.reason != "not applicable"
+    valparaiso = next(
+        contract
+        for contract in contracts
+        if contract.source_id == "ioc-valparaiso-rad-20110311to20110314"
+    )
+    assert valparaiso.availability == "approved"
+    assert valparaiso.format == "IOC SLSMF v2 research JSON"
+    assert "includesensors%5B%5D=rad" in valparaiso.url
+    assert "filter_exceeded_neighbours=false" in valparaiso.url
 
 
 def test_acquire_source_limits_the_prefix_identity_check_to_a_leading_window(

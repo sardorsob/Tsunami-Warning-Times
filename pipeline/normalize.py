@@ -1311,6 +1311,21 @@ def _coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
     return len(cast(list[object], data_value))
 
 
+def _ioc_coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
+    if any(record.record_type == "source_asset" for record in rejected):
+        return 1
+    try:
+        document_value: object = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise NormalizationError(f"could not reconcile IOC coastal input: {error}") from error
+    if not isinstance(document_value, dict):
+        raise NormalizationError("could not reconcile IOC coastal input object")
+    data_value = cast(dict[str, object], document_value).get("data")
+    if not isinstance(data_value, list):
+        raise NormalizationError("could not reconcile IOC coastal data rows")
+    return len(cast(list[object], data_value))
+
+
 def _ntwc_coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
     if any(record.record_type == "source_asset" for record in rejected):
         return 1
@@ -1529,6 +1544,13 @@ def build_tables(
                     verified[contract.source_id], station
                 )
                 input_count = _ntwc_coastal_input_count(
+                    verified[contract.source_id], station_rejected
+                )
+            elif contract.format == "IOC SLSMF v2 research JSON":
+                accepted, station_rejected = normalize_ioc_valparaiso(
+                    verified[contract.source_id], station
+                )
+                input_count = _ioc_coastal_input_count(
                     verified[contract.source_id], station_rejected
                 )
             else:
@@ -1753,6 +1775,8 @@ def build_tables(
                 if contract.source_class == "model source coefficients"
                 else "coverage_only_archival_companion"
                 if contract.source_class == "coastal water-level archival companion"
+                else "coverage_only_quality_companion"
+                if contract.source_class == "coastal water-level quality companion"
                 else "validation_input"
                 if contract.source_class == "modeled travel-time contour metadata"
                 else "normalized"
