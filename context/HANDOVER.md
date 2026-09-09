@@ -202,6 +202,16 @@ the frontend typecheck, Vitest, and production build; and `git diff --check`.
 Graphify was refreshed. Raw and processed data remain ignored and untracked,
 Serena remains ignored, and `context/EDA_REPORT.md` remains exactly zero bytes.
 
+## Active Valparaíso recovery
+
+T-002C2 is in progress under D-011. The IOC API credential is stored only in
+macOS Keychain service `org.ioc-sealevelmonitoring.api`, account
+`tsunami-warning-times`; repository files and run evidence may record those
+identifiers but never the credential. Official IOC documentation confirms
+header-based `X-API-KEY` authentication and the research endpoint's sensor,
+exclusive-end-date, QC-flag, and filter controls. The next gate is an
+authenticated, non-persisting inspection of `valp` pressure and radar responses.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
@@ -219,8 +229,9 @@ Serena remains ignored, and `context/EDA_REPORT.md` remains exactly zero bytes.
 
 Execute the remaining approved implementation chain in order:
 
-1. Start T-002D only from the accepted T-002C1 inventory and table checksums.
-2. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+1. Complete T-002C2 and independently review the Valparaíso sensor contract.
+2. Start T-002D only from the accepted T-002C2 inventory and table checksums.
+3. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -230,10 +241,10 @@ Do not begin the full wavefront or story build during the data proof.
 
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
 `main`. Raw and processed data remain ignored and untracked; no deployment or
-publication occurred. T-002C and T-002C1 are accepted, and T-002D remains
-pending.
+publication occurred. T-002C and T-002C1 are accepted, T-002C2 is in progress,
+and T-002D remains pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, T-002B, T-002C, and T-002C1 are accepted. T-002D
-is not yet active.
+T-000, T-001, T-002P, T-002A, T-002B, T-002C, and T-002C1 are accepted. T-002C2
+is in progress; T-002D is not yet active.

@@ -134,3 +134,21 @@
   outcome-driven station selection.
 - Revisit when: repeated EDA runs show that a stable follow-up check belongs in
   the fixed core profile.
+
+## D-011 — Keep IOC credentials outside the repository and preserve tsunami values
+
+- Date: 2026-09-09
+- Status: active
+- Decision: store the IOC API key in macOS Keychain under a project-specific
+  service/account, resolve it only in memory for an `X-API-KEY` request header,
+  and never write it to configuration, URLs, logs, run bundles, or commits. For
+  Valparaíso research data, request explicit sensor series with QC flags while
+  disabling value-removing QC filters, 30-day mean subtraction, and timestamp
+  fitting.
+- Reason: the official IOC contract uses header authentication; its documentation
+  warns that neighbour and other QC filters can replace tsunami observations
+  with missing values. Raw source timestamps, levels, and flags must remain
+  inspectable before any arrival analysis.
+- Revisit when: the key is rotated, a platform other than macOS must run live
+  acquisition, or independent review approves a source-owned preferred-sensor
+  rule and a separate filtered derivative.

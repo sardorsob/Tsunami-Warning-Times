@@ -271,11 +271,51 @@
   and APPROVED with no remaining blocking findings
 - Status: done
 
+## T-002C2 — Recover and normalize Valparaíso research data
+
+- ID: T-002C2
+- Title: Use authorized IOC access to recover the Valparaíso event series
+- Depends on: T-002C1 done
+- Owner (Maker): data-pipeline contributor
+- Checker: scientific data reviewer
+- Phase: authenticated acquisition and data quality
+- Data refs: IOC SLSMF v2 OpenAPI contract; official SLSMF API manual; station
+  `valp`; pressure `prs` and radar `rad` research series
+- Scientific refs: `docs/research/source-access-options.md`;
+  `context/spatial-contract.md`; D-011
+- Statistical notes: sensor coverage and QC flags may guide a documented source
+  choice, but observed tsunami shape or model residuals may not
+- Scope: store the credential outside Git, authenticate via `X-API-KEY`, acquire
+  the exact event window for both documented sensors without value-removing API
+  filters, fingerprint raw responses, validate station/sensor/time/unit/datum
+  semantics, normalize the accepted series or keep ambiguity visible, and revise
+  coverage/provenance reports
+- Artifacts to produce: Keychain entry, ignored immutable raw files and sidecars,
+  non-secret run evidence, tested credential-aware acquisition and normalization,
+  revised contracts/manifest/reports, and deterministic normalized candidates
+- Acceptance criteria: no secret reaches repository files, command output, run
+  evidence, or Git; official identity and endpoint parameters are recorded;
+  source rows, accepted rows, rejections, sensors, timestamps, missingness, QC
+  flags, units, and datum reconcile; no API filter silently removes a tsunami
+  value; Valparaíso leaves blocked status only if the full contract passes
+- Verification commands: secret scan, credential-loader and parser RED/GREEN
+  tests, two-run raw checksum comparison, deterministic normalized rebuild,
+  provenance validator, full repository gate, and independent scientific review
+- Manual QA: trace both sensor headers/metadata, first/event-window/last samples,
+  QC-flagged points, station coordinates, and three raw-to-normalized values
+- Evidence: Keychain entry stored and length-validated without displaying the
+  credential; official OpenAPI and API manual confirm `X-API-KEY`, meter-valued
+  `slevel`, exclusive `timestop`, sensor selection, and QC/filter semantics
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-09 — authorized IOC credential received; planning and
+  credential containment completed; authenticated source inspection pending
+- Status: in-progress
+
 ## T-002D — Run reproducible EDA
 
 - ID: T-002D
 - Title: Profile the broad Tōhoku data proof with scripts and marimo
-- Depends on: T-002C and T-002C1 done
+- Depends on: T-002C, T-002C1, and T-002C2 done
 - Owner (Maker): analysis contributor
 - Checker: independent analytical reviewer
 - Phase: EDA
