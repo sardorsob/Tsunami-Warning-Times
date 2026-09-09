@@ -12,7 +12,7 @@ import shutil
 import tempfile
 import tomllib
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 from typing import cast
@@ -651,9 +651,11 @@ def normalize_coastal(
 
 
 def normalize_ioc_valparaiso(
-    path: Path, station: StationRecord
+    path: Path, station: StationRecord, *, expected_sensor: str = "rad"
 ) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
-    """Normalize the explicit IOC Valparaíso radar response and retain its QC flags."""
+    """Validate one explicit IOC Valparaíso sensor response and retain its QC flags."""
+    if expected_sensor not in {"rad", "prs"}:
+        raise NormalizationError("IOC Valparaíso sensor must be rad or prs")
     if (
         station.station_type != "coastal"
         or station.availability != "approved"
@@ -666,7 +668,7 @@ def normalize_ioc_valparaiso(
             "normalize_ioc_valparaiso requires the approved valp coastal station with "
             "UTC, metres, and unknown vertical reference"
         )
-    asset_reference = "coastal-valp-asset"
+    asset_reference = f"coastal-valp-{expected_sensor}-asset"
 
     def reject_asset(
         reason: str, detail: str
@@ -713,10 +715,14 @@ def normalize_ioc_valparaiso(
         )
     data = cast(list[object], data_value)
     if any(
-        not isinstance(row, dict) or cast(dict[str, object], row).get("sensor") != "rad"
+        not isinstance(row, dict)
+        or cast(dict[str, object], row).get("sensor") != expected_sensor
         for row in data
     ):
-        return reject_asset("sensor_mismatch", "response contains a non-rad sensor row")
+        return reject_asset(
+            "sensor_mismatch",
+            f"response contains a row other than explicit sensor {expected_sensor}",
+        )
 
     observations: list[ObservationRecord] = []
     candidates: list[tuple[int, str, ObservationRecord]] = []
@@ -775,7 +781,7 @@ def normalize_ioc_valparaiso(
             )
             continue
         observed_at_utc = observed.strftime("%Y-%m-%dT%H:%M:%SZ")
-        extra = {"sensor": "rad", **qc}
+        extra = {"sensor": expected_sensor, **qc}
         candidates.append(
             (
                 row_number,
@@ -1350,6 +1356,21 @@ def _observation_source_accounting(
     }
 
 
+def _quality_companion_accounting(
+    input_count: int,
+    accepted: list[ObservationRecord],
+    rejected: list[RejectedRecord],
+) -> dict[str, object]:
+    if input_count != len(accepted) + len(rejected):
+        raise NormalizationError("quality-companion accounting does not reconcile")
+    return {
+        "input_count": input_count,
+        "accepted_count": len(accepted),
+        "rejected_count": len(rejected),
+        "output_count": 0,
+    }
+
+
 def _csv_value(value: object) -> object:
     if value is None:
         return ""
@@ -1567,6 +1588,31 @@ def build_tables(
             )
             observations.extend(accepted)
             rejected.extend(station_rejected)
+    valparaiso_stations = [station for station in stations if station.station_id == "valp"]
+    quality_companions = contracts_by_class.get("coastal water-level quality companion", [])
+    if quality_companions and len(valparaiso_stations) != 1:
+        raise NormalizationError(
+            "IOC quality companion requires exactly one configured valp station"
+        )
+    for contract in quality_companions:
+        if (
+            contract.format != "IOC SLSMF v2 research JSON"
+            or contract.source_id != "ioc-valparaiso-prs-20110311to20110314"
+        ):
+            raise NormalizationError("unsupported coastal water-level quality companion")
+        companion_station = replace(
+            valparaiso_stations[0],
+            source_id=contract.source_id,
+        )
+        accepted, companion_rejected = normalize_ioc_valparaiso(
+            verified[contract.source_id], companion_station, expected_sensor="prs"
+        )
+        source_accounting[contract.source_id] = _quality_companion_accounting(
+            _ioc_coastal_input_count(verified[contract.source_id], companion_rejected),
+            accepted,
+            companion_rejected,
+        )
+        rejected.extend(companion_rejected)
     station_sources = {station.source_id for station in stations}
     for contract in contracts:
         if contract.availability == "blocked" and contract.source_id not in station_sources:
@@ -1814,7 +1860,11 @@ def build_tables(
                         if contract.source_class == "modeled travel-time contours"
                         else "sample"
                         if contract.source_class
-                        in {"DART observation time series", "coastal water-level observation"}
+                        in {
+                            "DART observation time series",
+                            "coastal water-level observation",
+                            "coastal water-level quality companion",
+                        }
                         else "asset"
                     ),
                     "output_grain": (

@@ -28,9 +28,11 @@ A second build with tag `2026-09-09-valparaiso-reviewed-aab8491-b` produced the
 same seven output checksums; byte comparison of `observation.csv` and
 `accounting.json` returned no differences.
 
-The two build commands used the accepted inventory, current contract, repository
-root, and distinct run tags `2026-09-05-1958-quality-a-5f920f2` and
-`2026-09-05-1958-quality-b-5f920f2`. `diff -rq` returned no differences.
+The two current build commands used the accepted Valparaíso-rerun inventory,
+current contract, repository root, and distinct run tags
+`2026-09-09-valparaiso-reviewed-aab8491-a` and
+`2026-09-09-valparaiso-reviewed-aab8491-b`. Byte comparison returned no
+differences.
 Opening a build never performs network access, and existing output tags are not
 overwritten.
 
@@ -38,7 +40,7 @@ overwritten.
 
 The current denominator is 18 contracted source assets: 17 are approved and
 cached or downloaded (94.4%), and 1 is blocked. Valparaíso radar is the
-normalized source-preferred series; pressure is a coverage-only quality
+normalized higher-coverage series; pressure is a coverage-only quality
 companion and is not counted as another station. No gauge was substituted.
 
 | Source group | Source IDs | Input SHA-256 / state | Normalized disposition |

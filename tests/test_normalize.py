@@ -628,6 +628,33 @@ def test_normalize_ioc_valparaiso_rejects_wrong_sensor_or_pagination(tmp_path: P
         assert [row.reason_code for row in rejected] == [reason]
 
 
+def test_normalize_ioc_valparaiso_validates_an_explicit_pressure_companion(
+    tmp_path: Path,
+) -> None:
+    document = json.loads((FIXTURES / "ioc_valparaiso.json").read_text(encoding="utf-8"))
+    for row in document["data"]:
+        row["sensor"] = "prs"
+    path = tmp_path / "valp-prs.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    station = replace(
+        ioc_valparaiso_station(),
+        source_id="ioc-valparaiso-prs-20110311to20110314",
+    )
+
+    observations, rejected = normalize_module.normalize_ioc_valparaiso(
+        path, station, expected_sensor="prs"
+    )
+
+    assert len(observations) == 3
+    assert {row.source_id for row in observations} == {
+        "ioc-valparaiso-prs-20110311to20110314"
+    }
+    assert {json.loads(row.source_extra or "{}")["sensor"] for row in observations} == {
+        "prs"
+    }
+    assert rejected == []
+
+
 def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
     config = root / "config.toml"
     source_config = Path(__file__).parents[1] / "config/tohoku-data-proof.toml"
@@ -678,7 +705,12 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
         elif asset["source_class"] == "coastal water-level archival companion":
             payload = (FIXTURES / "ntwc_saipan.070").read_bytes()
         elif asset["source_class"] == "coastal water-level quality companion":
-            payload = (FIXTURES / "ioc_valparaiso.json").read_bytes()
+            payload_document = json.loads(
+                (FIXTURES / "ioc_valparaiso.json").read_text(encoding="utf-8")
+            )
+            for row in payload_document["data"]:
+                row["sensor"] = "prs"
+            payload = json.dumps(payload_document, separators=(",", ":")).encode()
         elif asset["source_class"] == "modeled travel-time contour metadata":
             payload = json.dumps(
                 {
@@ -865,6 +897,10 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
     assert outcomes["ioc-valparaiso-prs-20110311to20110314"][
         "normalization_role"
     ] == "coverage_only_quality_companion"
+    assert {
+        key: outcomes["ioc-valparaiso-prs-20110311to20110314"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 3, "accepted_count": 3, "rejected_count": 0, "output_count": 0}
     assert outcomes["nctr-tohoku-model-field"]["blocked_count"] == 1
 
     schemas = json.loads(

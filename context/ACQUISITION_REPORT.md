@@ -26,9 +26,9 @@ downloaded, and 1 blocked outcomes. The two downloaded IOC responses total
 `2026-09-09__1838__valparaiso-recovery-rerun__9cc448c` recorded 17 cached and 1
 blocked outcome with the same 14,361,473-byte inventory and identical hashes.
 
-The source-preferred one-sensor response selected radar for the full window, so
-the explicit `rad` response is the normalized series. The explicit `prs`
-response is a checksummed quality companion. Both cover the exclusive-end
+The explicit `rad` response has 4,272 timestamps versus 4,270 for `prs`, so the
+higher-coverage radar response is the normalized series. The pressure response
+is a fully validated, checksummed quality companion. Both cover the exclusive-end
 request `2011-03-11` through `2011-03-14`, report metres, contain one sensor
 identity and unique UTC timestamps, and preserve publisher QC flags. The API
 requests disable 30-day mean subtraction, timestamp fitting, and every

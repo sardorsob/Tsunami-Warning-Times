@@ -34,9 +34,10 @@ does not appear in configuration, URLs, logs, run evidence, or Git.
 Explicit `rad` and `prs` requests cover `2011-03-11` through the exclusive
 `2011-03-14` endpoint in one page. They disable 30-day mean subtraction,
 timestamp fitting, and all value-removing QC filters while requesting QC flags.
-The full-window source-preferred response selected radar, so its 4,272 unique
-timestamps are normalized. The 4,270-row pressure response is checksummed as a
-quality companion. The two sensors share 4,270 timestamps; radar has two
+Radar's 4,272 unique timestamps give it greater coverage than pressure, so the
+radar response is normalized under the pre-residual coverage rule. The
+4,270-row pressure response is fully validated and checksummed as a quality
+companion. The two sensors share 4,270 timestamps; radar has two
 additional timestamps. The source declares metres and the official example
 interprets `stime` as UTC, but no verified vertical datum or horizontal datum is
 assigned. The approximately 1.891 m median inter-sensor level offset is therefore

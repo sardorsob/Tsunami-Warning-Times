@@ -325,7 +325,7 @@ horizontal_datum = "unknown"
 vertical_datum = "unknown"
 coordinate_order = "latitude, longitude in IOC station metadata"
 temporal_semantics = "IOC research stime interpreted as UTC per the publisher API example; timestart included and timestop excluded; requested 2011-03-11 through 2011-03-14 as one three-day page; timestamps and QC flags retained without resampling, mean subtraction, or value-removing filters"
-station_metadata = "IOC real-time station endpoint code valp, Valparaiso, Chile, SHOA operator, latitude -33.02767128 and longitude -71.62787275; radar sensor ID 195 reports rate 1 and samples 5 in metres; catalog coordinates -33.02730833, -71.6259388 differ and are retained as a known source discrepancy; the API's source-preferred one-sensor response selected radar for this full request"
+station_metadata = "IOC real-time station endpoint code valp, Valparaiso, Chile, SHOA operator, latitude -33.02767128 and longitude -71.62787275; radar sensor ID 195 reports rate 1 and samples 5 in metres; catalog coordinates -33.02730833, -71.6259388 differ and are retained as a known source discrepancy; radar is normalized because its explicit response has 4272 timestamps versus 4270 for pressure"
 
 [assets.ioc_valp_prs]
 source_id = "ioc-valparaiso-prs-20110311to20110314"
@@ -344,7 +344,7 @@ horizontal_datum = "unknown"
 vertical_datum = "unknown"
 coordinate_order = "latitude, longitude in IOC station metadata"
 temporal_semantics = "IOC research stime interpreted as UTC per the publisher API example; timestart included and timestop excluded; requested 2011-03-11 through 2011-03-14 as one three-day page; timestamps and QC flags retained without resampling, mean subtraction, or value-removing filters"
-station_metadata = "IOC real-time station endpoint code valp, Valparaiso, Chile, SHOA operator, latitude -33.02767128 and longitude -71.62787275; pressure sensor ID 194 reports rate 1 and samples 5 in metres; retained only to assess agreement and source quality against the source-preferred radar response"
+station_metadata = "IOC real-time station endpoint code valp, Valparaiso, Chile, SHOA operator, latitude -33.02767128 and longitude -71.62787275; pressure sensor ID 194 reports rate 1 and samples 5 in metres; retained to assess agreement and source quality against the radar response without creating a second station series"
 
 # Parseable station identities for normalization. Availability and blocker
 # reasons remain owned by the corresponding source asset above.
@@ -465,5 +465,5 @@ latitude = -33.02767128
 longitude = -71.62787275
 units = "m"
 vertical_reference = "unknown"
-selection_role = "coastal candidate; source-preferred radar sensor"
+selection_role = "coastal candidate; radar selected by greater explicit timestamp coverage"
 time_basis = "UTC"

@@ -313,9 +313,10 @@
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-09 — authorized IOC credential received; planning and
   credential containment completed; both explicit sensor responses acquired and
-  reconciled; radar selected by the API's preferred-sensor behavior and pressure
-  retained as a quality companion; maker verification complete and independent
-  review pending
+  reconciled; radar selected by greater timestamp coverage before any residual
+  or waveform inspection and pressure retained as a fully validated quality
+  companion; first review found three accounting/documentation gaps now under
+  correction
 - Status: in-progress
 
 ## T-002D — Run reproducible EDA
