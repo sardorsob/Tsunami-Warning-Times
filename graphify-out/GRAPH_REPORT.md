@@ -1,7 +1,7 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-09)
 
 ## Corpus Check
-- 109 files · ~70,956 words
+- 109 files · ~71,063 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f6e50f70`
+- Built from commit: `9782165d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -120,7 +120,7 @@ Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
 Cohesion: 0.13
-Nodes (15): Accepted Saipan source recovery, Active Valparaíso recovery, Completed, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow (+7 more)
+Nodes (15): Accepted Saipan source recovery, Completed, Completed Valparaíso recovery, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow (+7 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
 Cohesion: 0.10
@@ -239,7 +239,7 @@ Cohesion: 0.25
 Nodes (8): Consequential unknowns, Decision and lane, In scope for the first complete version, Objective, Out of scope until separately approved, Project Contract, Smallest useful deliverable, Workflow contract
 
 ### Community 48 - "Project Instructions"
-Cohesion: 0.29
+Cohesion: 0.33
 Nodes (6): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification
 
 ### Community 49 - "Pacific Tsunami Warning Time"

@@ -315,9 +315,11 @@
   credential containment completed; both explicit sensor responses acquired and
   reconciled; radar selected by greater timestamp coverage before any residual
   or waveform inspection and pressure retained as a fully validated quality
-  companion; first review found three accounting/documentation gaps now under
-  correction
-- Status: in-progress
+  companion; first review found three accounting/documentation gaps, the maker
+  corrected all three, and independent re-review approved the source contract,
+  companion accounting, deterministic builds, and reporting with no remaining
+  blocking findings
+- Status: done
 
 ## T-002D — Run reproducible EDA
 

@@ -202,9 +202,9 @@ the frontend typecheck, Vitest, and production build; and `git diff --check`.
 Graphify was refreshed. Raw and processed data remain ignored and untracked,
 Serena remains ignored, and `context/EDA_REPORT.md` remains exactly zero bytes.
 
-## Active Valparaíso recovery
+## Completed Valparaíso recovery
 
-T-002C2 maker work is complete and awaiting independent review under D-011. The
+T-002C2 is accepted after independent review under D-011. The
 IOC API credential is stored only in
 macOS Keychain service `org.ioc-sealevelmonitoring.api`, account
 `tsunami-warning-times`; repository files and run evidence may record those
@@ -221,6 +221,16 @@ and 1 blocked. Radar contributes 4,272 accepted observations and pressure is a
 143,655 observations, 107 rejections, 10 stations, and 4,380 contour parts.
 The remaining blocker is the continuous NCTR field. Valparaíso's vertical datum
 and horizontal datum remain unknown; all IOC QC flags are preserved.
+
+The first review required three corrections: remove an unsupported source-
+preference claim, validate and account for the pressure companion through the
+same parser, and replace stale candidate-build references. The corrected
+contract selects radar solely because it contains 4,272 timestamps versus
+pressure's 4,270, before waveform or residual inspection. Re-review approved
+the corrected evidence with no remaining blocking findings. The final gate
+passed 88 Python tests, the 18-record provenance validator, Ruff, Pyright, the
+frontend typecheck/test/build, Semgrep with no findings, and an independent
+Codex Security diff scan with no reportable findings.
 
 ## Risks and blockers
 
@@ -239,9 +249,8 @@ and horizontal datum remain unknown; all IOC QC flags are preserved.
 
 Execute the remaining approved implementation chain in order:
 
-1. Independently review the T-002C2 Valparaíso sensor contract and evidence.
-2. Start T-002D only from the accepted T-002C2 inventory and table checksums.
-3. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
+1. Start T-002D only from the accepted T-002C2 inventory and table checksums.
+2. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
 
@@ -251,10 +260,10 @@ Do not begin the full wavefront or story build during the data proof.
 
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
 `main`. Raw and processed data remain ignored and untracked; no deployment or
-publication occurred. T-002C and T-002C1 are accepted, T-002C2 is in progress,
-and T-002D remains pending.
+publication occurred. T-002C, T-002C1, and T-002C2 are accepted; T-002D remains
+pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, T-002B, T-002C, and T-002C1 are accepted. T-002C2
-is in progress; T-002D is not yet active.
+T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
+accepted. T-002D is not yet active.

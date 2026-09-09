@@ -138,4 +138,6 @@ The baseline T-002B run acquired 12 approved exact assets. The Saipan and
 Valparaíso recovery runs bring the local checksum-gated cache to 17 approved
 assets and record actual byte counts, checksums, safe response headers, and
 response counts. They did not download the blocked NCTR asset or replace it with
-a proxy. Independent review of T-002C2 is the remaining gate before T-002D.
+a proxy. Independent review accepted T-002C2 after its sensor-selection,
+companion-accounting, and candidate-build documentation were corrected; T-002D
+may now begin from the accepted inventory.

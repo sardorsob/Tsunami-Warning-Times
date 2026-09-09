@@ -5,8 +5,9 @@
 T-002A source contracts, T-002B acquisition, and T-002C normalization have an
 accepted baseline. The Saipan and Valparaíso recovery revisions expand the
 ledger to 18 exact assets: 17 are acquired and checksummed, while only the
-continuous NCTR field remains blocked and visible. The Valparaíso revision is
-awaiting independent scientific-data review.
+continuous NCTR field remains blocked and visible. Independent scientific-data
+review accepted the Valparaíso revision after its sensor-selection rationale,
+pressure-companion accounting, and build references were corrected.
 Tōhoku remains a data-proof candidate, not a production dataset or operational
 warning product.
 

@@ -204,7 +204,7 @@ identity, and QC flags agree in all three traces.
 
 ## Interpretation, limitations, and next steps
 
-Subject to independent acceptance of T-002C2, the revised source subset is
+Independent review accepted T-002C2, so the revised source subset is
 structurally consistent enough for T-002D to inspect TTT contours, four DART
 series, and six coastal series. It is not
 sufficient for claims requiring the requested continuous NCTR field, direct
@@ -221,7 +221,7 @@ contracts, time/unit/datum handling, deterministic output, rejections, and the
 manual traces above. The pressure companion shares 4,270 timestamps with radar;
 radar has two additional timestamps. Their median absolute-level offset is
 1.891 m, which is not interpreted because the vertical datum is unknown.
-Independent review remains the final gate. Once accepted, T-002D may begin with
+Independent re-review found no remaining blocking issues. T-002D may begin with
 its fixed core profile and branch only from recorded findings. Immediate
 evidence-led questions are the DART cadence transitions, Pago Pago missingness,
 Valparaíso QC-flag sensitivity, the 24 near-180-degree contour precision flags,

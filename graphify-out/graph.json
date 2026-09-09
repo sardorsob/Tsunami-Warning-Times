@@ -2394,18 +2394,6 @@
       "source_location": "L174"
     },
     {
-      "id": "context_handover_active_valpara\u00edso_recovery",
-      "label": "Active Valpara\u00edso recovery",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Handover",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "active valparaiso recovery",
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L205"
-    },
-    {
       "id": "context_handover_completed",
       "label": "Completed",
       "_origin": "ast",
@@ -2418,6 +2406,18 @@
       "source_location": "L22"
     },
     {
+      "id": "context_handover_completed_valpara\u00edso_recovery",
+      "label": "Completed Valpara\u00edso recovery",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "completed valparaiso recovery",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L205"
+    },
+    {
       "id": "context_handover_continue_from_here",
       "label": "Continue from here",
       "_origin": "ast",
@@ -2427,7 +2427,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L238"
+      "source_location": "L248"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2451,7 +2451,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L257"
+      "source_location": "L266"
     },
     {
       "id": "context_handover_handover",
@@ -2487,7 +2487,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L250"
+      "source_location": "L259"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -2499,7 +2499,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L225"
+      "source_location": "L235"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -2607,7 +2607,7 @@
       "node_kind": "heading",
       "norm_label": "actual normalized grains",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "context_data_card_current_coverage_and_quality",
@@ -2619,7 +2619,7 @@
       "node_kind": "heading",
       "norm_label": "current coverage and quality",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L71"
+      "source_location": "L72"
     },
     {
       "id": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
@@ -2643,7 +2643,7 @@
       "node_kind": "heading",
       "norm_label": "data-proof acquisition set",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "context_data_card_known_misuse_risk",
@@ -2655,7 +2655,7 @@
       "node_kind": "heading",
       "norm_label": "known misuse risk",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L112"
+      "source_location": "L113"
     },
     {
       "id": "context_data_card_minimum_record_contract",
@@ -2667,7 +2667,7 @@
       "node_kind": "heading",
       "norm_label": "minimum record contract",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L59"
+      "source_location": "L60"
     },
     {
       "id": "context_data_card_required_source_classes",
@@ -2679,7 +2679,7 @@
       "node_kind": "heading",
       "norm_label": "required source classes",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "context_data_card_sensitive_data_and_authorization",
@@ -2691,7 +2691,7 @@
       "node_kind": "heading",
       "norm_label": "sensitive data and authorization",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L104"
+      "source_location": "L105"
     },
     {
       "id": "context_data_card_status",
@@ -3267,7 +3267,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d \u2014 run reproducible eda",
       "source_file": "context/TASKS.md",
-      "source_location": "L322"
+      "source_location": "L324"
     },
     {
       "id": "context_tasks_t_002e_review_and_close_the_data_proof",
@@ -3279,7 +3279,7 @@
       "node_kind": "heading",
       "norm_label": "t-002e \u2014 review and close the data proof",
       "source_file": "context/TASKS.md",
-      "source_location": "L354"
+      "source_location": "L356"
     },
     {
       "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
@@ -3303,7 +3303,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L380"
+      "source_location": "L382"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -3315,7 +3315,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L403"
+      "source_location": "L405"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -3327,7 +3327,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L427"
+      "source_location": "L429"
     },
     {
       "id": "context_tasks_tasks",
@@ -6399,18 +6399,6 @@
       "source_location": "L10"
     },
     {
-      "id": "agents",
-      "label": "AGENTS.md",
-      "_origin": "ast",
-      "community": 48,
-      "community_name": "Project Instructions",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "agents.md",
-      "source_file": "AGENTS.md",
-      "source_location": "L1"
-    },
-    {
       "id": "agents_graphify",
       "label": "graphify",
       "_origin": "ast",
@@ -6656,6 +6644,18 @@
       "norm_label": "limitations",
       "source_file": "artifacts/logs/runs/2026-09-09__1923__valparaiso-reviewed__7576ffb/notes.md",
       "source_location": "L7"
+    },
+    {
+      "id": "agents",
+      "label": "AGENTS.md",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "agents.md",
+      "source_file": "AGENTS.md",
+      "source_location": "L1"
     },
     {
       "id": "context_handover",
@@ -13589,7 +13589,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L104",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -13600,7 +13600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L112",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -13611,18 +13611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
-      "target": "context_data_card_data_proof_acquisition_set",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L29",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -13638,13 +13627,24 @@
     },
     {
       "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
+      "target": "context_data_card_data_proof_acquisition_set",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
       "target": "context_data_card_actual_normalized_grains",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -13655,7 +13655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -13666,7 +13666,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -14056,7 +14056,7 @@
     },
     {
       "source": "context_handover_handover",
-      "target": "context_handover_active_valpara\u00edso_recovery",
+      "target": "context_handover_completed_valpara\u00edso_recovery",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14084,7 +14084,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L225",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -14095,7 +14095,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L238",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -14106,7 +14106,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L250",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -14117,7 +14117,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L257",
+      "source_location": "L266",
       "weight": 1.0
     },
     {
@@ -14535,7 +14535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L322",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -14557,7 +14557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L354",
+      "source_location": "L356",
       "weight": 1.0
     },
     {
@@ -14568,7 +14568,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L380",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -14579,7 +14579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L403",
+      "source_location": "L405",
       "weight": 1.0
     },
     {
@@ -14590,7 +14590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L427",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -18381,5 +18381,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f6e50f70c0f93c224b74c6e4f9e5287466454d61"
+  "built_at_commit": "9782165d2342a0907b01b0ef597ccaad5aacc36a"
 }
