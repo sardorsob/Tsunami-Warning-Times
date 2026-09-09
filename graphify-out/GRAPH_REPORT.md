@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-09)
 
 ## Corpus Check
-- 103 files · ~66,023 words
+- 109 files · ~70,956 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 570 nodes · 998 edges · 46 communities (36 shown, 10 thin omitted)
+- 576 nodes · 1010 edges · 52 communities (42 shown, 10 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 41 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1846171d`
+- Built from commit: `f6e50f70`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,10 +59,15 @@
 - Acquisition run notes
 - Acquisition run notes
 - Acquisition run notes
+- PacificVis 2027 and tsunami-event data feasibility
+- Project Contract
+- Project Instructions
+- Pacific Tsunami Warning Time
+- Acquisition run notes
 
 ## God Nodes (most connected - your core abstractions)
-1. `NormalizationError` - 40 edges
-2. `build_tables()` - 39 edges
+1. `NormalizationError` - 41 edges
+2. `build_tables()` - 40 edges
 3. `acquire_source()` - 28 edges
 4. `SourceContract` - 23 edges
 5. `write_run_evidence()` - 20 edges
@@ -87,7 +92,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (46 total, 10 thin omitted)
+## Communities (52 total, 10 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -114,12 +119,12 @@ Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
-Cohesion: 0.05
-Nodes (35): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Accepted Saipan source recovery, Active Valparaíso recovery (+27 more)
+Cohesion: 0.13
+Nodes (15): Accepted Saipan source recovery, Active Valparaíso recovery, Completed, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow (+7 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
-Cohesion: 0.06
-Nodes (27): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+19 more)
+Cohesion: 0.10
+Nodes (17): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+9 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
@@ -199,7 +204,7 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 39 - "test_normalize.py"
 Cohesion: 0.06
-Nodes (100): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+92 more)
+Nodes (102): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+94 more)
 
 ### Community 40 - "Normalization and data-quality run notes"
 Cohesion: 0.40
@@ -225,8 +230,28 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 Cohesion: 0.50
 Nodes (3): Acquisition run notes, Decision, Limitations
 
+### Community 46 - "PacificVis 2027 and tsunami-event data feasibility"
+Cohesion: 0.20
+Nodes (10): Competition requirements (external constraints), Decision summary, Event recommendation and why it is conditional, Feasibility matrix, Honest “warning time” contract, Licensing/terms finding shared by all three, PacificVis 2027 and tsunami-event data feasibility, Project choices (not contest rules) (+2 more)
+
+### Community 47 - "Project Contract"
+Cohesion: 0.25
+Nodes (8): Consequential unknowns, Decision and lane, In scope for the first complete version, Objective, Out of scope until separately approved, Project Contract, Smallest useful deliverable, Workflow contract
+
+### Community 48 - "Project Instructions"
+Cohesion: 0.29
+Nodes (6): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification
+
+### Community 49 - "Pacific Tsunami Warning Time"
+Cohesion: 0.33
+Nodes (6): Current status, License, Local setup, Pacific Tsunami Warning Time, Repository map, Safety and interpretation
+
+### Community 50 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
+
 ## Knowledge Gaps
-- **231 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+226 more)
+- **233 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+228 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -236,7 +261,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `build_tables()` connect `test_normalize.py` to `acquire_tohoku.py`, `test_acquisition.py`?**
   _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `SourceContract` connect `test_acquisition.py` to `acquire_tohoku.py`, `test_normalize.py`?**
   _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
@@ -244,6 +269,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _231 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _233 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
