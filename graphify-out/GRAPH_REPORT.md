@@ -1,16 +1,16 @@
-# Graph Report - Tsunami-Warning-Times  (2026-09-08)
+# Graph Report - Tsunami-Warning-Times  (2026-09-09)
 
 ## Corpus Check
-- 90 files · ~53,958 words
+- 103 files · ~66,023 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 535 nodes · 934 edges · 44 communities (34 shown, 10 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.94)
+- 570 nodes · 998 edges · 46 communities (36 shown, 10 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 41 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `92c438c2`
+- Built from commit: `1846171d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -57,10 +57,12 @@
 - Acquisition run notes
 - Acquisition run notes
 - Acquisition run notes
+- Acquisition run notes
+- Acquisition run notes
 
 ## God Nodes (most connected - your core abstractions)
-1. `NormalizationError` - 38 edges
-2. `build_tables()` - 37 edges
+1. `NormalizationError` - 40 edges
+2. `build_tables()` - 39 edges
 3. `acquire_source()` - 28 edges
 4. `SourceContract` - 23 edges
 5. `write_run_evidence()` - 20 edges
@@ -68,7 +70,7 @@
 7. `sample_contract()` - 19 edges
 8. `normalize_dart()` - 18 edges
 9. `compilerOptions` - 17 edges
-10. `normalize_coastal()` - 16 edges
+10. `ResponseMetadata` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `_contract_record()` --uses--> `SourceContract`  [INFERRED]
@@ -77,15 +79,15 @@
   scripts/acquire_tohoku.py → pipeline/acquisition.py
 - `write_run_evidence()` --uses--> `SourceContract`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
-- `offline_fetcher()` --uses--> `ResponseMetadata`  [INFERRED]
+- `ioc_keychain_fetcher()` --uses--> `ResponseMetadata`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
-- `_result_record()` --uses--> `AcquisitionResult`  [INFERRED]
+- `offline_fetcher()` --uses--> `ResponseMetadata`  [INFERRED]
   scripts/acquire_tohoku.py → pipeline/acquisition.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (44 total, 10 thin omitted)
+## Communities (46 total, 10 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -101,7 +103,7 @@ Nodes (32): dependencies, react, react-dom, devDependencies, @types/node, @types
 
 ### Community 3 - "test_acquisition.py"
 Cohesion: 0.11
-Nodes (58): Fetcher, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), download_url(), _fetch_with_retries() (+50 more)
+Nodes (61): MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), download_url(), _fetch_with_retries(), load_contracts() (+53 more)
 
 ### Community 4 - "package.json"
 Cohesion: 0.13
@@ -112,24 +114,24 @@ Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
-Cohesion: 0.04
-Nodes (44): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Accepted Saipan source recovery, Completed (+36 more)
+Cohesion: 0.05
+Nodes (35): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Accepted Saipan source recovery, Active Valparaíso recovery (+27 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
-Cohesion: 0.10
-Nodes (17): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+9 more)
+Cohesion: 0.06
+Nodes (27): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+19 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
 Nodes (14): Acquisition behavior, Approved choices, Architecture, Canonical records, Commit boundaries, Data flow, Dependencies and deliberate deferrals, EDA contract (+6 more)
 
 ### Community 13 - "Decision Log"
-Cohesion: 0.15
-Nodes (12): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+4 more)
+Cohesion: 0.14
+Nodes (13): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+5 more)
 
 ### Community 14 - "Tasks"
-Cohesion: 0.14
-Nodes (13): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA, T-002E — Review and close the data proof (+5 more)
+Cohesion: 0.13
+Nodes (14): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C2 — Recover and normalize Valparaíso research data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA (+6 more)
 
 ### Community 15 - "Validation Plan"
 Cohesion: 0.22
@@ -172,16 +174,16 @@ Cohesion: 0.50
 Nodes (3): Cross-year criteria for this project, Originality boundary, PacificVis Storytelling Benchmark, 2017–2026
 
 ### Community 32 - "acquire_tohoku.py"
-Cohesion: 0.13
-Nodes (25): ContractError, ValueError, Raised when a source-contract TOML file violates the acquisition contract., _contract_record(), git_short_sha(), main(), offline_fetcher(), datetime (+17 more)
+Cohesion: 0.08
+Nodes (37): HTTPRedirectHandler, ContractError, ValueError, Raised when a source-contract TOML file violates the acquisition contract., Request, _contract_record(), download_ioc_url(), git_short_sha() (+29 more)
 
 ### Community 33 - "Global Constraints"
 Cohesion: 0.25
 Nodes (7): Global Constraints, Task 1: Source-contract ledger and blocked-state validation, Task 2: Atomic, source-independent acquisition core, Task 3: Live source bundle, checksums, and acquisition report, Task 4: Event, contour, and water-level normalization, Task 5: Live data-quality build and requested-phase closure, Tōhoku Data Coverage and Implementation Plan
 
 ### Community 34 - "T-002A — Tōhoku Source-Contract Ledger"
-Cohesion: 0.22
-Nodes (8): Approved contracts — 15 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 2 assets, Contract limits and next steps, Disposition, Saipan recovery evidence, T-002A — Tōhoku Source-Contract Ledger, T-002B clean live evidence
+Cohesion: 0.20
+Nodes (9): Approved contracts — 17 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 1 asset, Contract limits and next steps, Disposition, Saipan recovery evidence, T-002A — Tōhoku Source-Contract Ledger, T-002B clean live evidence (+1 more)
 
 ### Community 35 - "Tōhoku Normalization and Data-Quality Report"
 Cohesion: 0.20
@@ -196,8 +198,8 @@ Cohesion: 0.50
 Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 39 - "test_normalize.py"
-Cohesion: 0.07
-Nodes (93): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+85 more)
+Cohesion: 0.06
+Nodes (100): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+92 more)
 
 ### Community 40 - "Normalization and data-quality run notes"
 Cohesion: 0.40
@@ -215,8 +217,16 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 Cohesion: 0.50
 Nodes (3): Acquisition run notes, Decision, Limitations
 
+### Community 44 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
+
+### Community 45 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
+
 ## Knowledge Gaps
-- **223 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+218 more)
+- **231 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+226 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -224,16 +234,16 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `build_tables()` connect `test_normalize.py` to `acquire_tohoku.py`, `test_acquisition.py`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
   _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Why does `SourceContract` connect `test_acquisition.py` to `acquire_tohoku.py`, `test_normalize.py`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
   _`NormalizationError` has 15 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _223 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _231 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
