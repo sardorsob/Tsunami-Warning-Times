@@ -216,8 +216,8 @@ Authenticated run `2026-09-09__1838__valparaiso-recovery__9cc448c` downloaded
 explicit radar and pressure responses; its rerun reused both checksum-gated
 files without network access. The inventory now contains 18 assets: 17 approved
 and 1 blocked. Radar contributes 4,272 accepted observations and pressure is a
-4,270-row quality companion. Reviewed build candidates
-`2026-09-09-valparaiso-reviewed-aab8491-a` and `-b` have identical checksums,
+4,270-row quality companion. Corrected candidate builds
+`2026-09-09-valparaiso-reviewed-7576ffb-a` and `-b` have identical checksums,
 143,655 observations, 107 rejections, 10 stations, and 4,380 contour parts.
 The remaining blocker is the continuous NCTR field. Valparaíso's vertical datum
 and horizontal datum remain unknown; all IOC QC flags are preserved.

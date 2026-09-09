@@ -25,6 +25,9 @@ downloaded, and 1 blocked outcomes. The two downloaded IOC responses total
 1,893,995 bytes. Cache rerun
 `2026-09-09__1838__valparaiso-recovery-rerun__9cc448c` recorded 17 cached and 1
 blocked outcome with the same 14,361,473-byte inventory and identical hashes.
+Post-review cache run `2026-09-09__1923__valparaiso-reviewed__7576ffb` binds the
+unchanged 17 cached assets and one blocker to the corrected contract metadata;
+it did not access the network or Keychain.
 
 The explicit `rad` response has 4,272 timestamps versus 4,270 for `prs`, so the
 higher-coverage radar response is the normalized series. The pressure response

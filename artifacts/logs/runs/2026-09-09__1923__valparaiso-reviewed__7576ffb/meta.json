@@ -1,0 +1,9 @@
+{
+  "command": "uv run python scripts/acquire_tohoku.py --run-tag valparaiso-reviewed",
+  "evidence_disposition": "ready-for-review",
+  "git_sha": "7576ffb",
+  "mode": "live",
+  "run_id": "2026-09-09__1923__valparaiso-reviewed__7576ffb",
+  "timestamp_utc": "2026-09-09T19:23:00Z",
+  "working_tree": "clean"
+}

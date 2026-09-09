@@ -19,19 +19,19 @@ companion without changing the continuous NCTR-field blocker.
   `artifacts/logs/runs/2026-09-05__1958__quality__5f920f2/`
 
 The current candidate uses acquisition inventory
-`artifacts/logs/runs/2026-09-09__1838__valparaiso-recovery-rerun__9cc448c/outputs.json`
-and build tag `2026-09-09-valparaiso-reviewed-aab8491-a`. Its raw-data evidence
+`artifacts/logs/runs/2026-09-09__1923__valparaiso-reviewed__7576ffb/outputs.json`
+and build tag `2026-09-09-valparaiso-reviewed-7576ffb-a`. Its raw-data evidence
 is portable; its processed tables remain ignored and reproducible from the
 tracked contract and parser.
 
-A second build with tag `2026-09-09-valparaiso-reviewed-aab8491-b` produced the
+A second build with tag `2026-09-09-valparaiso-reviewed-7576ffb-b` produced the
 same seven output checksums; byte comparison of `observation.csv` and
 `accounting.json` returned no differences.
 
 The two current build commands used the accepted Valparaíso-rerun inventory,
 current contract, repository root, and distinct run tags
-`2026-09-09-valparaiso-reviewed-aab8491-a` and
-`2026-09-09-valparaiso-reviewed-aab8491-b`. Byte comparison returned no
+`2026-09-09-valparaiso-reviewed-7576ffb-a` and
+`2026-09-09-valparaiso-reviewed-7576ffb-b`. Byte comparison returned no
 differences.
 Opening a build never performs network access, and existing output tags are not
 overwritten.
@@ -57,6 +57,12 @@ Full source IDs, complete SHA-256 values, paths, publishers, URLs, units, time
 bases, datum notes, and redistribution notes are preserved in the run bundle,
 accepted acquisition bundle, source contract, and provenance manifest.
 
+IOC sample accounting is explicit at source grain: radar is
+`4,272 input = 4,272 accepted + 0 rejected`, with 4,272 observation outputs;
+pressure is `4,270 input = 4,270 accepted + 0 rejected`, with zero observation
+outputs because it is a quality companion. Both pass the same pagination,
+sensor, timestamp, finite-value, QC-flag, and duplicate-time parser contract.
+
 ## Output contract and reconciliation
 
 | Table | Grain | Primary key | Rows | Columns | Duplicate keys | Required-field null rows |
@@ -74,12 +80,12 @@ station/timestamp pairs, no source-time nulls, and no within-file time inversion
 
 | Output | SHA-256 |
 | --- | --- |
-| `accounting.json` | `8a8e59bfa430a02424e038cc2e4d57eca0adf89e09259e8a0d556a239cfdec02` |
+| `accounting.json` | `331617e5ed4a9e747ec79364409659e723cd7ece5b20f6cc1b197a40e1abaf83` |
 | `event.csv` | `bd1e11e9322f8670f016eeea4820f83ddca811d20fd52395d12405cd86d9ba82` |
 | `observation.csv` | `9daee574ea2b75c72c8bfb7984a32c248fa8692a2b74ba705ac7848089f52be3` |
 | `rejected_record.csv` | `e2d8e86cfead1713036cee2883007a513fc0155d8c6b84f954e757ce72d14310` |
 | `schemas.json` | `84cf050ffc0870b262ad0a5daffbd247b7b052632b4c80fa56c45c6d899d0bac` |
-| `station.csv` | `c65781e4758a8232234b01807a02f27cf6ab4bbd9b630e14c797ed456fb125b1` |
+| `station.csv` | `d4ad18dafca36e027242095d81a81a3c70ecce59ee3027fbc9f9d077689f5004` |
 | `ttt_contour.csv` | `53f2efd57327e69f196a6ce25417e451ff3366dd3e9f4185ddbe4d764c3caed4` |
 
 ## Event and contour quality
@@ -210,7 +216,7 @@ redistribution terms still require per-asset review; TTT origin-reference
 semantics are not stated in the geometry asset; and this retrospective dataset
 is not an operational warning product.
 
-The T-002C2 maker checks reconcile source identity, checksums, accounting, table
+The corrected T-002C2 maker checks reconcile source identity, checksums, accounting, table
 contracts, time/unit/datum handling, deterministic output, rejections, and the
 manual traces above. The pressure companion shares 4,270 timestamps with radar;
 radar has two additional timestamps. Their median absolute-level offset is

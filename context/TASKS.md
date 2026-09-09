@@ -308,7 +308,7 @@
   `slevel`, exclusive `timestop`, sensor selection, and QC/filter semantics;
   authenticated run `2026-09-09__1838__valparaiso-recovery__9cc448c` downloaded
   4,272 radar and 4,270 pressure rows; cache rerun reproduced both hashes;
-  deterministic builds `2026-09-09-valparaiso-reviewed-aab8491-a` and `-b`
+  deterministic builds `2026-09-09-valparaiso-reviewed-7576ffb-a` and `-b`
   produced 143,655 observations and 107 rejections with identical checksums
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-09 — authorized IOC credential received; planning and
