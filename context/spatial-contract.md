@@ -27,6 +27,16 @@ horizontal datum. Saipan values must not be compared as absolute levels with the
 CO-OPS `STND` series; later analysis may compare separately detrended anomalies
 only under an explicit method.
 
+The IOC real-time station endpoint places Valparaíso `valp` at latitude
+`-33.02767128`, longitude `-71.62787275`; its separate catalog record reports
+`-33.02730833`, `-71.6259388`. The pipeline retains the real-time endpoint
+coordinates and records the discrepancy rather than silently reconciling it.
+The research API declares metres but does not establish a vertical or horizontal
+datum for the acquired radar and pressure series. Their roughly 1.891 m median
+absolute-level offset must not be interpreted or aligned until a source datum
+contract is found; later EDA may compare separately centered anomalies under an
+explicit method.
+
 ## Required per-source fields
 
 - native CRS and coordinate order;

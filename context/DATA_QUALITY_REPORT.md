@@ -2,11 +2,10 @@
 
 ## Disposition
 
-T-002C has an accepted 2026-09-05 baseline. Independent scientific-data review
-accepted the 2026-09-08 Saipan recovery revision after every row belonging to a
-conflicting duplicate timestamp was quarantined. The revised checksum-gated
-build adds an exact event-day Saipan series without changing the continuous
-NCTR-field blocker.
+T-002C has an accepted 2026-09-05 baseline, and independent scientific-data
+review accepted the 2026-09-08 Saipan revision. The current T-002C2 candidate
+adds authenticated IOC Valparaíso radar observations plus a checksummed pressure
+companion without changing the continuous NCTR-field blocker.
 
 - Run ID: `2026-09-05__1958__quality__5f920f2`
 - Build Git SHA: `5f920f2`
@@ -19,14 +18,15 @@ NCTR-field blocker.
 - Portable evidence:
   `artifacts/logs/runs/2026-09-05__1958__quality__5f920f2/`
 
-The revised candidate uses acquisition inventory
-`artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/outputs.json`
-and build tag `2026-09-08-saipan-reviewed-92c438c`. Its raw-data evidence is
-portable; its processed tables remain ignored and reproducible from the tracked
-contract and parser.
+The current candidate uses acquisition inventory
+`artifacts/logs/runs/2026-09-09__1838__valparaiso-recovery-rerun__9cc448c/outputs.json`
+and build tag `2026-09-09-valparaiso-reviewed-aab8491-a`. Its raw-data evidence
+is portable; its processed tables remain ignored and reproducible from the
+tracked contract and parser.
 
-A second build with tag `2026-09-08-saipan-reviewed-b-92c438c` produced the
-same seven output checksums, and `diff -rq` reported no differences.
+A second build with tag `2026-09-09-valparaiso-reviewed-aab8491-b` produced the
+same seven output checksums; byte comparison of `observation.csv` and
+`accounting.json` returned no differences.
 
 The two build commands used the accepted inventory, current contract, repository
 root, and distinct run tags `2026-09-05-1958-quality-a-5f920f2` and
@@ -36,10 +36,10 @@ overwritten.
 
 ## Source coverage
 
-The revised denominator is 17 contracted source assets: 15 are approved and
-cached or downloaded (88.2%), and 2 are blocked. The two additional assets are
-Saipan days `.071` and `.072`, retained as coverage-only companions rather than
-being counted as extra stations. No gauge was substituted.
+The current denominator is 18 contracted source assets: 17 are approved and
+cached or downloaded (94.4%), and 1 is blocked. Valparaíso radar is the
+normalized source-preferred series; pressure is a coverage-only quality
+companion and is not counted as another station. No gauge was substituted.
 
 | Source group | Source IDs | Input SHA-256 / state | Normalized disposition |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ being counted as extra stations. No gauge was substituted.
 | DART | `ncei-dart-21413-20110301to20110320`; `21418`; `32401`; `46411` | `6a271680...b007`; `13706104...3333`; `c83bb772...4af`; `7632cfc7...9ea` | four stations; 121,722 accepted observations and 90 quarantined rows |
 | CO-OPS | Adak `9461380`; Crescent City `9419750`; Hilo `1617760`; Pago Pago `1770000` | `b4079253...c332`; `6b22f20a...974b`; `f958e362...b143`; `fbac9c7c...c857` | four coastal series; 16,897 rows |
 | NTWC/UHSLC Saipan | `ntwc-uhslc-saipan-20110311`; archival companions `20110312`, `20110313` | `42ff98b7...cfe5`; `bc4fcdeb...5f69`; `fc35c8a8...735b0` | 764 accepted event-day observations; all 16 rows at 8 conflicting timestamps quarantined; later days retained coverage-only |
-| Blocked coastal | Valparaíso `valp` | not downloaded | station identity and pending IOC-access blocker retained; no observations |
+| IOC/SHOA Valparaíso | radar `ioc-valparaiso-rad-20110311to20110314`; pressure companion `ioc-valparaiso-prs-20110311to20110314` | `17abf35d...3233`; `c5098210...717d` | 4,272 radar observations normalized; 4,270 pressure samples retained as checksummed quality evidence |
 
 Full source IDs, complete SHA-256 values, paths, publishers, URLs, units, time
 bases, datum notes, and redistribution notes are preserved in the run bundle,
@@ -62,8 +62,8 @@ accepted acquisition bundle, source contract, and provenance manifest.
 | `event.csv` | one reviewed event origin | `event_id` | 1 | 8 | 0 | 0 |
 | `ttt_contour.csv` | one source contour part | `contour_id` | 4,380 | 8 | 0 | 0 |
 | `station.csv` | one selected station/gauge identity | `station_id` | 10 | 14 | 0 | 0 |
-| `observation.csv` | one station sample | `observation_id` | 139,383 | 11 | 0 | 0 |
-| `rejected_record.csv` | one rejected source asset or record | `rejection_id` | 108 | 5 | 0 | 0 |
+| `observation.csv` | one station sample | `observation_id` | 143,655 | 11 | 0 | 0 |
+| `rejected_record.csv` | one rejected source asset or record | `rejection_id` | 107 | 5 | 0 | 0 |
 
 `schemas.json` records the field-level contract. `accounting.json` reconciles
 every input at its actual grain: assets, TTT features and parts, station samples,
@@ -72,12 +72,12 @@ station/timestamp pairs, no source-time nulls, and no within-file time inversion
 
 | Output | SHA-256 |
 | --- | --- |
-| `accounting.json` | `9a8d3b576ed1d9c84ead3a198fca1028a4ff585722e0ece36bb2ab033daf7ad4` |
+| `accounting.json` | `8a8e59bfa430a02424e038cc2e4d57eca0adf89e09259e8a0d556a239cfdec02` |
 | `event.csv` | `bd1e11e9322f8670f016eeea4820f83ddca811d20fd52395d12405cd86d9ba82` |
-| `observation.csv` | `a852d700171ef873277491554695fde876fbe9927d31f76679b13e160110ab6b` |
-| `rejected_record.csv` | `35dca30da86cb13a42ac8e9bac447d11e55145335fde9832aa705086427e780e` |
+| `observation.csv` | `9daee574ea2b75c72c8bfb7984a32c248fa8692a2b74ba705ac7848089f52be3` |
+| `rejected_record.csv` | `e2d8e86cfead1713036cee2883007a513fc0155d8c6b84f954e757ce72d14310` |
 | `schemas.json` | `84cf050ffc0870b262ad0a5daffbd247b7b052632b4c80fa56c45c6d899d0bac` |
-| `station.csv` | `c2747f181127545dbbaed1ec0a97eabbd259a21aab14d8ea375645de1c65c827` |
+| `station.csv` | `c65781e4758a8232234b01807a02f27cf6ab4bbd9b630e14c797ed456fb125b1` |
 | `ttt_contour.csv` | `53f2efd57327e69f196a6ce25417e451ff3366dd3e9f4185ddbe4d764c3caed4` |
 
 ## Event and contour quality
@@ -107,7 +107,7 @@ values remain in meters relative to requested station datum `STND`, with GMT as
 the query time basis. DART and coastal values are not combined as if their
 vertical references were interchangeable.
 
-The observation table has 1,049 raw nulls (0.7526% overall), all from CO-OPS.
+The observation table has 1,049 raw nulls (0.7302% overall), all from CO-OPS.
 The 16,897 CO-OPS rows and 764 Saipan rows correctly have null fitted and
 residual fields because those fields do not exist in either source. Saipan keeps
 the paired source epoch in `source_extra`. No normalized zero was observed in
@@ -125,6 +125,7 @@ not converted to NoData.
 | Crescent City 9419750 | 4,320 | 60 (1.389%) | Mar 11 00:00 to Mar 13 23:59 UTC | -0.396–3.932 m | complete 60 s timestamps; 98.611% usable requested window |
 | Adak 9461380 | 4,320 | 24 (0.556%) | Mar 11 00:00 to Mar 13 23:59 UTC | 0.446–3.068 m | complete 60 s timestamps; 99.444% usable requested window |
 | Saipan `saip` | 764 | 0 | Mar 11 00:00 to 23:59 UTC | 1.273–2.578 m MLLW | 732 intervals of 60 s; all 16 rows at 8 conflicting timestamps quarantined; 12:08–23:07 absent; 53.056% of event-day minute positions retained |
+| Valparaíso `valp` radar | 4,272 | 0 | Mar 11 00:01 to Mar 13 23:55 UTC | 0–6.222 m; datum unknown | unique minute timestamps; 48 of 4,320 nominal positions absent; 98.889% retained; one zero preserved with `out_of_range=T` |
 
 DART has documented mixed reporting cadences, so an interval change is not by
 itself called a gap. The table above reports observed post-quarantine intervals;
@@ -138,9 +139,9 @@ fields. Per-station residual median/MAD pairs are 21413 `0.02632/0.01474`,
 
 ## Rejections and adaptive finding
 
-There are 108 explicit rejections: 2 blocked source assets, 90 DART records, and
+There are 107 explicit rejections: 1 blocked source asset, 90 DART records, and
 16 Saipan rows belonging to 8 conflicting duplicate timestamps. The blocked
-assets are the continuous NCTR field and Valparaíso observations. DART
+asset is the continuous NCTR field. DART
 rejections by source are 2 at 21413, 67 at
 21418, 2 at 32401, and 19 at 46411 (90 of 121,812 input rows; 0.0739%).
 
@@ -182,22 +183,24 @@ The first raw and normalized DART rows agree for all four stations: at
 `4259.22668/4259.23417/-0.00749` plus unnamed source extra `1.964`.
 The source Julian value `60.000000` remains in `source_time`.
 
-The five available coastal records also agree at `2011-03-11T00:00:00Z`:
+The six available coastal records also agree with their respective raw sources:
 Hilo `1.309`, Pago Pago `1.647`, Crescent City `2.508`, and Adak `1.113` m.
 Their source station IDs and coordinates agree with each raw metadata block.
 Saipan begins at `2.239` m MLLW; its exact header states UTC/meters/MLLW and
 coordinates `15.2266, 145.742`, while its station identifier is `none`, so the
-normalized ID remains the archive code `saip`. Valparaíso remains a station row
-plus blocked-source rejection while IOC access is pending. Neither was
-substituted.
+normalized ID remains the archive code `saip`. Valparaíso radar begins at
+`4.462` m at `2011-03-11T00:01:00Z`, preserves the source zero at
+`2011-03-12T01:30:00Z` with `out_of_range=T`, and ends at `4.965` m at
+`2011-03-13T23:55:00Z`. Its raw and normalized values, UTC timestamps, sensor
+identity, and QC flags agree in all three traces.
 
 ## Interpretation, limitations, and next steps
 
-The independently accepted revised source subset is structurally consistent
-enough for T-002D to inspect TTT contours, four DART series, and five coastal
-series while keeping six coastal candidates in the denominator. It is not
+Subject to independent acceptance of T-002C2, the revised source subset is
+structurally consistent enough for T-002D to inspect TTT contours, four DART
+series, and six coastal series. It is not
 sufficient for claims requiring the requested continuous NCTR field, direct
-cross-datum level comparisons, or complete Valparaíso/Pago Pago coverage.
+cross-datum level comparisons, or complete Pago Pago coverage.
 
 Important limits remain: source horizontal datums are often unknown; DART's
 vertical reference is unknown; CO-OPS series use station-specific STND;
@@ -205,12 +208,14 @@ redistribution terms still require per-asset review; TTT origin-reference
 semantics are not stated in the geometry asset; and this retrospective dataset
 is not an operational warning product.
 
-The independent checker accepted source identity, checksums, accounting, table
-contracts, time/unit/datum handling, deterministic output, rejections, and all
-manual traces after corrections in `d0ef35b` and `5689f18`. T-002D may begin
-with its fixed core profile and then branch only from recorded findings.
-Immediate evidence-led questions are the DART cadence transitions and long
-intervals, Pago Pago's missing values and truncated tail, the 24 near-180-degree
-contour precision flags, and whether station-to-contour joins are sufficiently
-complete. Arrival rules and station inclusion remain frozen before residual
-sensitivity is viewed.
+The T-002C2 maker checks reconcile source identity, checksums, accounting, table
+contracts, time/unit/datum handling, deterministic output, rejections, and the
+manual traces above. The pressure companion shares 4,270 timestamps with radar;
+radar has two additional timestamps. Their median absolute-level offset is
+1.891 m, which is not interpreted because the vertical datum is unknown.
+Independent review remains the final gate. Once accepted, T-002D may begin with
+its fixed core profile and branch only from recorded findings. Immediate
+evidence-led questions are the DART cadence transitions, Pago Pago missingness,
+Valparaíso QC-flag sensitivity, the 24 near-180-degree contour precision flags,
+and station-to-contour join completeness. Arrival rules and station inclusion
+remain frozen before residual sensitivity is viewed.

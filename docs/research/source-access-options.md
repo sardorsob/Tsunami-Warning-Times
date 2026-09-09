@@ -13,7 +13,7 @@ Alaska, Hawaiʻi, American Samoa, California, and the southeast Pacific.
 
 ## Valparaíso (`valp`)
 
-**Likely recoverable with a user account and API key.**
+**Recovered on 2026-09-09 through the official authenticated research API.**
 
 The [IOC Sea Level Station Monitoring Facility API](https://api.ioc-sealevelmonitoring.org/)
 instructs users to register an account, edit the account, and request membership
@@ -25,11 +25,22 @@ request. The [official Valparaíso catalog record](https://www.ioc-sealevelmonit
 lists one-minute `prs` and `rad` sensors and research-quality data spanning
 1944-01-02 through 2018-12-31, which includes March 2011.
 
-After a key is obtained, test both documented sensor identities for station
-`valp` over 2011-03-11 through 2011-03-13. Do not accept the result until its
-station identity, sensor, timestamps, sampling, units, datum, missingness, terms,
-and checksum have been recorded. Keep the key in an ignored local environment
-file or environment variable; never commit it.
+The credential is stored in macOS Keychain under the project-specific service
+`org.ioc-sealevelmonitoring.api` and account `tsunami-warning-times`. The
+acquisition client reads it only in memory, sends it only in `X-API-KEY` to the
+exact IOC HTTPS hostname, and refuses authenticated redirects. The credential
+does not appear in configuration, URLs, logs, run evidence, or Git.
+
+Explicit `rad` and `prs` requests cover `2011-03-11` through the exclusive
+`2011-03-14` endpoint in one page. They disable 30-day mean subtraction,
+timestamp fitting, and all value-removing QC filters while requesting QC flags.
+The full-window source-preferred response selected radar, so its 4,272 unique
+timestamps are normalized. The 4,270-row pressure response is checksummed as a
+quality companion. The two sensors share 4,270 timestamps; radar has two
+additional timestamps. The source declares metres and the official example
+interprets `stime` as UTC, but no verified vertical datum or horizontal datum is
+assigned. The approximately 1.891 m median inter-sensor level offset is therefore
+recorded but not interpreted as an error or a common-datum comparison.
 
 ## Saipan
 
@@ -82,6 +93,5 @@ images or shifted comparison plots must not be used as proxies.
 
 ## Recommended order
 
-1. Retry Valparaíso when the requested IOC API access is approved.
-2. Email NCTR for the exact event field or complete unit-source package. Continue
+1. Email NCTR for the exact event field or complete unit-source package. Continue
    EDA without field-dependent claims unless NCTR supplies a verifiable contract.

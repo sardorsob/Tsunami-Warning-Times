@@ -305,10 +305,17 @@
   QC-flagged points, station coordinates, and three raw-to-normalized values
 - Evidence: Keychain entry stored and length-validated without displaying the
   credential; official OpenAPI and API manual confirm `X-API-KEY`, meter-valued
-  `slevel`, exclusive `timestop`, sensor selection, and QC/filter semantics
+  `slevel`, exclusive `timestop`, sensor selection, and QC/filter semantics;
+  authenticated run `2026-09-09__1838__valparaiso-recovery__9cc448c` downloaded
+  4,272 radar and 4,270 pressure rows; cache rerun reproduced both hashes;
+  deterministic builds `2026-09-09-valparaiso-reviewed-aab8491-a` and `-b`
+  produced 143,655 observations and 107 rejections with identical checksums
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-09 — authorized IOC credential received; planning and
-  credential containment completed; authenticated source inspection pending
+  credential containment completed; both explicit sensor responses acquired and
+  reconciled; radar selected by the API's preferred-sensor behavior and pressure
+  retained as a quality companion; maker verification complete and independent
+  review pending
 - Status: in-progress
 
 ## T-002D — Run reproducible EDA

@@ -1,6 +1,6 @@
 # Data Sources
 
-The accepted baseline and current Saipan recovery candidate are documented in
+The accepted baseline and current Saipan/Valparaíso recovery candidate are documented in
 the [primary-source feasibility comparison](research/feasibility.md),
 [source-access note](research/source-access-options.md), and
 [data card](../context/DATA_CARD.md).
@@ -16,7 +16,7 @@ and narrowly scoped public-warning records if the final story makes alert-time
 claims. A source appearing in research notes is not approved until its manifest
 row is accepted and the data proof passes.
 
-The current ledger contains 17 exact assets: 15 acquired/checksummed and 2
-blocked. Saipan day `.070` is a normalization input; `.071` and `.072` are
-coverage-only archival companions. The continuous NCTR field and Valparaíso
-remain blocked.
+The current ledger contains 18 exact assets: 17 acquired/checksummed and 1
+blocked. Saipan day `.070` and Valparaíso radar are normalization inputs;
+Saipan `.071`/`.072` and Valparaíso pressure are coverage-only companions. Only
+the continuous NCTR field remains blocked.

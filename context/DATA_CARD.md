@@ -3,10 +3,10 @@
 ## Status
 
 T-002A source contracts, T-002B acquisition, and T-002C normalization have an
-accepted baseline. A 2026-09-08 Saipan recovery revision expands the ledger to
-17 exact assets: 15 are acquired and checksummed, while the continuous NCTR
-field and Valparaíso remain blocked and visible. The revised normalization is
-accepted after independent scientific-data review.
+accepted baseline. The Saipan and Valparaíso recovery revisions expand the
+ledger to 18 exact assets: 17 are acquired and checksummed, while only the
+continuous NCTR field remains blocked and visible. The Valparaíso revision is
+awaiting independent scientific-data review.
 Tōhoku remains a data-proof candidate, not a production dataset or operational
 warning product.
 
@@ -41,8 +41,9 @@ T-002A. No candidate becomes analysis-ready merely because it downloads.
 
 ## Actual normalized grains
 
-- source outcome: one row per contracted file/API response, including blockers
-  and the two Saipan archival companions;
+- source outcome: one row per contracted file/API response, including the NCTR
+  blocker, two Saipan archival companions, and one Valparaíso sensor-quality
+  companion;
 - event: one row for the reviewed USGS event origin;
 - travel-time contour: one row per source contour part and `HOURS` value;
 - station: one row per selected DART deployment or coastal-gauge identity,
@@ -72,9 +73,8 @@ Every stage reconciles input, accepted, rejected, and output counts.
 - one reviewed USGS event row;
 - 72 TTT features expanded to 4,380 contour parts and 62,988 vertices;
 - four preselected DART stations with 121,722 accepted samples;
-- six coastal candidates represented as stations: five with 17,661 observations
-  and Valparaíso retained as a blocker;
-- 108 rejected records: 2 blocked assets, 90 DART rows containing an
+- six coastal candidates represented as stations with 21,933 observations;
+- 107 rejected records: 1 blocked asset, 90 DART rows containing an
   undocumented `9999` measurement sentinel, and all 16 Saipan rows belonging to
   8 conflicting duplicate timestamps;
 - zero duplicate primary keys, zero duplicate station/timestamp pairs, and zero
@@ -93,11 +93,21 @@ off-minute source timestamps are retained, and the 12:08–23:07 UTC gap is not
 filled. Days `.071` and `.072` remain exact checksummed source companions for
 later extended-tail analysis.
 
+Valparaíso supplies 4,272 accepted radar samples in metres with UTC source times
+and an explicitly unknown vertical datum. Its 4,270-sample pressure response is
+retained as a checksummed quality companion rather than normalized as a second
+station. All IOC QC flags remain attached; no API filter, mean subtraction, or
+timestamp fitting was applied. Forty-eight nominal radar minute positions are
+absent, and the sole numeric zero is retained with the publisher's
+`out_of_range=T` flag.
+
 ## Sensitive data and authorization
 
 The sources are public environmental and geographic records. No PII,
-credentials, private data, or user uploads are in scope. Public availability is
-not assumed to grant redistribution; terms must be checked per source.
+credentials, private data, or user uploads are present in repository artifacts.
+The IOC access credential remains outside the repository in macOS Keychain.
+Public availability is not assumed to grant redistribution; terms must be
+checked per source.
 
 ## Known misuse risk
 

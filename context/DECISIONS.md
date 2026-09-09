@@ -149,6 +149,11 @@
   warns that neighbour and other QC filters can replace tsunami observations
   with missing values. Raw source timestamps, levels, and flags must remain
   inspectable before any arrival analysis.
+- Outcome: the API's full-window preferred-sensor response selected radar. The
+  explicit radar response is therefore normalized; the pressure response is a
+  checksummed quality companion. This is a source-owned choice made without
+  inspecting modeled residuals. The vertical datum remains unknown, so the
+  inter-sensor absolute-level offset is not corrected or interpreted.
 - Revisit when: the key is rotated, a platform other than macOS must run live
   acquisition, or independent review approves a source-owned preferred-sensor
   rule and a separate filtered derivative.

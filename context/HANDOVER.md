@@ -204,13 +204,23 @@ Serena remains ignored, and `context/EDA_REPORT.md` remains exactly zero bytes.
 
 ## Active Valparaíso recovery
 
-T-002C2 is in progress under D-011. The IOC API credential is stored only in
+T-002C2 maker work is complete and awaiting independent review under D-011. The
+IOC API credential is stored only in
 macOS Keychain service `org.ioc-sealevelmonitoring.api`, account
 `tsunami-warning-times`; repository files and run evidence may record those
 identifiers but never the credential. Official IOC documentation confirms
 header-based `X-API-KEY` authentication and the research endpoint's sensor,
-exclusive-end-date, QC-flag, and filter controls. The next gate is an
-authenticated, non-persisting inspection of `valp` pressure and radar responses.
+exclusive-end-date, QC-flag, and filter controls.
+
+Authenticated run `2026-09-09__1838__valparaiso-recovery__9cc448c` downloaded
+explicit radar and pressure responses; its rerun reused both checksum-gated
+files without network access. The inventory now contains 18 assets: 17 approved
+and 1 blocked. Radar contributes 4,272 accepted observations and pressure is a
+4,270-row quality companion. Reviewed build candidates
+`2026-09-09-valparaiso-reviewed-aab8491-a` and `-b` have identical checksums,
+143,655 observations, 107 rejections, 10 stations, and 4,380 contour parts.
+The remaining blocker is the continuous NCTR field. Valparaíso's vertical datum
+and horizontal datum remain unknown; all IOC QC flags are preserved.
 
 ## Risks and blockers
 
@@ -229,7 +239,7 @@ authenticated, non-persisting inspection of `valp` pressure and radar responses.
 
 Execute the remaining approved implementation chain in order:
 
-1. Complete T-002C2 and independently review the Valparaíso sensor contract.
+1. Independently review the T-002C2 Valparaíso sensor contract and evidence.
 2. Start T-002D only from the accepted T-002C2 inventory and table checksums.
 3. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
