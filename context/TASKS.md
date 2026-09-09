@@ -223,11 +223,59 @@
   determinism, and manual-trace gates
 - Status: done
 
+## T-002C1 — Recover and normalize Saipan event data
+
+- ID: T-002C1
+- Title: Recover the exact NOAA Saipan files without substituting another gauge
+- Depends on: T-002C done
+- Owner (Maker): data-pipeline contributor
+- Checker: scientific data reviewer
+- Phase: source recovery and data quality
+- Data refs: NOAA/NWS 2011 Honshu event page; preserved captures of the exact
+  `.070`, `.071`, and `.072` NOAA URLs
+- Scientific refs: `docs/research/source-access-options.md`;
+  `context/spatial-contract.md`; source headers
+- Statistical notes: preserve gaps, duplicates, off-minute timestamps, units,
+  and datum; do not interpolate or tune arrival logic
+- Scope: reproduce direct-access behavior, recover exact archived source bytes,
+  fingerprint all three days, normalize the event-day file, retain later days as
+  explicit archival companions, and revise coverage/provenance reports
+- Artifacts to produce: three ignored immutable raw files and sidecars, acquisition
+  run bundle, parser and tests, revised manifest/contracts/reports, deterministic
+  candidate normalized tables
+- Acceptance criteria: source identity, UTC, meters, MLLW, coordinates, row
+  counts, checksums, duplicates, gaps, and blocked-source denominator reconcile;
+  no claim that archive code `saip` is CO-OPS station `1633227`
+- Verification commands: parser RED/GREEN tests, focused acquisition/normalization
+  suite, provenance validator, double-build comparison, full repository gate,
+  and independent source/data-quality review
+- Manual QA: compare all three headers and hashes; trace the first Saipan sample;
+  compare NOAA event-page arrival and peak metadata without treating them as
+  computed picks
+- Evidence: acquisition run
+  `2026-09-09__0142__saipan-recovery__92c438c` has 12 cached, 3 downloaded, and
+  2 blocked outcomes across 17 contracts; the three Saipan files total 81,117
+  bytes. Reviewed candidate build `2026-09-08-saipan-reviewed-92c438c` contains
+  139,383 observations and 108 rejections; the `-b-` rebuild is byte-identical.
+  Saipan supplies 764 accepted event-day rows; all 16 rows belonging to 8
+  conflicting duplicate timestamps are quarantined.
+- Attempts / Max: 2 / 3
+- Attempt log: 2026-09-08 — Chrome-controlled link click and referrer-bearing HTTP
+  probe both reproduced NOAA HTTP 403; exact 2016-12-22 Internet Archive captures
+  were located and downloaded; source headers resolved UTC/meters/MLLW and
+  coordinates; parser and dispatch behavior were implemented through observed
+  RED/GREEN tests; reviewer-requested all-row duplicate quarantine was added and
+  deterministically rebuilt; 81 Python tests, Ruff, Pyright, 17-record
+  provenance validation, frontend checks/build, and `git diff --check` passed;
+  independent review reconciled source bytes, accounting, hashes, and reports
+  and APPROVED with no remaining blocking findings
+- Status: done
+
 ## T-002D — Run reproducible EDA
 
 - ID: T-002D
 - Title: Profile the broad Tōhoku data proof with scripts and marimo
-- Depends on: T-002C done
+- Depends on: T-002C and T-002C1 done
 - Owner (Maker): analysis contributor
 - Checker: independent analytical reviewer
 - Phase: EDA

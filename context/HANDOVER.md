@@ -171,11 +171,42 @@ the current code graph with 513 nodes, 893 edges, and 43 communities. Raw and
 processed data were confirmed ignored and untracked, Serena remained ignored,
 and `context/EDA_REPORT.md` remained exactly zero bytes.
 
+## Accepted Saipan source recovery
+
+On 2026-09-08, browser-controlled access reproduced NOAA's HTTP 403 for the
+three exact Saipan event links. Internet Archive CDX records exposed preserved
+HTTP-200 captures of those same NOAA URLs from 2016-12-22. Acquisition run
+`2026-09-09__0142__saipan-recovery__92c438c` downloaded all three without
+rewriting them and recorded 12 cached, 3 downloaded, and 2 blocked outcomes
+across 17 contracts. The new raw files total 81,117 bytes and their SHA-256
+sidecars match.
+
+The header resolves the previously unknown Saipan contract: UHSLC provider,
+NTWC archive, meters, UTC, MLLW, nominal one-minute sampling, unfiltered values,
+and coordinates `15.2266, 145.742`. Because the source station identifier is
+`none`, normalized station ID `saip` follows the archive code and does not assert
+CO-OPS ID `1633227`. Reviewed candidate build
+`2026-09-08-saipan-reviewed-92c438c` contains 139,383 observations and 108
+rejections; `2026-09-08-saipan-reviewed-b-92c438c` is byte-identical. Saipan
+contributes 764 event-day observations; all 16 rows belonging to eight
+conflicting duplicate timestamps are explicitly quarantined, and the
+12:08–23:07 UTC gap remains open.
+Days `.071` and `.072` are checksum-gated coverage-only companions. Independent
+review reconciled all three raw hashes and sidecars, the exact header contracts,
+the 780 = 764 + 16 event-day accounting, and both deterministic builds, then
+approved T-002C1 with no remaining blocking findings.
+
+Final verification on 2026-09-08 passed Ruff; Pyright with 0 errors, warnings,
+or information messages; 81 Python tests; the 17-record provenance validator;
+the frontend typecheck, Vitest, and production build; and `git diff --check`.
+Graphify was refreshed. Raw and processed data remain ignored and untracked,
+Serena remains ignored, and `context/EDA_REPORT.md` remains exactly zero bytes.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
-- Raw coastal-gauge continuity, datums, and reproducible first-arrival picks are
-  unproved.
+- Saipan and Pago Pago have material continuity gaps; reproducible first-arrival
+  picks remain unproved for every coastal gauge.
 - A comparable primary 2011 warning-message archive was not verified.
 - The intended equal-distance versus arrival-time discovery still needs
   calculation; the event must change if that result is weak.
@@ -188,7 +219,7 @@ and `context/EDA_REPORT.md` remained exactly zero bytes.
 
 Execute the remaining approved implementation chain in order:
 
-1. Start T-002D only from the accepted T-002C inventory and table checksums.
+1. Start T-002D only from the accepted T-002C1 inventory and table checksums.
 2. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
    decision ledger, and add follow-up checks only when observed evidence warrants
    them.
@@ -199,9 +230,10 @@ Do not begin the full wavefront or story build during the data proof.
 
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
 `main`. Raw and processed data remain ignored and untracked; no deployment or
-publication occurred. T-002C is accepted, and T-002D remains pending.
+publication occurred. T-002C and T-002C1 are accepted, and T-002D remains
+pending.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, T-002B, and T-002C are accepted. T-002D is not
-yet active.
+T-000, T-001, T-002P, T-002A, T-002B, T-002C, and T-002C1 are accepted. T-002D
+is not yet active.

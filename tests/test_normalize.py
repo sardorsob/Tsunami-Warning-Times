@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 
+import pipeline.normalize as normalize_module
 from pipeline.normalize import (
     NormalizationError,
     StationRecord,
@@ -58,6 +59,25 @@ def coastal_station() -> StationRecord:
         horizontal_datum="unknown",
         coordinate_order="latitude, longitude",
         time_basis="GMT",
+    )
+
+
+def ntwc_saipan_station() -> StationRecord:
+    return StationRecord(
+        station_id="saip",
+        source_id="ntwc-uhslc-saipan-20110311",
+        station_type="coastal",
+        name="Saipan",
+        latitude=15.2266,
+        longitude=145.742,
+        availability="approved",
+        units="m",
+        vertical_reference="MLLW",
+        selection_role="coastal candidate",
+        reason="not applicable",
+        horizontal_datum="unknown",
+        coordinate_order="latitude, longitude",
+        time_basis="UTC",
     )
 
 
@@ -429,6 +449,98 @@ def test_normalize_coastal_rejects_an_empty_approved_asset(tmp_path: Path) -> No
         normalize_coastal(path, coastal_station())
 
 
+def test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum() -> None:
+    assert hasattr(normalize_module, "normalize_ntwc_saipan")
+    normalizer = normalize_module.normalize_ntwc_saipan
+
+    observations, rejected = normalizer(
+        FIXTURES / "ntwc_saipan.070", ntwc_saipan_station()
+    )
+
+    assert [row.observed_at_utc for row in observations] == [
+        "2011-03-11T00:00:00Z",
+        "2011-03-11T00:01:00Z",
+        "2011-03-11T00:01:59Z",
+    ]
+    assert [row.raw_value for row in observations] == [2.239, 2.238, 2.234]
+    assert [row.source_time for row in observations] == [
+        "20110311000000",
+        "20110311000100",
+        "20110311000159",
+    ]
+    assert [row.source_extra for row in observations] == [
+        "epoch=1299801600",
+        "epoch=1299801660",
+        "epoch=1299801719",
+    ]
+    assert all(row.units == "m" and row.vertical_reference == "MLLW" for row in observations)
+    assert rejected == []
+
+
+def test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times(
+    tmp_path: Path,
+) -> None:
+    assert hasattr(normalize_module, "normalize_ntwc_saipan")
+    normalizer = normalize_module.normalize_ntwc_saipan
+    path = tmp_path / "saipan.070"
+    path.write_text(
+        (FIXTURES / "ntwc_saipan.070").read_text(encoding="utf-8")
+        + "1299801660 2.240000 20110311000100\n"
+        + "1299801780 2.241000 20110311000400\n",
+        encoding="utf-8",
+    )
+
+    observations, rejected = normalizer(path, ntwc_saipan_station())
+
+    assert [row.observed_at_utc for row in observations] == [
+        "2011-03-11T00:00:00Z",
+        "2011-03-11T00:01:59Z",
+    ]
+    assert [row.reason_code for row in rejected] == [
+        "duplicate_timestamp",
+        "duplicate_timestamp",
+        "timestamp_mismatch",
+    ]
+    assert [row.rejection_id for row in rejected[:2]] == [
+        "coastal-saip-row-000002",
+        "coastal-saip-row-000004",
+    ]
+    assert all("all 2 rows quarantined" in row.detail for row in rejected[:2])
+
+
+def test_normalize_ntwc_saipan_rejects_unverified_header(tmp_path: Path) -> None:
+    assert hasattr(normalize_module, "normalize_ntwc_saipan")
+    normalizer = normalize_module.normalize_ntwc_saipan
+    path = tmp_path / "saipan.070"
+    path.write_text(
+        (FIXTURES / "ntwc_saipan.070")
+        .read_text(encoding="utf-8")
+        .replace(" m UTC 1 min MLLW ", " cm UTC 1 min MLLW "),
+        encoding="utf-8",
+    )
+
+    observations, rejected = normalizer(path, ntwc_saipan_station())
+
+    assert observations == []
+    assert [row.reason_code for row in rejected] == ["source_header_mismatch"]
+
+
+def test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch(tmp_path: Path) -> None:
+    assert hasattr(normalize_module, "normalize_ntwc_saipan")
+    normalizer = normalize_module.normalize_ntwc_saipan
+    path = tmp_path / "saipan.070"
+    path.write_text(
+        (FIXTURES / "ntwc_saipan.070").read_text(encoding="utf-8")
+        + "999999999999999999999 2.240000 20110311000200\n",
+        encoding="utf-8",
+    )
+
+    observations, rejected = normalizer(path, ntwc_saipan_station())
+
+    assert len(observations) == 3
+    assert [row.reason_code for row in rejected] == ["malformed_timestamp"]
+
+
 def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
     config = root / "config.toml"
     source_config = Path(__file__).parents[1] / "config/tohoku-data-proof.toml"
@@ -459,18 +571,23 @@ def stage_fixture_bundle(root: Path) -> tuple[Path, Path]:
         elif asset["source_class"] == "DART observation time series":
             payload = (FIXTURES / "dart_station.txt").read_bytes()
         elif asset["source_class"] == "coastal water-level observation":
-            payload_document = json.loads(
-                (FIXTURES / "coops_station.json").read_text(encoding="utf-8")
-            )
-            station = stations[source_id]
-            payload_document["metadata"].update(
-                {
-                    "id": station["station_id"],
-                    "lat": str(station["latitude"]),
-                    "lon": str(station["longitude"]),
-                }
-            )
-            payload = json.dumps(payload_document, separators=(",", ":")).encode()
+            if asset["format"] == "NTWC event archive ASCII":
+                payload = (FIXTURES / "ntwc_saipan.070").read_bytes()
+            else:
+                payload_document = json.loads(
+                    (FIXTURES / "coops_station.json").read_text(encoding="utf-8")
+                )
+                station = stations[source_id]
+                payload_document["metadata"].update(
+                    {
+                        "id": station["station_id"],
+                        "lat": str(station["latitude"]),
+                        "lon": str(station["longitude"]),
+                    }
+                )
+                payload = json.dumps(payload_document, separators=(",", ":")).encode()
+        elif asset["source_class"] == "coastal water-level archival companion":
+            payload = (FIXTURES / "ntwc_saipan.070").read_bytes()
         elif asset["source_class"] == "modeled travel-time contour metadata":
             payload = json.dumps(
                 {
@@ -559,14 +676,14 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
 
     assert first.row_counts == {
         "event": 1,
-        "observation": 20,
-        "rejected_record": 27,
+        "observation": 23,
+        "rejected_record": 26,
         "station": 10,
         "ttt_contour": 3,
     }
     assert first.rejection_counts == {
         "api_or_record_rejection": 24,
-        "blocked_source": 3,
+        "blocked_source": 2,
     }
     assert set(first.output_paths) == {
         "accounting",
@@ -585,7 +702,6 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
         station_rows = list(csv.DictReader(source))
     assert [row["station_id"] for row in station_rows] == [
         "1617760",
-        "1633227",
         "1770000",
         "21413",
         "21418",
@@ -593,22 +709,23 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
         "46411",
         "9419750",
         "9461380",
+        "saip",
         "valp",
     ]
     blocked_station_states = {
         row["availability"]
         for row in station_rows
-        if row["station_id"] in {"1633227", "valp"}
+        if row["station_id"] in {"saip", "valp"}
     }
-    assert blocked_station_states == {"blocked"}
+    assert blocked_station_states == {"approved", "blocked"}
 
     accounting = json.loads(
         (tmp_path / first.output_paths["accounting"]).read_text(encoding="utf-8")
     )
     assert accounting["source_coverage"] == {
-        "approved": 12,
-        "blocked": 3,
-        "total": 15,
+        "approved": 15,
+        "blocked": 2,
+        "total": 17,
     }
     assert accounting["nctr_model_field"] == "blocked_no_proxy"
     assert accounting["nctr_source_coefficients"] == "coverage_only_not_continuous_field"
@@ -634,11 +751,21 @@ def test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs(
         key: outcomes["coops-adak-9461380-20110311to20110313"][key]
         for key in ("input_count", "accepted_count", "rejected_count", "output_count")
     } == {"input_count": 5, "accepted_count": 3, "rejected_count": 2, "output_count": 3}
+    assert {
+        key: outcomes["ntwc-uhslc-saipan-20110311"][key]
+        for key in ("input_count", "accepted_count", "rejected_count", "output_count")
+    } == {"input_count": 3, "accepted_count": 3, "rejected_count": 0, "output_count": 3}
     assert outcomes["ncei-ttt-tohoku-layer17-metadata"]["normalization_role"] == (
         "validation_input"
     )
     assert outcomes["nctr-tohoku-source-coefficients"]["normalization_role"] == (
         "coverage_only_not_continuous_field"
+    )
+    assert outcomes["ntwc-uhslc-saipan-20110312"]["normalization_role"] == (
+        "coverage_only_archival_companion"
+    )
+    assert outcomes["ntwc-uhslc-saipan-20110313"]["normalization_role"] == (
+        "coverage_only_archival_companion"
     )
     assert outcomes["nctr-tohoku-model-field"]["blocked_count"] == 1
 

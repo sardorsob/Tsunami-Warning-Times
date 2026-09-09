@@ -21,7 +21,11 @@ longitude order, but their horizontal datums remain unknown. The continuous NCTR
 field is blocked, so no NCTR grid, axis order, extent, resolution, nodata value,
 cell registration, or field units are project facts. DART vertical reference is
 unknown; CO-OPS observations retain station datum `STND` and must not be treated
-as a shared vertical datum.
+as a shared vertical datum. The recovered Saipan archive header states MLLW and
+coordinates `15.2266, 145.742` in latitude/longitude order, but does not state a
+horizontal datum. Saipan values must not be compared as absolute levels with the
+CO-OPS `STND` series; later analysis may compare separately detrended anomalies
+only under an explicit method.
 
 ## Required per-source fields
 

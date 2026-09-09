@@ -1,0 +1,9 @@
+{
+  "command": "uv run python scripts/acquire_tohoku.py --run-tag saipan-recovery",
+  "evidence_disposition": "implementation-under-review",
+  "git_sha": "92c438c",
+  "mode": "live",
+  "run_id": "2026-09-09__0142__saipan-recovery__92c438c",
+  "timestamp_utc": "2026-09-09T01:42:00Z",
+  "working_tree": "dirty"
+}

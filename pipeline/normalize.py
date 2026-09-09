@@ -640,6 +640,159 @@ def normalize_coastal(
     return observations, rejected
 
 
+def normalize_ntwc_saipan(
+    path: Path, station: StationRecord
+) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
+    """Normalize one checksummed NTWC event-archive coastal text file."""
+    if (
+        station.station_type != "coastal"
+        or station.availability != "approved"
+        or station.units != "m"
+        or station.vertical_reference != "MLLW"
+        or station.time_basis != "UTC"
+    ):
+        raise NormalizationError(
+            "normalize_ntwc_saipan requires an approved coastal station with UTC and m/MLLW"
+        )
+    asset_reference = f"coastal-{station.station_id}-asset"
+
+    def reject_asset(detail: str) -> tuple[list[ObservationRecord], list[RejectedRecord]]:
+        return [], [
+            _station_rejection(
+                station,
+                asset_reference,
+                "source_header_mismatch",
+                detail,
+                record_type="source_asset",
+            )
+        ]
+
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except OSError as error:
+        raise NormalizationError(f"could not read NTWC coastal asset {path}: {error}") from error
+    if len(lines) < 5:
+        return reject_asset("expected four header lines and at least one sample")
+
+    identity = lines[0].split()
+    measurement = lines[1].split()
+    if (
+        len(identity) != 7
+        or identity[:4] != ["Saipan,_USA", "none", "UHSLC", "Continuous"]
+        or identity[6] != "20110311"
+        or len(measurement) != 8
+        or measurement != ["NGWLMS", "m", "UTC", "1", "min", "MLLW", "NTWC", "Unfiltered"]
+        or lines[2] != "1_minute_data_via_GOES"
+        or lines[3]
+        != "Data Format: SampleTime(epochal 1/1/1970)  WaterLevel  SampleTime(yyymmddhhmmss)"
+    ):
+        return reject_asset(
+            "identity, measurement, or format header differs from the accepted contract"
+        )
+    try:
+        latitude = _finite_float(identity[4])
+        longitude = _finite_float(identity[5])
+    except ValueError as error:
+        return reject_asset(str(error))
+    if abs(latitude - station.latitude) > 1e-6 or abs(longitude - station.longitude) > 1e-6:
+        return reject_asset("source coordinates differ from configuration")
+
+    observations: list[ObservationRecord] = []
+    candidates: list[tuple[int, str, ObservationRecord]] = []
+    indexed_rejections: list[tuple[int, RejectedRecord]] = []
+    for row_number, line in enumerate(lines[4:], start=1):
+        reference = f"coastal-{station.station_id}-row-{row_number:06d}"
+        values = line.split()
+        if len(values) != 3:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station, reference, "malformed_row", "expected three fields"
+                    ),
+                )
+            )
+            continue
+        epoch_text, raw_value_text, source_time = values
+        try:
+            epoch = int(epoch_text)
+            observed = datetime.strptime(source_time, "%Y%m%d%H%M%S").replace(tzinfo=UTC)
+            raw_value = _finite_float(raw_value_text)
+        except ValueError as error:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(station, reference, "malformed_row", str(error)),
+                )
+            )
+            continue
+        try:
+            epoch_time = datetime.fromtimestamp(epoch, tz=UTC)
+        except (OSError, OverflowError, ValueError) as error:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station, reference, "malformed_timestamp", str(error)
+                    ),
+                )
+            )
+            continue
+        if epoch_time != observed:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station,
+                        reference,
+                        "timestamp_mismatch",
+                        f"epoch {epoch_text} differs from calendar time {source_time}",
+                    ),
+                )
+            )
+            continue
+        observed_at_utc = observed.strftime("%Y-%m-%dT%H:%M:%SZ")
+        candidates.append(
+            (
+                row_number,
+                reference,
+                ObservationRecord(
+                    observation_id=f"{station.station_id}-{observed_at_utc}",
+                    source_id=station.source_id,
+                    station_id=station.station_id,
+                    source_time=source_time,
+                    observed_at_utc=observed_at_utc,
+                    raw_value=raw_value,
+                    fitted_value=None,
+                    residual_value=None,
+                    source_extra=f"epoch={epoch_text}",
+                    units=station.units,
+                    vertical_reference=station.vertical_reference,
+                ),
+            )
+        )
+
+    timestamp_counts = Counter(record.observed_at_utc for _, _, record in candidates)
+    for row_number, reference, record in candidates:
+        duplicate_count = timestamp_counts[record.observed_at_utc]
+        if duplicate_count > 1:
+            indexed_rejections.append(
+                (
+                    row_number,
+                    _station_rejection(
+                        station,
+                        reference,
+                        "duplicate_timestamp",
+                        f"{record.observed_at_utc}; all {duplicate_count} rows quarantined",
+                    ),
+                )
+            )
+        else:
+            observations.append(record)
+    rejected = [record for _, record in sorted(indexed_rejections, key=lambda item: item[0])]
+    return observations, rejected
+
+
 def _sha256(path: Path) -> tuple[int, str]:
     digest = hashlib.sha256()
     size = 0
@@ -981,6 +1134,15 @@ def _coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
     return len(cast(list[object], data_value))
 
 
+def _ntwc_coastal_input_count(path: Path, rejected: list[RejectedRecord]) -> int:
+    if any(record.record_type == "source_asset" for record in rejected):
+        return 1
+    try:
+        return max(0, len(path.read_text(encoding="utf-8").splitlines()) - 4)
+    except OSError as error:
+        raise NormalizationError(f"could not reconcile NTWC coastal input: {error}") from error
+
+
 def _observation_source_accounting(
     input_count: int,
     accepted: list[ObservationRecord],
@@ -1185,9 +1347,22 @@ def build_tables(
             observations.extend(accepted)
             rejected.extend(station_rejected)
         else:
-            accepted, station_rejected = normalize_coastal(verified[contract.source_id], station)
+            if contract.format == "NTWC event archive ASCII":
+                accepted, station_rejected = normalize_ntwc_saipan(
+                    verified[contract.source_id], station
+                )
+                input_count = _ntwc_coastal_input_count(
+                    verified[contract.source_id], station_rejected
+                )
+            else:
+                accepted, station_rejected = normalize_coastal(
+                    verified[contract.source_id], station
+                )
+                input_count = _coastal_input_count(
+                    verified[contract.source_id], station_rejected
+                )
             source_accounting[contract.source_id] = _observation_source_accounting(
-                _coastal_input_count(verified[contract.source_id], station_rejected),
+                input_count,
                 accepted,
                 station_rejected,
             )
@@ -1399,6 +1574,8 @@ def build_tables(
                 if contract.availability == "blocked"
                 else "coverage_only_not_continuous_field"
                 if contract.source_class == "model source coefficients"
+                else "coverage_only_archival_companion"
+                if contract.source_class == "coastal water-level archival companion"
                 else "validation_input"
                 if contract.source_class == "modeled travel-time contour metadata"
                 else "normalized"

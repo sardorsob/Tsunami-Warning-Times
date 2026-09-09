@@ -2,8 +2,10 @@
 
 ## Disposition
 
-Source discovery recorded 15 exact requested assets on 2026-09-05: 12 are
-approved for T-002B acquisition and 3 remain blocked. The clean committed
+Source discovery recorded an accepted 15-asset baseline on 2026-09-05. A
+2026-09-08 Saipan recovery revision now records 17 exact assets: 15 are approved
+and locally checksummed, while the NCTR continuous field and Valparaíso remain
+blocked. The clean committed baseline
 evidence bundles `2026-09-05__1906__accepted__e602131` and
 `2026-09-05__1906__accepted-rerun__e602131` each recorded 12 `cached` and 3
 `blocked` outcomes totaling 12,386,361 bytes. Both have Git SHA `e602131`,
@@ -12,6 +14,23 @@ outcome's byte count and checksum is identical between the two bundles. The
 machine-readable ledger is
 `artifacts/provenance/source-manifest.csv`; exact contracts are in
 `config/tohoku-data-proof.toml`.
+
+## Saipan recovery evidence
+
+The browser-controlled click on NOAA's exact `.070` link reproduced HTTP 403;
+a separate request with the event page as referrer also returned 403. The
+Internet Archive CDX index exposed HTTP-200 captures from 2016-12-22 for the
+same three NOAA URLs. Live acquisition run
+`2026-09-09__0142__saipan-recovery__92c438c` recorded 12 cached, 3 downloaded,
+and 2 blocked outcomes: 17 total assets and 12,467,478 bytes. The three new raw
+files total 81,117 bytes and have matching `.sha256` sidecars.
+
+The files self-identify as Saipan/UHSLC continuous NGWLMS observations via GOES,
+in meters, UTC, nominal one-minute cadence, MLLW, NTWC, and unfiltered. They give
+coordinates `15.2266, 145.742` and pair Unix epoch seconds with
+`YYYYMMDDhhmmss`. The source station identifier is `none`, so the contract uses
+archive code `saip` and does not claim CO-OPS ID `1633227`. Day `.070` is the
+normalization input; `.071` and `.072` are checksummed archival companions.
 
 ## T-002B clean live evidence
 
@@ -55,10 +74,10 @@ Manual source identity checks on the acquired raw cache found:
 - [NCEI DART event page](https://www.ngdc.noaa.gov/hazard/dart/2011honshu_dart.html) says its real-time records were extracted from NDBC. The [NDBC Web Data Guide](https://www.ndbc.noaa.gov/docs/ndbc_web_data_guide.pdf) defines its `YYYY MM DD hh mm ss` examples as UTC, establishing the calendar-field time basis for the selected records; Julian day is retained as a separate source field. Source-defined near-field stations are 21418 and 21413. Pre-residual geographic far-field stations are 46411 (northeast Pacific) and 32401 (southeast Pacific). The documented ten-field layout conflicts with an observed eleventh token in sampled rows; it is retained as an unnamed source extra and is not interpreted.
 - [CO-OPS Data API contract](https://api.tidesandcurrents.noaa.gov/api/prod/): exact one-minute-water-level queries request `STND`, `gmt`, and metric units for 2011-03-11 through 2011-03-13. Observed rows were Adak 9461380: 4320, Hilo 1617760: 4320, Crescent City 9419750: 4320, and Pago Pago 1770000: 3937; Pago Pago missingness is material. Raw values are preliminary and meters relative to station datum.
 - [IOC Valparaíso station metadata](https://www.ioc-sealevelmonitoring.org/ssc/stationdetails.php?id=SSC-valp) and [IOC API documentation](https://api.ioc-sealevelmonitoring.org/v2/doc): the `valp` historical high-resolution endpoint requires an API key.
-- Exact NOAA/PTWC event files [Saipan `.070`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.070), [`.071`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.071), [`.072`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.072), [Valparaíso `.070`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.070), [`.071`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.071), and [`.072`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.072) each returned HTTP 403 in the current audit. Their datum and schema remain unverified.
+- Exact NOAA event links for [Saipan `.070`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.070), [`.071`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.071), and [`.072`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/saip_A_2011.072) still return HTTP 403, but preserved copies of those exact URLs supplied verifiable headers and bytes. Valparaíso [`.070`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.070), [`.071`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.071), and [`.072`](https://www.tsunami.gov/previous.events/03-11-11_Honshu/Data/valp_A_2011.072) remain blocked while IOC API access is pending.
 - [NCTR event page](https://nctr.pmel.noaa.gov/honshu20110311/), [model comparison/source page](https://nctr.pmel.noaa.gov/honshu20110311/honshu20110311-modeldata.html), and [propagation database access page](https://nctr.pmel.noaa.gov/propagation-database-access.html): the event page publishes the scalar source weights recorded below, but no current stable HTTPS continuous event-specific machine-readable field, grid/time metadata, unit-source combination, or unshifted coastal series was found.
 
-## Approved contracts — 12 assets
+## Approved contracts — 15 assets
 
 | Class | Exact assets | Contract notes |
 | --- | --- | --- |
@@ -66,14 +85,14 @@ Manual source identity checks on the acquired raw cache found:
 | Modeled contours | NCEI layer 17 metadata JSON and ordered GeoJSON | Preserve geometry and antimeridian boundary precision; asset-specific terms and derivation details remain unknown. |
 | Model source | NCTR scalar coefficients | Publishable source-page weights: `4.66*kiszb24 + 12.23*kiszb25 + 26.31*kisza26 + 21.27*kiszb26 + 22.75*kisza27 + 4.98*kiszb27`. Units are unstated; unit-source parameters are in NOAA PMEL Technical Memorandum 139. |
 | DART observations | 21418, 21413, 46411, 32401 | Selection precedes residual inspection. NCEI traces real-time records to NDBC, whose guide defines the calendar fields as UTC; Julian day remains separate source data. Water-column series are meters. |
-| Coastal observations | Adak 9461380, Hilo 1617760, Crescent City 9419750, Pago Pago 1770000 | Request `one_minute_water_level`, `STND`, `gmt`, metric JSON. Preserve preliminary status and station-datum limitation. |
+| Coastal observations | Adak 9461380, Hilo 1617760, Crescent City 9419750, Pago Pago 1770000, and Saipan `saip` `.070` | CO-OPS sources request `one_minute_water_level`, `STND`, `gmt`, metric JSON. Saipan is source-declared UTC/meters/MLLW and is normalized separately. |
+| Coastal archival companions | Saipan `saip` `.071` and `.072` | Exact preserved NOAA event files; checksummed and retained for possible extended-tail EDA, not normalized in the event-day proof. |
 
-## Blocked contracts — 3 assets
+## Blocked contracts — 2 assets
 
 | Requested asset | Blocker | Required treatment |
 | --- | --- | --- |
 | NCTR model field | No stable event-specific machine-readable HTTPS field, units, grid/time metadata, or source combination | Keep blocked; images and shifted plots are not proxies. |
-| Tanapag Harbor/Saipan 1633227 | Exact CO-OPS request returned `No data was found`; NCEI high-resolution station page returned 404; each exact PTWC event file returned HTTP 403 | Keep the requested station visible; do not substitute Guam. |
 | Valparaíso `valp` | Official historical high-resolution endpoint requires an API key; each exact PTWC event file returned HTTP 403; datum/schema remain unverified | Keep blocked; do not substitute monthly or hourly products. |
 
 ## Contract limits and next steps
@@ -92,7 +111,10 @@ and row-level validation remain T-002C responsibilities. An explicit `reason`
 is present on every contract: `not applicable` for approved assets and the
 source-specific access/contract blocker for blocked assets.
 
-T-002B acquired only the 12 approved exact assets, fingerprinted each one, and
+The baseline T-002B run acquired 12 approved exact assets. The Saipan recovery
+run brings the local checksum-gated cache to 15 approved assets, fingerprints
+each one, and
 recorded actual byte counts, checksums, headers, and response counts. It did not
-download the blocked assets or replace them with proxies. T-002C normalization
-is accepted; T-002D remains pending.
+download the blocked assets or replace them with proxies. Independent review
+accepted the revised T-002C1 normalization and exact source reconciliation;
+T-002D remains pending.

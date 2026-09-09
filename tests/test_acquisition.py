@@ -543,7 +543,7 @@ def test_load_contracts_preserves_the_approved_source_contract_fields() -> None:
     )
     blocked = next(contract for contract in contracts if contract.availability == "blocked")
 
-    assert len(contracts) == 15
+    assert len(contracts) == 17
     assert event.expected_content_signature.startswith("One CSV row")
     assert event.expected_prefix == "time,latitude,longitude,depth"
     assert event.crs == "WGS84 horizontal coordinates"

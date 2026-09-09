@@ -1,16 +1,16 @@
-# Graph Report - Tsunami-Warning-Times  (2026-09-05)
+# Graph Report - Tsunami-Warning-Times  (2026-09-08)
 
 ## Corpus Check
-- 83 files · ~46,857 words
+- 90 files · ~53,958 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 513 nodes · 893 edges · 43 communities (33 shown, 10 thin omitted)
+- 535 nodes · 934 edges · 44 communities (34 shown, 10 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5689f18a`
+- Built from commit: `92c438c2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -56,10 +56,11 @@
 - Normalization and data-quality run notes
 - Acquisition run notes
 - Acquisition run notes
+- Acquisition run notes
 
 ## God Nodes (most connected - your core abstractions)
-1. `NormalizationError` - 36 edges
-2. `build_tables()` - 35 edges
+1. `NormalizationError` - 38 edges
+2. `build_tables()` - 37 edges
 3. `acquire_source()` - 28 edges
 4. `SourceContract` - 23 edges
 5. `write_run_evidence()` - 20 edges
@@ -84,7 +85,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (43 total, 10 thin omitted)
+## Communities (44 total, 10 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -111,12 +112,12 @@ Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
-Cohesion: 0.05
-Nodes (33): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Completed, Continue from here (+25 more)
+Cohesion: 0.04
+Nodes (44): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification, Accepted Saipan source recovery, Completed (+36 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
-Cohesion: 0.08
-Nodes (21): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+13 more)
+Cohesion: 0.10
+Nodes (17): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Required source classes (+9 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
@@ -127,8 +128,8 @@ Cohesion: 0.15
 Nodes (12): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+4 more)
 
 ### Community 14 - "Tasks"
-Cohesion: 0.15
-Nodes (12): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA, T-002E — Review and close the data proof, T-002P — Approve the broad data-proof design (+4 more)
+Cohesion: 0.14
+Nodes (13): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA, T-002E — Review and close the data proof (+5 more)
 
 ### Community 15 - "Validation Plan"
 Cohesion: 0.22
@@ -179,8 +180,8 @@ Cohesion: 0.25
 Nodes (7): Global Constraints, Task 1: Source-contract ledger and blocked-state validation, Task 2: Atomic, source-independent acquisition core, Task 3: Live source bundle, checksums, and acquisition report, Task 4: Event, contour, and water-level normalization, Task 5: Live data-quality build and requested-phase closure, Tōhoku Data Coverage and Implementation Plan
 
 ### Community 34 - "T-002A — Tōhoku Source-Contract Ledger"
-Cohesion: 0.25
-Nodes (7): Approved contracts — 12 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 3 assets, Contract limits and next steps, Disposition, T-002A — Tōhoku Source-Contract Ledger, T-002B clean live evidence
+Cohesion: 0.22
+Nodes (8): Approved contracts — 15 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 2 assets, Contract limits and next steps, Disposition, Saipan recovery evidence, T-002A — Tōhoku Source-Contract Ledger, T-002B clean live evidence
 
 ### Community 35 - "Tōhoku Normalization and Data-Quality Report"
 Cohesion: 0.20
@@ -196,7 +197,7 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 39 - "test_normalize.py"
 Cohesion: 0.07
-Nodes (85): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+77 more)
+Nodes (93): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+85 more)
 
 ### Community 40 - "Normalization and data-quality run notes"
 Cohesion: 0.40
@@ -210,8 +211,12 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 Cohesion: 0.50
 Nodes (3): Acquisition run notes, Decision, Limitations
 
+### Community 43 - "Acquisition run notes"
+Cohesion: 0.50
+Nodes (3): Acquisition run notes, Decision, Limitations
+
 ## Knowledge Gaps
-- **213 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+208 more)
+- **223 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+218 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -219,16 +224,16 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `build_tables()` connect `test_normalize.py` to `acquire_tohoku.py`, `test_acquisition.py`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Why does `SourceContract` connect `test_acquisition.py` to `acquire_tohoku.py`, `test_normalize.py`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
   _`NormalizationError` has 15 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 7 inferred relationships involving `SourceContract` (e.g. with `build_tables()` and `_load_stations()`) actually correct?**
-  _`SourceContract` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _213 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _223 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._

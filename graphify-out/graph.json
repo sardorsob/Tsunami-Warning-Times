@@ -977,7 +977,7 @@
       "file_type": "code",
       "norm_label": "build_tables()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1113"
+      "source_location": "L1275"
     },
     {
       "id": "pipeline_normalize_coastal_input_count",
@@ -989,7 +989,7 @@
       "file_type": "code",
       "norm_label": "_coastal_input_count()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L969"
+      "source_location": "L1122"
     },
     {
       "id": "pipeline_normalize_coordinate_part",
@@ -1013,7 +1013,7 @@
       "file_type": "code",
       "norm_label": "_csv_value()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L999"
+      "source_location": "L1161"
     },
     {
       "id": "pipeline_normalize_dart_input_count",
@@ -1025,7 +1025,7 @@
       "file_type": "code",
       "norm_label": "_dart_input_count()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L962"
+      "source_location": "L1115"
     },
     {
       "id": "pipeline_normalize_feature_reference",
@@ -1061,7 +1061,7 @@
       "file_type": "code",
       "norm_label": "_load_config_document()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L845"
+      "source_location": "L998"
     },
     {
       "id": "pipeline_normalize_load_inventory",
@@ -1073,7 +1073,7 @@
       "file_type": "code",
       "norm_label": "_load_inventory()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L653"
+      "source_location": "L806"
     },
     {
       "id": "pipeline_normalize_load_stations",
@@ -1085,7 +1085,7 @@
       "file_type": "code",
       "norm_label": "_load_stations()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L761"
+      "source_location": "L914"
     },
     {
       "id": "pipeline_normalize_normalize_coastal",
@@ -1124,6 +1124,18 @@
       "source_location": "L161"
     },
     {
+      "id": "pipeline_normalize_normalize_ntwc_saipan",
+      "label": "normalize_ntwc_saipan()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "normalize_ntwc_saipan()",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L643"
+    },
+    {
       "id": "pipeline_normalize_normalize_ttt",
       "label": "normalize_ttt()",
       "_callable": true,
@@ -1136,6 +1148,18 @@
       "source_location": "L254"
     },
     {
+      "id": "pipeline_normalize_ntwc_coastal_input_count",
+      "label": "_ntwc_coastal_input_count()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "_ntwc_coastal_input_count()",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1137"
+    },
+    {
       "id": "pipeline_normalize_observation_source_accounting",
       "label": "_observation_source_accounting()",
       "_callable": true,
@@ -1145,7 +1169,7 @@
       "file_type": "code",
       "norm_label": "_observation_source_accounting()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L984"
+      "source_location": "L1146"
     },
     {
       "id": "pipeline_normalize_parse_utc",
@@ -1169,7 +1193,7 @@
       "file_type": "code",
       "norm_label": "_sanitize_run_tag()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1106"
+      "source_location": "L1268"
     },
     {
       "id": "pipeline_normalize_sha256",
@@ -1181,7 +1205,7 @@
       "file_type": "code",
       "norm_label": "_sha256()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L643"
+      "source_location": "L796"
     },
     {
       "id": "pipeline_normalize_station_rejection",
@@ -1217,7 +1241,7 @@
       "file_type": "code",
       "norm_label": "_ttt_source_accounting()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L890"
+      "source_location": "L1043"
     },
     {
       "id": "pipeline_normalize_validate_ttt_metadata",
@@ -1229,7 +1253,7 @@
       "file_type": "code",
       "norm_label": "_validate_ttt_metadata()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L852"
+      "source_location": "L1005"
     },
     {
       "id": "pipeline_normalize_verify_inventory",
@@ -1241,7 +1265,7 @@
       "file_type": "code",
       "norm_label": "_verify_inventory()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L700"
+      "source_location": "L853"
     },
     {
       "id": "pipeline_normalize_write_csv",
@@ -1253,7 +1277,7 @@
       "file_type": "code",
       "norm_label": "_write_csv()",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1009"
+      "source_location": "L1171"
     },
     {
       "id": "scripts_build_tohoku_data_main",
@@ -1277,7 +1301,7 @@
       "file_type": "code",
       "norm_label": "coastal_station()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "tests_test_normalize_dart_station",
@@ -1289,7 +1313,19 @@
       "file_type": "code",
       "norm_label": "dart_station()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L26"
+      "source_location": "L27"
+    },
+    {
+      "id": "tests_test_normalize_ntwc_saipan_station",
+      "label": "ntwc_saipan_station()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "ntwc_saipan_station()",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L65"
     },
     {
       "id": "tests_test_normalize_replace_staged_asset",
@@ -1301,7 +1337,7 @@
       "file_type": "code",
       "norm_label": "replace_staged_asset()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L507"
+      "source_location": "L624"
     },
     {
       "id": "tests_test_normalize_stage_fixture_bundle",
@@ -1313,7 +1349,7 @@
       "file_type": "code",
       "norm_label": "stage_fixture_bundle()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L432"
+      "source_location": "L544"
     },
     {
       "id": "tests_test_normalize_test_build_cli_accepts_explicit_inputs_and_never_downloads",
@@ -1325,7 +1361,7 @@
       "file_type": "code",
       "norm_label": "test_build_cli_accepts_explicit_inputs_and_never_downloads()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L712"
+      "source_location": "L839"
     },
     {
       "id": "tests_test_normalize_test_build_tables_exposes_an_invalid_contract_as_a_normalization_error",
@@ -1337,7 +1373,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L702"
+      "source_location": "L829"
     },
     {
       "id": "tests_test_normalize_test_build_tables_rejects_a_checksum_mismatch_without_publishing",
@@ -1349,7 +1385,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_rejects_a_checksum_mismatch_without_publishing()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L656"
+      "source_location": "L783"
     },
     {
       "id": "tests_test_normalize_test_build_tables_rejects_a_checksum_sidecar_symlink_escape",
@@ -1361,7 +1397,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_rejects_a_checksum_sidecar_symlink_escape()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L668"
+      "source_location": "L795"
     },
     {
       "id": "tests_test_normalize_test_build_tables_rejects_an_output_root_symlink_escape",
@@ -1373,7 +1409,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_rejects_an_output_root_symlink_escape()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L686"
+      "source_location": "L813"
     },
     {
       "id": "tests_test_normalize_test_build_tables_rejects_unverified_ttt_metadata_before_publication",
@@ -1385,7 +1421,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_rejects_unverified_ttt_metadata_before_publication()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L538"
+      "source_location": "L655"
     },
     {
       "id": "tests_test_normalize_test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs",
@@ -1397,7 +1433,7 @@
       "file_type": "code",
       "norm_label": "test_build_tables_verifies_inputs_and_writes_complete_deterministic_outputs()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L552"
+      "source_location": "L669"
     },
     {
       "id": "tests_test_normalize_test_normalize_coastal_keeps_missing_and_zero_as_distinct_samples",
@@ -1409,7 +1445,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_coastal_keeps_missing_and_zero_as_distinct_samples()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L340"
+      "source_location": "L360"
     },
     {
       "id": "tests_test_normalize_test_normalize_coastal_quarantines_api_errors_or_wrong_station_metadata",
@@ -1421,7 +1457,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_coastal_quarantines_api_errors_or_wrong_station_metadata()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L378"
+      "source_location": "L398"
     },
     {
       "id": "tests_test_normalize_test_normalize_coastal_rejects_a_structured_value_without_crashing",
@@ -1433,7 +1469,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_coastal_rejects_a_structured_value_without_crashing()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L394"
+      "source_location": "L414"
     },
     {
       "id": "tests_test_normalize_test_normalize_coastal_rejects_an_empty_approved_asset",
@@ -1445,7 +1481,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_coastal_rejects_an_empty_approved_asset()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L415"
+      "source_location": "L435"
     },
     {
       "id": "tests_test_normalize_test_normalize_dart_quarantines_the_undocumented_9999_sentinel",
@@ -1457,7 +1493,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_dart_quarantines_the_undocumented_9999_sentinel()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L291"
+      "source_location": "L311"
     },
     {
       "id": "tests_test_normalize_test_normalize_dart_rejects_a_non_dart_station",
@@ -1469,7 +1505,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_dart_rejects_a_non_dart_station()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L307"
+      "source_location": "L327"
     },
     {
       "id": "tests_test_normalize_test_normalize_dart_rejects_an_empty_approved_asset",
@@ -1481,7 +1517,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_dart_rejects_an_empty_approved_asset()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L283"
+      "source_location": "L303"
     },
     {
       "id": "tests_test_normalize_test_normalize_dart_requires_canonical_units_and_vertical_reference",
@@ -1493,7 +1529,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_dart_requires_canonical_units_and_vertical_reference()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L333"
+      "source_location": "L353"
     },
     {
       "id": "tests_test_normalize_test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows",
@@ -1505,7 +1541,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L255"
+      "source_location": "L275"
     },
     {
       "id": "tests_test_normalize_test_normalize_event_accepts_the_exact_reviewed_fdsn_record",
@@ -1517,7 +1553,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_event_accepts_the_exact_reviewed_fdsn_record()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L64"
+      "source_location": "L84"
     },
     {
       "id": "tests_test_normalize_test_normalize_event_rejects_identity_or_schema_drift",
@@ -1529,7 +1565,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_event_rejects_identity_or_schema_drift()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L82"
+      "source_location": "L102"
     },
     {
       "id": "tests_test_normalize_test_normalize_event_rejects_nonfinite_measurements",
@@ -1541,7 +1577,55 @@
       "file_type": "code",
       "norm_label": "test_normalize_event_rejects_nonfinite_measurements()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L102"
+      "source_location": "L122"
+    },
+    {
+      "id": "tests_test_normalize_test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum",
+      "label": "test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum()",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L452"
+    },
+    {
+      "id": "tests_test_normalize_test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch",
+      "label": "test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch()",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L528"
+    },
+    {
+      "id": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times",
+      "label": "test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times()",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L480"
+    },
+    {
+      "id": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_unverified_header",
+      "label": "test_normalize_ntwc_saipan_rejects_unverified_header()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "code",
+      "norm_label": "test_normalize_ntwc_saipan_rejects_unverified_header()",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L511"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_explodes_parts_and_preserves_boundary_precision",
@@ -1553,7 +1637,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_explodes_parts_and_preserves_boundary_precision()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L113"
+      "source_location": "L133"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_a_non_feature_object_with_stable_identity",
@@ -1565,7 +1649,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_a_non_feature_object_with_stable_identity()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L203"
+      "source_location": "L223"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_a_one_position_linestring",
@@ -1577,7 +1661,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_a_one_position_linestring()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L161"
+      "source_location": "L181"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_an_empty_feature_collection",
@@ -1589,7 +1673,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_an_empty_feature_collection()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L227"
+      "source_location": "L247"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_an_empty_linestring",
@@ -1601,7 +1685,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_an_empty_linestring()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L182"
+      "source_location": "L202"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_an_empty_multilinestring",
@@ -1613,7 +1697,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_an_empty_multilinestring()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L235"
+      "source_location": "L255"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_duplicate_object_ids",
@@ -1625,7 +1709,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_duplicate_object_ids()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L148"
+      "source_location": "L168"
     },
     {
       "id": "tests_test_normalize_test_normalize_ttt_rejects_non_geojson_or_invalid_json",
@@ -1637,7 +1721,7 @@
       "file_type": "code",
       "norm_label": "test_normalize_ttt_rejects_non_geojson_or_invalid_json()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L139"
+      "source_location": "L159"
     },
     {
       "id": "tests_test_normalize_test_observation_normalizers_require_the_verified_source_time_basis",
@@ -1649,7 +1733,7 @@
       "file_type": "code",
       "norm_label": "test_observation_normalizers_require_the_verified_source_time_basis()",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L314"
+      "source_location": "L334"
     },
     {
       "id": "app_src_app_app",
@@ -2189,6 +2273,18 @@
       "source_location": "L1"
     },
     {
+      "id": "context_handover_accepted_saipan_source_recovery",
+      "label": "Accepted Saipan source recovery",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "accepted saipan source recovery",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L174"
+    },
+    {
       "id": "context_handover_completed",
       "label": "Completed",
       "_origin": "ast",
@@ -2210,7 +2306,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L179"
+      "source_location": "L218"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2234,7 +2330,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L196"
+      "source_location": "L236"
     },
     {
       "id": "context_handover_handover",
@@ -2270,7 +2366,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L190"
+      "source_location": "L229"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -2282,7 +2378,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L166"
+      "source_location": "L205"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -2453,6 +2549,138 @@
       "source_location": "L10"
     },
     {
+      "id": "docs_research_feasibility",
+      "label": "feasibility.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "feasibility.md",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_research_feasibility_competition_requirements_external_constraints",
+      "label": "Competition requirements (external constraints)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "competition requirements (external constraints)",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "docs_research_feasibility_decision_summary",
+      "label": "Decision summary",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decision summary",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "docs_research_feasibility_event_recommendation_and_why_it_is_conditional",
+      "label": "Event recommendation and why it is conditional",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "event recommendation and why it is conditional",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "docs_research_feasibility_feasibility_matrix",
+      "label": "Feasibility matrix",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "feasibility matrix",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "docs_research_feasibility_honest_warning_time_contract",
+      "label": "Honest \u201cwarning time\u201d contract",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "honest \u201cwarning time\u201d contract",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L59"
+    },
+    {
+      "id": "docs_research_feasibility_licensing_terms_finding_shared_by_all_three",
+      "label": "Licensing/terms finding shared by all three",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "licensing/terms finding shared by all three",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "docs_research_feasibility_pacificvis_2027_and_tsunami_event_data_feasibility",
+      "label": "PacificVis 2027 and tsunami-event data feasibility",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pacificvis 2027 and tsunami-event data feasibility",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_research_feasibility_project_choices_not_contest_rules",
+      "label": "Project choices (not contest rules)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "project choices (not contest rules)",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "docs_research_feasibility_required_next_data_proof_steps",
+      "label": "Required next data-proof steps",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "required next data-proof steps",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L86"
+    },
+    {
+      "id": "docs_research_feasibility_what_the_candidate_model_products_actually_are",
+      "label": "What the candidate model products actually are",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what the candidate model products actually are",
+      "source_file": "docs/research/feasibility.md",
+      "source_location": "L36"
+    },
+    {
       "id": "readme",
       "label": "README.md",
       "_origin": "ast",
@@ -2582,7 +2810,7 @@
       "node_kind": "heading",
       "norm_label": "actual normalized grains",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L40"
+      "source_location": "L42"
     },
     {
       "id": "context_data_card_current_coverage_and_quality",
@@ -2594,7 +2822,7 @@
       "node_kind": "heading",
       "norm_label": "current coverage and quality",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L67"
+      "source_location": "L70"
     },
     {
       "id": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
@@ -2618,7 +2846,7 @@
       "node_kind": "heading",
       "norm_label": "data-proof acquisition set",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "context_data_card_known_misuse_risk",
@@ -2630,7 +2858,7 @@
       "node_kind": "heading",
       "norm_label": "known misuse risk",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L92"
+      "source_location": "L102"
     },
     {
       "id": "context_data_card_minimum_record_contract",
@@ -2642,7 +2870,7 @@
       "node_kind": "heading",
       "norm_label": "minimum record contract",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L55"
+      "source_location": "L58"
     },
     {
       "id": "context_data_card_required_source_classes",
@@ -2654,7 +2882,7 @@
       "node_kind": "heading",
       "norm_label": "required source classes",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "context_data_card_sensitive_data_and_authorization",
@@ -2666,7 +2894,7 @@
       "node_kind": "heading",
       "norm_label": "sensitive data and authorization",
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L86"
+      "source_location": "L96"
     },
     {
       "id": "context_data_card_status",
@@ -2705,136 +2933,88 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_research_feasibility",
-      "label": "feasibility.md",
+      "id": "docs_research_source_access_options",
+      "label": "source-access-options.md",
       "_origin": "ast",
       "community": 11,
       "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "feasibility.md",
-      "source_file": "docs/research/feasibility.md",
+      "norm_label": "source-access-options.md",
+      "source_file": "docs/research/source-access-options.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_research_feasibility_competition_requirements_external_constraints",
-      "label": "Competition requirements (external constraints)",
+      "id": "docs_research_source_access_options_blocked_source_access_options",
+      "label": "Blocked-source access options",
       "_origin": "ast",
       "community": 11,
       "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "competition requirements (external constraints)",
-      "source_file": "docs/research/feasibility.md",
+      "norm_label": "blocked-source access options",
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_research_source_access_options_nctr_continuous_event_field",
+      "label": "NCTR continuous event field",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "nctr continuous event field",
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "docs_research_source_access_options_recommended_order",
+      "label": "Recommended order",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "recommended order",
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L83"
+    },
+    {
+      "id": "docs_research_source_access_options_saipan",
+      "label": "Saipan",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "saipan",
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_research_source_access_options_scope_clarification",
+      "label": "Scope clarification",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scope clarification",
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docs_research_source_access_options_valpara\u00edso_valp",
+      "label": "Valpara\u00edso (`valp`)",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "valparaiso (`valp`)",
+      "source_file": "docs/research/source-access-options.md",
       "source_location": "L14"
-    },
-    {
-      "id": "docs_research_feasibility_decision_summary",
-      "label": "Decision summary",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decision summary",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L8"
-    },
-    {
-      "id": "docs_research_feasibility_event_recommendation_and_why_it_is_conditional",
-      "label": "Event recommendation and why it is conditional",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "event recommendation and why it is conditional",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L74"
-    },
-    {
-      "id": "docs_research_feasibility_feasibility_matrix",
-      "label": "Feasibility matrix",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "feasibility matrix",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L43"
-    },
-    {
-      "id": "docs_research_feasibility_honest_warning_time_contract",
-      "label": "Honest \u201cwarning time\u201d contract",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "honest \u201cwarning time\u201d contract",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L59"
-    },
-    {
-      "id": "docs_research_feasibility_licensing_terms_finding_shared_by_all_three",
-      "label": "Licensing/terms finding shared by all three",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "licensing/terms finding shared by all three",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L53"
-    },
-    {
-      "id": "docs_research_feasibility_pacificvis_2027_and_tsunami_event_data_feasibility",
-      "label": "PacificVis 2027 and tsunami-event data feasibility",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pacificvis 2027 and tsunami-event data feasibility",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_research_feasibility_project_choices_not_contest_rules",
-      "label": "Project choices (not contest rules)",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "project choices (not contest rules)",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L32"
-    },
-    {
-      "id": "docs_research_feasibility_required_next_data_proof_steps",
-      "label": "Required next data-proof steps",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "required next data-proof steps",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L86"
-    },
-    {
-      "id": "docs_research_feasibility_what_the_candidate_model_products_actually_are",
-      "label": "What the candidate model products actually are",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Data Card \u2014 T\u014dhoku Data-Proof Candidate",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what the candidate model products actually are",
-      "source_file": "docs/research/feasibility.md",
-      "source_location": "L36"
     },
     {
       "id": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design",
@@ -3233,6 +3413,18 @@
       "source_location": "L134"
     },
     {
+      "id": "context_tasks_t_002c1_recover_and_normalize_saipan_event_data",
+      "label": "T-002C1 \u2014 Recover and normalize Saipan event data",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-002c1 \u2014 recover and normalize saipan event data",
+      "source_file": "context/TASKS.md",
+      "source_location": "L226"
+    },
+    {
       "id": "context_tasks_t_002c_normalize_and_validate_analysis_tables",
       "label": "T-002C \u2014 Normalize and validate analysis tables",
       "_origin": "ast",
@@ -3254,7 +3446,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d \u2014 run reproducible eda",
       "source_file": "context/TASKS.md",
-      "source_location": "L226"
+      "source_location": "L274"
     },
     {
       "id": "context_tasks_t_002e_review_and_close_the_data_proof",
@@ -3266,7 +3458,7 @@
       "node_kind": "heading",
       "norm_label": "t-002e \u2014 review and close the data proof",
       "source_file": "context/TASKS.md",
-      "source_location": "L258"
+      "source_location": "L306"
     },
     {
       "id": "context_tasks_t_002p_approve_the_broad_data_proof_design",
@@ -3290,7 +3482,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 make the static scientific comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L284"
+      "source_location": "L332"
     },
     {
       "id": "context_tasks_t_004_test_the_wavefront_mechanism",
@@ -3302,7 +3494,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L307"
+      "source_location": "L355"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -3314,7 +3506,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L331"
+      "source_location": "L379"
     },
     {
       "id": "context_tasks_tasks",
@@ -4217,7 +4409,7 @@
       "node_kind": "heading",
       "norm_label": "required per-source fields",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L26"
+      "source_location": "L30"
     },
     {
       "id": "context_spatial_contract_spatial_contract",
@@ -4241,7 +4433,7 @@
       "node_kind": "heading",
       "norm_label": "working output rules",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L37"
+      "source_location": "L41"
     },
     {
       "id": "context_assumptions",
@@ -5017,16 +5209,16 @@
       "source_location": "L1"
     },
     {
-      "id": "context_acquisition_report_approved_contracts_12_assets",
-      "label": "Approved contracts \u2014 12 assets",
+      "id": "context_acquisition_report_approved_contracts_15_assets",
+      "label": "Approved contracts \u2014 15 assets",
       "_origin": "ast",
       "community": 34,
       "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "approved contracts \u2014 12 assets",
+      "norm_label": "approved contracts \u2014 15 assets",
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L61"
+      "source_location": "L80"
     },
     {
       "id": "context_acquisition_report_authoritative_evidence_and_observed_smoke_checks",
@@ -5038,19 +5230,19 @@
       "node_kind": "heading",
       "norm_label": "authoritative evidence and observed smoke checks",
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L51"
+      "source_location": "L70"
     },
     {
-      "id": "context_acquisition_report_blocked_contracts_3_assets",
-      "label": "Blocked contracts \u2014 3 assets",
+      "id": "context_acquisition_report_blocked_contracts_2_assets",
+      "label": "Blocked contracts \u2014 2 assets",
       "_origin": "ast",
       "community": 34,
       "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "blocked contracts \u2014 3 assets",
+      "norm_label": "blocked contracts \u2014 2 assets",
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L71"
+      "source_location": "L91"
     },
     {
       "id": "context_acquisition_report_contract_limits_and_next_steps",
@@ -5062,7 +5254,7 @@
       "node_kind": "heading",
       "norm_label": "contract limits and next steps",
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L79"
+      "source_location": "L98"
     },
     {
       "id": "context_acquisition_report_disposition",
@@ -5075,6 +5267,18 @@
       "norm_label": "disposition",
       "source_file": "context/ACQUISITION_REPORT.md",
       "source_location": "L3"
+    },
+    {
+      "id": "context_acquisition_report_saipan_recovery_evidence",
+      "label": "Saipan recovery evidence",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "saipan recovery evidence",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L18"
     },
     {
       "id": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
@@ -5098,7 +5302,7 @@
       "node_kind": "heading",
       "norm_label": "t-002b clean live evidence",
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L16"
+      "source_location": "L35"
     },
     {
       "id": "context_data_quality_report",
@@ -5134,7 +5338,7 @@
       "node_kind": "heading",
       "norm_label": "event and contour quality",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L70"
+      "source_location": "L83"
     },
     {
       "id": "context_data_quality_report_interpretation_limitations_and_next_steps",
@@ -5146,7 +5350,7 @@
       "node_kind": "heading",
       "norm_label": "interpretation, limitations, and next steps",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L172"
+      "source_location": "L194"
     },
     {
       "id": "context_data_quality_report_manual_scientific_qa",
@@ -5158,7 +5362,7 @@
       "node_kind": "heading",
       "norm_label": "manual scientific qa",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L140"
+      "source_location": "L162"
     },
     {
       "id": "context_data_quality_report_observation_quality",
@@ -5170,7 +5374,7 @@
       "node_kind": "heading",
       "norm_label": "observation quality",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L87"
+      "source_location": "L100"
     },
     {
       "id": "context_data_quality_report_output_contract_and_reconciliation",
@@ -5182,7 +5386,7 @@
       "node_kind": "heading",
       "norm_label": "output contract and reconciliation",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L45"
+      "source_location": "L58"
     },
     {
       "id": "context_data_quality_report_rejections_and_adaptive_finding",
@@ -5194,7 +5398,7 @@
       "node_kind": "heading",
       "norm_label": "rejections and adaptive finding",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L124"
+      "source_location": "L139"
     },
     {
       "id": "context_data_quality_report_source_coverage",
@@ -5206,7 +5410,7 @@
       "node_kind": "heading",
       "norm_label": "source coverage",
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L27"
+      "source_location": "L37"
     },
     {
       "id": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
@@ -5428,17 +5632,6 @@
       "source_location": "L1"
     },
     {
-      "id": "pipeline_normalize_rationale_1116",
-      "label": "Build deterministic normalized tables from verified local raw assets only.",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "test_normalize.py",
-      "file_type": "rationale",
-      "norm_label": "build deterministic normalized tables from verified local raw assets only.",
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L1116"
-    },
-    {
       "id": "pipeline_normalize_rationale_116",
       "label": "One source sample with raw time and interpreted UTC kept separate.",
       "_origin": "ast",
@@ -5448,6 +5641,17 @@
       "norm_label": "one source sample with raw time and interpreted utc kept separate.",
       "source_file": "pipeline/normalize.py",
       "source_location": "L116"
+    },
+    {
+      "id": "pipeline_normalize_rationale_1278",
+      "label": "Build deterministic normalized tables from verified local raw assets only.",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "rationale",
+      "norm_label": "build deterministic normalized tables from verified local raw assets only.",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1278"
     },
     {
       "id": "pipeline_normalize_rationale_133",
@@ -5525,6 +5729,17 @@
       "norm_label": "one reviewed earthquake origin from the usgs fdsn service.",
       "source_file": "pipeline/normalize.py",
       "source_location": "L57"
+    },
+    {
+      "id": "pipeline_normalize_rationale_646",
+      "label": "Normalize one checksummed NTWC event-archive coastal text file.",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "test_normalize.py",
+      "file_type": "rationale",
+      "norm_label": "normalize one checksummed ntwc event-archive coastal text file.",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L646"
     },
     {
       "id": "pipeline_normalize_rationale_71",
@@ -5903,6 +6118,54 @@
       "source_location": "L7"
     },
     {
+      "id": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes",
+      "label": "2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Acquisition run notes",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_acquisition_run_notes",
+      "label": "Acquisition run notes",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Acquisition run notes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "acquisition run notes",
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_decision",
+      "label": "Decision",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Acquisition run notes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decision",
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_limitations",
+      "label": "Limitations",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "Acquisition run notes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "limitations",
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L7"
+    },
+    {
       "id": "app_src_app",
       "label": "App.tsx",
       "_origin": "ast",
@@ -6205,7 +6468,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1119",
+      "source_location": "L1281",
       "weight": 1.0
     },
     {
@@ -6217,7 +6480,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1121",
+      "source_location": "L1283",
       "weight": 1.0
     },
     {
@@ -6229,7 +6492,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1122",
+      "source_location": "L1284",
       "weight": 1.0
     },
     {
@@ -6241,7 +6504,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1123",
+      "source_location": "L1285",
       "weight": 1.0
     },
     {
@@ -6253,7 +6516,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1124",
+      "source_location": "L1286",
       "weight": 1.0
     },
     {
@@ -6265,7 +6528,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1125",
+      "source_location": "L1287",
       "weight": 1.0
     },
     {
@@ -6277,7 +6540,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1152",
+      "source_location": "L1314",
       "weight": 1.0
     },
     {
@@ -6289,7 +6552,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1154",
+      "source_location": "L1316",
       "weight": 1.0
     },
     {
@@ -6301,7 +6564,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1155",
+      "source_location": "L1317",
       "weight": 1.0
     },
     {
@@ -6313,7 +6576,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1163",
+      "source_location": "L1325",
       "weight": 1.0
     },
     {
@@ -6325,7 +6588,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1172",
+      "source_location": "L1334",
       "weight": 1.0
     },
     {
@@ -6337,7 +6600,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1181",
+      "source_location": "L1343",
       "weight": 1.0
     },
     {
@@ -6349,7 +6612,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1182",
+      "source_location": "L1344",
       "weight": 1.0
     },
     {
@@ -6361,7 +6624,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1183",
+      "source_location": "L1345",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_build_tables",
+      "target": "pipeline_normalize_normalize_ntwc_saipan",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1351",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_build_tables",
+      "target": "pipeline_normalize_ntwc_coastal_input_count",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1354",
       "weight": 1.0
     },
     {
@@ -6373,7 +6660,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1188",
+      "source_location": "L1358",
       "weight": 1.0
     },
     {
@@ -6385,7 +6672,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1190",
+      "source_location": "L1361",
       "weight": 1.0
     },
     {
@@ -6397,7 +6684,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1357",
+      "source_location": "L1532",
       "weight": 1.0
     },
     {
@@ -6409,7 +6696,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1380",
+      "source_location": "L1555",
       "weight": 1.0
     },
     {
@@ -6421,7 +6708,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1384",
+      "source_location": "L1559",
       "weight": 1.0
     },
     {
@@ -6433,7 +6720,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1393",
+      "source_location": "L1568",
       "weight": 1.0
     },
     {
@@ -6445,7 +6732,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1486",
+      "source_location": "L1663",
       "weight": 1.0
     },
     {
@@ -6457,7 +6744,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L975",
+      "source_location": "L1128",
       "weight": 1.0
     },
     {
@@ -6469,7 +6756,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L966",
+      "source_location": "L1119",
       "weight": 1.0
     },
     {
@@ -6493,7 +6780,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L849",
+      "source_location": "L1002",
       "weight": 1.0
     },
     {
@@ -6505,7 +6792,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L657",
+      "source_location": "L810",
       "weight": 1.0
     },
     {
@@ -6517,7 +6804,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L689",
+      "source_location": "L842",
       "weight": 1.0
     },
     {
@@ -6529,7 +6816,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L766",
+      "source_location": "L919",
       "weight": 1.0
     },
     {
@@ -6541,7 +6828,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L823",
+      "source_location": "L976",
       "weight": 1.0
     },
     {
@@ -6689,6 +6976,54 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_normalizationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L654",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_finite_float",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L693",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_station_rejection",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L710",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_observationrecord",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L759",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_normalize_ttt",
       "target": "pipeline_normalize_normalizationerror",
       "relation": "calls",
@@ -6749,6 +7084,18 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_ntwc_coastal_input_count",
+      "target": "pipeline_normalize_normalizationerror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1143",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_observation_source_accounting",
       "target": "pipeline_normalize_normalizationerror",
       "relation": "calls",
@@ -6757,7 +7104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L990",
+      "source_location": "L1152",
       "weight": 1.0
     },
     {
@@ -6781,7 +7128,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1109",
+      "source_location": "L1271",
       "weight": 1.0
     },
     {
@@ -6817,7 +7164,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L896",
+      "source_location": "L1049",
       "weight": 1.0
     },
     {
@@ -6829,7 +7176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L856",
+      "source_location": "L1009",
       "weight": 1.0
     },
     {
@@ -6841,7 +7188,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L705",
+      "source_location": "L858",
       "weight": 1.0
     },
     {
@@ -6853,7 +7200,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L749",
+      "source_location": "L902",
       "weight": 1.0
     },
     {
@@ -6865,7 +7212,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1014",
+      "source_location": "L1176",
       "weight": 1.0
     },
     {
@@ -8149,7 +8496,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -8161,7 +8508,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L27",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_ntwc_saipan_station",
+      "target": "pipeline_normalize_stationrecord",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -8173,7 +8532,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L434",
+      "source_location": "L546",
       "weight": 1.0
     },
     {
@@ -8185,7 +8544,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L713",
+      "source_location": "L840",
       "weight": 1.0
     },
     {
@@ -8197,7 +8556,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L715",
+      "source_location": "L842",
       "weight": 1.0
     },
     {
@@ -8209,7 +8568,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L705",
+      "source_location": "L832",
       "weight": 1.0
     },
     {
@@ -8221,7 +8580,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L709",
+      "source_location": "L836",
       "weight": 1.0
     },
     {
@@ -8233,7 +8592,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L657",
+      "source_location": "L784",
       "weight": 1.0
     },
     {
@@ -8245,7 +8604,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L663",
+      "source_location": "L790",
       "weight": 1.0
     },
     {
@@ -8257,7 +8616,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L671",
+      "source_location": "L798",
       "weight": 1.0
     },
     {
@@ -8269,7 +8628,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L681",
+      "source_location": "L808",
       "weight": 1.0
     },
     {
@@ -8281,7 +8640,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L689",
+      "source_location": "L816",
       "weight": 1.0
     },
     {
@@ -8293,7 +8652,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L697",
+      "source_location": "L824",
       "weight": 1.0
     },
     {
@@ -8305,7 +8664,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L541",
+      "source_location": "L658",
       "weight": 1.0
     },
     {
@@ -8317,7 +8676,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L542",
+      "source_location": "L659",
       "weight": 1.0
     },
     {
@@ -8329,7 +8688,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L547",
+      "source_location": "L664",
       "weight": 1.0
     },
     {
@@ -8341,7 +8700,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L555",
+      "source_location": "L672",
       "weight": 1.0
     },
     {
@@ -8353,7 +8712,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L557",
+      "source_location": "L674",
       "weight": 1.0
     },
     {
@@ -8365,7 +8724,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L341",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -8377,7 +8736,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L342",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -8389,7 +8748,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L386",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -8401,7 +8760,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L386",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -8413,7 +8772,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L409",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -8425,7 +8784,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L409",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -8437,7 +8796,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L429",
+      "source_location": "L449",
       "weight": 1.0
     },
     {
@@ -8449,7 +8808,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L429",
+      "source_location": "L449",
       "weight": 1.0
     },
     {
@@ -8461,7 +8820,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L300",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -8473,11 +8832,47 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L300",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
       "source": "tests_test_normalize_test_normalize_dart_rejects_a_non_dart_station",
+      "target": "tests_test_normalize_dart_station",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_dart_rejects_a_non_dart_station",
+      "target": "pipeline_normalize_normalize_dart",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L331",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_dart_rejects_an_empty_approved_asset",
+      "target": "pipeline_normalize_normalize_dart",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_dart_rejects_an_empty_approved_asset",
       "target": "tests_test_normalize_dart_station",
       "relation": "calls",
       "_origin": "ast",
@@ -8489,42 +8884,6 @@
       "weight": 1.0
     },
     {
-      "source": "tests_test_normalize_test_normalize_dart_rejects_a_non_dart_station",
-      "target": "pipeline_normalize_normalize_dart",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_normalize.py",
-      "source_location": "L311",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_normalize_test_normalize_dart_rejects_an_empty_approved_asset",
-      "target": "pipeline_normalize_normalize_dart",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_normalize.py",
-      "source_location": "L288",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_normalize_test_normalize_dart_rejects_an_empty_approved_asset",
-      "target": "tests_test_normalize_dart_station",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/test_normalize.py",
-      "source_location": "L288",
-      "weight": 1.0
-    },
-    {
       "source": "tests_test_normalize_test_normalize_dart_requires_canonical_units_and_vertical_reference",
       "target": "pipeline_normalize_normalize_dart",
       "relation": "calls",
@@ -8533,7 +8892,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L337",
+      "source_location": "L357",
       "weight": 1.0
     },
     {
@@ -8545,7 +8904,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L256",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -8557,7 +8916,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L256",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -8569,7 +8928,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L65",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -8581,7 +8940,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L99",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -8593,7 +8952,55 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L110",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum",
+      "target": "tests_test_normalize_ntwc_saipan_station",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L457",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch",
+      "target": "tests_test_normalize_ntwc_saipan_station",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L538",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times",
+      "target": "tests_test_normalize_ntwc_saipan_station",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L493",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_unverified_header",
+      "target": "tests_test_normalize_ntwc_saipan_station",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L522",
       "weight": 1.0
     },
     {
@@ -8605,7 +9012,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L114",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -8617,7 +9024,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L220",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -8629,7 +9036,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L176",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -8641,7 +9048,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L232",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -8653,7 +9060,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L197",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -8665,7 +9072,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L249",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -8677,7 +9084,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L154",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -8689,7 +9096,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L145",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -8701,7 +9108,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L316",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -8713,7 +9120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L317",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -8725,7 +9132,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L320",
+      "source_location": "L340",
       "weight": 1.0
     },
     {
@@ -8737,7 +9144,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L322",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -8965,7 +9372,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L523",
+      "source_location": "L640",
       "weight": 1.0
     },
     {
@@ -8977,7 +9384,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L360",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -8989,7 +9396,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L326",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -9001,7 +9408,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L74",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -9049,7 +9456,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L969",
+      "source_location": "L1122",
       "weight": 1.0
     },
     {
@@ -9077,6 +9484,18 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_rejectedrecord",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_normalize_ttt",
       "target": "pipeline_normalize_rejectedrecord",
       "relation": "references",
@@ -9089,6 +9508,18 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_ntwc_coastal_input_count",
+      "target": "pipeline_normalize_rejectedrecord",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1137",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_observation_source_accounting",
       "target": "pipeline_normalize_observationrecord",
       "relation": "references",
@@ -9097,7 +9528,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L984",
+      "source_location": "L1146",
       "weight": 1.0
     },
     {
@@ -9109,7 +9540,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L984",
+      "source_location": "L1146",
       "weight": 1.0
     },
     {
@@ -9121,7 +9552,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L890",
+      "source_location": "L1043",
       "weight": 1.0
     },
     {
@@ -9133,7 +9564,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L890",
+      "source_location": "L1043",
       "weight": 1.0
     },
     {
@@ -9145,7 +9576,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L700",
+      "source_location": "L853",
       "weight": 1.0
     },
     {
@@ -9157,7 +9588,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L700",
+      "source_location": "L853",
       "weight": 1.0
     },
     {
@@ -9661,7 +10092,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9673,7 +10104,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9685,7 +10116,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9697,7 +10128,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9709,7 +10140,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9721,7 +10152,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9733,7 +10164,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9745,7 +10176,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -9901,7 +10332,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9913,7 +10344,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10105,7 +10536,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L969",
+      "source_location": "L1122",
       "weight": 1.0
     },
     {
@@ -10117,7 +10548,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L962",
+      "source_location": "L1115",
       "weight": 1.0
     },
     {
@@ -10129,7 +10560,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L845",
+      "source_location": "L998",
       "weight": 1.0
     },
     {
@@ -10141,7 +10572,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L653",
+      "source_location": "L806",
       "weight": 1.0
     },
     {
@@ -10205,6 +10636,30 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_normalize_ntwc_saipan",
+      "target": "pipeline_normalize_stationrecord",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_normalize_ttt",
       "target": "pipeline_normalize_py_path",
       "relation": "references",
@@ -10217,6 +10672,18 @@
       "weight": 1.0
     },
     {
+      "source": "pipeline_normalize_ntwc_coastal_input_count",
+      "target": "pipeline_normalize_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1137",
+      "weight": 1.0
+    },
+    {
       "source": "pipeline_normalize_sha256",
       "target": "pipeline_normalize_py_path",
       "relation": "references",
@@ -10225,7 +10692,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L643",
+      "source_location": "L796",
       "weight": 1.0
     },
     {
@@ -10249,7 +10716,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L890",
+      "source_location": "L1043",
       "weight": 1.0
     },
     {
@@ -10261,7 +10728,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L852",
+      "source_location": "L1005",
       "weight": 1.0
     },
     {
@@ -10273,7 +10740,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1009",
+      "source_location": "L1171",
       "weight": 1.0
     },
     {
@@ -10657,7 +11124,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L507",
+      "source_location": "L624",
       "weight": 1.0
     },
     {
@@ -10669,7 +11136,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L712",
+      "source_location": "L839",
       "weight": 1.0
     },
     {
@@ -10681,7 +11148,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L702",
+      "source_location": "L829",
       "weight": 1.0
     },
     {
@@ -10693,7 +11160,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L656",
+      "source_location": "L783",
       "weight": 1.0
     },
     {
@@ -10705,7 +11172,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L668",
+      "source_location": "L795",
       "weight": 1.0
     },
     {
@@ -10717,7 +11184,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L686",
+      "source_location": "L813",
       "weight": 1.0
     },
     {
@@ -10729,7 +11196,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L538",
+      "source_location": "L655",
       "weight": 1.0
     },
     {
@@ -10741,7 +11208,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L552",
+      "source_location": "L669",
       "weight": 1.0
     },
     {
@@ -10753,7 +11220,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L378",
+      "source_location": "L398",
       "weight": 1.0
     },
     {
@@ -10765,7 +11232,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L394",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -10777,7 +11244,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L415",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -10789,7 +11256,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L291",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -10801,7 +11268,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L283",
+      "source_location": "L303",
       "weight": 1.0
     },
     {
@@ -10813,7 +11280,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L82",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -10825,7 +11292,43 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L102",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch",
+      "target": "tests_test_normalize_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L528",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times",
+      "target": "tests_test_normalize_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L480",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_unverified_header",
+      "target": "tests_test_normalize_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L511",
       "weight": 1.0
     },
     {
@@ -10837,7 +11340,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L203",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -10849,7 +11352,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L161",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -10861,7 +11364,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L227",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -10873,7 +11376,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L182",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -10885,7 +11388,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L235",
+      "source_location": "L255",
       "weight": 1.0
     },
     {
@@ -10897,7 +11400,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L148",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -10909,7 +11412,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L139",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -11829,6 +12332,39 @@
       "weight": 1.0
     },
     {
+      "source": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes",
+      "target": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_acquisition_run_notes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_acquisition_run_notes",
+      "target": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_decision",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_acquisition_run_notes",
+      "target": "artifacts_logs_runs_2026_09_09_0142_saipan_recovery_92c438c_notes_limitations",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/logs/runs/2026-09-09__0142__saipan-recovery__92c438c/notes.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "artifacts_provenance_source_manifest",
       "target": "artifacts_provenance_source_manifest_source_manifest_contract",
       "relation": "contains",
@@ -11863,13 +12399,13 @@
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
-      "target": "context_acquisition_report_t_002b_clean_live_evidence",
+      "target": "context_acquisition_report_saipan_recovery_evidence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11885,35 +12421,46 @@
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
+      "target": "context_acquisition_report_t_002b_clean_live_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
       "target": "context_acquisition_report_authoritative_evidence_and_observed_smoke_checks",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L51",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
-      "target": "context_acquisition_report_approved_contracts_12_assets",
+      "target": "context_acquisition_report_approved_contracts_15_assets",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L61",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
       "source": "context_acquisition_report_t_002a_t\u014dhoku_source_contract_ledger",
-      "target": "context_acquisition_report_blocked_contracts_3_assets",
+      "target": "context_acquisition_report_blocked_contracts_2_assets",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L71",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -11924,7 +12471,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/ACQUISITION_REPORT.md",
-      "source_location": "L79",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -11973,13 +12520,24 @@
     },
     {
       "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
+      "target": "context_data_card_known_misuse_risk",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_CARD.md",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
       "target": "context_data_card_required_source_classes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -11990,7 +12548,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -12012,7 +12570,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -12023,7 +12581,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L55",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -12034,7 +12592,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L67",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -12045,18 +12603,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_CARD.md",
-      "source_location": "L86",
-      "weight": 1.0
-    },
-    {
-      "source": "context_data_card_data_card_t\u014dhoku_data_proof_candidate",
-      "target": "context_data_card_known_misuse_risk",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/DATA_CARD.md",
-      "source_location": "L92",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -12072,13 +12619,24 @@
     },
     {
       "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
+      "target": "context_data_quality_report_observation_quality",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_QUALITY_REPORT.md",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
       "target": "context_data_quality_report_rejections_and_adaptive_finding",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L124",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -12089,7 +12647,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L140",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -12100,18 +12658,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
-      "target": "context_data_quality_report_source_coverage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L27",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -12127,13 +12674,24 @@
     },
     {
       "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
+      "target": "context_data_quality_report_source_coverage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DATA_QUALITY_REPORT.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
       "target": "context_data_quality_report_output_contract_and_reconciliation",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L45",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -12144,18 +12702,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L70",
-      "weight": 1.0
-    },
-    {
-      "source": "context_data_quality_report_t\u014dhoku_normalization_and_data_quality_report",
-      "target": "context_data_quality_report_observation_quality",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/DATA_QUALITY_REPORT.md",
-      "source_location": "L87",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -12424,13 +12971,24 @@
     },
     {
       "source": "context_handover_handover",
+      "target": "context_handover_accepted_saipan_source_recovery",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
       "target": "context_handover_risks_and_blockers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L166",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -12441,29 +12999,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L179",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_repository_state",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L190",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_final_disposition",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L196",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -12475,6 +13011,28 @@
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_repository_state",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_final_disposition",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -12776,17 +13334,6 @@
     },
     {
       "source": "context_spatial_contract_spatial_contract",
-      "target": "context_spatial_contract_required_per_source_fields",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/spatial-contract.md",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "context_spatial_contract_spatial_contract",
       "target": "context_spatial_contract_current_state",
       "relation": "contains",
       "_origin": "ast",
@@ -12798,13 +13345,24 @@
     },
     {
       "source": "context_spatial_contract_spatial_contract",
+      "target": "context_spatial_contract_required_per_source_fields",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/spatial-contract.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "context_spatial_contract_spatial_contract",
       "target": "context_spatial_contract_working_output_rules",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/spatial-contract.md",
-      "source_location": "L37",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -12853,7 +13411,7 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_002d_run_reproducible_eda",
+      "target": "context_tasks_t_002c1_recover_and_normalize_saipan_event_data",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12864,24 +13422,13 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_002e_review_and_close_the_data_proof",
+      "target": "context_tasks_t_002d_run_reproducible_eda",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L258",
-      "weight": 1.0
-    },
-    {
-      "source": "context_tasks_tasks",
-      "target": "context_tasks_t_003_make_the_static_scientific_comparison",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/TASKS.md",
-      "source_location": "L284",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -12897,24 +13444,24 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_004_test_the_wavefront_mechanism",
+      "target": "context_tasks_t_002e_review_and_close_the_data_proof",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L307",
+      "source_location": "L306",
       "weight": 1.0
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_005_build_and_package_the_story",
+      "target": "context_tasks_t_003_make_the_static_scientific_comparison",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L331",
+      "source_location": "L332",
       "weight": 1.0
     },
     {
@@ -12926,6 +13473,28 @@
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_004_test_the_wavefront_mechanism",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_t_005_build_and_package_the_story",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L379",
       "weight": 1.0
     },
     {
@@ -13333,6 +13902,72 @@
       "confidence_score": 1.0,
       "source_file": "docs/research/feasibility.md",
       "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options",
+      "target": "docs_research_source_access_options_blocked_source_access_options",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options_blocked_source_access_options",
+      "target": "docs_research_source_access_options_valpara\u00edso_valp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options_blocked_source_access_options",
+      "target": "docs_research_source_access_options_saipan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options_blocked_source_access_options",
+      "target": "docs_research_source_access_options_nctr_continuous_event_field",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options_blocked_source_access_options",
+      "target": "docs_research_source_access_options_scope_clarification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_research_source_access_options_blocked_source_access_options",
+      "target": "docs_research_source_access_options_recommended_order",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/research/source-access-options.md",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -13887,35 +14522,68 @@
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_write_csv",
+      "target": "pipeline_normalize_validate_ttt_metadata",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1009",
+      "source_location": "L1005",
       "weight": 1.0
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_sanitize_run_tag",
+      "target": "pipeline_normalize_ttt_source_accounting",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1106",
+      "source_location": "L1043",
       "weight": 1.0
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_build_tables",
+      "target": "pipeline_normalize_dart_input_count",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1113",
+      "source_location": "L1115",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_coastal_input_count",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1122",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_ntwc_coastal_input_count",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1137",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_observation_source_accounting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1146",
       "weight": 1.0
     },
     {
@@ -13927,6 +14595,50 @@
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
       "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_csv_value",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1161",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_write_csv",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1171",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_sanitize_run_tag",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1268",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize",
+      "target": "pipeline_normalize_build_tables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1275",
       "weight": 1.0
     },
     {
@@ -14085,24 +14797,13 @@
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_sha256",
+      "target": "pipeline_normalize_normalize_ntwc_saipan",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
       "source_location": "L643",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_normalize",
-      "target": "pipeline_normalize_load_inventory",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L653",
       "weight": 1.0
     },
     {
@@ -14118,24 +14819,24 @@
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_verify_inventory",
+      "target": "pipeline_normalize_sha256",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L700",
+      "source_location": "L796",
       "weight": 1.0
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_load_stations",
+      "target": "pipeline_normalize_load_inventory",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L761",
+      "source_location": "L806",
       "weight": 1.0
     },
     {
@@ -14151,35 +14852,24 @@
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_load_config_document",
+      "target": "pipeline_normalize_verify_inventory",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L845",
+      "source_location": "L853",
       "weight": 1.0
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_validate_ttt_metadata",
+      "target": "pipeline_normalize_load_stations",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L852",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_normalize",
-      "target": "pipeline_normalize_ttt_source_accounting",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L890",
+      "source_location": "L914",
       "weight": 1.0
     },
     {
@@ -14195,46 +14885,13 @@
     },
     {
       "source": "pipeline_normalize",
-      "target": "pipeline_normalize_dart_input_count",
+      "target": "pipeline_normalize_load_config_document",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L962",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_normalize",
-      "target": "pipeline_normalize_coastal_input_count",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L969",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_normalize",
-      "target": "pipeline_normalize_observation_source_accounting",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L984",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_normalize",
-      "target": "pipeline_normalize_csv_value",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L999",
+      "source_location": "L998",
       "weight": 1.0
     },
     {
@@ -14811,7 +15468,7 @@
     },
     {
       "source": "tests_test_normalize",
-      "target": "tests_test_normalize_test_normalize_event_rejects_nonfinite_measurements",
+      "target": "tests_test_normalize_test_normalize_event_rejects_identity_or_schema_drift",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14822,13 +15479,24 @@
     },
     {
       "source": "tests_test_normalize",
+      "target": "tests_test_normalize_test_normalize_event_rejects_nonfinite_measurements",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
       "target": "tests_test_normalize_test_normalize_ttt_explodes_parts_and_preserves_boundary_precision",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L113",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -14839,7 +15507,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L139",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -14850,7 +15518,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L148",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -14861,7 +15529,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L161",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -14872,7 +15540,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L182",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -14883,7 +15551,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L203",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -14894,23 +15562,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L227",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
       "source": "tests_test_normalize",
       "target": "tests_test_normalize_test_normalize_ttt_rejects_an_empty_multilinestring",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tests/test_normalize.py",
-      "source_location": "L235",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_normalize",
-      "target": "tests_test_normalize_test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14927,7 +15584,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L26",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_test_normalize_dart_retains_eleven_source_fields_and_rejects_bad_rows",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -14938,7 +15606,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L283",
+      "source_location": "L303",
       "weight": 1.0
     },
     {
@@ -14949,7 +15617,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L291",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -14960,7 +15628,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L307",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
@@ -14971,7 +15639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L314",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -14982,7 +15650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L333",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -14993,7 +15661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L340",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -15004,7 +15672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L378",
+      "source_location": "L398",
       "weight": 1.0
     },
     {
@@ -15015,7 +15683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L394",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -15026,18 +15694,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L415",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
       "source": "tests_test_normalize",
-      "target": "tests_test_normalize_stage_fixture_bundle",
+      "target": "tests_test_normalize_test_normalize_ntwc_saipan_preserves_declared_time_units_and_datum",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L432",
+      "source_location": "L452",
       "weight": 1.0
     },
     {
@@ -15048,7 +15716,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L45",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_duplicate_or_conflicting_times",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L480",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_test_normalize_ntwc_saipan_rejects_unverified_header",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_test_normalize_ntwc_saipan_quarantines_unrepresentable_epoch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L528",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_stage_fixture_bundle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L544",
       "weight": 1.0
     },
     {
@@ -15059,7 +15771,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L507",
+      "source_location": "L624",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_normalize",
+      "target": "tests_test_normalize_ntwc_saipan_station",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_normalize.py",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -15070,7 +15793,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L538",
+      "source_location": "L655",
       "weight": 1.0
     },
     {
@@ -15081,18 +15804,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L552",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_normalize",
-      "target": "tests_test_normalize_test_normalize_event_accepts_the_exact_reviewed_fdsn_record",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tests/test_normalize.py",
-      "source_location": "L64",
+      "source_location": "L669",
       "weight": 1.0
     },
     {
@@ -15103,7 +15815,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L656",
+      "source_location": "L783",
       "weight": 1.0
     },
     {
@@ -15114,7 +15826,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L668",
+      "source_location": "L795",
       "weight": 1.0
     },
     {
@@ -15125,7 +15837,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L686",
+      "source_location": "L813",
       "weight": 1.0
     },
     {
@@ -15136,7 +15848,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L702",
+      "source_location": "L829",
       "weight": 1.0
     },
     {
@@ -15147,18 +15859,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L712",
+      "source_location": "L839",
       "weight": 1.0
     },
     {
       "source": "tests_test_normalize",
-      "target": "tests_test_normalize_test_normalize_event_rejects_identity_or_schema_drift",
+      "target": "tests_test_normalize_test_normalize_event_accepts_the_exact_reviewed_fdsn_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -15415,17 +16127,6 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_normalize_rationale_1116",
-      "target": "pipeline_normalize_build_tables",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/normalize.py",
-      "source_location": "L1116",
-      "weight": 1.0
-    },
-    {
       "source": "pipeline_normalize_rationale_116",
       "target": "pipeline_normalize_observationrecord",
       "relation": "rationale_for",
@@ -15434,6 +16135,17 @@
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
       "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_rationale_1278",
+      "target": "pipeline_normalize_build_tables",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L1278",
       "weight": 1.0
     },
     {
@@ -15511,6 +16223,17 @@
       "confidence_score": 1.0,
       "source_file": "pipeline/normalize.py",
       "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_normalize_rationale_646",
+      "target": "pipeline_normalize_normalize_ntwc_saipan",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/normalize.py",
+      "source_location": "L646",
       "weight": 1.0
     },
     {
@@ -15763,7 +16486,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/data-sources.md",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -15779,13 +16502,24 @@
     },
     {
       "source": "docs_data_sources",
-      "target": "context_data_card",
+      "target": "docs_research_source_access_options",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/data-sources.md",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_data_sources",
+      "target": "context_data_card",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/data-sources.md",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -15853,7 +16587,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1488",
+      "source_location": "L1665",
       "weight": 1.0
     },
     {
@@ -15877,7 +16611,7 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L762",
+      "source_location": "L915",
       "weight": 0.8
     },
     {
@@ -15889,7 +16623,7 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "pipeline/normalize.py",
-      "source_location": "L701",
+      "source_location": "L854",
       "weight": 0.8
     },
     {
@@ -15973,7 +16707,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "tests/test_normalize.py",
-      "source_location": "L334",
+      "source_location": "L354",
       "weight": 0.8
     },
     {
@@ -15996,7 +16730,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1120",
+      "source_location": "L1282",
       "weight": 0.8
     },
     {
@@ -16007,7 +16741,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "pipeline/normalize.py",
-      "source_location": "L1130",
+      "source_location": "L1292",
       "weight": 0.8
     },
     {
@@ -16084,7 +16818,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L708",
+      "source_location": "L835",
       "weight": 0.8
     },
     {
@@ -16095,7 +16829,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L662",
+      "source_location": "L789",
       "weight": 0.8
     },
     {
@@ -16106,7 +16840,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L680",
+      "source_location": "L807",
       "weight": 0.8
     },
     {
@@ -16117,7 +16851,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L696",
+      "source_location": "L823",
       "weight": 0.8
     },
     {
@@ -16128,7 +16862,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L546",
+      "source_location": "L663",
       "weight": 0.8
     },
     {
@@ -16139,7 +16873,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L428",
+      "source_location": "L448",
       "weight": 0.8
     },
     {
@@ -16150,7 +16884,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L310",
+      "source_location": "L330",
       "weight": 0.8
     },
     {
@@ -16161,7 +16895,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L287",
+      "source_location": "L307",
       "weight": 0.8
     },
     {
@@ -16172,7 +16906,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L336",
+      "source_location": "L356",
       "weight": 0.8
     },
     {
@@ -16183,7 +16917,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L98",
+      "source_location": "L118",
       "weight": 0.8
     },
     {
@@ -16194,7 +16928,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L109",
+      "source_location": "L129",
       "weight": 0.8
     },
     {
@@ -16205,7 +16939,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L231",
+      "source_location": "L251",
       "weight": 0.8
     },
     {
@@ -16216,7 +16950,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L144",
+      "source_location": "L164",
       "weight": 0.8
     },
     {
@@ -16227,7 +16961,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_normalize.py",
-      "source_location": "L315",
+      "source_location": "L335",
       "weight": 0.8
     },
     {
@@ -16287,5 +17021,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5689f18a62c30aabb49482665d8e8e505cdc5e66"
+  "built_at_commit": "92c438c2e2f8845567c059873cb85544f1fd992a"
 }

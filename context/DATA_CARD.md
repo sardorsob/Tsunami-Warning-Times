@@ -2,9 +2,11 @@
 
 ## Status
 
-T-002A source contracts, T-002B acquisition, and T-002C normalization are
-accepted: 12 of 15 contracted sources were acquired by exact contract, while the
-continuous NCTR field, Saipan, and Valparaíso remain blocked and visible.
+T-002A source contracts, T-002B acquisition, and T-002C normalization have an
+accepted baseline. A 2026-09-08 Saipan recovery revision expands the ledger to
+17 exact assets: 15 are acquired and checksummed, while the continuous NCTR
+field and Valparaíso remain blocked and visible. The revised normalization is
+accepted after independent scientific-data review.
 Tōhoku remains a data-proof candidate, not a production dataset or operational
 warning product.
 
@@ -39,7 +41,8 @@ T-002A. No candidate becomes analysis-ready merely because it downloads.
 
 ## Actual normalized grains
 
-- source outcome: one row per contracted file/API response, including blockers;
+- source outcome: one row per contracted file/API response, including blockers
+  and the two Saipan archival companions;
 - event: one row for the reviewed USGS event origin;
 - travel-time contour: one row per source contour part and `HOURS` value;
 - station: one row per selected DART deployment or coastal-gauge identity,
@@ -69,10 +72,11 @@ Every stage reconciles input, accepted, rejected, and output counts.
 - one reviewed USGS event row;
 - 72 TTT features expanded to 4,380 contour parts and 62,988 vertices;
 - four preselected DART stations with 121,722 accepted samples;
-- six coastal candidates represented as stations: four with 16,897 observations
-  and two retained as blockers;
-- 93 rejected records: 3 blocked assets and 90 DART rows containing an
-  undocumented `9999` measurement sentinel;
+- six coastal candidates represented as stations: five with 17,661 observations
+  and Valparaíso retained as a blocker;
+- 108 rejected records: 2 blocked assets, 90 DART rows containing an
+  undocumented `9999` measurement sentinel, and all 16 Saipan rows belonging to
+  8 conflicting duplicate timestamps;
 - zero duplicate primary keys, zero duplicate station/timestamp pairs, and zero
   null required fields.
 
@@ -82,6 +86,12 @@ CO-OPS raw-value missingness is retained, not imputed. Pago Pago returns only
 source; long post-quarantine intervals remain explicit EDA targets. Unknown CRS,
 horizontal datum, vertical reference, and time semantics remain `unknown` where
 the publisher evidence does not resolve them.
+
+Saipan day `.070` supplies 764 accepted event-day samples in meters relative to
+MLLW. Every row at its eight conflicting duplicate timestamps is quarantined,
+off-minute source timestamps are retained, and the 12:08–23:07 UTC gap is not
+filled. Days `.071` and `.072` remain exact checksummed source companions for
+later extended-tail analysis.
 
 ## Sensitive data and authorization
 
