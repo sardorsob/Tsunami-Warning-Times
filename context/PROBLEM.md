@@ -27,4 +27,7 @@ community comparisons are defensible.
 - implying false precision from source or detection timestamps;
 - showing a decorative wavefront, amplitude, or turbulence not supported by data;
 - silently choosing a famous event whose public data cannot support the story;
-- hiding missing stations, NoData, datums, CRS issues, or failed comparisons.
+- hiding missing stations, NoData, datums, CRS issues, or failed comparisons;
+- reporting one pooled null percentage that hides absent timestamps,
+  structurally inapplicable fields, quarantined rows, or a wholly unavailable
+  source asset.

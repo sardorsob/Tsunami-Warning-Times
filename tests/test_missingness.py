@@ -127,7 +127,7 @@ def _stage_profile_inputs(root: Path) -> Path:
                 "station_id": "coast",
                 "source_time": "fixture",
                 "observed_at_utc": "2011-03-11T00:00:00Z",
-                "raw_value": "1",
+                "raw_value": "0",
                 "fitted_value": "",
                 "residual_value": "",
                 "source_extra": "",
@@ -286,6 +286,7 @@ def test_profile_separates_structural_nulls_from_measurement_and_grid_gaps(
     assert profile.ttt_missing_hour_labels == (2,)
     assert profile.unknown_horizontal_datum_stations == 2
     assert profile.unknown_vertical_reference_stations == 1
+    assert profile.unexpected_dart_modeled_field_null_rows == 0
 
     coast = profile.coastal_windows[0]
     assert coast.accepted_rows == 3

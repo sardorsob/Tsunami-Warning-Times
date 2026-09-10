@@ -45,6 +45,15 @@
   in the denominator.
 - Profile grain, keys, duplicates, missingness, cadence segments, gaps, robust
   outliers, distribution shape, and join expansion before interpreting results.
+- For missingness, report blank retained values, absent source-supported
+  timestamps, structural not-applicable fields, explicit quarantine, metadata
+  unknowns, and blocked source assets separately. Reconcile each count to its
+  own denominator; do not treat absent timestamps as CSV null cells.
+- Test exact-grid and sample-density coastal coverage separately so valid
+  off-grid source observations are neither discarded nor silently snapped.
+- Keep DART mixed cadence descriptive; investigate intervals over the documented
+  cadence before calling them outages. Assert retained zeros remain numeric and
+  no imputation occurs.
 - Compare arrival-pick settings without choosing them from model agreement.
 
 ## Cartographic and interaction

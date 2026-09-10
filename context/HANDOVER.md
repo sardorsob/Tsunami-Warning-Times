@@ -45,7 +45,8 @@ only the accepted analysis-ready data.
   source-gated acquisition, normalization/data quality, script-backed marimo
   EDA, Markdown reporting, and independent scientific closure.
 - Populated the acquisition and data-quality reports from their task-owned
-  evidence. The EDA report remains intentionally empty until T-002D.
+  evidence. The EDA report stayed intentionally empty through T-002C2 and is now
+  populated by the first T-002D slice.
 
 ## Verification evidence
 
@@ -97,9 +98,9 @@ Observed on 2026-09-05 for the source-contract ledger:
 - The final provenance suite passed 9 tests; the source-manifest validator
   accepted 15 exact assets; Ruff passed; Pyright reported 0 errors; the source
   contract TOML parsed with Python 3.12; and `git diff --check` passed.
-- The ledger permits 12 exact assets only for T-002B acquisition and keeps the
-  continuous NCTR field, Saipan, and Valparaíso visibly blocked. No raw data was
-  downloaded and T-002D remains pending.
+- At that gate, the ledger permitted 12 exact assets only for T-002B acquisition
+  and kept the continuous NCTR field, Saipan, and Valparaíso visibly blocked. No
+  raw data was downloaded in that task, and T-002D was still pending.
 - `graphify update .` rebuilt the tracked graph after the provenance and contract
   changes: 304 nodes, 307 edges, and 38 communities.
 - Review round 1 added the NCEI-to-NDBC UTC evidence chain for DART calendar
@@ -232,6 +233,46 @@ passed 88 Python tests, the 18-record provenance validator, Ruff, Pyright, the
 frontend typecheck/test/build, Semgrep with no findings, and an independent
 Codex Security diff scan with no reportable findings.
 
+## T-002D missingness slice
+
+The first adaptive EDA slice is complete on the accepted T-002C2 build. Clean
+implementation commit `7b6d386` adds the reusable typed profiler, thin CLI,
+source-supported six-gauge grid configuration, thin marimo notebook, and five
+task-owned tests. Run `2026-09-09__1749__missingness__7b6d386` records a
+six-file portable evidence bundle and finished local MLflow run
+`3ea475f7045e48c9a1a87af913f807e0`; the input fingerprint is
+`710dc48719a3f6362635b59cff2663887c43c5484ea9d15f6d3d12a4635d97d4`.
+
+The profiler found 1,049 raw-value blanks among 143,655 observations (0.7302%),
+but 2,276 unavailable exact-minute coastal positions among 23,040 (9.8785%).
+The sample-density view is 2,156 of 23,040 (9.3576%) because it preserves and
+counts 120 valid Saipan off-grid observations without snapping them. Pago Pago
+and Saipan dominate continuity risk. All 21,933 coastal fitted/residual blanks
+are structural not-applicability, not values to impute. The separate audit also
+keeps 90 quarantined DART sentinel records, 1 blocked asset among 18, 10 unknown
+horizontal datums, 5 unknown vertical references, and absent TTT labels 71–73
+visible.
+
+The notebook passed `marimo check` and a headless HTML execution; the latter is
+an ignored smoke artifact. The local MLflow run finished and contains the same
+run ID, Git SHA, input fingerprint, metrics, frozen-station tag, and four
+generated report/data artifacts. `context/EDA_REPORT.md` is canonical and the
+JSON/CSV outputs under `artifacts/eda/missingness/` are script-generated.
+Pooled MCAR is not supported; MAR remains only a possible conditional
+assumption, and MNAR cannot be excluded without publisher operational evidence.
+T-002D remains in progress because gap visualization, DART long-interval review,
+arrival-pick sensitivity, spatial/join coverage, NCTR structure, and the
+distance-versus-arrival contrast are not complete.
+
+The full repository gate passed with 93 Python tests, 18 validated provenance
+records, zero Ruff or Pyright findings, and a successful frontend typecheck,
+Vitest run, and production build. A separate source-table recount confirmed
+143,655 rows, 1,049 raw blanks, 21,933 coastal rows with structural
+fitted/residual blanks, zero retained DART modeled-field blanks, one retained
+numeric zero, and rejection reasons 1 blocked / 16 duplicate / 90 sentinel.
+Every one of the six normalized-input hashes and four generated-output hashes in
+the portable bundle reconciles to the current files.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
@@ -249,10 +290,13 @@ Codex Security diff scan with no reportable findings.
 
 Execute the remaining approved implementation chain in order:
 
-1. Start T-002D only from the accepted T-002C2 inventory and table checksums.
-2. Keep T-002D adaptive: run a fixed core profile, record each finding in an EDA
-   decision ledger, and add follow-up checks only when observed evidence warrants
-   them.
+1. Continue T-002D from the recorded missingness findings: map Pago Pago and
+   Saipan gap blocks and inspect DART intervals over 900 seconds.
+2. Define the no-interpolation pre-arrival completeness gate, then execute
+   arrival-pick sensitivity without model-guided station selection.
+3. Continue the remaining spatial/join, NCTR-structure, distribution, and
+   distance-versus-arrival checks, recording every adaptive branch in the EDA
+   decision ledger.
 
 Do not begin the full wavefront or story build during the data proof.
 
@@ -261,9 +305,10 @@ Do not begin the full wavefront or story build during the data proof.
 The T-000 setup, T-002A source contracts, and T-002B acquisition evidence are on
 `main`. Raw and processed data remain ignored and untracked; no deployment or
 publication occurred. T-002C, T-002C1, and T-002C2 are accepted; T-002D remains
-pending.
+in progress with its missingness slice complete. Serena and local MLflow state
+remain ignored.
 
 ## Final disposition
 
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
-accepted. T-002D is not yet active.
+accepted. T-002D is active but not complete; no event or station set is frozen.

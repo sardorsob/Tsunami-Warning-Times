@@ -20,7 +20,9 @@ Production begins only after primary-source research and a data proof establish:
 
 The broad data proof may reject sources or stations. “Six coastal candidates” is
 an acquisition/EDA scope, not a promise that six stations will survive into the
-story.
+story. Missingness is profiled without imputation: blank values, absent expected
+timestamps, structural not-applicable fields, rejected rows, metadata unknowns,
+and unavailable assets retain separate meanings and denominators.
 
 ## Deferred
 

@@ -140,4 +140,14 @@ assets and record actual byte counts, checksums, safe response headers, and
 response counts. They did not download the blocked NCTR asset or replace it with
 a proxy. Independent review accepted T-002C2 after its sensor-selection,
 companion-accounting, and candidate-build documentation were corrected; T-002D
-may now begin from the accepted inventory.
+became eligible to begin from the accepted inventory and is now active.
+
+## Downstream missingness reconciliation
+
+T-002D run `2026-09-09__1749__missingness__7b6d386` retains the acquisition
+denominator: 17 of 18 exact source assets are approved, and the NCTR continuous
+field remains the sole blocked asset. That blocker is reported as whole-asset
+unavailability rather than being mixed into observation-cell missingness. The
+run also confirms that accepted-table blanks, absent expected timestamps, and
+quarantined source rows remain visible after acquisition and normalization; it
+does not re-download or alter raw data.

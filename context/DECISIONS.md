@@ -158,3 +158,25 @@
 - Revisit when: the key is rotated, a platform other than macOS must run live
   acquisition, publisher metadata establishes a sensor-priority rule, or a
   separate filtered derivative is proposed.
+
+## D-012 — Separate missingness mechanisms and do not impute the data proof
+
+- Date: 2026-09-09
+- Status: active for T-002D
+- Decision: report raw-value blanks, absent source-supported timestamps,
+  structurally inapplicable fields, quarantined source records, unknown metadata,
+  and unavailable source assets as separate mechanisms with separate
+  denominators. Keep strict exact-grid and sample-density coverage distinct for
+  off-grid source timestamps. Do not impute or snap timestamps in the data proof.
+- Reason: the pooled 0.7302% raw-cell null rate omits absent timestamps and would
+  also misclassify 21,933 coastal fitted/residual blanks if structural semantics
+  were ignored. Pago Pago and Saipan concentrate the meaningful continuity risk.
+- Statistical interpretation: pooled MCAR is not supported. MAR is only a
+  possible conditional analysis assumption after station, source, time, and
+  reporting mode are represented; MNAR cannot be excluded without publisher
+  outage, maintenance, telemetry, or QC evidence.
+- Evidence: run `2026-09-09__1749__missingness__7b6d386`, generated from Git SHA
+  `7b6d386`, with canonical results in `context/EDA_REPORT.md`.
+- Revisit when: publisher outage/QC records resolve causes, a defensible
+  gap-handling method is proposed, or sensitivity analysis shows that station
+  inclusion or an arrival result changes materially.

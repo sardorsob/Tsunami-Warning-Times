@@ -44,6 +44,10 @@ operational forecast protocol.
 - Define the arrival-pick baseline window, filter, threshold, persistence,
   gap-handling, uncertainty, and maximum-wave rule before using residuals to
   evaluate or select a method.
+- Use the source-supported missingness profile as a pre-arrival eligibility gate.
+  The default sensitivity baseline performs no interpolation and never treats a
+  structurally inapplicable field or off-grid source time as a missing water-level
+  observation.
 - A sensitivity grid may expose method dependence; it may not be optimized to
   make the modeled field appear accurate.
 - Preserve source timestamps and precision beside every derived UTC value.

@@ -10,6 +10,10 @@
   not selected.
 - A simple interval or residual summary is preferable to a probabilistic model
   unless uncertainty materially changes the explanation.
+- Source-supported coastal request windows and cadences may define completeness
+  denominators, but they do not authorize timestamp snapping or interpolation.
+- DART cadence transitions are treated as sampling-by-design until source or QC
+  evidence identifies a true outage.
 
 ## Unresolved—do not treat as facts
 
@@ -24,3 +28,7 @@
 - D3 projection, renderer, scroll controller, and hosting provider;
 - repository code license;
 - feasibility of conference attendance if accepted.
+- the upstream cause of each retained blank or timestamp gap; pooled MCAR is not
+  supported, MAR is unproved, and MNAR cannot be excluded;
+- whether publisher outage, telemetry, maintenance, or QC records can resolve the
+  Pago Pago, Saipan, or long-DART-interval mechanisms.

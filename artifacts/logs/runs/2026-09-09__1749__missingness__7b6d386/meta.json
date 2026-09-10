@@ -1,0 +1,14 @@
+{
+  "commands": [
+    "uv run python scripts/profile_missingness.py --processed-dir data/processed/tohoku/2026-09-09-valparaiso-reviewed-7576ffb-a --config config/tohoku-missingness.toml --artifact-dir artifacts/eda/missingness --run-dir artifacts/logs/runs/2026-09-09__1749__missingness__7b6d386 --report context/EDA_REPORT.md --run-id 2026-09-09__1749__missingness__7b6d386 --git-sha 7b6d386 --working-tree clean --mlflow-dir .mlflow/mlruns --mlflow-experiment tohoku-eda"
+  ],
+  "evidence_disposition": "preliminary-missingness-slice",
+  "git_sha": "7b6d386",
+  "mlflow_experiment": "tohoku-eda",
+  "mlflow_run_id": "3ea475f7045e48c9a1a87af913f807e0",
+  "mlflow_tracking_dir": ".mlflow/mlruns",
+  "mode": "offline-checksummed-eda",
+  "run_id": "2026-09-09__1749__missingness__7b6d386",
+  "timestamp_utc": "2026-09-10T00:49:25.148956Z",
+  "working_tree": "clean"
+}

@@ -5,6 +5,7 @@
 .codex/hooks.json
 .serena/
 .mlflow/
+notebooks/__marimo__/
 .venv/
 .pytest_cache/
 .pyright/

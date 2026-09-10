@@ -24,6 +24,11 @@ same thing as actionable public warning time.
   data layout, provenance validator, and validation plan in this repository.
 - Paired delivery skill: `swe-devops-standards` for tests, pinned tools, CI, and
   cross-platform repository behavior.
+- Current EDA domain skill: `analyze-data-quality`, applied to the first T-002D
+  slice so missing observations, absent timestamps, structural
+  not-applicability, quarantine, and source-asset coverage retain separate
+  definitions. The script-generated Markdown report remains canonical under
+  D-007 and D-008.
 
 ## Decision and lane
 

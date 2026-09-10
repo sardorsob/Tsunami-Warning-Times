@@ -1,0 +1,18 @@
+{
+  "coastal_csv": {
+    "path": "artifacts/eda/missingness/coastal-missingness.csv",
+    "sha256": "07e0b87515f10c21d203b35e4e043ecf7d49d08fd202d8cb4eb540b2b3748ac5"
+  },
+  "mechanisms_csv": {
+    "path": "artifacts/eda/missingness/missingness-mechanisms.csv",
+    "sha256": "c305400a1f8d823293199a80985a33ec68b63e88646d5a0fa28c573500d373a3"
+  },
+  "report": {
+    "path": "context/EDA_REPORT.md",
+    "sha256": "42ca0790092e8e14b1b606b4950f442c25125e2517bc1005bfb9e04b8297167f"
+  },
+  "summary": {
+    "path": "artifacts/eda/missingness/missingness-summary.json",
+    "sha256": "e18250f621df7e057af450459a4909d40cf74a9a502b702e84e77c60a7961ee6"
+  }
+}

@@ -102,6 +102,31 @@ timestamp fitting was applied. Forty-eight nominal radar minute positions are
 absent, and the sole numeric zero is retained with the publisher's
 `out_of_range=T` flag.
 
+## Missingness profile
+
+The reproducible T-002D missingness slice uses six source-supported coastal
+windows totaling 23,040 nominal minute positions. Strict exact-grid coverage is
+90.1215%: 2,276 positions are unavailable because the exact timestamp is absent
+or its retained value is blank. Sample-density coverage is 90.6424%: 2,156
+positions are unavailable when Saipan's 120 valid off-grid observations count
+without being moved. The two rates intentionally answer different questions.
+
+| Station | Strict coverage | Sample-density coverage | Main evidence |
+| --- | ---: | ---: | --- |
+| Hilo | 99.3287% | 99.3287% | 29 source blanks |
+| Pago Pago | 69.4676% | 69.4676% | 936 blanks and 383 absent tail positions |
+| Crescent City | 98.6111% | 98.6111% | 60 source blanks |
+| Adak | 99.4444% | 99.4444% | 24 source blanks |
+| Saipan | 44.7222% | 53.0556% | 796 exact-grid positions absent; 120 valid off-grid rows |
+| Valparaíso | 98.8889% | 98.8889% | 48 positions absent |
+
+The pooled 0.7302% raw-null rate is not a sufficient completeness measure.
+Structural not-applicable fields, explicit quarantine, unknown datum metadata,
+and the blocked NCTR continuous field use separate denominators. Missingness is
+strongly concentrated by station and time, so pooled MCAR is not supported. MAR
+is unproved and MNAR cannot be excluded without upstream operational evidence.
+No value is imputed.
+
 ## Sensitive data and authorization
 
 The sources are public environmental and geographic records. No PII,

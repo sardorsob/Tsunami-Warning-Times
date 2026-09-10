@@ -1,0 +1,12 @@
+{
+  "approved_source_assets": 17,
+  "blocked_source_assets": 1,
+  "coastal_sample_density_unavailable_percent": 9.3576,
+  "coastal_strict_unavailable_percent": 9.8785,
+  "dart_sentinel_percent": 0.0739,
+  "observation_rows": 143655,
+  "raw_null_percent": 0.7302,
+  "raw_null_rows": 1049,
+  "structural_not_applicable_percent": 15.2678,
+  "structural_not_applicable_rows": 21933
+}

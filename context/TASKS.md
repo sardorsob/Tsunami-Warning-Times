@@ -348,15 +348,19 @@
 - Verification commands: task-owned tests, `marimo check`, headless notebook run,
   report regeneration, MLflow/run-bundle reconciliation, and selected-value checks
 - Manual QA: inspect all figures/tables and compare at least three values with data
-- Evidence: missingness subtask implementation includes a reusable profiler,
-  checksummed CLI/run bundle, project-local MLflow record, thin marimo view, and
-  task-owned tests. The accepted-data execution and remaining adaptive EDA are
-  still pending.
+- Evidence: missingness run
+  `2026-09-09__1749__missingness__7b6d386` profiles the accepted T-002C2 build,
+  records a six-file portable bundle and finished project-local MLflow run
+  `3ea475f7045e48c9a1a87af913f807e0`, and produces the canonical Markdown,
+  JSON, and CSV evidence. The reusable profiler has five task-owned tests; the
+  thin marimo view passes static validation and headless execution. Remaining
+  adaptive EDA scope is still pending.
 - Attempts / Max: 1 / 3
-- Attempt log: 2026-09-09 — started T-002D with a test-driven missingness slice
-  that separates raw nulls, absent expected timestamps, structural
-  not-applicable fields, deliberate quarantine, metadata unknowns, and blocked
-  source assets without imputation or timestamp snapping
+- Attempt log: 2026-09-09 — completed the first test-driven T-002D slice on a
+  clean committed implementation; it separates raw nulls, absent expected
+  timestamps, structural not-applicable fields, deliberate quarantine, metadata
+  unknowns, and blocked source assets without imputation or timestamp snapping;
+  the complete T-002D task remains active
 - Status: in-progress
 
 ## T-002E — Review and close the data proof

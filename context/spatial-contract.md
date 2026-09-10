@@ -37,6 +37,12 @@ absolute-level offset must not be interpreted or aligned until a source datum
 contract is found; later EDA may compare separately centered anomalies under an
 explicit method.
 
+The T-002D missingness slice counts 10 of 10 station horizontal datums and 5 of
+10 vertical references as explicitly `unknown`. These are metadata unknowns,
+not missing water-level observations, and they keep the affected spatial or
+cross-datum interpretation blocked even when a station's time-series coverage is
+high.
+
 ## Required per-source fields
 
 - native CRS and coordinate order;

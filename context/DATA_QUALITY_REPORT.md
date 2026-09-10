@@ -116,11 +116,12 @@ the query time basis. DART and coastal values are not combined as if their
 vertical references were interchangeable.
 
 The observation table has 1,049 raw nulls (0.7302% overall), all from CO-OPS.
-The 16,897 CO-OPS rows and 764 Saipan rows correctly have null fitted and
-residual fields because those fields do not exist in either source. Saipan keeps
-the paired source epoch in `source_extra`. No normalized zero was observed in
-this live bundle, but fixture tests prove that a valid zero is preserved and is
-not converted to NoData.
+All 21,933 coastal rows—16,897 CO-OPS, 764 Saipan, and 4,272
+Valparaíso—correctly have null fitted and residual fields because those
+DART-specific fields do not exist in the coastal sources. Saipan keeps the
+paired source epoch in `source_extra`. Valparaíso retains one numeric zero with
+its publisher QC flag; fixture tests independently prove that valid zero is not
+converted to NoData.
 
 | Station | Accepted rows | Raw nulls | Window | Raw range | Cadence / continuity |
 | --- | ---: | ---: | --- | --- | --- |
@@ -227,3 +228,19 @@ evidence-led questions are the DART cadence transitions, Pago Pago missingness,
 Valparaíso QC-flag sensitivity, the 24 near-180-degree contour precision flags,
 and station-to-contour join completeness. Arrival rules and station inclusion
 remain frozen before residual sensitivity is viewed.
+
+## Downstream missingness profile
+
+T-002D run `2026-09-09__1749__missingness__7b6d386` re-read the accepted build
+without changing it. It confirms 1,049 retained raw-value blanks, 21,933
+structurally inapplicable coastal fitted/residual rows, 2,276 unavailable
+exact-minute coastal positions out of 23,040, 90 quarantined DART sentinel rows
+out of 121,812 source rows, 17 approved source assets, and 1 blocked asset.
+
+The calculations and exact input/output hashes are in
+`scripts/profile_missingness.py`, `pipeline/missingness.py`, the run bundle, and
+`context/EDA_REPORT.md`. Five task-owned tests cover the distinctions and the
+real local MLflow record. No imputation, timestamp snapping, silent row repair,
+or station removal occurs. Pooled MCAR is not supported; upstream cause remains
+unknown where publisher outage, maintenance, telemetry, or QC evidence is
+absent.

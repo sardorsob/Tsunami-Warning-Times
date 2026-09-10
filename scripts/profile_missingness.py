@@ -63,8 +63,7 @@ def _append_fingerprints(
         "| --- | --- |",
     ]
     lines.extend(
-        f"| `{Path(record['path']).name}` | `{record['sha256']}` |"
-        for record in input_records
+        f"| `{Path(record['path']).name}` | `{record['sha256']}` |" for record in input_records
     )
     lines.extend(
         [
@@ -205,9 +204,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             },
         },
     )
-    input_records = [
-        {"path": _display_path(path), "sha256": _sha256(path)} for path in input_paths
-    ]
+    input_records = [{"path": _display_path(path), "sha256": _sha256(path)} for path in input_paths]
     _write_json(args.run_dir / "inputs.json", input_records)
     input_fingerprint = _sha256(args.run_dir / "inputs.json")
     _append_fingerprints(

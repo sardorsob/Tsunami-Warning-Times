@@ -47,3 +47,7 @@ the provisional event disposition.
 The source and station set can be frozen only when T-002E accepts the upstream
 identity, terms, timing, spatial, quality, sensitivity, and reproducibility
 evidence. Rejected stations and unavailable assets remain visible in the reports.
+The first T-002D slice keeps all six coastal candidates visible but identifies
+Pago Pago and Saipan as the material continuity risks. That finding triggers
+gap-block and arrival-sensitivity checks; it does not authorize dropping either
+station or freezing Tōhoku.

@@ -1,0 +1,53 @@
+{
+  "expected_windows": [
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-14T00:00:00Z",
+      "name": "Adak",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "9461380"
+    },
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-14T00:00:00Z",
+      "name": "Crescent City",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "9419750"
+    },
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-14T00:00:00Z",
+      "name": "Hilo",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "1617760"
+    },
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-14T00:00:00Z",
+      "name": "Pago Pago",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "1770000"
+    },
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-12T00:00:00Z",
+      "name": "Saipan",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "saip"
+    },
+    {
+      "cadence_seconds": 60,
+      "end_utc_exclusive": "2011-03-14T00:00:00Z",
+      "name": "Valpara\u00edso",
+      "start_utc": "2011-03-11T00:00:00Z",
+      "station_id": "valp"
+    }
+  ],
+  "missingness_policy": {
+    "absent_timestamp_is_not_a_null_cell": true,
+    "coastal_fitted_and_residual_are_not_applicable": true,
+    "dart_mixed_cadence_is_not_a_uniform_grid": true,
+    "imputation": "disabled",
+    "off_grid_source_times": "preserved"
+  }
+}
