@@ -4,6 +4,7 @@
 !.env.example
 .codex/hooks.json
 .serena/
+.mlflow/
 .venv/
 .pytest_cache/
 .pyright/

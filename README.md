@@ -12,14 +12,15 @@ then explain what those timings do—and do not—say about community warning ti
 
 ## Current status
 
-The repository is in the **feasibility phase**. No historical event, station,
-community set, or travel-time product is yet an accepted project fact. See the
-[feasibility research](docs/research/feasibility.md), [project contract](context/PROJECT.md),
-and [handover](context/HANDOVER.md) before beginning implementation.
+The repository is in the **Tōhoku data-proof and exploratory-analysis phase**.
+Source acquisition and normalization are accepted; Tōhoku remains provisional
+until the complete EDA and independent data-proof review are accepted. See the
+[project contract](context/PROJECT.md), [task ledger](context/TASKS.md), and
+[handover](context/HANDOVER.md) before beginning implementation.
 
-The current browser shell deliberately displays that unresolved state. It does
-not contain a simulated wave, operational warning information, or reportable
-scientific result.
+The current browser shell still displays the earlier unresolved state. It does
+not contain a simulated wave, operational warning information, or an accepted
+production claim.
 
 ## Local setup
 
@@ -52,6 +53,28 @@ uv run python -m pipeline.provenance artifacts/provenance/source-manifest.csv
 npm run check
 ```
 
+Run the reproducible missingness slice against the accepted normalized build:
+
+```bash
+uv run python scripts/profile_missingness.py \
+  --processed-dir data/processed/tohoku/2026-09-09-valparaiso-reviewed-7576ffb-a \
+  --config config/tohoku-missingness.toml \
+  --artifact-dir artifacts/eda/missingness \
+  --run-dir artifacts/logs/runs/RUN_ID \
+  --report context/EDA_REPORT.md \
+  --run-id RUN_ID \
+  --git-sha GIT_SHA \
+  --working-tree clean \
+  --mlflow-dir .mlflow/mlruns \
+  --mlflow-experiment tohoku-eda
+```
+
+Inspect the generated artifact reactively in marimo:
+
+```bash
+uv run marimo edit notebooks/tohoku_missingness.py
+```
+
 ## Repository map
 
 ```text
@@ -61,13 +84,15 @@ context/                Scope, decisions, scientific contracts, tasks, handover
 data/                   Ignored raw/interim/processed working data
 docs/                   Public concept, competition, methods, and research notes
 pipeline/               Reusable Python pipeline code
+notebooks/              Thin marimo views over script-generated artifacts
+scripts/                Reproducible command-line entry points
 public/data/             Generated, web-ready static assets
 tests/                  Python contract and pipeline tests
 ```
 
-Start with [AGENTS.md](AGENTS.md) for repository rules. The data pipeline remains
-intentionally dependency-light until the event feasibility and source-format
-checks determine which geospatial libraries are actually needed.
+Start with [AGENTS.md](AGENTS.md) for repository rules. Scientific calculations
+live in reusable Python modules and scripts; notebooks remain presentation-only,
+and Markdown reports are the canonical interpretation surface.
 
 ## Safety and interpretation
 

@@ -8,6 +8,8 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+  "marimo==0.24.0",
+  "mlflow-skinny==3.16.0",
   "pyright==1.1.411",
   "pytest==9.1.1",
   "ruff==0.16.6",
@@ -26,7 +28,9 @@ target-version = "py312"
 select = ["B", "E", "F", "I", "UP"]
 
 [tool.pyright]
-include = ["pipeline", "tests"]
+include = ["pipeline", "scripts", "tests"]
 exclude = ["data", "artifacts", "public"]
 pythonVersion = "3.12"
 typeCheckingMode = "strict"
+venv = ".venv"
+venvPath = "."

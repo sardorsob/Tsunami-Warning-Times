@@ -1,0 +1,45 @@
+# Source-supported regular grids for T-002D completeness accounting.
+# These windows do not authorize timestamp snapping or interpolation.
+profile_version = "2026-09-09"
+
+[windows.hilo]
+station_id = "1617760"
+name = "Hilo"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-14T00:00:00Z"
+cadence_seconds = 60
+
+[windows.pago_pago]
+station_id = "1770000"
+name = "Pago Pago"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-14T00:00:00Z"
+cadence_seconds = 60
+
+[windows.crescent_city]
+station_id = "9419750"
+name = "Crescent City"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-14T00:00:00Z"
+cadence_seconds = 60
+
+[windows.adak]
+station_id = "9461380"
+name = "Adak"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-14T00:00:00Z"
+cadence_seconds = 60
+
+[windows.saipan]
+station_id = "saip"
+name = "Saipan"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-12T00:00:00Z"
+cadence_seconds = 60
+
+[windows.valparaiso]
+station_id = "valp"
+name = "Valparaíso"
+start_utc = "2011-03-11T00:00:00Z"
+end_utc_exclusive = "2011-03-14T00:00:00Z"
+cadence_seconds = 60
