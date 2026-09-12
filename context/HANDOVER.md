@@ -273,6 +273,32 @@ numeric zero, and rejection reasons 1 blocked / 16 duplicate / 90 sentinel.
 Every one of the six normalized-input hashes and four generated-output hashes in
 the portable bundle reconciles to the current files.
 
+## Dual-track design checkpoint
+
+The owner approved the dual-track direction on 2026-09-11: one repository, a
+Conference Paper as the primary scientific deliverable, and a materially
+distinct Visual Data Storytelling entry implemented in `app/`. The reviewed
+architecture is recorded in
+`docs/superpowers/specs/2026-09-11-dual-track-repository-design.md` and awaits
+final owner review before the implementation plan and physical migration.
+
+The design makes the existing top-level data pipeline and analytical files the
+shared scientific foundation, adds explicit `paper` and `story` ownership for
+new submission-specific work, and defines a semantic originality firewall. The
+self-review deliberately keeps completed missingness artifacts, its canonical
+Markdown report, and its portable run bundle at their recorded paths so their
+checksums and provenance remain valid. It also requires thin Marimo views,
+script-backed metrics, lane reports, release manifests, automated import/export
+fences, and an AI-assistance disclosure ledger.
+
+Observed for this documentation checkpoint on 2026-09-11: Ruff passed; Pyright
+reported 0 errors and 0 warnings; Pytest reported 93 passed; the provenance
+validator accepted 18 records; and the frontend typecheck, Vitest test, and
+production build passed. `git diff --check` passed, the design contains no TBD,
+TODO, FIXME, or XXX placeholders, and the official PacificVis 2027 Conference
+Paper, VisNotes, submission-policy, and Visual Data Storytelling pages were
+rechecked against the recorded deadlines and originality requirements.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
