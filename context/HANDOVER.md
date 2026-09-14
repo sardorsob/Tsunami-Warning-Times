@@ -299,6 +299,33 @@ TODO, FIXME, or XXX placeholders, and the official PacificVis 2027 Conference
 Paper, VisNotes, submission-policy, and Visual Data Storytelling pages were
 rechecked against the recorded deadlines and originality requirements.
 
+## External track-compatibility guidance
+
+On 2026-09-13, Dr. Angelos Chatzimparmpas replied on behalf of the PacificVis
+2027 Visual Data Storytelling Contest co-chairs. The response conditionally
+supports the proposed dual-track structure: using the same underlying dataset
+is acceptable in principle when the submissions have clearly distinct goals and
+contributions and their relationship is fully disclosed. Limited overlap may be
+acceptable, but substantial duplication of text, figures, analyses, or other
+manuscript content should be avoided.
+
+The co-chairs asked for a later account of the type and approximate extent of
+any overlap. No reply was sent during this task. The response remains pending
+under X-001 until both contribution statements, the paper methods/analysis
+outline, the story thesis/storyboard, preliminary figure inventories, and an
+overlap matrix exist. `context/ORIGINALITY.md` holds the detailed paraphrase,
+current boundary, and follow-up trigger; D-013 records the decision. The
+original email remains in the owner's mailbox rather than the repository. No
+Paper/VisNotes co-chair reply was present in the reviewed mail results as of
+2026-09-13.
+
+Fresh verification for this correspondence-log checkpoint: Ruff passed;
+Pyright reported 0 errors and 0 warnings; Pytest reported 93 passed; the
+provenance validator accepted 18 source records; and the frontend typecheck,
+Vitest run, and production build passed. A diff scan found no copied email
+address, Gmail URL, thread/message identifier, or full private message body in
+the new repository record.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
@@ -311,6 +338,8 @@ rechecked against the recorded deadlines and originality requirements.
   policy is favorable.
 - Conference registration deadlines and remote-presentation options remain
   unpublished; attendance feasibility is an owner decision.
+- The storytelling co-chairs still require a concrete overlap description, and
+  Paper/VisNotes co-chair guidance remains pending.
 
 ## Continue from here
 
@@ -323,6 +352,8 @@ Execute the remaining approved implementation chain in order:
 3. Continue the remaining spatial/join, NCTR-structure, distribution, and
    distance-versus-arrival checks, recording every adaptive branch in the EDA
    decision ledger.
+4. Keep X-001 pending until both submission concepts are concrete enough to
+   quantify overlap; obtain owner authorization before sending the reply.
 
 Do not begin the full wavefront or story build during the data proof.
 

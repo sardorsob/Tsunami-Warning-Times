@@ -180,3 +180,27 @@
 - Revisit when: publisher outage/QC records resolve causes, a defensible
   gap-handling method is proposed, or sensitivity analysis shows that station
   inclusion or an arrival result changes materially.
+
+## D-013 — Treat shared-data dual submission as conditionally compatible
+
+- Date: 2026-09-13
+- Status: conditional external guidance
+- Decision: continue designing the Conference Paper and Visual Data Storytelling
+  entry as distinct submissions over a governed shared data foundation. Treat
+  the storytelling co-chairs' response as in-principle compatibility guidance,
+  not blanket approval of the final submissions.
+- Reason: the response permits use of the same underlying dataset when goals and
+  contributions are clearly distinct and fully disclosed, and says limited
+  overlap may be acceptable. It warns against substantial duplication of text,
+  figures, analyses, or other manuscript content.
+- Constraint: preserve the semantic and technical originality firewall in the
+  dual-track design. Do not send the requested follow-up until contribution
+  statements, methods/analysis outlines, story structure, figure inventories,
+  and an approximate overlap matrix are available.
+- Evidence: 2026-09-13 reply from Dr. Angelos Chatzimparmpas on behalf of the
+  PacificVis 2027 Visual Data Storytelling Contest co-chairs, summarized in
+  `context/ORIGINALITY.md`; original correspondence retained in the owner's
+  mailbox.
+- Revisit when: the overlap can be described concretely, the Paper/VisNotes
+  co-chairs reply, either submission changes scope, or the final artifacts are
+  ready for an originality audit.

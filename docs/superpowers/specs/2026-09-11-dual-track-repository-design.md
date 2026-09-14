@@ -148,11 +148,14 @@ Rules:
    gates.
 9. A finished story is not publicly deployed before its contest submission
    without an explicit originality review and owner decision.
-10. Once the contribution statements are stable, contact the paper and contest
-    chairs for a written track-compatibility opinion before submitting both.
+10. The storytelling co-chairs have provided in-principle compatibility
+    guidance. Once the contribution statements and artifact inventories are
+    stable, answer their requested overlap question and obtain or record the
+    corresponding Paper/VisNotes guidance before submitting both.
 
-Chair contact is a later externally authorized action; repository preparation
-does not send messages.
+The 2026-09-13 response and its conditions are summarized in
+`context/ORIGINALITY.md`. Further chair contact remains an externally authorized
+action; repository preparation does not send messages.
 
 ## Repository organization
 
@@ -415,5 +418,6 @@ criterion or reveals a scientifically useful discrepancy structure.
 4. Commit paper tasks in reproducible experiment-sized units.
 5. Commit story tasks in data-proof, visual-proof, and production-sized units.
 
-Push, public deployment, conference submission, chair contact, new credentialed
-downloads, and large multi-event acquisition remain separately authorized.
+Push, public deployment, conference submission, further chair contact, new
+credentialed downloads, and large multi-event acquisition remain separately
+authorized.

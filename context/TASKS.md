@@ -460,3 +460,34 @@
 - Attempts / Max: 0 / 3
 - Attempt log: not started
 - Status: pending
+
+## X-001 — Close the dual-track compatibility follow-up
+
+- ID: X-001
+- Title: Describe the paper/story overlap and obtain final chair guidance
+- Depends on: approved dual-track migration; stable contribution statements,
+  paper methods/analysis outline, story thesis/storyboard, and figure inventories
+- Owner (Maker): project owner with project coordinator support
+- Checker: independent originality reviewer
+- Phase: cross-track governance
+- Data refs: shared release manifests and the named source inventory
+- Scientific refs: official track policies; `context/ORIGINALITY.md`; D-013
+- Statistical notes: disclose shared source-factual analysis without transferring
+  fitted paper-model results into the story
+- Scope: quantify the expected overlap by data, preprocessing, analysis, figures,
+  and prose; prepare the requested factual response; reconcile any Paper/VisNotes
+  guidance; and update the originality firewall
+- Artifacts to produce: reviewed overlap matrix, owner-approved response, chair
+  disposition, and updated originality ledger
+- Acceptance criteria: both contributions are concrete; permitted overlap is
+  bounded; prohibited duplication is explicit; all related work is disclosed;
+  the response is not sent before owner authorization
+- Verification commands: cross-document consistency and final artifact/figure
+  inventory checks
+- Manual QA: compare the response against both submissions and the original
+  chair correspondence
+- Evidence: 2026-09-13 storytelling co-chair reply conditionally permits the
+  same dataset and requests the type and approximate extent of expected overlap
+- Attempts / Max: 0 / 3
+- Attempt log: waiting for enough paper and story context to answer accurately
+- Status: pending
