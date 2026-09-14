@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-14)
 
 ## Corpus Check
-- 145 files · ~97,604 words
+- 145 files · ~98,075 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 803 nodes · 1322 edges · 68 communities (54 shown, 14 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.94)
+- 812 nodes · 1350 edges · 68 communities (54 shown, 14 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `df0ef321`
+- Built from commit: `dcb8f5e9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -251,8 +251,8 @@ Cohesion: 0.50
 Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 46 - "missingness.py"
-Cohesion: 0.09
-Nodes (52): Namespace, CoastalWindowProfile, DartCadenceProfile, ExpectedWindow, _load_accounting(), load_expected_windows(), _mechanism_rows(), MissingnessError (+44 more)
+Cohesion: 0.08
+Nodes (61): Namespace, build_coastal_coverage_timelines(), CoastalCoverageTimeline, CoastalWindowProfile, CoveragePosition, DartCadenceProfile, ExpectedWindow, _load_accounting() (+53 more)
 
 ### Community 47 - "Project Contract"
 Cohesion: 0.22
@@ -323,7 +323,7 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `build_tables()` connect `test_normalize.py` to `test_acquisition.py`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `SourceContract` connect `test_acquisition.py` to `test_normalize.py`?**

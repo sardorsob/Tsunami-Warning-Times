@@ -378,7 +378,7 @@ git commit -m "data(story): add governed Pacific coastline context"
 - Consumes: `ExpectedWindow`, normalized `observation.csv`, and existing UTC/grid semantics.
 - Produces: `CoveragePosition`, `OffGridObservation`, `CoastalCoverageTimeline`, and `build_coastal_coverage_timelines(processed_dir, windows)`.
 
-- [ ] **Step 1: Write the failing timeline test**
+- [x] **Step 1: Write the failing timeline test**
 
 Add imports for the three new records and function, then add:
 
@@ -408,13 +408,13 @@ def test_coverage_timeline_preserves_exact_blank_absent_and_off_grid_states(
     assert timeline.off_grid[0].raw_value_available is True
 ```
 
-- [ ] **Step 2: Run the test and observe the missing interface**
+- [x] **Step 2: Run the test and observe the missing interface**
 
 Run: `uv run pytest tests/test_missingness.py::test_coverage_timeline_preserves_exact_blank_absent_and_off_grid_states -q`
 
 Expected: FAIL on the missing imports.
 
-- [ ] **Step 3: Add immutable coverage records**
+- [x] **Step 3: Add immutable coverage records**
 
 Add `Literal` to the typing imports and define:
 
@@ -447,7 +447,7 @@ class CoastalCoverageTimeline:
     off_grid: tuple[OffGridObservation, ...]
 ```
 
-- [ ] **Step 4: Implement the exact-grid timeline without snapping**
+- [x] **Step 4: Implement the exact-grid timeline without snapping**
 
 Add a public function that reads `observation.csv` through `_read_csv`, groups
 rows by station, and for every window:
@@ -528,7 +528,7 @@ def build_coastal_coverage_timelines(
 Import `timedelta` from `datetime`. Do not assign an off-grid row to an expected
 position.
 
-- [ ] **Step 5: Reconcile the timeline with the existing profile**
+- [x] **Step 5: Reconcile the timeline with the existing profile**
 
 Extend the test to count one `observed`, one `source_blank`, one
 `absent_timestamp`, and one off-grid observation. Run:
@@ -542,7 +542,7 @@ uv run pyright
 Expected: all missingness tests pass and the existing missingness report outputs
 remain byte-identical because the writer was not changed.
 
-- [ ] **Step 6: Commit the shared visual primitive**
+- [x] **Step 6: Commit the shared visual primitive**
 
 ```bash
 git add pipeline/missingness.py tests/test_missingness.py

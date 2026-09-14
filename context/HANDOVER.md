@@ -364,8 +364,10 @@ task-by-task execution on `main`. Task 1 added only the exact GeoPandas 1.1.4 an
 Matplotlib 3.11.2 dependency boundary plus package markers. Task 2 added the
 separate Natural Earth source contract and manifest; acquired and inspected the
 85,352-byte, version 4.1.0, EPSG:4326 coastline; and confirmed its SHA-256 through
-an offline cache rerun. No story figure, claim, or app export exists at this
-point.
+an offline cache rerun. Task 3 exposes the shared exact-grid coverage sequence
+and separate off-grid samples without snapping; all 6 missingness tests passed
+and the existing report writer and generated artifacts remained unchanged. No
+story figure, claim, or app export exists at this point.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -410,7 +412,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 3, committing each task
+1. Continue the approved inline Stage A plan at Task 4, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -438,4 +440,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–2 are complete and Task 3 is next.
+Tasks 1–3 are complete and Task 4 is next.

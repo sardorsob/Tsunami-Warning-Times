@@ -7,8 +7,12 @@ from mlflow import MlflowClient
 
 import pipeline.missingness as missingness_module
 from pipeline.missingness import (
+    CoastalCoverageTimeline,
+    CoveragePosition,
     ExpectedWindow,
     MissingnessError,
+    OffGridObservation,
+    build_coastal_coverage_timelines,
     profile_missingness,
     write_missingness_artifacts,
 )
@@ -298,6 +302,34 @@ def test_profile_separates_structural_nulls_from_measurement_and_grid_gaps(
     assert coast.strict_unavailable_positions == 2
     assert coast.sample_density_unavailable_positions == 1
     assert coast.strict_coverage_percent == 33.3333
+
+
+def test_coverage_timeline_preserves_exact_blank_absent_and_off_grid_states(
+    tmp_path: Path,
+) -> None:
+    processed = _stage_profile_inputs(tmp_path)
+    window = ExpectedWindow(
+        station_id="coast",
+        name="Coastal fixture",
+        start_utc="2011-03-11T00:00:00Z",
+        end_utc_exclusive="2011-03-11T00:03:00Z",
+        cadence_seconds=60,
+    )
+
+    timeline = build_coastal_coverage_timelines(processed, (window,))[0]
+
+    assert isinstance(timeline, CoastalCoverageTimeline)
+    assert timeline.positions == (
+        CoveragePosition("coast", "2011-03-11T00:00:00Z", "observed"),
+        CoveragePosition("coast", "2011-03-11T00:01:00Z", "absent_timestamp"),
+        CoveragePosition("coast", "2011-03-11T00:02:00Z", "source_blank"),
+    )
+    assert timeline.off_grid == (
+        OffGridObservation("coast", "2011-03-11T00:00:59Z", True),
+    )
+    assert [point.status for point in timeline.positions].count("observed") == 1
+    assert [point.status for point in timeline.positions].count("source_blank") == 1
+    assert [point.status for point in timeline.positions].count("absent_timestamp") == 1
 
 
 def test_expected_window_rejects_a_duration_that_is_not_divisible_by_cadence() -> None:

@@ -483,11 +483,13 @@
   Task 1 resolved the two exact static visualization dependencies and passed its
   focused dependency and strict-type gates; Task 2 added the separately governed
   Natural Earth coastline, one-record story manifest, lane-tagged acquisition
-  evidence, and an exact offline checksum rerun
+  evidence, and an exact offline checksum rerun; Task 3 added a tested shared
+  exact-grid/off-grid timeline interface without changing recorded missingness
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
-  contract, geometry, provenance, ignore, and idempotence checks
+  contract, geometry, provenance, ignore, and idempotence checks; 2026-09-14 —
+  coverage-state exposure passed 6 missingness tests, Ruff, and strict Pyright
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

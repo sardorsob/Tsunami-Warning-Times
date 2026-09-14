@@ -7,9 +7,9 @@ import json
 import tomllib
 from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import cast
+from typing import Literal, cast
 
 
 class MissingnessError(ValueError):
@@ -54,6 +54,40 @@ class ExpectedWindow:
             raise MissingnessError(
                 "expected window must contain a whole number of cadence intervals"
             )
+
+
+CoverageStatus = Literal["observed", "source_blank", "absent_timestamp"]
+
+
+@dataclass(frozen=True, slots=True)
+class CoveragePosition:
+    """State of one source-supported exact-grid timestamp."""
+
+    station_id: str
+    expected_at_utc: str
+    status: CoverageStatus
+
+
+@dataclass(frozen=True, slots=True)
+class OffGridObservation:
+    """One retained observation that does not land on the exact source grid."""
+
+    station_id: str
+    observed_at_utc: str
+    raw_value_available: bool
+
+
+@dataclass(frozen=True, slots=True)
+class CoastalCoverageTimeline:
+    """Exact-grid positions and separate off-grid samples for one coastal gauge."""
+
+    station_id: str
+    name: str
+    start_utc: str
+    end_utc_exclusive: str
+    cadence_seconds: int
+    positions: tuple[CoveragePosition, ...]
+    off_grid: tuple[OffGridObservation, ...]
 
 
 @dataclass(frozen=True, slots=True)
@@ -181,6 +215,79 @@ def _read_csv(path: Path, required_columns: set[str]) -> list[dict[str, str]]:
             return rows
     except OSError as error:
         raise MissingnessError(f"could not read {path}: {error}") from error
+
+
+def build_coastal_coverage_timelines(
+    processed_dir: Path, windows: tuple[ExpectedWindow, ...]
+) -> tuple[CoastalCoverageTimeline, ...]:
+    """Expose exact-grid coverage states without snapping off-grid observations."""
+    rows = _read_csv(
+        processed_dir / "observation.csv",
+        {"station_id", "observed_at_utc", "raw_value"},
+    )
+    by_station: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        by_station[row["station_id"]].append(row)
+
+    timelines: list[CoastalCoverageTimeline] = []
+    for window in windows:
+        start = _parse_utc(window.start_utc)
+        end = _parse_utc(window.end_utc_exclusive)
+        cadence_microseconds = window.cadence_seconds * 1_000_000
+        exact: dict[int, dict[str, str]] = {}
+        off_grid: list[OffGridObservation] = []
+        for row in by_station.get(window.station_id, []):
+            observed_at = _parse_utc(row["observed_at_utc"])
+            if not start <= observed_at < end:
+                continue
+            offset_microseconds = int((observed_at - start).total_seconds() * 1_000_000)
+            if offset_microseconds % cadence_microseconds == 0:
+                offset = offset_microseconds // cadence_microseconds
+                if offset in exact:
+                    raise MissingnessError(
+                        f"duplicate exact-grid timestamp for {window.station_id}"
+                    )
+                exact[offset] = row
+            else:
+                off_grid.append(
+                    OffGridObservation(
+                        station_id=window.station_id,
+                        observed_at_utc=row["observed_at_utc"],
+                        raw_value_available=bool(row["raw_value"].strip()),
+                    )
+                )
+
+        expected_count = int((end - start).total_seconds()) // window.cadence_seconds
+        positions: list[CoveragePosition] = []
+        for offset in range(expected_count):
+            row = exact.get(offset)
+            status: CoverageStatus
+            if row is None:
+                status = "absent_timestamp"
+            elif row["raw_value"].strip():
+                status = "observed"
+            else:
+                status = "source_blank"
+            timestamp = start + timedelta(seconds=offset * window.cadence_seconds)
+            positions.append(
+                CoveragePosition(
+                    station_id=window.station_id,
+                    expected_at_utc=timestamp.isoformat().replace("+00:00", "Z"),
+                    status=status,
+                )
+            )
+        timelines.append(
+            CoastalCoverageTimeline(
+                station_id=window.station_id,
+                name=window.name,
+                start_utc=window.start_utc,
+                end_utc_exclusive=window.end_utc_exclusive,
+                cadence_seconds=window.cadence_seconds,
+                positions=tuple(positions),
+                off_grid=tuple(sorted(off_grid, key=lambda item: item.observed_at_utc)),
+            )
+        )
+    return tuple(timelines)
 
 
 def _load_accounting(path: Path) -> dict[str, object]:

@@ -100,11 +100,16 @@
   `664449b39070027e882abb295974d182afec18ca21107273d17e9e8bf6f64817`;
   offline rerun `2026-09-14__2158__story-map-context-rerun__df0ef32` reused it
   exactly. Inspection found EPSG:4326 and 134 `LineString` features; raw ZIP and
-  sidecar are ignored
+  sidecar are ignored. Task 3 RED failed on the missing timeline records; GREEN
+  passed all 6 missingness tests plus Ruff and strict Pyright. The public timeline
+  preserves observed, source-blank, absent-timestamp, and off-grid states without
+  snapping, and the existing generated missingness artifacts were unchanged
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
-  acquisition and offline checksum rerun passed with source precision preserved
+  acquisition and offline checksum rerun passed with source precision preserved;
+  2026-09-14 — exposed exact-grid coverage states by reusing the shared CSV and
+  UTC validators without changing the existing missingness writer
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison
