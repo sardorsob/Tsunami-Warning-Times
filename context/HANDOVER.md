@@ -383,7 +383,13 @@ off-grid observation. Its RED test failed on the absent renderer; GREEN passed
 14 shared missingness and atlas tests, Ruff, and strict Pyright. A temporary
 actual-data render represented 23,040 exact-grid positions and 120 off-grid
 observations across all six gauges; lowest-coverage labels are derived from the
-supplied metrics. No canonical story figure, claim, or app export exists yet.
+supplied metrics. Task 7 adds station-local point panels: coastal raw values and
+DART residuals remain distinct, each panel has a local y-scale, and no centering,
+smoothing, interpolation, resampling, or gap-bridging line is applied. Its RED
+test failed on the absent panel interface; GREEN passed both focused tests, Ruff,
+and strict Pyright. A temporary actual-data render contained 10 panels and
+24,729 numeric points in the reviewed -6 h to +30 h window: 11,156 coastal and
+13,573 DART. No canonical story figure, claim, or app export exists yet.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -428,7 +434,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 7, committing each task
+1. Continue the approved inline Stage A plan at Task 8, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -456,4 +462,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–6 are complete and Task 7 is next.
+Tasks 1–7 are complete and Task 8 is next.

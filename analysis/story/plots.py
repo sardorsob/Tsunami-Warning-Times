@@ -41,6 +41,7 @@ from analysis.story.atlas import (  # noqa: E402
     AtlasError,
     AtlasInputs,
     Coordinate,
+    SeriesPanel,
     shift_longitude,
     split_at_display_seam,
 )
@@ -314,6 +315,120 @@ def plot_observation_coverage(
         units="source-supported timestamp coverage",
         input_parts=represented_positions,
         output_parts=represented_positions,
+    )
+
+
+def plot_station_timeseries(
+    panels: tuple[SeriesPanel, ...],
+    config: AtlasConfig,
+    output_stem: Path,
+) -> PlotFiles:
+    """Render station-local point traces without bridging gaps or comparing amplitudes."""
+    if not panels:
+        raise AtlasError("at least one station series panel is required")
+    station_ids = [panel.station_id for panel in panels]
+    if len(set(station_ids)) != len(station_ids):
+        raise AtlasError("series panels contain duplicate station IDs")
+    expected_order = sorted(panels, key=lambda item: (item.station_type, item.station_id))
+    if list(panels) != expected_order:
+        raise AtlasError("series panels must be ordered by station type then station ID")
+    if any(panel.shared_y_scale for panel in panels):
+        raise AtlasError("Stage A station panels must use local y-scales")
+
+    columns = 2
+    rows = math.ceil(len(panels) / columns)
+    figure = plt.figure(figsize=(13.0, rows * 2.2 + 1.8))
+    figure.patch.set_facecolor("#fbfaf7")
+    for panel_index, panel in enumerate(panels, start=1):
+        axes = figure.add_subplot(rows, columns, panel_index)
+        color = "#2a9d8f" if panel.station_type == "coastal" else "#d99028"
+        x_values = [point.elapsed_hours for point in panel.points]
+        y_values = [point.value for point in panel.points]
+        axes.scatter(
+            x_values,
+            y_values,
+            s=5.0,
+            color=color,
+            edgecolors="none",
+            alpha=0.72,
+            rasterized=False,
+            zorder=2,
+        )
+        axes.axvline(0.0, color="#66747b", linewidth=0.7, linestyle="--", zorder=1)
+        axes.set_xlim(config.start_hours, config.end_hours)
+        axes.grid(axis="y", color="#d7dcda", linewidth=0.5, alpha=0.75)
+        axes.tick_params(axis="both", labelsize=7, colors="#526068", length=2)
+        axes.spines["top"].set_visible(False)
+        axes.spines["right"].set_visible(False)
+        axes.spines["left"].set_color("#9ba5a1")
+        axes.spines["bottom"].set_color("#9ba5a1")
+        axes.set_title(
+            f"{panel.station_name} · {panel.station_id}",
+            loc="left",
+            fontsize=9,
+            fontweight="bold",
+            pad=12,
+        )
+        axes.text(
+            0.0,
+            1.01,
+            f"{panel.value_field} · {panel.units} · vertical reference "
+            f"{panel.vertical_reference} · local y-scale",
+            transform=axes.transAxes,
+            ha="left",
+            va="bottom",
+            fontsize=6.8,
+            color="#44535a",
+        )
+        if not panel.points:
+            axes.text(
+                0.5,
+                0.5,
+                "No numeric values in reviewed window",
+                transform=axes.transAxes,
+                ha="center",
+                va="center",
+                fontsize=8,
+                color="#66747b",
+            )
+
+    for unused_index in range(len(panels) + 1, rows * columns + 1):
+        unused = figure.add_subplot(rows, columns, unused_index)
+        unused.set_axis_off()
+
+    figure.suptitle(
+        "Station signals around earthquake origin",
+        x=0.07,
+        y=0.992,
+        ha="left",
+        fontsize=16,
+        fontweight="bold",
+        color="#17242b",
+    )
+    figure.supxlabel("Hours from earthquake origin (verified UTC)", fontsize=9, y=0.045)
+    figure.text(
+        0.07,
+        0.008,
+        "Points are retained values; gaps are not bridged · Panel amplitudes are not comparable · "
+        "coastal raw levels and DART residuals remain separate · "
+        "preliminary_storyboard_evidence",
+        ha="left",
+        va="bottom",
+        fontsize=7.5,
+        color="#394850",
+    )
+    figure.subplots_adjust(left=0.07, right=0.98, top=0.92, bottom=0.10, hspace=0.60, wspace=0.22)
+
+    png, svg = _save_figure(figure, output_stem, dpi=config.figure_dpi)
+    point_count = sum(len(panel.points) for panel in panels)
+    return PlotFiles(
+        plot_id="03_station_timeseries",
+        png=png,
+        svg=svg,
+        projection="not applicable",
+        units="station-local source units",
+        input_parts=point_count,
+        output_parts=point_count,
     )
 
 

@@ -114,7 +114,11 @@
   Task 6 RED failed on the absent coverage renderer; GREEN passed all 14 shared
   missingness and atlas tests, Ruff, and strict Pyright. Its temporary real-data
   render represented 23,040 exact-grid positions and 120 separate off-grid
-  observations across all six gauges; lowest-coverage names are metric-derived
+  observations across all six gauges; lowest-coverage names are metric-derived.
+  Task 7 RED failed on the absent panel interface; GREEN passed both series
+  tests, Ruff, and strict Pyright. The actual -6 h to +30 h window yields 10
+  locally scaled panels and 24,729 unchanged numeric points: 11,156 coastal raw
+  levels and 13,573 DART residuals; missing values remain in the coverage view
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -126,7 +130,9 @@
   added the deterministic Pacific evidence map with explicit projection,
   preliminary-state, candidate-marker, and non-continuous-field labels;
   2026-09-14 — added source-window coverage strips with separate observed,
-  source-blank, absent-timestamp, and unsnapped off-grid encodings
+  source-blank, absent-timestamp, and unsnapped off-grid encodings; 2026-09-14 —
+  added source-honest station point panels with no centering, smoothing,
+  interpolation, resampling, shared y-scale, or gap-bridging line
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

@@ -8,6 +8,7 @@ from pyproj import Geod
 
 from analysis.story.atlas import (
     AtlasError,
+    build_series_panels,
     geodesic_range_ring,
     load_atlas_config,
     load_atlas_inputs,
@@ -15,7 +16,11 @@ from analysis.story.atlas import (
     split_at_display_seam,
     validate_stage_a_scope,
 )
-from analysis.story.plots import plot_observation_coverage, plot_pacific_evidence
+from analysis.story.plots import (
+    plot_observation_coverage,
+    plot_pacific_evidence,
+    plot_station_timeseries,
+)
 from pipeline.missingness import (
     CoastalCoverageTimeline,
     CoveragePosition,
@@ -393,6 +398,50 @@ def test_pacific_evidence_map_is_deterministic_and_records_geometry_counts(
     assert first.projection == config.display_crs
     assert first.input_parts == len(atlas.contours) + 2
     assert first.output_parts >= first.input_parts
+
+
+def test_series_panels_preserve_station_specific_source_semantics(tmp_path: Path) -> None:
+    processed, missingness_summary = _stage_atlas_inputs(tmp_path)
+    config_path = tmp_path / "story-atlas.toml"
+    _write_fixture_config(config_path)
+    atlas = load_atlas_inputs(processed, missingness_summary)
+    config = load_atlas_config(config_path)
+
+    panels = build_series_panels(atlas, config)
+
+    assert panels[0].station_type == "coastal"
+    assert panels[0].value_field == "raw_value"
+    assert panels[0].points[0].value == 0.0
+    assert panels[1].station_type == "dart"
+    assert panels[1].value_field == "residual_value"
+    assert [point.value for point in panels[1].points] == [1.0, 1.5]
+    assert all(
+        config.start_hours <= point.elapsed_hours <= config.end_hours
+        for panel in panels
+        for point in panel.points
+    )
+    assert {panel.shared_y_scale for panel in panels} == {False}
+
+
+def test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison(
+    tmp_path: Path,
+) -> None:
+    processed, missingness_summary = _stage_atlas_inputs(tmp_path)
+    config_path = tmp_path / "story-atlas.toml"
+    _write_fixture_config(config_path)
+    atlas = load_atlas_inputs(processed, missingness_summary)
+    config = load_atlas_config(config_path)
+    panels = build_series_panels(atlas, config)
+
+    first = plot_station_timeseries(panels, config, tmp_path / "first-series")
+    second = plot_station_timeseries(panels, config, tmp_path / "second-series")
+
+    assert first.plot_id == "03_station_timeseries"
+    assert first.units == "station-local source units"
+    assert first.projection == "not applicable"
+    assert b"Panel amplitudes are not comparable" in first.svg.read_bytes()
+    assert sha256(first.png.read_bytes()).hexdigest() == sha256(second.png.read_bytes()).hexdigest()
+    assert sha256(first.svg.read_bytes()).hexdigest() == sha256(second.svg.read_bytes()).hexdigest()
 
 
 def test_observation_coverage_plot_preserves_all_missingness_states(

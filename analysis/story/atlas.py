@@ -21,6 +21,7 @@ LONGITUDE_TOLERANCE = 1e-6
 DISPLAY_CRS = "+proj=eqearth +lon_0=-160 +datum=WGS84 +units=m +no_defs +type=crs"
 
 StationType = Literal["coastal", "dart"]
+SeriesValueField = Literal["raw_value", "residual_value"]
 Coordinate = tuple[float, float]
 
 
@@ -108,6 +109,28 @@ class AtlasConfig:
     dart_station_ids: tuple[str, ...]
     coastal_station_ids: tuple[str, ...]
     figure_dpi: int
+
+
+@dataclass(frozen=True, slots=True)
+class SeriesPoint:
+    """One retained numeric value positioned relative to earthquake origin."""
+
+    elapsed_hours: float
+    value: float
+
+
+@dataclass(frozen=True, slots=True)
+class SeriesPanel:
+    """A station-local series whose y-scale must not be shared."""
+
+    station_id: str
+    station_name: str
+    station_type: StationType
+    value_field: SeriesValueField
+    units: str
+    vertical_reference: str
+    shared_y_scale: bool
+    points: tuple[SeriesPoint, ...]
 
 
 def _read_csv(path: Path, required_columns: set[str]) -> list[dict[str, str]]:
@@ -533,6 +556,58 @@ def validate_stage_a_scope(
     }
     if not set(config.highlighted_contour_hours).issubset(available_hours):
         raise AtlasError("reviewed highlighted contour hours are missing from the input")
+
+
+def build_series_panels(atlas: AtlasInputs, config: AtlasConfig) -> tuple[SeriesPanel, ...]:
+    """Build station-local point series without smoothing, centering, or resampling."""
+    configured_ids = set(config.coastal_station_ids) | set(config.dart_station_ids)
+    station_ids = {station.station_id for station in atlas.stations}
+    if configured_ids != station_ids:
+        raise AtlasError("series configuration must exactly match loaded station IDs")
+
+    observations_by_station: dict[str, list[ObservationRecord]] = {
+        station_id: [] for station_id in station_ids
+    }
+    for observation in atlas.observations:
+        observations_by_station[observation.station_id].append(observation)
+
+    panels: list[SeriesPanel] = []
+    for station in sorted(atlas.stations, key=lambda item: (item.station_type, item.station_id)):
+        value_field: SeriesValueField = (
+            "raw_value" if station.station_type == "coastal" else "residual_value"
+        )
+        points: list[SeriesPoint] = []
+        for observation in observations_by_station[station.station_id]:
+            if observation.units != station.units:
+                raise AtlasError(f"observation units disagree for station {station.station_id!r}")
+            if observation.vertical_reference != station.vertical_reference:
+                raise AtlasError(
+                    f"observation vertical reference disagrees for station {station.station_id!r}"
+                )
+            elapsed_hours = (
+                observation.observed_at_utc - atlas.event.origin_time_utc
+            ).total_seconds() / 3600.0
+            if not config.start_hours <= elapsed_hours <= config.end_hours:
+                continue
+            value = (
+                observation.raw_value if value_field == "raw_value" else observation.residual_value
+            )
+            if value is not None:
+                points.append(SeriesPoint(elapsed_hours=elapsed_hours, value=value))
+        points.sort(key=lambda point: point.elapsed_hours)
+        panels.append(
+            SeriesPanel(
+                station_id=station.station_id,
+                station_name=station.name,
+                station_type=station.station_type,
+                value_field=value_field,
+                units=station.units,
+                vertical_reference=station.vertical_reference,
+                shared_y_scale=False,
+                points=tuple(points),
+            )
+        )
+    return tuple(panels)
 
 
 def shift_longitude(longitude: float) -> float:

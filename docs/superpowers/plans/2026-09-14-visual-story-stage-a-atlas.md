@@ -978,7 +978,7 @@ git commit -m "feat(story): visualize observation coverage"
 - Consumes: `AtlasInputs`, origin-relative `AtlasConfig.start_hours/end_hours`, and output stem.
 - Produces: `SeriesPanel`, `build_series_panels(...)`, and `plot_station_timeseries(...)` writing `03_station_timeseries.{png,svg}`.
 
-- [ ] **Step 1: Write failing series-semantics tests**
+- [x] **Step 1: Write failing series-semantics tests**
 
 Use one DART and one coastal fixture station:
 
@@ -995,13 +995,13 @@ assert {panel.shared_y_scale for panel in panels} == {False}
 
 Render the fixture twice and compare PNG/SVG hashes.
 
-- [ ] **Step 2: Run the tests and observe the missing panel interface**
+- [x] **Step 2: Run the tests and observe the missing panel interface**
 
 Run: `uv run pytest tests/story/test_atlas.py -k 'series or timeseries' -q`
 
 Expected: FAIL on missing imports.
 
-- [ ] **Step 3: Add explicit panel records**
+- [x] **Step 3: Add explicit panel records**
 
 ```python
 @dataclass(frozen=True, slots=True)
@@ -1027,7 +1027,7 @@ class SeriesPanel:
 window, preserves every retained source timestamp, sorts by time, and performs
 no centering, smoothing, interpolation, or resampling.
 
-- [ ] **Step 4: Render separately scaled point traces**
+- [x] **Step 4: Render separately scaled point traces**
 
 Create a two-column small-multiple grid ordered by station type then station ID.
 Use points rather than connected lines so gaps are not visually bridged. Label
@@ -1035,7 +1035,7 @@ each panel with station ID, source field, units, vertical reference, and local
 y-scale status. Add a common x-axis in hours from earthquake origin and a note
 that panel amplitudes are not comparable.
 
-- [ ] **Step 5: Verify source semantics and deterministic output**
+- [x] **Step 5: Verify source semantics and deterministic output**
 
 Run:
 
@@ -1047,7 +1047,7 @@ uv run pyright
 
 Expected: all series tests pass with zero source-value transformations.
 
-- [ ] **Step 6: Commit the station view**
+- [x] **Step 6: Commit the station view**
 
 ```bash
 git add analysis/story/atlas.py analysis/story/plots.py tests/story/test_atlas.py
