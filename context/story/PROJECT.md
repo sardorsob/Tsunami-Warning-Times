@@ -9,7 +9,9 @@ governed Natural Earth coastline context. Task 3 now exposes shared exact-grid
 coverage positions and off-grid samples without snapping or changing existing
 missingness outputs. Task 4 adds typed, source-preserving inputs, exact reviewed
 scope validation, Pacific seam interpolation, and geodesic range rings. No story
-figure, claim, or app export exists yet; the NCTR field remains blocked.
+claim or app export exists yet; Task 5 now provides the deterministic Pacific
+evidence-map renderer, while canonical figures wait for the reviewed-run task.
+The NCTR field remains blocked.
 
 ## Question
 

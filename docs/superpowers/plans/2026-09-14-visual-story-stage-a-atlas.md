@@ -800,7 +800,7 @@ git commit -m "feat(story): add typed atlas geometry core"
 - Consumes: `AtlasInputs`, `AtlasConfig`, an explicit coastline path, and an explicit output stem.
 - Produces: `PlotFiles` and `plot_pacific_evidence(...)` writing `01_pacific_evidence_map.{png,svg}`.
 
-- [ ] **Step 1: Write a failing deterministic-render test**
+- [x] **Step 1: Write a failing deterministic-render test**
 
 Write a two-feature coastline GeoJSON into the test temporary directory, call the
 plot twice with distinct stems, and assert:
@@ -818,13 +818,13 @@ assert first.input_parts == len(atlas.contours) + 2
 assert first.output_parts >= first.input_parts
 ```
 
-- [ ] **Step 2: Run the focused test and observe the missing plot function**
+- [x] **Step 2: Run the focused test and observe the missing plot function**
 
 Run: `uv run pytest tests/story/test_atlas.py -k pacific_evidence -q`
 
 Expected: FAIL on the missing import.
 
-- [ ] **Step 3: Add deterministic plot output ownership**
+- [x] **Step 3: Add deterministic plot output ownership**
 
 Define:
 
@@ -863,7 +863,7 @@ At module import, select the noninteractive `Agg` backend, use DejaVu Sans, set
 `svg.hashsalt` to `pacific-tsunami-warning-time`, and disable path timestamp
 metadata.
 
-- [ ] **Step 4: Implement one-message evidence mapping**
+- [x] **Step 4: Implement one-message evidence mapping**
 
 `plot_pacific_evidence` must:
 
@@ -878,7 +878,7 @@ metadata.
 - use no basemap service, bathymetry, amplitude, wave texture, or decorative particles; and
 - return input/output part accounting in `PlotFiles`.
 
-- [ ] **Step 5: Run deterministic and visual-contract checks**
+- [x] **Step 5: Run deterministic and visual-contract checks**
 
 Run:
 
@@ -890,7 +890,7 @@ uv run pyright
 
 Expected: byte-identical fixture renders and clean static checks.
 
-- [ ] **Step 6: Commit the evidence map**
+- [x] **Step 6: Commit the evidence map**
 
 ```bash
 git add analysis/story/plots.py analysis/story/__init__.py tests/story/test_atlas.py

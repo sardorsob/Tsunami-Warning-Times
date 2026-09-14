@@ -1,5 +1,6 @@
 import csv
 import json
+from hashlib import sha256
 from pathlib import Path
 
 import pytest
@@ -14,6 +15,7 @@ from analysis.story.atlas import (
     split_at_display_seam,
     validate_stage_a_scope,
 )
+from analysis.story.plots import plot_pacific_evidence
 from pipeline.missingness import ExpectedWindow
 
 EVENT_COLUMNS = (
@@ -248,6 +250,38 @@ figure_dpi = 160
     )
 
 
+def _write_coastline(path: Path) -> None:
+    path.write_text(
+        json.dumps(
+            {
+                "type": "FeatureCollection",
+                "name": "fixture-coastline",
+                "crs": {"type": "name", "properties": {"name": "EPSG:4326"}},
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {"feature_id": "west"},
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [[-10.0, -20.0], [10.0, 20.0]],
+                        },
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {"feature_id": "east"},
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [[30.0, -20.0], [40.0, 20.0]],
+                        },
+                    },
+                ],
+            },
+            sort_keys=True,
+        ),
+        encoding="utf-8",
+    )
+
+
 def test_atlas_loader_preserves_source_semantics(tmp_path: Path) -> None:
     processed, missingness_summary = _stage_atlas_inputs(tmp_path)
 
@@ -331,3 +365,26 @@ def test_project_story_config_fixes_the_approved_four_plus_six_scope() -> None:
         "saip",
         "valp",
     )
+
+
+def test_pacific_evidence_map_is_deterministic_and_records_geometry_counts(
+    tmp_path: Path,
+) -> None:
+    processed, missingness_summary = _stage_atlas_inputs(tmp_path)
+    config_path = tmp_path / "story-atlas.toml"
+    coastline_path = tmp_path / "coastline.geojson"
+    _write_fixture_config(config_path)
+    _write_coastline(coastline_path)
+    atlas = load_atlas_inputs(processed, missingness_summary)
+    config = load_atlas_config(config_path)
+
+    first = plot_pacific_evidence(atlas, config, coastline_path, tmp_path / "first")
+    second = plot_pacific_evidence(atlas, config, coastline_path, tmp_path / "second")
+
+    assert first.png.read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
+    assert b"Pacific evidence map" in first.svg.read_bytes()
+    assert sha256(first.png.read_bytes()).hexdigest() == sha256(second.png.read_bytes()).hexdigest()
+    assert sha256(first.svg.read_bytes()).hexdigest() == sha256(second.svg.read_bytes()).hexdigest()
+    assert first.projection == config.display_crs
+    assert first.input_parts == len(atlas.contours) + 2
+    assert first.output_parts >= first.input_parts

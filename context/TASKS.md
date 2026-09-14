@@ -488,14 +488,17 @@
   Task 4 added immutable atlas inputs, strict reviewed-scope validation,
   interpolated Pacific seam handling, and WGS84 distance rings, then validated
   all 10 stations, 143,655 observations, 4,380 contour parts, and 6 coastal
-  windows against the accepted build
+  windows against the accepted build; Task 5 added a deterministic Pacific map
+  renderer and smoke-rendered 4,514 input line parts into 4,543 seam-safe parts
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
   contract, geometry, provenance, ignore, and idempotence checks; 2026-09-14 —
   coverage-state exposure passed 6 missingness tests, Ruff, and strict Pyright;
   2026-09-14 — atlas-core RED/GREEN passed 6 focused tests, Ruff, strict Pyright,
-  and a direct accepted-build scope load
+  and a direct accepted-build scope load; 2026-09-14 — evidence-map RED/GREEN
+  passed all 7 atlas tests, Ruff, strict Pyright, and an actual-data temporary
+  PNG/SVG render
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

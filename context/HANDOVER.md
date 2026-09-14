@@ -371,8 +371,13 @@ and the existing report writer and generated artifacts remained unchanged. Task
 interpolated 20°E/-340° seam handling, and WGS84 geodesic range rings. Its RED
 test failed on the absent atlas module; GREEN passed 6 focused tests, Ruff, and
 strict Pyright. A direct accepted-build load reconciled 1 reviewed event, 10
-stations, 143,655 observations, 4,380 contour parts, and 6 coastal windows. No
-story figure, claim, or app export exists at this point.
+stations, 143,655 observations, 4,380 contour parts, and 6 coastal windows. Task
+5 adds a deterministic Pacific evidence-map renderer with explicit Equal Earth,
+preliminary-evidence, candidate-station, and published-contour semantics. Its RED
+test failed on the absent plot module; GREEN passed all 7 atlas tests, Ruff, and
+strict Pyright. A temporary actual-data smoke render wrote valid PNG/SVG outputs
+and transformed all 4,514 input line parts into 4,543 seam-safe projected parts.
+No canonical story figure, claim, or app export exists at this point.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -417,7 +422,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 5, committing each task
+1. Continue the approved inline Stage A plan at Task 6, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -445,4 +450,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–4 are complete and Task 5 is next.
+Tasks 1–5 are complete and Task 6 is next.

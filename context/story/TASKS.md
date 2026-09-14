@@ -107,7 +107,10 @@
   Task 4 RED failed on the absent atlas module; GREEN passed 6 atlas tests, Ruff,
   and strict Pyright. A direct load of the accepted build validated the reviewed
   event, 10 stations, 143,655 observations, 4,380 contour parts, and all 6
-  coastal windows without inferred source semantics
+  coastal windows without inferred source semantics. Task 5 RED failed on the
+  absent plot module; GREEN passed all 7 atlas tests, Ruff, and strict Pyright.
+  A temporary real-data render preserved all 4,514 coastline-plus-contour input
+  parts as 4,543 seam-safe projected output parts and wrote valid PNG/SVG files
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -115,7 +118,9 @@
   2026-09-14 — exposed exact-grid coverage states by reusing the shared CSV and
   UTC validators without changing the existing missingness writer; 2026-09-14 —
   added immutable source-preserving atlas records, strict Stage A scope checks,
-  interpolated Pacific seam splits, and WGS84 distance rings
+  interpolated Pacific seam splits, and WGS84 distance rings; 2026-09-14 —
+  added the deterministic Pacific evidence map with explicit projection,
+  preliminary-state, candidate-marker, and non-continuous-field labels
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison
