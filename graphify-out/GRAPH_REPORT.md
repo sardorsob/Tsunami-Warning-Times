@@ -1,16 +1,16 @@
-# Graph Report - Tsunami-Warning-Times  (2026-09-09)
+# Graph Report - Tsunami-Warning-Times  (2026-09-14)
 
 ## Corpus Check
-- 120 files · ~78,822 words
+- 127 files · ~89,050 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 662 nodes · 1184 edges · 54 communities (43 shown, 11 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.94)
+- 760 nodes · 1279 edges · 60 communities (49 shown, 11 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7b6d386c`
+- Built from commit: `34a05eeb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,7 +46,7 @@
 - STRUCTURE.md
 - competition.md
 - data/README.md
-- RejectAuthenticatedRedirects
+- PacificVis 2027 Dual-Track Repository Design
 - Global Constraints
 - T-002A — Tōhoku Source-Contract Ledger
 - Tōhoku Normalization and Data-Quality Report
@@ -67,6 +67,12 @@
 - Acquisition run notes
 - cell
 - 2026-09-09__1749__missingness__7b6d386/notes.md
+- Visual-Story Adaptive EDA Design
+- Originality and Track Compatibility Ledger
+- Visual Story Contract
+- Visual-Story EDA Report
+- Visual Storyboard
+- Visual Story Tasks
 
 ## God Nodes (most connected - your core abstractions)
 1. `NormalizationError` - 41 edges
@@ -74,11 +80,11 @@
 3. `acquire_source()` - 28 edges
 4. `SourceContract` - 23 edges
 5. `write_run_evidence()` - 20 edges
-6. `normalize_ttt()` - 19 edges
-7. `sample_contract()` - 19 edges
-8. `normalize_dart()` - 18 edges
-9. `compilerOptions` - 17 edges
-10. `ResponseMetadata` - 17 edges
+6. `Handover` - 20 edges
+7. `normalize_ttt()` - 19 edges
+8. `sample_contract()` - 19 edges
+9. `normalize_dart()` - 18 edges
+10. `compilerOptions` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `_contract_record()` --uses--> `SourceContract`  [INFERRED]
@@ -95,7 +101,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (54 total, 11 thin omitted)
+## Communities (60 total, 11 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -111,7 +117,7 @@ Nodes (32): dependencies, react, react-dom, devDependencies, @types/node, @types
 
 ### Community 3 - "test_acquisition.py"
 Cohesion: 0.06
-Nodes (94): MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), ContractError, download_url(), _fetch_with_retries() (+86 more)
+Nodes (98): HTTPRedirectHandler, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), ContractError, download_url() (+90 more)
 
 ### Community 4 - "package.json"
 Cohesion: 0.13
@@ -122,8 +128,8 @@ Cohesion: 0.36
 Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
-Cohesion: 0.12
-Nodes (16): Accepted Saipan source recovery, Completed, Completed Valparaíso recovery, Continue from here, Decisions and assumptions, Final disposition, Handover, Objective and workflow (+8 more)
+Cohesion: 0.10
+Nodes (20): Accepted Saipan source recovery, Completed, Completed Valparaíso recovery, Continue from here, Decisions and assumptions, Dual-track design checkpoint, External track-compatibility guidance, Final disposition (+12 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
 Cohesion: 0.06
@@ -134,12 +140,12 @@ Cohesion: 0.13
 Nodes (14): Acquisition behavior, Approved choices, Architecture, Canonical records, Commit boundaries, Data flow, Dependencies and deliberate deferrals, EDA contract (+6 more)
 
 ### Community 13 - "Decision Log"
-Cohesion: 0.13
-Nodes (14): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+6 more)
+Cohesion: 0.12
+Nodes (16): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+8 more)
 
 ### Community 14 - "Tasks"
-Cohesion: 0.14
-Nodes (14): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C2 — Recover and normalize Valparaíso research data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA (+6 more)
+Cohesion: 0.12
+Nodes (16): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C2 — Recover and normalize Valparaíso research data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA (+8 more)
 
 ### Community 15 - "Validation Plan"
 Cohesion: 0.22
@@ -159,7 +165,7 @@ Nodes (5): Decision value, Problem, Question, Success, What would mislead
 
 ### Community 19 - "Concept"
 Cohesion: 0.33
-Nodes (5): Concept, Discovery sequence, Experience guardrails, Thesis, Visual direction
+Nodes (5): Candidate discovery sequence, Candidate thesis, Concept, Experience guardrails, Visual direction
 
 ### Community 20 - "Scope"
 Cohesion: 0.40
@@ -181,16 +187,16 @@ Nodes (4): Contract, Current state, Hazard Event Set, Tōhoku data-proof bundle
 Cohesion: 0.50
 Nodes (3): Cross-year criteria for this project, Originality boundary, PacificVis Storytelling Benchmark, 2017–2026
 
-### Community 32 - "RejectAuthenticatedRedirects"
-Cohesion: 0.40
-Nodes (4): HTTPRedirectHandler, Request, Prevent an authenticated request from forwarding its API key., RejectAuthenticatedRedirects
+### Community 32 - "PacificVis 2027 Dual-Track Repository Design"
+Cohesion: 0.08
+Nodes (24): Commit boundaries, Conference paper, Confirmed targets and dates, Data and experiment flow, Deliberate deferrals, Failure and change handling, Originality firewall, Outcome (+16 more)
 
 ### Community 33 - "Global Constraints"
 Cohesion: 0.25
 Nodes (7): Global Constraints, Task 1: Source-contract ledger and blocked-state validation, Task 2: Atomic, source-independent acquisition core, Task 3: Live source bundle, checksums, and acquisition report, Task 4: Event, contour, and water-level normalization, Task 5: Live data-quality build and requested-phase closure, Tōhoku Data Coverage and Implementation Plan
 
 ### Community 34 - "T-002A — Tōhoku Source-Contract Ledger"
-Cohesion: 0.18
+Cohesion: 0.20
 Nodes (10): Approved contracts — 17 assets, Authoritative evidence and observed smoke checks, Blocked contracts — 1 asset, Contract limits and next steps, Disposition, Downstream missingness reconciliation, Saipan recovery evidence, T-002A — Tōhoku Source-Contract Ledger (+2 more)
 
 ### Community 35 - "Tōhoku Normalization and Data-Quality Report"
@@ -242,16 +248,16 @@ Cohesion: 0.09
 Nodes (52): Namespace, CoastalWindowProfile, DartCadenceProfile, ExpectedWindow, _load_accounting(), load_expected_windows(), _mechanism_rows(), MissingnessError (+44 more)
 
 ### Community 47 - "Project Contract"
-Cohesion: 0.25
-Nodes (8): Consequential unknowns, Decision and lane, In scope for the first complete version, Objective, Out of scope until separately approved, Project Contract, Smallest useful deliverable, Workflow contract
+Cohesion: 0.22
+Nodes (9): Consequential unknowns, Current visual-story planning deliverable, Decision and lane, In scope for the first complete version, Objective, Out of scope until separately approved, Project Contract, Smallest useful deliverable (+1 more)
 
 ### Community 48 - "Project Instructions"
 Cohesion: 0.29
 Nodes (6): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification
 
 ### Community 49 - "Pacific Tsunami Warning Time"
-Cohesion: 0.33
-Nodes (6): Current status, License, Local setup, Pacific Tsunami Warning Time, Repository map, Safety and interpretation
+Cohesion: 0.13
+Nodes (15): Collection and validation rules, Current status, Data flow, Dataset gathering, Evidence and reporting, License, Local setup, Pacific Tsunami Warning Time (+7 more)
 
 ### Community 50 - "Acquisition run notes"
 Cohesion: 0.50
@@ -261,8 +267,32 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 Cohesion: 0.39
 Nodes (8): cell, artifact_selector(), coastal_table(), headline_metrics(), imports(), interpretation(), load_summary(), title()
 
+### Community 54 - "Visual-Story Adaptive EDA Design"
+Cohesion: 0.09
+Nodes (22): Adaptive decision ledger, Approaches considered, Approved choices, Architecture and ownership, Artifact contract, Color and accessibility, Dependency contract, Evidence boundary (+14 more)
+
+### Community 55 - "Originality and Track Compatibility Ledger"
+Cohesion: 0.25
+Nodes (7): Correspondence received 2026-09-13, Current disposition, Evidence history, Originality and Track Compatibility Ledger, Pending response, Purpose, Working overlap boundary
+
+### Community 56 - "Visual Story Contract"
+Cohesion: 0.25
+Nodes (7): Contribution boundary, Evidence states, First deliverable, Governing design, Question, Status, Visual Story Contract
+
+### Community 57 - "Visual-Story EDA Report"
+Cohesion: 0.33
+Nodes (5): Current evidence boundary, Next action, Reporting contract, Status, Visual-Story EDA Report
+
+### Community 58 - "Visual Storyboard"
+Cohesion: 0.40
+Nodes (4): Candidate discovery questions, Promotion rule, Status, Visual Storyboard
+
+### Community 59 - "Visual Story Tasks"
+Cohesion: 0.40
+Nodes (4): T-003A — Build the preliminary diagnostic atlas, T-003B — Complete the reviewed arrival comparison, T-003P — Approve the adaptive visual-story EDA design, Visual Story Tasks
+
 ## Knowledge Gaps
-- **250 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+245 more)
+- **328 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+323 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -270,16 +300,16 @@ Nodes (8): cell, artifact_selector(), coastal_table(), headline_metrics(), impor
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `build_tables()` connect `test_normalize.py` to `test_acquisition.py`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `SourceContract` connect `test_acquisition.py` to `test_normalize.py`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `SourceContract` connect `test_acquisition.py` to `test_normalize.py`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
   _`NormalizationError` has 15 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _250 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _328 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._

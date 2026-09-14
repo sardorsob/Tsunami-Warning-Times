@@ -87,8 +87,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 32,
-      "community_name": "RejectAuthenticatedRedirects",
+      "community": 3,
+      "community_name": "test_acquisition.py",
       "file_type": "code",
       "norm_label": "rejectauthenticatedredirects",
       "source_file": "scripts/acquire_tohoku.py",
@@ -662,6 +662,18 @@
       "source_location": "L71"
     },
     {
+      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
+      "label": ".redirect_request()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": ".redirect_request()",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L59"
+    },
+    {
       "id": "scripts_acquire_tohoku_result_record",
       "label": "_result_record()",
       "_callable": true,
@@ -1128,18 +1140,6 @@
       "norm_label": "test_write_run_evidence_writes_an_immutable_portable_bundle()",
       "source_file": "tests/test_acquisition.py",
       "source_location": "L71"
-    },
-    {
-      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
-      "label": ".redirect_request()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "RejectAuthenticatedRedirects",
-      "file_type": "code",
-      "norm_label": ".redirect_request()",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L59"
     },
     {
       "id": "pipeline_normalize_build_tables",
@@ -2876,7 +2876,7 @@
       "node_kind": "heading",
       "norm_label": "accepted saipan source recovery",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L174"
+      "source_location": "L175"
     },
     {
       "id": "context_handover_completed",
@@ -2900,7 +2900,7 @@
       "node_kind": "heading",
       "norm_label": "completed valparaiso recovery",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L205"
+      "source_location": "L206"
     },
     {
       "id": "context_handover_continue_from_here",
@@ -2912,7 +2912,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L279"
+      "source_location": "L386"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2924,7 +2924,31 @@
       "node_kind": "heading",
       "norm_label": "decisions and assumptions",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L115"
+      "source_location": "L116"
+    },
+    {
+      "id": "context_handover_dual_track_design_checkpoint",
+      "label": "Dual-track design checkpoint",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dual-track design checkpoint",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L276"
+    },
+    {
+      "id": "context_handover_external_track_compatibility_guidance",
+      "label": "External track-compatibility guidance",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "external track-compatibility guidance",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L302"
     },
     {
       "id": "context_handover_final_disposition",
@@ -2936,7 +2960,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L301"
+      "source_location": "L413"
     },
     {
       "id": "context_handover_handover",
@@ -2963,6 +2987,18 @@
       "source_location": "L3"
     },
     {
+      "id": "context_handover_readme_documentation_checkpoint",
+      "label": "README documentation checkpoint",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "readme documentation checkpoint",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L329"
+    },
+    {
       "id": "context_handover_repository_state",
       "label": "Repository state",
       "_origin": "ast",
@@ -2972,7 +3008,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L293"
+      "source_location": "L405"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -2984,7 +3020,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L266"
+      "source_location": "L370"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -2996,7 +3032,7 @@
       "node_kind": "heading",
       "norm_label": "t-002a verification evidence",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L91"
+      "source_location": "L92"
     },
     {
       "id": "context_handover_t_002b_accepted_clean_evidence",
@@ -3008,7 +3044,7 @@
       "node_kind": "heading",
       "norm_label": "t-002b accepted clean evidence",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L129"
+      "source_location": "L130"
     },
     {
       "id": "context_handover_t_002c_accepted_evidence",
@@ -3020,7 +3056,7 @@
       "node_kind": "heading",
       "norm_label": "t-002c accepted evidence",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L145"
+      "source_location": "L146"
     },
     {
       "id": "context_handover_t_002d_missingness_slice",
@@ -3032,7 +3068,7 @@
       "node_kind": "heading",
       "norm_label": "t-002d missingness slice",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L235"
+      "source_location": "L236"
     },
     {
       "id": "context_handover_t_002p_verification_evidence",
@@ -3044,7 +3080,7 @@
       "node_kind": "heading",
       "norm_label": "t-002p verification evidence",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L77"
+      "source_location": "L78"
     },
     {
       "id": "context_handover_verification_evidence",
@@ -3056,7 +3092,19 @@
       "node_kind": "heading",
       "norm_label": "verification evidence",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L50"
+      "source_location": "L51"
+    },
+    {
+      "id": "context_handover_visual_story_adaptive_eda_planning_checkpoint",
+      "label": "Visual-story adaptive EDA planning checkpoint",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Handover",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual-story adaptive eda planning checkpoint",
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L347"
     },
     {
       "id": "artifacts_provenance_source_manifest",
@@ -3791,6 +3839,30 @@
       "source_location": "L162"
     },
     {
+      "id": "context_decisions_d_013_treat_shared_data_dual_submission_as_conditionally_compatible",
+      "label": "D-013 \u2014 Treat shared-data dual submission as conditionally compatible",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-013 \u2014 treat shared-data dual submission as conditionally compatible",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L184"
+    },
+    {
+      "id": "context_decisions_d_014_use_a_fixed_visual_audit_core_and_let_evidence_redirect_the_story",
+      "label": "D-014 \u2014 Use a fixed visual audit core and let evidence redirect the story",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "Decision Log",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "d-014 \u2014 use a fixed visual audit core and let evidence redirect the story",
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L208"
+    },
+    {
       "id": "context_decisions_decision_log",
       "label": "Decision Log",
       "_origin": "ast",
@@ -3935,14 +4007,26 @@
       "source_location": "L61"
     },
     {
-      "id": "context_tasks_t_003_make_the_static_scientific_comparison",
-      "label": "T-003 \u2014 Make the static scientific comparison",
+      "id": "context_tasks_t_003_run_adaptive_visual_story_eda_and_make_the_static_comparison",
+      "label": "T-003 \u2014 Run adaptive visual-story EDA and make the static comparison",
       "_origin": "ast",
       "community": 14,
       "community_name": "Tasks",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "t-003 \u2014 make the static scientific comparison",
+      "norm_label": "t-003 \u2014 run adaptive visual-story eda and make the static comparison",
+      "source_file": "context/TASKS.md",
+      "source_location": "L417"
+    },
+    {
+      "id": "context_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
+      "label": "T-003P \u2014 Approve the adaptive visual-story EDA design",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003p \u2014 approve the adaptive visual-story eda design",
       "source_file": "context/TASKS.md",
       "source_location": "L392"
     },
@@ -3956,7 +4040,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L415"
+      "source_location": "L452"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -3968,7 +4052,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L439"
+      "source_location": "L476"
     },
     {
       "id": "context_tasks_tasks",
@@ -3981,6 +4065,18 @@
       "norm_label": "tasks",
       "source_file": "context/TASKS.md",
       "source_location": "L1"
+    },
+    {
+      "id": "context_tasks_x_001_close_the_dual_track_compatibility_follow_up",
+      "label": "X-001 \u2014 Close the dual-track compatibility follow-up",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "x-001 \u2014 close the dual-track compatibility follow-up",
+      "source_file": "context/TASKS.md",
+      "source_location": "L501"
     },
     {
       "id": "context_validation_plan",
@@ -4355,6 +4451,30 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_concept_candidate_discovery_sequence",
+      "label": "Candidate discovery sequence",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "Concept",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "candidate discovery sequence",
+      "source_file": "docs/concept.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "docs_concept_candidate_thesis",
+      "label": "Candidate thesis",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "Concept",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "candidate thesis",
+      "source_file": "docs/concept.md",
+      "source_location": "L3"
+    },
+    {
       "id": "docs_concept_concept",
       "label": "Concept",
       "_origin": "ast",
@@ -4367,18 +4487,6 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_concept_discovery_sequence",
-      "label": "Discovery sequence",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Concept",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "discovery sequence",
-      "source_file": "docs/concept.md",
-      "source_location": "L13"
-    },
-    {
       "id": "docs_concept_experience_guardrails",
       "label": "Experience guardrails",
       "_origin": "ast",
@@ -4388,19 +4496,7 @@
       "node_kind": "heading",
       "norm_label": "experience guardrails",
       "source_file": "docs/concept.md",
-      "source_location": "L36"
-    },
-    {
-      "id": "docs_concept_thesis",
-      "label": "Thesis",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Concept",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "thesis",
-      "source_file": "docs/concept.md",
-      "source_location": "L3"
+      "source_location": "L41"
     },
     {
       "id": "docs_concept_visual_direction",
@@ -4412,7 +4508,7 @@
       "node_kind": "heading",
       "norm_label": "visual direction",
       "source_file": "docs/concept.md",
-      "source_location": "L24"
+      "source_location": "L29"
     },
     {
       "id": "app_package",
@@ -4871,7 +4967,7 @@
       "node_kind": "heading",
       "norm_label": "required per-source fields",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L40"
+      "source_location": "L46"
     },
     {
       "id": "context_spatial_contract_spatial_contract",
@@ -4895,7 +4991,7 @@
       "node_kind": "heading",
       "norm_label": "working output rules",
       "source_file": "context/spatial-contract.md",
-      "source_location": "L51"
+      "source_location": "L57"
     },
     {
       "id": "context_assumptions",
@@ -5186,6 +5282,17 @@
       "source_location": "L1"
     },
     {
+      "id": "httpredirecthandler",
+      "label": "HTTPRedirectHandler",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": "httpredirecthandler",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "monkeypatch",
       "label": "MonkeyPatch",
       "_origin": "ast",
@@ -5248,6 +5355,17 @@
       "community_name": "test_acquisition.py",
       "file_type": "code",
       "norm_label": "pureposixpath",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "request",
+      "label": "Request",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": "request",
       "source_file": "",
       "source_location": ""
     },
@@ -5538,6 +5656,17 @@
       "source_location": "L358"
     },
     {
+      "id": "scripts_acquire_tohoku_rationale_57",
+      "label": "Prevent an authenticated request from forwarding its API key.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "rationale",
+      "norm_label": "prevent an authenticated request from forwarding its api key.",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L57"
+    },
+    {
       "id": "scripts_acquire_tohoku_rationale_72",
       "label": "Read and validate the IOC credential from the project Keychain entry.",
       "_origin": "ast",
@@ -5619,37 +5748,292 @@
       "source_location": "L1"
     },
     {
-      "id": "httpredirecthandler",
-      "label": "HTTPRedirectHandler",
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_commit_boundaries",
+      "label": "Commit boundaries",
       "_origin": "ast",
       "community": 32,
-      "community_name": "RejectAuthenticatedRedirects",
-      "file_type": "code",
-      "norm_label": "httpredirecthandler",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "commit boundaries",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L413"
     },
     {
-      "id": "request",
-      "label": "Request",
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_conference_paper",
+      "label": "Conference paper",
       "_origin": "ast",
       "community": 32,
-      "community_name": "RejectAuthenticatedRedirects",
-      "file_type": "code",
-      "norm_label": "request",
-      "source_file": "",
-      "source_location": ""
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "conference paper",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L68"
     },
     {
-      "id": "scripts_acquire_tohoku_rationale_57",
-      "label": "Prevent an authenticated request from forwarding its API key.",
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_confirmed_targets_and_dates",
+      "label": "Confirmed targets and dates",
       "_origin": "ast",
       "community": 32,
-      "community_name": "RejectAuthenticatedRedirects",
-      "file_type": "rationale",
-      "norm_label": "prevent an authenticated request from forwarding its api key.",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L57"
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "confirmed targets and dates",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_data_and_experiment_flow",
+      "label": "Data and experiment flow",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data and experiment flow",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L256"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_deliberate_deferrals",
+      "label": "Deliberate deferrals",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "deliberate deferrals",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L402"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_failure_and_change_handling",
+      "label": "Failure and change handling",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "failure and change handling",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L388"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_originality_firewall",
+      "label": "Originality firewall",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "originality firewall",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L116"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "label": "PacificVis 2027 Dual-Track Repository Design",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pacificvis 2027 dual-track repository design",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_1_repository_and_shared_data_seam_2026_09_11_through_2026_09_18",
+      "label": "Phase 1 \u2014 Repository and shared-data seam, 2026-09-11 through 2026-09-18",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 1 \u2014 repository and shared-data seam, 2026-09-11 through 2026-09-18",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L287"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_2_paper_framing_and_corpus_expansion_2026_09_19_through_2026_09_30",
+      "label": "Phase 2 \u2014 Paper framing and corpus expansion, 2026-09-19 through 2026-09-30",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 2 \u2014 paper framing and corpus expansion, 2026-09-19 through 2026-09-30",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L296"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_3_paper_experiments_and_method_2026_10_01_through_2026_10_18",
+      "label": "Phase 3 \u2014 Paper experiments and method, 2026-10-01 through 2026-10-18",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 3 \u2014 paper experiments and method, 2026-10-01 through 2026-10-18",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L307"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_4_paper_evaluation_and_submission_2026_10_19_through_2026_11_09",
+      "label": "Phase 4 \u2014 Paper evaluation and submission, 2026-10-19 through 2026-11-09",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 4 \u2014 paper evaluation and submission, 2026-10-19 through 2026-11-09",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L319"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_5_story_discovery_and_design_2026_11_10_through_2026_12_15",
+      "label": "Phase 5 \u2014 Story discovery and design, 2026-11-10 through 2026-12-15",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 5 \u2014 story discovery and design, 2026-11-10 through 2026-12-15",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L328"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_6_paper_decision_and_story_production_2026_12_16_through_2027_01_25",
+      "label": "Phase 6 \u2014 Paper decision and story production, 2026-12-16 through 2027-01-25",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 6 \u2014 paper decision and story production, 2026-12-16 through 2027-01-25",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L336"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_7_story_submission_2027_01_26_through_2027_02_01",
+      "label": "Phase 7 \u2014 Story submission, 2027-01-26 through 2027-02-01",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 7 \u2014 story submission, 2027-01-26 through 2027-02-01",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L346"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_product_definitions",
+      "label": "Product definitions",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product definitions",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_repository_organization",
+      "label": "Repository organization",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "repository organization",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L160"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "label": "Roadmap",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "roadmap",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L285"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_shared_release_interface",
+      "label": "Shared release interface",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "shared release interface",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L237"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_shared_scientific_foundation",
+      "label": "Shared scientific foundation",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "shared scientific foundation",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L51"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_task_organization",
+      "label": "Task organization",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task organization",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L354"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_verification_and_enforcement",
+      "label": "Verification and enforcement",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification and enforcement",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L369"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_visual_data_story",
+      "label": "Visual data story",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "PacificVis 2027 Dual-Track Repository Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual data story",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L93"
     },
     {
       "id": "docs_superpowers_plans_2026_09_05_tohoku_data_coverage_implementation",
@@ -5745,18 +6129,6 @@
       "node_kind": "heading",
       "norm_label": "tohoku data coverage and implementation plan",
       "source_file": "docs/superpowers/plans/2026-09-05-tohoku-data-coverage-implementation.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "context_acquisition_report",
-      "label": "ACQUISITION_REPORT.md",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "T-002A \u2014 T\u014dhoku Source-Contract Ledger",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "acquisition_report.md",
-      "source_file": "context/ACQUISITION_REPORT.md",
       "source_location": "L1"
     },
     {
@@ -6013,13 +6385,13 @@
     },
     {
       "id": "context_eda_report",
-      "label": "EDA_REPORT.md",
+      "label": "context/EDA_REPORT.md",
       "_origin": "ast",
       "community": 36,
       "community_name": "T\u014dhoku Missingness EDA",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "eda_report.md",
+      "norm_label": "context/eda_report.md",
       "source_file": "context/EDA_REPORT.md",
       "source_location": "L1"
     },
@@ -7278,7 +7650,19 @@
       "node_kind": "heading",
       "norm_label": "consequential unknowns",
       "source_file": "context/PROJECT.md",
-      "source_location": "L65"
+      "source_location": "L75"
+    },
+    {
+      "id": "context_project_current_visual_story_planning_deliverable",
+      "label": "Current visual-story planning deliverable",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Project Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "current visual-story planning deliverable",
+      "source_file": "context/PROJECT.md",
+      "source_location": "L91"
     },
     {
       "id": "context_project_decision_and_lane",
@@ -7290,7 +7674,7 @@
       "node_kind": "heading",
       "norm_label": "decision and lane",
       "source_file": "context/PROJECT.md",
-      "source_location": "L33"
+      "source_location": "L38"
     },
     {
       "id": "context_project_in_scope_for_the_first_complete_version",
@@ -7302,7 +7686,7 @@
       "node_kind": "heading",
       "norm_label": "in scope for the first complete version",
       "source_file": "context/PROJECT.md",
-      "source_location": "L46"
+      "source_location": "L56"
     },
     {
       "id": "context_project_objective",
@@ -7326,7 +7710,7 @@
       "node_kind": "heading",
       "norm_label": "out of scope until separately approved",
       "source_file": "context/PROJECT.md",
-      "source_location": "L58"
+      "source_location": "L68"
     },
     {
       "id": "context_project_project_contract",
@@ -7350,7 +7734,7 @@
       "node_kind": "heading",
       "norm_label": "smallest useful deliverable",
       "source_file": "context/PROJECT.md",
-      "source_location": "L72"
+      "source_location": "L82"
     },
     {
       "id": "context_project_workflow_contract",
@@ -7449,6 +7833,18 @@
       "source_location": "L58"
     },
     {
+      "id": "readme_collection_and_validation_rules",
+      "label": "Collection and validation rules",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "collection and validation rules",
+      "source_file": "README.md",
+      "source_location": "L98"
+    },
+    {
       "id": "readme_current_status",
       "label": "Current status",
       "_origin": "ast",
@@ -7458,7 +7854,43 @@
       "node_kind": "heading",
       "norm_label": "current status",
       "source_file": "README.md",
-      "source_location": "L13"
+      "source_location": "L36"
+    },
+    {
+      "id": "readme_data_flow",
+      "label": "Data flow",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data flow",
+      "source_file": "README.md",
+      "source_location": "L114"
+    },
+    {
+      "id": "readme_dataset_gathering",
+      "label": "Dataset gathering",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dataset gathering",
+      "source_file": "README.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "readme_evidence_and_reporting",
+      "label": "Evidence and reporting",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence and reporting",
+      "source_file": "README.md",
+      "source_location": "L309"
     },
     {
       "id": "readme_license",
@@ -7470,7 +7902,7 @@
       "node_kind": "heading",
       "norm_label": "license",
       "source_file": "README.md",
-      "source_location": "L103"
+      "source_location": "L328"
     },
     {
       "id": "readme_local_setup",
@@ -7482,7 +7914,7 @@
       "node_kind": "heading",
       "norm_label": "local setup",
       "source_file": "README.md",
-      "source_location": "L25"
+      "source_location": "L279"
     },
     {
       "id": "readme_pacific_tsunami_warning_time",
@@ -7497,16 +7929,64 @@
       "source_location": "L1"
     },
     {
-      "id": "readme_repository_map",
-      "label": "Repository map",
+      "id": "readme_pacificvis_2027_conference_paper_visual_data_storytelling_contest",
+      "label": "PacificVis 2027 \u2014 Conference Paper + Visual Data Storytelling Contest",
       "_origin": "ast",
       "community": 49,
       "community_name": "Pacific Tsunami Warning Time",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "repository map",
+      "norm_label": "pacificvis 2027 \u2014 conference paper + visual data storytelling contest",
       "source_file": "README.md",
-      "source_location": "L78"
+      "source_location": "L3"
+    },
+    {
+      "id": "readme_paper_and_visual_story_separation",
+      "label": "Paper and visual-story separation",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "paper and visual-story separation",
+      "source_file": "README.md",
+      "source_location": "L207"
+    },
+    {
+      "id": "readme_project_at_a_glance",
+      "label": "Project at a glance",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "project at a glance",
+      "source_file": "README.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "readme_repository_structure",
+      "label": "Repository structure",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "repository structure",
+      "source_file": "README.md",
+      "source_location": "L232"
+    },
+    {
+      "id": "readme_reproducing_the_pipeline",
+      "label": "Reproducing the pipeline",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reproducing the pipeline",
+      "source_file": "README.md",
+      "source_location": "L155"
     },
     {
       "id": "readme_safety_and_interpretation",
@@ -7518,7 +7998,19 @@
       "node_kind": "heading",
       "norm_label": "safety and interpretation",
       "source_file": "README.md",
-      "source_location": "L97"
+      "source_location": "L317"
+    },
+    {
+      "id": "readme_source_inventory",
+      "label": "Source inventory",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "Pacific Tsunami Warning Time",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source inventory",
+      "source_file": "README.md",
+      "source_location": "L68"
     },
     {
       "id": "app_src_app",
@@ -7624,6 +8116,18 @@
       "source_location": "L7"
     },
     {
+      "id": "context_acquisition_report",
+      "label": "ACQUISITION_REPORT.md",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "acquisition_report.md",
+      "source_file": "context/ACQUISITION_REPORT.md",
+      "source_location": "L1"
+    },
+    {
       "id": "context_handover",
       "label": "HANDOVER.md",
       "_origin": "ast",
@@ -7637,26 +8141,38 @@
     },
     {
       "id": "context_project",
-      "label": "PROJECT.md",
+      "label": "context/PROJECT.md",
       "_origin": "ast",
       "community": 51,
       "community_name": "README.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "project.md",
+      "norm_label": "context/project.md",
       "source_file": "context/PROJECT.md",
       "source_location": "L1"
     },
     {
       "id": "context_tasks",
-      "label": "TASKS.md",
+      "label": "context/TASKS.md",
       "_origin": "ast",
       "community": 51,
       "community_name": "README.md",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "tasks.md",
+      "norm_label": "context/tasks.md",
       "source_file": "context/TASKS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_11_dual_track_repository_design",
+      "label": "2026-09-11-dual-track-repository-design.md",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-11-dual-track-repository-design.md",
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
       "source_location": "L1"
     },
     {
@@ -7715,6 +8231,666 @@
       "node_kind": "heading",
       "norm_label": "missingness profile run notes",
       "source_file": "artifacts/logs/runs/2026-09-09__1749__missingness__7b6d386/notes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design",
+      "label": "2026-09-14-visual-story-adaptive-eda-design.md",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_adaptive_decision_ledger",
+      "label": "Adaptive decision ledger",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adaptive decision ledger",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L163"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
+      "label": "Approaches considered",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "approaches considered",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approved_choices",
+      "label": "Approved choices",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "approved choices",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_architecture_and_ownership",
+      "label": "Architecture and ownership",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "architecture and ownership",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_artifact_contract",
+      "label": "Artifact contract",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "artifact contract",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L191"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_color_and_accessibility",
+      "label": "Color and accessibility",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "color and accessibility",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L154"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_dependency_contract",
+      "label": "Dependency contract",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dependency contract",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L231"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_evidence_boundary",
+      "label": "Evidence boundary",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence boundary",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L54"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_diagnostic_atlas_with_adaptive_branches_selected",
+      "label": "Fixed diagnostic atlas with adaptive branches \u2014 selected",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fixed diagnostic atlas with adaptive branches \u2014 selected",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
+      "label": "Fixed visual contracts",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fixed visual contracts",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_hypothesis_first_storyboard",
+      "label": "Hypothesis-first storyboard",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "hypothesis-first storyboard",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L42"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_marimo_contract",
+      "label": "Marimo contract",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "marimo contract",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L223"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_open_ended_notebook_exploration",
+      "label": "Open-ended notebook exploration",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "open-ended notebook exploration",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_outcome",
+      "label": "Outcome",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "outcome",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_pacific_map",
+      "label": "Pacific map",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pacific map",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L132"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_a_preliminary_diagnostic_atlas",
+      "label": "Stage A \u2014 preliminary diagnostic atlas",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stage a \u2014 preliminary diagnostic atlas",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L99"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_b_reviewed_arrival_comparison",
+      "label": "Stage B \u2014 reviewed arrival comparison",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stage b \u2014 reviewed arrival comparison",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L118"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_task_and_commit_boundaries",
+      "label": "Task and commit boundaries",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task and commit boundaries",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L260"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_time_series_and_coverage_views",
+      "label": "Time-series and coverage views",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "time-series and coverage views",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
+      "label": "Two-stage execution",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "two-stage execution",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L97"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_verification",
+      "label": "Verification",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L243"
+    },
+    {
+      "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "label": "Visual-Story Adaptive EDA Design",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Visual-Story Adaptive EDA Design",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual-story adaptive eda design",
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_originality",
+      "label": "ORIGINALITY.md",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "originality.md",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_originality_correspondence_received_2026_09_13",
+      "label": "Correspondence received 2026-09-13",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "correspondence received 2026-09-13",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "context_originality_current_disposition",
+      "label": "Current disposition",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "current disposition",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "context_originality_evidence_history",
+      "label": "Evidence history",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence history",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L90"
+    },
+    {
+      "id": "context_originality_originality_and_track_compatibility_ledger",
+      "label": "Originality and Track Compatibility Ledger",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "originality and track compatibility ledger",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_originality_pending_response",
+      "label": "Pending response",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pending response",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "context_originality_purpose",
+      "label": "Purpose",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "purpose",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_originality_working_overlap_boundary",
+      "label": "Working overlap boundary",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Originality and Track Compatibility Ledger",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "working overlap boundary",
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "context_story_project",
+      "label": "story/PROJECT.md",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "story/project.md",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_project_contribution_boundary",
+      "label": "Contribution boundary",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contribution boundary",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "context_story_project_evidence_states",
+      "label": "Evidence states",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence states",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "context_story_project_first_deliverable",
+      "label": "First deliverable",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "first deliverable",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "context_story_project_governing_design",
+      "label": "Governing design",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "governing design",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "context_story_project_question",
+      "label": "Question",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "question",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "context_story_project_status",
+      "label": "Status",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "status",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_story_project_visual_story_contract",
+      "label": "Visual Story Contract",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Visual Story Contract",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual story contract",
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_eda_report",
+      "label": "story/EDA_REPORT.md",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "story/eda_report.md",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_eda_report_current_evidence_boundary",
+      "label": "Current evidence boundary",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "current evidence boundary",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "context_story_eda_report_next_action",
+      "label": "Next action",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "next action",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "context_story_eda_report_reporting_contract",
+      "label": "Reporting contract",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reporting contract",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "context_story_eda_report_status",
+      "label": "Status",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "status",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_story_eda_report_visual_story_eda_report",
+      "label": "Visual-Story EDA Report",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Visual-Story EDA Report",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual-story eda report",
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_storyboard",
+      "label": "STORYBOARD.md",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "Visual Storyboard",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "storyboard.md",
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_storyboard_candidate_discovery_questions",
+      "label": "Candidate discovery questions",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "Visual Storyboard",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "candidate discovery questions",
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "context_story_storyboard_promotion_rule",
+      "label": "Promotion rule",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "Visual Storyboard",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "promotion rule",
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "context_story_storyboard_status",
+      "label": "Status",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "Visual Storyboard",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "status",
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_story_storyboard_visual_storyboard",
+      "label": "Visual Storyboard",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "Visual Storyboard",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual storyboard",
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_tasks",
+      "label": "story/TASKS.md",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "story/tasks.md",
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "context_story_tasks_t_003a_build_the_preliminary_diagnostic_atlas",
+      "label": "T-003A \u2014 Build the preliminary diagnostic atlas",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003a \u2014 build the preliminary diagnostic atlas",
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
+      "label": "T-003B \u2014 Complete the reviewed arrival comparison",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "context_story_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
+      "label": "T-003P \u2014 Approve the adaptive visual-story EDA design",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003p \u2014 approve the adaptive visual-story eda design",
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "context_story_tasks_visual_story_tasks",
+      "label": "Visual Story Tasks",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual story tasks",
+      "source_file": "context/story/TASKS.md",
       "source_location": "L1"
     },
     {
@@ -16056,6 +17232,28 @@
     },
     {
       "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_013_treat_shared_data_dual_submission_as_conditionally_compatible",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
+      "target": "context_decisions_d_014_use_a_fixed_visual_audit_core_and_let_evidence_redirect_the_story",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/DECISIONS.md",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "context_decisions_decision_log",
       "target": "context_decisions_d_003_dependencies_follow_demonstrated_need",
       "relation": "contains",
       "_origin": "ast",
@@ -16403,7 +17601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L115",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -16414,7 +17612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -16425,7 +17623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -16436,7 +17634,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L174",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -16447,7 +17645,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L205",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -16469,40 +17667,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L235",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
       "source": "context_handover_handover",
-      "target": "context_handover_risks_and_blockers",
+      "target": "context_handover_dual_track_design_checkpoint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L266",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_continue_from_here",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L279",
-      "weight": 1.0
-    },
-    {
-      "source": "context_handover_handover",
-      "target": "context_handover_repository_state",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/HANDOVER.md",
-      "source_location": "L293",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -16518,13 +17694,79 @@
     },
     {
       "source": "context_handover_handover",
+      "target": "context_handover_external_track_compatibility_guidance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L302",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_readme_documentation_checkpoint",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_visual_story_adaptive_eda_planning_checkpoint",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L347",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_risks_and_blockers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_continue_from_here",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
+      "target": "context_handover_repository_state",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/HANDOVER.md",
+      "source_location": "L405",
+      "weight": 1.0
+    },
+    {
+      "source": "context_handover_handover",
       "target": "context_handover_final_disposition",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L301",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -16535,7 +17777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -16546,7 +17788,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L77",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -16557,7 +17799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -16613,6 +17855,83 @@
       "confidence_score": 1.0,
       "source_file": "context/MODEL_CARD.md",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality",
+      "target": "context_originality_originality_and_track_compatibility_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_current_disposition",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_correspondence_received_2026_09_13",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_purpose",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_working_overlap_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_pending_response",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "context_originality_originality_and_track_compatibility_ledger",
+      "target": "context_originality_evidence_history",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/ORIGINALITY.md",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -16711,7 +18030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L33",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -16722,7 +18041,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L46",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -16733,7 +18052,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L58",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -16744,7 +18063,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L65",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -16755,7 +18074,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L72",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "context_project_project_contract",
+      "target": "context_project_current_visual_story_planning_deliverable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/PROJECT.md",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -16832,7 +18162,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/spatial-contract.md",
-      "source_location": "L40",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -16843,7 +18173,227 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/spatial-contract.md",
-      "source_location": "L51",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_eda_report",
+      "target": "context_story_eda_report_visual_story_eda_report",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_eda_report_visual_story_eda_report",
+      "target": "context_story_eda_report_reporting_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_eda_report_visual_story_eda_report",
+      "target": "context_story_eda_report_current_evidence_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_eda_report_visual_story_eda_report",
+      "target": "context_story_eda_report_status",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_eda_report_visual_story_eda_report",
+      "target": "context_story_eda_report_next_action",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/EDA_REPORT.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project",
+      "target": "context_story_project_visual_story_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_contribution_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_evidence_states",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_status",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_first_deliverable",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_governing_design",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_question",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_storyboard",
+      "target": "context_story_storyboard_visual_storyboard",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_storyboard_visual_storyboard",
+      "target": "context_story_storyboard_promotion_rule",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_storyboard_visual_storyboard",
+      "target": "context_story_storyboard_status",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_storyboard_visual_storyboard",
+      "target": "context_story_storyboard_candidate_discovery_questions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/STORYBOARD.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks",
+      "target": "context_story_tasks_visual_story_tasks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks_visual_story_tasks",
+      "target": "context_story_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks_visual_story_tasks",
+      "target": "context_story_tasks_t_003a_build_the_preliminary_diagnostic_atlas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks_visual_story_tasks",
+      "target": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -16958,7 +18508,7 @@
     },
     {
       "source": "context_tasks_tasks",
-      "target": "context_tasks_t_003_make_the_static_scientific_comparison",
+      "target": "context_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16969,13 +18519,24 @@
     },
     {
       "source": "context_tasks_tasks",
+      "target": "context_tasks_t_003_run_adaptive_visual_story_eda_and_make_the_static_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L417",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
       "target": "context_tasks_t_004_test_the_wavefront_mechanism",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L415",
+      "source_location": "L452",
       "weight": 1.0
     },
     {
@@ -16986,7 +18547,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L439",
+      "source_location": "L476",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
+      "target": "context_tasks_x_001_close_the_dual_track_compatibility_follow_up",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L501",
       "weight": 1.0
     },
     {
@@ -17156,13 +18728,13 @@
     },
     {
       "source": "docs_concept_concept",
-      "target": "docs_concept_discovery_sequence",
+      "target": "docs_concept_candidate_discovery_sequence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/concept.md",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -17173,12 +18745,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/concept.md",
-      "source_location": "L24",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
       "source": "docs_concept_concept",
-      "target": "docs_concept_thesis",
+      "target": "docs_concept_candidate_thesis",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17195,7 +18767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/concept.md",
-      "source_location": "L36",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -17691,6 +19263,512 @@
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-04-tohoku-data-pipeline-eda-design.md",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_originality_firewall",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_repository_organization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_shared_release_interface",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_data_and_experiment_flow",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_confirmed_targets_and_dates",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_task_organization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L354",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_verification_and_enforcement",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L369",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_failure_and_change_handling",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L388",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_deliberate_deferrals",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L402",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_commit_boundaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_pacificvis_2027_dual_track_repository_design",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_product_definitions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_product_definitions",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_shared_scientific_foundation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_product_definitions",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_conference_paper",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_product_definitions",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_visual_data_story",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_1_repository_and_shared_data_seam_2026_09_11_through_2026_09_18",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_2_paper_framing_and_corpus_expansion_2026_09_19_through_2026_09_30",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_3_paper_experiments_and_method_2026_10_01_through_2026_10_18",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_4_paper_evaluation_and_submission_2026_10_19_through_2026_11_09",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_5_story_discovery_and_design_2026_11_10_through_2026_12_15",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_6_paper_decision_and_story_production_2026_12_16_through_2027_01_25",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_roadmap",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design_phase_7_story_submission_2027_01_26_through_2027_02_01",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-11-dual-track-repository-design.md",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_diagnostic_atlas_with_adaptive_branches_selected",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_hypothesis_first_storyboard",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_open_ended_notebook_exploration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_pacific_map",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_time_series_and_coverage_views",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_color_and_accessibility",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_b_reviewed_arrival_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_a_preliminary_diagnostic_atlas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_adaptive_decision_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approved_choices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_artifact_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_marimo_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_dependency_contract",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_verification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L243",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_task_and_commit_boundaries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_evidence_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_architecture_and_ownership",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -18750,25 +20828,80 @@
       "weight": 1.0
     },
     {
-      "source": "readme_pacific_tsunami_warning_time",
-      "target": "readme_license",
+      "source": "readme_dataset_gathering",
+      "target": "readme_data_flow",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L103",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_dataset_gathering",
+      "target": "readme_reproducing_the_pipeline",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_dataset_gathering",
+      "target": "readme_source_inventory",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_dataset_gathering",
+      "target": "readme_collection_and_validation_rules",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
       "source": "readme_pacific_tsunami_warning_time",
-      "target": "readme_current_status",
+      "target": "readme_paper_and_visual_story_separation",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L13",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_project_at_a_glance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_repository_structure",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -18779,18 +20912,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L25",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
       "source": "readme_pacific_tsunami_warning_time",
-      "target": "readme_repository_map",
+      "target": "readme_pacificvis_2027_conference_paper_visual_data_storytelling_contest",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L78",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_evidence_and_reporting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -18801,7 +20945,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L97",
+      "source_location": "L317",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_license",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_current_status",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_pacific_tsunami_warning_time",
+      "target": "readme_dataset_gathering",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -20874,35 +23051,24 @@
     },
     {
       "source": "readme",
-      "target": "context_project",
+      "target": "context_originality",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L18",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
       "source": "readme",
-      "target": "context_tasks",
+      "target": "docs_superpowers_specs_2026_09_11_dual_track_repository_design",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "readme",
-      "target": "context_handover",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L19",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -20913,7 +23079,62 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
+      "target": "context_project",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
+      "target": "context_tasks",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
+      "target": "context_handover",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
+      "target": "context_acquisition_report",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
       "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
+      "target": "context_data_card",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -21404,5 +23625,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7b6d386c64c4df5b1978f841d7119c2bc9ef07fa"
+  "built_at_commit": "34a05eeb37ab37ad59f4311f36d6a78e15cc8ea5"
 }

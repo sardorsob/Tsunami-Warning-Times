@@ -1,6 +1,6 @@
 # Concept
 
-## Thesis
+## Candidate thesis
 
 One tsunami crosses a shared ocean, but bathymetry, geography, observation, and
 warning systems leave Pacific communities with radically different amounts of
@@ -10,7 +10,12 @@ The wave is the mechanism; unequal time is the subject. The experience should be
 a scientific explorable narrative, not a dashboard and not a cinematic disaster
 simulation.
 
-## Discovery sequence
+This is a falsifiable starting point, not a required conclusion. Story-only EDA
+may revise, pivot, or reject it under D-014. No sequence below becomes a
+storyboard commitment until its evidence is promoted in
+`context/story/STORYBOARD.md`.
+
+## Candidate discovery sequence
 
 1. Show a simple distance-only ring and ask which of two similarly distant
    communities receives the wave first.

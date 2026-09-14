@@ -344,6 +344,35 @@ passed: Ruff; Pyright with 0 errors and 0 warnings; 93 Pytest tests; 18 validate
 provenance records; and the frontend typecheck, Vitest run, and production
 build.
 
+## Visual-story adaptive EDA planning checkpoint
+
+On 2026-09-14, the project owner approved a story-only visual discovery design:
+a fixed diagnostic atlas followed by evidence-triggered branches. The current
+distance-versus-arrival concept is now explicitly falsifiable; weak or unstable
+evidence triggers a recorded pivot or rejection rather than outcome-driven
+station selection.
+
+The written design is
+`docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md`. New
+lane context under `context/story/` separates the story question, task ledger,
+EDA decision report, and storyboard promotion state from shared and paper work.
+T-003P is in review until the project owner reviews the written specification.
+No plotting dependency, analysis code, figure, data download, story claim, or app
+export was added in this planning checkpoint.
+
+The approved execution boundary has two stages. T-003A may create preliminary
+maps and temporal diagnostics from the accepted T-002C2 build, but cannot
+promote stations or claims. T-003B remains gated by the frozen arrival method
+and a T-002E-promoted shared release. The unavailable NCTR continuous field is
+not replaced or inferred; preliminary spatial work uses the published NCEI
+contours with their source semantics and limitations.
+
+Fresh planning-package verification passed: Ruff; Pyright with 0 errors and 0
+warnings; 93 Pytest tests; 18 validated provenance records; frontend typecheck,
+Vitest, and production build; and `git diff --check`. Graphify rebuilt the
+repository graph to 760 nodes, 1,279 edges, and 60 communities so the new design
+and story context are discoverable. No large data or external service was used.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
@@ -351,7 +380,8 @@ build.
   picks remain unproved for every coastal gauge.
 - A comparable primary 2011 warning-message archive was not verified.
 - The intended equal-distance versus arrival-time discovery still needs
-  calculation; the event must change if that result is weak.
+  calculation; a weak result requires a documented story pivot or event
+  reconsideration.
 - Per-asset reuse/redistribution terms need review even where Federal open-data
   policy is favorable.
 - Conference registration deadlines and remote-presentation options remain
@@ -363,17 +393,20 @@ build.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue T-002D from the recorded missingness findings: map Pago Pago and
-   Saipan gap blocks and inspect DART intervals over 900 seconds.
-2. Define the no-interpolation pre-arrival completeness gate, then execute
+1. Review the written T-003P visual-story EDA specification. After acceptance,
+   prepare its implementation plan before adding dependencies or code.
+2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
+   and Saipan gap blocks and inspect DART intervals over 900 seconds.
+3. Define the no-interpolation pre-arrival completeness gate, then execute
    arrival-pick sensitivity without model-guided station selection.
-3. Continue the remaining spatial/join, NCTR-structure, distribution, and
-   distance-versus-arrival checks, recording every adaptive branch in the EDA
-   decision ledger.
-4. Keep X-001 pending until both submission concepts are concrete enough to
+4. T-003A may build only the preliminary story diagnostic atlas from the
+   accepted T-002C2 candidate build; label every output preliminary.
+5. Keep arrival-based T-003B work blocked until T-002E publishes an accepted
+   release, then record a promote, revise, pivot, or reject disposition.
+6. Keep X-001 pending until both submission concepts are concrete enough to
    quantify overlap; obtain owner authorization before sending the reply.
 
-Do not begin the full wavefront or story build during the data proof.
+Do not begin the full wavefront or story app build during the data proof.
 
 ## Repository state
 
@@ -387,3 +420,4 @@ remain ignored.
 
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
+T-003P is in review; T-003 and its story subtasks have not started.

@@ -204,3 +204,24 @@
 - Revisit when: the overlap can be described concretely, the Paper/VisNotes
   co-chairs reply, either submission changes scope, or the final artifacts are
   ready for an originality audit.
+
+## D-014 — Use a fixed visual audit core and let evidence redirect the story
+
+- Date: 2026-09-14
+- Status: accepted design; written-spec review pending
+- Decision: begin visual-story EDA with a small reproducible diagnostic atlas,
+  then trigger and record follow-up views from observed spatial, temporal, and
+  coverage findings. Treat the distance-versus-arrival concept as falsifiable;
+  pivot or reject it when the reviewed evidence is weak or unstable.
+- Reason: story direction should emerge from inspectable maps, timelines, and
+  small multiples without turning adaptive exploration into narrative-driven
+  station selection.
+- Constraint: preliminary plots may use the accepted T-002C2 candidate build but
+  cannot promote stations or public claims. Modeled-versus-observed comparisons
+  wait for the frozen arrival method and T-002E release. NCEI contours are not
+  represented as the unavailable continuous NCTR field. Paper-only models,
+  analyses, and figures remain outside the story lane.
+- Evidence: project-owner approval in conversation on 2026-09-14 and
+  `docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md`.
+- Revisit when: T-003A review finds the fixed core insufficient, T-002E changes
+  the usable evidence set, or the story/paper originality boundary changes.

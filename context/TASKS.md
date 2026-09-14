@@ -389,25 +389,62 @@
 - Attempt log: not started
 - Status: pending
 
-## T-003 — Make the static scientific comparison
+## T-003P — Approve the adaptive visual-story EDA design
+
+- ID: T-003P
+- Title: Define the visual discovery and artifact contract
+- Depends on: accepted T-002C2 build and approved dual-track design
+- Owner (Maker): project coordinator
+- Checker: project owner
+- Phase: story planning
+- Data refs: accepted T-002C2 analysis-ready artifacts and shared missingness run
+- Scientific refs: spatial contract, validation plan, and D-010 through D-014
+- Statistical notes: design only; no result or station selection
+- Scope: fixed visual audit core, adaptive branches, evidence states, scientific
+  gates, artifact lineage, story/paper boundary, and implementation sequence
+- Artifacts to produce: dated design specification and story context package
+- Acceptance criteria: written design matches the approved discussion, permits
+  an evidence-led pivot, and keeps implementation and unsupported claims out
+- Verification commands: link and consistency checks plus `git diff --check`
+- Manual QA: project owner reviews the written specification
+- Evidence: design approved in conversation on 2026-09-14; written specification
+  is prepared for review
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-14 — approved a fixed diagnostic atlas with adaptive
+  branches and a falsifiable distance-versus-arrival candidate
+- Status: in-review
+
+## T-003 — Run adaptive visual-story EDA and make the static comparison
 
 - ID: T-003
-- Title: Compare a distance-only ring with the modeled arrival field
-- Depends on: T-002E done with a promote disposition
-- Owner (Maker): analysis/visualization contributor
-- Checker: scientific and cartographic reviewer
-- Phase: analysis
-- Data refs: versioned T-002 outputs only
-- Scientific refs: accepted source and method documentation
-- Statistical notes: define distance metric, propagation assumption, residual sign,
-  and timing precision
-- Scope: one static Pacific figure and one or two explanatory comparisons
-- Artifacts to produce: generated figure, table, method note, and provenance entry
-- Acceptance criteria: projection documented; NoData distinct; no amplitude claim;
-  same extent/scale; labels and units readable; three displayed values checked
-- Verification commands: deterministic rebuild and task-owned tests
-- Manual QA: squint/thumbnail, grayscale, and color-vision review
-- Evidence: pending
+- Title: Discover and validate the visual-story comparison
+- Depends on: T-003P done and its implementation plan approved; T-002E promote
+  required before arrival-based evidence or station promotion
+- Owner (Maker): story analysis/visualization contributor
+- Checker: scientific, cartographic, and originality reviewer
+- Phase: story EDA and static visual proof
+- Data refs: accepted T-002C2 build for preliminary evidence; one explicitly
+  accepted T-002E release for reviewed evidence
+- Scientific refs: story EDA design, accepted source and method documentation,
+  spatial contract, validation plan, and originality firewall
+- Statistical notes: descriptive visual comparison; define geodesic distance,
+  propagation assumption, residual sign, timing precision, and pick sensitivity
+- Scope: a preliminary Pacific evidence map, coverage timelines, station small
+  multiples, and distance-versus-contour diagnostic; after the shared gate,
+  modeled-versus-observed arrival comparison, community contrast sheet, and an
+  explicit promote, revise, pivot, or reject disposition
+- Artifacts to produce: generated figures, atlas manifest, decision ledger,
+  portable run evidence, story EDA report, and at most one promoted static proof
+- Acceptance criteria: projection and antimeridian behavior documented; NoData
+  distinct; no amplitude or actionable-warning-time claim; negative findings
+  visible; paper artifacts absent; three displayed values checked; the notebook
+  contains no unique calculation or rendering logic
+- Verification commands: deterministic rebuild, task-owned tests, `marimo check`,
+  headless notebook execution, manifest/report reconciliation, full repository
+  gate, and Graphify update
+- Manual QA: full-size and thumbnail review, grayscale and color-vision checks,
+  source-value traces, and paper/story overlap audit
+- Evidence: detailed subtasks and current state live in `context/story/TASKS.md`
 - Attempts / Max: 0 / 3
 - Attempt log: not started
 - Status: pending

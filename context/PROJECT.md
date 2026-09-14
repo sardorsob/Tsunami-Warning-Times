@@ -29,6 +29,11 @@ same thing as actionable public warning time.
   not-applicability, quarantine, and source-asset coverage retain separate
   definitions. The script-generated Markdown report remains canonical under
   D-007 and D-008.
+- Current visual-story planning skill: `cartography-geoviz`, applied to T-003P
+  so projection, antimeridian handling, NoData, comparability, visual hierarchy,
+  and accessibility are part of the analytical contract rather than late-stage
+  styling. `marimo-notebook` keeps the future notebook a thin view over tested
+  modules and generated artifacts.
 
 ## Decision and lane
 
@@ -42,6 +47,11 @@ same thing as actionable public warning time.
 | Target unit | Elapsed time and UTC timestamp, definitions source-specific |
 | Primary lane | Historical event intelligence |
 | Secondary lane | None approved |
+
+The repository has two submission lanes over this shared hazard-data foundation:
+a scientific Conference Paper and a materially distinct Visual Data Story. New
+story-specific analysis is governed by `context/story/PROJECT.md`; fitted paper
+models, paper selection results, and paper figures do not enter the story lane.
 
 ## In scope for the first complete version
 
@@ -77,3 +87,11 @@ records, and six coastal-gauge candidates. Reusable scripts own the calculations
 a thin marimo notebook exposes the EDA, and Markdown reports preserve the
 evidence and decisions. The browser shell is infrastructure, not scientific
 evidence.
+
+## Current visual-story planning deliverable
+
+T-003P defines a small fixed diagnostic atlas with evidence-triggered branches.
+The accepted T-002C2 build may support preliminary storyboard evidence, while
+observed-arrival comparisons and station promotion remain blocked until T-002E
+publishes a reviewed shared release. The current distance-versus-arrival thesis
+is falsifiable and may be replaced by a stronger supported story.
