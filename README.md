@@ -1,59 +1,184 @@
 # Pacific Tsunami Warning Time
 
-One tsunami crosses a shared ocean, but bathymetry, geography, observation, and
-warning systems leave Pacific communities with radically different amounts of
-usable time.
+## PacificVis 2027 — Conference Paper + Visual Data Storytelling Contest
 
-This repository is the research, data, and browser-experience workspace for a
-PacificVis 2027 visual data story. The intended result is a guided scientific
-narrative: begin with a naive distance-only ring, reveal a bathymetry-shaped
-modeled arrival field, compare it with DART and tide-gauge observations, and
-then explain what those timings do—and do not—say about community warning time.
+One tsunami crosses a shared ocean, but bathymetry, geography, observation
+coverage, and warning systems leave Pacific communities with very different
+timing experiences.
+
+This repository is a reproducible research and communication workspace for two
+related—but materially different—PacificVis 2027 submissions:
+
+1. a **Conference Paper** investigating discrepancies among modeled and
+   observed tsunami arrival times with uncertainty-aware visual analytics and
+   statistical or machine-learning methods; and
+2. an **interactive visual data story** that uses one historical event to
+   explain why distance alone is a poor account of when a tsunami arrives.
+
+Both products share a governed scientific data foundation. They do not share a
+thesis, fitted-model result, final figure, narrative sequence, interaction
+design, or submission claim.
+
+## Project at a glance
+
+| Lane | Main question | Intended output | Current state |
+| --- | --- | --- | --- |
+| Shared scientific foundation | What source data can be acquired, normalized, and interpreted defensibly? | Versioned source contracts, checksums, tables, quality evidence, and release manifests | Tōhoku acquisition and normalization accepted; EDA in progress |
+| Conference Paper | How can uncertainty-aware visual analytics and statistical learning reveal systematic modeled-versus-observed timing discrepancies? | Multi-event research corpus, methods, evaluation, figures, and manuscript | Dual-track direction approved; paper-specific analysis not started |
+| Visual Data Story | How did one tsunami produce different arrival-time experiences around the Pacific, and why is distance alone misleading? | Guided browser story in `app/` | Data proof in progress; production story not started |
+
+The **2011 Tōhoku earthquake and tsunami** is the provisional source event for
+the current data proof. “Tōhoku” names the event and its source region in Japan;
+it does not limit the dataset to northeastern Japan. The observational chain
+extends across the Pacific to DART stations and coastal gauges in Alaska,
+Hawaiʻi, California, American Samoa, Saipan, and Chile.
 
 ## Current status
 
-The repository is in the **Tōhoku data-proof and exploratory-analysis phase**.
-Source acquisition and normalization are accepted; Tōhoku remains provisional
-until the complete EDA and independent data-proof review are accepted. See the
-[project contract](context/PROJECT.md), [task ledger](context/TASKS.md), and
-[handover](context/HANDOVER.md) before beginning implementation.
+The repository is in the **data-proof and adaptive exploratory-analysis phase**.
+The source inventory, acquisition, and normalization have passed review; the
+first missingness slice is implemented and verified. Tōhoku is still
+provisional until the remaining arrival, spatial, join, NCTR-structure, and
+distance-versus-arrival checks pass the final data-proof review.
 
-The current browser shell still displays the earlier unresolved state. It does
-not contain a simulated wave, operational warning information, or an accepted
-production claim.
+The current local evidence contains:
 
-## Local setup
+- 18 exact source contracts: 17 acquired and checksummed, 1 explicitly blocked;
+- 1 reviewed USGS event record;
+- 4,380 normalized NCEI travel-time contour parts containing 62,988 vertices;
+- 10 observation stations: 4 DART stations and 6 coastal gauges;
+- 143,655 accepted water-level observations; and
+- 107 quarantined or rejected records retained in the accounting.
 
-Requirements:
+The blocked asset is the requested continuous NCTR modeled field. No stable,
+event-specific machine-readable field with sufficient grid, time, unit, and
+source metadata was verified, so images and shifted comparison plots are not
+used as substitutes. The published NCTR source coefficients are retained as
+separate source evidence.
 
-- Python 3.12
-- Node.js 24.18.0 (pinned because the test and build toolchain has a narrower
-  support range than Vite alone)
-- `uv` 0.11.26
-- npm 11.16.0
+The browser shell does not yet contain a simulated wave, operational warning
+information, or an accepted scientific story claim.
 
-```bash
-uv sync
-npm install
+## Dataset gathering
+
+The data workflow follows the same principle used throughout the repository:
+**contract first, bytes second, interpretation last**. A file is not considered
+usable merely because it can be downloaded.
+
+### Source inventory
+
+| Source class | Publisher and assets | Role | Status |
+| --- | --- | --- | --- |
+| Earthquake metadata | USGS FDSN event record for `official20110311054624120_30` | Origin time, location, depth, magnitude, and event identity | 1 approved asset |
+| Modeled travel time | NOAA NCEI TTT layer 17 metadata and ordered GeoJSON | Source-published first-arrival contours in hours | 2 approved assets |
+| NCTR source description | NOAA PMEL/NCTR event page | Six published unit-source coefficients | 1 approved asset |
+| NCTR continuous field | NOAA PMEL/NCTR model-data pages | Requested continuous modeled field | 1 blocked asset; no proxy used |
+| Deep-ocean observations | NOAA NCEI/NDBC DART records 21418, 21413, 46411, and 32401 | Two near-field and two far-field water-column series chosen before residual inspection | 4 approved assets |
+| U.S. coastal observations | NOAA CO-OPS gauges at Adak, Hilo, Crescent City, and Pago Pago | One-minute coastal water-level series | 4 approved assets |
+| Saipan coastal observations | Exact NOAA event files `.070`, `.071`, and `.072` | Event-day series plus two archival companions | 3 approved preserved assets |
+| Valparaíso coastal observations | IOC Sea Level Monitoring Facility radar and pressure series | Radar analysis series plus a pressure quality companion | 2 approved assets |
+
+The six coastal analysis candidates are **Adak, Hilo, Crescent City, Pago Pago,
+Saipan, and Valparaíso**. Four DART records add a near-field/far-field deep-ocean
+comparison. Station selection was recorded before modeled residuals were
+inspected to reduce outcome-driven selection.
+
+Saipan's live NOAA links returned HTTP 403, so the pipeline accepted preserved
+copies of those exact URLs only after their headers, identities, units, time
+basis, coordinates, byte counts, and checksums were verified. Valparaíso was
+retrieved from the official IOC research interface. Its credential is read from
+macOS Keychain and sent only as an `X-API-KEY` header to the exact approved IOC
+host; it is never written to a URL, configuration file, run bundle, log, or Git.
+
+See the [source-contract ledger](context/ACQUISITION_REPORT.md),
+[data card](context/DATA_CARD.md), and machine-readable
+[source manifest](artifacts/provenance/source-manifest.csv) for the complete
+asset-level evidence.
+
+### Collection and validation rules
+
+Every source contract records:
+
+- source ID, publisher, exact URL, retrieval date, version, and terms note;
+- expected format, content signature, byte count, and SHA-256 checksum;
+- units, temporal semantics, CRS, coordinate order, and horizontal/vertical
+  datum when the publisher states them;
+- local raw path, processing history, missingness, and rejection accounting; and
+- an explicit `unknown` or `blocked` value where evidence is insufficient.
+
+The pipeline does not silently repair geometry, infer a datum, snap source
+timestamps, replace NoData with zero, or drop malformed records. Raw assets are
+immutable after acquisition. Each stage records its inputs, outputs, counts,
+hashes, Git SHA, command, and disposition in a portable run bundle.
+
+### Data flow
+
+```text
+reviewed source contracts
+  -> source-gated acquisition
+  -> immutable checksummed raw cache
+  -> deterministic normalization and quarantine
+  -> source-factual data-quality and missingness analysis
+  -> independent data-proof review
+  -> versioned shared release manifest (next gate)
+       |-> paper-only corpus and experiments
+       `-> story-only bundle and browser exports
 ```
 
-Start the browser shell:
+The main data layers are deliberately separated:
+
+| Layer | Location | Git policy |
+| --- | --- | --- |
+| Source contracts and provenance | `config/`, `artifacts/provenance/` | Tracked |
+| Raw source bytes and checksum sidecars | `data/raw/` | Ignored; immutable local cache |
+| Interim processing data | `data/interim/` | Ignored; reproducible checkpoints |
+| Analysis-ready tables and schemas | `data/processed/` | Ignored; rebuilt deterministically |
+| Portable run evidence | `artifacts/logs/runs/` | Tracked |
+| Compact EDA metrics | `artifacts/eda/` | Tracked when curated; generated by scripts |
+| Local MLflow state | `.mlflow/` | Ignored; paired with portable run IDs |
+| Markdown interpretations | `context/*_REPORT.md` | Tracked and canonical |
+
+The accepted normalized tables are:
+
+| Table | Grain |
+| --- | --- |
+| `event.csv` | One row per reviewed earthquake event |
+| `station.csv` | One row per selected DART deployment or coastal gauge |
+| `observation.csv` | One row per accepted station timestamp and source sample |
+| `ttt_contour.csv` | One row per source contour part and travel-time value |
+| `rejected_record.csv` | One row per rejected asset, feature, station, or sample |
+| `accounting.json` / `schemas.json` | Stage counts, field contracts, and output metadata |
+
+Arrival-pick tables are intentionally deferred until the sensitivity work in
+T-002D is complete.
+
+### Reproducing the pipeline
+
+Review `config/tohoku-data-proof.toml` before any networked acquisition. Running
+the acquisition against a populated cache verifies the existing bytes; missing
+approved assets may require network access, and the IOC assets require the
+project-specific Keychain entry.
 
 ```bash
-npm run dev
+uv run python scripts/acquire_tohoku.py \
+  --config config/tohoku-data-proof.toml \
+  --root . \
+  --run-tag local-acquisition
 ```
 
-Run the repository gate:
+Normalize an acquisition inventory without network access:
 
 ```bash
-uv run ruff check .
-uv run pyright
-uv run pytest -q
-uv run python -m pipeline.provenance artifacts/provenance/source-manifest.csv
-npm run check
+uv run python scripts/build_tohoku_data.py \
+  --inventory artifacts/logs/runs/2026-09-09__1923__valparaiso-reviewed__7576ffb/outputs.json \
+  --config config/tohoku-data-proof.toml \
+  --root . \
+  --run-tag local-build
 ```
 
-Run the reproducible missingness slice against the accepted normalized build:
+Run the reproducible missingness slice against a reviewed normalized build:
+replace `RUN_ID` with a new unique run identifier and `GIT_SHA` with the output
+of `git rev-parse --short HEAD`.
 
 ```bash
 uv run python scripts/profile_missingness.py \
@@ -69,38 +194,140 @@ uv run python scripts/profile_missingness.py \
   --mlflow-experiment tohoku-eda
 ```
 
-Inspect the generated artifact reactively in marimo:
+Inspect the generated result through the thin Marimo view:
 
 ```bash
 uv run marimo edit notebooks/tohoku_missingness.py
 ```
 
-## Repository map
+The notebook performs no acquisition, imputation, or unique scientific
+calculation. Reusable Python modules and scripts own the calculations;
+Markdown reports own the interpretation.
+
+## Paper and visual-story separation
+
+The repository remains unified because acquisition, provenance, normalization,
+and source-factual quality findings should have one implementation and one
+scientific meaning. The seam is the reviewed shared release: both submissions
+may consume it, but neither may consume the other's derived artifacts.
+
+| Surface | Shared foundation | Conference Paper | Visual Data Story |
+| --- | --- | --- | --- |
+| Data scope | Reviewed public sources and source-faithful tables | Multi-event, multi-station corpus planned | One reviewed Tōhoku event and small observation chain |
+| Analysis | Data quality, missingness, schemas, and transparent source-factual derivations | Statistical/ML modeling, calibration, uncertainty, sensitivity, and visual-analytics evaluation | Descriptive EDA used to choose defensible narrative contrasts |
+| Main contribution | Trustworthy, reusable evidence | Scientific visual-analytics method and evaluated research claim | Original guided narrative and interaction design |
+| Outputs | Release manifests and shared reports | Paper-only models, figures, tables, supplements, and manuscript | Story-only static exports, scenes, prose, and browser application |
+| Prohibited crossover | No fitted submission-specific result | Must not import story modules or reuse story figures/prose | Must not import paper modules or expose paper-model results |
+
+The Visual Data Storytelling co-chairs have confirmed that using the same
+underlying dataset is acceptable in principle when the submissions have clearly
+distinct goals and contributions, fully disclose their relationship, and avoid
+substantial duplication. They requested a later description of the type and
+approximate extent of overlap. That response remains pending until both products
+have stable contribution statements and artifact inventories. See the
+[originality ledger](context/ORIGINALITY.md) and
+[dual-track design](docs/superpowers/specs/2026-09-11-dual-track-repository-design.md).
+Separate Paper/VisNotes chair guidance is still pending.
+
+## Repository structure
+
+The current repository is organized around a shared scientific foundation and
+a static browser workspace:
 
 ```text
-app/                    React, TypeScript, and Vite browser experience
-artifacts/              Generated outputs and provenance records
-context/                Scope, decisions, scientific contracts, tasks, handover
-data/                   Ignored raw/interim/processed working data
-docs/                   Public concept, competition, methods, and research notes
-pipeline/               Reusable Python pipeline code
-notebooks/              Thin marimo views over script-generated artifacts
-scripts/                Reproducible command-line entry points
-public/data/             Generated, web-ready static assets
-tests/                  Python contract and pipeline tests
+Tsunami-Warning-Times/
+├── app/                    React, TypeScript, and Vite visual-story workspace
+├── artifacts/              Provenance, portable runs, and generated evidence
+├── config/                 Reviewed source and EDA configuration; no secrets
+├── context/                Scope, decisions, tasks, reports, and handover
+├── data/                   Ignored raw, interim, and processed scientific data
+├── docs/                   Concepts, competition research, designs, and plans
+├── notebooks/              Thin Marimo views over script-generated artifacts
+├── pipeline/               Reusable typed acquisition, normalization, and EDA modules
+├── public/data/            Current ignored location for generated web assets
+├── scripts/                Reproducible command-line entry points
+└── tests/                  Data-contract, pipeline, and provenance tests
 ```
 
-Start with [AGENTS.md](AGENTS.md) for repository rules. Scientific calculations
-live in reusable Python modules and scripts; notebooks remain presentation-only,
-and Markdown reports are the canonical interpretation surface.
+As the approved dual-track migration proceeds, new submission-specific work
+will use explicit lane directories:
+
+```text
+analysis/paper/             Paper statistics, ML, and visual-analytics analysis
+analysis/story/             Story-only descriptive and narrative-selection analysis
+scripts/paper/              Paper experiment and evaluation entry points
+scripts/story/              Story analysis and export entry points
+notebooks/paper/            Paper diagnostics and experiment views
+notebooks/story/            Story-only exploratory views
+tests/paper/                Paper protocol and evaluation tests
+tests/story/                Story analysis and export tests
+paper/                      Manuscript, final paper figures, and supplements
+context/paper/              Paper question, protocol, EDA, model, and report
+context/story/              Story brief, EDA, storyboard, and release report
+app/public/data/            Planned story-only static export location
+```
+
+Existing top-level modules, scripts, notebooks, tests, and context reports are
+the shared lane. Completed checksummed evidence remains at its recorded path;
+the migration will not move historical outputs merely for directory symmetry.
+
+Start with [AGENTS.md](AGENTS.md) for repository rules,
+[context/PROJECT.md](context/PROJECT.md) for the scientific contract,
+[context/TASKS.md](context/TASKS.md) for active work, and
+[context/HANDOVER.md](context/HANDOVER.md) for current evidence and blockers.
+
+## Local setup
+
+Requirements:
+
+- Python 3.12
+- Node.js 24.18.0
+- `uv` 0.11.26
+- npm 11.16.0
+
+```bash
+uv sync
+npm install
+```
+
+Start the current browser shell:
+
+```bash
+npm run dev
+```
+
+Run the full repository gate:
+
+```bash
+uv run ruff check .
+uv run pyright
+uv run pytest -q
+uv run python -m pipeline.provenance artifacts/provenance/source-manifest.csv
+npm run check
+```
+
+## Evidence and reporting
+
+Generated scientific data and figures are rebuilt by scripts and are not
+hand-edited. Every substantive acquisition, normalization, EDA, or experiment
+must record results, interpretation, limitations, decisions, and next steps in
+a Markdown report. Portable run bundles and machine-readable metrics provide
+the calculation evidence; Markdown is the canonical handoff and review surface.
 
 ## Safety and interpretation
 
-This project is retrospective research and visual communication. It must not be
-used for real-time tsunami detection, forecasting, evacuation, or emergency
-decision-making. Follow official local authorities for current warnings.
+This project is retrospective research and visual communication, not an
+operational warning system. Modeled arrival, observed first deviation, maximum
+wave, bulletin issue, public alert, and evacuation times remain separate
+concepts. Rupture-to-arrival duration is not called “actionable warning time”
+without evidence for the alert or warning-system timestamps being compared.
+
+For current tsunami information, follow official local authorities and warning
+centers.
 
 ## License
 
 No repository license has been selected. Do not assume reuse rights for project
-code, narrative, or derived assets until the owner records that decision.
+code, narrative, or derived assets. Each input source retains its own terms and
+attribution requirements; see the source manifest and acquisition report before
+redistributing data or derivatives.

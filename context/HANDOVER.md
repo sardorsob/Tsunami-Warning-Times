@@ -326,6 +326,24 @@ Vitest run, and production build passed. A diff scan found no copied email
 address, Gmail URL, thread/message identifier, or full private message body in
 the new repository record.
 
+## README documentation checkpoint
+
+On 2026-09-13, `README.md` was expanded around the three requested onboarding
+surfaces: the source-contract-first dataset gathering process, the current and
+planned repository structure, and the originality-preserving split between the
+Conference Paper and Visual Data Story. Its organization takes structural
+inspiration from the sibling GeoCrop project README without importing that
+project's claims or implementation details.
+
+Fresh README verification reconciled 17 approved and 1 blocked source contract,
+1 event, 10 stations (6 coastal and 4 DART), 143,655 observations, 4,380 TTT
+contour parts, 62,988 vertices, and 107 rejected records against the tracked
+manifest and accepted normalized build. All linked repository files exist,
+Markdown fences are balanced, and `git diff --check` passed. The full gate also
+passed: Ruff; Pyright with 0 errors and 0 warnings; 93 Pytest tests; 18 validated
+provenance records; and the frontend typecheck, Vitest run, and production
+build.
+
 ## Risks and blockers
 
 - The continuous/raw Tōhoku model field and unshifted MOST series are unverified.
