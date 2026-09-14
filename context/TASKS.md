@@ -445,8 +445,9 @@
   the Stage A/T-003B boundary in a scoped query
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — prepared the exact Stage A implementation, evidence,
-  adaptive-review, and handoff sequence
-- Status: in-review
+  adaptive-review, and handoff sequence; 2026-09-14 — project owner authorized
+  inline execution with review after each task commit
+- Status: done
 
 ## T-003 — Run adaptive visual-story EDA and make the static comparison
 
@@ -478,10 +479,13 @@
   gate, and Graphify update
 - Manual QA: full-size and thumbnail review, grayscale and color-vision checks,
   source-value traces, and paper/story overlap audit
-- Evidence: detailed subtasks and current state live in `context/story/TASKS.md`
-- Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Evidence: detailed subtasks and current state live in `context/story/TASKS.md`;
+  Task 1 resolved the two exact static visualization dependencies and passed its
+  focused dependency and strict-type gates
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-14 — Stage A inline execution began at the approved
+  dependency boundary
+- Status: in-progress
 
 ## T-004 — Test the wavefront mechanism
 

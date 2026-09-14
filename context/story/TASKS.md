@@ -62,8 +62,9 @@
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — decomposed Stage A into dependency, source,
   missingness, geometry, four plot, evidence-runner, notebook, and reviewed-run
-  commits with explicit scientific stop conditions
-- Status: in-review
+  commits with explicit scientific stop conditions; 2026-09-14 — project owner
+  authorized inline execution with review after each task commit
+- Status: done
 
 ## T-003A — Build the preliminary diagnostic atlas
 
@@ -90,10 +91,13 @@
   repository gate, and Graphify update
 - Manual QA: inspect every figure at full and thumbnail size, grayscale, and
   common color-vision simulations; trace three displayed values
-- Evidence: pending
-- Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Evidence: Task 1 RED failed on missing GeoPandas and `analysis`; GREEN resolved
+  exactly GeoPandas 1.1.4 and Matplotlib 3.11.2, passed 2 focused tests, and
+  reported zero Pyright errors
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
+  pinned static geospatial dependency boundary
+- Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison
 

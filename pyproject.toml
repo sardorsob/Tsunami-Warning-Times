@@ -8,7 +8,9 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+  "geopandas==1.1.4",
   "marimo==0.24.0",
+  "matplotlib==3.11.2",
   "mlflow-skinny==3.16.0",
   "pyright==1.1.411",
   "pytest==9.1.1",
@@ -28,7 +30,7 @@ target-version = "py312"
 select = ["B", "E", "F", "I", "UP"]
 
 [tool.pyright]
-include = ["pipeline", "scripts", "tests"]
+include = ["analysis", "pipeline", "scripts", "tests"]
 exclude = ["data", "artifacts", "public"]
 pythonVersion = "3.12"
 typeCheckingMode = "strict"

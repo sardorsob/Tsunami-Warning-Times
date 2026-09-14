@@ -98,4 +98,5 @@ observed-arrival comparisons and station promotion remain blocked until T-002E
 publishes a reviewed shared release. The current distance-versus-arrival thesis
 is falsifiable and may be replaced by a stronger supported story. The project
 owner accepted the written design on 2026-09-14; T-003I now holds the exact Stage
-A implementation plan and awaits an execution-strategy choice.
+A implementation plan. The owner selected inline, task-by-task execution on
+`main`; T-003A is active and each task is committed only after its focused gate.

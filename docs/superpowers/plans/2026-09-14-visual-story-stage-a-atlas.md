@@ -100,7 +100,7 @@
 - Consumes: Python `>=3.12,<3.14` and the existing `dev` dependency group.
 - Produces: importable `analysis.story`; exact GeoPandas 1.1.4 and Matplotlib 3.11.2 dependencies; strict type checking over `analysis`.
 
-- [ ] **Step 1: Write the failing dependency test**
+- [x] **Step 1: Write the failing dependency test**
 
 ```python
 from importlib.metadata import version
@@ -117,13 +117,13 @@ def test_story_analysis_namespace_imports() -> None:
     assert analysis.story.__doc__ == "Story-only descriptive analysis."
 ```
 
-- [ ] **Step 2: Run the test and observe the missing dependency/package failure**
+- [x] **Step 2: Run the test and observe the missing dependency/package failure**
 
 Run: `uv run pytest tests/story/test_dependencies.py -q`
 
 Expected: FAIL because the story analysis package and geospatial dependencies do not exist.
 
-- [ ] **Step 3: Add the package markers and exact dependencies**
+- [x] **Step 3: Add the package markers and exact dependencies**
 
 `analysis/__init__.py`:
 
@@ -149,7 +149,7 @@ Change the Pyright include list to:
 include = ["analysis", "pipeline", "scripts", "tests"]
 ```
 
-- [ ] **Step 4: Verify the environment and lockfile**
+- [x] **Step 4: Verify the environment and lockfile**
 
 Run:
 
@@ -161,7 +161,7 @@ uv run pyright
 
 Expected: lock check succeeds, 2 tests pass, and Pyright reports zero errors.
 
-- [ ] **Step 5: Commit the dependency boundary**
+- [x] **Step 5: Commit the dependency boundary**
 
 ```bash
 git add analysis/__init__.py analysis/story/__init__.py tests/story/test_dependencies.py pyproject.toml uv.lock

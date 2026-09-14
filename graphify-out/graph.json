@@ -82,6 +82,19 @@
       "source_location": "L20"
     },
     {
+      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects",
+      "label": "RejectAuthenticatedRedirects",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": "rejectauthenticatedredirects",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L56"
+    },
+    {
       "id": "pipeline_normalize_buildresult",
       "label": "BuildResult",
       "_callable": true,
@@ -275,19 +288,6 @@
       "norm_label": "projectstatus",
       "source_file": "app/src/project.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects",
-      "label": "RejectAuthenticatedRedirects",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 61,
-      "community_name": "RejectAuthenticatedRedirects",
-      "file_type": "code",
-      "norm_label": "rejectauthenticatedredirects",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L56"
     },
     {
       "id": "pipeline_provenance_main",
@@ -660,6 +660,18 @@
       "norm_label": "read_ioc_api_key()",
       "source_file": "scripts/acquire_tohoku.py",
       "source_location": "L71"
+    },
+    {
+      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
+      "label": ".redirect_request()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": ".redirect_request()",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L59"
     },
     {
       "id": "scripts_acquire_tohoku_result_record",
@@ -2426,16 +2438,28 @@
       "source_location": "L19"
     },
     {
-      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
-      "label": ".redirect_request()",
+      "id": "tests_story_test_dependencies_test_static_story_geospatial_dependencies_are_exact",
+      "label": "test_static_story_geospatial_dependencies_are_exact()",
       "_callable": true,
       "_origin": "ast",
       "community": 61,
-      "community_name": "RejectAuthenticatedRedirects",
+      "community_name": "test_dependencies.py",
       "file_type": "code",
-      "norm_label": ".redirect_request()",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L59"
+      "norm_label": "test_static_story_geospatial_dependencies_are_exact()",
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "tests_story_test_dependencies_test_story_analysis_namespace_imports",
+      "label": "test_story_analysis_namespace_imports()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "test_dependencies.py",
+      "file_type": "code",
+      "norm_label": "test_story_analysis_namespace_imports()",
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L9"
     },
     {
       "id": "app_tsconfig",
@@ -2912,7 +2936,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L405"
+      "source_location": "L406"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2960,7 +2984,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L432"
+      "source_location": "L433"
     },
     {
       "id": "context_handover_handover",
@@ -3008,7 +3032,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L424"
+      "source_location": "L425"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -3020,7 +3044,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L389"
+      "source_location": "L390"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -4016,7 +4040,7 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 run adaptive visual-story eda and make the static comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L451"
+      "source_location": "L452"
     },
     {
       "id": "context_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
@@ -4052,7 +4076,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L486"
+      "source_location": "L490"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -4064,7 +4088,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L510"
+      "source_location": "L514"
     },
     {
       "id": "context_tasks_tasks",
@@ -4088,7 +4112,7 @@
       "node_kind": "heading",
       "norm_label": "x-001 \u2014 close the dual-track compatibility follow-up",
       "source_file": "context/TASKS.md",
-      "source_location": "L535"
+      "source_location": "L539"
     },
     {
       "id": "context_validation_plan",
@@ -5294,6 +5318,17 @@
       "source_location": "L1"
     },
     {
+      "id": "httpredirecthandler",
+      "label": "HTTPRedirectHandler",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": "httpredirecthandler",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "monkeypatch",
       "label": "MonkeyPatch",
       "_origin": "ast",
@@ -5356,6 +5391,17 @@
       "community_name": "test_acquisition.py",
       "file_type": "code",
       "norm_label": "pureposixpath",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "request",
+      "label": "Request",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "code",
+      "norm_label": "request",
       "source_file": "",
       "source_location": ""
     },
@@ -5644,6 +5690,17 @@
       "norm_label": "run the source-independent acquisition command.",
       "source_file": "scripts/acquire_tohoku.py",
       "source_location": "L358"
+    },
+    {
+      "id": "scripts_acquire_tohoku_rationale_57",
+      "label": "Prevent an authenticated request from forwarding its API key.",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "test_acquisition.py",
+      "file_type": "rationale",
+      "norm_label": "prevent an authenticated request from forwarding its api key.",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L57"
     },
     {
       "id": "scripts_acquire_tohoku_rationale_72",
@@ -8834,7 +8891,7 @@
       "node_kind": "heading",
       "norm_label": "t-003a \u2014 build the preliminary diagnostic atlas",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L68"
+      "source_location": "L69"
     },
     {
       "id": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
@@ -8846,7 +8903,7 @@
       "node_kind": "heading",
       "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L98"
+      "source_location": "L102"
     },
     {
       "id": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
@@ -9135,46 +9192,68 @@
       "source_location": "L1"
     },
     {
-      "id": "httpredirecthandler",
-      "label": "HTTPRedirectHandler",
+      "id": "tests_story_test_dependencies",
+      "label": "test_dependencies.py",
       "_origin": "ast",
       "community": 61,
-      "community_name": "RejectAuthenticatedRedirects",
+      "community_name": "test_dependencies.py",
       "file_type": "code",
-      "norm_label": "httpredirecthandler",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "test_dependencies.py",
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L1"
     },
     {
-      "id": "request",
-      "label": "Request",
+      "id": "analysis_init",
+      "label": "analysis/__init__.py",
       "_origin": "ast",
-      "community": 61,
-      "community_name": "RejectAuthenticatedRedirects",
+      "community": 62,
+      "community_name": "analysis/__init__.py",
       "file_type": "code",
-      "norm_label": "request",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "analysis/__init__.py",
+      "source_file": "analysis/__init__.py",
+      "source_location": "L1"
     },
     {
-      "id": "scripts_acquire_tohoku_rationale_57",
-      "label": "Prevent an authenticated request from forwarding its API key.",
+      "id": "analysis_init_rationale_1",
+      "label": "Submission-specific analysis packages.",
       "_origin": "ast",
-      "community": 61,
-      "community_name": "RejectAuthenticatedRedirects",
+      "community": 62,
+      "community_name": "analysis/__init__.py",
       "file_type": "rationale",
-      "norm_label": "prevent an authenticated request from forwarding its api key.",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L57"
+      "norm_label": "submission-specific analysis packages.",
+      "source_file": "analysis/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_init",
+      "label": "story/__init__.py",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "story/__init__.py",
+      "source_file": "analysis/story/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_init_rationale_1",
+      "label": "Story-only descriptive analysis.",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "story-only descriptive analysis.",
+      "source_file": "analysis/story/__init__.py",
+      "source_location": "L1"
     },
     {
       "id": "pipeline_init",
-      "label": "__init__.py",
+      "label": "pipeline/__init__.py",
       "_origin": "ast",
       "community": 7,
       "community_name": "__init__.py",
       "file_type": "code",
-      "norm_label": "__init__.py",
+      "norm_label": "pipeline/__init__.py",
       "source_file": "pipeline/__init__.py",
       "source_location": "L1"
     },
@@ -17985,7 +18064,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L389",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -17996,7 +18075,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L405",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -18007,7 +18086,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L424",
+      "source_location": "L425",
       "weight": 1.0
     },
     {
@@ -18018,7 +18097,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L432",
+      "source_location": "L433",
       "weight": 1.0
     },
     {
@@ -18617,6 +18696,17 @@
     },
     {
       "source": "context_story_tasks_visual_story_tasks",
+      "target": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks_visual_story_tasks",
       "target": "context_story_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
       "relation": "contains",
       "_origin": "ast",
@@ -18645,18 +18735,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L68",
-      "weight": 1.0
-    },
-    {
-      "source": "context_story_tasks_visual_story_tasks",
-      "target": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/story/TASKS.md",
-      "source_location": "L98",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -18799,7 +18878,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L451",
+      "source_location": "L452",
       "weight": 1.0
     },
     {
@@ -18810,7 +18889,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L486",
+      "source_location": "L490",
       "weight": 1.0
     },
     {
@@ -18821,7 +18900,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L510",
+      "source_location": "L514",
       "weight": 1.0
     },
     {
@@ -18832,7 +18911,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L535",
+      "source_location": "L539",
       "weight": 1.0
     },
     {
@@ -21729,6 +21808,28 @@
       "weight": 1.0
     },
     {
+      "source": "tests_story_test_dependencies",
+      "target": "tests_story_test_dependencies_test_static_story_geospatial_dependencies_are_exact",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_dependencies",
+      "target": "tests_story_test_dependencies_test_story_analysis_namespace_imports",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "tests_test_acquisition",
       "target": "tests_test_acquisition_test_working_tree_status_ignores_only_generated_run_bundles",
       "relation": "contains",
@@ -22793,6 +22894,28 @@
       "confidence_score": 1.0,
       "source_file": "scripts/acquire_tohoku.py",
       "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_init_rationale_1",
+      "target": "analysis_init",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_init_rationale_1",
+      "target": "analysis_story_init",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/__init__.py",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -24097,5 +24220,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "335948dc8d7362f7a56b4541a1278699f7fae0f9"
+  "built_at_commit": "756c49632acf8061bca07f3305d15c8445c2c421"
 }
