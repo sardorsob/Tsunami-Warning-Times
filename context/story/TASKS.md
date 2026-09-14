@@ -103,13 +103,19 @@
   sidecar are ignored. Task 3 RED failed on the missing timeline records; GREEN
   passed all 6 missingness tests plus Ruff and strict Pyright. The public timeline
   preserves observed, source-blank, absent-timestamp, and off-grid states without
-  snapping, and the existing generated missingness artifacts were unchanged
+  snapping, and the existing generated missingness artifacts were unchanged.
+  Task 4 RED failed on the absent atlas module; GREEN passed 6 atlas tests, Ruff,
+  and strict Pyright. A direct load of the accepted build validated the reviewed
+  event, 10 stations, 143,655 observations, 4,380 contour parts, and all 6
+  coastal windows without inferred source semantics
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
   acquisition and offline checksum rerun passed with source precision preserved;
   2026-09-14 — exposed exact-grid coverage states by reusing the shared CSV and
-  UTC validators without changing the existing missingness writer
+  UTC validators without changing the existing missingness writer; 2026-09-14 —
+  added immutable source-preserving atlas records, strict Stage A scope checks,
+  interpolated Pacific seam splits, and WGS84 distance rings
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

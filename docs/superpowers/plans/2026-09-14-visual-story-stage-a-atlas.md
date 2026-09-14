@@ -565,7 +565,7 @@ git commit -m "feat(eda): expose coastal coverage timelines"
   `load_atlas_config`, `validate_stage_a_scope`, `shift_longitude`,
   `split_at_display_seam`, and `geodesic_range_ring`.
 
-- [ ] **Step 1: Write failing loader and geometry tests**
+- [x] **Step 1: Write failing loader and geometry tests**
 
 In `tests/story/test_atlas.py`, create a local `_stage_atlas_inputs(tmp_path)`
 helper that writes one reviewed event, one DART station, one coastal station,
@@ -587,7 +587,10 @@ def test_atlas_loader_preserves_source_semantics(tmp_path: Path) -> None:
 
 def test_pacific_shift_splits_a_line_at_the_twenty_degree_seam() -> None:
     parts = split_at_display_seam(((-10.0, 0.0), (30.0, 0.0)))
-    assert parts == (((-10.0, 0.0),), ((-330.0, 0.0),))
+    assert parts == (
+        ((-10.0, 0.0), (20.0, 0.0)),
+        ((-340.0, 0.0), (-330.0, 0.0)),
+    )
 
 
 def test_geodesic_range_ring_uses_kilometres_without_a_speed_model() -> None:
@@ -603,13 +606,13 @@ Use a second seam test containing at least two coordinates on each side so the
 production function rejects one-coordinate output segments rather than creating
 invalid `LineString` objects.
 
-- [ ] **Step 2: Run the tests and observe the missing module**
+- [x] **Step 2: Run the tests and observe the missing module**
 
 Run: `uv run pytest tests/story/test_atlas.py -q`
 
 Expected: FAIL because `analysis.story.atlas` does not exist.
 
-- [ ] **Step 3: Define the exact immutable records**
+- [x] **Step 3: Define the exact immutable records**
 
 Create these public records in `analysis/story/atlas.py`:
 
@@ -639,6 +642,7 @@ class StationRecord:
 @dataclass(frozen=True, slots=True)
 class ObservationRecord:
     station_id: str
+    source_time: str
     observed_at_utc: datetime
     raw_value: float | None
     residual_value: float | None
@@ -652,7 +656,9 @@ class ContourRecord:
     hours: float
     coordinates: tuple[tuple[float, float], ...]
     crs: str
+    coordinate_order: str
     longitude_boundary_precision: bool
+    crosses_antimeridian: bool
 
 
 @dataclass(frozen=True, slots=True)
@@ -668,6 +674,7 @@ class AtlasInputs:
 
 @dataclass(frozen=True, slots=True)
 class AtlasConfig:
+    event_id: str
     evidence_state: str
     display_crs: str
     central_meridian: float
@@ -686,7 +693,7 @@ station/timestamps, non-EPSG:4326 contours, fewer than two contour coordinates,
 and longitude beyond `180 + 1e-6`. Permit a value slightly over +180 only when
 `longitude_boundary_precision` is true.
 
-- [ ] **Step 4: Add the reviewed Stage A configuration**
+- [x] **Step 4: Add the reviewed Stage A configuration**
 
 Create `config/story-atlas.toml`:
 
@@ -714,7 +721,7 @@ reference in observations, and the configured event ID. Unit tests use a local
 fixture config with one DART and one coastal ID; the real config is what enforces
 the approved four-plus-six scope.
 
-- [ ] **Step 5: Implement seam handling and geodesic rings**
+- [x] **Step 5: Implement seam handling and geodesic rings**
 
 Use:
 
@@ -753,11 +760,15 @@ def geodesic_range_ring(
     return tuple(coordinates)
 ```
 
-The plotting conversion discards seam-split parts with fewer than two
-coordinates and records the discard count; the pure split function preserves
-the source-derived pieces for accounting.
+When a segment crosses the 20°E/-340° display seam, interpolate its seam
+intersection, close the current part at 20°E or -340°, and open the next part at
+the equivalent opposite boundary. Every returned part therefore remains a valid
+line with at least two coordinates; record any rejected degenerate source input
+instead of discarding a generated one-coordinate fragment. Preserve
+`source_time`, contour coordinate order, and the publisher antimeridian flag in
+the typed records even though Stage A aligns only on verified UTC.
 
-- [ ] **Step 6: Run focused and type checks**
+- [x] **Step 6: Run focused and type checks**
 
 Run:
 
@@ -769,7 +780,7 @@ uv run pyright
 
 Expected: focused tests pass and strict type checking is clean.
 
-- [ ] **Step 7: Commit the atlas core**
+- [x] **Step 7: Commit the atlas core**
 
 ```bash
 git add analysis/story/atlas.py analysis/story/__init__.py config/story-atlas.toml tests/story/test_atlas.py

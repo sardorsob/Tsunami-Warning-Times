@@ -7,8 +7,9 @@ The project owner authorized inline, task-by-task execution on `main`. T-003A is
 active: Tasks 1–2 added the approved pinned static stack and a separately
 governed Natural Earth coastline context. Task 3 now exposes shared exact-grid
 coverage positions and off-grid samples without snapping or changing existing
-missingness outputs. No story figure, claim, or app export exists yet; the NCTR
-field remains blocked.
+missingness outputs. Task 4 adds typed, source-preserving inputs, exact reviewed
+scope validation, Pacific seam interpolation, and geodesic range rings. No story
+figure, claim, or app export exists yet; the NCTR field remains blocked.
 
 ## Question
 

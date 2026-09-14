@@ -1,0 +1,12 @@
+schema_version = "1"
+event_id = "official20110311054624120_30"
+evidence_state = "preliminary_storyboard_evidence"
+display_crs = "+proj=eqearth +lon_0=-160 +datum=WGS84 +units=m +no_defs +type=crs"
+central_meridian = -160.0
+start_hours = -6.0
+end_hours = 30.0
+highlighted_contour_hours = [1, 3, 6, 9, 12, 15, 18, 21, 24]
+range_radii_km = [2500, 5000, 7500, 10000, 12500, 15000]
+dart_station_ids = ["21413", "21418", "32401", "46411"]
+coastal_station_ids = ["1617760", "1770000", "9419750", "9461380", "saip", "valp"]
+figure_dpi = 160
