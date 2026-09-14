@@ -33,7 +33,9 @@ same thing as actionable public warning time.
   so projection, antimeridian handling, NoData, comparability, visual hierarchy,
   and accessibility are part of the analytical contract rather than late-stage
   styling. `marimo-notebook` keeps the future notebook a thin view over tested
-  modules and generated artifacts.
+  modules and generated artifacts. `superpowers:writing-plans` converts the
+  accepted T-003P design into T-003I's exact test-first execution and commit
+  sequence before implementation begins.
 
 ## Decision and lane
 
@@ -94,4 +96,6 @@ T-003P defines a small fixed diagnostic atlas with evidence-triggered branches.
 The accepted T-002C2 build may support preliminary storyboard evidence, while
 observed-arrival comparisons and station promotion remain blocked until T-002E
 publishes a reviewed shared release. The current distance-versus-arrival thesis
-is falsifiable and may be replaced by a stronger supported story.
+is falsifiable and may be replaced by a stronger supported story. The project
+owner accepted the written design on 2026-09-14; T-003I now holds the exact Stage
+A implementation plan and awaits an execution-strategy choice.

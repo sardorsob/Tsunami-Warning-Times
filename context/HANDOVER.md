@@ -356,9 +356,12 @@ The written design is
 `docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md`. New
 lane context under `context/story/` separates the story question, task ledger,
 EDA decision report, and storyboard promotion state from shared and paper work.
-T-003P is in review until the project owner reviews the written specification.
-No plotting dependency, analysis code, figure, data download, story claim, or app
-export was added in this planning checkpoint.
+The project owner accepted the written specification on 2026-09-14, closing
+T-003P. The executable Stage A plan is
+`docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md`; T-003I is in
+review until the owner chooses its task-by-task execution approach. No plotting
+dependency, analysis code, figure, data download, story claim, or app export was
+added in this planning checkpoint.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -372,6 +375,16 @@ warnings; 93 Pytest tests; 18 validated provenance records; frontend typecheck,
 Vitest, and production build; and `git diff --check`. Graphify rebuilt the
 repository graph to 760 nodes, 1,279 edges, and 60 communities so the new design
 and story context are discoverable. No large data or external service was used.
+
+After written-design acceptance, the implementation-planning checkpoint passed
+the same full gate: Ruff; Pyright with 0 errors and 0 warnings; 93 Pytest tests;
+18 validated provenance records; frontend typecheck, Vitest, and production
+build; placeholder/type-consistency review; and `git diff --check`. Graphify
+then refreshed to 781 nodes, 1,299 edges, and 62 communities; a scoped query
+returned the Stage A plan, evidence states, fixed/adaptive contracts, and T-003B
+gate. The plan contains 11 test-first tasks with separate commits and keeps the
+preview, reviewed decision input, canonical clean-tree run, and independent
+rebuild distinct.
 
 ## Risks and blockers
 
@@ -393,8 +406,8 @@ and story context are discoverable. No large data or external service was used.
 
 Execute the remaining approved implementation chain in order:
 
-1. Review the written T-003P visual-story EDA specification. After acceptance,
-   prepare its implementation plan before adding dependencies or code.
+1. Review the T-003I implementation plan and choose inline or delegated task-by-
+   task execution before adding dependencies or code.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
 3. Define the no-interpolation pre-arrival completeness gate, then execute
@@ -420,4 +433,5 @@ remain ignored.
 
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
-T-003P is in review; T-003 and its story subtasks have not started.
+T-003P is accepted; T-003I is in review; T-003 and its implementation subtasks
+have not started.

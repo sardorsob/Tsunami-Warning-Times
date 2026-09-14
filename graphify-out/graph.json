@@ -82,19 +82,6 @@
       "source_location": "L20"
     },
     {
-      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects",
-      "label": "RejectAuthenticatedRedirects",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "test_acquisition.py",
-      "file_type": "code",
-      "norm_label": "rejectauthenticatedredirects",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L56"
-    },
-    {
       "id": "pipeline_normalize_buildresult",
       "label": "BuildResult",
       "_callable": true,
@@ -288,6 +275,19 @@
       "norm_label": "projectstatus",
       "source_file": "app/src/project.ts",
       "source_location": "L3"
+    },
+    {
+      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects",
+      "label": "RejectAuthenticatedRedirects",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "RejectAuthenticatedRedirects",
+      "file_type": "code",
+      "norm_label": "rejectauthenticatedredirects",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L56"
     },
     {
       "id": "pipeline_provenance_main",
@@ -660,18 +660,6 @@
       "norm_label": "read_ioc_api_key()",
       "source_file": "scripts/acquire_tohoku.py",
       "source_location": "L71"
-    },
-    {
-      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
-      "label": ".redirect_request()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "test_acquisition.py",
-      "file_type": "code",
-      "norm_label": ".redirect_request()",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L59"
     },
     {
       "id": "scripts_acquire_tohoku_result_record",
@@ -2438,6 +2426,18 @@
       "source_location": "L19"
     },
     {
+      "id": "scripts_acquire_tohoku_rejectauthenticatedredirects_redirect_request",
+      "label": ".redirect_request()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "RejectAuthenticatedRedirects",
+      "file_type": "code",
+      "norm_label": ".redirect_request()",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L59"
+    },
+    {
       "id": "app_tsconfig",
       "label": "tsconfig.json",
       "_origin": "ast",
@@ -2912,7 +2912,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L386"
+      "source_location": "L405"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -2960,7 +2960,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L413"
+      "source_location": "L432"
     },
     {
       "id": "context_handover_handover",
@@ -3008,7 +3008,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L405"
+      "source_location": "L424"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -3020,7 +3020,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L370"
+      "source_location": "L389"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -4016,7 +4016,19 @@
       "node_kind": "heading",
       "norm_label": "t-003 \u2014 run adaptive visual-story eda and make the static comparison",
       "source_file": "context/TASKS.md",
-      "source_location": "L417"
+      "source_location": "L451"
+    },
+    {
+      "id": "context_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
+      "label": "T-003I \u2014 Plan the Stage A diagnostic atlas implementation",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003i \u2014 plan the stage a diagnostic atlas implementation",
+      "source_file": "context/TASKS.md",
+      "source_location": "L418"
     },
     {
       "id": "context_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
@@ -4040,7 +4052,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L452"
+      "source_location": "L486"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -4052,7 +4064,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L476"
+      "source_location": "L510"
     },
     {
       "id": "context_tasks_tasks",
@@ -4076,7 +4088,7 @@
       "node_kind": "heading",
       "norm_label": "x-001 \u2014 close the dual-track compatibility follow-up",
       "source_file": "context/TASKS.md",
-      "source_location": "L501"
+      "source_location": "L535"
     },
     {
       "id": "context_validation_plan",
@@ -5282,17 +5294,6 @@
       "source_location": "L1"
     },
     {
-      "id": "httpredirecthandler",
-      "label": "HTTPRedirectHandler",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "test_acquisition.py",
-      "file_type": "code",
-      "norm_label": "httpredirecthandler",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "monkeypatch",
       "label": "MonkeyPatch",
       "_origin": "ast",
@@ -5355,17 +5356,6 @@
       "community_name": "test_acquisition.py",
       "file_type": "code",
       "norm_label": "pureposixpath",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "request",
-      "label": "Request",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "test_acquisition.py",
-      "file_type": "code",
-      "norm_label": "request",
       "source_file": "",
       "source_location": ""
     },
@@ -5654,17 +5644,6 @@
       "norm_label": "run the source-independent acquisition command.",
       "source_file": "scripts/acquire_tohoku.py",
       "source_location": "L358"
-    },
-    {
-      "id": "scripts_acquire_tohoku_rationale_57",
-      "label": "Prevent an authenticated request from forwarding its API key.",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "test_acquisition.py",
-      "file_type": "rationale",
-      "norm_label": "prevent an authenticated request from forwarding its api key.",
-      "source_file": "scripts/acquire_tohoku.py",
-      "source_location": "L57"
     },
     {
       "id": "scripts_acquire_tohoku_rationale_72",
@@ -7650,7 +7629,7 @@
       "node_kind": "heading",
       "norm_label": "consequential unknowns",
       "source_file": "context/PROJECT.md",
-      "source_location": "L75"
+      "source_location": "L77"
     },
     {
       "id": "context_project_current_visual_story_planning_deliverable",
@@ -7662,7 +7641,7 @@
       "node_kind": "heading",
       "norm_label": "current visual-story planning deliverable",
       "source_file": "context/PROJECT.md",
-      "source_location": "L91"
+      "source_location": "L93"
     },
     {
       "id": "context_project_decision_and_lane",
@@ -7674,7 +7653,7 @@
       "node_kind": "heading",
       "norm_label": "decision and lane",
       "source_file": "context/PROJECT.md",
-      "source_location": "L38"
+      "source_location": "L40"
     },
     {
       "id": "context_project_in_scope_for_the_first_complete_version",
@@ -7686,7 +7665,7 @@
       "node_kind": "heading",
       "norm_label": "in scope for the first complete version",
       "source_file": "context/PROJECT.md",
-      "source_location": "L56"
+      "source_location": "L58"
     },
     {
       "id": "context_project_objective",
@@ -7710,7 +7689,7 @@
       "node_kind": "heading",
       "norm_label": "out of scope until separately approved",
       "source_file": "context/PROJECT.md",
-      "source_location": "L68"
+      "source_location": "L70"
     },
     {
       "id": "context_project_project_contract",
@@ -7734,7 +7713,7 @@
       "node_kind": "heading",
       "norm_label": "smallest useful deliverable",
       "source_file": "context/PROJECT.md",
-      "source_location": "L82"
+      "source_location": "L84"
     },
     {
       "id": "context_project_workflow_contract",
@@ -8255,7 +8234,7 @@
       "node_kind": "heading",
       "norm_label": "adaptive decision ledger",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L163"
+      "source_location": "L165"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approaches_considered",
@@ -8267,7 +8246,7 @@
       "node_kind": "heading",
       "norm_label": "approaches considered",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L34"
+      "source_location": "L36"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approved_choices",
@@ -8279,7 +8258,7 @@
       "node_kind": "heading",
       "norm_label": "approved choices",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L19"
+      "source_location": "L21"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_architecture_and_ownership",
@@ -8291,7 +8270,7 @@
       "node_kind": "heading",
       "norm_label": "architecture and ownership",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L74"
+      "source_location": "L76"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_artifact_contract",
@@ -8303,7 +8282,7 @@
       "node_kind": "heading",
       "norm_label": "artifact contract",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L191"
+      "source_location": "L193"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_color_and_accessibility",
@@ -8315,7 +8294,7 @@
       "node_kind": "heading",
       "norm_label": "color and accessibility",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L154"
+      "source_location": "L156"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_dependency_contract",
@@ -8327,7 +8306,7 @@
       "node_kind": "heading",
       "norm_label": "dependency contract",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L231"
+      "source_location": "L233"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_evidence_boundary",
@@ -8339,7 +8318,7 @@
       "node_kind": "heading",
       "norm_label": "evidence boundary",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L54"
+      "source_location": "L56"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_diagnostic_atlas_with_adaptive_branches_selected",
@@ -8351,7 +8330,7 @@
       "node_kind": "heading",
       "norm_label": "fixed diagnostic atlas with adaptive branches \u2014 selected",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L36"
+      "source_location": "L38"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_fixed_visual_contracts",
@@ -8363,7 +8342,7 @@
       "node_kind": "heading",
       "norm_label": "fixed visual contracts",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L130"
+      "source_location": "L132"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_hypothesis_first_storyboard",
@@ -8375,7 +8354,7 @@
       "node_kind": "heading",
       "norm_label": "hypothesis-first storyboard",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L42"
+      "source_location": "L44"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_marimo_contract",
@@ -8387,7 +8366,7 @@
       "node_kind": "heading",
       "norm_label": "marimo contract",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L223"
+      "source_location": "L225"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_open_ended_notebook_exploration",
@@ -8399,7 +8378,7 @@
       "node_kind": "heading",
       "norm_label": "open-ended notebook exploration",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L48"
+      "source_location": "L50"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_outcome",
@@ -8411,7 +8390,7 @@
       "node_kind": "heading",
       "norm_label": "outcome",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L7"
+      "source_location": "L9"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_pacific_map",
@@ -8423,7 +8402,7 @@
       "node_kind": "heading",
       "norm_label": "pacific map",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L132"
+      "source_location": "L134"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_a_preliminary_diagnostic_atlas",
@@ -8435,7 +8414,7 @@
       "node_kind": "heading",
       "norm_label": "stage a \u2014 preliminary diagnostic atlas",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L99"
+      "source_location": "L101"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_b_reviewed_arrival_comparison",
@@ -8447,7 +8426,7 @@
       "node_kind": "heading",
       "norm_label": "stage b \u2014 reviewed arrival comparison",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L118"
+      "source_location": "L120"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_task_and_commit_boundaries",
@@ -8459,7 +8438,7 @@
       "node_kind": "heading",
       "norm_label": "task and commit boundaries",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L260"
+      "source_location": "L262"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_time_series_and_coverage_views",
@@ -8471,7 +8450,7 @@
       "node_kind": "heading",
       "norm_label": "time-series and coverage views",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L145"
+      "source_location": "L147"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
@@ -8483,7 +8462,7 @@
       "node_kind": "heading",
       "norm_label": "two-stage execution",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L97"
+      "source_location": "L99"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_verification",
@@ -8495,7 +8474,7 @@
       "node_kind": "heading",
       "norm_label": "verification",
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L243"
+      "source_location": "L245"
     },
     {
       "id": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
@@ -8627,7 +8606,7 @@
       "node_kind": "heading",
       "norm_label": "contribution boundary",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "context_story_project_evidence_states",
@@ -8639,7 +8618,7 @@
       "node_kind": "heading",
       "norm_label": "evidence states",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "context_story_project_first_deliverable",
@@ -8651,7 +8630,7 @@
       "node_kind": "heading",
       "norm_label": "first deliverable",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "context_story_project_governing_design",
@@ -8663,7 +8642,7 @@
       "node_kind": "heading",
       "norm_label": "governing design",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "context_story_project_question",
@@ -8675,7 +8654,7 @@
       "node_kind": "heading",
       "norm_label": "question",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "context_story_project_status",
@@ -8723,7 +8702,7 @@
       "node_kind": "heading",
       "norm_label": "current evidence boundary",
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "context_story_eda_report_next_action",
@@ -8735,7 +8714,7 @@
       "node_kind": "heading",
       "norm_label": "next action",
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "context_story_eda_report_reporting_contract",
@@ -8747,7 +8726,7 @@
       "node_kind": "heading",
       "norm_label": "reporting contract",
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "context_story_eda_report_status",
@@ -8855,7 +8834,7 @@
       "node_kind": "heading",
       "norm_label": "t-003a \u2014 build the preliminary diagnostic atlas",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L31"
+      "source_location": "L68"
     },
     {
       "id": "context_story_tasks_t_003b_complete_the_reviewed_arrival_comparison",
@@ -8867,7 +8846,19 @@
       "node_kind": "heading",
       "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L61"
+      "source_location": "L98"
+    },
+    {
+      "id": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
+      "label": "T-003I \u2014 Plan the Stage A diagnostic atlas implementation",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "Visual Story Tasks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "t-003i \u2014 plan the stage a diagnostic atlas implementation",
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L32"
     },
     {
       "id": "context_story_tasks_t_003p_approve_the_adaptive_visual_story_eda_design",
@@ -8914,6 +8905,267 @@
       "norm_label": "requiredoutputs",
       "source_file": "app/scripts/check-build.mjs",
       "source_location": "L3"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas",
+      "label": "2026-09-14-visual-story-stage-a-atlas.md",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-09-14-visual-story-stage-a-atlas.md",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_create",
+      "label": "Create",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "create",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "label": "File Structure",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "file structure",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_generated_by_the_implementation",
+      "label": "Generated by the implementation",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "generated by the implementation",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_global_constraints",
+      "label": "Global Constraints",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "global constraints",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_modify",
+      "label": "Modify",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "modify",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_stage_a_completion_gate",
+      "label": "Stage A Completion Gate",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "stage a completion gate",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1547"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_10_add_the_thin_marimo_atlas_viewer",
+      "label": "Task 10: Add the thin Marimo atlas viewer",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 10: add the thin marimo atlas viewer",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1320"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_11_run_the_real_atlas_and_record_adaptive_findings",
+      "label": "Task 11: Run the real atlas and record adaptive findings",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 11: run the real atlas and record adaptive findings",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1394"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_1_add_the_minimal_static_geospatial_stack",
+      "label": "Task 1: Add the minimal static geospatial stack",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 1: add the minimal static geospatial stack",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L88"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_2_add_governed_pacific_coastline_context",
+      "label": "Task 2: Add governed Pacific coastline context",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 2: add governed pacific coastline context",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L171"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_3_expose_exact_grid_coverage_timelines_from_shared_missingness_logic",
+      "label": "Task 3: Expose exact-grid coverage timelines from shared missingness logic",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 3: expose exact-grid coverage timelines from shared missingness logic",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L369"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_4_implement_the_typed_atlas_input_and_pacific_geometry_core",
+      "label": "Task 4: Implement the typed atlas input and Pacific geometry core",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 4: implement the typed atlas input and pacific geometry core",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L552"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_5_render_the_pacific_evidence_map_deterministically",
+      "label": "Task 5: Render the Pacific evidence map deterministically",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 5: render the pacific evidence map deterministically",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L779"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_6_render_observation_coverage_timelines",
+      "label": "Task 6: Render observation-coverage timelines",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 6: render observation-coverage timelines",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L889"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_7_render_source_honest_station_small_multiples",
+      "label": "Task 7: Render source-honest station small multiples",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 7: render source-honest station small multiples",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L957"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_8_render_the_distance_versus_contour_shape_diagnostic",
+      "label": "Task 8: Render the distance-versus-contour shape diagnostic",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 8: render the distance-versus-contour shape diagnostic",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1046"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_9_add_the_reproducible_atlas_runner_and_evidence_bundle",
+      "label": "Task 9: Add the reproducible atlas runner and evidence bundle",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "task 9: add the reproducible atlas runner and evidence bundle",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1114"
+    },
+    {
+      "id": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_visual_story_stage_a_diagnostic_atlas_implementation_plan",
+      "label": "Visual-Story Stage A Diagnostic Atlas Implementation Plan",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "File Structure",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual-story stage a diagnostic atlas implementation plan",
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "httpredirecthandler",
+      "label": "HTTPRedirectHandler",
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "RejectAuthenticatedRedirects",
+      "file_type": "code",
+      "norm_label": "httpredirecthandler",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "request",
+      "label": "Request",
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "RejectAuthenticatedRedirects",
+      "file_type": "code",
+      "norm_label": "request",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_acquire_tohoku_rationale_57",
+      "label": "Prevent an authenticated request from forwarding its API key.",
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "RejectAuthenticatedRedirects",
+      "file_type": "rationale",
+      "norm_label": "prevent an authenticated request from forwarding its api key.",
+      "source_file": "scripts/acquire_tohoku.py",
+      "source_location": "L57"
     },
     {
       "id": "pipeline_init",
@@ -17733,7 +17985,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L370",
+      "source_location": "L389",
       "weight": 1.0
     },
     {
@@ -17744,7 +17996,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L386",
+      "source_location": "L405",
       "weight": 1.0
     },
     {
@@ -17755,7 +18007,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L405",
+      "source_location": "L424",
       "weight": 1.0
     },
     {
@@ -17766,7 +18018,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L413",
+      "source_location": "L432",
       "weight": 1.0
     },
     {
@@ -18030,7 +18282,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -18041,7 +18293,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -18052,7 +18304,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L68",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -18063,7 +18315,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L75",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -18074,7 +18326,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -18085,7 +18337,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/PROJECT.md",
-      "source_location": "L91",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -18195,7 +18447,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -18206,7 +18458,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -18228,7 +18480,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/EDA_REPORT.md",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -18244,24 +18496,24 @@
     },
     {
       "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_question",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
       "target": "context_story_project_contribution_boundary",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "context_story_project_visual_story_contract",
-      "target": "context_story_project_evidence_states",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/story/PROJECT.md",
-      "source_location": "L29",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -18277,13 +18529,24 @@
     },
     {
       "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_evidence_states",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
       "target": "context_story_project_first_deliverable",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -18294,18 +18557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L45",
-      "weight": 1.0
-    },
-    {
-      "source": "context_story_project_visual_story_contract",
-      "target": "context_story_project_question",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/story/PROJECT.md",
-      "source_location": "L9",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -18376,13 +18628,24 @@
     },
     {
       "source": "context_story_tasks_visual_story_tasks",
+      "target": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/TASKS.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_tasks_visual_story_tasks",
       "target": "context_story_tasks_t_003a_build_the_preliminary_diagnostic_atlas",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L31",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -18393,7 +18656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L61",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -18519,13 +18782,24 @@
     },
     {
       "source": "context_tasks_tasks",
+      "target": "context_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/TASKS.md",
+      "source_location": "L418",
+      "weight": 1.0
+    },
+    {
+      "source": "context_tasks_tasks",
       "target": "context_tasks_t_003_run_adaptive_visual_story_eda_and_make_the_static_comparison",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L417",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -18536,7 +18810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L452",
+      "source_location": "L486",
       "weight": 1.0
     },
     {
@@ -18547,7 +18821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L476",
+      "source_location": "L510",
       "weight": 1.0
     },
     {
@@ -18558,7 +18832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L501",
+      "source_location": "L535",
       "weight": 1.0
     },
     {
@@ -19112,6 +19386,204 @@
       "weight": 1.0
     },
     {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_visual_story_stage_a_diagnostic_atlas_implementation_plan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_8_render_the_distance_versus_contour_shape_diagnostic",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1046",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_9_add_the_reproducible_atlas_runner_and_evidence_bundle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1114",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_10_add_the_thin_marimo_atlas_viewer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1320",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_11_run_the_real_atlas_and_record_adaptive_findings",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1394",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_2_add_governed_pacific_coastline_context",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_create",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_3_expose_exact_grid_coverage_timelines_from_shared_missingness_logic",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L369",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_modify",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_4_implement_the_typed_atlas_input_and_pacific_geometry_core",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L552",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_generated_by_the_implementation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_5_render_the_pacific_evidence_map_deterministically",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L779",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_1_add_the_minimal_static_geospatial_stack",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_6_render_observation_coverage_timelines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L889",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_task_7_render_source_honest_station_small_multiples",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L957",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_visual_story_stage_a_diagnostic_atlas_implementation_plan",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_global_constraints",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_visual_story_stage_a_diagnostic_atlas_implementation_plan",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_stage_a_completion_gate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L1547",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_visual_story_stage_a_diagnostic_atlas_implementation_plan",
+      "target": "docs_superpowers_plans_2026_09_14_visual_story_stage_a_atlas_file_structure",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
       "source": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design",
       "target": "docs_superpowers_specs_2026_09_04_tohoku_data_pipeline_eda_design_t\u014dhoku_data_pipeline_and_eda_design",
       "relation": "contains",
@@ -19548,7 +20020,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -19559,7 +20031,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -19570,7 +20042,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -19581,7 +20053,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L132",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -19592,7 +20064,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L145",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -19603,18 +20075,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L154",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
-      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_b_reviewed_arrival_comparison",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L118",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -19625,7 +20086,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L99",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_two_stage_execution",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_stage_b_reviewed_arrival_comparison",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -19636,7 +20108,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L130",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -19647,18 +20119,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L163",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
-      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approved_choices",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L19",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -19669,7 +20130,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L191",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_approved_choices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -19680,7 +20152,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L223",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
@@ -19691,7 +20163,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L231",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -19702,7 +20174,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L243",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -19713,7 +20185,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L260",
+      "source_location": "L262",
       "weight": 1.0
     },
     {
@@ -19724,7 +20196,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -19735,18 +20207,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
-      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_outcome",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L7",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -19757,7 +20218,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L74",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_visual_story_adaptive_eda_design",
+      "target": "docs_superpowers_specs_2026_09_14_visual_story_adaptive_eda_design_outcome",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -19768,7 +20240,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -23625,5 +24097,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "34a05eeb37ab37ad59f4311f36d6a78e15cc8ea5"
+  "built_at_commit": "335948dc8d7362f7a56b4541a1278699f7fae0f9"
 }

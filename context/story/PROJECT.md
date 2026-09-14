@@ -2,9 +2,10 @@
 
 ## Status
 
-The adaptive EDA design was approved in conversation on 2026-09-14. The written
-specification awaits project-owner review before an implementation plan or code
-change begins.
+The project owner approved the written adaptive EDA specification on 2026-09-14.
+The Stage A implementation plan is prepared for execution-strategy review; no
+visual-story dependency, analysis code, figure, or data source has been added by
+this planning step.
 
 ## Question
 
@@ -46,4 +47,7 @@ community shortlist wait for the shared release gate.
 
 Read
 `docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md` before
-changing story EDA code, artifacts, findings, or storyboard state.
+changing story EDA code, artifacts, findings, or storyboard state. Execute Stage
+A from
+`docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md` only after the
+project owner chooses an execution approach.

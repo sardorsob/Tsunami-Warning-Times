@@ -3,9 +3,10 @@
 ## Status
 
 No story EDA run has been executed and no visual finding has been accepted.
-The design was approved in conversation on 2026-09-14; its written specification
-is awaiting project-owner review. Existing missingness results remain shared
-evidence in `context/EDA_REPORT.md` rather than being copied here.
+The project owner approved the written design on 2026-09-14, and the Stage A
+implementation plan is prepared for execution-strategy review. Existing
+missingness results remain shared evidence in `context/EDA_REPORT.md` rather
+than being copied here.
 
 ## Reporting contract
 
@@ -32,6 +33,6 @@ paths, and reviewer status.
 
 ## Next action
 
-After the project owner approves the written design, prepare the implementation
-plan for T-003A. Do not record a finding here until a script-generated artifact
-and its verification evidence exist.
+Review the Stage A implementation plan, choose its execution approach, and then
+execute it task by task. Do not record a finding here until a script-generated
+artifact and its verification evidence exist.

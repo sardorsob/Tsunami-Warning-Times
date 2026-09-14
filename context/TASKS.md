@@ -407,18 +407,52 @@
   an evidence-led pivot, and keeps implementation and unsupported claims out
 - Verification commands: link and consistency checks plus `git diff --check`
 - Manual QA: project owner reviews the written specification
-- Evidence: design approved in conversation on 2026-09-14; written specification
-  is prepared for review
+- Evidence: project owner approved the design discussion and written
+  specification on 2026-09-14; design commit `335948d`
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — approved a fixed diagnostic atlas with adaptive
-  branches and a falsifiable distance-versus-arrival candidate
+  branches and a falsifiable distance-versus-arrival candidate; 2026-09-14 —
+  project owner accepted the written specification
+- Status: done
+
+## T-003I — Plan the Stage A diagnostic atlas implementation
+
+- ID: T-003I
+- Title: Convert the approved story design into an executable Stage A plan
+- Depends on: T-003P done
+- Owner (Maker): project coordinator
+- Checker: project owner
+- Phase: story planning
+- Data refs: accepted T-002C2 build and shared missingness evidence; planned
+  governed Natural Earth coastline context
+- Scientific refs: approved story design, spatial contract, validation plan,
+  originality firewall, and D-010 through D-014
+- Statistical notes: planning only; no result or candidate selection
+- Scope: exact test-first tasks for the static geospatial stack, governed map
+  context, reusable coverage/geometry interfaces, four preliminary diagnostics,
+  run evidence, adaptive review input, and thin Marimo view
+- Artifacts to produce:
+  `docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md`
+- Acceptance criteria: the plan covers Stage A without crossing into arrival-
+  based Stage B, paper analysis, app export, or an inferred NCTR field; each
+  coherent task has verification and a commit boundary
+- Verification commands: specification-coverage, placeholder, naming, and type-
+  consistency review; `git diff --check`; repository gate; Graphify refresh
+- Manual QA: project owner chooses the task-by-task execution approach
+- Evidence: 11-task implementation plan prepared after written-design approval;
+  full repository gate passed with 93 Python tests and 18 provenance records;
+  Graphify refreshed to 781 nodes, 1,299 edges, and 62 communities and returned
+  the Stage A/T-003B boundary in a scoped query
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-14 — prepared the exact Stage A implementation, evidence,
+  adaptive-review, and handoff sequence
 - Status: in-review
 
 ## T-003 — Run adaptive visual-story EDA and make the static comparison
 
 - ID: T-003
 - Title: Discover and validate the visual-story comparison
-- Depends on: T-003P done and its implementation plan approved; T-002E promote
+- Depends on: T-003I done; T-002E promote
   required before arrival-based evidence or station promotion
 - Owner (Maker): story analysis/visualization contributor
 - Checker: scientific, cartographic, and originality reviewer

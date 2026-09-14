@@ -2,7 +2,7 @@
 
 Date: 2026-09-14
 
-Status: approved in conversation; written-spec review pending
+Status: approved by the project owner on 2026-09-14
 
 Lane: story only
 

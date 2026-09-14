@@ -208,7 +208,7 @@
 ## D-014 — Use a fixed visual audit core and let evidence redirect the story
 
 - Date: 2026-09-14
-- Status: accepted design; written-spec review pending
+- Status: accepted
 - Decision: begin visual-story EDA with a small reproducible diagnostic atlas,
   then trigger and record follow-up views from observed spatial, temporal, and
   coverage findings. Treat the distance-versus-arrival concept as falsifiable;
@@ -221,7 +221,8 @@
   wait for the frozen arrival method and T-002E release. NCEI contours are not
   represented as the unavailable continuous NCTR field. Paper-only models,
   analyses, and figures remain outside the story lane.
-- Evidence: project-owner approval in conversation on 2026-09-14 and
+- Evidence: project-owner approval of the written specification on 2026-09-14;
+  design commit `335948d`; and
   `docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md`.
 - Revisit when: T-003A review finds the fixed core insufficient, T-002E changes
   the usable evidence set, or the story/paper originality boundary changes.

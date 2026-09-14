@@ -21,18 +21,55 @@
 - Verification commands: link check, context consistency review,
   `git diff --check`, and documentation-sensitive repository checks
 - Manual QA: project owner reviews the written specification
-- Evidence: project owner approved the proposed design in conversation on
-  2026-09-14; written specification prepared for review
+- Evidence: project owner approved the proposed design in conversation and the
+  written specification on 2026-09-14; design commit `335948d`
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — selected a fixed diagnostic atlas with adaptive
-  branches and authorized a pivot if the distance-versus-arrival idea is weak
+  branches and authorized a pivot if the distance-versus-arrival idea is weak;
+  2026-09-14 — project owner accepted the written specification
+- Status: done
+
+## T-003I — Plan the Stage A diagnostic atlas implementation
+
+- ID: T-003I
+- Title: Convert the approved story design into an executable Stage A plan
+- Depends on: T-003P done
+- Owner (Maker): project coordinator
+- Checker: project owner
+- Phase: story planning
+- Data refs: accepted T-002C2 build; shared missingness run; governed Natural
+  Earth coastline contract planned but not yet acquired
+- Scientific refs: approved adaptive visual-story EDA design, spatial contract,
+  validation plan, and cartographic guidance
+- Statistical notes: implementation planning only; no result, arrival pick,
+  station promotion, or narrative selection
+- Scope: exact files and interfaces, test-first steps, fixed four-plot Stage A
+  atlas, adaptive review input, deterministic evidence, thin Marimo viewer,
+  frequent commit boundaries, and the T-002E fence around Stage B
+- Artifacts to produce:
+  `docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md`
+- Acceptance criteria: every design requirement maps to an executable step;
+  preview and canonical runs have truthful Git state; manual review is a
+  validated input; no Stage B, paper, app-export, or NCTR proxy work enters the
+  plan
+- Verification commands: design-to-plan coverage review; placeholder and type-
+  consistency scans; `git diff --check`; full repository gate; Graphify refresh
+- Manual QA: project owner chooses inline or delegated task-by-task execution
+- Evidence: comprehensive 11-task plan prepared after written-design approval;
+  full repository gate passed with 93 Python tests and 18 provenance records;
+  Graphify refreshed to 781 nodes, 1,299 edges, and 62 communities and returned
+  the plan, evidence states, and T-003B gate in a scoped query
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-09-14 — decomposed Stage A into dependency, source,
+  missingness, geometry, four plot, evidence-runner, notebook, and reviewed-run
+  commits with explicit scientific stop conditions
 - Status: in-review
 
 ## T-003A — Build the preliminary diagnostic atlas
 
 - ID: T-003A
 - Title: Generate story-only spatial and temporal discovery views
-- Depends on: T-003P done and its implementation plan approved
+- Depends on: T-003I done
 - Owner (Maker): story analysis contributor
 - Checker: scientific and cartographic reviewer
 - Phase: story EDA
@@ -57,6 +94,7 @@
 - Attempts / Max: 0 / 3
 - Attempt log: not started
 - Status: pending
+
 ## T-003B — Complete the reviewed arrival comparison
 
 - ID: T-003B
