@@ -361,8 +361,11 @@ T-003P. The executable Stage A plan is
 `docs/superpowers/plans/2026-09-14-visual-story-stage-a-atlas.md`; T-003I is in
 review in that planning checkpoint. The owner subsequently authorized inline,
 task-by-task execution on `main`. Task 1 added only the exact GeoPandas 1.1.4 and
-Matplotlib 3.11.2 dependency boundary plus package markers; no figure, new data
-source, story claim, or app export exists at this point.
+Matplotlib 3.11.2 dependency boundary plus package markers. Task 2 added the
+separate Natural Earth source contract and manifest; acquired and inspected the
+85,352-byte, version 4.1.0, EPSG:4326 coastline; and confirmed its SHA-256 through
+an offline cache rerun. No story figure, claim, or app export exists at this
+point.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -407,7 +410,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 2, committing each task
+1. Continue the approved inline Stage A plan at Task 3, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -435,4 +438,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Task 1 is complete and Task 2 is next.
+Tasks 1–2 are complete and Task 3 is next.

@@ -93,10 +93,18 @@
   common color-vision simulations; trace three displayed values
 - Evidence: Task 1 RED failed on missing GeoPandas and `analysis`; GREEN resolved
   exactly GeoPandas 1.1.4 and Matplotlib 3.11.2, passed 2 focused tests, and
-  reported zero Pyright errors
+  reported zero Pyright errors. Task 2 RED failed on the missing map contract,
+  manifest, and run lane; GREEN passed 39 tests and added one validated source
+  record. Live run `2026-09-14__2157__story-map-context__df0ef32` downloaded the
+  85,352-byte Natural Earth 4.1.0 ZIP with SHA-256
+  `664449b39070027e882abb295974d182afec18ca21107273d17e9e8bf6f64817`;
+  offline rerun `2026-09-14__2158__story-map-context-rerun__df0ef32` reused it
+  exactly. Inspection found EPSG:4326 and 134 `LineString` features; raw ZIP and
+  sidecar are ignored
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
-  pinned static geospatial dependency boundary
+  pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
+  acquisition and offline checksum rerun passed with source precision preserved
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

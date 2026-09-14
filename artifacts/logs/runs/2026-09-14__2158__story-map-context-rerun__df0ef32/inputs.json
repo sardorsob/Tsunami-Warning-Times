@@ -1,0 +1,21 @@
+[
+  {
+    "availability": "approved",
+    "coordinate_order": "x longitude, y latitude",
+    "crs": "expected WGS84 from source .prj; verify after acquisition",
+    "expected_content_signature": "Natural Earth 1:110m coastline version 4.1.0; major islands included.",
+    "expected_prefix": "PK",
+    "format": "ESRI Shapefile ZIP",
+    "horizontal_datum": "expected WGS84 from source .prj; verify after acquisition",
+    "local_path": "data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip",
+    "publisher": "Natural Earth",
+    "reason": "not applicable",
+    "source_class": "coastline context",
+    "source_id": "natural-earth-coastline-110m-v4.1.0",
+    "station_metadata": "not applicable",
+    "temporal_semantics": "not applicable",
+    "units": "degrees in source coordinates",
+    "url": "https://naturalearth.s3.amazonaws.com/110m_physical/ne_110m_coastline.zip",
+    "vertical_datum": "not applicable"
+  }
+]

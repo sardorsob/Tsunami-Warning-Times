@@ -1,0 +1,10 @@
+{
+  "command": "uv run python scripts/acquire_tohoku.py --config config/story-map-context.toml --root . --run-tag story-map-context --lane story",
+  "evidence_disposition": "implementation-under-review",
+  "git_sha": "df0ef32",
+  "lane": "story",
+  "mode": "live",
+  "run_id": "2026-09-14__2157__story-map-context__df0ef32",
+  "timestamp_utc": "2026-09-14T21:57:00Z",
+  "working_tree": "dirty"
+}

@@ -5,6 +5,7 @@ from datetime import UTC, datetime
 from email.message import Message
 from http.client import IncompleteRead
 from pathlib import Path, PurePosixPath
+from typing import Any, cast
 from urllib.error import HTTPError, URLError
 from urllib.request import Request
 
@@ -97,6 +98,7 @@ def test_write_run_evidence_writes_an_immutable_portable_bundle(tmp_path: Path) 
         results=results,
         command="uv run python scripts/acquire_tohoku.py --run-tag Initial Rerun!",
         mode="live",
+        lane="story",
         now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
         git_sha=lambda: "be7f766",
         working_tree=lambda: "dirty",
@@ -115,6 +117,7 @@ def test_write_run_evidence_writes_an_immutable_portable_bundle(tmp_path: Path) 
         "command": "uv run python scripts/acquire_tohoku.py --run-tag Initial Rerun!",
         "evidence_disposition": "implementation-under-review",
         "git_sha": "be7f766",
+        "lane": "story",
         "mode": "live",
         "run_id": "2011-03-11__0546__initial-rerun__be7f766",
         "timestamp_utc": "2011-03-11T05:46:00Z",
@@ -146,9 +149,27 @@ def test_write_run_evidence_writes_an_immutable_portable_bundle(tmp_path: Path) 
             results=results,
             command="test",
             mode="live",
+            lane="story",
             now_utc=lambda: datetime(2011, 3, 11, 5, 46, tzinfo=UTC),
             git_sha=lambda: "be7f766",
             working_tree=lambda: "dirty",
+        )
+
+
+def test_write_run_evidence_rejects_an_unknown_lane(tmp_path: Path) -> None:
+    config = tmp_path / "tohoku.toml"
+    config.write_text("[assets]\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="unsupported run lane"):
+        write_run_evidence(
+            root=tmp_path,
+            run_tag="bad-lane",
+            config_path=config,
+            contracts=(),
+            results=(),
+            command="fixture",
+            mode="offline",
+            lane=cast(Any, "unknown"),
         )
 
 

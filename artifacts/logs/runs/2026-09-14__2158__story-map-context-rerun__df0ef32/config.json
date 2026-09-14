@@ -1,0 +1,5 @@
+{
+  "path": "config/story-map-context.toml",
+  "sha256": "c0e4767ea0e4e9b090d733fefa9a033ef8d64916adcea50c0b02a3db8aa1c10b",
+  "toml": "contract_version = \"2026-09-14\"\n\n[assets.natural_earth_coastline]\nsource_id = \"natural-earth-coastline-110m-v4.1.0\"\nsource_class = \"coastline context\"\navailability = \"approved\"\nreason = \"not applicable\"\nurl = \"https://naturalearth.s3.amazonaws.com/110m_physical/ne_110m_coastline.zip\"\nlocal_path = \"data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip\"\nformat = \"ESRI Shapefile ZIP\"\npublisher = \"Natural Earth\"\nexpected_content_signature = \"Natural Earth 1:110m coastline version 4.1.0; major islands included.\"\nexpected_prefix = \"PK\"\nunits = \"degrees in source coordinates\"\ncrs = \"expected WGS84 from source .prj; verify after acquisition\"\nhorizontal_datum = \"expected WGS84 from source .prj; verify after acquisition\"\nvertical_datum = \"not applicable\"\ncoordinate_order = \"x longitude, y latitude\"\ntemporal_semantics = \"not applicable\"\nstation_metadata = \"not applicable\"\n"
+}

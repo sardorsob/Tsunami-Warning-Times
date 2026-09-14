@@ -1,0 +1,24 @@
+[
+  {
+    "bytes": 85352,
+    "content_type": "application/zip",
+    "headers": {
+      "Accept-Ranges": "bytes",
+      "Connection": "[redacted]",
+      "Content-Length": "85352",
+      "Content-Type": "application/zip",
+      "Date": "Mon, 14 Sep 2026 21:57:39 GMT",
+      "ETag": "\"2defae9f229bf50e4f6d26ee8a8cca7d\"",
+      "Last-Modified": "Wed, 24 Mar 2021 06:27:17 GMT",
+      "Server": "[redacted]",
+      "x-amz-id-2": "[redacted]",
+      "x-amz-request-id": "[redacted]",
+      "x-amz-version-id": "[redacted]"
+    },
+    "local_path": "data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip",
+    "reason": "not applicable",
+    "sha256": "664449b39070027e882abb295974d182afec18ca21107273d17e9e8bf6f64817",
+    "source_id": "natural-earth-coastline-110m-v4.1.0",
+    "status": "downloaded"
+  }
+]

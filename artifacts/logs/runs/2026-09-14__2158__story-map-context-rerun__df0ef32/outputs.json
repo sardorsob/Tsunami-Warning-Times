@@ -1,0 +1,12 @@
+[
+  {
+    "bytes": 85352,
+    "content_type": "not-downloaded",
+    "headers": {},
+    "local_path": "data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip",
+    "reason": "not applicable",
+    "sha256": "664449b39070027e882abb295974d182afec18ca21107273d17e9e8bf6f64817",
+    "source_id": "natural-earth-coastline-110m-v4.1.0",
+    "status": "cached"
+  }
+]

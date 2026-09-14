@@ -31,6 +31,7 @@ jobs:
           uv run pyright
           uv run pytest -q
           uv run python -m pipeline.provenance artifacts/provenance/source-manifest.csv
+          uv run python -m pipeline.provenance artifacts/provenance/story-source-manifest.csv
 
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6

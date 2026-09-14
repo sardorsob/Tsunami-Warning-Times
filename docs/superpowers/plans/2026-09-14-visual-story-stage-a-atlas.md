@@ -185,7 +185,7 @@ git commit -m "build(story): add static geospatial stack"
 - Consumes: `pipeline.acquisition.load_contracts`, `pipeline.acquisition.acquire_all`, `scripts.acquire_tohoku.write_run_evidence`, and `pipeline.provenance.validate_manifest`.
 - Produces: source ID `natural-earth-coastline-110m-v4.1.0`; ignored raw ZIP `data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip`; acquisition evidence with `lane="story"`; a one-record story source manifest.
 
-- [ ] **Step 1: Write failing contract and lane tests**
+- [x] **Step 1: Write failing contract and lane tests**
 
 Add to `tests/story/test_map_context.py`:
 
@@ -235,7 +235,7 @@ def test_write_run_evidence_rejects_an_unknown_lane(tmp_path: Path) -> None:
         )
 ```
 
-- [ ] **Step 2: Run the tests and confirm the missing files/interface**
+- [x] **Step 2: Run the tests and confirm the missing files/interface**
 
 Run:
 
@@ -245,7 +245,7 @@ uv run pytest tests/story/test_map_context.py tests/test_acquisition.py::test_wr
 
 Expected: FAIL because the story contract/manifest and `lane` parameter do not exist.
 
-- [ ] **Step 3: Add the validated run lane**
+- [x] **Step 3: Add the validated run lane**
 
 Add `Literal` to the imports in `scripts/acquire_tohoku.py`, then change the writer signature and metadata:
 
@@ -274,7 +274,7 @@ Add `"lane": lane` to `meta.json`. Add the CLI argument and pass it to the write
 parser.add_argument("--lane", choices=("shared", "paper", "story"), default="shared")
 ```
 
-- [ ] **Step 4: Create the exact source contract**
+- [x] **Step 4: Create the exact source contract**
 
 Create `config/story-map-context.toml`:
 
@@ -306,7 +306,7 @@ and one `approved` row. Before acquisition, use `not-downloaded` for both
 `sha256` and `local_path`; record version `4.1.0`, public-domain terms, expected
 WGS84, line geometry, and scale-generalization limitations.
 
-- [ ] **Step 5: Make CI validate both provenance ledgers**
+- [x] **Step 5: Make CI validate both provenance ledgers**
 
 Add this line immediately after the existing provenance command:
 
@@ -314,7 +314,7 @@ Add this line immediately after the existing provenance command:
 uv run python -m pipeline.provenance artifacts/provenance/story-source-manifest.csv
 ```
 
-- [ ] **Step 6: Run the tests before network acquisition**
+- [x] **Step 6: Run the tests before network acquisition**
 
 Run:
 
@@ -325,7 +325,7 @@ uv run python -m pipeline.provenance artifacts/provenance/story-source-manifest.
 
 Expected: tests pass and the story manifest validates one record.
 
-- [ ] **Step 7: Acquire and inspect the exact coastline asset**
+- [x] **Step 7: Acquire and inspect the exact coastline asset**
 
 Run only after confirming the repository is on the implementation commit and the
 source contract above is unchanged:
@@ -347,7 +347,7 @@ row count, CRS, geometry types, command, run ID, version, and public-domain
 terms in `context/story/SOURCES.md`. Preserve any unexpected value as a blocker
 instead of changing the contract to fit it.
 
-- [ ] **Step 8: Revalidate and commit the governed source**
+- [x] **Step 8: Revalidate and commit the governed source**
 
 Run:
 

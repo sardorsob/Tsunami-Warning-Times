@@ -4,8 +4,9 @@
 
 The project owner approved the written adaptive EDA specification on 2026-09-14.
 The project owner authorized inline, task-by-task execution on `main`. T-003A is
-active: Task 1 adds only the approved pinned static geospatial stack and analysis
-namespace; no figure, new source, story claim, or app export exists yet.
+active: Tasks 1–2 added the approved pinned static stack and a separately
+governed Natural Earth coastline context. No story figure, claim, or app export
+exists yet; the NCTR field remains blocked.
 
 ## Question
 

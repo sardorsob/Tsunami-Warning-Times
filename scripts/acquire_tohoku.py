@@ -16,6 +16,7 @@ from collections import Counter
 from collections.abc import Callable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Literal
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -259,11 +260,14 @@ def write_run_evidence(
     results: Sequence[AcquisitionResult],
     command: str,
     mode: str,
+    lane: Literal["shared", "paper", "story"] = "shared",
     now_utc: Callable[[], datetime] = utc_now,
     git_sha: Callable[[], str] | None = None,
     working_tree: Callable[[], str] | None = None,
 ) -> Path:
     """Write one immutable portable bundle without copying raw scientific data."""
+    if lane not in {"shared", "paper", "story"}:
+        raise ValueError(f"unsupported run lane {lane!r}")
     safe_tag = sanitize_run_tag(run_tag)
     if not safe_tag:
         raise ValueError("--run-tag must include at least one letter or number")
@@ -299,6 +303,7 @@ def write_run_evidence(
                 "command": command,
                 "evidence_disposition": evidence_disposition,
                 "git_sha": revision,
+                "lane": lane,
                 "mode": mode,
                 "run_id": run_id,
                 "timestamp_utc": timestamp.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -361,6 +366,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--config", type=Path, default=Path("config/tohoku-data-proof.toml"))
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--run-tag", default="acquisition")
+    parser.add_argument("--lane", choices=("shared", "paper", "story"), default="shared")
     parser.add_argument("--offline", action="store_true", help="do not access the network")
     args = parser.parse_args(effective_argv)
     if not sanitize_run_tag(args.run_tag):
@@ -385,6 +391,7 @@ def main(argv: list[str] | None = None) -> int:
             results=results,
             command=command,
             mode="offline" if args.offline else "live",
+            lane=args.lane,
         )
     except (OSError, ValueError, UnicodeDecodeError) as error:
         parser.error(f"could not write run evidence: {error}")
