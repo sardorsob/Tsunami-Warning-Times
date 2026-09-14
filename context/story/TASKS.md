@@ -118,7 +118,11 @@
   Task 7 RED failed on the absent panel interface; GREEN passed both series
   tests, Ruff, and strict Pyright. The actual -6 h to +30 h window yields 10
   locally scaled panels and 24,729 unchanged numeric points: 11,156 coastal raw
-  levels and 13,573 DART residuals; missing values remain in the coverage view
+  levels and 13,573 DART residuals; missing values remain in the coverage view.
+  Task 8 RED failed on the absent diagnostic function; GREEN passed the semantic
+  and byte-determinism test, Ruff, and strict Pyright. The actual-data render
+  compares six WGS84 range rings with nine configured published contour hours;
+  885 input parts become 916 seam-safe parts, with no speed or arrival inference
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -132,7 +136,9 @@
   2026-09-14 — added source-window coverage strips with separate observed,
   source-blank, absent-timestamp, and unsnapped off-grid encodings; 2026-09-14 —
   added source-honest station point panels with no centering, smoothing,
-  interpolation, resampling, shared y-scale, or gap-bridging line
+  interpolation, resampling, shared y-scale, or gap-bridging line; 2026-09-14 —
+  added the side-by-side geodesic-range/published-contour shape diagnostic with
+  explicit incompatible units and nearest-contour prohibition
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

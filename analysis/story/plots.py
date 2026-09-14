@@ -42,6 +42,7 @@ from analysis.story.atlas import (  # noqa: E402
     AtlasInputs,
     Coordinate,
     SeriesPanel,
+    geodesic_range_ring,
     shift_longitude,
     split_at_display_seam,
 )
@@ -429,6 +430,229 @@ def plot_station_timeseries(
         units="station-local source units",
         input_parts=point_count,
         output_parts=point_count,
+    )
+
+
+def _draw_event_and_stations(
+    axes: Axes,
+    atlas: AtlasInputs,
+    config: AtlasConfig,
+) -> None:
+    event_series = _project_points(
+        [Point(shift_longitude(atlas.event.longitude), atlas.event.latitude)],
+        config.display_crs,
+    )
+    event = cast(Point, event_series.iloc[0])
+    axes.scatter(
+        [event.x],
+        [event.y],
+        marker="*",
+        s=95,
+        facecolor="#d1495b",
+        edgecolor="#2b2526",
+        linewidth=0.6,
+        zorder=5,
+    )
+    station_series = _project_points(
+        [Point(shift_longitude(station.longitude), station.latitude) for station in atlas.stations],
+        config.display_crs,
+    )
+    station_geometries = cast(Iterable[BaseGeometry], station_series)
+    for station, geometry in zip(atlas.stations, station_geometries, strict=True):
+        point = cast(Point, geometry)
+        is_dart = station.station_type == "dart"
+        axes.scatter(
+            [point.x],
+            [point.y],
+            marker="^" if is_dart else "o",
+            s=22,
+            facecolor="#f2b134" if is_dart else "#2a9d8f",
+            edgecolor="#202623",
+            linewidth=0.45,
+            zorder=4,
+        )
+        axes.annotate(
+            station.station_id,
+            (point.x, point.y),
+            xytext=(2.5, 2.5),
+            textcoords="offset points",
+            fontsize=5.5,
+            color="#202623",
+            zorder=5,
+        )
+
+
+def _line_extent(lines: gpd.GeoSeries) -> tuple[float, float, float, float]:
+    geometries = tuple(cast(Iterable[BaseGeometry], lines))
+    if not geometries:
+        raise AtlasError("cannot derive an extent from empty linework")
+    return (
+        min(geometry.bounds[0] for geometry in geometries),
+        min(geometry.bounds[1] for geometry in geometries),
+        max(geometry.bounds[2] for geometry in geometries),
+        max(geometry.bounds[3] for geometry in geometries),
+    )
+
+
+def plot_distance_contour_diagnostic(
+    atlas: AtlasInputs,
+    config: AtlasConfig,
+    coastline_path: Path,
+    output_stem: Path,
+) -> PlotFiles:
+    """Compare geodesic ring shape with published contour shape without conversion."""
+    coastline_inputs = _load_coastline_parts(coastline_path)
+    coastline_parts = tuple(
+        part for source_part in coastline_inputs for part in split_at_display_seam(source_part)
+    )
+    projected_coastline = _project_lines(coastline_parts, config.display_crs)
+
+    ring_sources = tuple(
+        geodesic_range_ring(
+            latitude=atlas.event.latitude,
+            longitude=atlas.event.longitude,
+            radius_km=radius_km,
+        )
+        for radius_km in config.range_radii_km
+    )
+    ring_parts_by_radius = tuple(
+        (radius_km, split_at_display_seam(source))
+        for radius_km, source in zip(config.range_radii_km, ring_sources, strict=True)
+    )
+
+    configured_hours = set(config.highlighted_contour_hours)
+    selected_contours = tuple(
+        contour
+        for contour in atlas.contours
+        if contour.hours.is_integer() and int(contour.hours) in configured_hours
+    )
+    available_hours = {int(contour.hours) for contour in selected_contours}
+    if available_hours != configured_hours:
+        raise AtlasError("distance diagnostic lacks one or more configured contour hours")
+    selected_contour_parts = tuple(
+        part for contour in selected_contours for part in split_at_display_seam(contour.coordinates)
+    )
+
+    figure = plt.figure(figsize=(14.0, 6.7))
+    figure.patch.set_facecolor("#f7f4ed")
+    left_axes = figure.add_subplot(1, 2, 1)
+    right_axes = figure.add_subplot(1, 2, 2)
+    for axes in (left_axes, right_axes):
+        axes.set_facecolor("#eaf1f4")
+        _draw_lines(
+            axes,
+            projected_coastline,
+            color="#4b514d",
+            linewidth=0.65,
+            alpha=0.90,
+        )
+        _draw_event_and_stations(axes, atlas, config)
+
+    radius_handles: list[Line2D] = []
+    for radius_km, parts in ring_parts_by_radius:
+        _draw_lines(
+            left_axes,
+            _project_lines(parts, config.display_crs),
+            color="#8f4f8b",
+            linewidth=0.9,
+            alpha=0.70,
+        )
+        radius_handles.append(
+            Line2D(
+                [],
+                [],
+                color="#8f4f8b",
+                linewidth=1.0,
+                label=f"{radius_km:,} km",
+            )
+        )
+    _draw_lines(
+        right_axes,
+        _project_lines(selected_contour_parts, config.display_crs),
+        color="#397da8",
+        linewidth=0.65,
+        alpha=0.45,
+    )
+
+    min_x, min_y, max_x, max_y = _line_extent(projected_coastline)
+    x_margin = (max_x - min_x) * 0.01
+    y_margin = (max_y - min_y) * 0.035
+    for axes in (left_axes, right_axes):
+        axes.set_xlim(min_x - x_margin, max_x + x_margin)
+        axes.set_ylim(min_y - y_margin, max_y + y_margin)
+        axes.set_aspect("equal", adjustable="box")
+        axes.set_axis_off()
+    left_axes.set_title(
+        "WGS84 geodesic range rings",
+        loc="left",
+        fontsize=12,
+        fontweight="bold",
+    )
+    right_axes.set_title(
+        "NCEI published travel-time contours",
+        loc="left",
+        fontsize=12,
+        fontweight="bold",
+    )
+    left_axes.legend(
+        handles=radius_handles,
+        loc="lower left",
+        ncol=2,
+        fontsize=6.5,
+        framealpha=0.94,
+    )
+    right_axes.legend(
+        handles=[
+            Line2D(
+                [],
+                [],
+                color="#397da8",
+                linewidth=1.1,
+                label="Published hours: "
+                + ", ".join(str(hour) for hour in config.highlighted_contour_hours),
+            )
+        ],
+        loc="lower left",
+        fontsize=6.5,
+        framealpha=0.94,
+    )
+    figure.suptitle(
+        "Distance and published contour shape are different evidence",
+        x=0.045,
+        y=0.985,
+        ha="left",
+        fontsize=16,
+        fontweight="bold",
+        color="#17242b",
+    )
+    figure.text(
+        0.045,
+        0.012,
+        "Units differ · No speed conversion · nearest-contour values are not assigned to "
+        "stations and are not a modeled arrival at a station · Equal Earth, central meridian "
+        "160°W · preliminary_storyboard_evidence",
+        ha="left",
+        va="bottom",
+        fontsize=7.5,
+        color="#394850",
+    )
+    figure.subplots_adjust(left=0.04, right=0.99, top=0.91, bottom=0.09, wspace=0.04)
+
+    png, svg = _save_figure(figure, output_stem, dpi=config.figure_dpi)
+    input_parts = len(coastline_inputs) * 2 + len(ring_sources) + len(selected_contours)
+    output_parts = (
+        len(coastline_parts) * 2
+        + sum(len(parts) for _, parts in ring_parts_by_radius)
+        + len(selected_contour_parts)
+    )
+    return PlotFiles(
+        plot_id="04_distance_contour_diagnostic",
+        png=png,
+        svg=svg,
+        projection=config.display_crs,
+        units="left: geodesic kilometres; right: published contour hours",
+        input_parts=input_parts,
+        output_parts=output_parts,
     )
 
 

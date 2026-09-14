@@ -13,7 +13,9 @@ claim or app export exists yet; Task 5 now provides the deterministic Pacific
 evidence-map renderer, and Task 6 provides source-window coverage strips with
 all missingness mechanisms separated. Task 7 provides station-local point
 panels that keep coastal raw levels and DART residuals distinct. Canonical
-figures wait for the reviewed-run task. The NCTR field remains blocked.
+figures wait for the reviewed-run task. Task 8 also implements the optional
+distance-versus-contour shape diagnostic without a speed or station-arrival
+conversion. The NCTR field remains blocked.
 
 ## Question
 

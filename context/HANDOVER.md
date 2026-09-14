@@ -389,7 +389,13 @@ smoothing, interpolation, resampling, or gap-bridging line is applied. Its RED
 test failed on the absent panel interface; GREEN passed both focused tests, Ruff,
 and strict Pyright. A temporary actual-data render contained 10 panels and
 24,729 numeric points in the reviewed -6 h to +30 h window: 11,156 coastal and
-13,573 DART. No canonical story figure, claim, or app export exists yet.
+13,573 DART. Task 8 adds a side-by-side shape diagnostic with identical map
+context: six WGS84 geodesic range rings on the left and nine configured published
+NCEI contour hours on the right. It accepts no speed or arrival input and assigns
+no nearest contour to a station. Its RED test failed on the absent function;
+GREEN passed the semantic and byte-determinism test, Ruff, and strict Pyright. A
+temporary actual-data render transformed 885 input parts into 916 seam-safe
+parts. No canonical story figure, claim, or app export exists yet.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -434,7 +440,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 8, committing each task
+1. Continue the approved inline Stage A plan at Task 9, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -462,4 +468,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–7 are complete and Task 8 is next.
+Tasks 1–8 are complete and Task 9 is next.

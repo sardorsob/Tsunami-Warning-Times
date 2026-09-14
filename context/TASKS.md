@@ -493,7 +493,9 @@
   Task 6 added deterministic source-window coverage strips and smoke-rendered
   23,040 exact-grid positions plus 120 unsnapped off-grid observations; Task 7
   added separately scaled point panels for 11,156 coastal raw values and 13,573
-  DART residuals in the reviewed -6 h to +30 h window
+  DART residuals in the reviewed -6 h to +30 h window; Task 8 added the
+  side-by-side six-ring/nine-contour shape diagnostic without speed or arrival
+  inference and smoke-rendered 885 input parts as 916 seam-safe parts
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
@@ -505,7 +507,9 @@
   PNG/SVG render; 2026-09-14 — coverage-plot RED/GREEN passed 14 shared and
   story tests, Ruff, strict Pyright, and an actual six-gauge temporary render;
   2026-09-14 — station-series RED/GREEN passed focused semantics and byte-
-  determinism tests plus an actual ten-panel temporary render
+  determinism tests plus an actual ten-panel temporary render; 2026-09-14 —
+  distance-diagnostic RED/GREEN passed its semantic/byte gate, Ruff, strict
+  Pyright, and an actual-data temporary render
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

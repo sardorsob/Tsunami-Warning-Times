@@ -1066,7 +1066,7 @@ git commit -m "feat(story): add station signal small multiples"
 - Consumes: event location, configured geodesic radii in kilometres, configured NCEI contour hours, common coastline, and common projection/extent.
 - Produces: `plot_distance_contour_diagnostic(...)` writing `04_distance_contour_diagnostic.{png,svg}` without a propagation-speed model.
 
-- [ ] **Step 1: Write the failing semantic guard test**
+- [x] **Step 1: Write the failing semantic guard test**
 
 ```python
 files = plot_distance_contour_diagnostic(
@@ -1086,13 +1086,13 @@ assert files.svg.is_file()
 Also inspect the SVG text and assert it contains `No speed conversion` and
 `not a modeled arrival at a station`.
 
-- [ ] **Step 2: Run the focused test and observe the missing function**
+- [x] **Step 2: Run the focused test and observe the missing function**
 
 Run: `uv run pytest tests/story/test_atlas.py -k distance_contour -q`
 
 Expected: FAIL on the missing import.
 
-- [ ] **Step 3: Implement the side-by-side comparison**
+- [x] **Step 3: Implement the side-by-side comparison**
 
 Use identical projected coastline, extent, event, and station overlays in both
 panels. The left panel draws configured WGS84 geodesic range rings labeled in
@@ -1103,7 +1103,7 @@ and nearest-contour values are not being assigned to stations.
 The function must not accept a speed parameter, arrival table, residual table,
 or continuous raster.
 
-- [ ] **Step 4: Verify semantic and deterministic behavior**
+- [x] **Step 4: Verify semantic and deterministic behavior**
 
 Run:
 
@@ -1115,7 +1115,7 @@ uv run pyright
 
 Expected: semantic text and byte-stability checks pass.
 
-- [ ] **Step 5: Commit the shape diagnostic**
+- [x] **Step 5: Commit the shape diagnostic**
 
 ```bash
 git add analysis/story/plots.py tests/story/test_atlas.py

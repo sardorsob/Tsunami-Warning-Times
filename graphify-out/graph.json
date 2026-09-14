@@ -277,19 +277,6 @@
       "source_location": "L130"
     },
     {
-      "id": "pipeline_missingness_offgridobservation",
-      "label": "OffGridObservation",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "missingness.py",
-      "file_type": "code",
-      "norm_label": "offgridobservation",
-      "source_file": "pipeline/missingness.py",
-      "source_location": "L72"
-    },
-    {
       "id": "app_src_project_projectphase",
       "label": "ProjectPhase",
       "_callable": true,
@@ -443,7 +430,7 @@
       "file_type": "code",
       "norm_label": "_coveragemetric",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L65"
+      "source_location": "L66"
     },
     {
       "id": "analysis_story_plots_plotfiles",
@@ -456,7 +443,7 @@
       "file_type": "code",
       "norm_label": "plotfiles",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "pipeline_missingness_coastalcoveragetimeline",
@@ -470,6 +457,19 @@
       "norm_label": "coastalcoveragetimeline",
       "source_file": "pipeline/missingness.py",
       "source_location": "L81"
+    },
+    {
+      "id": "pipeline_missingness_offgridobservation",
+      "label": "OffGridObservation",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "offgridobservation",
+      "source_file": "pipeline/missingness.py",
+      "source_location": "L72"
     },
     {
       "id": "pipeline_provenance_main",
@@ -2476,18 +2476,6 @@
       "source_location": "L35"
     },
     {
-      "id": "tests_story_test_atlas_test_observation_coverage_plot_preserves_all_missingness_states",
-      "label": "test_observation_coverage_plot_preserves_all_missingness_states()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "missingness.py",
-      "file_type": "code",
-      "norm_label": "test_observation_coverage_plot_preserves_all_missingness_states()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L447"
-    },
-    {
       "id": "tests_test_missingness_stage_profile_inputs",
       "label": "_stage_profile_inputs()",
       "_callable": true,
@@ -2953,7 +2941,7 @@
       "file_type": "code",
       "norm_label": "_coverage_metrics()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L110"
+      "source_location": "L111"
     },
     {
       "id": "analysis_story_plots_coverage_percent",
@@ -2965,7 +2953,19 @@
       "file_type": "code",
       "norm_label": "_coverage_percent()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L101"
+      "source_location": "L102"
+    },
+    {
+      "id": "analysis_story_plots_draw_event_and_stations",
+      "label": "_draw_event_and_stations()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "_draw_event_and_stations()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L436"
     },
     {
       "id": "analysis_story_plots_draw_lines",
@@ -2977,7 +2977,19 @@
       "file_type": "code",
       "norm_label": "_draw_lines()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L486"
+      "source_location": "L710"
+    },
+    {
+      "id": "analysis_story_plots_line_extent",
+      "label": "_line_extent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "_line_extent()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L485"
     },
     {
       "id": "analysis_story_plots_load_coastline_parts",
@@ -2989,7 +3001,7 @@
       "file_type": "code",
       "norm_label": "_load_coastline_parts()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L446"
+      "source_location": "L670"
     },
     {
       "id": "analysis_story_plots_parse_plot_utc",
@@ -3001,7 +3013,19 @@
       "file_type": "code",
       "norm_label": "_parse_plot_utc()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L91"
+      "source_location": "L92"
+    },
+    {
+      "id": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "label": "plot_distance_contour_diagnostic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "plot_distance_contour_diagnostic()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L497"
     },
     {
       "id": "analysis_story_plots_plot_observation_coverage",
@@ -3013,7 +3037,7 @@
       "file_type": "code",
       "norm_label": "plot_observation_coverage()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L183"
+      "source_location": "L184"
     },
     {
       "id": "analysis_story_plots_plot_pacific_evidence",
@@ -3025,7 +3049,7 @@
       "file_type": "code",
       "norm_label": "plot_pacific_evidence()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L512"
+      "source_location": "L736"
     },
     {
       "id": "analysis_story_plots_plot_station_timeseries",
@@ -3037,7 +3061,7 @@
       "file_type": "code",
       "norm_label": "plot_station_timeseries()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L321"
+      "source_location": "L322"
     },
     {
       "id": "analysis_story_plots_project_lines",
@@ -3049,7 +3073,7 @@
       "file_type": "code",
       "norm_label": "_project_lines()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L478"
+      "source_location": "L702"
     },
     {
       "id": "analysis_story_plots_project_points",
@@ -3061,7 +3085,7 @@
       "file_type": "code",
       "norm_label": "_project_points()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L508"
+      "source_location": "L732"
     },
     {
       "id": "analysis_story_plots_save_figure",
@@ -3073,7 +3097,7 @@
       "file_type": "code",
       "norm_label": "_save_figure()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L72"
+      "source_location": "L73"
     },
     {
       "id": "analysis_story_plots_status_spans",
@@ -3085,7 +3109,7 @@
       "file_type": "code",
       "norm_label": "_status_spans()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L146"
+      "source_location": "L147"
     },
     {
       "id": "analysis_story_plots_two_dimensional_coordinates",
@@ -3097,7 +3121,7 @@
       "file_type": "code",
       "norm_label": "_two_dimensional_coordinates()",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L435"
+      "source_location": "L659"
     },
     {
       "id": "tests_story_test_atlas_stage_atlas_inputs",
@@ -3109,7 +3133,7 @@
       "file_type": "code",
       "norm_label": "_stage_atlas_inputs()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L89"
+      "source_location": "L90"
     },
     {
       "id": "tests_story_test_atlas_test_atlas_loader_preserves_source_semantics",
@@ -3121,7 +3145,7 @@
       "file_type": "code",
       "norm_label": "test_atlas_loader_preserves_source_semantics()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L295"
+      "source_location": "L296"
     },
     {
       "id": "tests_story_test_atlas_test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance",
@@ -3133,7 +3157,19 @@
       "file_type": "code",
       "norm_label": "test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L310"
+      "source_location": "L311"
+    },
+    {
+      "id": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L404"
     },
     {
       "id": "tests_story_test_atlas_test_geodesic_range_ring_uses_kilometres_without_a_speed_model",
@@ -3145,7 +3181,19 @@
       "file_type": "code",
       "norm_label": "test_geodesic_range_ring_uses_kilometres_without_a_speed_model()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L333"
+      "source_location": "L334"
+    },
+    {
+      "id": "tests_story_test_atlas_test_observation_coverage_plot_preserves_all_missingness_states",
+      "label": "test_observation_coverage_plot_preserves_all_missingness_states()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "code",
+      "norm_label": "test_observation_coverage_plot_preserves_all_missingness_states()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L483"
     },
     {
       "id": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
@@ -3157,7 +3205,7 @@
       "file_type": "code",
       "norm_label": "test_pacific_evidence_map_is_deterministic_and_records_geometry_counts()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L380"
+      "source_location": "L381"
     },
     {
       "id": "tests_story_test_atlas_test_pacific_shift_splits_a_line_at_the_twenty_degree_seam",
@@ -3169,7 +3217,7 @@
       "file_type": "code",
       "norm_label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L321"
+      "source_location": "L322"
     },
     {
       "id": "tests_story_test_atlas_test_project_story_config_fixes_the_approved_four_plus_six_scope",
@@ -3181,7 +3229,7 @@
       "file_type": "code",
       "norm_label": "test_project_story_config_fixes_the_approved_four_plus_six_scope()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L366"
+      "source_location": "L367"
     },
     {
       "id": "tests_story_test_atlas_test_series_panels_preserve_station_specific_source_semantics",
@@ -3193,7 +3241,7 @@
       "file_type": "code",
       "norm_label": "test_series_panels_preserve_station_specific_source_semantics()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L403"
+      "source_location": "L439"
     },
     {
       "id": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
@@ -3205,7 +3253,7 @@
       "file_type": "code",
       "norm_label": "test_stage_a_scope_matches_configured_event_stations_and_windows()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L341"
+      "source_location": "L342"
     },
     {
       "id": "tests_story_test_atlas_test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison",
@@ -3217,7 +3265,7 @@
       "file_type": "code",
       "norm_label": "test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L426"
+      "source_location": "L462"
     },
     {
       "id": "tests_story_test_atlas_write_coastline",
@@ -3229,7 +3277,7 @@
       "file_type": "code",
       "norm_label": "_write_coastline()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L263"
+      "source_location": "L264"
     },
     {
       "id": "tests_story_test_atlas_write_csv",
@@ -3241,7 +3289,7 @@
       "file_type": "code",
       "norm_label": "_write_csv()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L82"
+      "source_location": "L83"
     },
     {
       "id": "tests_story_test_atlas_write_fixture_config",
@@ -3253,7 +3301,7 @@
       "file_type": "code",
       "norm_label": "_write_fixture_config()",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L244"
+      "source_location": "L245"
     },
     {
       "id": "app_tsconfig",
@@ -3741,7 +3789,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L433"
+      "source_location": "L439"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -3789,7 +3837,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L460"
+      "source_location": "L466"
     },
     {
       "id": "context_handover_handover",
@@ -3837,7 +3885,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L452"
+      "source_location": "L458"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -3849,7 +3897,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L417"
+      "source_location": "L423"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -4881,7 +4929,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L511"
+      "source_location": "L515"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -4893,7 +4941,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L535"
+      "source_location": "L539"
     },
     {
       "id": "context_tasks_tasks",
@@ -4917,7 +4965,7 @@
       "node_kind": "heading",
       "norm_label": "x-001 \u2014 close the dual-track compatibility follow-up",
       "source_file": "context/TASKS.md",
-      "source_location": "L560"
+      "source_location": "L564"
     },
     {
       "id": "context_validation_plan",
@@ -8449,17 +8497,6 @@
       "source_location": "L64"
     },
     {
-      "id": "pipeline_missingness_rationale_73",
-      "label": "One retained observation that does not land on the exact source grid.",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "missingness.py",
-      "file_type": "rationale",
-      "norm_label": "one retained observation that does not land on the exact source grid.",
-      "source_file": "pipeline/missingness.py",
-      "source_location": "L73"
-    },
-    {
       "id": "pipeline_missingness_rationale_768",
       "label": "Write deterministic JSON/CSV evidence and its canonical Markdown report.",
       "_origin": "ast",
@@ -9512,7 +9549,7 @@
       "node_kind": "heading",
       "norm_label": "contribution boundary",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "context_story_project_evidence_states",
@@ -9524,7 +9561,7 @@
       "node_kind": "heading",
       "norm_label": "evidence states",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L38"
+      "source_location": "L40"
     },
     {
       "id": "context_story_project_first_deliverable",
@@ -9536,7 +9573,7 @@
       "node_kind": "heading",
       "norm_label": "first deliverable",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L47"
+      "source_location": "L49"
     },
     {
       "id": "context_story_project_governing_design",
@@ -9548,7 +9585,7 @@
       "node_kind": "heading",
       "norm_label": "governing design",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L54"
+      "source_location": "L56"
     },
     {
       "id": "context_story_project_question",
@@ -9560,7 +9597,7 @@
       "node_kind": "heading",
       "norm_label": "question",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "context_story_project_status",
@@ -9752,7 +9789,7 @@
       "node_kind": "heading",
       "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L138"
+      "source_location": "L144"
     },
     {
       "id": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
@@ -10459,7 +10496,7 @@
       "source_location": "L1"
     },
     {
-      "id": "analysis_story_plots_rationale_189",
+      "id": "analysis_story_plots_rationale_190",
       "label": "Render source-supported coastal coverage without interpolation or snapping.",
       "_origin": "ast",
       "community": 63,
@@ -10467,10 +10504,10 @@
       "file_type": "rationale",
       "norm_label": "render source-supported coastal coverage without interpolation or snapping.",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L189"
+      "source_location": "L190"
     },
     {
-      "id": "analysis_story_plots_rationale_326",
+      "id": "analysis_story_plots_rationale_327",
       "label": "Render station-local point traces without bridging gaps or comparing amplitudes.",
       "_origin": "ast",
       "community": 63,
@@ -10478,21 +10515,21 @@
       "file_type": "rationale",
       "norm_label": "render station-local point traces without bridging gaps or comparing amplitudes.",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L326"
+      "source_location": "L327"
     },
     {
-      "id": "analysis_story_plots_rationale_518",
-      "label": "Render the preliminary basin context without implying a continuous field.",
+      "id": "analysis_story_plots_rationale_503",
+      "label": "Compare geodesic ring shape with published contour shape without conversion.",
       "_origin": "ast",
       "community": 63,
       "community_name": "atlas.py",
       "file_type": "rationale",
-      "norm_label": "render the preliminary basin context without implying a continuous field.",
+      "norm_label": "compare geodesic ring shape with published contour shape without conversion.",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L518"
+      "source_location": "L503"
     },
     {
-      "id": "analysis_story_plots_rationale_53",
+      "id": "analysis_story_plots_rationale_54",
       "label": "Paths and spatial accounting for one deterministic plot.",
       "_origin": "ast",
       "community": 63,
@@ -10500,7 +10537,29 @@
       "file_type": "rationale",
       "norm_label": "paths and spatial accounting for one deterministic plot.",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L53"
+      "source_location": "L54"
+    },
+    {
+      "id": "analysis_story_plots_rationale_742",
+      "label": "Render the preliminary basin context without implying a continuous field.",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "rationale",
+      "norm_label": "render the preliminary basin context without implying a continuous field.",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L742"
+    },
+    {
+      "id": "pipeline_missingness_rationale_73",
+      "label": "One retained observation that does not land on the exact source grid.",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "atlas.py",
+      "file_type": "rationale",
+      "norm_label": "one retained observation that does not land on the exact source grid.",
+      "source_file": "pipeline/missingness.py",
+      "source_location": "L73"
     },
     {
       "id": "pipeline_missingness_rationale_82",
@@ -11195,7 +11254,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -11207,7 +11266,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -11219,7 +11278,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L131",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -11231,7 +11290,55 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L103",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "analysis_story_plots_project_points",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L441",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "analysis_story_atlas_shift_longitude",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L442",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "point",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L442",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_line_extent",
+      "target": "analysis_story_atlas_atlaserror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L488",
       "weight": 1.0
     },
     {
@@ -11243,7 +11350,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L450",
+      "source_location": "L674",
       "weight": 1.0
     },
     {
@@ -11255,7 +11362,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L468",
+      "source_location": "L692",
       "weight": 1.0
     },
     {
@@ -11267,7 +11374,127 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L95",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_load_coastline_parts",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L504",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_atlas_split_at_display_seam",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L506",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_project_lines",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L508",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_atlas_geodesic_range_ring",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_atlas_atlaserror",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L531",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_draw_lines",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_draw_event_and_stations",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L549",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_line_extent",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L577",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_save_figure",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L641",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_plotfiles",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L648",
       "weight": 1.0
     },
     {
@@ -11279,7 +11506,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L191",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -11291,7 +11518,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L195",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -11303,7 +11530,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L208",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -11315,7 +11542,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L218",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -11327,7 +11554,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L306",
+      "source_location": "L307",
       "weight": 1.0
     },
     {
@@ -11339,7 +11566,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L310",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -11351,7 +11578,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L519",
+      "source_location": "L743",
       "weight": 1.0
     },
     {
@@ -11363,7 +11590,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L521",
+      "source_location": "L745",
       "weight": 1.0
     },
     {
@@ -11375,7 +11602,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L527",
+      "source_location": "L751",
       "weight": 1.0
     },
     {
@@ -11387,7 +11614,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L533",
+      "source_location": "L757",
       "weight": 1.0
     },
     {
@@ -11399,7 +11626,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L548",
+      "source_location": "L772",
       "weight": 1.0
     },
     {
@@ -11411,7 +11638,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L549",
+      "source_location": "L773",
       "weight": 1.0
     },
     {
@@ -11423,7 +11650,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L549",
+      "source_location": "L773",
       "weight": 1.0
     },
     {
@@ -11435,7 +11662,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L651",
+      "source_location": "L875",
       "weight": 1.0
     },
     {
@@ -11447,7 +11674,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L652",
+      "source_location": "L876",
       "weight": 1.0
     },
     {
@@ -11459,7 +11686,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L328",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -11471,7 +11698,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L422",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -11483,7 +11710,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L424",
+      "source_location": "L425",
       "weight": 1.0
     },
     {
@@ -11495,7 +11722,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L480",
+      "source_location": "L704",
       "weight": 1.0
     },
     {
@@ -11507,7 +11734,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L150",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -11519,7 +11746,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L151",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -11531,7 +11758,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L439",
+      "source_location": "L663",
       "weight": 1.0
     },
     {
@@ -13379,7 +13606,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -13391,7 +13618,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L296",
+      "source_location": "L297",
       "weight": 1.0
     },
     {
@@ -13403,7 +13630,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L298",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -13415,7 +13642,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L313",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -13427,7 +13654,79 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L318",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "tests_story_test_atlas_stage_atlas_inputs",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L407",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "tests_story_test_atlas_write_fixture_config",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L410",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "tests_story_test_atlas_write_coastline",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L411",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "analysis_story_atlas_load_atlas_inputs",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L412",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "analysis_story_atlas_load_atlas_config",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L415",
       "weight": 1.0
     },
     {
@@ -13439,7 +13738,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L334",
+      "source_location": "L335",
       "weight": 1.0
     },
     {
@@ -13451,7 +13750,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L450",
+      "source_location": "L486",
       "weight": 1.0
     },
     {
@@ -13463,7 +13762,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L457",
+      "source_location": "L493",
       "weight": 1.0
     },
     {
@@ -13475,7 +13774,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L461",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -13487,7 +13786,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L474",
+      "source_location": "L510",
       "weight": 1.0
     },
     {
@@ -13499,24 +13798,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L383",
+      "source_location": "L384",
       "weight": 1.0
     },
     {
       "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
       "target": "tests_story_test_atlas_write_fixture_config",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L386",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
-      "target": "tests_story_test_atlas_write_coastline",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13528,7 +13815,7 @@
     },
     {
       "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
-      "target": "analysis_story_atlas_load_atlas_inputs",
+      "target": "tests_story_test_atlas_write_coastline",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13540,7 +13827,7 @@
     },
     {
       "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
-      "target": "analysis_story_atlas_load_atlas_config",
+      "target": "analysis_story_atlas_load_atlas_inputs",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13552,6 +13839,18 @@
     },
     {
       "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
+      "target": "analysis_story_atlas_load_atlas_config",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L390",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
       "target": "analysis_story_plots_plot_pacific_evidence",
       "relation": "calls",
       "_origin": "ast",
@@ -13559,7 +13858,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L391",
+      "source_location": "L392",
       "weight": 1.0
     },
     {
@@ -13571,7 +13870,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L322",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -13583,7 +13882,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L323",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -13595,7 +13894,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L367",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -13607,7 +13906,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L367",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -13619,7 +13918,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L404",
+      "source_location": "L440",
       "weight": 1.0
     },
     {
@@ -13631,7 +13930,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L406",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -13643,7 +13942,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L407",
+      "source_location": "L443",
       "weight": 1.0
     },
     {
@@ -13655,7 +13954,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L408",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -13667,7 +13966,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L410",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -13679,7 +13978,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L342",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -13691,24 +13990,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L344",
+      "source_location": "L345",
       "weight": 1.0
     },
     {
       "source": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
       "target": "analysis_story_atlas_load_atlas_inputs",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L346",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
-      "target": "analysis_story_atlas_load_atlas_config",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13720,7 +14007,7 @@
     },
     {
       "source": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
-      "target": "analysis_story_atlas_validate_stage_a_scope",
+      "target": "analysis_story_atlas_load_atlas_config",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13732,6 +14019,18 @@
     },
     {
       "source": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
+      "target": "analysis_story_atlas_validate_stage_a_scope",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
       "target": "pipeline_missingness_expectedwindow",
       "relation": "calls",
       "_origin": "ast",
@@ -13739,7 +14038,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L352",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -13751,7 +14050,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L429",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
@@ -13763,7 +14062,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L431",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -13775,7 +14074,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L432",
+      "source_location": "L468",
       "weight": 1.0
     },
     {
@@ -13787,7 +14086,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L433",
+      "source_location": "L469",
       "weight": 1.0
     },
     {
@@ -13799,7 +14098,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L434",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -13811,7 +14110,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L436",
+      "source_location": "L472",
       "weight": 1.0
     },
     {
@@ -16343,7 +16642,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L446",
+      "source_location": "L670",
       "weight": 1.0
     },
     {
@@ -16355,7 +16654,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L478",
+      "source_location": "L702",
       "weight": 1.0
     },
     {
@@ -16367,7 +16666,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L508",
+      "source_location": "L732",
       "weight": 1.0
     },
     {
@@ -16379,7 +16678,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -16391,7 +16690,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -16403,7 +16702,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L435",
+      "source_location": "L659",
       "weight": 1.0
     },
     {
@@ -16679,7 +16978,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -17008,6 +17307,18 @@
     },
     {
       "source": "analysis_story_plots",
+      "target": "analysis_story_atlas_geodesic_range_ring",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
       "target": "analysis_story_atlas_seriespanel",
       "relation": "imports",
       "_origin": "ast",
@@ -17051,7 +17362,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -17392,6 +17703,18 @@
     },
     {
       "source": "tests_story_test_atlas",
+      "target": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas",
       "target": "analysis_story_plots_plot_observation_coverage",
       "relation": "imports",
       "_origin": "ast",
@@ -17435,7 +17758,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17447,7 +17770,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17459,7 +17782,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17471,7 +17794,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17975,7 +18298,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -18119,7 +18442,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -18339,6 +18662,18 @@
       "weight": 1.0
     },
     {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "axes",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L436",
+      "weight": 1.0
+    },
+    {
       "source": "analysis_story_plots_draw_lines",
       "target": "axes",
       "relation": "references",
@@ -18347,7 +18682,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L486",
+      "source_location": "L710",
       "weight": 1.0
     },
     {
@@ -18359,7 +18694,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L486",
+      "source_location": "L710",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_line_extent",
+      "target": "geoseries",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L485",
       "weight": 1.0
     },
     {
@@ -18371,7 +18718,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L446",
+      "source_location": "L670",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_plots_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -18383,7 +18742,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L183",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -18395,7 +18754,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L512",
+      "source_location": "L736",
       "weight": 1.0
     },
     {
@@ -18407,7 +18766,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L321",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -18419,7 +18778,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -18431,7 +18790,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L435",
+      "source_location": "L659",
       "weight": 1.0
     },
     {
@@ -19115,7 +19474,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L295",
+      "source_location": "L296",
       "weight": 1.0
     },
     {
@@ -19127,7 +19486,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L310",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "target": "tests_story_test_atlas_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L404",
       "weight": 1.0
     },
     {
@@ -19139,7 +19510,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L447",
+      "source_location": "L483",
       "weight": 1.0
     },
     {
@@ -19151,7 +19522,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L380",
+      "source_location": "L381",
       "weight": 1.0
     },
     {
@@ -19163,7 +19534,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L403",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -19175,7 +19546,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L341",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -19187,7 +19558,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L426",
+      "source_location": "L462",
       "weight": 1.0
     },
     {
@@ -19199,7 +19570,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L263",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -19211,7 +19582,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -19223,7 +19594,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L244",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -20171,7 +20542,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -20183,7 +20554,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L478",
+      "source_location": "L702",
       "weight": 1.0
     },
     {
@@ -20195,7 +20566,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L508",
+      "source_location": "L732",
       "weight": 1.0
     },
     {
@@ -20688,7 +21059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L101",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -20699,7 +21070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -20710,7 +21081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -20721,7 +21092,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L183",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -20732,73 +21103,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L321",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
       "source": "analysis_story_plots",
-      "target": "analysis_story_plots_two_dimensional_coordinates",
+      "target": "analysis_story_plots_draw_event_and_stations",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L435",
+      "source_location": "L436",
       "weight": 1.0
     },
     {
       "source": "analysis_story_plots",
-      "target": "analysis_story_plots_load_coastline_parts",
+      "target": "analysis_story_plots_line_extent",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L446",
+      "source_location": "L485",
       "weight": 1.0
     },
     {
       "source": "analysis_story_plots",
-      "target": "analysis_story_plots_project_lines",
+      "target": "analysis_story_plots_plot_distance_contour_diagnostic",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L478",
-      "weight": 1.0
-    },
-    {
-      "source": "analysis_story_plots",
-      "target": "analysis_story_plots_draw_lines",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L486",
-      "weight": 1.0
-    },
-    {
-      "source": "analysis_story_plots",
-      "target": "analysis_story_plots_project_points",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L508",
-      "weight": 1.0
-    },
-    {
-      "source": "analysis_story_plots",
-      "target": "analysis_story_plots_plot_pacific_evidence",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L512",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -20809,7 +21147,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L52",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_two_dimensional_coordinates",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L659",
       "weight": 1.0
     },
     {
@@ -20820,7 +21169,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L65",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_load_coastline_parts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L670",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_project_lines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L702",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_draw_lines",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L710",
       "weight": 1.0
     },
     {
@@ -20831,7 +21213,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L72",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_project_points",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L732",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots",
+      "target": "analysis_story_plots_plot_pacific_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L736",
       "weight": 1.0
     },
     {
@@ -20842,7 +21246,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -22690,7 +23094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L417",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -22701,7 +23105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L433",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -22712,7 +23116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L452",
+      "source_location": "L458",
       "weight": 1.0
     },
     {
@@ -22723,7 +23127,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L460",
+      "source_location": "L466",
       "weight": 1.0
     },
     {
@@ -23207,18 +23611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "context_story_project_visual_story_contract",
-      "target": "context_story_project_contribution_boundary",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/story/PROJECT.md",
-      "source_location": "L28",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -23234,13 +23627,24 @@
     },
     {
       "source": "context_story_project_visual_story_contract",
+      "target": "context_story_project_contribution_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "context/story/PROJECT.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "context_story_project_visual_story_contract",
       "target": "context_story_project_evidence_states",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -23251,7 +23655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -23262,7 +23666,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L54",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -23350,7 +23754,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L138",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -23537,7 +23941,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L511",
+      "source_location": "L515",
       "weight": 1.0
     },
     {
@@ -23548,7 +23952,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L535",
+      "source_location": "L539",
       "weight": 1.0
     },
     {
@@ -23559,7 +23963,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L560",
+      "source_location": "L564",
       "weight": 1.0
     },
     {
@@ -26507,7 +26911,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L244",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -26518,7 +26922,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L263",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -26529,7 +26933,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L295",
+      "source_location": "L296",
       "weight": 1.0
     },
     {
@@ -26540,7 +26944,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L310",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -26551,7 +26955,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L321",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -26562,7 +26966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L333",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -26573,7 +26977,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L341",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -26584,7 +26988,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L366",
+      "source_location": "L367",
       "weight": 1.0
     },
     {
@@ -26595,7 +26999,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L380",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_atlas",
+      "target": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L404",
       "weight": 1.0
     },
     {
@@ -26606,7 +27021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L403",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -26617,7 +27032,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L426",
+      "source_location": "L462",
       "weight": 1.0
     },
     {
@@ -26628,7 +27043,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L447",
+      "source_location": "L483",
       "weight": 1.0
     },
     {
@@ -26639,7 +27054,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -26650,7 +27065,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -28007,47 +28422,58 @@
       "weight": 1.0
     },
     {
-      "source": "analysis_story_plots_rationale_189",
+      "source": "analysis_story_plots_rationale_190",
       "target": "analysis_story_plots_plot_observation_coverage",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L189",
+      "source_location": "L190",
       "weight": 1.0
     },
     {
-      "source": "analysis_story_plots_rationale_326",
+      "source": "analysis_story_plots_rationale_327",
       "target": "analysis_story_plots_plot_station_timeseries",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L326",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
-      "source": "analysis_story_plots_rationale_518",
-      "target": "analysis_story_plots_plot_pacific_evidence",
+      "source": "analysis_story_plots_rationale_503",
+      "target": "analysis_story_plots_plot_distance_contour_diagnostic",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L518",
+      "source_location": "L503",
       "weight": 1.0
     },
     {
-      "source": "analysis_story_plots_rationale_53",
+      "source": "analysis_story_plots_rationale_54",
       "target": "analysis_story_plots_plotfiles",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/plots.py",
-      "source_location": "L53",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "analysis_story_plots_rationale_742",
+      "target": "analysis_story_plots_plot_pacific_evidence",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L742",
       "weight": 1.0
     },
     {
@@ -28965,7 +29391,7 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L112",
+      "source_location": "L113",
       "weight": 0.8
     },
     {
@@ -28977,7 +29403,7 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L184",
+      "source_location": "L185",
       "weight": 0.8
     },
     {
@@ -28989,7 +29415,7 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L322",
+      "source_location": "L323",
       "weight": 0.8
     },
     {
@@ -29065,6 +29491,54 @@
       "weight": 0.8
     },
     {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "analysis_story_atlas_atlasinputs",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L438",
+      "weight": 0.8
+    },
+    {
+      "source": "analysis_story_plots_draw_event_and_stations",
+      "target": "analysis_story_atlas_atlasconfig",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L439",
+      "weight": 0.8
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_atlas_atlasinputs",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L498",
+      "weight": 0.8
+    },
+    {
+      "source": "analysis_story_plots_plot_distance_contour_diagnostic",
+      "target": "analysis_story_atlas_atlasconfig",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "parameter_type",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L499",
+      "weight": 0.8
+    },
+    {
       "source": "analysis_story_plots_plot_pacific_evidence",
       "target": "analysis_story_atlas_atlasinputs",
       "relation": "uses",
@@ -29073,7 +29547,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L513",
+      "source_location": "L737",
       "weight": 0.8
     },
     {
@@ -29085,7 +29559,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L514",
+      "source_location": "L738",
       "weight": 0.8
     },
     {
@@ -29097,7 +29571,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L323",
+      "source_location": "L324",
       "weight": 0.8
     },
     {
@@ -29109,7 +29583,7 @@
       "confidence_score": 0.95,
       "context": "parameter_type",
       "source_file": "analysis/story/plots.py",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 0.8
     },
     {
@@ -29222,7 +29696,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/story/test_atlas.py",
-      "source_location": "L317",
+      "source_location": "L318",
       "weight": 0.8
     },
     {
@@ -29513,5 +29987,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ced987f0416be5059baa9c27533aa0c49c164d8f"
+  "built_at_commit": "6115a7c84a468897af612b51e00f99e91a2339a0"
 }

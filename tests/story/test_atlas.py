@@ -17,6 +17,7 @@ from analysis.story.atlas import (
     validate_stage_a_scope,
 )
 from analysis.story.plots import (
+    plot_distance_contour_diagnostic,
     plot_observation_coverage,
     plot_pacific_evidence,
     plot_station_timeseries,
@@ -398,6 +399,41 @@ def test_pacific_evidence_map_is_deterministic_and_records_geometry_counts(
     assert first.projection == config.display_crs
     assert first.input_parts == len(atlas.contours) + 2
     assert first.output_parts >= first.input_parts
+
+
+def test_distance_contour_diagnostic_keeps_incompatible_units_separate(
+    tmp_path: Path,
+) -> None:
+    processed, missingness_summary = _stage_atlas_inputs(tmp_path)
+    config_path = tmp_path / "story-atlas.toml"
+    coastline_path = tmp_path / "coastline.geojson"
+    _write_fixture_config(config_path)
+    _write_coastline(coastline_path)
+    atlas = load_atlas_inputs(processed, missingness_summary)
+    config = load_atlas_config(config_path)
+
+    first = plot_distance_contour_diagnostic(
+        atlas,
+        config,
+        coastline_path,
+        tmp_path / "first-distance",
+    )
+    second = plot_distance_contour_diagnostic(
+        atlas,
+        config,
+        coastline_path,
+        tmp_path / "second-distance",
+    )
+
+    assert first.plot_id == "04_distance_contour_diagnostic"
+    assert first.units == "left: geodesic kilometres; right: published contour hours"
+    assert first.projection == config.display_crs
+    assert first.png.is_file()
+    assert first.svg.is_file()
+    assert b"No speed conversion" in first.svg.read_bytes()
+    assert b"not a modeled arrival at a station" in first.svg.read_bytes()
+    assert sha256(first.png.read_bytes()).hexdigest() == sha256(second.png.read_bytes()).hexdigest()
+    assert sha256(first.svg.read_bytes()).hexdigest() == sha256(second.svg.read_bytes()).hexdigest()
 
 
 def test_series_panels_preserve_station_specific_source_semantics(tmp_path: Path) -> None:
