@@ -110,7 +110,11 @@
   coastal windows without inferred source semantics. Task 5 RED failed on the
   absent plot module; GREEN passed all 7 atlas tests, Ruff, and strict Pyright.
   A temporary real-data render preserved all 4,514 coastline-plus-contour input
-  parts as 4,543 seam-safe projected output parts and wrote valid PNG/SVG files
+  parts as 4,543 seam-safe projected output parts and wrote valid PNG/SVG files.
+  Task 6 RED failed on the absent coverage renderer; GREEN passed all 14 shared
+  missingness and atlas tests, Ruff, and strict Pyright. Its temporary real-data
+  render represented 23,040 exact-grid positions and 120 separate off-grid
+  observations across all six gauges; lowest-coverage names are metric-derived
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -120,7 +124,9 @@
   added immutable source-preserving atlas records, strict Stage A scope checks,
   interpolated Pacific seam splits, and WGS84 distance rings; 2026-09-14 —
   added the deterministic Pacific evidence map with explicit projection,
-  preliminary-state, candidate-marker, and non-continuous-field labels
+  preliminary-state, candidate-marker, and non-continuous-field labels;
+  2026-09-14 — added source-window coverage strips with separate observed,
+  source-blank, absent-timestamp, and unsnapped off-grid encodings
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

@@ -909,7 +909,7 @@ git commit -m "feat(story): render Pacific evidence map"
 - Consumes: `tuple[CoastalCoverageTimeline, ...]`, the shared missingness summary, and an output stem.
 - Produces: `plot_observation_coverage(...)` writing `02_observation_coverage.{png,svg}`.
 
-- [ ] **Step 1: Write the failing coverage-plot test**
+- [x] **Step 1: Write the failing coverage-plot test**
 
 Build one fixture timeline with observed, blank, absent, and off-grid states and
 assert deterministic PNG/SVG output plus this metadata:
@@ -928,13 +928,13 @@ assert files.png.is_file()
 assert files.svg.is_file()
 ```
 
-- [ ] **Step 2: Run the focused test and observe the missing function**
+- [x] **Step 2: Run the focused test and observe the missing function**
 
 Run: `uv run pytest tests/story/test_atlas.py -k observation_coverage -q`
 
 Expected: FAIL on the missing import.
 
-- [ ] **Step 3: Implement the timeline view**
+- [x] **Step 3: Implement the timeline view**
 
 Render one horizontal strip per coastal gauge over its own source-supported
 window. Encode exact observations, retained source blanks, and absent timestamps
@@ -946,7 +946,7 @@ the supplied metrics rather than a hard-coded annotation.
 The legend must state that off-grid ticks were preserved rather than snapped and
 that gray absence is not numeric zero. Use `_save_figure` for both outputs.
 
-- [ ] **Step 4: Verify counts and rendering**
+- [x] **Step 4: Verify counts and rendering**
 
 Run:
 
@@ -958,7 +958,7 @@ uv run pyright
 
 Expected: shared counts remain unchanged and the new plot tests pass.
 
-- [ ] **Step 5: Commit the coverage plot**
+- [x] **Step 5: Commit the coverage plot**
 
 ```bash
 git add analysis/story/plots.py tests/story/test_atlas.py

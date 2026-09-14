@@ -377,7 +377,13 @@ preliminary-evidence, candidate-station, and published-contour semantics. Its RE
 test failed on the absent plot module; GREEN passed all 7 atlas tests, Ruff, and
 strict Pyright. A temporary actual-data smoke render wrote valid PNG/SVG outputs
 and transformed all 4,514 input line parts into 4,543 seam-safe projected parts.
-No canonical story figure, claim, or app export exists at this point.
+Task 6 adds deterministic source-window coverage strips whose distinct states
+are exact observed value, retained source blank, absent timestamp, and unsnapped
+off-grid observation. Its RED test failed on the absent renderer; GREEN passed
+14 shared missingness and atlas tests, Ruff, and strict Pyright. A temporary
+actual-data render represented 23,040 exact-grid positions and 120 off-grid
+observations across all six gauges; lowest-coverage labels are derived from the
+supplied metrics. No canonical story figure, claim, or app export exists yet.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -422,7 +428,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 6, committing each task
+1. Continue the approved inline Stage A plan at Task 7, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -450,4 +456,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–5 are complete and Task 6 is next.
+Tasks 1–6 are complete and Task 7 is next.

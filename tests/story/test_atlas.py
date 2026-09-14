@@ -15,8 +15,13 @@ from analysis.story.atlas import (
     split_at_display_seam,
     validate_stage_a_scope,
 )
-from analysis.story.plots import plot_pacific_evidence
-from pipeline.missingness import ExpectedWindow
+from analysis.story.plots import plot_observation_coverage, plot_pacific_evidence
+from pipeline.missingness import (
+    CoastalCoverageTimeline,
+    CoveragePosition,
+    ExpectedWindow,
+    OffGridObservation,
+)
 
 EVENT_COLUMNS = (
     "event_id",
@@ -388,3 +393,52 @@ def test_pacific_evidence_map_is_deterministic_and_records_geometry_counts(
     assert first.projection == config.display_crs
     assert first.input_parts == len(atlas.contours) + 2
     assert first.output_parts >= first.input_parts
+
+
+def test_observation_coverage_plot_preserves_all_missingness_states(
+    tmp_path: Path,
+) -> None:
+    timeline = CoastalCoverageTimeline(
+        station_id="coast",
+        name="Coastal fixture",
+        start_utc="2011-03-11T00:00:00Z",
+        end_utc_exclusive="2011-03-11T00:03:00Z",
+        cadence_seconds=60,
+        positions=(
+            CoveragePosition("coast", "2011-03-11T00:00:00Z", "observed"),
+            CoveragePosition("coast", "2011-03-11T00:01:00Z", "source_blank"),
+            CoveragePosition("coast", "2011-03-11T00:02:00Z", "absent_timestamp"),
+        ),
+        off_grid=(OffGridObservation("coast", "2011-03-11T00:00:59Z", True),),
+    )
+    summary: dict[str, object] = {
+        "coastal_windows": [
+            {
+                "station_id": "coast",
+                "name": "Coastal fixture",
+                "strict_coverage_percent": 33.3333,
+                "sample_density_coverage_percent": 66.6667,
+            }
+        ]
+    }
+
+    first = plot_observation_coverage(
+        (timeline,),
+        missingness_summary=summary,
+        output_stem=tmp_path / "first-coverage",
+    )
+    second = plot_observation_coverage(
+        (timeline,),
+        missingness_summary=summary,
+        output_stem=tmp_path / "second-coverage",
+    )
+
+    assert first.plot_id == "02_observation_coverage"
+    assert first.units == "source-supported timestamp coverage"
+    assert first.projection == "not applicable"
+    assert first.png.is_file()
+    assert first.svg.is_file()
+    assert b"Off-grid ticks are preserved rather than snapped" in first.svg.read_bytes()
+    assert b"Gray absence is not numeric zero" in first.svg.read_bytes()
+    assert sha256(first.png.read_bytes()).hexdigest() == sha256(second.png.read_bytes()).hexdigest()
+    assert sha256(first.svg.read_bytes()).hexdigest() == sha256(second.svg.read_bytes()).hexdigest()

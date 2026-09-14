@@ -7,8 +7,10 @@ keyword types; source-owned values and geometry objects remain explicitly typed.
 
 from __future__ import annotations
 
+import math
 from collections.abc import Iterable
 from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import cast
 
@@ -24,10 +26,12 @@ matplotlib.rcParams.update(
     }
 )
 
+import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.axes import Axes  # noqa: E402
 from matplotlib.figure import Figure  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.patches import Patch  # noqa: E402
 from pyproj import CRS  # noqa: E402
 from shapely.geometry import LineString, MultiLineString, Point  # noqa: E402
 from shapely.geometry.base import BaseGeometry  # noqa: E402
@@ -40,6 +44,7 @@ from analysis.story.atlas import (  # noqa: E402
     shift_longitude,
     split_at_display_seam,
 )
+from pipeline.missingness import CoastalCoverageTimeline, CoverageStatus  # noqa: E402
 
 
 @dataclass(frozen=True, slots=True)
@@ -53,6 +58,14 @@ class PlotFiles:
     units: str
     input_parts: int
     output_parts: int
+
+
+@dataclass(frozen=True, slots=True)
+class _CoverageMetric:
+    station_id: str
+    name: str
+    strict_percent: float
+    sample_density_percent: float
 
 
 def _save_figure(figure: Figure, output_stem: Path, *, dpi: int) -> tuple[Path, Path]:
@@ -72,6 +85,236 @@ def _save_figure(figure: Figure, output_stem: Path, *, dpi: int) -> tuple[Path, 
     )
     plt.close(figure)
     return png, svg
+
+
+def _parse_plot_utc(value: str) -> datetime:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise AtlasError(f"invalid coverage timestamp {value!r}") from error
+    if not value.endswith("Z") or parsed.utcoffset() != UTC.utcoffset(parsed):
+        raise AtlasError(f"coverage timestamp is not explicit UTC: {value!r}")
+    return parsed
+
+
+def _coverage_percent(value: object, *, field: str) -> float:
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
+        raise AtlasError(f"missingness summary {field} must be numeric")
+    result = float(value)
+    if not math.isfinite(result) or not 0.0 <= result <= 100.0:
+        raise AtlasError(f"missingness summary {field} must be between 0 and 100")
+    return result
+
+
+def _coverage_metrics(
+    missingness_summary: dict[str, object],
+    timelines: tuple[CoastalCoverageTimeline, ...],
+) -> dict[str, _CoverageMetric]:
+    raw_windows = missingness_summary.get("coastal_windows")
+    if not isinstance(raw_windows, list) or not raw_windows:
+        raise AtlasError("missingness summary requires coastal_windows")
+    metrics: dict[str, _CoverageMetric] = {}
+    for raw_window in cast(list[object], raw_windows):
+        if not isinstance(raw_window, dict):
+            raise AtlasError("missingness summary coastal window must be an object")
+        window = cast(dict[str, object], raw_window)
+        station_id = window.get("station_id")
+        name = window.get("name")
+        if not isinstance(station_id, str) or not isinstance(name, str):
+            raise AtlasError("missingness summary coastal window lacks station identity")
+        if station_id in metrics:
+            raise AtlasError(f"duplicate missingness metric for {station_id!r}")
+        metrics[station_id] = _CoverageMetric(
+            station_id=station_id,
+            name=name,
+            strict_percent=_coverage_percent(
+                window.get("strict_coverage_percent"),
+                field=f"{station_id} strict_coverage_percent",
+            ),
+            sample_density_percent=_coverage_percent(
+                window.get("sample_density_coverage_percent"),
+                field=f"{station_id} sample_density_coverage_percent",
+            ),
+        )
+    timeline_ids = {timeline.station_id for timeline in timelines}
+    if set(metrics) != timeline_ids:
+        raise AtlasError("coverage timelines and missingness metrics must have identical stations")
+    return metrics
+
+
+def _status_spans(
+    timeline: CoastalCoverageTimeline,
+) -> dict[CoverageStatus, list[tuple[float, float]]]:
+    if not timeline.positions:
+        raise AtlasError(f"coverage timeline {timeline.station_id!r} has no positions")
+    expected_start = _parse_plot_utc(timeline.start_utc)
+    expected_end = _parse_plot_utc(timeline.end_utc_exclusive)
+    cadence = timedelta(seconds=timeline.cadence_seconds)
+    spans: dict[CoverageStatus, list[tuple[float, float]]] = {
+        "observed": [],
+        "source_blank": [],
+        "absent_timestamp": [],
+    }
+    run_status = timeline.positions[0].status
+    run_start = _parse_plot_utc(timeline.positions[0].expected_at_utc)
+    previous = run_start
+    for position in timeline.positions:
+        if position.station_id != timeline.station_id:
+            raise AtlasError(f"coverage position has wrong station for {timeline.station_id!r}")
+        current = _parse_plot_utc(position.expected_at_utc)
+        if current < expected_start or current >= expected_end:
+            raise AtlasError(f"coverage position lies outside {timeline.station_id!r} window")
+        if current != previous and current != previous + cadence:
+            raise AtlasError(f"coverage timeline {timeline.station_id!r} is not an exact grid")
+        if position.status != run_status:
+            start_number = cast(float, mdates.date2num(run_start))
+            end_number = cast(float, mdates.date2num(previous + cadence))
+            spans[run_status].append((start_number, end_number - start_number))
+            run_status = position.status
+            run_start = current
+        previous = current
+    start_number = cast(float, mdates.date2num(run_start))
+    end_number = cast(float, mdates.date2num(previous + cadence))
+    spans[run_status].append((start_number, end_number - start_number))
+    return spans
+
+
+def plot_observation_coverage(
+    timelines: tuple[CoastalCoverageTimeline, ...],
+    *,
+    missingness_summary: dict[str, object],
+    output_stem: Path,
+) -> PlotFiles:
+    """Render source-supported coastal coverage without interpolation or snapping."""
+    if not timelines:
+        raise AtlasError("at least one coastal coverage timeline is required")
+    station_ids = [timeline.station_id for timeline in timelines]
+    if len(set(station_ids)) != len(station_ids):
+        raise AtlasError("coverage timelines contain duplicate station IDs")
+    metrics = _coverage_metrics(missingness_summary, timelines)
+
+    figure = plt.figure(figsize=(13.0, 1.35 * len(timelines) + 2.4))
+    figure.patch.set_facecolor("#fbfaf7")
+    axes_list: list[Axes] = []
+    status_colors: dict[CoverageStatus, str] = {
+        "observed": "#277da1",
+        "source_blank": "#f4a261",
+        "absent_timestamp": "#c7c9c8",
+    }
+    for panel_index, timeline in enumerate(timelines, start=1):
+        axes = figure.add_subplot(len(timelines), 1, panel_index)
+        axes_list.append(axes)
+        spans = _status_spans(timeline)
+        for status, color in status_colors.items():
+            if spans[status]:
+                axes.broken_barh(
+                    spans[status],
+                    (0.0, 1.0),
+                    facecolors=color,
+                    edgecolors="none",
+                    zorder=1,
+                )
+        start = _parse_plot_utc(timeline.start_utc)
+        end = _parse_plot_utc(timeline.end_utc_exclusive)
+        for observation in timeline.off_grid:
+            if observation.station_id != timeline.station_id:
+                raise AtlasError(
+                    f"off-grid observation has wrong station for {timeline.station_id}"
+                )
+            observed_at = _parse_plot_utc(observation.observed_at_utc)
+            if observed_at < start or observed_at >= end:
+                raise AtlasError(
+                    f"off-grid observation lies outside {timeline.station_id!r} window"
+                )
+            axes.vlines(
+                cast(float, mdates.date2num(observed_at)),
+                0.02,
+                0.98,
+                colors="#202124" if observation.raw_value_available else "#9c2f45",
+                linewidth=0.55,
+                zorder=3,
+            )
+        metric = metrics[timeline.station_id]
+        axes.set_xlim(
+            cast(float, mdates.date2num(start)),
+            cast(float, mdates.date2num(end)),
+        )
+        axes.set_ylim(0.0, 1.0)
+        axes.set_yticks([])
+        axes.xaxis.set_major_locator(mdates.AutoDateLocator(minticks=2, maxticks=4))
+        axes.xaxis.set_major_formatter(mdates.DateFormatter("%b %d\n%H:%M", tz=UTC))
+        axes.tick_params(axis="x", labelsize=7, colors="#526068", length=2)
+        for spine in axes.spines.values():
+            spine.set_visible(False)
+        axes.set_title(
+            f"{timeline.name} · {timeline.station_id}",
+            loc="left",
+            fontsize=9,
+            fontweight="bold",
+            pad=3,
+        )
+        axes.text(
+            1.0,
+            1.08,
+            f"strict {metric.strict_percent:.2f}% · sample density "
+            f"{metric.sample_density_percent:.2f}%",
+            transform=axes.transAxes,
+            ha="right",
+            va="bottom",
+            fontsize=7.5,
+            color="#394850",
+        )
+
+    weakest = sorted(metrics.values(), key=lambda item: (item.strict_percent, item.station_id))[:2]
+    weakest_names = ", ".join(metric.name for metric in weakest)
+    figure.suptitle(
+        "Observation coverage by source-supported window",
+        x=0.08,
+        y=0.985,
+        ha="left",
+        fontsize=16,
+        fontweight="bold",
+        color="#17242b",
+    )
+    figure.legend(
+        handles=[
+            Patch(facecolor=status_colors["observed"], label="Exact observed value"),
+            Patch(facecolor=status_colors["source_blank"], label="Retained source blank"),
+            Patch(facecolor=status_colors["absent_timestamp"], label="Absent timestamp"),
+            Line2D([], [], color="#202124", linewidth=1.0, label="Off-grid observation"),
+        ],
+        loc="lower center",
+        ncol=4,
+        frameon=False,
+        fontsize=8,
+        bbox_to_anchor=(0.5, 0.065),
+    )
+    figure.text(
+        0.08,
+        0.012,
+        "Off-grid ticks are preserved rather than snapped · Gray absence is not numeric zero · "
+        f"lowest strict coverage from supplied metrics: {weakest_names} · "
+        "preliminary_storyboard_evidence",
+        ha="left",
+        va="bottom",
+        fontsize=7.5,
+        color="#394850",
+    )
+    figure.subplots_adjust(left=0.08, right=0.98, top=0.90, bottom=0.18, hspace=0.95)
+
+    png, svg = _save_figure(figure, output_stem, dpi=160)
+    represented_positions = sum(
+        len(timeline.positions) + len(timeline.off_grid) for timeline in timelines
+    )
+    return PlotFiles(
+        plot_id="02_observation_coverage",
+        png=png,
+        svg=svg,
+        projection="not applicable",
+        units="source-supported timestamp coverage",
+        input_parts=represented_positions,
+        output_parts=represented_positions,
+    )
 
 
 def _two_dimensional_coordinates(line: LineString, *, label: str) -> tuple[Coordinate, ...]:

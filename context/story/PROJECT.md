@@ -10,8 +10,9 @@ coverage positions and off-grid samples without snapping or changing existing
 missingness outputs. Task 4 adds typed, source-preserving inputs, exact reviewed
 scope validation, Pacific seam interpolation, and geodesic range rings. No story
 claim or app export exists yet; Task 5 now provides the deterministic Pacific
-evidence-map renderer, while canonical figures wait for the reviewed-run task.
-The NCTR field remains blocked.
+evidence-map renderer, and Task 6 provides source-window coverage strips with
+all missingness mechanisms separated. Canonical figures wait for the reviewed-
+run task. The NCTR field remains blocked.
 
 ## Question
 
