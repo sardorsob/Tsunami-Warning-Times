@@ -501,7 +501,10 @@
   record; Task 10 added the thin read-only Marimo atlas viewer, passed 3
   dependency/boundary tests plus headless empty-state execution, and kept
   normalized tables, plotting, MLflow, and repository writes outside the
-  notebook
+  notebook; the first full-size preview then exposed and stopped on false
+  spatial seam lines, whose PROJ exact-boundary normalization root cause was
+  fixed and verified by a RED/GREEN regression plus a real-data rerender with
+  zero coastline or contour segments over 2,000 km
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
@@ -519,7 +522,9 @@
   passed 10 integration/error tests, Ruff, strict Pyright, overwrite refusal,
   path fences, reviewed-decision checks, and manifest hash reconciliation;
   2026-09-16 — notebook RED/GREEN passed its source boundary, Marimo, empty-
-  state export, Ruff, and strict Pyright checks
+  state export, Ruff, and strict Pyright checks; 2026-09-16 — cartographic QA
+  rejected the first preview, then the Pacific force-over projection fix passed
+  all 12 atlas tests, Ruff, strict Pyright, segment-length checks, and visual QA
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

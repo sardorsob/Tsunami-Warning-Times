@@ -131,7 +131,13 @@
   passed all 3 dependency/boundary tests, `marimo check`, Ruff, and strict
   Pyright. A headless HTML export rendered the explicit no-manifest callout and
   created no repository file; the notebook reads only generated manifests,
-  ledgers, and figure paths.
+  ledgers, and figure paths. The first Task 11 full-size preview exposed false
+  horizontal seam segments in both spatial figures, so review stopped. A RED
+  regression reproduced PROJ normalizing the exact unwrapped `-340°` endpoint
+  to the opposite edge; the typed `force_over` projection fix passed all 12
+  atlas tests, Ruff, and strict Pyright. A real-data rerender reduced coastline
+  and contour segments over 2,000 km from 9 and 16 to zero; visual inspection
+  confirmed the false lines were removed.
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -151,7 +157,10 @@
   added the preview/review-aware reproducible runner with overwrite refusal,
   story-lane fences, checksum reconciliation, and no-partial-output tests;
   2026-09-16 — added the read-only reactive atlas viewer and verified its empty
-  state without loading normalized tables, plotting, tracking, or writing
+  state without loading normalized tables, plotting, tracking, or writing;
+  2026-09-16 — stopped the first real-atlas review on a visible seam defect,
+  traced it to exact-boundary longitude normalization, and fixed the root cause
+  with a typed projection regression and real-data spatial rerender
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

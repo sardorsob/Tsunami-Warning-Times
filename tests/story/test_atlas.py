@@ -7,11 +7,13 @@ import pytest
 from pyproj import Geod
 
 from analysis.story.atlas import (
+    DISPLAY_CRS,
     AtlasError,
     build_series_panels,
     geodesic_range_ring,
     load_atlas_config,
     load_atlas_inputs,
+    project_line_parts,
     shift_longitude,
     split_at_display_seam,
     validate_stage_a_scope,
@@ -329,6 +331,20 @@ def test_pacific_shift_splits_a_line_at_the_twenty_degree_seam() -> None:
         ((-330.0, 0.0), (-340.0, 2.5)),
         ((20.0, 2.5), (-10.0, 10.0)),
     )
+
+
+def test_projected_split_line_preserves_both_pacific_seam_sides() -> None:
+    parts = split_at_display_seam(((-10.0, 0.0), (30.0, 0.0)))
+
+    east_part, west_part = project_line_parts(parts, DISPLAY_CRS)
+
+    assert east_part[-1][0] > 0.0
+    assert west_part[0][0] < 0.0
+    assert max(
+        abs(current[0] - previous[0])
+        for part in (east_part, west_part)
+        for previous, current in zip(part, part[1:], strict=False)
+    ) < 5_000_000.0
 
 
 def test_geodesic_range_ring_uses_kilometres_without_a_speed_model() -> None:

@@ -11,7 +11,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal, cast
 
-from pyproj import Geod
+from pyproj import Geod, Transformer
 
 from pipeline.missingness import ExpectedWindow
 
@@ -645,6 +645,33 @@ def split_at_display_seam(
             parts[-1].append(current)
         previous = current
     return tuple(tuple(part) for part in parts)
+
+
+def project_line_parts(
+    parts: tuple[tuple[Coordinate, ...], ...],
+    display_crs: str,
+) -> tuple[tuple[Coordinate, ...], ...]:
+    """Project unwrapped Pacific linework without normalizing its seam endpoints."""
+    transformer = Transformer.from_crs(
+        "EPSG:4326",
+        display_crs,
+        always_xy=True,
+        force_over=True,
+    )
+    projected_parts: list[tuple[Coordinate, ...]] = []
+    for part in parts:
+        if len(part) < 2:
+            raise AtlasError("linework must contain at least two coordinates")
+        projected_parts.append(
+            tuple(
+                cast(
+                    Coordinate,
+                    transformer.transform(longitude, latitude),
+                )
+                for longitude, latitude in part
+            )
+        )
+    return tuple(projected_parts)
 
 
 def geodesic_range_ring(

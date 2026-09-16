@@ -409,6 +409,17 @@ export, Ruff, and strict Pyright. It loads no normalized table, invokes no plot
 or MLflow code, and writes no repository file. No canonical story figure,
 claim, or app export exists yet.
 
+The first Task 11 full-size preview correctly halted before a review decision:
+both spatial figures showed false horizontal seam segments. Diagnostics found
+9 coastline and 16 contour segments over 2,000 km, with a maximum near 32,128
+km. The splitter had correctly emitted the unwrapped `-340°` west-edge endpoint,
+but the default PROJ transform normalized that exact value to the opposite map
+edge. A RED regression captured the failure; the typed geometry core now uses a
+force-over transform that preserves both seam sides. All 12 atlas tests, Ruff,
+and strict Pyright passed. A real-data rerender reported zero coastline or
+contour segments over 2,000 km and visual inspection confirmed the false lines
+were gone. The reviewed preview must still be restarted from the clean fix SHA.
+
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
 promote stations or claims. T-003B remains gated by the frozen arrival method

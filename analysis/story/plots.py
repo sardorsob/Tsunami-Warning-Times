@@ -43,6 +43,7 @@ from analysis.story.atlas import (  # noqa: E402
     Coordinate,
     SeriesPanel,
     geodesic_range_ring,
+    project_line_parts,
     shift_longitude,
     split_at_display_seam,
 )
@@ -700,11 +701,8 @@ def _load_coastline_parts(path: Path) -> tuple[tuple[Coordinate, ...], ...]:
 
 
 def _project_lines(parts: tuple[tuple[Coordinate, ...], ...], display_crs: str) -> gpd.GeoSeries:
-    geographic = gpd.GeoSeries(
-        [LineString(part) for part in parts],
-        crs="EPSG:4326",
-    )
-    return geographic.to_crs(display_crs)
+    projected = [LineString(part) for part in project_line_parts(parts, display_crs)]
+    return gpd.GeoSeries(projected, crs=display_crs)
 
 
 def _draw_lines(
