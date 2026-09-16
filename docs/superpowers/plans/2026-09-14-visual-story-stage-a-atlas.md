@@ -1388,7 +1388,8 @@ Run:
 ```bash
 uv run pytest tests/story/test_dependencies.py -q
 uv run marimo check notebooks/story/tohoku_storyboard_eda.py
-uv run marimo export html notebooks/story/tohoku_storyboard_eda.py -o /tmp/tohoku-storyboard-eda-empty.html --force
+cp notebooks/story/tohoku_storyboard_eda.py /tmp/tohoku_storyboard_eda.py
+uv run marimo export html /tmp/tohoku_storyboard_eda.py -o /tmp/tohoku-storyboard-eda-empty.html --force
 uv run ruff check notebooks/story/tohoku_storyboard_eda.py tests/story/test_dependencies.py
 uv run pyright
 git diff --check
@@ -1501,7 +1502,8 @@ test -z "$(git status --porcelain)"
 STORY_GIT_SHA="$(git rev-parse --short HEAD)"
 STORY_RUN_ID="$(date -u +%Y-%m-%d__%H%M)__story-atlas__${STORY_GIT_SHA}"
 uv run python scripts/story/build_story_atlas.py --processed-dir data/processed/tohoku/2026-09-09-valparaiso-reviewed-7576ffb-a --missingness-config config/tohoku-missingness.toml --missingness-summary artifacts/eda/missingness/missingness-summary.json --coastline data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip --config config/story-atlas.toml --decision-input config/story-atlas-decisions.toml --artifact-dir "artifacts/eda/story/${STORY_RUN_ID}" --run-dir "artifacts/logs/runs/${STORY_RUN_ID}" --report context/story/EDA_REPORT.md --run-id "$STORY_RUN_ID" --git-sha "$STORY_GIT_SHA" --working-tree clean --mlflow-dir .mlflow/mlruns --mlflow-experiment story-tohoku-eda
-uv run marimo export html notebooks/story/tohoku_storyboard_eda.py -o /tmp/tohoku-storyboard-eda.html --force
+cp notebooks/story/tohoku_storyboard_eda.py /tmp/tohoku_storyboard_eda.py
+uv run marimo export html /tmp/tohoku_storyboard_eda.py -o /tmp/tohoku-storyboard-eda.html --force
 ```
 
 Expected: the canonical report and ledger reproduce the committed review; the
