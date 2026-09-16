@@ -1137,7 +1137,7 @@ git commit -m "feat(story): compare distance rings with TTT contours"
 - Consumes: all Task 3–8 interfaces plus explicit CLI paths and run identity.
 - Produces: four PNG/SVG pairs, `atlas-manifest.json`, `decision-ledger.csv`, six-file portable run bundle, MLflow run, and generated `context/story/EDA_REPORT.md`.
 
-- [ ] **Step 1: Write the failing end-to-end fixture test**
+- [x] **Step 1: Write the failing end-to-end fixture test**
 
 Stage the compact accepted fixture, coastline GeoJSON, missingness config and
 summary, then call `scripts.story.build_story_atlas.main` with every path
@@ -1176,13 +1176,13 @@ Assert the MLflow run has tags `lane=story`,
 `evidence_state=preliminary_storyboard_evidence`, `portable_run_id`, and the
 input fingerprint.
 
-- [ ] **Step 2: Run the integration test and observe the missing runner**
+- [x] **Step 2: Run the integration test and observe the missing runner**
 
 Run: `uv run pytest tests/story/test_story_atlas_cli.py -q`
 
 Expected: FAIL because the artifacts module and CLI do not exist.
 
-- [ ] **Step 3: Define artifact records and path fences**
+- [x] **Step 3: Define artifact records and path fences**
 
 In `analysis/story/artifacts.py`, define:
 
@@ -1213,7 +1213,7 @@ def validate_story_output_path(path: Path) -> None:
 Every manifest and output path passes this function. Reject an existing run or
 artifact directory rather than overwriting it.
 
-- [ ] **Step 4: Support preview decisions and validated review decisions**
+- [x] **Step 4: Support preview decisions and validated review decisions**
 
 When `--decision-input` is omitted, write one factual preview row per plot with
 disposition `retain`, meaning retain in the diagnostic atlas rather than promote
@@ -1263,7 +1263,7 @@ It must explicitly state that the NCTR field is unavailable, the fourth plot
 compares shapes in different units, station panels use local scales, and no
 arrival pick, residual comparison, station promotion, or story claim occurred.
 
-- [ ] **Step 5: Implement the thin CLI**
+- [x] **Step 5: Implement the thin CLI**
 
 The parser requires all paths and run identity explicitly, except for the
 optional reviewed decision input:
@@ -1305,7 +1305,7 @@ bundle. Log configuration, input/version references, Git SHA, metrics, every
 generated artifact, report, and retain/revise/branch/reject decision in MLflow;
 keep the portable six-file bundle as the independent reconstruction record.
 
-- [ ] **Step 6: Verify integration, decision validation, overwrite refusal, and lane fences**
+- [x] **Step 6: Verify integration, decision validation, overwrite refusal, and lane fences**
 
 Test both preview mode and a complete four-plot decision TOML fixture. Add
 failure cases for a missing/duplicate plot decision, `promote`, blank review
@@ -1321,7 +1321,7 @@ uv run pyright
 Expected: all integration/error tests pass, the decision-input hash is recorded,
 and no partial output survives a failed run.
 
-- [ ] **Step 7: Commit the runner**
+- [x] **Step 7: Commit the runner**
 
 ```bash
 git add analysis/story/artifacts.py analysis/story/__init__.py scripts/story/build_story_atlas.py tests/story/test_story_atlas_cli.py artifacts/README.md

@@ -14,3 +14,12 @@ For T-002, each meaningful execution writes
 `config.json`, `inputs.json`, `outputs.json`, `metrics.json`, and `notes.md`.
 The acquisition, data-quality, and EDA summaries are rendered into the canonical
 Markdown report paths named in `context/TASKS.md`.
+
+Stage A visual-story runs write generated diagnostics beneath
+`eda/story/<run_id>/` and a matching six-file portable bundle beneath
+`logs/runs/<run_id>/`. Each story atlas contains four numbered PNG/SVG pairs,
+`atlas-manifest.json`, and `decision-ledger.csv`. The manifest labels every file
+`preliminary_storyboard_evidence`, records input and output checksums, and keeps
+the blocked continuous NCTR field, incompatible units, local panel scales, and
+manual-review state explicit. These exploratory files never flow directly into
+`app/public/data/`; a later reviewed promotion requires a separate manifest.

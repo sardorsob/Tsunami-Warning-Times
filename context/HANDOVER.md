@@ -395,7 +395,13 @@ NCEI contour hours on the right. It accepts no speed or arrival input and assign
 no nearest contour to a station. Its RED test failed on the absent function;
 GREEN passed the semantic and byte-determinism test, Ruff, and strict Pyright. A
 temporary actual-data render transformed 885 input parts into 916 seam-safe
-parts. No canonical story figure, claim, or app export exists yet.
+parts. Task 9 adds a thin story-only runner for the four plot pairs, complete
+per-file manifest lineage, preview or validated review decisions, the ordered
+Markdown report, a portable six-file bundle, and a project-local MLflow record.
+Its RED test failed on the absent runner; GREEN passed 10 integration and error-
+path tests, Ruff, and strict Pyright, including overwrite refusal, output fences,
+reviewed-decision validation, manifest hash reconciliation, and atomic failure.
+No canonical story figure, claim, or app export exists yet.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -440,7 +446,7 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 9, committing each task
+1. Continue the approved inline Stage A plan at Task 10, committing each task
    after its focused verification passes.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
@@ -468,4 +474,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–8 are complete and Task 9 is next.
+Tasks 1–9 are complete and Task 10 is next.

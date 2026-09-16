@@ -122,7 +122,11 @@
   Task 8 RED failed on the absent diagnostic function; GREEN passed the semantic
   and byte-determinism test, Ruff, and strict Pyright. The actual-data render
   compares six WGS84 range rings with nine configured published contour hours;
-  885 input parts become 916 seam-safe parts, with no speed or arrival inference
+  885 input parts become 916 seam-safe parts, with no speed or arrival inference.
+  Task 9 RED failed on the absent runner; GREEN passed 10 integration and error-
+  path tests plus Ruff and strict Pyright. The runner owns all four figure pairs,
+  checksummed manifest and decision ledger, ordered Markdown report, portable
+  six-file bundle, project-local MLflow record, output fences, and atomic failure
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -138,7 +142,9 @@
   added source-honest station point panels with no centering, smoothing,
   interpolation, resampling, shared y-scale, or gap-bridging line; 2026-09-14 —
   added the side-by-side geodesic-range/published-contour shape diagnostic with
-  explicit incompatible units and nearest-contour prohibition
+  explicit incompatible units and nearest-contour prohibition; 2026-09-16 —
+  added the preview/review-aware reproducible runner with overwrite refusal,
+  story-lane fences, checksum reconciliation, and no-partial-output tests
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

@@ -495,7 +495,9 @@
   added separately scaled point panels for 11,156 coastal raw values and 13,573
   DART residuals in the reviewed -6 h to +30 h window; Task 8 added the
   side-by-side six-ring/nine-contour shape diagnostic without speed or arrival
-  inference and smoke-rendered 885 input parts as 916 seam-safe parts
+  inference and smoke-rendered 885 input parts as 916 seam-safe parts; Task 9
+  added the atomic story-only runner, eight-file manifest lineage, decision
+  validation, portable six-file bundle, Markdown report, and local MLflow record
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
@@ -509,7 +511,9 @@
   2026-09-14 — station-series RED/GREEN passed focused semantics and byte-
   determinism tests plus an actual ten-panel temporary render; 2026-09-14 —
   distance-diagnostic RED/GREEN passed its semantic/byte gate, Ruff, strict
-  Pyright, and an actual-data temporary render
+  Pyright, and an actual-data temporary render; 2026-09-16 — runner RED/GREEN
+  passed 10 integration/error tests, Ruff, strict Pyright, overwrite refusal,
+  path fences, reviewed-decision checks, and manifest hash reconciliation
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism
