@@ -1,0 +1,16 @@
+{
+  "atlas_media_file_count": 8,
+  "contour_count": 4380,
+  "coverage_grid_positions": 23040,
+  "coverage_off_grid": 120,
+  "distance_input_parts": 885,
+  "distance_output_parts": 916,
+  "highlighted_contour_hour_count": 9,
+  "map_input_parts": 4514,
+  "map_output_parts": 4543,
+  "observation_count": 143655,
+  "range_radius_count": 6,
+  "rejection_count": 107,
+  "series_point_count": 24729,
+  "station_count": 10
+}

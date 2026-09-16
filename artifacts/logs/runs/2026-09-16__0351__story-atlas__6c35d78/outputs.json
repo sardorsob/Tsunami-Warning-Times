@@ -1,0 +1,46 @@
+[
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/01_pacific_evidence_map.png",
+    "sha256": "a3ec2a5206bc5593dae727a1003e5b1abbe6d49b156543755db454e046426fea"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/01_pacific_evidence_map.svg",
+    "sha256": "d089a001dda9532ceb874fa42079c7d43971cb1d2ada93bca4cb3d9cf271f407"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/02_observation_coverage.png",
+    "sha256": "991e4d64bc615388b36949400a423f78c6568e4b30c3a0ef7ed7e6a8c9021dca"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/02_observation_coverage.svg",
+    "sha256": "306132709fdc3dcbcd5d7c84322cab862e6f131307f8acb4d3ffba4fa98c3d70"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/03_station_timeseries.png",
+    "sha256": "48fd2793a08f012f9714f3a8ed6b814614cfd1ed2a8dac2aba91b7cd1f5f3482"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/03_station_timeseries.svg",
+    "sha256": "a8bb88f4878d0d2cbb8eb52fe2d610e29b00b44e15c69630b0bf4f6a001efffe"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/04_distance_contour_diagnostic.png",
+    "sha256": "9ed1767ab65b425e09fb243cdeabb29dd773a51f07f7a03528aabd7ca55c40a7"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/04_distance_contour_diagnostic.svg",
+    "sha256": "64d0ac653736f5776d728f9aa87ed2deba2fcfa0dcb16e763f0de46b2ec9684e"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/atlas-manifest.json",
+    "sha256": "4101db77d8104e8d422fc5ab96f7a5ef2200e1d51db1ddfead6fa10fb52495e1"
+  },
+  {
+    "path": "artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78/decision-ledger.csv",
+    "sha256": "a4c1aade238e5696bdeb76a1b20349989b511f5ef101348328e684af77895a62"
+  },
+  {
+    "path": "context/story/EDA_REPORT.md",
+    "sha256": "3c8761638116dbc9af85125d80cb9479995a215ead47c4b9b5c412b329048917"
+  }
+]

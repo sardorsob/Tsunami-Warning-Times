@@ -504,7 +504,12 @@
   notebook; the first full-size preview then exposed and stopped on false
   spatial seam lines, whose PROJ exact-boundary normalization root cause was
   fixed and verified by a RED/GREEN regression plus a real-data rerender with
-  zero coastline or contour segments over 2,000 km
+  zero coastline or contour segments over 2,000 km; canonical run
+  `2026-09-16__0351__story-atlas__6c35d78` records two branches and two retained
+  diagnostics with no promotion, and verification run
+  `2026-09-16__0351__story-atlas-verify__6c35d78` matched all 8 figure bytes,
+  all 4 decisions, metrics, configuration, input fingerprint, inputs, and stable
+  manifest fields
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — Stage A inline execution began at the approved
   dependency boundary; 2026-09-14 — the governed basin-context source passed
@@ -524,7 +529,10 @@
   2026-09-16 — notebook RED/GREEN passed its source boundary, Marimo, empty-
   state export, Ruff, and strict Pyright checks; 2026-09-16 — cartographic QA
   rejected the first preview, then the Pacific force-over projection fix passed
-  all 12 atlas tests, Ruff, strict Pyright, segment-length checks, and visual QA
+  all 12 atlas tests, Ruff, strict Pyright, segment-length checks, and visual
+  QA; 2026-09-16 — corrected stale preview prose in the reviewed report, built
+  and independently reproduced the canonical Stage A atlas, and moved T-003A
+  to independent review while keeping T-003B pending
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

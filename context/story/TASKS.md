@@ -141,7 +141,43 @@
   because its reviewed ledger was paired with stale preview-only interpretation
   and next-step prose. A RED/GREEN runner regression now renders distinct
   preview and reviewed report states; all 10 runner tests, Ruff, and strict
-  Pyright pass.
+  Pyright pass. Canonical portable run
+  `2026-09-16__0351__story-atlas__6c35d78` and local MLflow run
+  `a5a576b2c4634a27af6da7655b3e4060` reproduce the four committed decisions:
+  branch the crowded basin context and observability lead; retain the signal and
+  non-radial shape diagnostics; promote nothing. Figure hashes are map PNG
+  `a3ec2a5206bc5593dae727a1003e5b1abbe6d49b156543755db454e046426fea`,
+  map SVG
+  `d089a001dda9532ceb874fa42079c7d43971cb1d2ada93bca4cb3d9cf271f407`,
+  coverage PNG
+  `991e4d64bc615388b36949400a423f78c6568e4b30c3a0ef7ed7e6a8c9021dca`,
+  coverage SVG
+  `306132709fdc3dcbcd5d7c84322cab862e6f131307f8acb4d3ffba4fa98c3d70`,
+  series PNG
+  `48fd2793a08f012f9714f3a8ed6b814614cfd1ed2a8dac2aba91b7cd1f5f3482`,
+  series SVG
+  `a8bb88f4878d0d2cbb8eb52fe2d610e29b00b44e15c69630b0bf4f6a001efffe`,
+  diagnostic PNG
+  `9ed1767ab65b425e09fb243cdeabb29dd773a51f07f7a03528aabd7ca55c40a7`,
+  and diagnostic SVG
+  `64d0ac653736f5776d728f9aa87ed2deba2fcfa0dcb16e763f0de46b2ec9684e`.
+  Independent verification run
+  `2026-09-16__0351__story-atlas-verify__6c35d78` with local MLflow run
+  `bfe3efe1d5714f4e92577b8f5a03d346` matched all eight figure bytes, all four
+  decision rows, metrics hash
+  `33f265b1a79ec2b52e7dfc638e51e3f890bd9139e7b2eb5f48ffd1b1a2ed687a`,
+  configuration hash
+  `ba83d20051b69c41c73864cddc946a025e8136dc15111b0dde163fa1d3ceba05`,
+  input fingerprint
+  `e9805ae16527145c0030da7b4a7711989997296e02815253b84e7c426eff2b5b`,
+  input records, and all stable manifest fields. Final Maker gate: Ruff passed;
+  Pyright reported 0 errors and 0 warnings; all 122 Python tests passed; the
+  shared and story provenance validators accepted 18 and 1 records; the Marimo
+  notebook check passed; frontend typecheck, Vitest, and production build
+  passed; and
+  `git diff --check` passed. Graphify refreshed to 990 nodes, 1,910 edges, and
+  76 communities and returned the Stage A inputs, story modules, generated
+  evidence, preliminary branches, and T-003B gate without paper-lane imports.
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -166,8 +202,12 @@
   traced it to exact-boundary longitude normalization, and fixed the root cause
   with a typed projection regression and real-data spatial rerender;
   2026-09-16 — rejected the first canonical report's stale preview prose and
-  added tested state-specific interpretation, takeaways, and next steps
-- Status: in-progress
+  added tested state-specific interpretation, takeaways, and next steps;
+  2026-09-16 — generated the corrected clean-SHA canonical atlas, executed the
+  thin notebook, and independently reproduced stable scientific and visual
+  evidence byte-for-byte; the full repository gate and Graphify query passed,
+  and the Maker result was submitted for independent review
+- Status: in-review
 
 ## T-003B — Complete the reviewed arrival comparison
 

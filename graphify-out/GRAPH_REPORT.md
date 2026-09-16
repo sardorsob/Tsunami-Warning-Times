@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-16)
 
 ## Corpus Check
-- 152 files · ~110,308 words
+- 159 files · ~751,367 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 980 nodes · 1901 edges · 70 communities (57 shown, 13 thin omitted)
+- 990 nodes · 1910 edges · 76 communities (62 shown, 14 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 64 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `13638ba1`
+- Built from commit: `6c35d782`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -75,13 +75,19 @@
 - Visual Story Tasks
 - File Structure
 - analysis/__init__.py
-- AtlasError
+- plots.py
 - build_story_atlas.py
 - Acquisition run notes
 - Acquisition run notes
 - Visual-Story Source Notes
 - test_story_atlas_cli.py
+- AtlasError
+- test_atlas.py
+- story/__init__.py
 - tohoku_storyboard_eda.py
+- split_at_display_seam
+- Dataset gathering
+- 2026-09-16__0351__story-atlas__6c35d78/notes.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `AtlasError` - 49 edges
@@ -98,19 +104,19 @@
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `AtlasError`  [INFERRED]
   scripts/story/build_story_atlas.py → analysis/story/atlas.py
+- `test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()` --uses--> `AtlasError`  [INFERRED]
+  tests/story/test_atlas.py → analysis/story/atlas.py
 - `test_decision_input_rejects_incomplete_or_promoting_review()` --uses--> `AtlasError`  [INFERRED]
   tests/story/test_story_atlas_cli.py → analysis/story/atlas.py
 - `_rejection_count()` --uses--> `AtlasInputs`  [INFERRED]
   scripts/story/build_story_atlas.py → analysis/story/atlas.py
 - `validate_stage_a_scope()` --uses--> `ExpectedWindow`  [INFERRED]
   analysis/story/atlas.py → pipeline/missingness.py
-- `_output_records()` --uses--> `PlotFiles`  [INFERRED]
-  scripts/story/build_story_atlas.py → analysis/story/plots.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (70 total, 13 thin omitted)
+## Communities (76 total, 14 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -126,7 +132,7 @@ Nodes (32): dependencies, react, react-dom, devDependencies, @types/node, @types
 
 ### Community 3 - "test_acquisition.py"
 Cohesion: 0.06
-Nodes (96): HTTPRedirectHandler, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), download_url(), _fetch_with_retries() (+88 more)
+Nodes (99): HTTPRedirectHandler, MonkeyPatch, acquire_all(), acquire_source(), AcquisitionResult, _checksum_path(), ContractError, download_url() (+91 more)
 
 ### Community 4 - "package.json"
 Cohesion: 0.13
@@ -226,7 +232,7 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 39 - "test_normalize.py"
 Cohesion: 0.06
-Nodes (106): ContractError, ValueError, Raised when a source-contract TOML file violates the acquisition contract., build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value() (+98 more)
+Nodes (103): build_tables(), BuildResult, _coastal_input_count(), _coordinate_part(), _csv_value(), _dart_input_count(), EventRecord, _feature_reference() (+95 more)
 
 ### Community 40 - "Normalization and data-quality run notes"
 Cohesion: 0.40
@@ -265,8 +271,8 @@ Cohesion: 0.29
 Nodes (6): graphify, Non-negotiable scientific rules, Project Instructions, Scope and implementation rules, Start here, Verification
 
 ### Community 49 - "Pacific Tsunami Warning Time"
-Cohesion: 0.13
-Nodes (15): Collection and validation rules, Current status, Data flow, Dataset gathering, Evidence and reporting, License, Local setup, Pacific Tsunami Warning Time (+7 more)
+Cohesion: 0.20
+Nodes (10): Current status, Evidence and reporting, License, Local setup, Pacific Tsunami Warning Time, PacificVis 2027 — Conference Paper + Visual Data Storytelling Contest, Paper and visual-story separation, Project at a glance (+2 more)
 
 ### Community 50 - "Acquisition run notes"
 Cohesion: 0.50
@@ -289,12 +295,12 @@ Cohesion: 0.25
 Nodes (7): Contribution boundary, Evidence states, First deliverable, Governing design, Question, Status, Visual Story Contract
 
 ### Community 57 - "Visual-Story EDA Report"
-Cohesion: 0.33
-Nodes (5): Current evidence boundary, Next action, Reporting contract, Status, Visual-Story EDA Report
+Cohesion: 0.15
+Nodes (12): Adaptive decision ledger, Fixed diagnostic atlas, Generated atlas evidence, Input and output fingerprints, Inputs, Inputs and source boundary, Interpretation, Limitations (+4 more)
 
 ### Community 58 - "Visual Storyboard"
-Cohesion: 0.40
-Nodes (4): Candidate discovery questions, Promotion rule, Status, Visual Storyboard
+Cohesion: 0.33
+Nodes (5): Candidate discovery questions, Preliminary branches, Promotion rule, Status, Visual Storyboard
 
 ### Community 59 - "Visual Story Tasks"
 Cohesion: 0.33
@@ -304,9 +310,9 @@ Nodes (5): T-003A — Build the preliminary diagnostic atlas, T-003B — Complet
 Cohesion: 0.11
 Nodes (18): Create, File Structure, Generated by the implementation, Global Constraints, Modify, Stage A Completion Gate, Task 10: Add the thin Marimo atlas viewer, Task 11: Run the real atlas and record adaptive findings (+10 more)
 
-### Community 63 - "AtlasError"
-Cohesion: 0.06
-Nodes (99): AtlasConfig, AtlasError, AtlasInputs, _boolean(), build_series_panels(), ContourRecord, _coordinate(), EventRecord (+91 more)
+### Community 63 - "plots.py"
+Cohesion: 0.13
+Nodes (34): A station-local series whose y-scale must not be shared., SeriesPanel, _coverage_metrics(), _coverage_percent(), _CoverageMetric, _draw_event_and_stations(), _draw_lines(), _line_extent() (+26 more)
 
 ### Community 64 - "build_story_atlas.py"
 Cohesion: 0.14
@@ -324,14 +330,34 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 Cohesion: 0.35
 Nodes (16): main(), Run the fixed Stage A atlas and write reconstructable evidence., _cli_args(), parametrize, Path, _replace_arg(), _sha256(), _stage_cli_fixture() (+8 more)
 
+### Community 69 - "AtlasError"
+Cohesion: 0.12
+Nodes (31): AtlasError, _boolean(), ContourRecord, _coordinate(), EventRecord, _finite(), geodesic_range_ring(), _integer_tuple() (+23 more)
+
+### Community 70 - "test_atlas.py"
+Cohesion: 0.39
+Nodes (15): load_atlas_config(), Load and validate the fixed Stage A atlas contract., Path, _stage_atlas_inputs(), test_atlas_loader_preserves_source_semantics(), test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance(), test_distance_contour_diagnostic_keeps_incompatible_units_separate(), test_pacific_evidence_map_is_deterministic_and_records_geometry_counts() (+7 more)
+
+### Community 71 - "story/__init__.py"
+Cohesion: 0.24
+Nodes (11): AtlasConfig, AtlasInputs, build_series_panels(), One retained numeric value positioned relative to earthquake origin., Require the reviewed event, station groups, contour hours, and coastal windows., Build station-local point series without smoothing, centering, or resampling., Validated normalized inputs for preliminary story diagnostics., Reviewed Stage A projection, window, and candidate scope. (+3 more)
+
 ### Community 72 - "tohoku_storyboard_eda.py"
 Cohesion: 0.36
 Nodes (9): decision_ledger(), discover_manifests(), evidence_boundary(), generated_figures(), imports(), load_manifest(), cell, require_manifest() (+1 more)
 
+### Community 73 - "split_at_display_seam"
+Cohesion: 0.29
+Nodes (8): project_line_parts(), Shift a longitude into the Pacific display domain [-340, 20)., Split linework at 20°E while retaining an endpoint on each seam side., Project unwrapped Pacific linework without normalizing its seam endpoints., shift_longitude(), split_at_display_seam(), test_pacific_shift_splits_a_line_at_the_twenty_degree_seam(), test_projected_split_line_preserves_both_pacific_seam_sides()
+
+### Community 74 - "Dataset gathering"
+Cohesion: 0.40
+Nodes (5): Collection and validation rules, Data flow, Dataset gathering, Reproducing the pipeline, Source inventory
+
 ## Knowledge Gaps
-- **351 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+346 more)
+- **359 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+354 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -349,4 +375,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _351 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _359 weakly-connected nodes found - possible documentation gaps or missing edges._

@@ -2,24 +2,16 @@
 
 ## Status
 
-The project owner approved the written adaptive EDA specification on 2026-09-14.
-The project owner authorized inline, task-by-task execution on `main`. T-003A is
-active: Tasks 1–2 added the approved pinned static stack and a separately
-governed Natural Earth coastline context. Task 3 now exposes shared exact-grid
-coverage positions and off-grid samples without snapping or changing existing
-missingness outputs. Task 4 adds typed, source-preserving inputs, exact reviewed
-scope validation, Pacific seam interpolation, and geodesic range rings. No story
-claim or app export exists yet; Task 5 now provides the deterministic Pacific
-evidence-map renderer, and Task 6 provides source-window coverage strips with
-all missingness mechanisms separated. Task 7 provides station-local point
-panels that keep coastal raw levels and DART residuals distinct. Canonical
-figures wait for the reviewed-run task. Task 8 also implements the optional
-distance-versus-contour shape diagnostic without a speed or station-arrival
-conversion. Task 9 packages all four plots into checksummed, story-only run
-evidence with validated manual decisions. Task 10 adds a read-only Marimo
-viewer that discovers only generated atlas manifests and performs no scientific
-calculation or repository write. The NCTR field remains blocked; the canonical
-atlas and adaptive review remain Task 11 work.
+The project owner approved the written adaptive EDA specification on 2026-09-14
+and authorized inline, task-by-task execution on `main`. All 11 Maker tasks are
+implemented. Canonical run
+`2026-09-16__0351__story-atlas__6c35d78` contains the four checksummed
+diagnostics, reviewed decision ledger, manifest, generated report, portable run
+bundle, and a thin read-only Marimo view. T-003A is `in-review`: an independent
+scientific/cartographic Checker must rerun and accept or request fixes before it
+can become done. No scene, station, arrival result, or app asset is promoted.
+The continuous NCTR field remains unavailable with no proxy substitution, and
+T-003B remains gated by T-002E.
 
 ## Question
 

@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Matplotlib emits SVG path continuations with meaningful trailing spaces.
+*.svg whitespace=-trailing-space

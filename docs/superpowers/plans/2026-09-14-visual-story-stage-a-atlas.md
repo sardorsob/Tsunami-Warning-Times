@@ -1427,7 +1427,7 @@ git commit -m "feat(story): add thin atlas notebook"
 - Produces: manually inspected preliminary evidence, a committed adaptive
   decision input, a reproducible canonical run, and a Checker-ready handoff.
 
-- [ ] **Step 1: Confirm the implementation boundary is clean and create a temporary preview**
+- [x] **Step 1: Confirm the implementation boundary is clean and create a temporary preview**
 
 Run these commands in one shell so the variables remain exact:
 
@@ -1442,7 +1442,7 @@ uv run python scripts/story/build_story_atlas.py --processed-dir data/processed/
 Expected: the tracked tree was clean at invocation and all preview scientific
 outputs exist only below the unique temporary directory.
 
-- [ ] **Step 2: Perform visual and source-value QA on the preview**
+- [x] **Step 2: Perform visual and source-value QA on the preview**
 
 Open the four preview PNGs with the local image viewer and record concrete
 observations for:
@@ -1462,7 +1462,7 @@ Cross-check each displayed count and label against the normalized CSVs,
 missingness summary, and atlas manifest. If any check disagrees, stop and return
 the defect to the task that owns the transform; do not rationalize it in prose.
 
-- [ ] **Step 3: Create and validate the adaptive review input**
+- [x] **Step 3: Create and validate the adaptive review input**
 
 Apply the design's branch table exactly:
 
@@ -1492,7 +1492,7 @@ git add config/story-atlas-decisions.toml
 git commit -m "docs(story): record atlas review decisions"
 ```
 
-- [ ] **Step 4: Run the canonical atlas from the committed review**
+- [x] **Step 4: Run the canonical atlas from the committed review**
 
 Confirm the tree is clean, derive a new immutable run identity from the review
 commit, and keep all scientific inputs exact:
@@ -1509,7 +1509,7 @@ uv run marimo export html /tmp/tohoku_storyboard_eda.py -o /tmp/tohoku-storyboar
 Expected: the canonical report and ledger reproduce the committed review; the
 notebook selects and displays the new run without changing repository files.
 
-- [ ] **Step 5: Rebuild independently and compare stable evidence**
+- [x] **Step 5: Rebuild independently and compare stable evidence**
 
 Create another unique temporary directory and run the same CLI with the same
 scientific/configuration inputs and committed review, a distinct verification
@@ -1519,7 +1519,7 @@ metrics, input fingerprint, and configuration hash. Exclude only run ID,
 timestamp, working-tree status, MLflow identity, and absolute output paths.
 Scientific and visual outputs must match byte-for-byte.
 
-- [ ] **Step 6: Update durable status without overclaiming**
+- [x] **Step 6: Update durable status without overclaiming**
 
 Set T-003A to `in-review`, record the exact portable and MLflow run IDs, figure
 hashes, observations, and verification commands in `context/story/TASKS.md` and
@@ -1528,7 +1528,7 @@ mark the implemented paths active. Keep `context/story/STORYBOARD.md` at “no
 promoted scene” while recording the candidate branch selected for later review.
 Do not hand-edit the script-generated `context/story/EDA_REPORT.md`.
 
-- [ ] **Step 7: Run the full gate and refresh the project graph**
+- [x] **Step 7: Run the full gate and refresh the project graph**
 
 ```bash
 uv run ruff check .
@@ -1546,7 +1546,7 @@ git diff --check
 Expected: every command passes; Graphify returns the story modules, generated
 evidence paths, context report, and later gate without paper-lane imports.
 
-- [ ] **Step 8: Commit the real preliminary atlas**
+- [x] **Step 8: Commit the real preliminary atlas**
 
 ```bash
 git add "artifacts/eda/story/${STORY_RUN_ID}" "artifacts/logs/runs/${STORY_RUN_ID}" context/story/PROJECT.md context/story/TASKS.md context/story/EDA_REPORT.md context/story/STORYBOARD.md context/STRUCTURE.md context/HANDOVER.md graphify-out/graph.json graphify-out/GRAPH_REPORT.md

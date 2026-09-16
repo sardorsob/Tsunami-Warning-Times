@@ -428,8 +428,39 @@ diagnostics; promote nothing. The first canonical draft was discarded because
 the generated report still contained hard-coded preview-only interpretation and
 instructions to repeat completed QA. A RED/GREEN runner regression now selects
 preview or reviewed interpretation, takeaways, and next steps explicitly. All
-10 runner tests, Ruff, and strict Pyright pass; the canonical run must be rebuilt
-from the clean report-fix SHA.
+10 runner tests, Ruff, and strict Pyright pass.
+
+Corrected canonical run `2026-09-16__0351__story-atlas__6c35d78` has local
+MLflow run `a5a576b2c4634a27af6da7655b3e4060`. Its eight figure hashes are:
+map PNG `a3ec2a5206bc5593dae727a1003e5b1abbe6d49b156543755db454e046426fea`,
+map SVG `d089a001dda9532ceb874fa42079c7d43971cb1d2ada93bca4cb3d9cf271f407`,
+coverage PNG `991e4d64bc615388b36949400a423f78c6568e4b30c3a0ef7ed7e6a8c9021dca`,
+coverage SVG `306132709fdc3dcbcd5d7c84322cab862e6f131307f8acb4d3ffba4fa98c3d70`,
+series PNG `48fd2793a08f012f9714f3a8ed6b814614cfd1ed2a8dac2aba91b7cd1f5f3482`,
+series SVG `a8bb88f4878d0d2cbb8eb52fe2d610e29b00b44e15c69630b0bf4f6a001efffe`,
+diagnostic PNG `9ed1767ab65b425e09fb243cdeabb29dd773a51f07f7a03528aabd7ca55c40a7`,
+and diagnostic SVG
+`64d0ac653736f5776d728f9aa87ed2deba2fcfa0dcb16e763f0de46b2ec9684e`.
+
+Independent run `2026-09-16__0351__story-atlas-verify__6c35d78`, local MLflow
+run `bfe3efe1d5714f4e92577b8f5a03d346`, reproduced all eight figure bytes and
+four decision rows. Metrics hash
+`33f265b1a79ec2b52e7dfc638e51e3f890bd9139e7b2eb5f48ffd1b1a2ed687a`,
+configuration hash
+`ba83d20051b69c41c73864cddc946a025e8136dc15111b0dde163fa1d3ceba05`,
+and input fingerprint
+`e9805ae16527145c0030da7b4a7711989997296e02815253b84e7c426eff2b5b`
+also match, along with the input records and stable manifest fields. The thin
+Marimo export selected the canonical run without a Git-visible write. T-003A is
+now `in-review`; no scene or app asset was promoted, and T-003B remains pending.
+
+Final Maker verification passed Ruff; strict Pyright with 0 errors and 0
+warnings; all 122 Python tests; both provenance validators with 18 shared and 1
+story source record; `marimo check`; the frontend typecheck, Vitest run, and
+production build; and `git diff --check`. Graphify refreshed to 990 nodes, 1,910
+edges, and 76 communities. Its scoped query returned the Stage A input flow,
+story analysis and runner modules, generated evidence, preliminary branches,
+and the T-003B gate without paper-lane imports.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -474,9 +505,8 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 11: build and inspect the
-   real preview, commit its adaptive review, then build and verify the canonical
-   preliminary atlas.
+1. Assign a scientific/cartographic Checker to rerun and accept or request fixes
+   for canonical Stage A run `2026-09-16__0351__story-atlas__6c35d78`.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
 3. Define the no-interpolation pre-arrival completeness gate, then execute
@@ -502,5 +532,6 @@ remain ignored.
 
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
-T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–10 are complete and Task 11 is next.
+T-003P and T-003I are accepted. All 11 T-003A Maker tasks are complete and
+T-003A is in independent review; the root T-003 work remains in progress.
+T-003B is pending and remains gated by T-002E.

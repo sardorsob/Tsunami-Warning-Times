@@ -2,8 +2,25 @@
 
 ## Status
 
-No scene, community comparison, or narrative thesis has been promoted. The
-distance-versus-arrival idea remains a candidate question pending visual EDA.
+No scene, community comparison, or narrative thesis has been promoted. Stage A
+Maker review branches the crowded basin context toward a regional inset or
+small multiple and identifies uneven observability as the strongest current
+story lead. The non-radial distance-versus-contour shape remains a separate
+candidate for T-003B; it is not an arrival result.
+
+## Preliminary branches
+
+- **Observability-first candidate:** explain why Saipan and Pago Pago dominate
+  continuity risk and keep source blanks, absent timestamps, and off-grid
+  samples distinct. This is a reviewed follow-up question, not a scene.
+- **Regional-context candidate:** resolve the Tōhoku event/DART label cluster in
+  a regional inset or small multiple without changing the fixed station set.
+- **Retained diagnostics:** keep the point-only station panels and the
+  distance-versus-contour shape comparison as preliminary evidence only.
+
+T-003B stays pending until T-002E publishes a reviewed shared release and an
+independent scientific/cartographic Checker accepts or requests changes to the
+Stage A atlas.
 
 ## Candidate discovery questions
 

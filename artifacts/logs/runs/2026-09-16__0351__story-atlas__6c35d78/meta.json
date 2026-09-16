@@ -1,0 +1,16 @@
+{
+  "commands": [
+    "uv run python scripts/story/build_story_atlas.py --processed-dir data/processed/tohoku/2026-09-09-valparaiso-reviewed-7576ffb-a --missingness-config config/tohoku-missingness.toml --missingness-summary artifacts/eda/missingness/missingness-summary.json --coastline data/raw/natural-earth/ne_110m_coastline_v4.1.0.zip --config config/story-atlas.toml --decision-input config/story-atlas-decisions.toml --artifact-dir artifacts/eda/story/2026-09-16__0351__story-atlas__6c35d78 --run-dir artifacts/logs/runs/2026-09-16__0351__story-atlas__6c35d78 --report context/story/EDA_REPORT.md --run-id 2026-09-16__0351__story-atlas__6c35d78 --git-sha 6c35d78 --working-tree clean --mlflow-dir .mlflow/mlruns --mlflow-experiment story-tohoku-eda"
+  ],
+  "evidence_state": "preliminary_storyboard_evidence",
+  "git_sha": "6c35d78",
+  "input_fingerprint_sha256": "e9805ae16527145c0030da7b4a7711989997296e02815253b84e7c426eff2b5b",
+  "lane": "story",
+  "mlflow_experiment": "story-tohoku-eda",
+  "mlflow_run_id": "a5a576b2c4634a27af6da7655b3e4060",
+  "mlflow_tracking_dir": ".mlflow/mlruns",
+  "mode": "offline-checksummed-eda",
+  "run_id": "2026-09-16__0351__story-atlas__6c35d78",
+  "timestamp_utc": "2026-09-16T03:51:20.727499Z",
+  "working_tree": "clean"
+}
