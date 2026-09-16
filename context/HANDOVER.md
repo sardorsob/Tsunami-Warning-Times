@@ -420,6 +420,17 @@ and strict Pyright passed. A real-data rerender reported zero coastline or
 contour segments over 2,000 km and visual inspection confirmed the false lines
 were gone. The reviewed preview must still be restarted from the clean fix SHA.
 
+That restarted preview passed full-size, thumbnail, grayscale, deuteranopia,
+protanopia, and source-value QA. The four Maker decisions are recorded in
+`config/story-atlas-decisions.toml`: branch the crowded Tōhoku context and the
+observability-first coverage lead; retain the signal and non-radial shape
+diagnostics; promote nothing. The first canonical draft was discarded because
+the generated report still contained hard-coded preview-only interpretation and
+instructions to repeat completed QA. A RED/GREEN runner regression now selects
+preview or reviewed interpretation, takeaways, and next steps explicitly. All
+10 runner tests, Ruff, and strict Pyright pass; the canonical run must be rebuilt
+from the clean report-fix SHA.
+
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
 promote stations or claims. T-003B remains gated by the frozen arrival method

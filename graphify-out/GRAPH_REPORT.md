@@ -1,7 +1,7 @@
 # Graph Report - Tsunami-Warning-Times  (2026-09-16)
 
 ## Corpus Check
-- 152 files · ~109,970 words
+- 152 files · ~110,308 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4a628e1a`
+- Built from commit: `13638ba1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

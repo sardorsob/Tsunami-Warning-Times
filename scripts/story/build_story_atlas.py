@@ -319,6 +319,7 @@ def _run(args: argparse.Namespace) -> tuple[str, dict[str, str]]:
                 metrics=metrics,
                 input_records=input_records,
                 output_records=output_records,
+                reviewed=reviewed_decisions is not None,
             ),
             encoding="utf-8",
         )

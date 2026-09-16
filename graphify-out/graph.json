@@ -3590,7 +3590,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L415"
+      "source_location": "L416"
     },
     {
       "id": "tests_story_test_story_atlas_cli_cli_args",
@@ -3650,7 +3650,7 @@
       "file_type": "code",
       "norm_label": "test_cli_missing_input_or_mismatched_event_leaves_no_partial_output()",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L509"
+      "source_location": "L515"
     },
     {
       "id": "tests_story_test_story_atlas_cli_test_cli_refuses_existing_output_directories_without_partial_output",
@@ -3662,7 +3662,7 @@
       "file_type": "code",
       "norm_label": "test_cli_refuses_existing_output_directories_without_partial_output()",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L481"
+      "source_location": "L487"
     },
     {
       "id": "tests_story_test_story_atlas_cli_test_cli_rejects_lane_crossing_output_path",
@@ -3674,7 +3674,7 @@
       "file_type": "code",
       "norm_label": "test_cli_rejects_lane_crossing_output_path()",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L497"
+      "source_location": "L503"
     },
     {
       "id": "tests_story_test_story_atlas_cli_test_cli_uses_reviewed_decisions_verbatim_and_reconciles_manifest",
@@ -3686,7 +3686,7 @@
       "file_type": "code",
       "norm_label": "test_cli_uses_reviewed_decisions_verbatim_and_reconciles_manifest()",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L387"
+      "source_location": "L390"
     },
     {
       "id": "tests_story_test_story_atlas_cli_test_cli_writes_story_only_atlas_evidence_and_mlflow_run",
@@ -3710,7 +3710,7 @@
       "file_type": "code",
       "norm_label": "test_decision_input_rejects_incomplete_or_promoting_review()",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L461"
+      "source_location": "L467"
     },
     {
       "id": "tests_story_test_story_atlas_cli_write_csv",
@@ -4318,7 +4318,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L462"
+      "source_location": "L473"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -4366,7 +4366,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L490"
+      "source_location": "L501"
     },
     {
       "id": "context_handover_handover",
@@ -4414,7 +4414,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L482"
+      "source_location": "L493"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -4426,7 +4426,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L446"
+      "source_location": "L457"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -10340,7 +10340,7 @@
       "node_kind": "heading",
       "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L166"
+      "source_location": "L172"
     },
     {
       "id": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
@@ -11234,7 +11234,7 @@
       "source_location": "L258"
     },
     {
-      "id": "analysis_story_artifacts_rationale_327",
+      "id": "analysis_story_artifacts_rationale_328",
       "label": "Render the canonical Stage A report with the required section order.",
       "_origin": "ast",
       "community": 64,
@@ -11242,7 +11242,7 @@
       "file_type": "rationale",
       "norm_label": "render the canonical stage a report with the required section order.",
       "source_file": "analysis/story/artifacts.py",
-      "source_location": "L327"
+      "source_location": "L328"
     },
     {
       "id": "analysis_story_artifacts_rationale_64",
@@ -11465,7 +11465,7 @@
       "source_location": ""
     },
     {
-      "id": "scripts_story_build_story_atlas_rationale_416",
+      "id": "scripts_story_build_story_atlas_rationale_417",
       "label": "Run the fixed Stage A atlas and write reconstructable evidence.",
       "_origin": "ast",
       "community": 68,
@@ -11473,7 +11473,7 @@
       "file_type": "rationale",
       "norm_label": "run the fixed stage a atlas and write reconstructable evidence.",
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L416"
+      "source_location": "L417"
     },
     {
       "id": "pipeline_init",
@@ -11615,7 +11615,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "analysis/story/artifacts.py",
-      "source_location": "L336",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -14651,7 +14651,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L434",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -14999,7 +14999,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L326",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
@@ -15011,7 +15011,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L361",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -15599,7 +15599,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L514",
+      "source_location": "L520",
       "weight": 1.0
     },
     {
@@ -15611,7 +15611,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L517",
+      "source_location": "L523",
       "weight": 1.0
     },
     {
@@ -15623,7 +15623,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L517",
+      "source_location": "L523",
       "weight": 1.0
     },
     {
@@ -15635,7 +15635,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L484",
+      "source_location": "L490",
       "weight": 1.0
     },
     {
@@ -15647,7 +15647,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L485",
+      "source_location": "L491",
       "weight": 1.0
     },
     {
@@ -15659,7 +15659,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L486",
+      "source_location": "L492",
       "weight": 1.0
     },
     {
@@ -15671,7 +15671,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L498",
+      "source_location": "L504",
       "weight": 1.0
     },
     {
@@ -15683,7 +15683,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L500",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -15695,7 +15695,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L500",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -15707,7 +15707,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L503",
+      "source_location": "L509",
       "weight": 1.0
     },
     {
@@ -15719,7 +15719,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L388",
+      "source_location": "L391",
       "weight": 1.0
     },
     {
@@ -15731,7 +15731,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L390",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -15743,7 +15743,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L391",
+      "source_location": "L394",
       "weight": 1.0
     },
     {
@@ -15755,7 +15755,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L393",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -15767,7 +15767,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L425",
+      "source_location": "L428",
       "weight": 1.0
     },
     {
@@ -15779,7 +15779,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L428",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -15827,7 +15827,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L469",
+      "source_location": "L475",
       "weight": 1.0
     },
     {
@@ -15839,7 +15839,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L477",
+      "source_location": "L483",
       "weight": 1.0
     },
     {
@@ -18323,7 +18323,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L480",
+      "source_location": "L486",
       "weight": 1.0
     },
     {
@@ -18335,7 +18335,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L452",
+      "source_location": "L458",
       "weight": 1.0
     },
     {
@@ -22307,7 +22307,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L509",
+      "source_location": "L515",
       "weight": 1.0
     },
     {
@@ -22319,7 +22319,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L497",
+      "source_location": "L503",
       "weight": 1.0
     },
     {
@@ -22343,7 +22343,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L461",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -26021,7 +26021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L446",
+      "source_location": "L457",
       "weight": 1.0
     },
     {
@@ -26032,7 +26032,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L462",
+      "source_location": "L473",
       "weight": 1.0
     },
     {
@@ -26043,7 +26043,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L482",
+      "source_location": "L493",
       "weight": 1.0
     },
     {
@@ -26054,7 +26054,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L490",
+      "source_location": "L501",
       "weight": 1.0
     },
     {
@@ -26681,7 +26681,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L166",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -29970,7 +29970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L415",
+      "source_location": "L416",
       "weight": 1.0
     },
     {
@@ -30322,7 +30322,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L387",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -30333,7 +30333,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L461",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -30344,7 +30344,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L481",
+      "source_location": "L487",
       "weight": 1.0
     },
     {
@@ -30355,7 +30355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L497",
+      "source_location": "L503",
       "weight": 1.0
     },
     {
@@ -30366,7 +30366,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L509",
+      "source_location": "L515",
       "weight": 1.0
     },
     {
@@ -31547,14 +31547,14 @@
       "weight": 1.0
     },
     {
-      "source": "analysis_story_artifacts_rationale_327",
+      "source": "analysis_story_artifacts_rationale_328",
       "target": "analysis_story_artifacts_render_story_report",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "analysis/story/artifacts.py",
-      "source_location": "L327",
+      "source_location": "L328",
       "weight": 1.0
     },
     {
@@ -32559,14 +32559,14 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_story_build_story_atlas_rationale_416",
+      "source": "scripts_story_build_story_atlas_rationale_417",
       "target": "scripts_story_build_story_atlas_main",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L416",
+      "source_location": "L417",
       "weight": 1.0
     },
     {
@@ -33155,7 +33155,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L435",
+      "source_location": "L436",
       "weight": 0.8
     },
     {
@@ -33166,7 +33166,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "scripts/story/build_story_atlas.py",
-      "source_location": "L435",
+      "source_location": "L436",
       "weight": 0.8
     },
     {
@@ -33188,7 +33188,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/story/test_story_atlas_cli.py",
-      "source_location": "L476",
+      "source_location": "L482",
       "weight": 0.8
     },
     {
@@ -33479,5 +33479,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4a628e1af430129b2b4976b8ec8f1ea66dc808ae"
+  "built_at_commit": "13638ba117ffaef1f88e0019fd468315e885c512"
 }

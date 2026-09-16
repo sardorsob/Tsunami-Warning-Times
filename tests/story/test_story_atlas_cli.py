@@ -368,7 +368,10 @@ def test_cli_writes_story_only_atlas_evidence_and_mlflow_run(tmp_path: Path) -> 
     meta = json.loads((run_dir / "meta.json").read_text(encoding="utf-8"))
     assert meta["lane"] == "story"
     assert meta["evidence_state"] == "preliminary_storyboard_evidence"
-    assert "No story claim has been promoted" in report_path.read_text(encoding="utf-8")
+    report = report_path.read_text(encoding="utf-8")
+    assert "No story claim has been promoted" in report
+    assert "`retain` preview" in report
+    assert "Inspect all four figures" in report
     manifest_text = (artifact_dir / "atlas-manifest.json").read_text(encoding="utf-8")
     assert "paper" not in manifest_text.lower()
 
@@ -433,6 +436,9 @@ def test_cli_uses_reviewed_decisions_verbatim_and_reconciles_manifest(tmp_path: 
     report = (tmp_path / "EDA_REPORT.md").read_text(encoding="utf-8")
     assert "Observed fixture result 1." in ledger
     assert "Reviewed fixture result 4." in report
+    assert "`retain` preview" not in report
+    assert "Inspect all four figures" not in report
+    assert "Hand this preliminary atlas to the independent Checker" in report
     headings = [
         "## Run and evidence state",
         "## Inputs and source boundary",

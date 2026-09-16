@@ -323,6 +323,7 @@ def render_story_report(
     metrics: dict[str, int | float],
     input_records: list[dict[str, str]],
     output_records: list[dict[str, str]],
+    reviewed: bool,
 ) -> str:
     """Render the canonical Stage A report with the required section order."""
     decision_lines = "\n".join(
@@ -338,6 +339,30 @@ def render_story_report(
     output_lines = "\n".join(
         f"| `{Path(record['path']).name}` | `{record['sha256']}` |" for record in output_records
     )
+    if reviewed:
+        interpretation = """These views test geography, observability, source-preserving
+signals, and shape. They do not test an arrival-time claim. The recorded
+dispositions are Maker review inputs: `retain` keeps a diagnostic visible,
+while `branch` records a new question without promoting a scene or selecting
+stations from its result."""
+        takeaways = """The manual review branches the crowded basin context toward a
+regional view and the coverage finding toward an observability-first candidate.
+It retains the signal and non-radial shape diagnostics as preliminary evidence.
+No scene, station, waveform, or arrival claim is promoted."""
+        next_steps = """Hand this preliminary atlas to the independent Checker for scientific and
+cartographic review. Keep T-003A in review, carry the regional-context and
+observability branches as separately reviewed work, and do not begin
+arrival-based Stage B before T-002E."""
+    else:
+        interpretation = """These views test geography, observability, source-preserving
+signals, and shape. They do not test an arrival-time claim. A `retain` preview
+disposition means only that the required diagnostic remains visible for review."""
+        takeaways = """The fixed atlas can now be rebuilt and reviewed as one evidence
+unit. Negative or weak findings remain eligible for `revise`, `branch`, or
+`reject` decisions."""
+        next_steps = """Inspect all four figures at full and thumbnail size, in grayscale and common
+color-vision simulations; trace three displayed values; then record the observed
+review in the decision input. Do not begin arrival-based Stage B before T-002E."""
     return f"""# Visual-Story EDA Report
 
 ## Run and evidence state
@@ -376,9 +401,7 @@ continuous field.
 
 ## Interpretation
 
-These views test geography, observability, source-preserving signals, and shape.
-They do not test an arrival-time claim. A `retain` preview disposition means only
-that the required diagnostic remains visible for review.
+{interpretation}
 
 ## Limitations
 
@@ -388,14 +411,11 @@ explicit. Coastal raw levels and DART residual signals are separate quantities.
 
 ## Takeaways
 
-The fixed atlas can now be rebuilt and reviewed as one evidence unit. Negative or
-weak findings remain eligible for `revise`, `branch`, or `reject` decisions.
+{takeaways}
 
 ## Next steps
 
-Inspect all four figures at full and thumbnail size, in grayscale and common
-color-vision simulations; trace three displayed values; then record the observed
-review in the decision input. Do not begin arrival-based Stage B before T-002E.
+{next_steps}
 
 ## Input and output fingerprints
 

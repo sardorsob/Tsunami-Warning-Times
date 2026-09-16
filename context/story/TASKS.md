@@ -137,7 +137,11 @@
   to the opposite edge; the typed `force_over` projection fix passed all 12
   atlas tests, Ruff, and strict Pyright. A real-data rerender reduced coastline
   and contour segments over 2,000 km from 9 and 16 to zero; visual inspection
-  confirmed the false lines were removed.
+  confirmed the false lines were removed. The first canonical draft then halted
+  because its reviewed ledger was paired with stale preview-only interpretation
+  and next-step prose. A RED/GREEN runner regression now renders distinct
+  preview and reviewed report states; all 10 runner tests, Ruff, and strict
+  Pyright pass.
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -160,7 +164,9 @@
   state without loading normalized tables, plotting, tracking, or writing;
   2026-09-16 — stopped the first real-atlas review on a visible seam defect,
   traced it to exact-boundary longitude normalization, and fixed the root cause
-  with a typed projection regression and real-data spatial rerender
+  with a typed projection regression and real-data spatial rerender;
+  2026-09-16 — rejected the first canonical report's stale preview prose and
+  added tested state-specific interpretation, takeaways, and next steps
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison
