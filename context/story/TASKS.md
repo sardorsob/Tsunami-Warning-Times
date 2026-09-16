@@ -127,6 +127,11 @@
   path tests plus Ruff and strict Pyright. The runner owns all four figure pairs,
   checksummed manifest and decision ledger, ordered Markdown report, portable
   six-file bundle, project-local MLflow record, output fences, and atomic failure
+  cleanup. Task 10 RED failed because the thin notebook did not exist; GREEN
+  passed all 3 dependency/boundary tests, `marimo check`, Ruff, and strict
+  Pyright. A headless HTML export rendered the explicit no-manifest callout and
+  created no repository file; the notebook reads only generated manifests,
+  ledgers, and figure paths.
 - Attempts / Max: 1 / 3
 - Attempt log: 2026-09-14 — inline Stage A execution started with the minimal
   pinned static geospatial dependency boundary; 2026-09-14 — governed coastline
@@ -144,7 +149,9 @@
   added the side-by-side geodesic-range/published-contour shape diagnostic with
   explicit incompatible units and nearest-contour prohibition; 2026-09-16 —
   added the preview/review-aware reproducible runner with overwrite refusal,
-  story-lane fences, checksum reconciliation, and no-partial-output tests
+  story-lane fences, checksum reconciliation, and no-partial-output tests;
+  2026-09-16 — added the read-only reactive atlas viewer and verified its empty
+  state without loading normalized tables, plotting, tracking, or writing
 - Status: in-progress
 
 ## T-003B — Complete the reviewed arrival comparison

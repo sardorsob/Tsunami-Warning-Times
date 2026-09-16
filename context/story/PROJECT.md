@@ -16,7 +16,10 @@ panels that keep coastal raw levels and DART residuals distinct. Canonical
 figures wait for the reviewed-run task. Task 8 also implements the optional
 distance-versus-contour shape diagnostic without a speed or station-arrival
 conversion. Task 9 packages all four plots into checksummed, story-only run
-evidence with validated manual decisions. The NCTR field remains blocked.
+evidence with validated manual decisions. Task 10 adds a read-only Marimo
+viewer that discovers only generated atlas manifests and performs no scientific
+calculation or repository write. The NCTR field remains blocked; the canonical
+atlas and adaptive review remain Task 11 work.
 
 ## Question
 

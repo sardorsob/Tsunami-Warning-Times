@@ -1342,7 +1342,7 @@ git commit -m "feat(story): add reproducible atlas runner"
 - Produces: a read-only reactive selector and viewer; no metrics, transforms,
   scientific records, plots, or repository writes.
 
-- [ ] **Step 1: Write the failing notebook boundary test**
+- [x] **Step 1: Write the failing notebook boundary test**
 
 Add a source-level guard to `tests/story/test_dependencies.py`:
 
@@ -1360,13 +1360,13 @@ def test_story_notebook_is_a_thin_read_only_view() -> None:
         assert forbidden not in source
 ```
 
-- [ ] **Step 2: Run the test and observe the missing notebook**
+- [x] **Step 2: Run the test and observe the missing notebook**
 
 Run: `uv run pytest tests/story/test_dependencies.py -q`
 
 Expected: FAIL because the notebook does not exist.
 
-- [ ] **Step 3: Create the thin reactive notebook**
+- [x] **Step 3: Create the thin reactive notebook**
 
 Use the same Marimo DAG pattern as `notebooks/tohoku_missingness.py`. Discover
 only atlas manifests below `artifacts/eda/story`, offer their run IDs in a
@@ -1381,7 +1381,7 @@ selector, and show a clear empty state when none exists. Cells may:
 Cells must not import plotting functions, load normalized CSV files, calculate
 metrics, modify files, call MLflow, or use `print()`.
 
-- [ ] **Step 4: Verify empty-state execution and commit**
+- [x] **Step 4: Verify empty-state execution and commit**
 
 Run:
 

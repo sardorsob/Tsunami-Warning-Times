@@ -322,24 +322,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "atlasconfig",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L98"
-    },
-    {
-      "id": "analysis_story_atlas_atlaserror",
-      "label": "AtlasError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "atlaserror",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L28"
     },
     {
       "id": "analysis_story_atlas_atlasinputs",
@@ -348,50 +335,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "atlasinputs",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L85"
-    },
-    {
-      "id": "analysis_story_atlas_contourrecord",
-      "label": "ContourRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "contourrecord",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L72"
-    },
-    {
-      "id": "analysis_story_atlas_eventrecord",
-      "label": "EventRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "eventrecord",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L33"
-    },
-    {
-      "id": "analysis_story_atlas_observationrecord",
-      "label": "ObservationRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "observationrecord",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L59"
     },
     {
       "id": "analysis_story_atlas_seriespanel",
@@ -400,7 +348,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "seriespanel",
       "source_file": "analysis/story/atlas.py",
@@ -413,37 +361,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "seriespoint",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L115"
-    },
-    {
-      "id": "analysis_story_atlas_stationrecord",
-      "label": "StationRecord",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "stationrecord",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L43"
-    },
-    {
-      "id": "analysis_story_plots_coveragemetric",
-      "label": "_CoverageMetric",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_coveragemetric",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L66"
     },
     {
       "id": "analysis_story_plots_plotfiles",
@@ -452,24 +374,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "plotfiles",
       "source_file": "analysis/story/plots.py",
       "source_location": "L53"
-    },
-    {
-      "id": "pipeline_missingness_coastalcoveragetimeline",
-      "label": "CoastalCoverageTimeline",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "coastalcoveragetimeline",
-      "source_file": "pipeline/missingness.py",
-      "source_location": "L81"
     },
     {
       "id": "analysis_story_artifacts_decisionrecord",
@@ -483,6 +392,97 @@
       "norm_label": "decisionrecord",
       "source_file": "analysis/story/artifacts.py",
       "source_location": "L63"
+    },
+    {
+      "id": "analysis_story_atlas_atlaserror",
+      "label": "AtlasError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "atlaserror",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L28"
+    },
+    {
+      "id": "analysis_story_atlas_contourrecord",
+      "label": "ContourRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "contourrecord",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "analysis_story_atlas_eventrecord",
+      "label": "EventRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "eventrecord",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "analysis_story_atlas_observationrecord",
+      "label": "ObservationRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "observationrecord",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "analysis_story_atlas_stationrecord",
+      "label": "StationRecord",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "stationrecord",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "analysis_story_plots_coveragemetric",
+      "label": "_CoverageMetric",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "_coveragemetric",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L66"
+    },
+    {
+      "id": "pipeline_missingness_coastalcoveragetimeline",
+      "label": "CoastalCoverageTimeline",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "coastalcoveragetimeline",
+      "source_file": "pipeline/missingness.py",
+      "source_location": "L81"
     },
     {
       "id": "pipeline_provenance_main",
@@ -530,7 +530,7 @@
       "file_type": "code",
       "norm_label": "test_story_source_manifest_is_valid()",
       "source_file": "tests/story/test_map_context.py",
-      "source_location": "L20"
+      "source_location": "L23"
     },
     {
       "id": "tests_test_provenance_test_manifest_accepts_a_blocked_asset",
@@ -2489,6 +2489,18 @@
       "source_location": "L35"
     },
     {
+      "id": "tests_story_test_atlas_test_observation_coverage_plot_preserves_all_missingness_states",
+      "label": "test_observation_coverage_plot_preserves_all_missingness_states()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "missingness.py",
+      "file_type": "code",
+      "norm_label": "test_observation_coverage_plot_preserves_all_missingness_states()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L483"
+    },
+    {
       "id": "tests_test_missingness_stage_profile_inputs",
       "label": "_stage_profile_inputs()",
       "_callable": true,
@@ -2614,7 +2626,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "artifact_selector()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2626,7 +2638,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "coastal_table()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2638,7 +2650,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "headline_metrics()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2650,7 +2662,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "imports()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2662,7 +2674,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "interpretation()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2674,7 +2686,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "load_summary()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2686,7 +2698,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "title()",
       "source_file": "notebooks/tohoku_missingness.py",
@@ -2702,7 +2714,7 @@
       "file_type": "code",
       "norm_label": "test_static_story_geospatial_dependencies_are_exact()",
       "source_file": "tests/story/test_dependencies.py",
-      "source_location": "L4"
+      "source_location": "L5"
     },
     {
       "id": "tests_story_test_dependencies_test_story_analysis_namespace_imports",
@@ -2714,19 +2726,19 @@
       "file_type": "code",
       "norm_label": "test_story_analysis_namespace_imports()",
       "source_file": "tests/story/test_dependencies.py",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
-      "id": "analysis_story_atlas_boolean",
-      "label": "_boolean()",
+      "id": "tests_story_test_dependencies_test_story_notebook_is_a_thin_read_only_view",
+      "label": "test_story_notebook_is_a_thin_read_only_view()",
       "_callable": true,
       "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
+      "community": 61,
+      "community_name": "test_dependencies.py",
       "file_type": "code",
-      "norm_label": "_boolean()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L187"
+      "norm_label": "test_story_notebook_is_a_thin_read_only_view()",
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L16"
     },
     {
       "id": "analysis_story_atlas_build_series_panels",
@@ -2734,155 +2746,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "build_series_panels()",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L561"
-    },
-    {
-      "id": "analysis_story_atlas_coordinate",
-      "label": "_coordinate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_coordinate()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L195"
-    },
-    {
-      "id": "analysis_story_atlas_finite",
-      "label": "_finite()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_finite()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L173"
-    },
-    {
-      "id": "analysis_story_atlas_geodesic_range_ring",
-      "label": "geodesic_range_ring()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "geodesic_range_ring()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L650"
-    },
-    {
-      "id": "analysis_story_atlas_integer_tuple",
-      "label": "_integer_tuple()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_integer_tuple()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L461"
-    },
-    {
-      "id": "analysis_story_atlas_load_atlas_config",
-      "label": "load_atlas_config()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "load_atlas_config()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L484"
-    },
-    {
-      "id": "analysis_story_atlas_load_atlas_inputs",
-      "label": "load_atlas_inputs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "load_atlas_inputs()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L240"
-    },
-    {
-      "id": "analysis_story_atlas_load_json_object",
-      "label": "_load_json_object()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_load_json_object()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L153"
-    },
-    {
-      "id": "analysis_story_atlas_number",
-      "label": "_number()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_number()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L451"
-    },
-    {
-      "id": "analysis_story_atlas_optional_finite",
-      "label": "_optional_finite()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_optional_finite()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L183"
-    },
-    {
-      "id": "analysis_story_atlas_parse_coordinates",
-      "label": "_parse_coordinates()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_parse_coordinates()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L207"
-    },
-    {
-      "id": "analysis_story_atlas_parse_utc",
-      "label": "_parse_utc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_parse_utc()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L163"
-    },
-    {
-      "id": "analysis_story_atlas_read_csv",
-      "label": "_read_csv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_read_csv()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L136"
     },
     {
       "id": "analysis_story_atlas_shift_longitude",
@@ -2890,7 +2758,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "shift_longitude()",
       "source_file": "analysis/story/atlas.py",
@@ -2902,35 +2770,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "split_at_display_seam()",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L621"
-    },
-    {
-      "id": "analysis_story_atlas_station_ids",
-      "label": "_station_ids()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_station_ids()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L471"
-    },
-    {
-      "id": "analysis_story_atlas_text",
-      "label": "_text()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_text()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L444"
     },
     {
       "id": "analysis_story_atlas_validate_stage_a_scope",
@@ -2938,35 +2782,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "validate_stage_a_scope()",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L535"
-    },
-    {
-      "id": "analysis_story_plots_coverage_metrics",
-      "label": "_coverage_metrics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_coverage_metrics()",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L111"
-    },
-    {
-      "id": "analysis_story_plots_coverage_percent",
-      "label": "_coverage_percent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_coverage_percent()",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L102"
     },
     {
       "id": "analysis_story_plots_draw_event_and_stations",
@@ -2974,7 +2794,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_draw_event_and_stations()",
       "source_file": "analysis/story/plots.py",
@@ -2986,7 +2806,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_draw_lines()",
       "source_file": "analysis/story/plots.py",
@@ -2998,7 +2818,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_line_extent()",
       "source_file": "analysis/story/plots.py",
@@ -3010,23 +2830,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_load_coastline_parts()",
       "source_file": "analysis/story/plots.py",
       "source_location": "L670"
-    },
-    {
-      "id": "analysis_story_plots_parse_plot_utc",
-      "label": "_parse_plot_utc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_parse_plot_utc()",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L92"
     },
     {
       "id": "analysis_story_plots_plot_distance_contour_diagnostic",
@@ -3034,23 +2842,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "plot_distance_contour_diagnostic()",
       "source_file": "analysis/story/plots.py",
       "source_location": "L497"
-    },
-    {
-      "id": "analysis_story_plots_plot_observation_coverage",
-      "label": "plot_observation_coverage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "plot_observation_coverage()",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L184"
     },
     {
       "id": "analysis_story_plots_plot_pacific_evidence",
@@ -3058,7 +2854,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "plot_pacific_evidence()",
       "source_file": "analysis/story/plots.py",
@@ -3070,7 +2866,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "plot_station_timeseries()",
       "source_file": "analysis/story/plots.py",
@@ -3082,7 +2878,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_project_lines()",
       "source_file": "analysis/story/plots.py",
@@ -3094,7 +2890,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_project_points()",
       "source_file": "analysis/story/plots.py",
@@ -3106,23 +2902,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_save_figure()",
       "source_file": "analysis/story/plots.py",
       "source_location": "L73"
-    },
-    {
-      "id": "analysis_story_plots_status_spans",
-      "label": "_status_spans()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_status_spans()",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L147"
     },
     {
       "id": "analysis_story_plots_two_dimensional_coordinates",
@@ -3130,95 +2914,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "_two_dimensional_coordinates()",
       "source_file": "analysis/story/plots.py",
       "source_location": "L659"
-    },
-    {
-      "id": "tests_story_test_atlas_stage_atlas_inputs",
-      "label": "_stage_atlas_inputs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_stage_atlas_inputs()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L90"
-    },
-    {
-      "id": "tests_story_test_atlas_test_atlas_loader_preserves_source_semantics",
-      "label": "test_atlas_loader_preserves_source_semantics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_atlas_loader_preserves_source_semantics()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L296"
-    },
-    {
-      "id": "tests_story_test_atlas_test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance",
-      "label": "test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L311"
-    },
-    {
-      "id": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
-      "label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L404"
-    },
-    {
-      "id": "tests_story_test_atlas_test_geodesic_range_ring_uses_kilometres_without_a_speed_model",
-      "label": "test_geodesic_range_ring_uses_kilometres_without_a_speed_model()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_geodesic_range_ring_uses_kilometres_without_a_speed_model()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L334"
-    },
-    {
-      "id": "tests_story_test_atlas_test_observation_coverage_plot_preserves_all_missingness_states",
-      "label": "test_observation_coverage_plot_preserves_all_missingness_states()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_observation_coverage_plot_preserves_all_missingness_states()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L483"
-    },
-    {
-      "id": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
-      "label": "test_pacific_evidence_map_is_deterministic_and_records_geometry_counts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_pacific_evidence_map_is_deterministic_and_records_geometry_counts()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L381"
     },
     {
       "id": "tests_story_test_atlas_test_pacific_shift_splits_a_line_at_the_twenty_degree_seam",
@@ -3226,95 +2926,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
       "source_file": "tests/story/test_atlas.py",
       "source_location": "L322"
-    },
-    {
-      "id": "tests_story_test_atlas_test_project_story_config_fixes_the_approved_four_plus_six_scope",
-      "label": "test_project_story_config_fixes_the_approved_four_plus_six_scope()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_project_story_config_fixes_the_approved_four_plus_six_scope()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L367"
-    },
-    {
-      "id": "tests_story_test_atlas_test_series_panels_preserve_station_specific_source_semantics",
-      "label": "test_series_panels_preserve_station_specific_source_semantics()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_series_panels_preserve_station_specific_source_semantics()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L439"
-    },
-    {
-      "id": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
-      "label": "test_stage_a_scope_matches_configured_event_stations_and_windows()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_stage_a_scope_matches_configured_event_stations_and_windows()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L342"
-    },
-    {
-      "id": "tests_story_test_atlas_test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison",
-      "label": "test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L462"
-    },
-    {
-      "id": "tests_story_test_atlas_write_coastline",
-      "label": "_write_coastline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_write_coastline()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L264"
-    },
-    {
-      "id": "tests_story_test_atlas_write_csv",
-      "label": "_write_csv()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_write_csv()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L83"
-    },
-    {
-      "id": "tests_story_test_atlas_write_fixture_config",
-      "label": "_write_fixture_config()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "_write_fixture_config()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L245"
     },
     {
       "id": "analysis_story_artifacts_display_path",
@@ -3699,6 +3315,498 @@
       "norm_label": "_write_decision_input()",
       "source_file": "tests/story/test_story_atlas_cli.py",
       "source_location": "L303"
+    },
+    {
+      "id": "analysis_story_atlas_boolean",
+      "label": "_boolean()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_boolean()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L187"
+    },
+    {
+      "id": "analysis_story_atlas_coordinate",
+      "label": "_coordinate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_coordinate()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L195"
+    },
+    {
+      "id": "analysis_story_atlas_finite",
+      "label": "_finite()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_finite()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L173"
+    },
+    {
+      "id": "analysis_story_atlas_geodesic_range_ring",
+      "label": "geodesic_range_ring()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "geodesic_range_ring()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L650"
+    },
+    {
+      "id": "analysis_story_atlas_integer_tuple",
+      "label": "_integer_tuple()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_integer_tuple()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L461"
+    },
+    {
+      "id": "analysis_story_atlas_load_atlas_inputs",
+      "label": "load_atlas_inputs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "load_atlas_inputs()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L240"
+    },
+    {
+      "id": "analysis_story_atlas_load_json_object",
+      "label": "_load_json_object()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_load_json_object()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L153"
+    },
+    {
+      "id": "analysis_story_atlas_number",
+      "label": "_number()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_number()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L451"
+    },
+    {
+      "id": "analysis_story_atlas_optional_finite",
+      "label": "_optional_finite()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_optional_finite()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L183"
+    },
+    {
+      "id": "analysis_story_atlas_parse_coordinates",
+      "label": "_parse_coordinates()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_parse_coordinates()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L207"
+    },
+    {
+      "id": "analysis_story_atlas_parse_utc",
+      "label": "_parse_utc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_parse_utc()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L163"
+    },
+    {
+      "id": "analysis_story_atlas_read_csv",
+      "label": "_read_csv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_read_csv()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L136"
+    },
+    {
+      "id": "analysis_story_atlas_station_ids",
+      "label": "_station_ids()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_station_ids()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L471"
+    },
+    {
+      "id": "analysis_story_atlas_text",
+      "label": "_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "_text()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L444"
+    },
+    {
+      "id": "tests_story_test_atlas_test_geodesic_range_ring_uses_kilometres_without_a_speed_model",
+      "label": "test_geodesic_range_ring_uses_kilometres_without_a_speed_model()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "test_geodesic_range_ring_uses_kilometres_without_a_speed_model()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L334"
+    },
+    {
+      "id": "analysis_story_atlas_load_atlas_config",
+      "label": "load_atlas_config()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "load_atlas_config()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L484"
+    },
+    {
+      "id": "tests_story_test_atlas_stage_atlas_inputs",
+      "label": "_stage_atlas_inputs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "_stage_atlas_inputs()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L90"
+    },
+    {
+      "id": "tests_story_test_atlas_test_atlas_loader_preserves_source_semantics",
+      "label": "test_atlas_loader_preserves_source_semantics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_atlas_loader_preserves_source_semantics()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L296"
+    },
+    {
+      "id": "tests_story_test_atlas_test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance",
+      "label": "test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L311"
+    },
+    {
+      "id": "tests_story_test_atlas_test_distance_contour_diagnostic_keeps_incompatible_units_separate",
+      "label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_distance_contour_diagnostic_keeps_incompatible_units_separate()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L404"
+    },
+    {
+      "id": "tests_story_test_atlas_test_pacific_evidence_map_is_deterministic_and_records_geometry_counts",
+      "label": "test_pacific_evidence_map_is_deterministic_and_records_geometry_counts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_pacific_evidence_map_is_deterministic_and_records_geometry_counts()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L381"
+    },
+    {
+      "id": "tests_story_test_atlas_test_project_story_config_fixes_the_approved_four_plus_six_scope",
+      "label": "test_project_story_config_fixes_the_approved_four_plus_six_scope()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_project_story_config_fixes_the_approved_four_plus_six_scope()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L367"
+    },
+    {
+      "id": "tests_story_test_atlas_test_series_panels_preserve_station_specific_source_semantics",
+      "label": "test_series_panels_preserve_station_specific_source_semantics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_series_panels_preserve_station_specific_source_semantics()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L439"
+    },
+    {
+      "id": "tests_story_test_atlas_test_stage_a_scope_matches_configured_event_stations_and_windows",
+      "label": "test_stage_a_scope_matches_configured_event_stations_and_windows()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_stage_a_scope_matches_configured_event_stations_and_windows()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L342"
+    },
+    {
+      "id": "tests_story_test_atlas_test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison",
+      "label": "test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_station_timeseries_is_deterministic_and_warns_against_amplitude_comparison()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L462"
+    },
+    {
+      "id": "tests_story_test_atlas_write_coastline",
+      "label": "_write_coastline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "_write_coastline()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L264"
+    },
+    {
+      "id": "tests_story_test_atlas_write_csv",
+      "label": "_write_csv()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "_write_csv()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L83"
+    },
+    {
+      "id": "tests_story_test_atlas_write_fixture_config",
+      "label": "_write_fixture_config()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "_write_fixture_config()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L245"
+    },
+    {
+      "id": "analysis_story_plots_coverage_metrics",
+      "label": "_coverage_metrics()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "_coverage_metrics()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L111"
+    },
+    {
+      "id": "analysis_story_plots_coverage_percent",
+      "label": "_coverage_percent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "_coverage_percent()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L102"
+    },
+    {
+      "id": "analysis_story_plots_parse_plot_utc",
+      "label": "_parse_plot_utc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "_parse_plot_utc()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L92"
+    },
+    {
+      "id": "analysis_story_plots_plot_observation_coverage",
+      "label": "plot_observation_coverage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "plot_observation_coverage()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L184"
+    },
+    {
+      "id": "analysis_story_plots_status_spans",
+      "label": "_status_spans()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "_status_spans()",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L147"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_decision_ledger",
+      "label": "decision_ledger()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "decision_ledger()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L173"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_discover_manifests",
+      "label": "discover_manifests()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "discover_manifests()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L36"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_evidence_boundary",
+      "label": "evidence_boundary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "evidence_boundary()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L105"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_generated_figures",
+      "label": "generated_figures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "generated_figures()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L125"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_imports",
+      "label": "imports()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "imports()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_load_manifest",
+      "label": "load_manifest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "load_manifest()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L75"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_require_manifest",
+      "label": "require_manifest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "require_manifest()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L61"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_title",
+      "label": "title()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "title()",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L20"
     },
     {
       "id": "app_tsconfig",
@@ -4186,7 +4294,7 @@
       "node_kind": "heading",
       "norm_label": "continue from here",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L445"
+      "source_location": "L451"
     },
     {
       "id": "context_handover_decisions_and_assumptions",
@@ -4234,7 +4342,7 @@
       "node_kind": "heading",
       "norm_label": "final disposition",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L472"
+      "source_location": "L479"
     },
     {
       "id": "context_handover_handover",
@@ -4282,7 +4390,7 @@
       "node_kind": "heading",
       "norm_label": "repository state",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L464"
+      "source_location": "L471"
     },
     {
       "id": "context_handover_risks_and_blockers",
@@ -4294,7 +4402,7 @@
       "node_kind": "heading",
       "norm_label": "risks and blockers",
       "source_file": "context/HANDOVER.md",
-      "source_location": "L429"
+      "source_location": "L435"
     },
     {
       "id": "context_handover_t_002a_verification_evidence",
@@ -5326,7 +5434,7 @@
       "node_kind": "heading",
       "norm_label": "t-004 \u2014 test the wavefront mechanism",
       "source_file": "context/TASKS.md",
-      "source_location": "L519"
+      "source_location": "L525"
     },
     {
       "id": "context_tasks_t_005_build_and_package_the_story",
@@ -5338,7 +5446,7 @@
       "node_kind": "heading",
       "norm_label": "t-005 \u2014 build and package the story",
       "source_file": "context/TASKS.md",
-      "source_location": "L543"
+      "source_location": "L549"
     },
     {
       "id": "context_tasks_tasks",
@@ -5362,7 +5470,7 @@
       "node_kind": "heading",
       "norm_label": "x-001 \u2014 close the dual-track compatibility follow-up",
       "source_file": "context/TASKS.md",
-      "source_location": "L568"
+      "source_location": "L574"
     },
     {
       "id": "context_validation_plan",
@@ -9163,18 +9271,6 @@
       "source_location": "L58"
     },
     {
-      "id": "readme_collection_and_validation_rules",
-      "label": "Collection and validation rules",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "Pacific Tsunami Warning Time",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "collection and validation rules",
-      "source_file": "README.md",
-      "source_location": "L98"
-    },
-    {
       "id": "readme_current_status",
       "label": "Current status",
       "_origin": "ast",
@@ -9185,30 +9281,6 @@
       "norm_label": "current status",
       "source_file": "README.md",
       "source_location": "L36"
-    },
-    {
-      "id": "readme_data_flow",
-      "label": "Data flow",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "Pacific Tsunami Warning Time",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "data flow",
-      "source_file": "README.md",
-      "source_location": "L114"
-    },
-    {
-      "id": "readme_dataset_gathering",
-      "label": "Dataset gathering",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "Pacific Tsunami Warning Time",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dataset gathering",
-      "source_file": "README.md",
-      "source_location": "L62"
     },
     {
       "id": "readme_evidence_and_reporting",
@@ -9307,18 +9379,6 @@
       "source_location": "L232"
     },
     {
-      "id": "readme_reproducing_the_pipeline",
-      "label": "Reproducing the pipeline",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "Pacific Tsunami Warning Time",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "reproducing the pipeline",
-      "source_file": "README.md",
-      "source_location": "L155"
-    },
-    {
       "id": "readme_safety_and_interpretation",
       "label": "Safety and interpretation",
       "_origin": "ast",
@@ -9329,18 +9389,6 @@
       "norm_label": "safety and interpretation",
       "source_file": "README.md",
       "source_location": "L317"
-    },
-    {
-      "id": "readme_source_inventory",
-      "label": "Source inventory",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "Pacific Tsunami Warning Time",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "source inventory",
-      "source_file": "README.md",
-      "source_location": "L68"
     },
     {
       "id": "app_src_app",
@@ -9518,26 +9566,26 @@
       "source_location": "L1"
     },
     {
-      "id": "cell",
-      "label": "cell",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "cell",
-      "file_type": "code",
-      "norm_label": "cell",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "notebooks_tohoku_missingness",
       "label": "tohoku_missingness.py",
       "_origin": "ast",
       "community": 52,
-      "community_name": "cell",
+      "community_name": "tohoku_missingness.py",
       "file_type": "code",
       "norm_label": "tohoku_missingness.py",
       "source_file": "notebooks/tohoku_missingness.py",
       "source_location": "L1"
+    },
+    {
+      "id": "notebooks_tohoku_missingness_py_cell",
+      "label": "cell",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "tohoku_missingness.py",
+      "file_type": "code",
+      "norm_label": "cell",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "artifacts_logs_runs_2026_09_09_1749_missingness_7b6d386_notes",
@@ -9957,7 +10005,7 @@
       "node_kind": "heading",
       "norm_label": "contribution boundary",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L31"
+      "source_location": "L34"
     },
     {
       "id": "context_story_project_evidence_states",
@@ -9969,7 +10017,7 @@
       "node_kind": "heading",
       "norm_label": "evidence states",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L41"
+      "source_location": "L44"
     },
     {
       "id": "context_story_project_first_deliverable",
@@ -9981,7 +10029,7 @@
       "node_kind": "heading",
       "norm_label": "first deliverable",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L50"
+      "source_location": "L53"
     },
     {
       "id": "context_story_project_governing_design",
@@ -9993,7 +10041,7 @@
       "node_kind": "heading",
       "norm_label": "governing design",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L57"
+      "source_location": "L60"
     },
     {
       "id": "context_story_project_question",
@@ -10005,7 +10053,7 @@
       "node_kind": "heading",
       "norm_label": "question",
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L21"
+      "source_location": "L24"
     },
     {
       "id": "context_story_project_status",
@@ -10197,7 +10245,7 @@
       "node_kind": "heading",
       "norm_label": "t-003b \u2014 complete the reviewed arrival comparison",
       "source_file": "context/story/TASKS.md",
-      "source_location": "L150"
+      "source_location": "L157"
     },
     {
       "id": "context_story_tasks_t_003i_plan_the_stage_a_diagnostic_atlas_implementation",
@@ -10519,55 +10567,11 @@
       "source_location": "L1"
     },
     {
-      "id": "analysis_story_atlas",
-      "label": "atlas.py",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "atlas.py",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "analysis_story_atlas_py_datetime",
-      "label": "datetime",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "datetime",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "analysis_story_atlas_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "analysis_story_atlas_py_valueerror",
-      "label": "ValueError",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "valueerror",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "analysis_story_init",
       "label": "story/__init__.py",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "story/__init__.py",
       "source_file": "analysis/story/__init__.py",
@@ -10578,29 +10582,18 @@
       "label": "plots.py",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "plots.py",
       "source_file": "analysis/story/plots.py",
       "source_location": "L1"
     },
     {
-      "id": "analysis_story_plots_py_datetime",
-      "label": "datetime",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "datetime",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "analysis_story_plots_py_path",
       "label": "Path",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "path",
       "source_file": "",
@@ -10611,7 +10604,7 @@
       "label": "Axes",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "axes",
       "source_file": "",
@@ -10622,20 +10615,9 @@
       "label": "Coordinate",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "coordinate",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "coveragestatus",
-      "label": "CoverageStatus",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "coveragestatus",
       "source_file": "",
       "source_location": ""
     },
@@ -10644,7 +10626,7 @@
       "label": "Figure",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "figure",
       "source_file": "",
@@ -10655,7 +10637,7 @@
       "label": "GeoSeries",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "geoseries",
       "source_file": "",
@@ -10666,7 +10648,7 @@
       "label": "LineString",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "linestring",
       "source_file": "",
@@ -10677,51 +10659,18 @@
       "label": "Point",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "code",
       "norm_label": "point",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "tests_story_test_atlas",
-      "label": "test_atlas.py",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_atlas.py",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_story_test_atlas_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "analysis_story_atlas_rationale_1",
-      "label": "Typed, source-preserving inputs and geometry for the Stage A story atlas.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "typed, source-preserving inputs and geometry for the stage a story atlas.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L1"
-    },
-    {
       "id": "analysis_story_atlas_rationale_116",
       "label": "One retained numeric value positioned relative to earthquake origin.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "one retained numeric value positioned relative to earthquake origin.",
       "source_file": "analysis/story/atlas.py",
@@ -10732,73 +10681,18 @@
       "label": "A station-local series whose y-scale must not be shared.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "a station-local series whose y-scale must not be shared.",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L124"
     },
     {
-      "id": "analysis_story_atlas_rationale_241",
-      "label": "Load normalized inputs while preserving source semantics and explicit unknowns.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "load normalized inputs while preserving source semantics and explicit unknowns.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L241"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_29",
-      "label": "Raised when an atlas input would require guessing or silent repair.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "raised when an atlas input would require guessing or silent repair.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L29"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_34",
-      "label": "Reviewed event identity and origin.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "reviewed event identity and origin.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L34"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_44",
-      "label": "Source-stated station location and measurement semantics.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "source-stated station location and measurement semantics.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L44"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_485",
-      "label": "Load and validate the fixed Stage A atlas contract.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "load and validate the fixed stage a atlas contract.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L485"
-    },
-    {
       "id": "analysis_story_atlas_rationale_538",
       "label": "Require the reviewed event, station groups, contour hours, and coastal windows.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "require the reviewed event, station groups, contour hours, and coastal windows.",
       "source_file": "analysis/story/atlas.py",
@@ -10809,29 +10703,18 @@
       "label": "Build station-local point series without smoothing, centering, or resampling.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "build station-local point series without smoothing, centering, or resampling.",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L562"
     },
     {
-      "id": "analysis_story_atlas_rationale_60",
-      "label": "One observation with source time kept separate from verified UTC.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "one observation with source time kept separate from verified utc.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L60"
-    },
-    {
       "id": "analysis_story_atlas_rationale_614",
       "label": "Shift a longitude into the Pacific display domain [-340, 20).",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "shift a longitude into the pacific display domain [-340, 20).",
       "source_file": "analysis/story/atlas.py",
@@ -10842,40 +10725,18 @@
       "label": "Split linework at 20\u00b0E while retaining an endpoint on each seam side.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "split linework at 20\u00b0e while retaining an endpoint on each seam side.",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L624"
     },
     {
-      "id": "analysis_story_atlas_rationale_653",
-      "label": "Return a WGS84 geodesic distance ring in kilometres, with no speed model.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "return a wgs84 geodesic distance ring in kilometres, with no speed model.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L653"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_73",
-      "label": "One published NCEI travel-time contour part.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "one published ncei travel-time contour part.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L73"
-    },
-    {
       "id": "analysis_story_atlas_rationale_86",
       "label": "Validated normalized inputs for preliminary story diagnostics.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "validated normalized inputs for preliminary story diagnostics.",
       "source_file": "analysis/story/atlas.py",
@@ -10886,7 +10747,7 @@
       "label": "Reviewed Stage A projection, window, and candidate scope.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "reviewed stage a projection, window, and candidate scope.",
       "source_file": "analysis/story/atlas.py",
@@ -10897,29 +10758,18 @@
       "label": "Story-only descriptive analysis.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "story-only descriptive analysis.",
       "source_file": "analysis/story/__init__.py",
       "source_location": "L1"
     },
     {
-      "id": "analysis_story_plots_rationale_190",
-      "label": "Render source-supported coastal coverage without interpolation or snapping.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "render source-supported coastal coverage without interpolation or snapping.",
-      "source_file": "analysis/story/plots.py",
-      "source_location": "L190"
-    },
-    {
       "id": "analysis_story_plots_rationale_327",
       "label": "Render station-local point traces without bridging gaps or comparing amplitudes.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "render station-local point traces without bridging gaps or comparing amplitudes.",
       "source_file": "analysis/story/plots.py",
@@ -10930,7 +10780,7 @@
       "label": "Compare geodesic ring shape with published contour shape without conversion.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "compare geodesic ring shape with published contour shape without conversion.",
       "source_file": "analysis/story/plots.py",
@@ -10941,7 +10791,7 @@
       "label": "Paths and spatial accounting for one deterministic plot.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "paths and spatial accounting for one deterministic plot.",
       "source_file": "analysis/story/plots.py",
@@ -10952,22 +10802,11 @@
       "label": "Render the preliminary basin context without implying a continuous field.",
       "_origin": "ast",
       "community": 63,
-      "community_name": "AtlasError",
+      "community_name": "plots.py",
       "file_type": "rationale",
       "norm_label": "render the preliminary basin context without implying a continuous field.",
       "source_file": "analysis/story/plots.py",
       "source_location": "L742"
-    },
-    {
-      "id": "pipeline_missingness_rationale_82",
-      "label": "Exact-grid positions and separate off-grid samples for one coastal gauge.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "exact-grid positions and separate off-grid samples for one coastal gauge.",
-      "source_file": "pipeline/missingness.py",
-      "source_location": "L82"
     },
     {
       "id": "analysis_story_artifacts",
@@ -11333,6 +11172,138 @@
       "source_location": "L416"
     },
     {
+      "id": "analysis_story_atlas",
+      "label": "atlas.py",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "atlas.py",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_atlas_py_datetime",
+      "label": "datetime",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "datetime",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "analysis_story_atlas_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "analysis_story_atlas_py_valueerror",
+      "label": "ValueError",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "code",
+      "norm_label": "valueerror",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "analysis_story_atlas_rationale_1",
+      "label": "Typed, source-preserving inputs and geometry for the Stage A story atlas.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "typed, source-preserving inputs and geometry for the stage a story atlas.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_241",
+      "label": "Load normalized inputs while preserving source semantics and explicit unknowns.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "load normalized inputs while preserving source semantics and explicit unknowns.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L241"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_29",
+      "label": "Raised when an atlas input would require guessing or silent repair.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "raised when an atlas input would require guessing or silent repair.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L29"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_34",
+      "label": "Reviewed event identity and origin.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "reviewed event identity and origin.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_44",
+      "label": "Source-stated station location and measurement semantics.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "source-stated station location and measurement semantics.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L44"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_60",
+      "label": "One observation with source time kept separate from verified UTC.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "one observation with source time kept separate from verified utc.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L60"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_653",
+      "label": "Return a WGS84 geodesic distance ring in kilometres, with no speed model.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "return a wgs84 geodesic distance ring in kilometres, with no speed model.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L653"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_73",
+      "label": "One published NCEI travel-time contour part.",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "AtlasError",
+      "file_type": "rationale",
+      "norm_label": "one published ncei travel-time contour part.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L73"
+    },
+    {
       "id": "pipeline_init",
       "label": "pipeline/__init__.py",
       "_origin": "ast",
@@ -11353,6 +11324,165 @@
       "norm_label": "reproducible data-pipeline support for pacific tsunami warning time.",
       "source_file": "pipeline/__init__.py",
       "source_location": "L1"
+    },
+    {
+      "id": "tests_story_test_atlas",
+      "label": "test_atlas.py",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "test_atlas.py",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_story_test_atlas_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "analysis_story_atlas_rationale_485",
+      "label": "Load and validate the fixed Stage A atlas contract.",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "test_atlas.py",
+      "file_type": "rationale",
+      "norm_label": "load and validate the fixed stage a atlas contract.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L485"
+    },
+    {
+      "id": "analysis_story_plots_py_datetime",
+      "label": "datetime",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "datetime",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "coveragestatus",
+      "label": "CoverageStatus",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "code",
+      "norm_label": "coveragestatus",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "analysis_story_plots_rationale_190",
+      "label": "Render source-supported coastal coverage without interpolation or snapping.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "rationale",
+      "norm_label": "render source-supported coastal coverage without interpolation or snapping.",
+      "source_file": "analysis/story/plots.py",
+      "source_location": "L190"
+    },
+    {
+      "id": "pipeline_missingness_rationale_82",
+      "label": "Exact-grid positions and separate off-grid samples for one coastal gauge.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "plot_observation_coverage",
+      "file_type": "rationale",
+      "norm_label": "exact-grid positions and separate off-grid samples for one coastal gauge.",
+      "source_file": "pipeline/missingness.py",
+      "source_location": "L82"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda",
+      "label": "tohoku_storyboard_eda.py",
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "tohoku_storyboard_eda.py",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "label": "cell",
+      "_origin": "ast",
+      "community": 72,
+      "community_name": "tohoku_storyboard_eda.py",
+      "file_type": "code",
+      "norm_label": "cell",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "readme_collection_and_validation_rules",
+      "label": "Collection and validation rules",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "Dataset gathering",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "collection and validation rules",
+      "source_file": "README.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "readme_data_flow",
+      "label": "Data flow",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "Dataset gathering",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "data flow",
+      "source_file": "README.md",
+      "source_location": "L114"
+    },
+    {
+      "id": "readme_dataset_gathering",
+      "label": "Dataset gathering",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "Dataset gathering",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dataset gathering",
+      "source_file": "README.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "readme_reproducing_the_pipeline",
+      "label": "Reproducing the pipeline",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "Dataset gathering",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reproducing the pipeline",
+      "source_file": "README.md",
+      "source_location": "L155"
+    },
+    {
+      "id": "readme_source_inventory",
+      "label": "Source inventory",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "Dataset gathering",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "source inventory",
+      "source_file": "README.md",
+      "source_location": "L68"
     },
     {
       "id": "app_vite_config",
@@ -15362,7 +15492,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/story/test_map_context.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -17922,8 +18052,104 @@
       "weight": 1.0
     },
     {
+      "source": "notebooks_story_tohoku_storyboard_eda_decision_ledger",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_discover_manifests",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_evidence_boundary",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_generated_figures",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_imports",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_load_manifest",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_require_manifest",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda_title",
+      "target": "notebooks_story_tohoku_storyboard_eda_py_cell",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "decorator",
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
       "source": "notebooks_tohoku_missingness_artifact_selector",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17935,7 +18161,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_coastal_table",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17947,7 +18173,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_headline_metrics",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17959,7 +18185,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_imports",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17971,7 +18197,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_interpretation",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17983,7 +18209,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_load_summary",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17995,7 +18221,7 @@
     },
     {
       "source": "notebooks_tohoku_missingness_title",
-      "target": "cell",
+      "target": "notebooks_tohoku_missingness_py_cell",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25653,7 +25879,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L429",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -25664,7 +25890,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L445",
+      "source_location": "L451",
       "weight": 1.0
     },
     {
@@ -25675,7 +25901,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L464",
+      "source_location": "L471",
       "weight": 1.0
     },
     {
@@ -25686,7 +25912,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/HANDOVER.md",
-      "source_location": "L472",
+      "source_location": "L479",
       "weight": 1.0
     },
     {
@@ -26170,7 +26396,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -26192,7 +26418,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -26203,7 +26429,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L41",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -26214,7 +26440,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L50",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -26225,7 +26451,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/PROJECT.md",
-      "source_location": "L57",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -26313,7 +26539,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/story/TASKS.md",
-      "source_location": "L150",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -26500,7 +26726,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L519",
+      "source_location": "L525",
       "weight": 1.0
     },
     {
@@ -26511,7 +26737,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L543",
+      "source_location": "L549",
       "weight": 1.0
     },
     {
@@ -26522,7 +26748,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/TASKS.md",
-      "source_location": "L568",
+      "source_location": "L574",
       "weight": 1.0
     },
     {
@@ -27931,6 +28157,94 @@
       "confidence_score": 1.0,
       "source_file": "docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md",
       "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_evidence_boundary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_generated_figures",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_decision_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_title",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_discover_manifests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_require_manifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_load_manifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "notebooks_story_tohoku_storyboard_eda",
+      "target": "notebooks_story_tohoku_storyboard_eda_imports",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "notebooks/story/tohoku_storyboard_eda.py",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -29717,24 +30031,35 @@
     },
     {
       "source": "tests_story_test_dependencies",
-      "target": "tests_story_test_dependencies_test_static_story_geospatial_dependencies_are_exact",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tests/story/test_dependencies.py",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_story_test_dependencies",
       "target": "tests_story_test_dependencies_test_story_analysis_namespace_imports",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_dependencies.py",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_dependencies",
+      "target": "tests_story_test_dependencies_test_story_notebook_is_a_thin_read_only_view",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_story_test_dependencies",
+      "target": "tests_story_test_dependencies_test_static_story_geospatial_dependencies_are_exact",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/story/test_dependencies.py",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -29745,7 +30070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/story/test_map_context.py",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -32990,5 +33315,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "022dba382f604c8283111922dcaae232fe0fd950"
+  "built_at_commit": "c3e5c0843a71b0f22ad76a4727b59b716e195379"
 }

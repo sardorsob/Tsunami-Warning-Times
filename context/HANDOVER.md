@@ -401,7 +401,13 @@ Markdown report, a portable six-file bundle, and a project-local MLflow record.
 Its RED test failed on the absent runner; GREEN passed 10 integration and error-
 path tests, Ruff, and strict Pyright, including overwrite refusal, output fences,
 reviewed-decision validation, manifest hash reconciliation, and atomic failure.
-No canonical story figure, claim, or app export exists yet.
+Task 10 adds a thin read-only Marimo viewer that discovers generated atlas
+manifests, displays their already-rendered figures and decision ledger, and
+links to the canonical report. Its RED check failed on the missing notebook;
+GREEN passed 3 dependency/boundary tests, `marimo check`, a headless empty-state
+export, Ruff, and strict Pyright. It loads no normalized table, invokes no plot
+or MLflow code, and writes no repository file. No canonical story figure,
+claim, or app export exists yet.
 
 The approved execution boundary has two stages. T-003A may create preliminary
 maps and temporal diagnostics from the accepted T-002C2 build, but cannot
@@ -446,8 +452,9 @@ rebuild distinct.
 
 Execute the remaining approved implementation chain in order:
 
-1. Continue the approved inline Stage A plan at Task 10, committing each task
-   after its focused verification passes.
+1. Continue the approved inline Stage A plan at Task 11: build and inspect the
+   real preview, commit its adaptive review, then build and verify the canonical
+   preliminary atlas.
 2. Continue shared T-002D from the recorded missingness findings: map Pago Pago
    and Saipan gap blocks and inspect DART intervals over 900 seconds.
 3. Define the no-interpolation pre-arrival completeness gate, then execute
@@ -474,4 +481,4 @@ remain ignored.
 T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
 accepted. T-002D is active but not complete; no event or station set is frozen.
 T-003P and T-003I are accepted. T-003A and the root T-003 work are in progress;
-Tasks 1–9 are complete and Task 10 is next.
+Tasks 1–10 are complete and Task 11 is next.
