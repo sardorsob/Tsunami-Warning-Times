@@ -323,6 +323,12 @@
 
 ## T-002D — Run reproducible EDA
 
+Execution continuation authorized 2026-10-05: see
+`docs/superpowers/plans/2026-10-05-shared-eda-review.md` for the five bounded
+commit/review units. Arrival diagnostic settings are frozen in
+`config/tohoku-arrival-audit.toml` before real-data picking. Adaptive follow-ups
+must preserve rejected settings, controls, and explicit unavailable fields.
+
 - ID: T-002D
 - Title: Profile the broad Tōhoku data proof with scripts and marimo
 - Depends on: T-002C, T-002C1, and T-002C2 done
