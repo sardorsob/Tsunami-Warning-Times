@@ -29,6 +29,7 @@ def title(mo):
         [Read the canonical story EDA report](../../context/story/EDA_REPORT.md)
         """
     )
+    mo.output.replace(title_view)
     return (title_view,)
 
 
@@ -54,6 +55,7 @@ def discover_manifests(Path, mo):
             run_selector,
         ]
     )
+    mo.output.replace(selector_view)
     return manifest_paths, run_selector, selector_view
 
 
@@ -118,6 +120,7 @@ def evidence_boundary(manifest_data, mo, selected_manifest_path):
             ),
         ]
     )
+    mo.output.replace(boundary_view)
     return (boundary_view,)
 
 
@@ -166,6 +169,7 @@ def generated_figures(Path, cast, artifact_records, mo):
             )
         )
     figures_view = mo.vstack(figure_views, gap=2)
+    mo.output.replace(figures_view)
     return (figures_view,)
 
 
@@ -194,6 +198,7 @@ def decision_ledger(cast, csv, mo, selected_manifest_path):
             ),
         ]
     )
+    mo.output.replace(decision_view)
     return (decision_view,)
 
 
