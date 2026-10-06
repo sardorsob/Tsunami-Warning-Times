@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-10-05)
 
 ## Corpus Check
-- 190 files · ~897,310 words
+- 205 files · ~976,149 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1141 nodes · 2177 edges · 86 communities (71 shown, 15 thin omitted)
+- 1188 nodes · 2233 edges · 90 communities (76 shown, 14 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2e29de33`
+- Built from commit: `c98a9c2e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,12 +92,16 @@
 - Independent Stage A Checker review
 - Tōhoku timing audit protocol
 - test_notebook_render.py
-- build_series_panels
+- story/__init__.py
 - Tōhoku Missingness EDA
 - Tōhoku shared EDA — timing support audit
 - Tōhoku Missingness EDA
 - 2026-10-05-initial-timing-run.md
 - Tōhoku shared EDA — timing support audit
+- Tōhoku Missingness EDA
+- Tōhoku shared EDA — timing support audit
+- split_at_display_seam
+- Independent shared EDA and data-proof review
 
 ## God Nodes (most connected - your core abstractions)
 1. `AtlasError` - 49 edges
@@ -108,8 +112,8 @@
 6. `_run()` - 28 edges
 7. `SourceContract` - 23 edges
 8. `write_run_evidence()` - 21 edges
-9. `plot_distance_contour_diagnostic()` - 20 edges
-10. `Handover` - 20 edges
+9. `Handover` - 21 edges
+10. `plot_distance_contour_diagnostic()` - 20 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --uses--> `AtlasError`  [INFERRED]
@@ -126,7 +130,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (86 total, 15 thin omitted)
+## Communities (90 total, 14 thin omitted)
 
 ### Community 0 - "compilerOptions"
 Cohesion: 0.08
@@ -154,27 +158,27 @@ Nodes (4): App(), root, ProjectPhase, ProjectStatus
 
 ### Community 10 - "Handover"
 Cohesion: 0.10
-Nodes (20): Accepted Saipan source recovery, Completed, Completed Valparaíso recovery, Continue from here, Decisions and assumptions, Dual-track design checkpoint, External track-compatibility guidance, Final disposition (+12 more)
+Nodes (21): 2026-10-05 shared audit and independent closure, Accepted Saipan source recovery, Completed, Completed Valparaíso recovery, Continue from here, Decisions and assumptions, Dual-track design checkpoint, External track-compatibility guidance (+13 more)
 
 ### Community 11 - "Data Card — Tōhoku Data-Proof Candidate"
 Cohesion: 0.06
-Nodes (28): Source Manifest Contract, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract, Missingness profile (+20 more)
+Nodes (29): Source Manifest Contract, 2026-10-05 reviewed EDA boundary, Actual normalized grains, Current coverage and quality, Data Card — Tōhoku Data-Proof Candidate, Data-proof acquisition set, Known misuse risk, Minimum record contract (+21 more)
 
 ### Community 12 - "Tōhoku Data Pipeline and EDA Design"
 Cohesion: 0.13
 Nodes (14): Acquisition behavior, Approved choices, Architecture, Canonical records, Commit boundaries, Data flow, Dependencies and deliberate deferrals, EDA contract (+6 more)
 
 ### Community 13 - "Decision Log"
-Cohesion: 0.12
-Nodes (16): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+8 more)
+Cohesion: 0.11
+Nodes (17): D-001 — Minimal split repository shell, D-002 — Event selection remains gated, D-003 — Dependencies follow demonstrated need, D-004 — Tōhoku is provisional, not frozen, D-005 — Use physical-travel-time wording by default, D-006 — Use a broad but source-gated Tōhoku data proof, D-007 — Scripts own calculations; marimo exposes EDA, D-008 — Markdown is the canonical result surface (+9 more)
 
 ### Community 14 - "Tasks"
 Cohesion: 0.12
 Nodes (17): T-000 — Prepare the repository, T-001 — Select a feasible event, T-002A — Resolve source endpoints and contracts, T-002B — Acquire and fingerprint raw assets, T-002C1 — Recover and normalize Saipan event data, T-002C2 — Recover and normalize Valparaíso research data, T-002C — Normalize and validate analysis tables, T-002D — Run reproducible EDA (+9 more)
 
 ### Community 15 - "Validation Plan"
-Cohesion: 0.22
-Nodes (8): Acquisition and accounting, Analytical, Cartographic and interaction, Release, Source and identity, Spatial and raster, Temporal, Validation Plan
+Cohesion: 0.20
+Nodes (9): Acquisition and accounting, Analytical, Cartographic and interaction, Release, Shared diagnostic release gate (2026-10-05), Source and identity, Spatial and raster, Temporal (+1 more)
 
 ### Community 16 - "Methodology — Draft Contract"
 Cohesion: 0.25
@@ -211,6 +215,10 @@ Nodes (4): Contract, Current state, Hazard Event Set, Tōhoku data-proof bundle
 ### Community 24 - "PacificVis Storytelling Benchmark, 2017–2026"
 Cohesion: 0.50
 Nodes (3): Cross-year criteria for this project, Originality boundary, PacificVis Storytelling Benchmark, 2017–2026
+
+### Community 26 - "Experiment Ledger"
+Cohesion: 0.50
+Nodes (3): 2026-09-09 — T-002D missingness slice, 2026-10-05 — shared adaptive timing audit, Experiment Ledger
 
 ### Community 32 - "PacificVis 2027 Dual-Track Repository Design"
 Cohesion: 0.08
@@ -270,7 +278,7 @@ Nodes (3): Acquisition run notes, Decision, Limitations
 
 ### Community 46 - "missingness.py"
 Cohesion: 0.08
-Nodes (59): build_coastal_coverage_timelines(), CoastalWindowProfile, CoveragePosition, DartCadenceProfile, ExpectedWindow, _load_accounting(), load_expected_windows(), _mechanism_rows() (+51 more)
+Nodes (60): build_coastal_coverage_timelines(), CoastalCoverageTimeline, CoastalWindowProfile, CoveragePosition, DartCadenceProfile, ExpectedWindow, _load_accounting(), load_expected_windows() (+52 more)
 
 ### Community 47 - "Project Contract"
 Cohesion: 0.22
@@ -321,12 +329,12 @@ Cohesion: 0.11
 Nodes (18): Create, File Structure, Generated by the implementation, Global Constraints, Modify, Stage A Completion Gate, Task 10: Add the thin Marimo atlas viewer, Task 11: Run the real atlas and record adaptive findings (+10 more)
 
 ### Community 63 - "plots.py"
-Cohesion: 0.10
-Nodes (45): AtlasInputs, project_line_parts(), Shift a longitude into the Pacific display domain [-340, 20)., Split linework at 20°E while retaining an endpoint on each seam side., Project unwrapped Pacific linework without normalizing its seam endpoints., Validated normalized inputs for preliminary story diagnostics., shift_longitude(), split_at_display_seam() (+37 more)
+Cohesion: 0.13
+Nodes (34): A station-local series whose y-scale must not be shared., SeriesPanel, _coverage_metrics(), _coverage_percent(), _CoverageMetric, _draw_event_and_stations(), _draw_lines(), _line_extent() (+26 more)
 
 ### Community 64 - "build_story_atlas.py"
-Cohesion: 0.13
-Nodes (36): DecisionRecord, display_path(), load_decision_input(), _png_dimensions(), preview_decisions(), Path, Inspectable evidence artifacts for the preliminary visual-story atlas., Write stable human-readable JSON. (+28 more)
+Cohesion: 0.14
+Nodes (35): DecisionRecord, display_path(), load_decision_input(), _png_dimensions(), preview_decisions(), Path, Inspectable evidence artifacts for the preliminary visual-story atlas., Write stable human-readable JSON. (+27 more)
 
 ### Community 65 - "Acquisition run notes"
 Cohesion: 0.50
@@ -341,24 +349,24 @@ Cohesion: 0.35
 Nodes (16): main(), Run the fixed Stage A atlas and write reconstructable evidence., _cli_args(), parametrize, Path, _replace_arg(), _sha256(), _stage_cli_fixture() (+8 more)
 
 ### Community 69 - "AtlasError"
-Cohesion: 0.14
-Nodes (27): AtlasConfig, AtlasError, _boolean(), _coordinate(), _finite(), geodesic_range_ring(), _integer_tuple(), load_atlas_config() (+19 more)
+Cohesion: 0.12
+Nodes (31): AtlasError, _boolean(), ContourRecord, _coordinate(), EventRecord, _finite(), geodesic_range_ring(), _integer_tuple() (+23 more)
 
 ### Community 70 - "test_atlas.py"
-Cohesion: 0.20
-Nodes (23): ContourRecord, EventRecord, load_atlas_inputs(), ObservationRecord, Load normalized inputs while preserving source semantics and explicit unknowns., Reviewed event identity and origin., Source-stated station location and measurement semantics., One observation with source time kept separate from verified UTC. (+15 more)
+Cohesion: 0.39
+Nodes (15): load_atlas_config(), Load and validate the fixed Stage A atlas contract., Path, _stage_atlas_inputs(), test_atlas_loader_preserves_source_semantics(), test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance(), test_distance_contour_diagnostic_keeps_incompatible_units_separate(), test_pacific_evidence_map_is_deterministic_and_records_geometry_counts() (+7 more)
 
 ### Community 71 - "write_run"
-Cohesion: 0.14
-Nodes (22): figures(), Any, Path, Deterministic run bundles and explanatory diagnostics for the shared timing…, Result-dependent findings and follow-ups, retaining every station and failed…, Stable, finite JSON; scientific unavailable values are explicit strings., Preserve all columns, including failure-only fields., Publish a complete new bundle only; refuse overwrite and clean failed staging. (+14 more)
+Cohesion: 0.13
+Nodes (24): figures(), Any, Path, Deterministic run bundles and explanatory diagnostics for the shared timing…, Result-dependent findings and follow-ups, retaining every station and failed…, Stable, finite JSON; scientific unavailable values are explicit strings., Preserve all columns, including failure-only fields., Publish a complete new bundle only; refuse overwrite and clean failed staging. (+16 more)
 
 ### Community 72 - "tohoku_storyboard_eda.py"
 Cohesion: 0.36
 Nodes (9): decision_ledger(), discover_manifests(), evidence_boundary(), generated_figures(), imports(), load_manifest(), cell, require_manifest() (+1 more)
 
 ### Community 73 - "test_eda.py"
-Cohesion: 0.09
-Nodes (52): audit(), fingerprint(), Any, Path, Checksummed, descriptive shared EDA; no arrival or story-selection promotion., Record bytes and a portable repository-relative path., Require rectangular CSV records, including for provenance inputs., Describe retained values and gaps without dropping outliers or imputing. (+44 more)
+Cohesion: 0.07
+Nodes (62): audit(), fingerprint(), Any, Path, Checksummed, descriptive shared EDA; no arrival or story-selection promotion., Record bytes and a portable repository-relative path., Require rectangular CSV records, including for provenance inputs., Describe retained values and gaps without dropping outliers or imputing. (+54 more)
 
 ### Community 74 - "tohoku_arrival_audit.py"
 Cohesion: 0.53
@@ -380,9 +388,9 @@ Nodes (4): Adaptive sequence and acceptance, Frozen rules, Measurement contract,
 Cohesion: 0.50
 Nodes (3): Path, Verify visible notebook output, not just successful execution., test_populated_atlas_notebook_displays_figures_and_decisions()
 
-### Community 80 - "build_series_panels"
-Cohesion: 0.33
-Nodes (6): build_series_panels(), One retained numeric value positioned relative to earthquake origin., A station-local series whose y-scale must not be shared., Build station-local point series without smoothing, centering, or resampling., SeriesPanel, SeriesPoint
+### Community 80 - "story/__init__.py"
+Cohesion: 0.24
+Nodes (11): AtlasConfig, AtlasInputs, build_series_panels(), One retained numeric value positioned relative to earthquake origin., Require the reviewed event, station groups, contour hours, and coastal windows., Build station-local point series without smoothing, centering, or resampling., Validated normalized inputs for preliminary story diagnostics., Reviewed Stage A projection, window, and candidate scope. (+3 more)
 
 ### Community 81 - "Tōhoku Missingness EDA"
 Cohesion: 0.18
@@ -400,20 +408,36 @@ Nodes (10): Adaptive EDA decision ledger, Checks performed, Coastal completeness
 Cohesion: 0.20
 Nodes (9): Adaptive evidence ledger, All-station sensitivity results, Completed evidence-triggered follow-ups, Distribution, fit, geometry, and join checks, Missingness remains part of this audit, Reproduction and evidence, Scope and disposition, Takeaways and next steps (+1 more)
 
+### Community 86 - "Tōhoku Missingness EDA"
+Cohesion: 0.18
+Nodes (10): Adaptive EDA decision ledger, Checks performed, Coastal completeness, DART cadence, Limitations, takeaways, and next steps, Missingness mechanisms, Other incompleteness, Run and scope (+2 more)
+
+### Community 87 - "Tōhoku shared EDA — timing support audit"
+Cohesion: 0.20
+Nodes (9): Adaptive evidence ledger, All-station sensitivity results, Completed evidence-triggered follow-ups, Distribution, fit, geometry, and join checks, Missingness remains part of this audit, Reproduction and evidence, Scope and disposition, Takeaways and next steps (+1 more)
+
+### Community 88 - "split_at_display_seam"
+Cohesion: 0.29
+Nodes (8): project_line_parts(), Shift a longitude into the Pacific display domain [-340, 20)., Split linework at 20°E while retaining an endpoint on each seam side., Project unwrapped Pacific linework without normalizing its seam endpoints., shift_longitude(), split_at_display_seam(), test_pacific_shift_splits_a_line_at_the_twenty_degree_seam(), test_projected_split_line_preserves_both_pacific_seam_sides()
+
+### Community 89 - "Independent shared EDA and data-proof review"
+Cohesion: 0.25
+Nodes (7): Disposition, Findings resolved during review, Independent shared EDA and data-proof review, Independent verification, Presentation caveats and declined judgments, Source traces and scientific interpretation, Strengths
+
 ## Knowledge Gaps
-- **402 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+397 more)
+- **429 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+424 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `SourceContract` connect `test_acquisition.py` to `test_normalize.py`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `load_contracts()` connect `test_acquisition.py` to `validate_manifest`, `test_normalize.py`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `build_tables()` connect `test_normalize.py` to `test_acquisition.py`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `AtlasError` (e.g. with `main()` and `test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()`) actually correct?**
   _`AtlasError` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
@@ -421,4 +445,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _402 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _429 weakly-connected nodes found - possible documentation gaps or missing edges._
