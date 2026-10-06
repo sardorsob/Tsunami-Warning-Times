@@ -47,6 +47,10 @@ reproduce instrument trigger time. Sources checked 2026-10-05:
   origin, estimating its baseline from the preceding 2/4 h. This window is
   disjoint from its fitted baseline. A control crossing rejects automatic
   promotion; absence of one is not validation of a tsunami onset.
+  An evaluable quiet window also requires the baseline support/gap criteria
+  over the entire search window. Empty or truncated searches are explicitly
+  `incomplete_search`. A candidate may be shown despite incomplete later
+  coverage, but any earlier invalid sample or excessive gap blocks the screen.
 - Sensitivity: retain no-detection and ineligible settings; never compute a
   stable consensus from successful settings alone. All eight must detect, all
   controls must be evaluable and quiet, maximum spread 300 s, and supporting

@@ -2,11 +2,65 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from math import isfinite
+from pathlib import Path
 from statistics import median
-from typing import Literal
+from typing import Literal, cast
+
+from pipeline.missingness import _parse_utc  # pyright: ignore[reportPrivateUsage]
+from pipeline.normalize import IOC_QC_FLAGS
+
+
+def verify_fingerprints(root: Path, records: list[dict[str, str]]) -> None:
+    """Refuse changed inputs and paths escaping the explicitly supplied repository."""
+    seen: set[Path] = set()
+    for record in records:
+        path = (root / record["path"]).resolve()
+        if not path.is_relative_to(root.resolve()):
+            raise ValueError("fingerprint path outside repository")
+        if path in seen:
+            raise ValueError("duplicate fingerprint path")
+        seen.add(path)
+        if hashlib.sha256(path.read_bytes()).hexdigest() != record["sha256"]:
+            raise ValueError(f"checksum mismatch: {record['path']}")
+
+
+def group_observations(
+    rows: list[dict[str, str]], stations: dict[str, dict[str, str]]
+) -> dict[str, list[Sample]]:
+    """Validate grain and measurement semantics before sorting preserved observations."""
+    grouped: dict[str, list[Sample]] = {key: [] for key in stations}
+    identities: set[str] = set()
+    keys: set[tuple[str, datetime]] = set()
+    for row in rows:
+        station = stations.get(row["station_id"])
+        if station is None:
+            raise ValueError("orphan observation")
+        if any(row[k] != station[k] for k in ("source_id", "units", "vertical_reference")):
+            raise ValueError("observation semantics differ from station")
+        at = _parse_utc(row["observed_at_utc"])
+        key = (row["station_id"], at)
+        if row["observation_id"] in identities or key in keys:
+            raise ValueError("duplicate observation")
+        identities.add(row["observation_id"])
+        keys.add(key)
+        values: list[float | None] = []
+        for field in ("raw_value", "residual_value", "fitted_value"):
+            value = float(row[field]) if row[field] else None
+            if value is not None and not isfinite(value):
+                raise ValueError("observation must be finite")
+            values.append(value)
+        extra = row["source_extra"]
+        flags = cast(dict[str, object], json.loads(extra)) if extra.startswith("{") else {}
+        bad = any(str(flags.get(k, "F")).upper() in ("T", "TRUE", "1") for k in IOC_QC_FLAGS)
+        grouped[key[0]].append(Sample(at, row["source_time"], *values, qc_bad=bad))
+    for samples in grouped.values():
+        samples.sort(key=lambda sample: sample.at)
+    return grouped
 
 
 @dataclass(frozen=True)
@@ -84,6 +138,9 @@ def detect_crossing(
         source_time="unknown",
         pre_candidate_gap_seconds="unknown",
         candidate_elapsed_seconds="unknown",
+        pre_candidate_max_gap_seconds="unknown",
+        earlier_support_complete=False,
+        search_coverage=0.0,
     )
     if (
         len(baseline) < minimum_samples
@@ -102,12 +159,33 @@ def detect_crossing(
     run_lower: datetime | None = None
     run_gap: float = 0
     end = origin + timedelta(hours=search_hours)
+    search_valid = [
+        s.at
+        for s in samples
+        if origin <= s.at < end and getattr(s, field) is not None and not s.qc_bad
+    ]
+    search_bounds = [origin, *search_valid, end]
+    search_gaps = [
+        (b - a).total_seconds() for a, b in zip(search_bounds, search_bounds[1:], strict=False)
+    ]
+    support = sum(min(g, support_cadence) for g in search_gaps) / (search_hours * 3600)
+    result.update(search_coverage=support, search_max_gap_seconds=max(search_gaps))
+    if not search_valid or support < minimum_coverage or max(search_gaps) > max_gap_seconds:
+        result["status"] = "incomplete_search"
+    last_valid = baseline[-1].at
+    largest_gap = 0.0
+    earlier_invalid = False
     for row in samples:
         if not origin <= row.at < end:
             continue
         gap = (row.at - previous.at).total_seconds()
         value = row.raw if field == "raw" else row.residual
         valid = value is not None and not row.qc_bad
+        if valid:
+            largest_gap = max(largest_gap, (row.at - last_valid).total_seconds())
+            last_valid = row.at
+        else:
+            earlier_invalid = True
         if gap > max_gap_seconds or not valid:
             first = None
             lower = None
@@ -123,6 +201,8 @@ def detect_crossing(
                     source_time=first.source_time,
                     pre_candidate_gap_seconds=run_gap,
                     candidate_elapsed_seconds=(first.at - origin).total_seconds(),
+                    pre_candidate_max_gap_seconds=largest_gap,
+                    earlier_support_complete=largest_gap <= max_gap_seconds and not earlier_invalid,
                 )
                 return result
         elif valid:
@@ -150,13 +230,13 @@ def summarize_sensitivity(
         detected_settings=len(times),
         all_settings_detect=all_detect,
         control_crossings=sum(c["status"] == "candidate" for c in controls),
-        control_ineligible=sum(c["status"] == "ineligible_baseline" for c in controls),
+        control_ineligible=sum(c["status"] not in ("candidate", "no_detection") for c in controls),
         spread_seconds=spread if spread is not None else "unknown",
         screen_pass=all_detect
         and controls_quiet
         and spread is not None
         and spread <= max_spread
-        and all(p["lower_utc"] != "unknown" for p in picks),
+        and all(p["lower_utc"] != "unknown" and p["earlier_support_complete"] for p in picks),
         physical_arrival_status="unvalidated",
         modeled_arrival_utc="unavailable",
     )

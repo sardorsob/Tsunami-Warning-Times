@@ -1,16 +1,16 @@
 # Graph Report - Tsunami-Warning-Times  (2026-10-05)
 
 ## Corpus Check
-- 165 files · ~754,972 words
+- 166 files · ~756,770 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1039 nodes · 1995 edges · 80 communities (66 shown, 14 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 67 edges (avg confidence: 0.95)
+- 1064 nodes · 2064 edges · 80 communities (66 shown, 14 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 69 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fb2eebf7`
+- Built from commit: `7b87d6dc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -351,8 +351,8 @@ Cohesion: 0.36
 Nodes (9): decision_ledger(), discover_manifests(), evidence_boundary(), generated_figures(), imports(), load_manifest(), cell, require_manifest() (+1 more)
 
 ### Community 73 - "test_eda.py"
-Cohesion: 0.21
-Nodes (23): detect_crossing(), datetime, Retrospective timing diagnostics; threshold candidates are not physical…, Keep failed settings and control failures in the sensitivity denominator., One preserved source observation; QC exclusion affects diagnostics only., Preserve source timestamp precision when serializing UTC., Find a sampled sustained excursion without filling gaps or inventing bounds., Sample (+15 more)
+Cohesion: 0.11
+Nodes (46): Any, audit(), fingerprint(), Path, Checksummed, descriptive shared EDA; no arrival or story-selection promotion., Record bytes and a portable repository-relative path., Require rectangular CSV records, including for provenance inputs., Describe retained values and gaps without dropping outliers or imputing. (+38 more)
 
 ### Community 74 - "Dataset gathering"
 Cohesion: 0.40
@@ -363,8 +363,8 @@ Cohesion: 0.22
 Nodes (8): Global constraints, Review focus, Shared EDA and scientific closure implementation plan, Task 1: Freeze diagnostic protocol and task boundaries, Task 2: Implement shared audit and sensitivity core, Task 3: Add report runner and thin notebook, Task 4: Execute and follow findings, Task 5: Independently review and close with an explicit disposition
 
 ### Community 77 - "Independent Stage A Checker review"
-Cohesion: 0.33
-Nodes (5): Commands and results, Independent Stage A Checker review, R1 — Populated notebook renders no visible content, Rendered-image review and chart checker, Reproducibility and provenance
+Cohesion: 0.29
+Nodes (6): Commands and results, Independent Stage A Checker review, R1 independent recheck and final disposition, R1 — Populated notebook renders no visible content, Rendered-image review and chart checker, Reproducibility and provenance
 
 ### Community 78 - "Tōhoku timing audit protocol"
 Cohesion: 0.40
@@ -375,19 +375,19 @@ Cohesion: 0.50
 Nodes (3): Path, Verify visible notebook output, not just successful execution., test_populated_atlas_notebook_displays_figures_and_decisions()
 
 ## Knowledge Gaps
-- **372 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+367 more)
+- **373 isolated node(s):** `name`, `private`, `version`, `type`, `node` (+368 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `build_tables()` connect `test_normalize.py` to `test_acquisition.py`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `validate_manifest()` connect `validate_manifest` to `test_acquisition.py`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `SourceContract` connect `test_acquisition.py` to `test_normalize.py`?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Why does `load_contracts()` connect `test_acquisition.py` to `validate_manifest`, `test_normalize.py`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Why does `build_tables()` connect `test_normalize.py` to `test_acquisition.py`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `AtlasError` (e.g. with `main()` and `test_atlas_loader_rejects_unflagged_longitude_outside_precision_tolerance()`) actually correct?**
   _`AtlasError` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 15 inferred relationships involving `NormalizationError` (e.g. with `main()` and `test_build_tables_exposes_an_invalid_contract_as_a_normalization_error()`) actually correct?**
@@ -395,4 +395,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 3 inferred relationships involving `build_tables()` (e.g. with `ContractError` and `SourceContract`) actually correct?**
   _`build_tables()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _372 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _373 weakly-connected nodes found - possible documentation gaps or missing edges._

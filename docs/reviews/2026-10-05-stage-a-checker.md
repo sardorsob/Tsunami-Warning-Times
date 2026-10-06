@@ -7,7 +7,7 @@ Checker: independent `stage_a_checker` agent; Maker work reviewed at `16e4c23`.
 Task: T-003A, preliminary diagnostic atlas only. No T-002D implementation,
 arrival result, community promotion, paper output, or public scene was reviewed.
 
-Disposition: **needs-fix** for the populated Marimo viewer (R1). The scientific
+Initial disposition: **needs-fix** for the populated Marimo viewer (R1). The scientific
 atlas and portable evidence are accepted within preliminary diagnostic scope.
 Acceptance is not a publication-chart or production-scene approval.
 
@@ -177,3 +177,40 @@ was empty, producing R1. Exit status alone is insufficient for this criterion.
 T-003B remains gated by the accepted shared release and its own scientific and
 cartographic review. This receipt does not clear that gate or resolve the
 unavailable continuous NCTR field.
+
+## R1 independent recheck and final disposition
+
+Maker fix reviewed at `7b87d6d` on 2026-10-05. The notebook now explicitly calls
+`mo.output.replace` for its title, selector, evidence boundary, figure collection,
+and ledger views. It retains the read-only boundary and introduces no scientific
+calculation or artifact mutation.
+
+The Checker copied the committed notebook to
+`/tmp/tsunami-stage-a-recheck.2jTR0s/viewer.py`, linked only the existing canonical
+`artifacts` directory, and exported it headlessly:
+
+```bash
+.venv/bin/marimo export html \
+  /tmp/tsunami-stage-a-recheck.2jTR0s/viewer.py \
+  -o /tmp/tsunami-stage-a-recheck.2jTR0s/viewer.html --no-include-code
+.venv/bin/pytest tests/story/test_notebook_render.py tests/story/test_dependencies.py -q
+.venv/bin/python /tmp/tsunami-stage-a-checker.J1dOdz/reconcile.py
+```
+
+The export exits 0. Inspection of actual exported cell outputs, excluding
+notebook source, confirms the title, selector label, canonical run ID,
+continuous-NCTR limitation, all four canonical figure titles, exactly four
+`<img>` elements, and the adaptive decision ledger. There are no error outputs.
+The four focused notebook/dependency tests pass. All ten input and eleven
+output hashes still reconcile; all eight canonical figure bytes, decision
+ledger, stable manifest fields, configuration, and metrics remain unchanged
+from the independently rebuilt evidence above. R1 is resolved.
+
+Final independent Checker disposition: **accepted for T-003A's preliminary
+diagnostic scope; recommend T-003A `done`**. No blocking scientific or notebook
+finding remains. The report-preset chart lint still has the recorded 23
+failures and 30 warnings; this acceptance does not describe it as lint-clean.
+The regional/label branch, contrast, readable public sizing, source labeling,
+and clear handling of unequal coverage windows remain required before public
+scene promotion. T-003B still requires its separately accepted shared release
+and subsequent scientific/cartographic review.
