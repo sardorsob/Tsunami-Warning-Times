@@ -1,0 +1,6 @@
+mechanism,count,denominator,percent,interpretation
+source_blank_value,1049,143655,0.7302,upstream value missing at a retained timestamp; exact cause unknown
+structural_not_applicable,21933,143655,15.2678,coastal sources do not publish DART fitted/residual fields
+coastal_strict_grid_unavailable,2276,23040,9.8785,expected timestamp absent or exact-grid value blank
+dart_sentinel_quarantine,90,121812,0.0739,ambiguous 9999 measurement row deliberately excluded
+source_asset_unavailable,1,18,5.5556,whole contracted asset unavailable; not row-level missingness
