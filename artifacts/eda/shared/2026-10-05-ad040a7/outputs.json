@@ -1,0 +1,74 @@
+[
+  {
+    "path": "candidate-windows.csv",
+    "sha256": "599adf3b784aeb8a7e7c7a5e6d4d12ec29dd1e2ccbf5667e440291a05d05f3ca"
+  },
+  {
+    "path": "config.json",
+    "sha256": "8feb18963f4e66fffcb5d72115acc2cad3a902c78358bba4c6875ff44be6113f"
+  },
+  {
+    "path": "dart-candidates.png",
+    "sha256": "8fb67fdceeb0461740a6252f9f5afb384371c28e548ea5c6561ff43bcd6c9478"
+  },
+  {
+    "path": "dart-candidates.svg",
+    "sha256": "def09a1319bbba6b3294cd8023df1286c1f003991601f336d0ee04c3f5f9e32c"
+  },
+  {
+    "path": "gaps.csv",
+    "sha256": "dc53bc1eb3300245e33fbab27931146b92acfeea73b7e3e856b099bf30aeede6"
+  },
+  {
+    "path": "inputs.json",
+    "sha256": "d7ba1ff80d081487b346dcf76f26dabe31e79341c90c04fe74002b9ffa3165c1"
+  },
+  {
+    "path": "meta.json",
+    "sha256": "852bf1c7114996b593854717f5ec75f16ce12fa4868cb0c55ca32a961a20fd8d"
+  },
+  {
+    "path": "missingness/coastal-missingness.csv",
+    "sha256": "07e0b87515f10c21d203b35e4e043ecf7d49d08fd202d8cb4eb540b2b3748ac5"
+  },
+  {
+    "path": "missingness/missingness-mechanisms.csv",
+    "sha256": "c305400a1f8d823293199a80985a33ec68b63e88646d5a0fa28c573500d373a3"
+  },
+  {
+    "path": "missingness/missingness-summary.json",
+    "sha256": "e18250f621df7e057af450459a4909d40cf74a9a502b702e84e77c60a7961ee6"
+  },
+  {
+    "path": "missingness-report.md",
+    "sha256": "9684e28d7a179bd10b32bd61fb90b6e8d2262b5c1aa4a30487f1d1c3fdf4be2b"
+  },
+  {
+    "path": "profiles.csv",
+    "sha256": "7abf3ee447c2b2494b8e1fb6704eda154987e33eb3d260318a3e6e46bbef95d4"
+  },
+  {
+    "path": "report.md",
+    "sha256": "65a63d0484cb95a899a8e4269a861ef00578b70dd6c8408e0b1e516125992b25"
+  },
+  {
+    "path": "sensitivity.csv",
+    "sha256": "b2cb5d2ac2bc20d24cc1c78ea237bcdc7f9a1fe85f00543b700e732237fa955d"
+  },
+  {
+    "path": "setting-status.png",
+    "sha256": "3097d97fc517cf15b8b7c30921a877c4c53439070543ce1d90b3dadd259b244a"
+  },
+  {
+    "path": "setting-status.svg",
+    "sha256": "3bdf8f40dc547e866683eedfbb822a1baff15e9ab8b937ad943fca5831fa9dc3"
+  },
+  {
+    "path": "station-decisions.csv",
+    "sha256": "2d4a7dae9e69f7d9e162c1da00de40625275214341d6953daa643bdfbf7c720f"
+  },
+  {
+    "path": "summary.json",
+    "sha256": "3d981c4d31c79b30418ece4030e14a9d32b6205dce03ba6f722ce6ab4a79c0da"
+  }
+]
