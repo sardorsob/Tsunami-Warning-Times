@@ -206,14 +206,19 @@
   2026-09-16 — generated the corrected clean-SHA canonical atlas, executed the
   thin notebook, and independently reproduced stable scientific and visual
   evidence byte-for-byte; the full repository gate and Graphify query passed,
-  and the Maker result was submitted for independent review
-- Status: in-review
+  and the Maker result was submitted for independent review; 2026-10-05 —
+  independent Checker reproduced all eight figure files and traced inputs and
+  outputs. Fixed blank populated notebook rendering with a RED/GREEN visible-
+  export regression. Checker accepts preliminary diagnostic scope; public-scene
+  label collisions, contour contrast and small-width typography remain explicit
+  follow-ups in `docs/reviews/2026-10-05-stage-a-checker.md`.
+- Status: done
 
 ## T-003B — Complete the reviewed arrival comparison
 
 - ID: T-003B
 - Title: Test and promote the visual-story contrast
-- Depends on: T-003A done and T-002E promotes a versioned shared release
+- Depends on: T-003A done and a shared release explicitly grants arrival-comparison permission
 - Owner (Maker): story analysis contributor
 - Checker: independent scientific, cartographic, and originality reviewer
 - Phase: story EDA review
@@ -234,7 +239,10 @@
   checksum validation, full repository gate, and Graphify update
 - Manual QA: compare three values with authoritative or normalized sources and
   audit paper/story figures and methods for overlap
-- Evidence: pending
+- Evidence: T-002E completed with `revise_arrival_comparison`; the descriptive
+  release sets `arrival_comparison_allowed=false`. A file's existence is not
+  promotion. First resolve observed-onset validation and a modeled-arrival
+  product, or separately approve a story pivot that does not need that comparison.
 - Attempts / Max: 0 / 3
 - Attempt log: not started
-- Status: pending
+- Status: blocked (scientific arrival-comparison gate)

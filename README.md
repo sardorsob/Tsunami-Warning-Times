@@ -23,7 +23,7 @@ design, or submission claim.
 
 | Lane | Main question | Intended output | Current state |
 | --- | --- | --- | --- |
-| Shared scientific foundation | What source data can be acquired, normalized, and interpreted defensibly? | Versioned source contracts, checksums, tables, quality evidence, and release manifests | Tōhoku acquisition and normalization accepted; EDA in progress |
+| Shared scientific foundation | What source data can be acquired, normalized, and interpreted defensibly? | Versioned source contracts, checksums, tables, quality evidence, and release manifests | Descriptive EDA accepted; arrival comparisons require revision |
 | Conference Paper | How can uncertainty-aware visual analytics and statistical learning reveal systematic modeled-versus-observed timing discrepancies? | Multi-event research corpus, methods, evaluation, figures, and manuscript | Dual-track direction approved; paper-specific analysis not started |
 | Visual Data Story | How did one tsunami produce different arrival-time experiences around the Pacific, and why is distance alone misleading? | Guided browser story in `app/` | Data proof in progress; production story not started |
 
@@ -149,8 +149,13 @@ The accepted normalized tables are:
 | `rejected_record.csv` | One row per rejected asset, feature, station, or sample |
 | `accounting.json` / `schemas.json` | Stage counts, field contracts, and output metadata |
 
-Arrival-pick tables are intentionally deferred until the sensitivity work in
-T-002D is complete.
+T-002D's shared audit now retains all 80 event and 80 control settings, including
+failures, in [the canonical evidence bundle](artifacts/eda/shared/2026-10-05-final/).
+These are threshold diagnostics, not validated physical-arrival records. See
+[the EDA report](context/EDA_REPORT.md), [independent review](docs/reviews/2026-10-05-shared-eda-checker.md)
+and [restricted release](artifacts/releases/tohoku-descriptive-v1.json).
+The preliminary visual atlas is independently accepted; arrival comparisons and
+community selection remain blocked. The continuous NCTR field is still unavailable.
 
 ### Reproducing the pipeline
 

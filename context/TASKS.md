@@ -366,8 +366,13 @@ must preserve rejected settings, controls, and explicit unavailable fields.
   clean committed implementation; it separates raw nulls, absent expected
   timestamps, structural not-applicable fields, deliberate quarantine, metadata
   unknowns, and blocked source assets without imputation or timestamp snapping;
-  the complete T-002D task remains active
-- Status: in-progress
+  the complete T-002D task remained active; 2026-10-05 — completed the frozen
+  80-event/80-control timing audit and evidence-triggered raw-source follow-ups.
+  Canonical run `artifacts/eda/shared/2026-10-05-final` includes three figure
+  pairs, all station/settings outcomes, missingness rerun, raw trace/QC evidence,
+  and a thin populated Marimo view. Independent review accepts descriptive
+  audit scope, not physical arrivals; see `docs/reviews/2026-10-05-shared-eda-checker.md`.
+- Status: done
 
 ## T-002E — Review and close the data proof
 
@@ -390,10 +395,17 @@ must preserve rejected settings, controls, and explicit unavailable fields.
 - Verification commands: clean rerun, independent report/code review, checksum
   comparison, full repository gate, and Graphify update
 - Manual QA: scientific reviewer traces three reported findings to raw sources
-- Evidence: pending
-- Attempts / Max: 0 / 3
-- Attempt log: not started
-- Status: pending
+- Evidence: `docs/reviews/2026-10-05-shared-eda-checker.md` accepts shared
+  descriptive/diagnostic evidence and explicitly returns revise for physical
+  arrival comparisons. Versioned interface:
+  `artifacts/releases/tohoku-descriptive-v1.json`; arrival permission is false.
+- Attempts / Max: 1 / 3
+- Attempt log: 2026-10-05 — independently verified hashes, raw values, sensitivity,
+  controls and missingness; corrected numerical boundary artifacts and explicit
+  unknown serialization; rejected early DART 21418 crossing as a validated
+  arrival because NOAA's approximate reference conflicts with it. No station
+  selection or modeled-arrival proxy was promoted. T-003B remains blocked.
+- Status: done (review completed; arrival comparison disposition: revise)
 
 ## T-003P — Approve the adaptive visual-story EDA design
 
@@ -538,7 +550,10 @@ must preserve rejected settings, controls, and explicit unavailable fields.
   all 12 atlas tests, Ruff, strict Pyright, segment-length checks, and visual
   QA; 2026-09-16 — corrected stale preview prose in the reviewed report, built
   and independently reproduced the canonical Stage A atlas, and moved T-003A
-  to independent review while keeping T-003B pending
+  to independent review while keeping T-003B pending; 2026-10-05 — T-003A
+  independently accepted for preliminary diagnostics. T-002E's descriptive
+  interface explicitly denies arrival-comparison permission; T-003B is blocked
+  until a new scientific gate or separately approved story pivot.
 - Status: in-progress
 
 ## T-004 — Test the wavefront mechanism

@@ -7,11 +7,13 @@ and authorized inline, task-by-task execution on `main`. All 11 Maker tasks are
 implemented. Canonical run
 `2026-09-16__0351__story-atlas__6c35d78` contains the four checksummed
 diagnostics, reviewed decision ledger, manifest, generated report, portable run
-bundle, and a thin read-only Marimo view. T-003A is `in-review`: an independent
-scientific/cartographic Checker must rerun and accept or request fixes before it
-can become done. No scene, station, arrival result, or app asset is promoted.
+bundle, and a thin read-only Marimo view. T-003A is `done`: independent review
+accepted preliminary diagnostic scope on 2026-10-05 after fixing populated
+notebook rendering. Public-scene cartographic caveats remain documented in the
+review receipt. No scene, station, arrival result, or app asset is promoted.
 The continuous NCTR field remains unavailable with no proxy substitution, and
-T-003B remains gated by T-002E.
+T-003B remains blocked: T-002E completed with a descriptive-only release and
+`arrival_comparison_allowed=false`, not an arrival-capable promotion.
 
 ## Question
 

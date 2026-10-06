@@ -530,8 +530,50 @@ remain ignored.
 
 ## Final disposition
 
-T-000, T-001, T-002P, T-002A, T-002B, T-002C, T-002C1, and T-002C2 are
-accepted. T-002D is active but not complete; no event or station set is frozen.
-T-003P and T-003I are accepted. All 11 T-003A Maker tasks are complete and
-T-003A is in independent review; the root T-003 work remains in progress.
-T-003B is pending and remains gated by T-002E.
+T-000 through T-002C2 remain accepted. T-002D is complete and independently
+accepted for descriptive/sensitivity audit scope. T-002E is complete with an
+explicit **revise arrival comparison** decision. No event or station set is
+frozen for production. T-003P/I/A are accepted; T-003A acceptance is restricted
+to preliminary diagnostic figures. T-003B is blocked on scientific validation,
+not missing implementation labor. The root T-003 story remains in progress.
+
+## 2026-10-05 shared audit and independent closure
+
+Canonical report: `context/EDA_REPORT.md`; machine pointer: `context/EDA_RUN.json`;
+bundle: `artifacts/eda/shared/2026-10-05-final`; implementation: `c98a9c2`.
+The versioned interface is `artifacts/releases/tohoku-descriptive-v1.json`.
+The notebook uses the explicit pointer, never hash-name sorting.
+
+- Frozen 80 event / 80 pre-origin control settings over all ten stations.
+- 28 verified input fingerprints, 24 stable outputs, 62 exact raw-source trace
+  rows. Second execution reproduced all 24 outputs and their manifest byte-for-byte.
+- 143,655 observations and all 17 acquired assets reconcile; continuous NCTR
+  asset remains blocked. No download, imputation, new datum, or source editing.
+- Only 21418 and 46411 pass the mechanical screen. DART 21418's early crossing
+  conflicts with NOAA's approximate arrival description; neither station gains
+  a validated physical onset. Adak has four pre-origin crossings; Saipan's
+  event baseline fails; 140 Valparaíso QC flags remain inspectable.
+- Exact-decimal checking resolves the initial 231 false residual-disagreement
+  counts. Retain the first run with its explicit rejection receipt; do not cite
+  that run's numerical QA counts. Intermediate run `2026-10-05-2e29de3` has
+  correct scientific results but a superseded waveform-label layout.
+- Scientific Checker accepts restricted evidence; fresh image-only review at
+  1000 px found no P0/P1 issues. Shared chart checker: three figures, zero
+  failures, four warnings (small text at 600 px and a source-prefix heuristic).
+  Existing Stage A public-scene cartographic limitations remain recorded.
+- Populated final notebook export displays the final run and three images.
+  Local MLflow run `6e42c1bfb21a49c8be204cda94c0c386` finished (status 3);
+  the portable bundle remains authoritative and tracking stays ignored.
+
+Next: make a reviewed choice between repairing the observed/model arrival
+evidence and an observability-focused story pivot. Neither this audit nor the
+descriptive release authorizes Stage B arrival comparisons or public scenes.
+
+Final observed gate: Ruff clean; Pyright zero errors/warnings; 143 Python tests
+passed; provenance validated 18 shared and one story source; both active Marimo
+notebooks passed static checks; the populated canonical viewer exported correctly.
+Frontend TypeScript, one Vitest test and production build passed (17 modules;
+two required build outputs verified). Graphify refreshed to 1,188 nodes and
+2,233 edges in 90 communities. `git diff --check` passed. A sandbox-only Marimo
+failure was traced to its localhost kernel socket bind; the same check passed
+with that permission, with no notebook-code workaround or skipped test.

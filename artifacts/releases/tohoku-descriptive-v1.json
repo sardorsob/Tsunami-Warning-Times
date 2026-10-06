@@ -1,0 +1,37 @@
+{
+  "allowed_uses": [
+    "descriptive_data_quality",
+    "preliminary_story_diagnostics"
+  ],
+  "arrival_comparison_allowed": false,
+  "bundle": "artifacts/eda/shared/2026-10-05-final",
+  "continuous_nctr_field": "blocked_no_proxy",
+  "disposition": "revise_arrival_comparison",
+  "event_status": "data_proof_candidate",
+  "input_manifest": {
+    "path": "artifacts/eda/shared/2026-10-05-final/inputs.json",
+    "sha256": "d7ba1ff80d081487b346dcf76f26dabe31e79341c90c04fe74002b9ffa3165c1"
+  },
+  "next_gate": "Validate observed onsets and modeled arrival evidence; obtain a new review",
+  "output_manifest": {
+    "path": "artifacts/eda/shared/2026-10-05-final/outputs.json",
+    "sha256": "2a877d9a4af17801693054334931633912d46eeca28e1352a689fdbdf1e43a57"
+  },
+  "physical_arrival_records_released": 0,
+  "prohibited_uses": [
+    "physical_arrival_comparison",
+    "modeled_minus_observed_residual",
+    "community_timing_selection",
+    "actionable_warning_time",
+    "operational_warning",
+    "public_story_scene_promotion"
+  ],
+  "release_id": "tohoku-descriptive-v1",
+  "review_receipt": {
+    "path": "docs/reviews/2026-10-05-shared-eda-checker.md",
+    "sha256": "f09dfb5556446a6f90b420d4175d75f7f22cffcbc6c03dfcd92111c91656c803"
+  },
+  "schema_version": 1,
+  "source_assets_acquired": 17,
+  "source_assets_contracted": 18
+}

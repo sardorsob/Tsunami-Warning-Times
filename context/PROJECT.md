@@ -24,8 +24,8 @@ same thing as actionable public warning time.
   data layout, provenance validator, and validation plan in this repository.
 - Paired delivery skill: `swe-devops-standards` for tests, pinned tools, CI, and
   cross-platform repository behavior.
-- Current EDA domain skill: `analyze-data-quality`, applied to the first T-002D
-  slice so missing observations, absent timestamps, structural
+- Current EDA domain skill: `analyze-data-quality`, applied to T-002D's completed
+  missingness and timing-support audit so missing observations, absent timestamps, structural
   not-applicability, quarantine, and source-asset coverage retain separate
   definitions. The script-generated Markdown report remains canonical under
   D-007 and D-008.
@@ -99,4 +99,8 @@ publishes a reviewed shared release. The current distance-versus-arrival thesis
 is falsifiable and may be replaced by a stronger supported story. The project
 owner accepted the written design on 2026-09-14; T-003I now holds the exact Stage
 A implementation plan. The owner selected inline, task-by-task execution on
-`main`; T-003A is active and each task is committed only after its focused gate.
+`main`; T-003A is independently accepted for preliminary diagnostics. On
+2026-10-05, T-002D completed the shared adaptive audit and T-002E returned
+`revise_arrival_comparison`. The versioned descriptive release does not grant
+arrival permission; T-003B stays blocked. Current results and exact run pointer
+are `context/EDA_REPORT.md` and `context/EDA_RUN.json`.

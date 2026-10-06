@@ -70,3 +70,17 @@
 - Run the full repository gate and inspect CI evidence.
 - Confirm source/third-party attribution, originality, public access without login,
   browser behavior, and that the story stands without its abstract.
+
+## Shared diagnostic release gate (2026-10-05)
+
+The initial frozen screen is not a physical-onset validator. Require all eight
+settings, evaluable quiet disjoint controls, supported baseline and pre-candidate
+coverage, and an independent physical interpretation. Explicitly test truncated
+controls, earlier gaps, QC-invalid rows, source-decimal rounding boundaries,
+orphan/duplicate joins, changed hashes, overwrite refusal and visible notebook
+output. Keep failed settings in denominators and missing fields `unknown`.
+
+Release metadata must bind input/output manifests and the independent receipt.
+T-003B requires an explicit `arrival_comparison_allowed=true`; descriptive-only
+release `tohoku-descriptive-v1` is false. A new accepted observed-onset method
+and modeled-arrival evidence are required to reconsider that gate.

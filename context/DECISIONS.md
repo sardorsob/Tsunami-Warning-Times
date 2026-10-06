@@ -226,3 +226,29 @@
   `docs/superpowers/specs/2026-09-14-visual-story-adaptive-eda-design.md`.
 - Revisit when: T-003A review finds the fixed core insufficient, T-002E changes
   the usable evidence set, or the story/paper originality boundary changes.
+
+## D-015 — Close the descriptive audit without promoting physical arrivals
+
+- Date: 2026-10-05
+- Status: accepted restricted evidence; arrival comparison requires revision
+- Decision: complete T-002D and T-002E with a checksummed descriptive-only
+  interface. Complete T-003A's independent preliminary-atlas review. Keep T-003B
+  blocked; downstream code must require `arrival_comparison_allowed=true`,
+  not infer permission from the existence of a release manifest.
+- Evidence: canonical shared run `2026-10-05-final` (implementation `c98a9c2`),
+  `docs/reviews/2026-10-05-shared-eda-checker.md`, and
+  `docs/reviews/2026-10-05-stage-a-checker.md`.
+- Reason: only two DART stations pass the mechanical sensitivity screen, and
+  neither has independently validated physical onset. The stable early DART
+  21418 crossing contradicts NOAA's approximately 25-minute recording account.
+  Coastal tidal series need a reviewed onset method; the continuous NCTR field
+  is still blocked; hourly contours do not constitute station modeled arrivals.
+- Adaptive checks: retained all 160 event/control settings, inspected raw-source
+  gap/sentinel traces, retained 140 IOC QC flags, inspected the early waveform,
+  and corrected decimal-boundary QA without retuning detector parameters.
+- Scope: no event/community set frozen for production, no paper model, no new
+  acquisition, no app scene/export, no actionable warning claim. Existing source
+  contracts and research/attribution limits remain in force.
+- Next decision: validate observed onsets and an arrival-capable modeled product,
+  or separately approve a non-arrival-comparison story pivot. No automatic
+  substitution of nearest contours, inferred tides, or approximate reference times.

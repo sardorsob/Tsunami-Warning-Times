@@ -55,7 +55,25 @@ T-002A. No candidate becomes analysis-ready merely because it downloads.
 
 The NCTR model-field index is absent because no exact continuous field passed the
 source gate. Published NCTR scalar source coefficients are coverage-only evidence
-and are not a field proxy. Arrival-pick tables are deferred to T-002D.
+and are not a field proxy. T-002D now supplies 80 event and 80 control
+configuration outcomes, explicitly diagnostic rather than physical-arrival
+records. T-002E's descriptive release grants no arrival-comparison permission.
+
+## 2026-10-05 reviewed EDA boundary
+
+Canonical evidence: `artifacts/eda/shared/2026-10-05-final`; reviewed interface:
+`artifacts/releases/tohoku-descriptive-v1.json`. All 143,655 normalized rows,
+17 acquired raw assets, ten stations and contour geometries reconcile unchanged.
+No new source was downloaded. Missingness mechanisms retain separate denominators.
+
+Only DART 21418 and 46411 pass the mechanical eight-setting screen; neither is
+a validated physical onset. DART 21418's 2.348–2.598 minute candidates conflict
+with NOAA's approximately 25-minute first-recording description. Adak produces
+four pre-origin crossings; Saipan has no eligible event baseline; Valparaíso's
+140 source-QC flags are retained and excluded only from diagnostic picking.
+Exact-decimal DART raw−fit−residual checks show no exceedance of 0.00002 m.
+Coastal raw water levels have no reviewed tidal residual/onset method. Every
+station's modeled arrival remains unavailable. No missing datum is inferred.
 
 ## Minimum record contract
 

@@ -37,6 +37,13 @@ Stage A atlas.
 
 ## Promotion rule
 
+2026-10-05 review: shared timing diagnostics strengthen the need to distinguish
+an instrument excursion from a validated tsunami arrival. DART 21418 is a
+possible future explanatory example, not a promoted scene. The current shared
+release explicitly denies arrival-comparison permission, so no community timing
+shortlist or modeled-versus-observed scene is approved. Observability remains a
+candidate pivot requiring its own story decision and review.
+
 A candidate becomes a storyboard primitive only when its source data, method,
 visual artifact, limitations, and decision-ledger entry are reviewed together.
 Promotion does not make an exploratory figure an app asset; a separate export
