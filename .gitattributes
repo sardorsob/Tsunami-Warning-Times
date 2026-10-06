@@ -3,3 +3,7 @@
 
 # Matplotlib emits SVG path continuations with meaningful trailing spaces.
 *.svg whitespace=-trailing-space
+
+# Preserve the original rejected exploratory run's checksummed CSV bytes.
+# Subsequent shared-audit writers emit LF explicitly.
+artifacts/eda/shared/2026-10-05-ad040a7/*.csv -text

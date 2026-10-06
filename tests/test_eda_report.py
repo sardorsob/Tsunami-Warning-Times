@@ -37,6 +37,10 @@ def test_real_audit_is_deterministic_checksums_inputs_and_refuses_overwrite(tmp_
     assert len(summary["summaries"]) == 10
     assert len(summary["picks"]) == 160
     assert len(summary["inputs"]) >= 25
+    assert len(summary["adaptive_ledger"]) == 8
+    assert len(summary["qc_records"]) == 140
+    assert any(r["kind"] == "gap_sentinel" for r in summary["raw_traces"])
+    assert all(p["residual_disagreement_above_0_00002_m"] == 0 for p in summary["profiles"])
     assert all(s["modeled_arrival_utc"] == "unavailable" for s in summary["summaries"])
     with pytest.raises(FileExistsError):
         write_run(
@@ -77,7 +81,7 @@ def test_populated_audit_notebook_exports_visible_evidence(tmp_path: Path) -> No
     png = base64.b64decode(
         "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+j7XkAAAAASUVORK5CYII="
     )
-    for name in ["setting-status.png", "dart-candidates.png"]:
+    for name in ["setting-status.png", "dart-candidates.png", "early-crossing-check.png"]:
         (run / name).write_bytes(png)
     subprocess.run(
         [
@@ -100,4 +104,4 @@ def test_populated_audit_notebook_exports_visible_evidence(tmp_path: Path) -> No
     output = json.dumps([cell["outputs"] for cell in session["cells"]])
     assert "Fixture evidence report" in output
     assert "Arrival comparison is unapproved" in output
-    assert output.count("<img") == 2
+    assert output.count("<img") == 3

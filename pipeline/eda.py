@@ -140,7 +140,8 @@ def detect_crossing(
         candidate_elapsed_seconds="unknown",
         pre_candidate_max_gap_seconds="unknown",
         earlier_support_complete=False,
-        search_coverage=0.0,
+        search_coverage="unknown",
+        search_max_gap_seconds="unknown",
     )
     if (
         len(baseline) < minimum_samples

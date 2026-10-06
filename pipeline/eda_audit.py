@@ -8,6 +8,7 @@ import json
 import tomllib
 from collections import Counter
 from datetime import timedelta
+from decimal import Decimal
 from itertools import product
 from pathlib import Path
 from statistics import median
@@ -61,12 +62,16 @@ def station_profile(
             }
         )
     differences = [
-        abs(s.raw - s.fitted - s.residual)
+        abs(Decimal(str(s.raw)) - Decimal(str(s.fitted)) - Decimal(str(s.residual)))
         for s in samples
         if s.raw is not None and s.fitted is not None and s.residual is not None
     ]
-    result["raw_minus_fit_minus_residual_max_abs"] = max(differences, default="unknown")
-    result["residual_disagreement_above_0_00002_m"] = sum(v > 0.00002 for v in differences)
+    result["raw_minus_fit_minus_residual_max_abs"] = (
+        float(max(differences)) if differences else "unknown"
+    )
+    result["residual_disagreement_above_0_00002_m"] = sum(
+        v > Decimal("0.00002") for v in differences
+    )
     intervals = [
         (a, b, (b.at - a.at).total_seconds()) for a, b in zip(samples, samples[1:], strict=False)
     ]
@@ -94,12 +99,12 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
     """Audit the accepted bytes against tracked anchors before running frozen settings."""
     from pipeline.eda import verify_fingerprints
 
-    anchors: list[dict[str, str]] = json.loads(anchor.read_text())
+    anchors: list[dict[str, str]] = json.loads(anchor.read_text(encoding="utf-8"))
     verify_fingerprints(root, anchors)
     accounting_path = processed / "accounting.json"
     if fingerprint(accounting_path, root) not in anchors:
         raise ValueError("processed accounting is not covered by trusted anchor")
-    accounting = json.loads(accounting_path.read_text())
+    accounting = json.loads(accounting_path.read_text(encoding="utf-8"))
     inputs = [fingerprint(anchor, root), fingerprint(config, root), *anchors]
     records = [
         {
@@ -113,7 +118,7 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
     verify_fingerprints(root, records)
     inputs.extend(records)
     inventory_path = root / accounting["input_inventory"]
-    inventory = json.loads(inventory_path.read_text())
+    inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
     outcomes = {row["source_id"]: row for row in inventory}
     raw_records: list[dict[str, str]] = []
     for outcome in accounting["source_outcomes"]:
@@ -128,7 +133,7 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
     tables = {name: read_table(processed / f"{name}.csv") for name in accounting["row_counts"]}
     if {key: len(rows) for key, rows in tables.items()} != accounting["row_counts"]:
         raise ValueError("row accounting differs")
-    settings = tomllib.loads(config.read_text())
+    settings = tomllib.loads(config.read_text(encoding="utf-8"))
     event = tables["event"][0]
     if (
         len(tables["event"]) != 1
@@ -238,9 +243,9 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
                             "candidate_utc": utc(candidate),
                             "observed_at_utc": utc(s.at),
                             "source_time": s.source_time,
-                            "raw": s.raw,
-                            "residual": s.residual,
-                            "fitted": s.fitted,
+                            "raw": s.raw if s.raw is not None else "unknown",
+                            "residual": s.residual if s.residual is not None else "unknown",
+                            "fitted": s.fitted if s.fitted is not None else "unknown",
                             "qc_bad": s.qc_bad,
                         }
                     )
@@ -255,7 +260,7 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
         contour_stats["unsplit_longitude_jumps"] += sum(
             abs(b[0] - a[0]) > 180 for a, b in zip(coordinates, coordinates[1:], strict=False)
         )
-    return dict(
+    result = dict(
         settings=settings,
         inputs=sorted({r["path"]: r for r in inputs}.values(), key=lambda r: r["path"]),
         counts=accounting["row_counts"],
@@ -268,3 +273,7 @@ def audit(root: Path, processed: Path, anchor: Path, config: Path) -> dict[str, 
         candidate_windows=windows,
         geometry=dict(contour_stats),
     )
+    from pipeline.eda_followups import follow_up
+
+    follow_up(result, grouped, stations, outcomes, root)
+    return result

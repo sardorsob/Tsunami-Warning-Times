@@ -329,32 +329,6 @@
       "source_location": "L3"
     },
     {
-      "id": "analysis_story_atlas_atlasconfig",
-      "label": "AtlasConfig",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "atlasconfig",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L98"
-    },
-    {
-      "id": "analysis_story_atlas_atlasinputs",
-      "label": "AtlasInputs",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "atlasinputs",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L85"
-    },
-    {
       "id": "analysis_story_atlas_seriespanel",
       "label": "SeriesPanel",
       "_callable": true,
@@ -472,19 +446,6 @@
       "source_location": "L43"
     },
     {
-      "id": "analysis_story_atlas_seriespoint",
-      "label": "SeriesPoint",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "code",
-      "norm_label": "seriespoint",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L115"
-    },
-    {
       "id": "pipeline_eda_sample",
       "label": "Sample",
       "_callable": true,
@@ -496,6 +457,45 @@
       "norm_label": "sample",
       "source_file": "pipeline/eda.py",
       "source_location": "L67"
+    },
+    {
+      "id": "analysis_story_atlas_atlasconfig",
+      "label": "AtlasConfig",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "atlasconfig",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L98"
+    },
+    {
+      "id": "analysis_story_atlas_atlasinputs",
+      "label": "AtlasInputs",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "atlasinputs",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L85"
+    },
+    {
+      "id": "analysis_story_atlas_seriespoint",
+      "label": "SeriesPoint",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "seriespoint",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L115"
     },
     {
       "id": "pipeline_provenance_main",
@@ -2754,30 +2754,6 @@
       "source_location": "L16"
     },
     {
-      "id": "analysis_story_atlas_shift_longitude",
-      "label": "shift_longitude()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "shift_longitude()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L613"
-    },
-    {
-      "id": "analysis_story_atlas_split_at_display_seam",
-      "label": "split_at_display_seam()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "split_at_display_seam()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L621"
-    },
-    {
       "id": "analysis_story_plots_coverage_metrics",
       "label": "_coverage_metrics()",
       "_callable": true,
@@ -2968,18 +2944,6 @@
       "norm_label": "_two_dimensional_coordinates()",
       "source_file": "analysis/story/plots.py",
       "source_location": "L660"
-    },
-    {
-      "id": "tests_story_test_atlas_test_pacific_shift_splits_a_line_at_the_twenty_degree_seam",
-      "label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L324"
     },
     {
       "id": "analysis_story_artifacts_display_path",
@@ -3498,18 +3462,6 @@
       "source_location": "L163"
     },
     {
-      "id": "analysis_story_atlas_project_line_parts",
-      "label": "project_line_parts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "project_line_parts()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L650"
-    },
-    {
       "id": "analysis_story_atlas_read_csv",
       "label": "_read_csv()",
       "_callable": true,
@@ -3558,30 +3510,6 @@
       "source_location": "L350"
     },
     {
-      "id": "tests_story_test_atlas_test_projected_split_line_preserves_both_pacific_seam_sides",
-      "label": "test_projected_split_line_preserves_both_pacific_seam_sides()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "AtlasError",
-      "file_type": "code",
-      "norm_label": "test_projected_split_line_preserves_both_pacific_seam_sides()",
-      "source_file": "tests/story/test_atlas.py",
-      "source_location": "L336"
-    },
-    {
-      "id": "analysis_story_atlas_build_series_panels",
-      "label": "build_series_panels()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "code",
-      "norm_label": "build_series_panels()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L561"
-    },
-    {
       "id": "analysis_story_atlas_load_atlas_config",
       "label": "load_atlas_config()",
       "_callable": true,
@@ -3592,18 +3520,6 @@
       "norm_label": "load_atlas_config()",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L484"
-    },
-    {
-      "id": "analysis_story_atlas_validate_stage_a_scope",
-      "label": "validate_stage_a_scope()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "code",
-      "norm_label": "validate_stage_a_scope()",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L535"
     },
     {
       "id": "tests_story_test_atlas_stage_atlas_inputs",
@@ -3771,7 +3687,7 @@
       "file_type": "code",
       "norm_label": "render_report()",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L185"
+      "source_location": "L228"
     },
     {
       "id": "pipeline_eda_report_write_csv",
@@ -3807,7 +3723,7 @@
       "file_type": "code",
       "norm_label": "write_run()",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L296"
+      "source_location": "L353"
     },
     {
       "id": "scripts_run_tohoku_eda_main",
@@ -3831,7 +3747,7 @@
       "file_type": "code",
       "norm_label": "test_bad_anchor_does_not_publish_partial_run()",
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L54"
+      "source_location": "L58"
     },
     {
       "id": "tests_test_eda_report_test_populated_audit_notebook_exports_visible_evidence",
@@ -3843,7 +3759,7 @@
       "file_type": "code",
       "norm_label": "test_populated_audit_notebook_exports_visible_evidence()",
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L70"
+      "source_location": "L74"
     },
     {
       "id": "tests_test_eda_report_test_real_audit_is_deterministic_checksums_inputs_and_refuses_overwrite",
@@ -3963,7 +3879,7 @@
       "file_type": "code",
       "norm_label": "audit()",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L93"
+      "source_location": "L98"
     },
     {
       "id": "pipeline_eda_audit_fingerprint",
@@ -3975,7 +3891,7 @@
       "file_type": "code",
       "norm_label": "fingerprint()",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "pipeline_eda_audit_read_table",
@@ -3987,7 +3903,7 @@
       "file_type": "code",
       "norm_label": "read_table()",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "pipeline_eda_audit_station_profile",
@@ -3999,7 +3915,7 @@
       "file_type": "code",
       "norm_label": "station_profile()",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "pipeline_eda_detect_crossing",
@@ -4012,6 +3928,18 @@
       "norm_label": "detect_crossing()",
       "source_file": "pipeline/eda.py",
       "source_location": "L83"
+    },
+    {
+      "id": "pipeline_eda_followups_follow_up",
+      "label": "follow_up()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "code",
+      "norm_label": "follow_up()",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L14"
     },
     {
       "id": "pipeline_eda_group_observations",
@@ -4035,7 +3963,7 @@
       "file_type": "code",
       "norm_label": "summarize_sensitivity()",
       "source_file": "pipeline/eda.py",
-      "source_location": "L214"
+      "source_location": "L215"
     },
     {
       "id": "pipeline_eda_utc",
@@ -4071,7 +3999,7 @@
       "file_type": "code",
       "norm_label": "baseline()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L38"
+      "source_location": "L45"
     },
     {
       "id": "tests_test_eda_pick",
@@ -4083,7 +4011,7 @@
       "file_type": "code",
       "norm_label": "pick()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L42"
+      "source_location": "L49"
     },
     {
       "id": "tests_test_eda_sample",
@@ -4095,7 +4023,7 @@
       "file_type": "code",
       "norm_label": "sample()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L34"
+      "source_location": "L41"
     },
     {
       "id": "tests_test_eda_test_baseline_boundaries_count_against_support",
@@ -4107,7 +4035,7 @@
       "file_type": "code",
       "norm_label": "test_baseline_boundaries_count_against_support()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L82"
+      "source_location": "L89"
     },
     {
       "id": "tests_test_eda_test_checksum_mismatch_fails_before_analysis",
@@ -4119,7 +4047,7 @@
       "file_type": "code",
       "norm_label": "test_checksum_mismatch_fails_before_analysis()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L131"
+      "source_location": "L140"
     },
     {
       "id": "tests_test_eda_test_crossing_preserves_source_time_bracket_and_confirmation",
@@ -4131,7 +4059,19 @@
       "file_type": "code",
       "norm_label": "test_crossing_preserves_source_time_bracket_and_confirmation()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L59"
+      "source_location": "L66"
+    },
+    {
+      "id": "tests_test_eda_test_decimal_rounding_boundary_is_not_a_residual_disagreement",
+      "label": "test_decimal_rounding_boundary_is_not_a_residual_disagreement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "code",
+      "norm_label": "test_decimal_rounding_boundary_is_not_a_residual_disagreement()",
+      "source_file": "tests/test_eda.py",
+      "source_location": "L34"
     },
     {
       "id": "tests_test_eda_test_duplicate_or_nonfinite_samples_are_rejected",
@@ -4143,7 +4083,7 @@
       "file_type": "code",
       "norm_label": "test_duplicate_or_nonfinite_samples_are_rejected()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L94"
+      "source_location": "L103"
     },
     {
       "id": "tests_test_eda_test_earlier_gap_is_not_forgotten_when_candidate_has_local_bracket",
@@ -4155,7 +4095,7 @@
       "file_type": "code",
       "norm_label": "test_earlier_gap_is_not_forgotten_when_candidate_has_local_bracket()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L123"
+      "source_location": "L132"
     },
     {
       "id": "tests_test_eda_test_empty_or_truncated_control_is_not_evidence_of_quiet",
@@ -4167,7 +4107,7 @@
       "file_type": "code",
       "norm_label": "test_empty_or_truncated_control_is_not_evidence_of_quiet()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L116"
+      "source_location": "L125"
     },
     {
       "id": "tests_test_eda_test_long_gap_does_not_bridge_candidate_or_invent_lower_bound",
@@ -4179,7 +4119,7 @@
       "file_type": "code",
       "norm_label": "test_long_gap_does_not_bridge_candidate_or_invent_lower_bound()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L75"
+      "source_location": "L82"
     },
     {
       "id": "tests_test_eda_test_missing_or_flagged_sample_resets_persistence",
@@ -4191,7 +4131,7 @@
       "file_type": "code",
       "norm_label": "test_missing_or_flagged_sample_resets_persistence()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L69"
+      "source_location": "L76"
     },
     {
       "id": "tests_test_eda_test_negative_excursion_detected_without_zero_becoming_missing",
@@ -4203,7 +4143,7 @@
       "file_type": "code",
       "norm_label": "test_negative_excursion_detected_without_zero_becoming_missing()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L88"
+      "source_location": "L97"
     },
     {
       "id": "tests_test_eda_test_no_success_only_stability_summary",
@@ -4215,7 +4155,7 @@
       "file_type": "code",
       "norm_label": "test_no_success_only_stability_summary()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L101"
+      "source_location": "L110"
     },
     {
       "id": "tests_test_eda_test_observation_join_refuses_orphans_duplicates_and_semantic_mismatch",
@@ -4227,7 +4167,7 @@
       "file_type": "code",
       "norm_label": "test_observation_join_refuses_orphans_duplicates_and_semantic_mismatch()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L140"
+      "source_location": "L149"
     },
     {
       "id": "tests_test_eda_test_positive_or_unevaluable_control_blocks_screen",
@@ -4239,7 +4179,7 @@
       "file_type": "code",
       "norm_label": "test_positive_or_unevaluable_control_blocks_screen()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L110"
+      "source_location": "L119"
     },
     {
       "id": "tests_test_eda_test_profile_preserves_qc_extreme_and_exposes_residual_disagreement",
@@ -4263,7 +4203,7 @@
       "file_type": "code",
       "norm_label": "test_qc_flag_is_retained_and_blocks_diagnostic_use()",
       "source_file": "tests/test_eda.py",
-      "source_location": "L168"
+      "source_location": "L177"
     },
     {
       "id": "notebooks_tohoku_arrival_audit_evidence",
@@ -4324,6 +4264,90 @@
       "norm_label": "test_populated_atlas_notebook_displays_figures_and_decisions()",
       "source_file": "tests/story/test_notebook_render.py",
       "source_location": "L11"
+    },
+    {
+      "id": "analysis_story_atlas_build_series_panels",
+      "label": "build_series_panels()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "build_series_panels()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L561"
+    },
+    {
+      "id": "analysis_story_atlas_validate_stage_a_scope",
+      "label": "validate_stage_a_scope()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "validate_stage_a_scope()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L535"
+    },
+    {
+      "id": "analysis_story_atlas_project_line_parts",
+      "label": "project_line_parts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "code",
+      "norm_label": "project_line_parts()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L650"
+    },
+    {
+      "id": "analysis_story_atlas_shift_longitude",
+      "label": "shift_longitude()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "code",
+      "norm_label": "shift_longitude()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L613"
+    },
+    {
+      "id": "analysis_story_atlas_split_at_display_seam",
+      "label": "split_at_display_seam()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "code",
+      "norm_label": "split_at_display_seam()",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L621"
+    },
+    {
+      "id": "tests_story_test_atlas_test_pacific_shift_splits_a_line_at_the_twenty_degree_seam",
+      "label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "code",
+      "norm_label": "test_pacific_shift_splits_a_line_at_the_twenty_degree_seam()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L324"
+    },
+    {
+      "id": "tests_story_test_atlas_test_projected_split_line_preserves_both_pacific_seam_sides",
+      "label": "test_projected_split_line_preserves_both_pacific_seam_sides()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "code",
+      "norm_label": "test_projected_split_line_preserves_both_pacific_seam_sides()",
+      "source_file": "tests/story/test_atlas.py",
+      "source_location": "L336"
     },
     {
       "id": "app_tsconfig",
@@ -8299,7 +8323,7 @@
       "label": "context/EDA_REPORT.md",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "context/eda_report.md",
@@ -8307,158 +8331,98 @@
       "source_location": "L1"
     },
     {
-      "id": "context_eda_report_adaptive_eda_decision_ledger",
-      "label": "Adaptive EDA decision ledger",
+      "id": "context_eda_report_adaptive_evidence_ledger",
+      "label": "Adaptive evidence ledger",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "adaptive eda decision ledger",
+      "norm_label": "adaptive evidence ledger",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L109"
+      "source_location": "L30"
     },
     {
-      "id": "context_eda_report_checks_performed",
-      "label": "Checks performed",
+      "id": "context_eda_report_all_station_sensitivity_results",
+      "label": "All-station sensitivity results",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "checks performed",
+      "norm_label": "all-station sensitivity results",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L22"
+      "source_location": "L11"
     },
     {
-      "id": "context_eda_report_coastal_completeness",
-      "label": "Coastal completeness",
+      "id": "context_eda_report_distribution_fit_geometry_and_join_checks",
+      "label": "Distribution, fit, geometry, and join checks",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "coastal completeness",
+      "norm_label": "distribution, fit, geometry, and join checks",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L34"
+      "source_location": "L45"
     },
     {
-      "id": "context_eda_report_dart_cadence",
-      "label": "DART cadence",
+      "id": "context_eda_report_missingness_remains_part_of_this_audit",
+      "label": "Missingness remains part of this audit",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "dart cadence",
+      "norm_label": "missingness remains part of this audit",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L66"
+      "source_location": "L58"
     },
     {
-      "id": "context_eda_report_generated_machine_readable_outputs",
-      "label": "Generated machine-readable outputs",
+      "id": "context_eda_report_reproduction_and_evidence",
+      "label": "Reproduction and evidence",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "generated machine-readable outputs",
+      "norm_label": "reproduction and evidence",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L150"
+      "source_location": "L69"
     },
     {
-      "id": "context_eda_report_input_and_output_fingerprints",
-      "label": "Input and output fingerprints",
+      "id": "context_eda_report_scope_and_disposition",
+      "label": "Scope and disposition",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "input and output fingerprints",
+      "norm_label": "scope and disposition",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L134"
+      "source_location": "L5"
     },
     {
-      "id": "context_eda_report_limitations_takeaways_and_next_steps",
-      "label": "Limitations, takeaways, and next steps",
+      "id": "context_eda_report_takeaways_and_next_steps",
+      "label": "Takeaways and next steps",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "limitations, takeaways, and next steps",
+      "norm_label": "takeaways and next steps",
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L122"
+      "source_location": "L62"
     },
     {
-      "id": "context_eda_report_missingness_mechanisms",
-      "label": "Missingness mechanisms",
+      "id": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "label": "T\u014dhoku shared EDA \u2014 timing support audit",
       "_origin": "ast",
       "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "missingness mechanisms",
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L49"
-    },
-    {
-      "id": "context_eda_report_normalized_inputs",
-      "label": "Normalized inputs",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "normalized inputs",
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L139"
-    },
-    {
-      "id": "context_eda_report_other_incompleteness",
-      "label": "Other incompleteness",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "other incompleteness",
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L95"
-    },
-    {
-      "id": "context_eda_report_run_and_scope",
-      "label": "Run and scope",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "run and scope",
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "context_eda_report_statistical_interpretation",
-      "label": "Statistical interpretation",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "statistical interpretation",
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L80"
-    },
-    {
-      "id": "context_eda_report_t\u014dhoku_missingness_eda",
-      "label": "T\u014dhoku Missingness EDA",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "T\u014dhoku Missingness EDA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "tohoku missingness eda",
+      "norm_label": "tohoku shared eda \u2014 timing support audit",
       "source_file": "context/EDA_REPORT.md",
       "source_location": "L1"
     },
@@ -11251,17 +11215,6 @@
       "source_location": "L1"
     },
     {
-      "id": "analysis_story_init",
-      "label": "story/__init__.py",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "code",
-      "norm_label": "story/__init__.py",
-      "source_file": "analysis/story/__init__.py",
-      "source_location": "L1"
-    },
-    {
       "id": "analysis_story_plots",
       "label": "plots.py",
       "_origin": "ast",
@@ -11381,61 +11334,6 @@
       "norm_label": "a station-local series whose y-scale must not be shared.",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L124"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_614",
-      "label": "Shift a longitude into the Pacific display domain [-340, 20).",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "rationale",
-      "norm_label": "shift a longitude into the pacific display domain [-340, 20).",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L614"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_624",
-      "label": "Split linework at 20\u00b0E while retaining an endpoint on each seam side.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "rationale",
-      "norm_label": "split linework at 20\u00b0e while retaining an endpoint on each seam side.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L624"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_86",
-      "label": "Validated normalized inputs for preliminary story diagnostics.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "rationale",
-      "norm_label": "validated normalized inputs for preliminary story diagnostics.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L86"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_99",
-      "label": "Reviewed Stage A projection, window, and candidate scope.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "rationale",
-      "norm_label": "reviewed stage a projection, window, and candidate scope.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L99"
-    },
-    {
-      "id": "analysis_story_init_rationale_1",
-      "label": "Story-only descriptive analysis.",
-      "_origin": "ast",
-      "community": 63,
-      "community_name": "plots.py",
-      "file_type": "rationale",
-      "norm_label": "story-only descriptive analysis.",
-      "source_file": "analysis/story/__init__.py",
-      "source_location": "L1"
     },
     {
       "id": "analysis_story_plots_rationale_191",
@@ -11966,17 +11864,6 @@
       "source_location": "L60"
     },
     {
-      "id": "analysis_story_atlas_rationale_654",
-      "label": "Project unwrapped Pacific linework without normalizing its seam endpoints.",
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "AtlasError",
-      "file_type": "rationale",
-      "norm_label": "project unwrapped pacific linework without normalizing its seam endpoints.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L654"
-    },
-    {
       "id": "analysis_story_atlas_rationale_680",
       "label": "Return a WGS84 geodesic distance ring in kilometres, with no speed model.",
       "_origin": "ast",
@@ -12043,17 +11930,6 @@
       "source_location": ""
     },
     {
-      "id": "analysis_story_atlas_rationale_116",
-      "label": "One retained numeric value positioned relative to earthquake origin.",
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "rationale",
-      "norm_label": "one retained numeric value positioned relative to earthquake origin.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L116"
-    },
-    {
       "id": "analysis_story_atlas_rationale_485",
       "label": "Load and validate the fixed Stage A atlas contract.",
       "_origin": "ast",
@@ -12063,28 +11939,6 @@
       "norm_label": "load and validate the fixed stage a atlas contract.",
       "source_file": "analysis/story/atlas.py",
       "source_location": "L485"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_538",
-      "label": "Require the reviewed event, station groups, contour hours, and coastal windows.",
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "rationale",
-      "norm_label": "require the reviewed event, station groups, contour hours, and coastal windows.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L538"
-    },
-    {
-      "id": "analysis_story_atlas_rationale_562",
-      "label": "Build station-local point series without smoothing, centering, or resampling.",
-      "_origin": "ast",
-      "community": 70,
-      "community_name": "test_atlas.py",
-      "file_type": "rationale",
-      "norm_label": "build station-local point series without smoothing, centering, or resampling.",
-      "source_file": "analysis/story/atlas.py",
-      "source_location": "L562"
     },
     {
       "id": "pipeline_eda_report",
@@ -12175,7 +12029,7 @@
       "source_location": "L1"
     },
     {
-      "id": "pipeline_eda_report_rationale_186",
+      "id": "pipeline_eda_report_rationale_229",
       "label": "Result-dependent findings and follow-ups, retaining every station and failed\u2026",
       "_origin": "ast",
       "community": 71,
@@ -12183,7 +12037,7 @@
       "file_type": "rationale",
       "norm_label": "result-dependent findings and follow-ups, retaining every station and failed...",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L186"
+      "source_location": "L229"
     },
     {
       "id": "pipeline_eda_report_rationale_29",
@@ -12197,17 +12051,6 @@
       "source_location": "L29"
     },
     {
-      "id": "pipeline_eda_report_rationale_306",
-      "label": "Publish a complete new bundle only; refuse overwrite and clean failed staging.",
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "write_run",
-      "file_type": "rationale",
-      "norm_label": "publish a complete new bundle only; refuse overwrite and clean failed staging.",
-      "source_file": "pipeline/eda_report.py",
-      "source_location": "L306"
-    },
-    {
       "id": "pipeline_eda_report_rationale_36",
       "label": "Preserve all columns, including failure-only fields.",
       "_origin": "ast",
@@ -12217,6 +12060,17 @@
       "norm_label": "preserve all columns, including failure-only fields.",
       "source_file": "pipeline/eda_report.py",
       "source_location": "L36"
+    },
+    {
+      "id": "pipeline_eda_report_rationale_363",
+      "label": "Publish a complete new bundle only; refuse overwrite and clean failed staging.",
+      "_origin": "ast",
+      "community": 71,
+      "community_name": "write_run",
+      "file_type": "rationale",
+      "norm_label": "publish a complete new bundle only; refuse overwrite and clean failed staging.",
+      "source_file": "pipeline/eda_report.py",
+      "source_location": "L363"
     },
     {
       "id": "pipeline_eda_report_rationale_55",
@@ -12329,6 +12183,39 @@
       "source_location": ""
     },
     {
+      "id": "pipeline_eda_followups",
+      "label": "eda_followups.py",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "code",
+      "norm_label": "eda_followups.py",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "pipeline_eda_followups_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "pipeline_eda_followups_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "pipeline_eda_py_datetime",
       "label": "datetime",
       "_origin": "ast",
@@ -12395,7 +12282,7 @@
       "source_location": "L1"
     },
     {
-      "id": "pipeline_eda_audit_rationale_24",
+      "id": "pipeline_eda_audit_rationale_25",
       "label": "Record bytes and a portable repository-relative path.",
       "_origin": "ast",
       "community": 73,
@@ -12403,10 +12290,10 @@
       "file_type": "rationale",
       "norm_label": "record bytes and a portable repository-relative path.",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
-      "id": "pipeline_eda_audit_rationale_32",
+      "id": "pipeline_eda_audit_rationale_33",
       "label": "Require rectangular CSV records, including for provenance inputs.",
       "_origin": "ast",
       "community": 73,
@@ -12414,10 +12301,10 @@
       "file_type": "rationale",
       "norm_label": "require rectangular csv records, including for provenance inputs.",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
-      "id": "pipeline_eda_audit_rationale_46",
+      "id": "pipeline_eda_audit_rationale_47",
       "label": "Describe retained values and gaps without dropping outliers or imputing.",
       "_origin": "ast",
       "community": 73,
@@ -12425,10 +12312,10 @@
       "file_type": "rationale",
       "norm_label": "describe retained values and gaps without dropping outliers or imputing.",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
-      "id": "pipeline_eda_audit_rationale_94",
+      "id": "pipeline_eda_audit_rationale_99",
       "label": "Audit the accepted bytes against tracked anchors before running frozen settings.",
       "_origin": "ast",
       "community": 73,
@@ -12436,7 +12323,29 @@
       "file_type": "rationale",
       "norm_label": "audit the accepted bytes against tracked anchors before running frozen settings.",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L94"
+      "source_location": "L99"
+    },
+    {
+      "id": "pipeline_eda_followups_rationale_1",
+      "label": "Evidence-triggered checks added after the first frozen timing audit, without\u2026",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "rationale",
+      "norm_label": "evidence-triggered checks added after the first frozen timing audit, without...",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "pipeline_eda_followups_rationale_21",
+      "label": "Trace suspicious candidates, gaps and QC extrema to preserved publisher bytes.",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "test_eda.py",
+      "file_type": "rationale",
+      "norm_label": "trace suspicious candidates, gaps and qc extrema to preserved publisher bytes.",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L21"
     },
     {
       "id": "pipeline_eda_rationale_1",
@@ -12461,7 +12370,7 @@
       "source_location": "L19"
     },
     {
-      "id": "pipeline_eda_rationale_219",
+      "id": "pipeline_eda_rationale_220",
       "label": "Keep failed settings and control failures in the sensitivity denominator.",
       "_origin": "ast",
       "community": 73,
@@ -12469,7 +12378,7 @@
       "file_type": "rationale",
       "norm_label": "keep failed settings and control failures in the sensitivity denominator.",
       "source_file": "pipeline/eda.py",
-      "source_location": "L219"
+      "source_location": "L220"
     },
     {
       "id": "pipeline_eda_rationale_35",
@@ -12866,6 +12775,380 @@
       "file_type": "code",
       "norm_label": "vite.config.ts",
       "source_file": "app/vite.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_init",
+      "label": "story/__init__.py",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "code",
+      "norm_label": "story/__init__.py",
+      "source_file": "analysis/story/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_116",
+      "label": "One retained numeric value positioned relative to earthquake origin.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "one retained numeric value positioned relative to earthquake origin.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L116"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_538",
+      "label": "Require the reviewed event, station groups, contour hours, and coastal windows.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "require the reviewed event, station groups, contour hours, and coastal windows.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L538"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_562",
+      "label": "Build station-local point series without smoothing, centering, or resampling.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "build station-local point series without smoothing, centering, or resampling.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L562"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_86",
+      "label": "Validated normalized inputs for preliminary story diagnostics.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "validated normalized inputs for preliminary story diagnostics.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L86"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_99",
+      "label": "Reviewed Stage A projection, window, and candidate scope.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "reviewed stage a projection, window, and candidate scope.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L99"
+    },
+    {
+      "id": "analysis_story_init_rationale_1",
+      "label": "Story-only descriptive analysis.",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "story/__init__.py",
+      "file_type": "rationale",
+      "norm_label": "story-only descriptive analysis.",
+      "source_file": "analysis/story/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report",
+      "label": "missingness-report.md",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "missingness-report.md",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_adaptive_eda_decision_ledger",
+      "label": "Adaptive EDA decision ledger",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adaptive eda decision ledger",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L109"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_checks_performed",
+      "label": "Checks performed",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "checks performed",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_coastal_completeness",
+      "label": "Coastal completeness",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "coastal completeness",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_dart_cadence",
+      "label": "DART cadence",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dart cadence",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_limitations_takeaways_and_next_steps",
+      "label": "Limitations, takeaways, and next steps",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "limitations, takeaways, and next steps",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L122"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_missingness_mechanisms",
+      "label": "Missingness mechanisms",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "missingness mechanisms",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_other_incompleteness",
+      "label": "Other incompleteness",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "other incompleteness",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L95"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_run_and_scope",
+      "label": "Run and scope",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "run and scope",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_statistical_interpretation",
+      "label": "Statistical interpretation",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "statistical interpretation",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "label": "T\u014dhoku Missingness EDA",
+      "_origin": "ast",
+      "community": 81,
+      "community_name": "T\u014dhoku Missingness EDA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tohoku missingness eda",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report",
+      "label": "report.md",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "report.md",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_adaptive_evidence_ledger",
+      "label": "Adaptive evidence ledger",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adaptive evidence ledger",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_all_station_sensitivity_results",
+      "label": "All-station sensitivity results",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "all-station sensitivity results",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_distribution_fit_geometry_and_join_checks",
+      "label": "Distribution, fit, geometry, and join checks",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "distribution, fit, geometry, and join checks",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_missingness_remains_part_of_this_audit",
+      "label": "Missingness remains part of this audit",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "missingness remains part of this audit",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L58"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_reproduction_and_evidence",
+      "label": "Reproduction and evidence",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reproduction and evidence",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L69"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_scope_and_disposition",
+      "label": "Scope and disposition",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scope and disposition",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_takeaways_and_next_steps",
+      "label": "Takeaways and next steps",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "takeaways and next steps",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "label": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "_origin": "ast",
+      "community": 82,
+      "community_name": "T\u014dhoku shared EDA \u2014 timing support audit",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tohoku shared eda \u2014 timing support audit",
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_614",
+      "label": "Shift a longitude into the Pacific display domain [-340, 20).",
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "rationale",
+      "norm_label": "shift a longitude into the pacific display domain [-340, 20).",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L614"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_624",
+      "label": "Split linework at 20\u00b0E while retaining an endpoint on each seam side.",
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "rationale",
+      "norm_label": "split linework at 20\u00b0e while retaining an endpoint on each seam side.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L624"
+    },
+    {
+      "id": "analysis_story_atlas_rationale_654",
+      "label": "Project unwrapped Pacific linework without normalizing its seam endpoints.",
+      "_origin": "ast",
+      "community": 83,
+      "community_name": "split_at_display_seam",
+      "file_type": "rationale",
+      "norm_label": "project unwrapped pacific linework without normalizing its seam endpoints.",
+      "source_file": "analysis/story/atlas.py",
+      "source_location": "L654"
+    },
+    {
+      "id": "docs_reviews_2026_10_05_initial_timing_run",
+      "label": "2026-10-05-initial-timing-run.md",
+      "_origin": "ast",
+      "community": 84,
+      "community_name": "2026-10-05-initial-timing-run.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-10-05-initial-timing-run.md",
+      "source_file": "docs/reviews/2026-10-05-initial-timing-run.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_reviews_2026_10_05_initial_timing_run_initial_timing_run_exploratory_not_accepted",
+      "label": "Initial timing run \u2014 exploratory, not accepted",
+      "_origin": "ast",
+      "community": 84,
+      "community_name": "2026-10-05-initial-timing-run.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "initial timing run \u2014 exploratory, not accepted",
+      "source_file": "docs/reviews/2026-10-05-initial-timing-run.md",
       "source_location": "L1"
     },
     {
@@ -14302,6 +14585,18 @@
     },
     {
       "source": "pipeline_eda_audit_audit",
+      "target": "pipeline_eda_verify_fingerprints",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit_audit",
       "target": "pipeline_eda_audit_fingerprint",
       "relation": "calls",
       "_origin": "ast",
@@ -14309,7 +14604,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L100",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -14321,7 +14616,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L128",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -14333,7 +14628,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L144",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -14345,7 +14640,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L145",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -14357,7 +14652,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L157",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -14369,7 +14664,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L187",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -14381,7 +14676,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L214",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -14393,19 +14688,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L238",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
       "source": "pipeline_eda_audit_audit",
-      "target": "pipeline_eda_verify_fingerprints",
+      "target": "pipeline_eda_followups_follow_up",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L98",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -14417,7 +14712,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L74",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -14429,7 +14724,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda.py",
-      "source_location": "L198",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_follow_up",
+      "target": "pipeline_eda_utc",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_follow_up",
+      "target": "pipeline_missingness_parse_utc",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14465,7 +14784,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L309",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
@@ -14477,7 +14796,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L312",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -14489,7 +14808,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L321",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
@@ -14501,7 +14820,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L322",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -14513,7 +14832,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L339",
+      "source_location": "L400",
       "weight": 1.0
     },
     {
@@ -14525,7 +14844,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L341",
+      "source_location": "L402",
       "weight": 1.0
     },
     {
@@ -14537,7 +14856,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L343",
+      "source_location": "L404",
       "weight": 1.0
     },
     {
@@ -14549,7 +14868,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L351",
+      "source_location": "L412",
       "weight": 1.0
     },
     {
@@ -14561,7 +14880,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L352",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -14573,7 +14892,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "pipeline/eda.py",
-      "source_location": "L222",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -18569,7 +18888,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L39",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -18581,7 +18900,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L43",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -18593,7 +18912,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L58",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -18617,7 +18936,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L35",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -18629,7 +18948,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L83",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -18641,7 +18960,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L83",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -18653,7 +18972,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L135",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -18665,7 +18984,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L60",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -18677,7 +18996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L60",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -18689,7 +19008,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L60",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_eda_test_decimal_rounding_boundary_is_not_a_residual_disagreement",
+      "target": "pipeline_eda_sample",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_eda.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_eda_test_decimal_rounding_boundary_is_not_a_residual_disagreement",
+      "target": "pipeline_eda_audit_station_profile",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tests/test_eda.py",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -18701,7 +19044,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L96",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -18713,7 +19056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L96",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -18725,7 +19068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L96",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -18737,7 +19080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L124",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -18749,7 +19092,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L124",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -18761,7 +19104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L124",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -18773,7 +19116,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L128",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -18785,7 +19128,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L117",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -18797,7 +19140,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L117",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -18809,7 +19152,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L118",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -18821,7 +19164,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L76",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -18833,7 +19176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L76",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -18845,7 +19188,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L76",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -18857,7 +19200,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L70",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -18869,7 +19212,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L70",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -18881,7 +19224,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L70",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -18893,7 +19236,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L89",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -18905,7 +19248,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L89",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -18917,7 +19260,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L89",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -18929,7 +19272,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L102",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -18941,7 +19284,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L102",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -18953,7 +19296,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L102",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -18965,7 +19308,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L104",
+      "source_location": "L113",
       "weight": 1.0
     },
     {
@@ -18977,7 +19320,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L155",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -18989,7 +19332,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L111",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -19001,7 +19344,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L111",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -19013,7 +19356,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L111",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -19025,7 +19368,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L113",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -19073,7 +19416,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tests/test_eda.py",
-      "source_location": "L183",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -20585,7 +20928,7 @@
       "confidence_score": 1.0,
       "context": "decorator",
       "source_file": "tests/test_eda.py",
-      "source_location": "L68",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -20849,7 +21192,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L93",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -20861,7 +21204,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -20874,6 +21217,18 @@
       "context": "generic_arg",
       "source_file": "pipeline/eda.py",
       "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_follow_up",
+      "target": "pipeline_eda_followups_py_any",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -20897,7 +21252,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L185",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -20921,7 +21276,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L296",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -21209,7 +21564,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tests/test_eda.py",
-      "source_location": "L42",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -21910,67 +22265,19 @@
     },
     {
       "source": "pipeline_eda_audit",
+      "target": "pipeline_eda_verify_fingerprints",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
       "target": "pipeline_eda_detect_crossing",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_audit",
-      "target": "pipeline_eda_group_observations",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_audit",
-      "target": "pipeline_eda_sample",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_audit",
-      "target": "pipeline_eda_summarize_sensitivity",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_audit",
-      "target": "pipeline_eda_utc",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_audit",
-      "target": "pipeline_missingness_parse_utc",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21982,14 +22289,110 @@
     },
     {
       "source": "pipeline_eda_audit",
-      "target": "pipeline_eda_verify_fingerprints",
+      "target": "pipeline_eda_group_observations",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L95",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
+      "target": "pipeline_eda_sample",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
+      "target": "pipeline_eda_summarize_sensitivity",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
+      "target": "pipeline_eda_utc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
+      "target": "pipeline_missingness_parse_utc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_audit",
+      "target": "pipeline_eda_followups_follow_up",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_audit.py",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_eda_sample",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_eda_utc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_missingness_parse_utc",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -23381,7 +23784,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -23393,7 +23796,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L20",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_eda",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_missingness",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -24293,7 +24720,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L93",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -24305,7 +24732,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -24317,7 +24744,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -24330,6 +24757,18 @@
       "context": "parameter_type",
       "source_file": "pipeline/eda.py",
       "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_follow_up",
+      "target": "pipeline_eda_followups_py_path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -25589,7 +26028,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L54",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -25601,7 +26040,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L70",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -25625,7 +26064,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tests/test_eda.py",
-      "source_location": "L131",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -27557,6 +27996,204 @@
       "weight": 1.0
     },
     {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_adaptive_eda_decision_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_limitations_takeaways_and_next_steps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_checks_performed",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_run_and_scope",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_coastal_completeness",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_missingness_mechanisms",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_dart_cadence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_statistical_interpretation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_t\u014dhoku_missingness_eda",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_missingness_report_other_incompleteness",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/missingness-report.md",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_all_station_sensitivity_results",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_adaptive_evidence_ledger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_distribution_fit_geometry_and_join_checks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_scope_and_disposition",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_missingness_remains_part_of_this_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_takeaways_and_next_steps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_eda_shared_2026_10_05_ad040a7_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "artifacts_eda_shared_2026_10_05_ad040a7_report_reproduction_and_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "artifacts/eda/shared/2026-10-05-ad040a7/report.md",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
       "source": "artifacts_logs_runs_2026_09_05_1840_initial_be7f766_notes",
       "target": "artifacts_logs_runs_2026_09_05_1840_initial_be7f766_notes_acquisition_run_notes",
       "relation": "contains",
@@ -28515,7 +29152,7 @@
     },
     {
       "source": "context_eda_report",
-      "target": "context_eda_report_t\u014dhoku_missingness_eda",
+      "target": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -28525,135 +29162,80 @@
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_input_and_output_fingerprints",
-      "target": "context_eda_report_normalized_inputs",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_all_station_sensitivity_results",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L139",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_input_and_output_fingerprints",
-      "target": "context_eda_report_generated_machine_readable_outputs",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_adaptive_evidence_ledger",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L150",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_adaptive_eda_decision_ledger",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_distribution_fit_geometry_and_join_checks",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L109",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_limitations_takeaways_and_next_steps",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_scope_and_disposition",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L122",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_input_and_output_fingerprints",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_missingness_remains_part_of_this_audit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L134",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_checks_performed",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_takeaways_and_next_steps",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L22",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_run_and_scope",
+      "source": "context_eda_report_t\u014dhoku_shared_eda_timing_support_audit",
+      "target": "context_eda_report_reproduction_and_evidence",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "context/EDA_REPORT.md",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_coastal_completeness",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_missingness_mechanisms",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_dart_cadence",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_statistical_interpretation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L80",
-      "weight": 1.0
-    },
-    {
-      "source": "context_eda_report_t\u014dhoku_missingness_eda",
-      "target": "context_eda_report_other_incompleteness",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "context/EDA_REPORT.md",
-      "source_location": "L95",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -30384,6 +30966,17 @@
       "weight": 1.0
     },
     {
+      "source": "docs_reviews_2026_10_05_initial_timing_run",
+      "target": "docs_reviews_2026_10_05_initial_timing_run_initial_timing_run_exploratory_not_accepted",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/reviews/2026-10-05-initial-timing-run.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "docs_reviews_2026_10_05_stage_a_checker",
       "target": "docs_reviews_2026_10_05_stage_a_checker_independent_stage_a_checker_review",
       "relation": "contains",
@@ -32019,7 +32612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda.py",
-      "source_location": "L214",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -32074,7 +32667,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -32085,7 +32678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -32096,7 +32689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -32107,7 +32700,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L93",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups",
+      "target": "pipeline_eda_followups_follow_up",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -32118,7 +32722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L185",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -32134,17 +32738,6 @@
     },
     {
       "source": "pipeline_eda_report",
-      "target": "pipeline_eda_report_write_run",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/eda_report.py",
-      "source_location": "L296",
-      "weight": 1.0
-    },
-    {
-      "source": "pipeline_eda_report",
       "target": "pipeline_eda_report_write_csv",
       "relation": "contains",
       "_origin": "ast",
@@ -32152,6 +32745,17 @@
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_report.py",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_report",
+      "target": "pipeline_eda_report_write_run",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/eda_report.py",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -34125,18 +34729,18 @@
     },
     {
       "source": "tests_test_eda",
-      "target": "tests_test_eda_test_no_success_only_stability_summary",
+      "target": "tests_test_eda_test_duplicate_or_nonfinite_samples_are_rejected",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L101",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
       "source": "tests_test_eda",
-      "target": "tests_test_eda_test_positive_or_unevaluable_control_blocks_screen",
+      "target": "tests_test_eda_test_no_success_only_stability_summary",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -34147,13 +34751,24 @@
     },
     {
       "source": "tests_test_eda",
+      "target": "tests_test_eda_test_positive_or_unevaluable_control_blocks_screen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_eda.py",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_eda",
       "target": "tests_test_eda_test_empty_or_truncated_control_is_not_evidence_of_quiet",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L116",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -34164,7 +34779,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L123",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -34175,7 +34790,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L131",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -34186,7 +34801,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L140",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -34197,7 +34812,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L168",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -34213,7 +34828,7 @@
     },
     {
       "source": "tests_test_eda",
-      "target": "tests_test_eda_sample",
+      "target": "tests_test_eda_test_decimal_rounding_boundary_is_not_a_residual_disagreement",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -34224,13 +34839,24 @@
     },
     {
       "source": "tests_test_eda",
+      "target": "tests_test_eda_sample",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_eda.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_test_eda",
       "target": "tests_test_eda_baseline",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L38",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -34241,7 +34867,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L42",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -34252,7 +34878,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L59",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -34263,7 +34889,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L69",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -34274,7 +34900,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L75",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -34285,7 +34911,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L82",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -34296,18 +34922,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda.py",
-      "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "tests_test_eda",
-      "target": "tests_test_eda_test_duplicate_or_nonfinite_samples_are_rejected",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tests/test_eda.py",
-      "source_location": "L94",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -34329,7 +34944,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L54",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -34340,7 +34955,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/test_eda_report.py",
-      "source_location": "L70",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -35598,47 +36213,69 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_audit_rationale_24",
+      "source": "pipeline_eda_audit_rationale_25",
       "target": "pipeline_eda_audit_fingerprint",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_audit_rationale_32",
+      "source": "pipeline_eda_audit_rationale_33",
       "target": "pipeline_eda_audit_read_table",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_audit_rationale_46",
+      "source": "pipeline_eda_audit_rationale_47",
       "target": "pipeline_eda_audit_station_profile",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_audit_rationale_94",
+      "source": "pipeline_eda_audit_rationale_99",
       "target": "pipeline_eda_audit_audit",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L94",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_rationale_1",
+      "target": "pipeline_eda_followups",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_followups_rationale_21",
+      "target": "pipeline_eda_followups_follow_up",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -35664,14 +36301,14 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_rationale_219",
+      "source": "pipeline_eda_rationale_220",
       "target": "pipeline_eda_summarize_sensitivity",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda.py",
-      "source_location": "L219",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -35730,14 +36367,14 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_report_rationale_186",
+      "source": "pipeline_eda_report_rationale_229",
       "target": "pipeline_eda_report_render_report",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_report.py",
-      "source_location": "L186",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -35752,17 +36389,6 @@
       "weight": 1.0
     },
     {
-      "source": "pipeline_eda_report_rationale_306",
-      "target": "pipeline_eda_report_write_run",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "pipeline/eda_report.py",
-      "source_location": "L306",
-      "weight": 1.0
-    },
-    {
       "source": "pipeline_eda_report_rationale_36",
       "target": "pipeline_eda_report_write_csv",
       "relation": "rationale_for",
@@ -35771,6 +36397,17 @@
       "confidence_score": 1.0,
       "source_file": "pipeline/eda_report.py",
       "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "pipeline_eda_report_rationale_363",
+      "target": "pipeline_eda_report_write_run",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "pipeline/eda_report.py",
+      "source_location": "L363",
       "weight": 1.0
     },
     {
@@ -36641,7 +37278,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L250",
+      "source_location": "L255",
       "weight": 1.0
     },
     {
@@ -36737,7 +37374,19 @@
       "confidence_score": 0.95,
       "context": "generic_arg",
       "source_file": "pipeline/eda_audit.py",
-      "source_location": "L44",
+      "source_location": "L45",
+      "weight": 0.8
+    },
+    {
+      "source": "pipeline_eda_followups_follow_up",
+      "target": "pipeline_eda_sample",
+      "relation": "uses",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "generic_arg",
+      "source_file": "pipeline/eda_followups.py",
+      "source_location": "L16",
       "weight": 0.8
     },
     {
@@ -37142,7 +37791,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_eda.py",
-      "source_location": "L38",
+      "source_location": "L45",
       "weight": 0.8
     },
     {
@@ -37153,7 +37802,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_eda.py",
-      "source_location": "L42",
+      "source_location": "L49",
       "weight": 0.8
     },
     {
@@ -37164,7 +37813,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "tests/test_eda.py",
-      "source_location": "L69",
+      "source_location": "L76",
       "weight": 0.8
     },
     {
@@ -37411,5 +38060,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4512766c0544f76ce05aa481f95e36b8b44ea6bc"
+  "built_at_commit": "c4cf83f8ce29bdf8ae650af2818245f8ff5f82e3"
 }

@@ -31,6 +31,13 @@ def test_profile_preserves_qc_extreme_and_exposes_residual_disagreement() -> Non
     assert gaps[0]["seconds"] == 540
 
 
+def test_decimal_rounding_boundary_is_not_a_residual_disagreement() -> None:
+    rows = [Sample(ORIGIN, "source", 5000.00002, 0.0, 5000.0)]
+    profile, _ = station_profile(rows, "a", 900)
+    assert profile["raw_minus_fit_minus_residual_max_abs"] == 0.00002
+    assert profile["residual_disagreement_above_0_00002_m"] == 0
+
+
 def sample(seconds: int, value: float | None, *, bad: bool = False) -> Sample:
     return Sample(ORIGIN + timedelta(seconds=seconds), str(seconds), value, value, 0.0, bad)
 
@@ -83,6 +90,8 @@ def test_baseline_boundaries_count_against_support() -> None:
     result = pick([sample(t, 0) for t in range(-600, 0, 60)] + [sample(0, 0.1)])
     assert result["status"] == "ineligible_baseline"
     assert cast(float, result["baseline_coverage"]) < 0.2
+    assert result["search_max_gap_seconds"] == "unknown"
+    assert result["search_coverage"] == "unknown"
 
 
 def test_negative_excursion_detected_without_zero_becoming_missing() -> None:

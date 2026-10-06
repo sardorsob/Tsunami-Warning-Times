@@ -45,7 +45,7 @@ def evidence(Path, json, mo, run_path):
         not (folder / "summary.json").is_file(),
         mo.callout("Run scripts/run_tohoku_eda.py first.", kind="warn"),
     )
-    summary = json.loads((folder / "summary.json").read_text())
+    summary = json.loads((folder / "summary.json").read_text(encoding="utf-8"))
     mo.output.replace(
         mo.vstack(
             [
@@ -62,7 +62,11 @@ def evidence(Path, json, mo, run_path):
                     src=str(folder / "dart-candidates.png"),
                     alt="DART diagnostic candidate ranges, not physical arrivals",
                 ),
-                mo.md((folder / "report.md").read_text()),
+                mo.image(
+                    src=str(folder / "early-crossing-check.png"),
+                    alt="DART 21418 crossing conflicts with NOAA's approximate tsunami timing",
+                ),
+                mo.md((folder / "report.md").read_text(encoding="utf-8")),
             ]
         )
     )

@@ -36,7 +36,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     """Preserve all columns, including failure-only fields."""
     columns = sorted({key for row in rows for key in row})
     with path.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=columns)
+        writer = csv.DictWriter(stream, fieldnames=columns, restval="unknown", lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow(
@@ -181,6 +181,49 @@ def figures(result: dict[str, Any], output: Path) -> None:
         fig.savefig(output / "dart-candidates.svg", metadata={"Date": None})
         plt.close(fig)
 
+        fig, ax = plt.subplots(figsize=(12, 6))
+        waveform = result["early_waveform"]
+        ax.plot(
+            [r["minutes"] for r in waveform],
+            [r["residual"] for r in waveform],
+            color="#176578",
+            linewidth=1.5,
+        )
+        near = [
+            p["candidate_elapsed_seconds"] / 60
+            for p in result["picks"]
+            if p["station_id"] == "21418" and p["window"] == "event" and p["status"] == "candidate"
+        ]
+        ax.axvline(min(near), color="#9F4A12", linestyle=":")
+        ax.axvline(25, color="#513A76", linestyle="--")
+        ax.text(4, 1.7, f"Threshold candidate\n~{min(near):.2f} min", fontsize=13, color="#9F4A12")
+        ax.text(
+            26,
+            1.7,
+            "NOAA first-recording reference\napproximately 25 min",
+            fontsize=13,
+            color="#513A76",
+        )
+        ax.set(
+            xlim=(-5, 60),
+            xlabel="Minutes after earthquake origin (UTC)",
+            ylabel="Publisher residual (m water column)",
+        )
+        ax.set_title(
+            "A stable early crossing conflicts with NOAA’s tsunami timing", loc="left", pad=22
+        )
+        fig.text(
+            0.03,
+            0.025,
+            "DART 21418 · NOAA/NCEI residuals; NOAA/PMEL/NCTR event-page reference.\n"
+            "The reference is approximate, not a validated exact pick. Early signal mechanism is unclassified.",
+            fontsize=11,
+        )
+        fig.subplots_adjust(left=0.1, right=0.97, top=0.83, bottom=0.23)
+        fig.savefig(output / "early-crossing-check.png", dpi=120)
+        fig.savefig(output / "early-crossing-check.svg", metadata={"Date": None})
+        plt.close(fig)
+
 
 def render_report(result: dict[str, Any], run_id: str, git_sha: str) -> str:
     """Result-dependent findings and follow-ups, retaining every station and failed setting."""
@@ -236,6 +279,20 @@ def render_report(result: dict[str, Any], run_id: str, git_sha: str) -> str:
             f"Decision: {summary['physical_arrival_status']}; "
             "do not use the threshold timestamp as a physical arrival."
         )
+    lines += ["", "### Completed evidence-triggered follow-ups", ""]
+    for finding in result["adaptive_ledger"]:
+        lines.append(
+            f"- **Observation:** {finding['observation']} **Question:** {finding['question']} "
+            f"**Check:** {finding['follow_up']} **Evidence:** {finding['evidence']} "
+            f"**Decision:** {finding['decision']}"
+        )
+    lines += [
+        "",
+        "The first exploratory run reported 231 residual-consistency exceedances at the "
+        "0.00002 m boundary. Exact-decimal rechecking showed floating-point cancellation, not "
+        "source disagreement. The corrected comparison and a regression test preserve the "
+        "original tolerance; no detector setting or source value changed.",
+    ]
     lines += [
         "",
         "## Distribution, fit, geometry, and join checks",
@@ -317,6 +374,10 @@ def write_run(
             ("gaps", "gaps"),
             ("candidate_windows", "candidate-windows"),
             ("summaries", "station-decisions"),
+            ("adaptive_ledger", "adaptive-ledger"),
+            ("raw_traces", "raw-traces"),
+            ("qc_records", "qc-records"),
+            ("early_waveform", "early-waveform"),
         ]:
             write_csv(stage / f"{name}.csv", result[key])
         write_json(stage / "summary.json", result)
