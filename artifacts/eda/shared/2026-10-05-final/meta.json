@@ -1,0 +1,7 @@
+{
+  "command": "uv run python scripts/run_tohoku_eda.py --output <new-directory> --run-id 2026-10-05-final --git-sha c98a9c2",
+  "disposition": "revise_arrival_comparison",
+  "git_sha": "c98a9c2",
+  "randomness": "none",
+  "run_id": "2026-10-05-final"
+}

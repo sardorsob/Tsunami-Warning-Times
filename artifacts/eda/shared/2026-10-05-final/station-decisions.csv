@@ -1,0 +1,11 @@
+all_settings_detect,control_crossings,control_ineligible,detected_settings,external_validation,field,measurement_supported,modeled_arrival_utc,physical_arrival_status,screen_pass,settings,spread_seconds,station_id
+True,0,0,8,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,21960.0,1617760
+True,0,0,8,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,6600.0,1770000
+True,0,0,8,not_validated,residual,True,unavailable,unvalidated,False,8,1635.0,21413
+True,0,0,8,conflicts_approximate_publisher_reference,residual,True,unavailable,unvalidated,True,8,15.0,21418
+True,0,0,8,not_validated,residual,True,unavailable,unvalidated,False,8,210.0,32401
+True,0,0,8,not_validated,residual,True,unavailable,unvalidated,True,8,60.0,46411
+True,0,0,8,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,5100.0,9419750
+True,4,0,8,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,5640.0,9461380
+False,0,8,0,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,unknown,saip
+True,0,0,8,not_validated,raw,False,unavailable,unsupported_raw_water_level,False,8,78420.0,valp

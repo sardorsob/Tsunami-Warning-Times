@@ -1,0 +1,37 @@
+{
+  "baseline_hours": [
+    2,
+    4
+  ],
+  "coastal_max_gap_seconds": 120,
+  "control_hours": 1,
+  "dart_max_gap_seconds": 900,
+  "event_id": "official20110311054624120_30",
+  "maximum_stability_spread_seconds": 300,
+  "minimum_baseline_coverage": 0.9,
+  "minimum_baseline_samples": 6,
+  "noise_multiplier": 5.0,
+  "origin_utc": "2011-03-11T05:46:24.120Z",
+  "persistence_seconds": [
+    60,
+    120
+  ],
+  "protocol_version": "2026-10-05-v1",
+  "search_hours": 30,
+  "station_ids": [
+    "1617760",
+    "1770000",
+    "21413",
+    "21418",
+    "32401",
+    "46411",
+    "9419750",
+    "9461380",
+    "saip",
+    "valp"
+  ],
+  "threshold_floors_m": [
+    0.03,
+    0.05
+  ]
+}
