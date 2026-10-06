@@ -76,6 +76,13 @@ def test_populated_audit_notebook_exports_visible_evidence(tmp_path: Path) -> No
     shutil.copyfile(ROOT / "notebooks/tohoku_arrival_audit.py", notebook)
     run = tmp_path / "artifacts/eda/shared/test"
     run.mkdir(parents=True)
+    (tmp_path / "context").mkdir()
+    (tmp_path / "context/EDA_RUN.json").write_text(
+        json.dumps({"bundle": "artifacts/eda/shared/test"})
+    )
+    stale = tmp_path / "artifacts/eda/shared/zz-stale"
+    stale.mkdir()
+    (stale / "summary.json").write_text("{}")
     (run / "summary.json").write_text(json.dumps({"summaries": [{"station_id": "test"}]}))
     (run / "report.md").write_text("# Fixture evidence report")
     png = base64.b64decode(

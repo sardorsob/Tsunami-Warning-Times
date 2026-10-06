@@ -27,10 +27,15 @@ def title(mo):
 
 
 @app.cell
-def selector(Path, mo):
-    _runs = sorted(Path("artifacts/eda/shared").glob("*/summary.json"))
+def selector(Path, json, mo):
+    _pointer = Path("context/EDA_RUN.json")
+    _bundle = (
+        json.loads(_pointer.read_text(encoding="utf-8"))["bundle"]
+        if _pointer.is_file()
+        else "artifacts/eda/shared/no-canonical-run"
+    )
     run_path = mo.ui.text(
-        value=str(_runs[-1].parent) if _runs else "artifacts/eda/shared/latest",
+        value=_bundle,
         label="Audit run directory",
         full_width=True,
     )

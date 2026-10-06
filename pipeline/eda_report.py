@@ -196,13 +196,23 @@ def figures(result: dict[str, Any], output: Path) -> None:
         ]
         ax.axvline(min(near), color="#9F4A12", linestyle=":")
         ax.axvline(25, color="#513A76", linestyle="--")
-        ax.text(4, 1.7, f"Threshold candidate\n~{min(near):.2f} min", fontsize=13, color="#9F4A12")
+        top = max(r["residual"] for r in waveform)
+        ax.set_ylim(min(r["residual"] for r in waveform) - 0.1, top + 0.65)
+        ax.text(
+            4,
+            top + 0.5,
+            f"Threshold candidate\n~{min(near):.2f} min",
+            fontsize=13,
+            color="#9F4A12",
+            va="top",
+        )
         ax.text(
             26,
-            1.7,
+            top + 0.5,
             "NOAA first-recording reference\napproximately 25 min",
             fontsize=13,
             color="#513A76",
+            va="top",
         )
         ax.set(
             xlim=(-5, 60),

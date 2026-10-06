@@ -43,6 +43,18 @@ def main() -> None:
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_bytes((args.output / "report.md").read_bytes())
+        write_json(
+            args.report.parent / "EDA_RUN.json",
+            {
+                "bundle": args.output.resolve().relative_to(root).as_posix(),
+                "run_id": args.run_id,
+                "git_sha": args.git_sha,
+                "report_sha256": hashlib.sha256(
+                    (args.output / "report.md").read_bytes()
+                ).hexdigest(),
+                "arrival_comparison_allowed": False,
+            },
+        )
     if args.mlflow:
         os.environ.setdefault("MLFLOW_ALLOW_FILE_STORE", "true")
         os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "true")
